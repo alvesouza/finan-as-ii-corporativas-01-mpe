@@ -1,0 +1,531 @@
+Finanças Two, Corporate Finance. Class one: What is corporate finance? Introduction and stylized facts. A listening version of the class notes.
+
+How to listen.
+
+This is the full content of the class one notes, rewritten to be heard rather than read. Nothing is summarized away. Every derivation is said step by step, every number is the one in the notes, and every table is walked row by row.
+
+There are six main parts, followed by seven support parts. Part one: what the field studies. Part two: corporate governance. Part three: the Modigliani and Miller benchmark. Part four: the stylized facts of corporate financing. Part five: the resolution, a model of credit rationing. Part six: what this class leaves to later classes.
+
+Then the support parts: the common pitfalls, a spoken formula sheet, the interactive companion and the number check, the reading route and exercises, a self-test, a glossary, and finally the whole class in five lines.
+
+All mathematics is spoken in words. When you hear "p H", that is the letter p with a subscript H. When you hear "A bar", that is the letter A with a bar over it.
+
+All page numbers are the printed page numbers of the book. The main book is Jean Tirole, The Theory of Corporate Finance, Princeton University Press. In the PDF, the page number is the printed page plus thirteen.
+
+One scope rule applies throughout. The course covers only the nine syllabus topics: corporate governance, valuation, the Modigliani and Miller benchmark, agency costs, liquidity, asymmetric information, activism, mergers and acquisitions, and macroeconomic implications. Whenever something in this class belongs to a later topic, you will hear it said out loud.
+
+Before we start, the thesis of the whole class, in one sentence. Modigliani and Miller show that how the pie is carved cannot change its size. Corporate finance exists because, once the people who run a firm are not the people who fund it, the carving does change the size, and a project with positive net present value can go unfunded.
+
+Keep that sentence in mind. Every part of this class serves one of three jobs: to show the benchmark, to show the facts that contradict it, and to show the one assumption whose failure explains those facts.
+
+
+Part one. What the field studies. This covers Tirole's Introduction, printed pages one and two.
+
+One point one. The two sides of the firm.
+
+Every firm has two sides. On one side are the insiders: the entrepreneur, the founder, the managers. They run the firm. On the other side are the outsiders: shareholders, banks, bondholders. They fund it.
+
+Money flows from the outsiders to the firm. Claims on future income flow back from the firm to the outsiders: a share of profits, a repayment schedule, a seat on the board.
+
+One point two. Why the Arrow and Debreu model is not enough.
+
+For most of the twentieth century, finance had a powerful general theory of how claims are priced: the Arrow and Debreu model of complete markets. But in Tirole's words, it "said little about the firms' financial choices and about their governance".
+
+The reason is simple. In that world, every action of the firm can be written into a contract. If every action is in the contract, nobody can cheat, and so there is nothing to govern.
+
+One point three. A principal and agent problem.
+
+Corporate finance, as Tirole teaches it, starts by dropping that assumption. Formally, the relationship is a principal and agent problem. The outsiders are the principal. The insiders are the agent.
+
+Tirole sorts the problem into three kinds of asymmetry, and the clearest way to tell them apart is by timing.
+
+First, adverse selection. This happens before the contract is signed. The insider knows something the outsider does not: the quality of the technology, or how risky the market really is.
+
+Second, hidden knowledge. This happens after the outcome. The insider knows how much income was actually earned, and the outsider does not.
+
+Third, moral hazard. This happens in between, after the money arrives and before the outcome. The outsider cannot see the insider's effort, the choice of project, or how much risk is being taken.
+
+So: before the contract, adverse selection. After the outcome, hidden knowledge. In between, moral hazard.
+
+Moral hazard is the one used in part five of this class. Keep it in mind.
+
+Recap of part one. You should be able to name the insiders and the outsiders. You should be able to say why complete contracts leave nothing to govern. And you should be able to state the three asymmetries and place each one in time.
+
+
+Part two. Corporate governance. This covers Tirole chapter one, sections one point one and one point two, printed pages fifteen to twenty eight.
+
+Two point one. The separation of ownership and control.
+
+The worry is old. In nineteen thirty two, Adolf Berle and Gardiner Means documented the separation of ownership and control in large American corporations. In their words, dispersed ownership "creates substantial managerial discretion, which can be abused".
+
+Why does dispersion matter? Because monitoring is a public good among small shareholders. A shareholder who owns a tiny sliver of the firm bears the whole cost of watching the managers, but gets only her tiny share of the gain. Every other shareholder benefits whether or not they lifted a finger. So nobody supplies monitoring, and it is under-supplied.
+
+Now the definition the course uses. Tirole adopts the definition of Shleifer and Vishny, on printed page fifteen. Corporate governance is the set of ways in which suppliers of finance to corporations "assure themselves of getting a return on their investment".
+
+Notice two things about that definition. It is not about how the firm maximizes value, and it is not about how the board is organized. And it is written entirely from the outsiders' side. Governance is the outsiders' problem.
+
+Tirole also distinguishes two shapes of the agency problem, on printed page fifteen.
+
+The first shape: dispersed owners facing one manager. This is frequent in Anglo-Saxon countries. The conflict runs between the manager and the shareholders as a group.
+
+The second shape: a controlling shareholder facing minority shareholders. This is typical of continental Europe. The controller can monitor the manager perfectly well. The question becomes: who monitors the controller?
+
+Two point two. Moral hazard comes in many guises. This is section one point one point one, printed pages sixteen and seventeen.
+
+Tirole lists four guises. Here they are, each with its examples from the book.
+
+First, insufficient effort. This is not about hours at the office. It is about where effort goes: avoiding cost cutting, avoiding hard bargaining, avoiding firing friends, and sitting on too many outside boards.
+
+Second, extravagant investments. Empire building and pet projects. Tirole's example comes from Michael Jensen on the oil industry in the late nineteen seventies: oil companies kept exploring even though buying oil was cheaper than drilling for it.
+
+Third, entrenchment. Investments that make the manager personally indispensable, gambling for resurrection when things go badly, and resisting takeovers.
+
+Fourth, self-dealing. Perks, such as RJR Nabisco's fleet of ten aircraft with thirty six company pilots. And at the extreme, theft: Robert Maxwell's use of his employees' pension fund, and Tyco, where more than one hundred million dollars was taken.
+
+What do all four share? In every case, the manager takes an action that cannot be written into a contract, and that action shrinks what is left for the outsiders. That phrase, an action that cannot be written into a contract, is the hinge of the whole course.
+
+Two point three. Evidence of dysfunctional governance. Printed pages seventeen to twenty.
+
+Three pieces of evidence.
+
+One: chief executive pay. Average pay of chief executives of large American firms roughly tripled in real terms between nineteen eighty and nineteen ninety four, and roughly doubled again by two thousand and one. In two thousand, the average chief executive earned five hundred and thirty one times the average wage of the firm's workers. In nineteen eighty two the multiple had been forty two.
+
+Two: pay for luck. Bertrand and Mullainathan found that chief executive pay is as sensitive to a "lucky dollar" as to a general dollar. Pay rises with an oil price or an exchange rate the manager does not control. But a large shareholder on the board cuts pay for luck by twenty three to thirty three per cent.
+
+Three: accounting. WorldCom's profits turned out to have been overstated by seven point one billion dollars.
+
+Now the most important idea of this section: the iceberg. Observed scandals are only the tip. Below the water are what Tirole calls "the averted ones": the covenants, the boards, the auditors, and the lenders who refused.
+
+This matters for how you read evidence. A country or a firm with few scandals might have excellent governance. Or it might have so little outside finance that there is nothing left to steal. The size of the visible tip tells you little about the iceberg.
+
+Two point four. The instruments. Section one point two, printed pages twenty to twenty eight.
+
+Tirole lists four instruments for aligning insiders with outsiders. Let us take them in order.
+
+Instrument one: monetary compensation. Salary, bonus, shares, and stock options.
+
+How strong are these incentives in practice? The famous measurement is by Jensen and Murphy, on printed page twenty four. The median chief executive of the two hundred and fifty largest American firms held a quarter of one per cent of the firm's shares. Take a rise of one thousand dollars in shareholder wealth. Add up everything that moves the chief executive's pocket. The total is three dollars and twenty five cents.
+
+Tirole's comment: a grocer who kept less than a third of a cent of every extra dollar of profit "would start eating the apples".
+
+Two caveats. Hall and Liebman, counting stock options properly, find a mean of twenty five dollars per thousand and a median of five dollars thirty. And a stake can be too large: a risk-averse manager with all her wealth in one firm will refuse good but risky projects.
+
+Now compare a share and an option. A share pays the share price, P. A stock option with strike price P S pays the maximum of zero and P minus P S. That is, it pays nothing when the price ends below the strike, and the excess over the strike when it ends above.
+
+Per unit of cost, options give stronger incentives near the top. But options that are under water, that is, far below the strike, give the manager nothing to lose from a wild gamble. That invites gambling for resurrection. And when prices fall, boards often reprice options, lowering the strike, which undoes the promise. Tirole's example is Ascend Communications.
+
+Instrument two: implicit incentives. The threat of dismissal, takeover, or bankruptcy. Stuart Gilson found that fifty two per cent of financially distressed firms replace senior management, against nineteen per cent of firms with equally poor stock returns but no distress. So debt itself disciplines.
+
+Instrument three: monitoring. Tirole splits it in two.
+
+Active monitoring is forward-looking. Someone with control rights intervenes to change what the firm will do: the board, a bank, a large shareholder.
+
+Speculative monitoring is backward-looking. Someone takes a picture of what the firm has done and acts through prices and the threat of exit, without controlling anything: analysts, rating agencies, short-term lenders.
+
+And monitors have their own conflicts. For example, auditors earning large non-audit fees from the firms they audit.
+
+Instrument four: product-market competition. A rival is a yardstick, and a weak firm risks bankruptcy. But in Tirole's words, competition "will never substitute for a proper governance structure".
+
+Recap of part two. You should be able to state the Shleifer and Vishny definition of governance and explain why it is written from the outsiders' side. You should be able to name the four guises of moral hazard with one example each. You should be able to explain the iceberg and why few scandals do not prove good governance. And you should be able to compute the Jensen and Murphy ratio, compare the payoff of a share with the payoff of an option, and distinguish active from speculative monitoring.
+
+
+Part three. The benchmark: Modigliani and Miller. This covers Tirole chapter two, section two point two, printed pages seventy seven to seventy nine.
+
+Three point zero. The claim.
+
+Under the conditions of Modigliani and Miller, the total value of the firm is independent of its financial structure. The level of debt, its seniority, the dividend policy: none of it changes total value.
+
+In Tirole's words, "decisions concerning the financial structure affect only how the 'corporate pie' is shared, but have no effect on the total size of the pie."
+
+Tirole gives two arguments, both on printed page seventy eight. We will do both in full.
+
+Three point one. Value additivity.
+
+The setting: the firm has random income, called R, which is never negative. It has issued debt with face value D. Investors are risk neutral.
+
+What does each claim pay? Equity pays the maximum of zero and R minus D: the shareholders get what is left after the debt is repaid, or nothing. Debt pays the minimum of R and D: the creditors get their face value, or all the income if the income falls short.
+
+Now add the two payoffs, case by case.
+
+Case one: income is at least as large as the debt. Then equity gets R minus D, and debt gets D. The sum is R minus D plus D, which is R.
+
+Case two: income is smaller than the debt. Then equity gets zero, and debt gets all of R. The sum is zero plus R, which is R.
+
+So in every state of the world, the equity payoff plus the debt payoff equals R.
+
+Now take expectations. The value of equity plus the value of debt equals the expected value of the maximum of zero and R minus D, plus the expected value of the minimum of R and D, which equals the expected value of R.
+
+The face value D has disappeared. Total value does not depend on how much debt the firm issues.
+
+An example. Suppose income is either zero or two hundred, each with probability one half. Expected income is one hundred.
+
+With debt of face value eighty: the debt is worth one half times eighty, which is forty. The equity is worth one half times one hundred and twenty, which is sixty. Total, one hundred.
+
+With debt of face value one hundred and fifty: the debt is worth seventy five, and the equity is worth one half times fifty, which is twenty five. Total, one hundred again.
+
+The split changed. The pie did not.
+
+Three point two. Payout irrelevance.
+
+The second argument shows that dividend policy cannot change value either.
+
+The setting: an all-equity firm, dates zero, one, two, and so on. At each date t, the firm earns random revenue R t, pays a dividend per share d t, has n t shares outstanding, and sinks an investment I t. P t is the share price at the end of date t, after the dividend. And beta is the discount factor.
+
+Two conditions hold.
+
+First, arbitrage. The price of a share today equals beta times the expected value of next period's dividend plus next period's price. In symbols: P t equals beta times the expectation of d t plus one, plus P t plus one.
+
+Second, the cash identity. At each date, revenue plus the money raised by issuing shares equals the dividends paid plus the investment. In symbols: R t, plus P t times the change in the number of shares, equals n t minus one times d t, plus I t. When the firm buys back shares, the money raised is negative.
+
+Now the derivation. Define V t as the total value of shares, n t times P t.
+
+Step one. Using arbitrage, V t equals beta times the expectation of n t times d t plus one, plus n t times P t plus one.
+
+Step two. Use the cash identity at date t plus one to replace the dividends paid, n t times d t plus one. The identity says that equals R t plus one, minus I t plus one, plus P t plus one times the change in shares from t to t plus one. So V t equals beta times the expectation of: R t plus one, minus I t plus one, plus the change in shares times P t plus one, plus n t times P t plus one.
+
+Step three. The last two terms combine. The change in shares times the price, plus the old number of shares times the price, is just the new number of shares times the price, which is V t plus one. So V t equals beta times the expectation of R t plus one, minus I t plus one, plus V t plus one.
+
+Step four. Repeat the same substitution forever. V t equals the expected value of the sum, over all future dates tau from one onward, of beta to the power tau times revenue minus investment at date t plus tau.
+
+What has disappeared? Dividends and share issues. Value depends only on the firm's real characteristics: its income and its investment. Not on its dividend or capital-market choices.
+
+Three point three. Where it breaks.
+
+Tirole immediately says, on printed page seventy nine, where the benchmark fails: "Whenever managerial decisions cannot be perfectly specified contractually, the incentives given to those who pick those decisions affect the firm's income, the size of the pie, and therefore the split of the pie matters."
+
+That is the bridge to part two. All four guises of moral hazard are decisions that cannot be specified contractually.
+
+A scope note, said out loud. The full Modigliani and Miller treatment, including Proposition Two, taxes, and default costs, belongs to topic three, classes four and five. Here we only need Tirole's two arguments.
+
+Recap of part three. You should be able to state the Modigliani and Miller claim. You should be able to prove value additivity by the two-case split and redo the numerical example. You should be able to derive the payout irrelevance formula in four steps from arbitrage and the cash identity. And you should be able to say, in Tirole's words, why the split of the pie matters when decisions are not contractible.
+
+
+Part four. The stylized facts that the benchmark has to face. This covers Tirole chapter two, sections two point five and two point six, printed pages ninety five to one hundred and two.
+
+If financing were irrelevant, there would be no reason for firms in every country to finance themselves the same way. Here is how they actually do it. Five families of facts.
+
+Four point one. Internal finance dominates.
+
+This is Table two point two, from Mayer, nineteen ninety, on printed page ninety six. It gives the financing of non-financial firms as a percentage of total financing, nineteen seventy to nineteen eighty five, for five countries. Four rows: retentions, loans, bonds, and new shares.
+
+Row one, retentions, meaning profits the firm kept. United States, sixty six point nine per cent. United Kingdom, seventy two point zero. Germany, fifty five point two. Japan, thirty three point seven. France, forty four point one.
+
+Row two, loans. United States, twenty three point one. United Kingdom, twenty one point four. Germany, twenty one point one. Japan, forty point seven. France, forty one point five.
+
+Row three, bonds. United States, nine point seven. United Kingdom, zero point eight. Germany, zero point seven. Japan, three point one. France, two point three.
+
+Row four, new shares. United States, zero point eight. United Kingdom, four point nine. Germany, two point one. Japan, three point five. France, ten point six.
+
+Tirole draws three conclusions. One: retentions dominate everywhere. Two: bank loans are the bulk of external finance, well ahead of new equity, which is small everywhere. Three: bond markets play a minor role outside North America.
+
+Four point two. Net equity is small or even negative. Printed page ninety seven.
+
+Rajan and Zingales studied American firms from nineteen eighty four to nineteen eighty six. New share issues were sixty five per cent of external financing. But buybacks and other equity reductions were sixty eight per cent. Net equity issuance was negative. In Tirole's words, "basically all external financing was debt".
+
+More recent figures: the share of gross fixed-capital formation raised through new equity in nineteen ninety nine was twelve per cent in the United States, nine in the United Kingdom, nine in France, eight in Japan, and six in Germany.
+
+A caveat Tirole insists on. Retained earnings are also shareholders' money: cash they agree to leave in the firm. So the real puzzle is not where the money comes from. It is why leaving profits in is so much easier than buying newly issued shares. That puzzle belongs to classes eleven and twelve.
+
+Four point three. Leverage. Table two point four, from White, nineteen ninety one, on printed page ninety eight. American firms in nineteen eighty five. Two columns: equity as a share of debt plus equity, and the ratio of debt to equity.
+
+All industries: equity is zero point three two of the total, and debt to equity is two point one one.
+
+Manufacturing: zero point four five, and one point two zero.
+
+Wholesale and retail trade: zero point two nine, and two point four nine.
+
+Services: zero point three one, and two point two five.
+
+Commercial banks: zero point zero eight, and eleven point zero zero.
+
+So a typical debt to equity ratio is around two, and banks are around eleven.
+
+Who borrows a lot? Firms with steady cash flow and assets that can be redeployed or resold. Who borrows little? Risky firms, firms with little cash flow, and firms whose value is intangible.
+
+Four point four. Banks versus markets. Table two point five, printed page ninety nine. Liabilities of non-financial firms in two thousand and two.
+
+Bonds are fifteen point six per cent of liabilities in the United States, against two point three per cent in Germany and Italy. Loans are ten per cent in the United States, against forty three per cent in Germany and thirty nine point five per cent in Japan.
+
+So there are market-based systems and bank-based systems. This matters for the distinction between active and speculative monitoring from part two.
+
+Four point five. Announcement effects. Table two point six, from Eckbo and Masulis, nineteen ninety five, printed page one hundred and one. The average two-day abnormal return when an American industrial firm announces a new issue.
+
+Common stock: minus three point one per cent. Convertible bonds: minus two point zero per cent. Straight bonds: minus zero point three per cent, which is not statistically significant. And bank loan announcements: positive.
+
+Under Modigliani and Miller, every one of these should be zero. The split should not move the value of the pie.
+
+Four point six. Timing. Printed page one hundred and one.
+
+Bank finance is countercyclical. Strong firms lend to weak ones in recessions. Small, bank-dependent firms are hit harder by downturns. And equity issues cluster in upswings and after the firm's own share price has risen. That last fact is called market timing.
+
+Four point seven. The map to the course. Section two point six, printed page one hundred and two.
+
+Tirole closes the chapter by naming what all these facts point to: "information and incentives in general, and capital, liquidity, value of collateral, and external monitoring more specifically".
+
+Each fact has a home in the course. Five pairings.
+
+First: firms rely on retentions and bank debt and issue little equity. That is explained by agency costs and borrowing capacity, classes six to eight.
+
+Second: leverage tracks steady cash flow and collateral. That is pledgeable income and collateral, class seven.
+
+Third: equity issues lower the share price and bank loans raise it. That is asymmetric information, classes eleven and twelve, and monitoring, class thirteen.
+
+Fourth: some systems are bank-based and others market-based. That is active versus speculative monitoring, class thirteen.
+
+Fifth: financing is cyclical and the small are hit hardest. That is liquidity, classes nine and ten, and macroeconomic implications, classes fifteen and sixteen.
+
+Recap of part four. You should be able to state Tirole's three conclusions from Table two point two. You should be able to explain why net equity issuance can be negative and why retentions are still shareholders' money. You should know the typical debt to equity ratio and who borrows. And you should be able to quote the announcement returns and say why they embarrass Modigliani and Miller.
+
+
+Part five. The resolution in one model. This covers Tirole chapter three, section three point two, printed pages one hundred and fifteen to one hundred and eighteen. It is the Holmström and Tirole fixed-investment model.
+
+A scope note first. This class only previews the model, up to the threshold for funding. The full model belongs to class six.
+
+All amounts are in thousands of reais. The calibration used throughout:
+
+The investment, I, is one hundred.
+The founder's net worth, A, is ten.
+Income in case of success, R, is one hundred and sixty.
+The probability of success if she behaves, p H, is zero point eight.
+The probability of success if she shirks, p L, is zero point four.
+Her private benefit from shirking, B, is twenty.
+
+Five point one. The setup.
+
+The entrepreneur has net worth A, which is less than I. So she must borrow I minus A.
+
+The project either succeeds, yielding verifiable income R, or fails, yielding zero.
+
+She can behave, giving success probability p H and no private benefit. Or she can shirk, giving the lower success probability p L, and she enjoys private benefit B. Define delta p as p H minus p L.
+
+Everyone is risk neutral. The interest rate is zero. She is protected by limited liability. Lenders are competitive, so they make zero profit.
+
+The contract gives her R b in case of success, and gives the lenders R l, which is R minus R b. In case of failure, both get zero.
+
+Five point two. The two assumptions.
+
+Assumption three point one: the project has positive net present value if she behaves. p H times R minus I is greater than zero. With our numbers: zero point eight times one hundred and sixty is one hundred and twenty eight, minus one hundred, is twenty eight. Positive.
+
+Assumption three point two: the project has negative value if she shirks, even counting her private benefit. p L times R, minus I, plus B, is less than zero. With our numbers: sixty four minus one hundred plus twenty is minus sixteen. Negative.
+
+Assumption three point two means no loan that lets her shirk will ever be granted. So every contract must give her enough of a stake to behave.
+
+Five point three. Step one: incentive compatibility.
+
+She behaves if her expected payoff from behaving is at least her expected payoff from shirking. p H times R b is at least p L times R b plus B. Subtract and you get: delta p times R b is at least B.
+
+That is the incentive constraint. So her minimum stake in case of success is B divided by delta p. With our numbers: twenty divided by zero point four, which is fifty.
+
+Five point four. Step two: pledgeable income.
+
+If she must keep at least fifty out of the one hundred and sixty, then the most that can be promised to lenders in case of success is R minus B over delta p. That is one hundred and sixty minus fifty, which is one hundred and ten.
+
+In expected terms, the pledgeable income, called script P, is p H times the quantity R minus B over delta p. With our numbers: zero point eight times one hundred and ten, which is eighty eight.
+
+Five point five. Step three: breakeven and the threshold.
+
+Lenders must recover their outlay. So pledgeable income must be at least I minus A. That is the lenders' participation constraint. With our numbers, she needs ninety.
+
+Rearrange the condition. Pledgeable income at least I minus A is the same as A being at least A bar, where A bar equals p H times B over delta p, minus the quantity p H times R minus I. This is equation three point three.
+
+The first term, p H times B over delta p, is called the agency rent: the minimum expected payoff that must be left to her to keep her behaving. With our numbers, the agency rent is forty. The second term is the net present value, twenty eight. So A bar is forty minus twenty eight, which is twelve.
+
+Our founder has ten. Ten is less than twelve. She is rationed, short by two, even though the project's net present value is plus twenty eight.
+
+Check it the other way. Pledgeable income minus the funding need is eighty eight minus ninety, which is minus two. And A minus A bar is ten minus twelve, which is minus two. The same two, two ways. In general, pledgeable income minus I minus A always equals A minus A bar.
+
+As the conventional wisdom puts it: "one only lends to the rich."
+
+Five point six. Step four: when she is funded.
+
+If A is at least A bar, the lenders break even: p H times R l equals I minus A. So the gross interest rate, one plus iota, equals one divided by p H. The nominal rate is a pure default premium; the investors' expected return is still zero.
+
+Her net utility is a step. It is zero if A is below A bar. It is p H times R minus I, the whole net present value, if A is at least A bar. This is equation three point six. Her utility jumps at A bar.
+
+An example: a richer founder with A equal to twenty. Lenders need p H times R l equal to eighty, so R l is one hundred. Her stake R b is sixty, which exceeds the required fifty, so she behaves. And her net utility is twenty eight, the whole net present value.
+
+Five point seven. Comparative statics. Printed page one hundred and eighteen.
+
+Credit rationing comes from two sources: low net worth A, or high agency cost. The agency cost is measured by B and by the likelihood ratio, delta p divided by p H, which says how informative the outcome is about her effort.
+
+Here is how the threshold A bar responds to each parameter. Remember: a higher A bar means harder to fund.
+
+When B rises, A bar rises. The derivative is p H divided by delta p. At our calibration, that is plus two per unit of B. Harder to fund.
+
+When p L rises, A bar rises. The derivative is p H times B divided by delta p squared. At our calibration, that is plus one hundred per unit of probability, or plus one per hundredth. Harder to fund, because the outcome reveals less about effort.
+
+When I rises, A bar rises one for one. Harder to fund.
+
+When R rises, A bar falls. The derivative is minus p H, minus zero point eight at our calibration. Easier to fund.
+
+When p H rises, A bar falls. The derivative is minus R minus p L times B divided by delta p squared. At our calibration, that is minus two hundred and ten per unit, or minus two point one per hundredth. Easier to fund.
+
+Five point eight. Modigliani and Miller recovered.
+
+Now set B equal to zero. Behaviour is then effectively contractible: there is nothing to gain from shirking. A bar becomes minus the net present value, minus twenty eight, which is negative. Every project with positive net present value is funded, whatever the founder's net worth. That is exactly the Modigliani and Miller world.
+
+One assumption separates the two worlds. Put it back, and you have the benchmark. Take it away, and you have corporate finance.
+
+Recap of part five. You should be able to set up the model and check assumptions three point one and three point two with the numbers. You should be able to derive the incentive constraint, the minimum stake of fifty, the pledgeable income of eighty eight, and the threshold of twelve. You should be able to explain why the founder is short by two, why the interest rate is a default premium, and why her utility jumps. And you should be able to sign every comparative static and show that B equal to zero gives back Modigliani and Miller.
+
+
+Part six. What this class leaves to later classes.
+
+Classes four and five own Modigliani and Miller in full.
+
+Class six owns the fixed-investment model in full, from section three point two point three onward.
+
+Classes eleven and twelve explain the announcement effects. Here they are facts only.
+
+And no Brazilian numbers appear in this class, because none are in the course books.
+
+
+Support part one. Pitfalls. Each is said as the error, then the correction.
+
+Pitfall one. The error is to think that positive net present value implies funding. The correction: the test is pledgeable income against the funding need, I minus A, not net present value against zero.
+
+Pitfall two. The error is to confuse the agency rent with the minimum stake. The correction: the agency rent, p H times B over delta p, is an expected payoff, forty in our example. The minimum stake, B over delta p, is a payoff in case of success, fifty in our example.
+
+Pitfall three. The error is to read the interest rate as investors' return. The correction: one plus iota equals one over p H is a pure default premium; investors' expected return is zero.
+
+Pitfall four. The error is to think a rationed borrower could get funded by offering a higher interest rate. The correction: raising the lenders' claim lowers her stake below B over delta p, so she would shirk, and the lenders refuse.
+
+Pitfall five. The error is to think governance means how the board is organized. The correction: in this course, governance is the ways suppliers of finance assure themselves of a return.
+
+Pitfall six. The error is to treat internal finance as free money. The correction: retentions are shareholders' money too; the puzzle is why leaving it in is easier than buying new shares.
+
+Pitfall seven. The error is to treat a stock option as just a cheaper share. The correction: the option's payoff is flat below the strike, so under-water options invite gambling.
+
+Pitfall eight. The error is to read few scandals as evidence of good governance. The correction: the iceberg; few scandals can also mean little outside finance.
+
+
+Support part two. The spoken formula sheet.
+
+Use it for active recall. Pause after each name, say the formula yourself, then listen to the answer.
+
+Formula one. Value additivity. The value of equity plus the value of debt equals the expected value of the maximum of zero and R minus D, plus the expected value of the minimum of R and D, which equals the expected value of R.
+
+Formula two. Arbitrage. P t equals beta times the expectation of d t plus one plus P t plus one.
+
+Formula three. The cash identity. R t, plus P t times n t minus n t minus one, equals n t minus one times d t, plus I t.
+
+Formula four. Payout irrelevance. V t equals the expectation of the sum over tau from one onward of beta to the tau times R t plus tau minus I t plus tau.
+
+Formula five. Equation three point one. p H times R minus I is greater than zero.
+
+Formula six. Equation three point two. p L times R minus I plus B is less than zero.
+
+Formula seven. The incentive constraint. delta p times R b is at least B.
+
+Formula eight. Pledgeable income. Script P equals p H times the quantity R minus B over delta p.
+
+Formula nine. Equation three point three, the threshold. A bar equals p H times B over delta p, minus the quantity p H times R minus I.
+
+Formula ten. The identity. Pledgeable income minus I minus A equals A minus A bar.
+
+Formula eleven. The interest rate. One plus iota equals one over p H.
+
+Formula twelve. Equation three point six. U b equals zero if A is below A bar, and p H times R minus I if A is at least A bar.
+
+Formula thirteen. The share and the option. A share pays P. An option with strike P S pays the maximum of zero and P minus P S.
+
+
+Support part three. Implementation: the companion and the number check.
+
+There is an interactive companion page for part five, saved next to the class one video in the folder Videos, aula zero one, what is corporate finance, under the name companion dot html.
+
+It has six sliders: net worth A, private benefit B, the shirking probability p L, income R, the behaving probability p H, and investment I. Defaults are the class calibration.
+
+At the top it shows the verdict, funded or rationed, and the gap A minus A bar: minus two at the defaults. The first chart draws the founder's utility as a step against net worth, with A bar marked and the founder as a dot. The second chart compares pledgeable income with the funding need, and splits R into what lenders can be promised and the stake the founder must keep.
+
+Three experiments to try. First, set B to zero and watch A bar jump to minus twenty eight. Second, set B to fifteen: A bar falls to two and she is funded. Third, raise p L toward p H and watch the threshold run away; at p L equal to p H, no stake can induce effort.
+
+The number check is a short script in the same folder, called check numbers dot py. Its order of operations: set the six parameters as exact fractions; compute the net present value and check it is twenty eight; compute the shirking value and check it is minus sixteen; compute the minimum stake, the maximum promise, and the pledgeable income, and check fifty, one hundred and ten, and eighty eight; compute the agency rent and the threshold, and check forty and twelve; and confirm the founder is short by two both ways. The one trap: use exact fractions, because in floating point zero point eight minus zero point four is not exactly zero point four, and the threshold comparison at exactly twelve can flip.
+
+
+Support part four. Reading route and exercises. Addresses only; exercise statements are not read aloud.
+
+Readings, in Tirole. Introduction, printed pages one to twelve. Chapter one, sections one point one and one point two, printed pages fifteen to twenty eight. Chapter two, section two point two, printed pages seventy seven to eighty. Chapter two, sections two point five and two point six, printed pages ninety five to one hundred and two. Chapter three, section three point two, printed pages one hundred and fifteen to one hundred and eighteen.
+
+Complementary readings. Ross, Fundamentos de Administração Financeira, chapter one, sections one point three and one point four, printed pages eight to seventeen. Higgins, Analysis for Financial Management, chapter four, section New Equity Financing, printed pages one hundred and twenty eight to one hundred and thirty five.
+
+The practice plan, saved as Listas, pratica aula zero one, lists twenty exercises in increasing complexity. In order:
+
+Foundations. Ross chapter one, conceptual questions one point six and one point seven, printed page twenty two, and one point fifteen and one point sixteen, printed page twenty three. Higgins problems four point five and four point six, printed page one hundred and thirty five. Ross chapter sixteen, conceptual question sixteen point two, printed page five hundred and seventy five, and review problem sixteen point two, printed page five hundred and seventy four.
+
+Exam level. Ross problem sixteen point eight, printed page five hundred and seventy seven. Ross conceptual question sixteen point four, printed page five hundred and seventy five. Amaro de Matos, exercise two of section two point one point five, printed page forty eight, and exercise three of section three point one point five, printed page seventy seven. Then Tirole chapter three: exercise three point two part one and exercise three point one, printed page one hundred and forty four; three point fifteen, printed page one hundred and fifty; three point thirteen part one, printed page one hundred and forty nine; three point ten, printed page one hundred and forty eight; and three point four, printed page one hundred and forty five.
+
+Advanced. Tirole three point eleven, printed page one hundred and forty eight, and three point twenty, printed page one hundred and fifty two. Answers to the Tirole exercises are in Part Seven, printed pages five hundred and seventy one to five hundred and eighty.
+
+
+Support part five. Self-test. Pause after each question and answer it out loud before moving on.
+
+Question one. State the three asymmetries, and give one example of each for a startup founder.
+
+Pause.
+
+Question two. Show that the maximum of zero and R minus D, plus the minimum of R and D, equals R. Then explain why this implies that capital structure is irrelevant.
+
+Pause.
+
+Question three. Derive the payout irrelevance formula from the arbitrage condition and the cash identity.
+
+Pause.
+
+Question four. Which stylized facts contradict Modigliani and Miller most directly, and why?
+
+Pause.
+
+Question five. With the class calibration, find the largest private benefit B at which a founder with net worth ten is funded.
+
+Pause.
+
+The answer: A bar is two B minus twenty eight. That is at most ten when B is at most nineteen.
+
+Question six. Why will a rationed borrower's offer of a higher interest rate be refused?
+
+Pause.
+
+
+Support part six. Glossary. One sentence per term.
+
+Insiders: the entrepreneur and managers who run the firm.
+
+Outsiders: the shareholders, banks, and bondholders who fund it.
+
+Adverse selection: private information held by the insider before the contract is signed.
+
+Moral hazard: an unobserved action by the insider between financing and outcome.
+
+Corporate governance: the ways in which suppliers of finance assure themselves of getting a return on their investment.
+
+Entrenchment: choices that make a manager personally hard to replace.
+
+Active monitoring: forward-looking intervention by someone with control rights.
+
+Speculative monitoring: backward-looking assessment that acts through prices and exit.
+
+Value additivity: the result that the values of all claims add up to the value of the firm's income, whatever the split.
+
+Retentions: profits the firm keeps instead of paying out.
+
+Pledgeable income: the largest expected income that can be promised to outsiders without destroying the insider's incentives.
+
+Agency rent: the minimum expected payoff that must be left to the insider to keep her behaving.
+
+Credit rationing: a positive net present value project that is not funded because the borrower's net worth is too low.
+
+Likelihood ratio: delta p divided by p H, a measure of how informative the outcome is about effort.
+
+
+Support part seven. The whole class in five lines.
+
+One. Corporate finance studies the relationship between insiders who run the firm and outsiders who fund it.
+
+Two. Modigliani and Miller prove that when everything is contractible, the split of the pie cannot change its size.
+
+Three. The facts say otherwise: firms rely on retentions and bank debt, issue little equity, and lose value when they announce a share issue.
+
+Four. The reason is non-contractible behaviour: the insider must keep a stake of B over delta p, so only p H times R minus B over delta p can be pledged, and a founder with net worth below A bar is rationed despite a positive net present value.
+
+Five. Set B to zero and the threshold goes negative, every good project is funded, and Modigliani and Miller return. Every class that follows relaxes the benchmark one assumption at a time.

@@ -1,0 +1,12 @@
+.env
+.env.*
+!.env.example
+Videos/*/media/
+Videos/*/audio/
+Videos/*/build/
+Videos/*/scratch_*/
+Videos/*/scenes.py
+*.mp4
+graphify-out/
+__pycache__/
+.venv/

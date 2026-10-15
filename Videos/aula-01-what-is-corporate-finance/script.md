@@ -1,0 +1,1189 @@
+---
+tags: [video, aula-01, explainer, script]
+date: 2026-10-09
+slug: aula-01-what-is-corporate-finance
+---
+
+# Narration — Class 1: What Is Corporate Finance?
+
+Spoken register: every symbol said in words. `[pause]` marks a silence realised as held frame
+time in `scenes.py`. Sources: Tirole (2005 printing, 1st ed.), Introduction, §1.1–1.2, §2.2,
+§2.5–2.6, §3.2; printed pages given in `plan.md`. Every computed number is asserted in
+`check_numbers.py`. Money in the founder's story is in thousands of reais.
+
+---
+
+## BeatOpen - 90 s
+
+A founder in Campinas has a project. It costs one hundred thousand reais to set up.
+
+If she runs it properly, it succeeds with probability eighty per cent and returns one hundred
+and sixty thousand. Eighty per cent of one hundred and sixty is one hundred and twenty-eight.
+So on average the project turns one hundred into one hundred and twenty-eight.
+
+[pause]
+
+It creates twenty-eight thousand reais of value. Nobody disputes that number.
+
+She has ten thousand of her own. She needs ninety from outside.
+
+She goes to a bank. She goes to an angel investor. She goes to her uncle, who is a dentist and
+has savings. Every one of them looks at the numbers and agrees: it is a good project.
+
+And every one of them says no.
+
+[pause]
+
+Here is the strange part. There is a famous theorem — it won two Nobel prizes between its
+authors — which says that in a well-functioning market this cannot happen. A project that
+creates value always finds money. The only question is the price.
+
+So either the theorem is wrong, or something about this founder is not in the theorem.
+
+By the end of this video you will be able to compute, to the last thousand reais, why she is
+turned down. And you will find that she is short by exactly two thousand — of something that is
+not money.
+
+That missing something is what corporate finance is about.
+
+## BeatTwoSides - 130 s
+
+Let us draw the situation, because the picture is the subject.
+
+In the middle, a firm. On the left, the people who run it — the founder, the entrepreneur, the
+manager. Tirole calls them the insiders. On the right, the people who fund it — shareholders,
+banks, bondholders. The outsiders.
+
+Money flows from right to left. Promises flow from left to right: a share of future income, a
+repayment schedule, a seat on the board.
+
+[pause]
+
+Now, for most of the twentieth century, finance had a beautiful general theory of how claims
+like these are priced: the Arrow–Debreu model. Complete markets, no taxes, no transaction
+costs, everyone knows everything. It is a powerful machine for pricing an asset. But, in
+Tirole's words, it "said little about the firms' financial choices and about their
+governance". In that world, what the firm does is written into the contract. Nobody can cheat,
+so there is nothing to govern.
+
+[pause]
+
+Corporate finance, as Tirole teaches it, begins by refusing that assumption. The insiders know
+things the outsiders do not, and do things the outsiders cannot see. Formally, this is a
+principal–agent relationship: the outsiders are the principal, the insiders are the agent.
+
+He sorts the problem into three kinds of asymmetry.
+
+First, adverse selection: the insider knows something before the contract is signed — how good
+the technology really is, how risky the market is.
+
+Second, hidden knowledge after the fact: the insider knows how much income was actually
+earned.
+
+Third, moral hazard: the outsiders cannot see how carefully projects are chosen, how much risk
+is taken, or how much effort goes in.
+
+[pause]
+
+Put our founder into each of the three. Adverse selection: she knows, better than any investor,
+whether her market really exists — and every founder says it does. Hidden knowledge: once the
+project runs, she sees the accounts first, and could report a smaller success than the one that
+happened. Moral hazard: after the money arrives, nobody sees whether she spends her days on the
+project or on something easier.
+
+All three are reasons for an outsider to hesitate. They differ only in timing: before the
+contract, after the outcome, or in between.
+
+[pause]
+
+Hold on to the third one. It is the one that turns down our founder. We will spend the last
+third of this video proving it.
+
+## BeatBerleMeans - 120 s
+
+This is not a new worry. In nineteen thirty-two, Adolf Berle and Gardiner Means wrote a book
+documenting what they called the separation of ownership and control in American
+corporations.
+
+Picture a large company. Its shares are held by tens of thousands of people, each owning a tiny
+sliver. None of them owns enough to bother watching the managers closely — the effort would be
+theirs, the gain would be shared with everybody else.
+
+Put a number on it. A shareholder owns one hundredth of one per cent of a firm. She could spend
+a week reading the accounts and lobbying the board, and suppose that raises the firm's value by
+ten million. Her share of the gain is one thousand. The week costs her more than that — and
+every other shareholder collects their share of the ten million whether or not they lifted a
+finger. Monitoring is a public good among shareholders, so nobody supplies it.
+
+So control passes to a professional manager who owns almost none of it.
+
+[pause]
+
+Berle and Means showed that this dispersion "creates substantial managerial discretion, which
+can be abused". Tirole puts the premise of his entire book in one sentence: corporate insiders
+need not act in the best interests of the providers of the funds.
+
+[pause]
+
+That gives us the definition of the subject's governance half. Tirole adopts the one of
+Shleifer and Vishny: corporate governance is the set of ways in which the suppliers of finance
+to corporations "assure themselves of getting a return on their investment".
+
+Read it slowly, because every word earns its place. Not "how the firm maximises value". Not
+"how the board is organised". How the people who handed over the money make sure they get some
+of it back.
+
+He calls this the narrow and orthodox view, and it is the one this course uses. Notice that it
+is written entirely from the outsiders' side of our picture. Governance is the outsiders'
+problem.
+
+## BeatFourGuises - 150 s
+
+What exactly are the outsiders afraid of? Tirole's section one point one point one is titled
+"Moral hazard comes in many guises", and he lists four. Let us put them in a table, one row at
+a time.
+
+[pause]
+
+Row one: insufficient effort. This is not about hours at the office — most executives work very
+long hours. It is about where the effort goes. Avoiding the unpleasant work: cutting costs,
+negotiating hard with unions, firing a friend who is underperforming. Spreading oneself across
+too many outside boards.
+
+[pause]
+
+Row two: extravagant investments. Pet projects and empire building. Tirole's example comes from
+Michael Jensen on the oil industry in the late nineteen-seventies. Oil companies kept exploring
+even though, at the prices of the day, buying oil on Wall Street was much cheaper than obtaining
+it by drilling holes in the ground. The cash was there, and the managers wanted to spend it.
+
+[pause]
+
+Row three: entrenchment. Choosing investments that make the manager personally indispensable.
+Being too cautious when things go well, and gambling for resurrection when they go badly.
+Resisting takeovers. In parts of Europe and Japan, Tirole adds, complex cross-holdings and
+shares with double voting rights do the same job.
+
+[pause]
+
+Row four: self-dealing. Perks — the corporate jet, the art collection, the box at the stadium.
+RJR Nabisco, in the late nineteen-eighties, ran a fleet of ten aircraft with thirty-six company
+pilots. And at the extreme, plain theft: Tirole mentions Robert Maxwell's use of his
+employees' pension fund, and Tyco, where in two thousand and two the chief executive and his
+collaborators were found to have taken more than one hundred million dollars.
+
+[pause]
+
+Four rows. Notice what they share. In every one, the manager takes an action the outsiders
+cannot write into a contract, and that action shrinks what is left for the outsiders. Keep
+that phrase: an action that cannot be written into a contract. It is the hinge of the whole
+course.
+
+## BeatIceberg - 130 s
+
+You could read the last table as a list of scandals. Tirole insists on a different picture: an
+iceberg.
+
+Above the water, the visible misbehaviour. A few numbers from his section on dysfunctional
+governance.
+
+Average pay of the chief executives of large American firms roughly tripled in real terms
+between nineteen eighty and nineteen ninety-four, and roughly doubled again by two thousand and
+one. In two thousand, the average chief executive of a large American firm earned five hundred
+and thirty-one times the average wage of the firm's workers. In nineteen eighty-two, the
+multiple had been forty-two.
+
+[pause]
+
+And is the pay at least tied to performance? Bertrand and Mullainathan checked whether chief
+executives are paid for things they control, or for luck — an oil price rise, an exchange rate
+move. Their finding, in Tirole's words: chief executive pay is as sensitive to a lucky dollar as
+to a general dollar. Interestingly, the effect is weaker where someone is watching: an
+additional large shareholder on the board cuts pay for luck by between twenty-three and
+thirty-three per cent.
+
+Then accounting. WorldCom's profits from two thousand onwards turned out to have been overstated
+by seven point one billion dollars.
+
+[pause]
+
+That is the tip. Now the part below the water — and this is Tirole's real point. What we
+observe is the misbehaviour that got through. Underneath it is everything that was prevented:
+the covenants, the board, the auditors, the threat of a takeover, the lender who refused. He
+calls them "the averted ones".
+
+[pause]
+
+This matters for how you read evidence. A country, or a firm, with few scandals might have
+excellent governance — or so little outside finance that there is nothing left to steal. The
+size of the visible tip tells you surprisingly little about the iceberg.
+
+And it tells you something about our founder. Her lenders' refusal is one of the averted ones.
+It never makes the news. It is governance working — at a cost.
+
+## BeatGrocer - 150 s
+
+If the danger is that managers act against the outsiders, the obvious fix is to make the
+managers outsiders too: give them a stake. Tirole lists the instruments in section one point
+two. Monetary compensation — salary, bonus, shares, stock options. Implicit incentives — the
+threat of being fired, taken over, or pushed into bankruptcy. Monitoring by the board and by
+large investors. And competition in the product market.
+
+How strong are these incentives in practice? Here is the most famous measurement, and we will
+write it out.
+
+[pause]
+
+Michael Jensen and Kevin Murphy looked at the chief executives of the two hundred and fifty
+largest American public firms. The median one held a quarter of one per cent of the firm's
+shares.
+
+Now take a one-thousand-dollar increase in shareholder wealth. Add up everything that moves the
+chief executive's pocket: shares, options, this year's and next year's salary, the change in
+the chance of being dismissed. The total, on average, is three dollars and twenty-five cents.
+
+Three twenty-five, per thousand. Divide: that is about a third of one per cent.
+
+[pause]
+
+Tirole's comment is the line to remember. Suppose your grocer kept zero point three cents out
+of every extra dollar of profit, and gave ninety-nine point seven cents to other people. One
+might imagine that the grocer would start eating the apples on the fruit stand.
+
+[pause]
+
+Two caveats, both from the book. Later studies, by Hall and Liebman, find larger numbers once
+stock options are counted properly — a mean of twenty-five dollars per thousand, a median of
+five dollars thirty. And a stake can be too large: a risk-averse manager with all her wealth in
+one firm will refuse risky but valuable projects.
+
+So the question is never "incentives or no incentives". It is how much of the pie the insider
+must keep for the rest to be safe. Hold that sentence. In Act Four it becomes an equation.
+
+## BeatOptions - 130 s
+
+If a stake is the answer, what kind of stake? Tirole compares the two standard forms, and the
+comparison is worth drawing, because the picture does the arguing.
+
+On the horizontal axis, the share price P on the day the stake pays out. On the vertical axis,
+what the manager receives.
+
+[pause]
+
+First, a straight share. It pays P. A straight line through the origin: every real of extra
+value moves her pocket by the same amount.
+
+Second, a stock option with strike price P S — the right to buy a share at P S. If the price
+ends above the strike, she exercises and gains P minus P S. If it ends below, she walks away
+with nothing. So the option pays the maximum of zero and P minus P S: flat at zero, then a kink
+at the strike, then a line rising one for one.
+
+[pause]
+
+Compare them at the same cost to shareholders. An option is cheaper than a share, so for the
+same budget the firm can give many more options than shares — and above the strike, each one
+moves just as much as a share. Per real spent, options give stronger incentives near the top.
+
+[pause]
+
+But look at the flat part. If the price has fallen well below the strike, the option is "under
+water", out of the money, and worth little unless something remarkable happens. A manager
+holding only under-water options has nothing to lose from a wild gamble and something to win.
+That is the gamble for resurrection from Row three of our table.
+
+And the promise behind options is fragile. When the price falls, boards often reprice them —
+lower the strike — or grant new ones. Tirole's example: Ascend Communications, whose stock fell
+from eighty dollars to twenty-three, and whose executives' strikes were cut accordingly. He
+notes that more than half of all stock options were out of the money in two thousand and two.
+
+[pause]
+
+So even the instrument meant to align insiders with outsiders has a shape that, in bad states,
+points the other way. The design of the insider's slice is itself part of the problem.
+
+## BeatWatchers - 130 s
+
+Pay is only one of Tirole's four instruments. The other three work through people watching.
+
+Implicit incentives first. A manager who performs badly risks being replaced. The evidence says
+the risk is real: top-executive turnover rises after poor performance, and Tirole reports that
+the pattern is similar in the United States, Germany and Japan. And financial distress
+sharpens it. Stuart Gilson found that fifty-two per cent of financially distressed firms replace
+senior management, against nineteen per cent of firms with equally poor stock performance but
+no distress. Debt, in other words, is itself a disciplining device. Hold that thought for
+Class eight.
+
+[pause]
+
+Second, monitoring, which Tirole splits in two, and the split organises half of this course.
+
+Active monitoring is forward-looking: someone with control rights intervenes to change what the
+firm will do — a large shareholder on the board, a bank renegotiating a loan, a creditor in a
+restructuring.
+
+Speculative monitoring is backward-looking: someone takes a picture of what the firm has done
+and acts on it without controlling anything — a stock analyst, a rating agency, a short-term
+lender who refuses to roll over. It disciplines through prices and through the threat of
+leaving.
+
+[pause]
+
+And third, the watchers have their own incentives. Analysts may push the shares of firms their
+bank wants as clients. Auditors may be paid more for consulting than for auditing: in two
+thousand and one, non-audit fees made up more than half of the fees paid to accounting firms by
+twenty-eight of the thirty companies in the Dow Jones Industrial Average.
+
+[pause]
+
+Finally, competition in the product market helps — a rival's performance is a yardstick, and a
+weak firm risks bankruptcy. But in Tirole's words, it "will never substitute for a proper
+governance structure".
+
+## BeatTwoAgencyProblems - 140 s
+
+So far the story has an American shape: dispersed shareholders, a powerful manager. Tirole is
+careful to say that this is only one of two shapes.
+
+On the left, the firm Berle and Means described. Many small shareholders, one manager. Frequent,
+he says, in Anglo-Saxon countries. The conflict runs between the manager and the shareholders
+as a group.
+
+On the right, the shape typical of continental Europe: a controlling shareholder — a family, a
+holding company, sometimes the state — with a block of votes, and minority shareholders around
+it. Now the conflict runs between the controller and the minority. The controller can
+monitor the manager perfectly well. The question is who monitors the controller.
+
+[pause]
+
+Brazil sits firmly on the right. Most listed Brazilian firms have a controlling shareholder,
+often a family, often holding control through voting shares while the public holds non-voting
+preferred shares. The protection of minority shareholders — a phrase Tirole lists among the
+household terms of the field — is the Brazilian version of the problem.
+
+[pause]
+
+Concentrated ownership is not simply a defect. Tirole cites a study of seven hundred and fifty
+French listed firms in which two-thirds had significant family ownership — and family
+ownership went with better performance. A large owner has the incentive to watch that dispersed
+shareholders lack. And Burkart and coauthors put the logic in one line: with lower investor
+protection, ownership concentration is called for. When the law protects outsiders badly, the
+outsiders protect themselves by not being outsiders.
+
+And Brazil's institutional answers map directly onto the theory. The Novo Mercado listing
+segment, created at the start of the two thousands, admits only firms with a single class of
+voting shares: one share, one vote, so control cannot be held with a small slice of the
+capital. And many large Brazilian firms list American depositary receipts in New York.
+
+Tirole gives the reason that works. Countries with strong investor protection limit managers'
+ability to squander investor money, and so have lower agency costs. Cross-listing in a
+jurisdiction with strong protection lets a firm import that protection — and it eases
+financing.
+
+Keep the word "agency cost". In Act Four it will have a symbol, and our founder's whole problem
+will be that hers is too large.
+
+## BeatPie - 110 s
+
+Now the benchmark — the theorem from the opening.
+
+In nineteen fifty-eight, Franco Modigliani and Merton Miller published a result that Tirole
+calls "striking and somewhat counterintuitive". Under some conditions, the total value of a
+firm — the value of all the claims on its income together — is independent of how it is
+financed.
+
+How much debt, how much equity, what collateral, who is senior to whom, how much is paid in
+dividends: none of it changes total value. It only changes who gets which slice.
+
+[pause]
+
+Tirole's image is a pie. Here it is, cut into a thin slice of debt and a large slice of equity.
+Now cut it again: a large slice of debt, a thin slice of equity. Same pie. In his words, "the
+size of the pie is unaffected by the way it is carved".
+
+[pause]
+
+The conditions matter, so let us list them. Complete markets. No transaction costs. No taxes.
+No bankruptcy costs. And — this is the one that is easy to miss, and Tirole spells it out a
+page later — the firm's decisions are themselves contractible. Nobody can change the size of
+the pie by changing what they do.
+
+[pause]
+
+One assumption you might expect is not on the list: risk neutrality. Tirole illustrates the
+result with risk-neutral investors because the algebra is shorter, but he notes that the proof
+goes through with risk aversion too, by valuing each state of the world at its own state price.
+What drives the result is not attitudes to risk. It is that every unit of income goes to
+somebody, and markets let investors undo any split they dislike.
+
+He calls the theorem a detonator. It was a benchmark whose assumptions "needed to be relaxed".
+Everything you will study in this course is one of those relaxations. So before relaxing
+anything, let us prove it — twice, the way Tirole does on page seventy-eight.
+
+## BeatValueAdditivity - 170 s
+
+First proof: debt and equity add up to the firm.
+
+Let R be the firm's random income at the end of the period. Careful — in this beat R is total
+income; later it will mean something slightly different, and I will say so.
+
+The firm owes its debtholders a face value D. Investors are risk-neutral, so a claim is worth
+its expected payoff. Tirole writes expectations with round brackets, E of something, to avoid
+confusion with the letter for equity.
+
+[pause]
+
+Line one: what do the shareholders get? If income exceeds D, they get what is left, R minus D.
+If income falls short, limited liability protects them and they get zero. So equity pays the
+maximum of zero and R minus D.
+
+Line two: what do the debtholders get? If income exceeds D, they are paid in full, D. If not,
+they take everything there is, R. So debt pays the minimum of R and D.
+
+[pause]
+
+Line three: add them, case by case. Suppose R is at least D. Equity gets R minus D, debt gets D;
+the sum is R.
+
+Line four: suppose R is below D. Equity gets zero, debt gets R; the sum is R.
+
+[pause]
+
+Line five: so, in every state of the world, the maximum of zero and R minus D, plus the minimum
+of R and D, equals R. The face value has cancelled out of the sum, state by state.
+
+Line six: take expectations of both sides. The value of equity plus the value of debt equals the
+expected value of R.
+
+[pause]
+
+Line seven: and the right-hand side has no D in it. Total value is independent of the face value
+of debt. Choose any leverage you like; the pie does not change.
+
+Tirole draws the conclusion immediately: since the split does not matter, the firm may as well
+issue a single claim — a hundred per cent equity. An all-equity firm is as good as any other.
+
+[pause]
+
+Try it with numbers. A firm's income is zero or two hundred, each with probability one half, so
+the expected value of R is one hundred. Set the face value of debt at eighty. Debt pays zero or
+eighty: worth forty. Equity pays zero or one hundred and twenty: worth sixty. Forty plus sixty,
+one hundred. Now raise the face value to one hundred and fifty. Debt pays zero or one hundred
+and fifty: worth seventy-five. Equity pays zero or fifty: worth twenty-five. Seventy-five plus
+twenty-five: one hundred again. The slices moved; the pie did not.
+
+[pause]
+
+Notice what did the work. Not an economic argument — an accounting identity. Whatever income
+there is, all of it goes to somebody. That is only interesting because, in the real world, it
+is false: some of the income goes to nobody, because it is never produced.
+
+## BeatPayoutIrrelevance - 180 s
+
+Second proof: dividends do not matter either. This one is longer, so we go line by line, and I
+will number the lines we come back to.
+
+Time runs in periods: t equals zero, one, two, and so on. In period t the firm earns revenue R
+sub t, invests I sub t, has n sub t shares outstanding, pays a dividend of d sub t per share,
+and its shares trade at price P sub t, measured just after the dividend. Investors discount the
+future by a factor beta.
+
+[pause]
+
+Line one, the arbitrage condition. Buying a share at t costs P sub t. Holding it pays next
+period's dividend plus next period's price. If those were not equal in discounted expectation,
+investors would buy or sell until they were. So P sub t equals beta times the expected value of
+d sub t plus one, plus P sub t plus one. Call this equation one.
+
+[pause]
+
+Line two, the firm's cash identity. Money in must equal money out. In: revenue R sub t, plus
+whatever new shares raise — the price P sub t times the change in the number of shares, n sub t
+minus n sub t minus one. Out: dividends on the shares that were outstanding, n sub t minus one
+times d sub t, plus investment I sub t. Call this equation two.
+
+[pause]
+
+Line three: define the value of the firm, V sub t, as the number of shares times the price, n
+sub t times P sub t.
+
+Line four: multiply equation one by n sub t. Then V sub t equals beta times the expectation of
+n sub t times d sub t plus one, plus n sub t times P sub t plus one.
+
+[pause]
+
+Line five: now the step that matters. Write equation two one period ahead, at t plus one, and
+solve it for total dividends, n sub t times d sub t plus one. That equals revenue R sub t plus
+one, plus new shares issued times their price, minus investment I sub t plus one.
+
+Line six: substitute into line four. The new-share term and n sub t times P sub t plus one
+combine: together they are exactly n sub t plus one times P sub t plus one — which is next
+period's value, V sub t plus one.
+
+[pause]
+
+Line seven: so V sub t equals beta times the expectation of R sub t plus one, minus I sub t
+plus one, plus V sub t plus one.
+
+Line eight: repeat the substitution for V sub t plus one, then V sub t plus two, and so on, by
+induction. V sub t is the expected discounted sum, over all future periods, of revenue minus
+investment.
+
+[pause]
+
+Look at what survived: revenue and investment, the real side of the firm. Look at what
+disappeared: the dividend, and the number of shares. Pay out more today and you must issue
+shares to fund the same investment; the new shareholders' claim exactly offsets the cash the old
+ones received. Value depends only on investment policy and net income — Tirole's words, "real
+characteristics".
+
+Which, again, assumes that the investment policy does not change when the payout policy does.
+
+## BeatPuzzle - 130 s
+
+Two proofs, one message: financial structure is irrelevant. Now let us do the obvious thing and
+apply it to our founder.
+
+The project needs one hundred. Expected return, one hundred and twenty-eight. Net present value,
+plus twenty-eight. In the Modigliani–Miller world, the financing question has one answer: offer
+investors any claim worth ninety in expectation — debt, equity, it does not matter which — and
+keep the rest. Investors break even, she keeps twenty-eight. Funded.
+
+[pause]
+
+But she was not funded. Let us write the conclusion in red and cross it out.
+
+This is our wrong first attempt, and it is wrong in an instructive way. Nothing in either proof
+was mistaken. The mistake is in a premise we used without noticing.
+
+[pause]
+
+Tirole names it in one sentence, and it is the key sentence of the chapter. Whenever managerial
+decisions cannot be perfectly specified contractually, the incentives given to those who pick
+those decisions affect the firm's income — the size of the pie — and therefore the split of the
+pie matters.
+
+[pause]
+
+Look back at the value-additivity proof. It treated R as given — something that happens to the
+firm, the same whatever the split. But if the founder's effort decides whether R is one hundred
+and sixty or zero, and her effort depends on how much of R she keeps, then the size of the pie
+depends on how it is carved.
+
+Tirole lists what outsiders can do about it, and each item is a chapter of this course. They can
+write covenants — but covenants can only be based on public, and therefore coarse, information.
+They can give the insider high-powered incentives — a large slice — but that is costly, because
+the slice is no longer available to pay investors. Or they can delegate monitoring to a large
+claimholder, a bank or a big shareholder — but monitoring is partly a public good, so it is
+undersupplied unless someone holds a large enough stake. Covenants, incentives, monitoring: none
+is free, so the split of the pie always costs something.
+
+[pause]
+
+That is the whole difference between Modigliani–Miller and corporate finance. Before we compute
+it, let us see whether the data agree that financing matters. If the theorem were right, firms
+would finance themselves in no particular way. They do not.
+
+## BeatInternalFinance - 150 s
+
+Act Three: the facts. If financing were irrelevant, there would be no reason for firms in every
+country to finance themselves the same way. Here is how they actually do it.
+
+This is Table two point two in Tirole, from Colin Mayer. The average financing of non-financial
+firms, as a percentage of all sources, from nineteen seventy to nineteen eighty-five. We take
+five countries and four rows.
+
+[pause]
+
+Row one: retentions — profits the firm kept instead of paying out. United States, sixty-seven
+per cent. United Kingdom, seventy-two. Germany, fifty-five. France, forty-four. Japan,
+thirty-four.
+
+Row two: loans. United States twenty-three, United Kingdom twenty-one, Germany twenty-one,
+France forty-one and a half, Japan forty-one.
+
+[pause]
+
+Row three: bonds. Under ten per cent everywhere — nearly ten in the United States, under one
+per cent in Britain and Germany.
+
+Row four: new shares. Under one per cent in the United States. Two in Germany. Five in Britain.
+Three and a half in Japan. The largest of the five is France, at under eleven.
+
+[pause]
+
+Tirole draws three conclusions, and the table makes each one visible.
+
+One: in all countries, internal financing — retained earnings — is the dominant source.
+
+Two: bank loans provide the bulk of external financing, well ahead of new equity, which is a
+small fraction everywhere.
+
+Three: bond markets play a minor role, except in North America.
+
+[pause]
+
+The countries differ in the middle of the table. In France and Japan, loans are about
+forty-one per cent of all financing — nearly as much as retentions. In Britain and the United
+States they are about twenty-two. But in every column, the top row beats the bottom row, by a
+wide margin.
+
+[pause]
+
+Notice the order: money the firm already has first, then a bank that can watch it closely,
+then — rarely — strangers on a stock exchange. It is the order of increasing distance between
+the insiders and the people supplying the money. A theory in which financing does not matter
+has nothing to say about why it should be that order.
+
+## BeatNetEquity - 130 s
+
+The share row is even smaller than it looks, because those are gross figures in some
+countries. Look at what the United States actually did in the mid-nineteen-eighties.
+
+Rajan and Zingales studied American firms from nineteen eighty-four to nineteen eighty-six.
+New share issues amounted to sixty-five per cent of external financing. That sounds large. But
+share buybacks and other equity reductions amounted to sixty-eight per cent.
+
+[pause]
+
+Sixty-five in, sixty-eight out. Net equity issuance was negative. In Tirole's words, basically
+all external financing was debt.
+
+And external financing itself was small: net external financing was fourteen per cent of the
+sum of operating cash flow and net external financing over those three years. Most investment
+was paid for with the firm's own cash.
+
+[pause]
+
+More recent data tell the same story. Here, as bars: the share of gross fixed-capital formation
+raised through new equity in nineteen ninety-nine, counting both first-time and later issues.
+United States, twelve per cent. United Kingdom, nine. France, nine. Japan, eight. Germany, six.
+
+[pause]
+
+Tirole adds a caution I want to pass on. Do not over-read the word "internal". Retained earnings
+are cash that shareholders agree to leave in the firm; new shares are cash shareholders hand to
+the firm. Either way, it is shareholders' money. The real puzzle is not where the money comes
+from. It is why handing over money one way — leaving profits in — is so much easier than the
+other way — buying newly issued shares.
+
+We will answer it in Classes eleven and twelve. For now, register it as a fact a theory has to
+match.
+
+## BeatLeverage - 130 s
+
+Next fact: how much firms borrow. Table two point four, from White, on a very large sample of
+American firms in nineteen eighty-five. Two columns: equity as a share of debt plus equity, and
+the ratio of debt to equity.
+
+[pause]
+
+All industries: equity is thirty-two per cent of the total, so debt is about twice equity —
+two point one one. Tirole's summary: a typical debt–equity ratio in this sample lies around
+two.
+
+Manufacturing: equity forty-five per cent, debt-to-equity one point two.
+
+Wholesale and retail trade: two point four nine. Services: two point two five.
+
+[pause]
+
+And then commercial banks: equity eight per cent of the total. Debt is eleven times equity.
+
+Other studies Tirole cites fill in the extremes. Telephone, gas and electricity companies —
+regulated, with very stable revenue — had long-term debt of over half of debt plus market
+equity, against twenty-nine per cent for the average American firm. Some leveraged buyouts run
+debt at ten or twenty times equity. And despite all this variation across firms, the aggregate
+market-based ratio in the United States has been remarkably stable, at around zero point three
+two, for half a century.
+
+[pause]
+
+Who borrows a lot, and who does not? Tirole lists the pattern. Firms with safe, steady cash flows
+and assets that could be resold — buildings, aircraft, inventory — carry high debt. Risky firms,
+firms with little cash flow, and firms whose value is intangible — research, brands, growth
+options — carry low debt.
+
+[pause]
+
+Read that list again with our founder in mind. What makes debt easy is something an outsider can
+count on without trusting the insider: cash that arrives regardless of effort, an asset that can
+be seized and sold. What makes debt hard is value that depends on what the insider does next.
+That is the shape of the answer we are about to derive.
+
+## BeatBanksVsMarkets - 120 s
+
+The aggregate picture hides a second pattern: countries differ in who supplies the debt.
+Table two point five in Tirole compares the liabilities of non-financial firms in two thousand
+and two, from the national accounts. Six countries, three rows.
+
+[pause]
+
+Row one: securities other than stocks — essentially bonds. United States, fifteen point six per
+cent of liabilities. United Kingdom, ten point six. Japan, eight. France, seven. Germany and
+Italy, two point three.
+
+Row two: credit — loans, mostly from banks. United States, ten per cent. Germany, forty-three.
+Japan, thirty-nine and a half. Italy, thirty-two. United Kingdom, thirty-one. France, twenty-four.
+
+[pause]
+
+Row three: stocks, at market value, between twenty-eight per cent in Japan and fifty-three in
+Britain and France.
+
+[pause]
+
+So American firms borrow from markets; German and Japanese firms borrow from banks. The
+textbook names are market-based and bank-based financial systems. Brazil, with large public
+and private banks and a development bank, BNDES, supplying long-term credit, has historically
+looked more like the second column than the first.
+
+Why would that matter, if debt is debt? Because a bank and a bondholder watch the firm very
+differently. A bank can monitor actively, renegotiate, and learn about the borrower over time.
+A dispersed bondholder can only read the price and leave. Which of the two a firm faces changes
+what the insiders can get away with — the active and speculative monitoring we just met. That is
+Class thirteen.
+
+## BeatAnnouncement - 130 s
+
+Last fact, and the most surprising. What happens to a firm's share price on the day it announces
+how it will raise money?
+
+Table two point six, from Eckbo and Masulis, summarising studies of American firms. The
+average two-day abnormal return when the announcement is made — the price move beyond what the
+market as a whole did.
+
+[pause]
+
+An industrial firm announces a new issue of common stock, underwritten: its share price falls
+three point one per cent. Convertible bonds: minus two. Straight bonds: minus zero point three,
+and that is not statistically different from zero.
+
+[pause]
+
+So the market reads a share issue as bad news, and a bond issue as roughly no news. And Tirole
+adds the other side: when a firm announces a bank loan agreement, its share price rises.
+
+[pause]
+
+Under Modigliani and Miller this is inexplicable. If the split does not change the pie, then
+announcing how you will split it cannot move the value of the pie. Yet the average firm loses
+three per cent of its market value on an announcement that the theorem says is irrelevant.
+
+The explanation — that issuing shares tells the market the insiders think the shares are
+overpriced — is asymmetric information, the first of Tirole's three asymmetries. It is Classes
+eleven and twelve. Today it is a fact, and a fact the benchmark cannot explain.
+
+## BeatTiming - 110 s
+
+One more family of facts, and Tirole calls it one of the best documented in corporate finance:
+financing moves with the business cycle. Six items, in a list that builds.
+
+[pause]
+
+One: bank finance is countercyclical. Firms that issue bonds in booms turn to banks in
+recessions.
+
+Two: firms with strong balance sheets extend more trade credit to weaker firms, and issue more
+commercial paper, in recessions.
+
+Three: small and medium-sized firms, which depend on banks, are hit harder by downturns than
+large ones.
+
+[pause]
+
+Four: equity issues are more frequent in upswings, both absolutely and relative to debt.
+
+Five: the negative price reaction to a share issue — the minus three per cent we just saw — is
+smaller in expansions.
+
+Six: firms issue shares after their own share price has risen, and buy them back after it has
+fallen.
+
+[pause]
+
+That last one has a name: equity market timing. Firms issue when shares are dear and buy back
+when they are cheap. Tirole lists the candidate explanations without choosing: investment really
+is more productive in booms; adverse selection is milder when times are good; bubbles; or
+irrational markets.
+
+[pause]
+
+For today, one observation is enough. If financing were irrelevant, firms would have no reason
+to time it. They time it constantly. And items two and three — the strong lending to the weak,
+the small hit harder — are the seeds of the macroeconomic story in the last two classes of the
+course.
+
+## BeatFactsToClasses - 90 s
+
+Let us collect the facts, and next to each, the part of this course that explains it.
+
+Firms rely on retained earnings and bank loans, and rarely issue shares: agency costs and
+borrowing capacity, Classes six to eight.
+
+Leverage tracks safe cash flow and resaleable assets: collateral and pledgeable income, Class
+seven.
+
+Share issues lower the share price, bank loans raise it: asymmetric information, Classes eleven
+and twelve; and monitoring by banks and large investors, Class thirteen.
+
+Some countries borrow from banks and others from markets: active versus speculative
+monitoring, Class thirteen again.
+
+Financing follows the business cycle, and the small are hit hardest: liquidity, Classes nine and
+ten, and the macroeconomic implications, Classes fifteen and sixteen.
+
+[pause]
+
+Tirole closes the chapter by naming what all of this points to: the key role of information and
+incentives in general, and of capital, liquidity, the value of collateral, and external
+monitoring more specifically.
+
+Every one of those words is a lecture in this course. And all of them start from the same
+place. So let us go back to the founder, and compute.
+
+## BeatSetup - 140 s
+
+Act Four. This is the model Tirole calls the workhorse of his book: the fixed-investment model
+of credit rationing, from Holmström and Tirole. Section three point two.
+
+A word on notation. From here on, R no longer means total revenue. It means the income the
+project produces if it succeeds.
+
+[pause]
+
+Here are the parameters, with our founder's numbers, in thousands of reais.
+
+I, the investment, is one hundred. A, her own assets — Tirole calls it net worth — is ten. She
+must borrow I minus A, ninety.
+
+If the project succeeds it yields R, one hundred and sixty. If it fails it yields zero.
+
+[pause]
+
+Now the moral hazard. After the money is raised, she chooses how to behave. If she behaves — she
+works hard, she picks the careful option — the project succeeds with probability p H, eighty
+per cent. If she misbehaves, it succeeds with probability p L, forty per cent; but she enjoys a
+private benefit B, twenty. B is whatever she gains from shirking: an easier life, a pet
+project, a friend hired as supplier. Investors cannot see her choice. Delta p, the difference p
+H minus p L, is zero point four.
+
+[pause]
+
+The timeline: first the loan agreement is signed. Then the investment is made. Then she chooses
+how to behave — unseen. Then the outcome is realised and the money is shared.
+
+Everyone is risk-neutral, the interest rate is zero, she has limited liability, and lenders are
+competitive: they accept any deal on which they break even.
+
+Each assumption is there to remove a distraction. Risk neutrality removes insurance motives, so
+the only reason to give her a slice is incentives. A zero interest rate removes discounting, so
+every number is in today's reais. Competition among lenders means that if the deal is
+financeable at all, she gets all the surplus — we are asking whether the pie can be baked, not
+how it is shared among lenders.
+
+[pause]
+
+Two assumptions, checked with our numbers. First, the project is good if she behaves: p H times
+R minus I is one hundred and twenty-eight minus one hundred, plus twenty-eight. Second, it is
+bad if she misbehaves, even counting her private benefit: p L times R minus I plus B is
+sixty-four minus one hundred plus twenty, minus sixteen. So investors want her to behave. The
+question is whether they can make her.
+
+## BeatIncentive - 170 s
+
+The contract is a sharing rule. If the project succeeds, she gets R b — b for borrower — and the
+lenders get R l, l for lenders, with R b plus R l equal to R. If it fails, there is nothing, and
+limited liability means she cannot be made to pay.
+
+[pause]
+
+Line one: the incentive constraint. She behaves only if behaving pays at least as much as
+misbehaving. Behaving gives p H times R b. Misbehaving gives p L times R b, plus the private
+benefit B. So p H times R b must be at least p L times R b plus B.
+
+Line two: collect the R b terms. Delta p times R b must be at least B.
+
+Line three: divide by delta p. R b must be at least B over delta p. Twenty over zero point four:
+fifty.
+
+[pause]
+
+Stop on that line. To make her behave, she must keep at least fifty thousand reais of the
+success income. Not because she is greedy — because if her slice is any smaller, shirking pays
+her better, and everyone knows it.
+
+Why can lenders not simply punish her on failure instead — a fine if the project fails? Because
+of limited liability. Failure leaves nothing, and she cannot be made to pay from wealth she has
+already invested. The only lever is the reward on success, so the reward has to be large. If
+she could be fined, a small slice would do; it is the floor at zero that makes incentives
+expensive.
+
+[pause]
+
+Line four: so the most that can be promised to lenders if the project succeeds is R minus B over
+delta p. One hundred and sixty minus fifty: one hundred and ten.
+
+Line five: lenders are paid only on success, which happens with probability p H. So the most
+they can expect is p H times R minus B over delta p. Tirole calls this the pledgeable income,
+script P. Zero point eight times one hundred and ten: eighty-eight.
+
+[pause]
+
+Line six: compare the two numbers on the screen. The project's expected income is p H times R,
+one hundred and twenty-eight. The pledgeable income is eighty-eight. The difference, forty, is
+p H times B over delta p: the part of the expected income that must stay with her for the
+project to work at all. Tirole calls it the agency rent.
+
+[pause]
+
+There is the founder's missing something. Of one hundred and twenty-eight thousand reais of
+expected income, only eighty-eight can be promised to anyone else.
+
+## BeatThreshold - 170 s
+
+Now ask the lenders' question. They put in I minus A. They expect back at most the pledgeable
+income. They lend only if it is enough.
+
+[pause]
+
+Line one: the lenders' participation constraint. Script P, the pledgeable income, must be at
+least I minus A. Tirole labels it I R l: individual rationality for the lenders.
+
+Line two: write script P out. p H times, R minus B over delta p, must be at least I minus A.
+
+Line three: move A to the left and everything else to the right. A must be at least I minus p H
+R plus p H B over delta p.
+
+[pause]
+
+Line four: rearrange into two recognisable pieces. A must be at least p H B over delta p — the
+agency rent — minus, p H R minus I — the net present value. Tirole calls the right-hand side A
+bar. This is his equation three point three.
+
+[pause]
+
+Line five: our numbers. The agency rent is forty. The net present value is twenty-eight. A bar
+is forty minus twenty-eight: twelve.
+
+Line six: she has ten.
+
+[pause]
+
+Ten is less than twelve. The lenders' constraint fails. She is turned down.
+
+[pause]
+
+Check it the other way. She needs ninety from lenders. The most they can be promised is
+eighty-eight. Short by two. And her own assets fall short of the threshold — ten against
+twelve — by the same two. Two ways to see one gap.
+
+[pause]
+
+Notice that A bar can be negative. If the project created, say, fifty of value instead of
+twenty-eight, A bar would be forty minus fifty, minus ten, and a founder with nothing at all
+would be funded. Tirole assumes A bar is positive precisely to study the interesting case:
+when the value the project creates is smaller than the rent its manager must be left.
+
+[pause]
+
+Read the threshold as a sentence. The founder must bring at least the agency rent, minus the
+value the project creates. If the project creates more value than the rent she must keep, she
+needs nothing of her own. If the rent is bigger, she must cover the difference herself. As Tirole
+puts it, quoting conventional wisdom: one only lends to the rich.
+
+## BeatRicherFounder - 140 s
+
+To see that the threshold is the whole story, give the founder a richer sister. Same project,
+same behaviour, same private benefit. The sister has twenty thousand reais of her own, not ten.
+Twenty is above twelve, so she should be funded. Let us write her contract out and check that
+it works.
+
+[pause]
+
+Line one: she borrows I minus A, one hundred minus twenty: eighty.
+
+Line two: competitive lenders break even. They are paid R l on success, with probability p H.
+So p H times R l equals eighty. R l is eighty over zero point eight: one hundred.
+
+Line three: she keeps the rest on success. R b equals R minus R l: one hundred and sixty minus
+one hundred, sixty.
+
+[pause]
+
+Line four: check the incentive constraint. She needs R b at least B over delta p, which is
+fifty. She has sixty. Sixty is at least fifty, so she behaves. The contract is self-enforcing.
+
+Line five: her payoff. On success, with probability zero point eight, she gets sixty: expected
+forty-eight. Subtract the twenty she put in: twenty-eight. Exactly the net present value. The
+lenders broke even, so all the value the project creates is hers.
+
+[pause]
+
+Line six: the interest rate. Tirole writes the lenders' success payment as one plus iota, times
+the loan. One hundred equals one plus iota, times eighty, so one plus iota is one point two five:
+a nominal rate of twenty-five per cent, with the riskless rate at zero.
+
+Line seven: and that is exactly one over p H. One over zero point eight is one point two five.
+The twenty-five per cent is pure default premium — compensation for the twenty per cent chance
+of failure — and nothing else.
+
+[pause]
+
+Now notice what does not appear: the sister pays no penalty for being watched, and no extra
+interest for the moral hazard. Once she is above the threshold, moral hazard costs her nothing
+at all. Below it, it costs her everything. The cost of the agency problem is not a smooth
+premium on the loan. It is a cliff.
+
+## BeatComparativeStatics - 130 s
+
+The cliff is at A bar. So the question "who gets funded?" becomes "what moves A bar?" We can
+answer it line by line, by differentiating equation three point three.
+
+Recall it: A bar equals p H B over delta p, minus, p H R minus I.
+
+[pause]
+
+Line one: the private benefit. The derivative of A bar with respect to B is p H over delta p.
+With our numbers, zero point eight over zero point four: two. Every extra thousand reais of
+private benefit raises the threshold by two thousand. A firm where insiders can divert more
+needs richer owners.
+
+Line two: the success income. The derivative with respect to R is minus p H: minus zero point
+eight. A more valuable project lowers the threshold — but by less than one for one, because
+only the success state pays.
+
+Line three: the investment. The derivative with respect to I is plus one. Every extra real of
+investment must be found, real for real, by somebody.
+
+[pause]
+
+Line four: the probabilities. Divide the rent by p H, and it depends on delta p over p H — what
+Tirole calls the likelihood ratio: how much more likely success is when she behaves. The larger
+that ratio, the more informative success is about her behaviour, the smaller the rent, the lower
+the threshold.
+
+[pause]
+
+So, read across the four lines. Funding is easier when insiders have more of their own money,
+when they can divert less, when the project is more valuable or cheaper, and when outcomes
+reveal more about behaviour. Each of those is the subject of a later class. Tirole's section on
+the determinants of borrowing capacity — Class seven — is this list, one item at a time.
+
+## BeatStep - 130 s
+
+Now draw what the founder gets, against how much she has.
+
+On the horizontal axis, her assets A. On the vertical axis, her utility U b — what she ends up
+with, net of what she put in.
+
+[pause]
+
+Below the threshold A bar, she is not funded, and she gets zero.
+
+At the threshold and above, she is funded, competitive lenders break even, and she collects the
+whole net present value: twenty-eight. Tirole's equation three point six.
+
+So the curve is flat at zero, and then jumps to twenty-eight at A bar equals twelve.
+
+[pause]
+
+Here is our founder: a red dot at ten. Two units to the left of the jump. Her project is worth
+exactly as much as it would be at twelve. She loses all of it.
+
+And she is not the only loser. The twenty-eight thousand reais was value for the economy, not
+just for her: the output that would have been produced, the jobs it would have paid for. When
+the project is not funded, nobody gets it. The investors are no worse off — they keep their
+ninety — but the economy is twenty-eight poorer than it could have been. That is what
+economists mean by credit rationing being inefficient: a transaction that would make someone
+better off and nobody worse off does not happen.
+
+[pause]
+
+Now play the comparative statics on the picture. Give her more of her own wealth and the dot
+moves right, across the jump. Raise B by one and the jump itself moves right by two. Make
+success more informative about behaviour and the jump moves left. Every policy that helps
+founders like her works through one of those two motions: move the dot, or move the cliff.
+
+[pause]
+
+And here Brazil comes back in. One natural reading of B is how much an insider can take from
+investors without being stopped. Tirole notes that countries with strong investor protection
+limit managers' ability to squander investor money, and so have lower agency costs. Courts,
+disclosure rules, a listing segment that gives minorities a vote, a cross-listing under a
+stricter regulator — each of these lowers B. A lower B moves the
+jump to the left, and firms like our founder's get funded. That is the precise sense in which
+institutions change how much finance an economy gets.
+
+## BeatMMRecovered - 110 s
+
+One last move, and it closes the loop with the opening.
+
+Take the private benefit B and shrink it, all the way to zero. Watch the threshold.
+
+[pause]
+
+A bar equals the agency rent minus the net present value. As B goes to zero, the agency rent, p
+H B over delta p, goes to zero. A bar becomes minus the net present value: minus twenty-eight.
+
+[pause]
+
+The jump has slid to the left of zero. Every founder — even one with nothing — is funded. Our red
+dot turns green.
+
+[pause]
+
+With B equal to zero, there is nothing to gain from misbehaving, so behaviour does not need to
+be bought, so all the expected income is pledgeable, so any project with positive net present
+value finds money. The split no longer affects the size of the pie. That is Modigliani and
+Miller, recovered as a special case.
+
+[pause]
+
+There is a subtler echo of Modigliani and Miller inside the model, too. With only two outcomes,
+success and failure, it does not matter whether we call the lenders' claim debt or equity: a
+claim to one hundred and ten on success and zero on failure is both a loan and a share of the
+income. Tirole makes exactly this point in section three point two point three. The model does
+not tell us which security to issue — only how much can be promised in total. Choosing between
+securities becomes interesting later, when outsiders have their own decisions to make.
+
+[pause]
+
+So the two worlds of this video differ by exactly one thing: whether the insider's behaviour can
+be written into the contract. When it can, financing is irrelevant. When it cannot, financing is
+the whole problem.
+
+## BeatClose - 100 s
+
+Here is the picture to keep.
+
+The step: zero, then a jump to twenty-eight at twelve. Our founder, red, at ten. Above it, her
+pie: a blue slice of fifty that she must keep, and a teal slice — all that investors can be
+promised.
+
+[pause]
+
+Modigliani and Miller is the world where the step sits to the left of zero. Corporate finance is
+the world where it does not.
+
+[pause]
+
+The rest of the course moves pieces of this picture. Valuation, in Classes two and three, prices
+the pie. Classes four and five finish Modigliani and Miller, with taxes and default costs.
+Classes six to eight extend the model you just derived — borrowing capacity, debt overhang,
+control rights. Liquidity asks what happens when the pie needs more money midway. Asymmetric
+information asks what happens when the lender does not know how big the pie is. Activism and
+takeovers ask who watches the insider. And the last classes ask what happens when every founder
+in an economy is near the jump at once.
+
+[pause]
+
+For practice, Tirole's exercises three point one to three point three, on page one hundred and
+forty-four, use exactly this model, and their answers are in the back of the book. Before you
+open them, try one thing yourself: redo our founder's numbers with a private benefit of fifteen
+instead of twenty. Compute the minimum stake, the pledgeable income, and A bar — and decide
+whether she gets the money.
+
+[pause]
+
+Ten against twelve. Two thousand reais of something that is not money. That is corporate
+finance.

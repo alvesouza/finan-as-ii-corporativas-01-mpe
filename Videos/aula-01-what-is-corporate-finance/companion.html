@@ -1,0 +1,447 @@
+<title>The Rationing Threshold</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,650&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a credit memo. Verdict strip on top, the term-sheet controls on the left, two exhibits on the right, contract and provenance as the memo's footnotes. */
+:root {
+  --bg: #f4f6f8;
+  --paper: #ffffff;
+  --ink: #18212b;
+  --ink-2: #4a5663;
+  --rule: #d8dee5;
+  --grid: #e8ecf0;
+  --insider: #2a62c9;     /* founder: stake R_b, private benefit B */
+  --outsider: #0d7f77;    /* investors: claim R_l, pledgeable income */
+  --focus: #b37800;       /* the threshold, the live object */
+  --muted: #8a96a3;
+  --bad: #c13c2c;         /* rationed */
+  --good: #2b7d45;        /* funded */
+  --bad-soft: #f8e4e1;
+  --good-soft: #e1f1e6;
+  --focus-soft: #fbf0d9;
+  --f-display: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --f-body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --f-num: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0f141a; --paper: #161d25; --ink: #e4e9ef; --ink-2: #a3afbc; --rule: #2a3440; --grid: #212a34;
+    --insider: #6d9cf0; --outsider: #3cc0b4; --focus: #e6b13e; --muted: #6f7c89;
+    --bad: #ef7765; --good: #5cc27e; --bad-soft: #3a1f1c; --good-soft: #17301f; --focus-soft: #352a12;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0f141a; --paper: #161d25; --ink: #e4e9ef; --ink-2: #a3afbc; --rule: #2a3440; --grid: #212a34;
+  --insider: #6d9cf0; --outsider: #3cc0b4; --focus: #e6b13e; --muted: #6f7c89;
+  --bad: #ef7765; --good: #5cc27e; --bad-soft: #3a1f1c; --good-soft: #17301f; --focus-soft: #352a12;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--f-body); }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 48px; display: grid; gap: 20px; }
+header { display: grid; gap: 6px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+h1 { font: 650 clamp(26px, 4vw, 36px)/1.15 var(--f-display); margin: 0; text-wrap: balance; }
+.lede { margin: 0; color: var(--ink-2); max-width: 70ch; }
+.num, .mono { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+
+/* Verdict strip */
+.verdict { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 2fr); gap: 16px; background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 18px 20px; }
+.verdict[data-state="funded"] { border-left: 6px solid var(--good); }
+.verdict[data-state="rationed"] { border-left: 6px solid var(--bad); }
+.verdict[data-state="nogo"] { border-left: 6px solid var(--muted); }
+.stamp { display: grid; gap: 2px; align-content: start; }
+.stamp .label { font: 600 13px/1 var(--f-body); letter-spacing: .1em; text-transform: uppercase; }
+.verdict[data-state="funded"] .label { color: var(--good); }
+.verdict[data-state="rationed"] .label { color: var(--bad); }
+.verdict[data-state="nogo"] .label { color: var(--ink-2); }
+.stamp .big { font: 500 clamp(30px, 5vw, 44px)/1.1 var(--f-num); font-variant-numeric: tabular-nums; }
+.stamp .sub { color: var(--ink-2); font-size: 13px; }
+.why { margin: 0; align-self: center; max-width: 62ch; }
+.checks { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.chip { font: 500 12px/1 var(--f-body); padding: 5px 8px; border-radius: 3px; border: 1px solid var(--rule); color: var(--ink-2); }
+.chip.ok { color: var(--good); border-color: var(--good); }
+.chip.no { color: var(--bad); border-color: var(--bad); background: var(--bad-soft); }
+
+/* Main */
+main { display: grid; grid-template-columns: 330px minmax(0, 1fr); gap: 20px; align-items: start; }
+@media (max-width: 900px) { main { grid-template-columns: minmax(0, 1fr); } .verdict { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; padding: 16px 18px; min-width: 0; }
+.controls { display: grid; gap: 18px; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: 14px; }
+legend { font: 600 12px/1 var(--f-body); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); padding: 0 0 8px; border-bottom: 1px solid var(--rule); width: 100%; }
+.ctl { display: grid; gap: 4px; }
+.ctl-head { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; }
+.ctl-head label { font-weight: 600; }
+.ctl-head label i { font-family: var(--f-display); font-weight: 500; }
+.ctl-head output { font: 500 15px var(--f-num); font-variant-numeric: tabular-nums; }
+.ctl p { margin: 0; font-size: 12.5px; color: var(--ink-2); }
+input[type="range"] { width: 100%; accent-color: var(--focus); margin: 2px 0; }
+input[type="range"]:focus-visible, button:focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+.ctl.insider output { color: var(--insider); }
+.note { font-size: 12px; color: var(--bad); min-height: 0; }
+.buttons { display: flex; flex-wrap: wrap; gap: 8px; }
+button { font: 500 13px var(--f-body); color: var(--ink); background: var(--bg); border: 1px solid var(--rule); border-radius: 4px; padding: 7px 10px; cursor: pointer; }
+button:hover { border-color: var(--ink-2); }
+button.primary { border-color: var(--focus); }
+
+.exhibits { display: grid; gap: 20px; min-width: 0; }
+.ex-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: baseline; margin-bottom: 6px; }
+h2 { font: 650 19px/1.25 var(--f-display); margin: 0; }
+.ex-head .tag { font-size: 12px; color: var(--ink-2); }
+.cap { font-size: 13px; color: var(--ink-2); margin: 6px 0 0; max-width: 75ch; }
+svg { display: block; width: 100%; height: auto; max-width: 100%; }
+svg text { fill: var(--ink-2); font: 12px var(--f-body); }
+svg .t-num { font-family: var(--f-num); font-variant-numeric: tabular-nums; }
+svg .axis { stroke: var(--ink-2); stroke-width: 1; }
+svg .grid { stroke: var(--grid); stroke-width: 1; }
+
+.figures { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: 4px; overflow: hidden; }
+.fig { background: var(--paper); padding: 10px 12px; display: grid; gap: 2px; }
+.fig .k { font-size: 12px; color: var(--ink-2); }
+.fig .v { font: 500 18px var(--f-num); font-variant-numeric: tabular-nums; }
+.fig .f { font-size: 11.5px; color: var(--muted); font-family: var(--f-num); }
+.fig.insider .v { color: var(--insider); }
+.fig.outsider .v { color: var(--outsider); }
+.fig.focus .v { color: var(--focus); }
+
+.tbl-wrap { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+th, td { text-align: left; padding: 7px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-2); }
+td.n { font-family: var(--f-num); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.harder { color: var(--bad); font-weight: 500; }
+.easier { color: var(--good); font-weight: 500; }
+footer { font-size: 12.5px; color: var(--ink-2); display: grid; gap: 10px; }
+footer p { margin: 0; max-width: 95ch; }
+@media (prefers-reduced-motion: no-preference) { .verdict { transition: border-color .2s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Finanças II – Corporativas · Class 1 companion · Tirole §3.2, pp. 115–118</div>
+    <h1>The Rationing Threshold</h1>
+    <p class="lede">A founder needs <i>I</i> and has <i>A</i>. The project has positive NPV, yet investors may refuse. Move the parameters and watch whether the pledgeable income covers what she must borrow. All amounts in thousand reais.</p>
+  </header>
+
+  <section class="verdict" id="verdict" data-state="rationed" aria-live="polite">
+    <div class="stamp">
+      <span class="label" id="v-label">Rationed</span>
+      <span class="big" id="v-gap">−2.0</span>
+      <span class="sub" id="v-sub">net worth minus threshold, <i>A</i> − <i>Ā</i></span>
+    </div>
+    <div>
+      <p class="why" id="v-why"></p>
+      <div class="checks" id="checks"></div>
+    </div>
+  </section>
+
+  <main>
+    <form class="panel controls" id="controls" onsubmit="return false">
+      <div class="buttons">
+        <button type="button" class="primary" id="reset">Reset to calibration</button>
+        <button type="button" id="p-mm">MM world: B = 0</button>
+        <button type="button" id="p-b15">B = 15</button>
+        <button type="button" id="p-rich">Richer founder: A = 20</button>
+      </div>
+    </form>
+
+    <div class="exhibits">
+      <section class="panel" aria-labelledby="h-step">
+        <div class="ex-head"><h2 id="h-step">Exhibit 1 · Founder's payoff against net worth</h2><span class="tag">eq. (3.6), p. 117</span></div>
+        <svg id="svg-step" viewBox="0 0 640 300" role="img" aria-label="Founder's net utility as a function of net worth"></svg>
+        <p class="cap">Below <i>Ā</i> the founder gets nothing; at <i>Ā</i> her payoff jumps to the whole NPV, <i>p<sub>H</sub>R − I</i>. The dot is the founder at her current <i>A</i>; red shading is how far she is from the threshold.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="h-bars">
+        <div class="ex-head"><h2 id="h-bars">Exhibit 2 · What can be promised</h2><span class="tag">IC<sub>b</sub> and IR<sub>l</sub>, pp. 116–117</span></div>
+        <svg id="svg-bars" viewBox="0 0 640 210" role="img" aria-label="Pledgeable income against funding need, and the split of the success payoff"></svg>
+        <p class="cap">Top: expected pledgeable income against the loan the lenders must recover. Bottom: the success payoff <i>R</i> split into the most investors can be promised (teal) and the minimum stake that keeps the founder behaving (blue). The tick is the claim lenders need to break even, <i>(I − A)/p<sub>H</sub></i>.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="h-fig">
+        <div class="ex-head"><h2 id="h-fig">Live figures</h2><span class="tag">thousand reais unless stated</span></div>
+        <div class="figures" id="figures"></div>
+      </section>
+
+      <section class="panel" aria-labelledby="h-cs">
+        <div class="ex-head"><h2 id="h-cs">What moves the threshold</h2><span class="tag">∂Ā/∂·, at the current point · p. 118</span></div>
+        <div class="tbl-wrap"><table id="cs"><thead><tr><th>Parameter rises</th><th>Derivative</th><th>Value now</th><th>Effect</th></tr></thead><tbody></tbody></table></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="panel">
+    <h2>Control contract and sources</h2>
+    <div class="tbl-wrap"><table id="contract"><thead><tr><th>Control</th><th>What it is</th><th>Range</th><th>Step</th><th>Default</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+    <p><b>Model.</b> Holmström–Tirole fixed-investment model as in Tirole, <i>The Theory of Corporate Finance</i> (Princeton, 2006), §3.2.1–3.2.2, eqs. (3.1)–(3.6), printed pp. 115–118. Risk neutrality, zero interest rate, limited liability, competitive lenders. Every curve is the closed-form expression; nothing is fitted or solved numerically.</p>
+    <p><b>Defaults.</b> Class 1 calibration, checked in <span class="mono">Videos/aula-01-what-is-corporate-finance/check_numbers.py</span>.</p>
+    <p><b>Edge cases.</b> If <i>p<sub>L</sub> = p<sub>H</sub></i> and <i>B</i> &gt; 0, no stake can induce effort, so <i>Ā</i> is infinite. If (3.1) fails, the project is not worth funding at any <i>A</i>. If (3.2) fails, a loan that tolerates shirking could also be granted, and (3.3) is no longer the whole funding condition; the page still shows (3.3) and flags it.</p>
+  </footer>
+</div>
+
+<script>
+(() => {
+  const DEF = { A: 10, B: 20, pL: 0.40, R: 160, pH: 0.80, I: 100 };
+  const CTL = [
+    { group: "Founder", id: "A", sym: "A", name: "Net worth", min: 0, max: 60, step: 1, dp: 0, cls: "insider",
+      what: "Cash the founder puts in. The rest, I − A, is borrowed.", src: "§3.2.1, p. 115" },
+    { group: "Agency", id: "B", sym: "B", name: "Private benefit", min: 0, max: 60, step: 1, dp: 0, cls: "insider",
+      what: "What she gains by shirking. Larger B means a larger stake to keep her honest.", src: "§3.2.1, p. 115" },
+    { group: "Agency", id: "pL", sym: "p<sub>L</sub>", name: "Success if shirking", min: 0, max: 1, step: 0.01, dp: 2,
+      what: "Closer to p_H means the outcome reveals less about effort.", src: "§3.2.1, p. 115" },
+    { group: "Technology", id: "R", sym: "R", name: "Income if success", min: 100, max: 250, step: 1, dp: 0,
+      what: "Verifiable income on success; 0 on failure.", src: "§3.2.1, p. 115" },
+    { group: "Technology", id: "pH", sym: "p<sub>H</sub>", name: "Success if behaving", min: 0.5, max: 1, step: 0.01, dp: 2,
+      what: "Raises NPV and the informativeness Δp/p_H.", src: "§3.2.1, p. 115" },
+    { group: "Technology", id: "I", sym: "I", name: "Investment", min: 70, max: 200, step: 1, dp: 0,
+      what: "Fixed outlay the project needs.", src: "§3.2.1, p. 115" },
+  ];
+  const p = { ...DEF };
+  const $ = (id) => document.getElementById(id);
+  const M = "−";
+  const f = (x, d = 1) => {
+    if (x === Infinity) return "∞";
+    if (x === -Infinity) return M + "∞";
+    const s = (Math.abs(x) < 0.5 * Math.pow(10, -d) ? 0 : x).toFixed(d);
+    return s.startsWith("-") ? M + s.slice(1) : s;
+  };
+  const sgn = (x, d = 1) => (x > 0 && isFinite(x) ? "+" : "") + f(x, d);
+
+  /* Controls */
+  const form = $("controls"), btns = form.firstElementChild;
+  const groups = {};
+  const note = document.createElement("div"); note.className = "note"; note.id = "pl-note";
+  for (const c of CTL) {
+    if (!groups[c.group]) {
+      const fs = document.createElement("fieldset");
+      fs.innerHTML = `<legend>${c.group}</legend>`;
+      form.insertBefore(fs, btns); groups[c.group] = fs;
+    }
+    const d = document.createElement("div");
+    d.className = "ctl " + (c.cls || "");
+    d.innerHTML = `<div class="ctl-head"><label for="in-${c.id}">${c.name} <i>${c.sym}</i></label><output id="out-${c.id}" for="in-${c.id}"></output></div>
+      <input type="range" id="in-${c.id}" min="${c.min}" max="${c.max}" step="${c.step}" value="${DEF[c.id]}">
+      <p>${c.what}</p>`;
+    groups[c.group].appendChild(d);
+    if (c.id === "pL") d.appendChild(note);
+    d.querySelector("input").addEventListener("input", (e) => { p[c.id] = +e.target.value; update(c.id); });
+  }
+
+  /* Model: Tirole (3.1)-(3.6) */
+  function model(q) {
+    const dp = Math.round((q.pH - q.pL) * 100) / 100;
+    const npv = q.pH * q.R - q.I;
+    const icPossible = !(dp <= 0 && q.B > 0);
+    let stake, rent, P, Abar;
+    if (dp <= 0) {
+      if (q.B > 0) { stake = Infinity; rent = Infinity; P = -Infinity; Abar = Infinity; }
+      else { stake = 0; rent = 0; P = q.pH * q.R; Abar = -npv; }
+    } else { stake = q.B / dp; rent = q.pH * stake; P = q.pH * (q.R - stake); Abar = rent - npv; }
+    const need = q.I - q.A;
+    const a31 = npv > 1e-9, a32 = q.pL * q.R - q.I + q.B < -1e-9, a34 = Abar > 1e-9;
+    const gap = q.A - Abar;
+    const funded = a31 && icPossible && gap >= -1e-9;
+    const Rl = need / q.pH;
+    return { dp, npv, stake, rent, P, Abar, need, a31, a32, a34, gap, funded, icPossible,
+      Ub: funded ? npv : 0, Rl, Rb: q.R - Rl, maxPromise: q.R - stake, lr: dp / q.pH, gross: 1 / q.pH,
+      d: { B: dp > 0 ? q.pH / dp : null, pL: dp > 0 ? q.pH * q.B / (dp * dp) : null, I: 1, R: -q.pH,
+           pH: dp > 0 ? -q.R - q.pL * q.B / (dp * dp) : null } };
+  }
+
+  /* SVG helpers */
+  const NS = "http://www.w3.org/2000/svg";
+  function el(svg, tag, attrs, text) {
+    const e = document.createElementNS(NS, tag);
+    let style = attrs.style || "";
+    for (const k in attrs) {
+      const v = String(attrs[k]);
+      if ((k === "fill" || k === "stroke") && v.startsWith("var(")) style += `;${k}:${v}`;
+      else if (k !== "style") e.setAttribute(k, v);
+    }
+    if (style) e.setAttribute("style", style);
+    if (text != null) e.textContent = text;
+    svg.appendChild(e); return e;
+  }
+  function niceMax(v) {
+    if (v <= 0) return 10;
+    const e = Math.pow(10, Math.floor(Math.log10(v))), m = v / e;
+    return (m <= 1 ? 1 : m <= 2 ? 2 : m <= 2.5 ? 2.5 : m <= 5 ? 5 : 10) * e;
+  }
+  const C = (v) => `var(--${v})`;
+
+  function drawStep(m) {
+    const svg = $("svg-step"); svg.replaceChildren();
+    const W = 640, H = 300, L = 56, Rr = 24, T = 24, Bt = 46;
+    const xMax = 60, yMax = niceMax(Math.max(m.npv, 10) * 1.15);
+    const X = (a) => L + (a / xMax) * (W - L - Rr), Y = (u) => H - Bt - (u / yMax) * (H - T - Bt);
+    for (let t = 0; t <= yMax + 1e-9; t += yMax / 4) {
+      el(svg, "line", { x1: L, x2: W - Rr, y1: Y(t), y2: Y(t), class: "grid" });
+      el(svg, "text", { x: L - 8, y: Y(t) + 4, "text-anchor": "end", class: "t-num" }, f(t, t % 1 ? 1 : 0));
+    }
+    for (let a = 0; a <= xMax; a += 10) el(svg, "text", { x: X(a), y: H - Bt + 18, "text-anchor": "middle", class: "t-num" }, a);
+    el(svg, "line", { x1: L, x2: W - Rr, y1: Y(0), y2: Y(0), class: "axis" });
+    el(svg, "line", { x1: L, x2: L, y1: T, y2: Y(0), class: "axis" });
+    el(svg, "text", { x: (L + W - Rr) / 2, y: H - 8, "text-anchor": "middle" }, "Net worth A (thousand reais)");
+    el(svg, "text", { x: 14, y: (T + H - Bt) / 2, "text-anchor": "middle", transform: `rotate(-90 14 ${(T + H - Bt) / 2})` }, "Founder's net utility U_b");
+
+    if (m.a31) {
+      el(svg, "line", { x1: L, x2: W - Rr, y1: Y(m.npv), y2: Y(m.npv), stroke: C("muted"), "stroke-dasharray": "3 4" });
+      el(svg, "text", { x: L + 6, y: Y(m.npv) + 16, class: "t-num" }, `NPV = p_H R − I = ${f(m.npv)}`);
+    }
+    // Shortfall shading between A and Abar
+    if (m.a31 && !m.funded) {
+      const x1 = X(p.A), x2 = isFinite(m.Abar) ? X(Math.min(m.Abar, xMax)) : X(xMax);
+      el(svg, "rect", { x: x1, y: T, width: Math.max(0, x2 - x1), height: Y(0) - T, fill: C("bad-soft") });
+    }
+    // Step function, exact
+    const ab = m.a31 ? m.Abar : Infinity;
+    const stroke = 3;
+    if (ab <= 0) {
+      el(svg, "line", { x1: X(0), x2: X(xMax), y1: Y(m.npv), y2: Y(m.npv), stroke: C("good"), "stroke-width": stroke });
+    } else if (ab >= xMax) {
+      el(svg, "line", { x1: X(0), x2: X(xMax), y1: Y(0), y2: Y(0), stroke: C("bad"), "stroke-width": stroke });
+    } else {
+      el(svg, "line", { x1: X(0), x2: X(ab), y1: Y(0), y2: Y(0), stroke: C("bad"), "stroke-width": stroke });
+      el(svg, "line", { x1: X(ab), x2: X(ab), y1: Y(0), y2: Y(m.npv), stroke: C("muted"), "stroke-width": 1, "stroke-dasharray": "2 3" });
+      el(svg, "line", { x1: X(ab), x2: X(xMax), y1: Y(m.npv), y2: Y(m.npv), stroke: C("good"), "stroke-width": stroke });
+      el(svg, "circle", { cx: X(ab), cy: Y(0), r: 4.5, fill: C("paper"), stroke: C("bad"), "stroke-width": 2 });
+      el(svg, "circle", { cx: X(ab), cy: Y(m.npv), r: 4.5, fill: C("good") });
+    }
+    // Threshold landmark
+    if (m.a31) {
+      if (ab > 0 && ab < xMax) {
+        el(svg, "line", { x1: X(ab), x2: X(ab), y1: T - 4, y2: Y(0), stroke: C("focus"), "stroke-width": 1.5, "stroke-dasharray": "5 4" });
+        el(svg, "text", { x: X(ab) + (ab > 45 ? -6 : 6), y: T + 8, "text-anchor": ab > 45 ? "end" : "start", fill: C("focus"), class: "t-num", style: "fill:var(--focus)" }, `Ā = ${f(ab)}`);
+      } else {
+        const left = ab <= 0;
+        el(svg, "text", { x: left ? L + 6 : W - Rr - 6, y: T + 8, "text-anchor": left ? "start" : "end", class: "t-num", style: "fill:var(--focus)" },
+          left ? `← Ā = ${f(ab)}: every A is funded` : `Ā = ${f(ab)} →  off the axis`);
+      }
+    } else {
+      el(svg, "text", { x: (L + W - Rr) / 2, y: T + 30, "text-anchor": "middle", style: "fill:var(--bad)" }, "NPV ≤ 0: assumption (3.1) fails, no A gets the project funded");
+    }
+    // Founder dot
+    const col = m.funded ? "good" : "bad";
+    el(svg, "circle", { cx: X(p.A), cy: Y(m.Ub), r: 7, fill: C(col), stroke: C("paper"), "stroke-width": 2 });
+    el(svg, "text", { x: X(p.A), y: Y(m.Ub) - 13, "text-anchor": p.A < 4 ? "start" : p.A > 56 ? "end" : "middle", class: "t-num", style: `fill:var(--${col})` }, `founder, A = ${p.A}`);
+  }
+
+  function drawBars(m) {
+    const svg = $("svg-bars"); svg.replaceChildren();
+    const W = 640, L = 150, Rr = 24;
+    // Row 1: expected pledgeable income vs need
+    const P = m.P, lo1 = Math.min(0, isFinite(P) ? P : 0), hi1 = niceMax(Math.max(m.need, isFinite(P) ? P : 0) * 1.08);
+    const X1 = (v) => L + ((v - lo1) / (hi1 - lo1)) * (W - L - Rr);
+    el(svg, "text", { x: 0, y: 30 }, "Pledgeable income P");
+    el(svg, "text", { x: 0, y: 60 }, "Funding need I − A");
+    if (isFinite(P)) el(svg, "rect", { x: Math.min(X1(0), X1(P)), y: 18, width: Math.abs(X1(P) - X1(0)), height: 18, fill: C("outsider") });
+    el(svg, "text", { x: isFinite(P) ? Math.max(X1(P), X1(0)) + 6 : X1(0) + 6, y: 32, class: "t-num", style: "fill:var(--outsider)" }, isFinite(P) ? f(P) : "−∞ (no IC stake exists)");
+    el(svg, "rect", { x: X1(0), y: 48, width: X1(m.need) - X1(0), height: 18, fill: "none", stroke: C("ink-2"), "stroke-width": 1.5 });
+    el(svg, "text", { x: X1(m.need) + 6, y: 62, class: "t-num" }, f(m.need));
+    el(svg, "line", { x1: X1(0), x2: X1(0), y1: 12, y2: 72, class: "axis" });
+    if (isFinite(P)) {
+      const ok = P >= m.need - 1e-9;
+      el(svg, "line", { x1: X1(m.need), x2: X1(m.need), y1: 12, y2: 72, stroke: C(ok ? "good" : "bad"), "stroke-width": 2 });
+    }
+
+    // Row 2: split of R on success
+    const top = 110;
+    const hi2 = niceMax(Math.max(p.R, m.Rl) * 1.04);
+    const X2 = (v) => L + (Math.max(0, Math.min(v, hi2)) / hi2) * (W - L - Rr);
+    el(svg, "text", { x: 0, y: top + 16 }, "Success payoff R");
+    el(svg, "text", { x: 0, y: top + 32, style: "font-size:11px" }, `R = ${f(p.R, 0)}`);
+    const mp = Math.max(0, Math.min(p.R, m.maxPromise));
+    el(svg, "rect", { x: X2(0), y: top, width: X2(mp) - X2(0), height: 26, fill: C("outsider") });
+    el(svg, "rect", { x: X2(mp), y: top, width: X2(p.R) - X2(mp), height: 26, fill: C("insider") });
+    const tickOk = m.Rl <= m.maxPromise + 1e-9;
+    el(svg, "line", { x1: X2(m.Rl), x2: X2(m.Rl), y1: top - 8, y2: top + 34, stroke: C(tickOk ? "good" : "bad"), "stroke-width": 2.5 });
+    el(svg, "text", { x: X2(m.Rl), y: top - 12, "text-anchor": X2(m.Rl) > W - 120 ? "end" : "middle", class: "t-num", style: `fill:var(--${tickOk ? "good" : "bad"})` }, `needed R_l = ${f(m.Rl)}`);
+    el(svg, "text", { x: X2(0), y: top + 50, class: "t-num", style: "fill:var(--outsider)" },
+      isFinite(m.maxPromise) ? `max promise R − B/Δp = ${f(m.maxPromise)}` : "max promise: none");
+    el(svg, "text", { x: X2(p.R), y: top + 66, "text-anchor": "end", class: "t-num", style: "fill:var(--insider)" },
+      isFinite(m.stake) ? `min stake B/Δp = ${f(m.stake)}${m.stake > p.R ? " (exceeds R)" : ""}` : "min stake: ∞ (Δp = 0)");
+    for (let t = 0; t <= hi2 + 1e-9; t += hi2 / 4) el(svg, "text", { x: X2(t), y: top + 92, "text-anchor": "middle", class: "t-num", style: "font-size:11px" }, f(t, 0));
+  }
+
+  function figures(m) {
+    const F = [
+      ["outsider", "Pledgeable income", "P = p_H(R − B/Δp)", f(m.P)],
+      ["", "Funding need", "I − A", f(m.need)],
+      ["focus", "Threshold", "Ā = p_H B/Δp − NPV  (3.3)", f(m.Abar)],
+      ["", "NPV if behaving", "p_H R − I  (3.1)", f(m.npv)],
+      ["insider", "Agency rent", "p_H B/Δp", f(m.rent)],
+      ["insider", "Minimum stake", "B/Δp (paid on success)", f(m.stake)],
+      ["", "Likelihood ratio", "Δp/p_H (no unit)", f(m.lr, 3)],
+      ["", "Shirking NPV", "p_L R − I + B  (3.2)", f(p.pL * p.R - p.I + p.B)],
+      ["outsider", "Lender claim if funded", "R_l = (I − A)/p_H", m.funded ? f(m.Rl) : "—"],
+      ["", "Gross loan rate", "1 + ι = 1/p_H", f(m.gross, 3)],
+      ["insider", "Founder's net utility", "U_b  (3.6)", f(m.Ub)],
+      ["", "Founder's stake if funded", "R_b = R − R_l", m.funded ? f(m.Rb) : "—"],
+    ];
+    $("figures").innerHTML = F.map(([c, k, fo, v]) => `<div class="fig ${c}"><span class="k">${k}</span><span class="v">${v}</span><span class="f">${fo}</span></div>`).join("");
+  }
+
+  function statics(m) {
+    const rows = [
+      ["Private benefit B", "p_H/Δp", m.d.B, 1, "per unit"],
+      ["Success if shirking p_L", "p_H B/Δp²", m.d.pL, 0.01, "per 0.01"],
+      ["Investment I", "1", m.d.I, 1, "per unit"],
+      ["Income if success R", "−p_H", m.d.R, 1, "per unit"],
+      ["Success if behaving p_H", "−R − p_L B/Δp²", m.d.pH, 0.01, "per 0.01"],
+    ];
+    $("cs").tBodies[0].innerHTML = rows.map(([n, e, v, s, u]) => {
+      if (v == null) return `<tr><td>${n}</td><td class="n">${e}</td><td class="n">undefined at Δp = 0</td><td>—</td></tr>`;
+      const x = v * s, w = x > 1e-12 ? '<span class="harder">raises Ā · harder to fund</span>' : x < -1e-12 ? '<span class="easier">lowers Ā · easier to fund</span>' : "no effect here";
+      return `<tr><td>${n}</td><td class="n">${e}</td><td class="n">${sgn(x, 2)} ${u}</td><td>${w}</td></tr>`;
+    }).join("");
+  }
+
+  function verdict(m) {
+    const v = $("verdict");
+    const state = m.funded ? "funded" : !m.a31 ? "nogo" : "rationed";
+    v.dataset.state = state;
+    $("v-label").textContent = m.funded ? "Funded" : !m.a31 ? "Not worth funding" : "Rationed";
+    $("v-gap").textContent = !m.a31 ? f(m.npv) : sgn(m.gap);
+    $("v-sub").innerHTML = !m.a31 ? "NPV p<sub>H</sub>R − I, not positive" : "net worth minus threshold, <i>A</i> − <i>Ā</i>";
+    let why;
+    if (!m.a31) why = `Even if the founder behaves, the project returns ${f(p.pH * p.R)} on an outlay of ${f(p.I)}. Nobody should fund it.`;
+    else if (!m.icPossible) why = `With p<sub>L</sub> = p<sub>H</sub>, the outcome says nothing about effort, so no stake can stop her taking B = ${f(p.B, 0)}. No loan is granted at any net worth.`;
+    else if (m.funded) why = `Pledgeable income ${f(m.P)} covers the loan ${f(m.need)}. The founder keeps the whole NPV, ${f(m.npv)}, and lenders hold R<sub>l</sub> = ${f(m.Rl)} at gross rate ${f(m.gross, 3)}.` + (m.a34 ? "" : " Here Ā ≤ 0, so even a founder with no cash would be funded (condition (3.4) fails).");
+    else why = `The project has NPV ${f(m.npv)}, but investors can be promised only ${f(m.P)} in expectation against a loan of ${f(m.need)}. She is short by ${f(-m.gap)}: offering lenders more would leave her a stake below B/Δp = ${f(m.stake)}, and she would shirk.`;
+    $("v-why").innerHTML = why;
+    const chip = (ok, t) => `<span class="chip ${ok ? "ok" : "no"}">${ok ? "✓" : "✗"} ${t}</span>`;
+    $("checks").innerHTML = chip(m.a31, "(3.1) positive NPV if behaving") + chip(m.a32, "(3.2) shirking destroys value") +
+      chip(m.a34, "(3.4) Ā > 0") + (p.B === 0 ? '<span class="chip ok">B = 0: MM benchmark</span>' : "");
+  }
+
+  function update(changed) {
+    const plIn = $("in-pL");
+    plIn.max = p.pH.toFixed(2);
+    if (p.pL > p.pH + 1e-9) {
+      p.pL = p.pH; plIn.value = p.pL;
+      note.textContent = `p_L lowered to ${p.pH.toFixed(2)}: it cannot exceed p_H.`;
+    } else if (changed !== "pH") note.textContent = "";
+    for (const c of CTL) $("out-" + c.id).textContent = c.dp ? p[c.id].toFixed(c.dp) : p[c.id];
+    const m = model(p);
+    verdict(m); drawStep(m); drawBars(m); figures(m); statics(m);
+  }
+
+  function set(vals) {
+    Object.assign(p, DEF, vals);
+    for (const c of CTL) { const i = $("in-" + c.id); if (c.id === "pL") i.max = p.pH; i.value = p[c.id]; }
+    note.textContent = ""; update();
+  }
+  $("reset").addEventListener("click", () => set({}));
+  $("p-mm").addEventListener("click", () => set({ B: 0 }));
+  $("p-b15").addEventListener("click", () => set({ B: 15 }));
+  $("p-rich").addEventListener("click", () => set({ A: 20 }));
+
+  $("contract").tBodies[0].innerHTML = CTL.map((c) =>
+    `<tr><td><i>${c.sym}</i> ${c.name}</td><td>${c.what}</td><td class="n">${c.id === "pL" ? "0 – p_H" : c.min + " – " + c.max}</td><td class="n">${c.step}</td><td class="n">${DEF[c.id]}</td><td>Tirole ${c.src}</td></tr>`).join("");
+
+  set({});
+})();
+</script>

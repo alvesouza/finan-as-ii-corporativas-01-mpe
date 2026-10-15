@@ -1,0 +1,2887 @@
+1
+00:00:00,000 --> 00:00:02,154
+A founder in Campinas has a project.
+
+2
+00:00:02,154 --> 00:00:04,923
+It costs one hundred thousand reais to set up.
+
+3
+00:00:04,923 --> 00:00:10,769
+If she runs it properly, it succeeds with probability eighty per cent and returns one hundred and sixty thousand.
+
+4
+00:00:10,769 --> 00:00:14,769
+Eighty per cent of one hundred and sixty is one hundred and twenty-eight.
+
+5
+00:00:14,769 --> 00:00:18,769
+So on average the project turns one hundred into one hundred and twenty-eight.
+
+6
+00:00:18,769 --> 00:00:20,923
+It creates twenty-eight thousand reais of value.
+
+7
+00:00:20,923 --> 00:00:22,154
+Nobody disputes that number.
+
+8
+00:00:22,154 --> 00:00:24,308
+She has ten thousand of her own.
+
+9
+00:00:24,308 --> 00:00:25,846
+She needs ninety from outside.
+
+10
+00:00:25,846 --> 00:00:27,384
+She goes to a bank.
+
+11
+00:00:27,384 --> 00:00:29,231
+She goes to an angel investor.
+
+12
+00:00:29,231 --> 00:00:32,923
+She goes to her uncle, who is a dentist and has savings.
+
+13
+00:00:32,923 --> 00:00:37,538
+Every one of them looks at the numbers and agrees: it is a good project.
+
+14
+00:00:37,538 --> 00:00:39,692
+And every one of them says no.
+
+15
+00:00:39,692 --> 00:00:41,231
+Here is the strange part.
+
+16
+00:00:41,231 --> 00:00:48,923
+There is a famous theorem — it won two Nobel prizes between its authors — which says that in a well-functioning market this cannot happen.
+
+17
+00:00:48,923 --> 00:00:51,384
+A project that creates value always finds money.
+
+18
+00:00:51,384 --> 00:00:53,230
+The only question is the price.
+
+19
+00:00:53,230 --> 00:00:58,153
+So either the theorem is wrong, or something about this founder is not in the theorem.
+
+20
+00:00:58,153 --> 00:01:04,923
+By the end of this video you will be able to compute, to the last thousand reais, why she is turned down.
+
+21
+00:01:04,923 --> 00:01:10,769
+And you will find that she is short by exactly two thousand — of something that is not money.
+
+22
+00:01:10,769 --> 00:01:13,538
+That missing something is what corporate finance is about.
+
+23
+00:01:18,599 --> 00:01:21,984
+Let us draw the situation, because the picture is the subject.
+
+24
+00:01:21,984 --> 00:01:23,522
+In the middle, a firm.
+
+25
+00:01:23,522 --> 00:01:28,137
+On the left, the people who run it — the founder, the entrepreneur, the manager.
+
+26
+00:01:28,137 --> 00:01:29,676
+Tirole calls them the insiders.
+
+27
+00:01:29,676 --> 00:01:33,368
+On the right, the people who fund it — shareholders, banks, bondholders.
+
+28
+00:01:33,368 --> 00:01:33,984
+The outsiders.
+
+29
+00:01:33,984 --> 00:01:35,830
+Money flows from right to left.
+
+30
+00:01:35,830 --> 00:01:41,676
+Promises flow from left to right: a share of future income, a repayment schedule, a seat on the board.
+
+31
+00:01:41,676 --> 00:01:48,753
+Now, for most of the twentieth century, finance had a beautiful general theory of how claims like these are priced: the Arrow–Debreu model.
+
+32
+00:01:48,753 --> 00:01:51,830
+Complete markets, no taxes, no transaction costs, everyone knows everything.
+
+33
+00:01:51,830 --> 00:01:54,599
+It is a powerful machine for pricing an asset.
+
+34
+00:01:54,599 --> 00:01:59,522
+But, in Tirole's words, it "said little about the firms' financial choices and about their governance".
+
+35
+00:01:59,522 --> 00:02:03,214
+In that world, what the firm does is written into the contract.
+
+36
+00:02:03,214 --> 00:02:05,984
+Nobody can cheat, so there is nothing to govern.
+
+37
+00:02:05,984 --> 00:02:09,368
+Corporate finance, as Tirole teaches it, begins by refusing that assumption.
+
+38
+00:02:09,368 --> 00:02:13,984
+The insiders know things the outsiders do not, and do things the outsiders cannot see.
+
+39
+00:02:13,984 --> 00:02:18,907
+Formally, this is a principal–agent relationship: the outsiders are the principal, the insiders are the agent.
+
+40
+00:02:18,907 --> 00:02:21,676
+He sorts the problem into three kinds of asymmetry.
+
+41
+00:02:21,676 --> 00:02:29,060
+First, adverse selection: the insider knows something before the contract is signed — how good the technology really is, how risky the market is.
+
+42
+00:02:29,060 --> 00:02:33,676
+Second, hidden knowledge after the fact: the insider knows how much income was actually earned.
+
+43
+00:02:33,676 --> 00:02:40,753
+Third, moral hazard: the outsiders cannot see how carefully projects are chosen, how much risk is taken, or how much effort goes in.
+
+44
+00:02:40,753 --> 00:02:43,214
+Put our founder into each of the three.
+
+45
+00:02:43,214 --> 00:02:49,368
+Adverse selection: she knows, better than any investor, whether her market really exists — and every founder says it does.
+
+46
+00:02:49,368 --> 00:02:56,137
+Hidden knowledge: once the project runs, she sees the accounts first, and could report a smaller success than the one that happened.
+
+47
+00:02:56,137 --> 00:03:02,291
+Moral hazard: after the money arrives, nobody sees whether she spends her days on the project or on something easier.
+
+48
+00:03:02,291 --> 00:03:05,060
+All three are reasons for an outsider to hesitate.
+
+49
+00:03:05,060 --> 00:03:09,368
+They differ only in timing: before the contract, after the outcome, or in between.
+
+50
+00:03:09,368 --> 00:03:11,214
+Hold on to the third one.
+
+51
+00:03:11,214 --> 00:03:13,983
+It is the one that turns down our founder.
+
+52
+00:03:13,983 --> 00:03:17,368
+We will spend the last third of this video proving it.
+
+53
+00:03:27,396 --> 00:03:29,242
+This is not a new worry.
+
+54
+00:03:29,242 --> 00:03:36,627
+In nineteen thirty-two, Adolf Berle and Gardiner Means wrote a book documenting what they called the separation of ownership and control in American corporations.
+
+55
+00:03:36,627 --> 00:03:37,858
+Picture a large company.
+
+56
+00:03:37,858 --> 00:03:42,473
+Its shares are held by tens of thousands of people, each owning a tiny sliver.
+
+57
+00:03:42,473 --> 00:03:50,165
+None of them owns enough to bother watching the managers closely — the effort would be theirs, the gain would be shared with everybody else.
+
+58
+00:03:50,165 --> 00:03:51,704
+Put a number on it.
+
+59
+00:03:51,704 --> 00:03:55,396
+A shareholder owns one hundredth of one per cent of a firm.
+
+60
+00:03:55,396 --> 00:04:02,165
+She could spend a week reading the accounts and lobbying the board, and suppose that raises the firm's value by ten million.
+
+61
+00:04:02,165 --> 00:04:04,627
+Her share of the gain is one thousand.
+
+62
+00:04:04,627 --> 00:04:12,627
+The week costs her more than that — and every other shareholder collects their share of the ten million whether or not they lifted a finger.
+
+63
+00:04:12,627 --> 00:04:16,011
+Monitoring is a public good among shareholders, so nobody supplies it.
+
+64
+00:04:16,011 --> 00:04:20,011
+So control passes to a professional manager who owns almost none of it.
+
+65
+00:04:20,011 --> 00:04:24,627
+Berle and Means showed that this dispersion "creates substantial managerial discretion, which can be abused".
+
+66
+00:04:24,627 --> 00:04:32,627
+Tirole puts the premise of his entire book in one sentence: corporate insiders need not act in the best interests of the providers of the funds.
+
+67
+00:04:32,627 --> 00:04:35,704
+That gives us the definition of the subject's governance half.
+
+68
+00:04:35,704 --> 00:04:45,550
+Tirole adopts the one of Shleifer and Vishny: corporate governance is the set of ways in which the suppliers of finance to corporations "assure themselves of getting a return on their investment".
+
+69
+00:04:45,550 --> 00:04:48,319
+Read it slowly, because every word earns its place.
+
+70
+00:04:48,319 --> 00:04:50,165
+Not "how the firm maximises value".
+
+71
+00:04:50,165 --> 00:04:52,011
+Not "how the board is organised".
+
+72
+00:04:52,011 --> 00:04:56,934
+How the people who handed over the money make sure they get some of it back.
+
+73
+00:04:56,934 --> 00:05:01,858
+He calls this the narrow and orthodox view, and it is the one this course uses.
+
+74
+00:05:01,858 --> 00:05:05,858
+Notice that it is written entirely from the outsiders' side of our picture.
+
+75
+00:05:05,858 --> 00:05:07,396
+Governance is the outsiders' problem.
+
+76
+00:05:12,593 --> 00:05:14,747
+What exactly are the outsiders afraid of?
+
+77
+00:05:14,747 --> 00:05:20,593
+Tirole's section one point one point one is titled "Moral hazard comes in many guises", and he lists four.
+
+78
+00:05:20,593 --> 00:05:24,285
+Let us put them in a table, one row at a time.
+
+79
+00:05:24,285 --> 00:05:25,516
+Row one: insufficient effort.
+
+80
+00:05:25,516 --> 00:05:30,132
+This is not about hours at the office — most executives work very long hours.
+
+81
+00:05:30,132 --> 00:05:32,285
+It is about where the effort goes.
+
+82
+00:05:32,285 --> 00:05:37,208
+Avoiding the unpleasant work: cutting costs, negotiating hard with unions, firing a friend who is underperforming.
+
+83
+00:05:37,208 --> 00:05:39,362
+Spreading oneself across too many outside boards.
+
+84
+00:05:39,362 --> 00:05:40,593
+Row two: extravagant investments.
+
+85
+00:05:40,593 --> 00:05:42,132
+Pet projects and empire building.
+
+86
+00:05:42,132 --> 00:05:46,439
+Tirole's example comes from Michael Jensen on the oil industry in the late nineteen-seventies.
+
+87
+00:05:46,439 --> 00:05:55,362
+Oil companies kept exploring even though, at the prices of the day, buying oil on Wall Street was much cheaper than obtaining it by drilling holes in the ground.
+
+88
+00:05:55,362 --> 00:05:58,747
+The cash was there, and the managers wanted to spend it.
+
+89
+00:05:58,747 --> 00:05:59,670
+Row three: entrenchment.
+
+90
+00:05:59,670 --> 00:06:02,132
+Choosing investments that make the manager personally indispensable.
+
+91
+00:06:02,132 --> 00:06:06,747
+Being too cautious when things go well, and gambling for resurrection when they go badly.
+
+92
+00:06:06,747 --> 00:06:07,362
+Resisting takeovers.
+
+93
+00:06:07,362 --> 00:06:13,516
+In parts of Europe and Japan, Tirole adds, complex cross-holdings and shares with double voting rights do the same job.
+
+94
+00:06:13,516 --> 00:06:14,439
+Row four: self-dealing.
+
+95
+00:06:14,439 --> 00:06:18,439
+Perks — the corporate jet, the art collection, the box at the stadium.
+
+96
+00:06:18,439 --> 00:06:23,362
+RJR Nabisco, in the late nineteen-eighties, ran a fleet of ten aircraft with thirty-six company pilots.
+
+97
+00:06:23,362 --> 00:06:35,978
+And at the extreme, plain theft: Tirole mentions Robert Maxwell's use of his employees' pension fund, and Tyco, where in two thousand and two the chief executive and his collaborators were found to have taken more than one hundred million dollars.
+
+98
+00:06:35,978 --> 00:06:36,593
+Four rows.
+
+99
+00:06:36,593 --> 00:06:37,824
+Notice what they share.
+
+100
+00:06:37,824 --> 00:06:45,516
+In every one, the manager takes an action the outsiders cannot write into a contract, and that action shrinks what is left for the outsiders.
+
+101
+00:06:45,516 --> 00:06:49,208
+Keep that phrase: an action that cannot be written into a contract.
+
+102
+00:06:49,208 --> 00:06:51,670
+It is the hinge of the whole course.
+
+103
+00:07:04,191 --> 00:07:07,575
+You could read the last table as a list of scandals.
+
+104
+00:07:07,575 --> 00:07:10,037
+Tirole insists on a different picture: an iceberg.
+
+105
+00:07:10,037 --> 00:07:11,883
+Above the water, the visible misbehaviour.
+
+106
+00:07:11,883 --> 00:07:14,652
+A few numbers from his section on dysfunctional governance.
+
+107
+00:07:14,652 --> 00:07:23,883
+Average pay of the chief executives of large American firms roughly tripled in real terms between nineteen eighty and nineteen ninety-four, and roughly doubled again by two thousand and one.
+
+108
+00:07:23,883 --> 00:07:31,575
+In two thousand, the average chief executive of a large American firm earned five hundred and thirty-one times the average wage of the firm's workers.
+
+109
+00:07:31,575 --> 00:07:34,037
+In nineteen eighty-two, the multiple had been forty-two.
+
+110
+00:07:34,037 --> 00:07:36,806
+And is the pay at least tied to performance?
+
+111
+00:07:36,806 --> 00:07:44,498
+Bertrand and Mullainathan checked whether chief executives are paid for things they control, or for luck — an oil price rise, an exchange rate move.
+
+112
+00:07:44,498 --> 00:07:50,652
+Their finding, in Tirole's words: chief executive pay is as sensitive to a lucky dollar as to a general dollar.
+
+113
+00:07:50,652 --> 00:07:58,960
+Interestingly, the effect is weaker where someone is watching: an additional large shareholder on the board cuts pay for luck by between twenty-three and thirty-three per cent.
+
+114
+00:07:58,960 --> 00:07:59,575
+Then accounting.
+
+115
+00:07:59,575 --> 00:08:05,114
+WorldCom's profits from two thousand onwards turned out to have been overstated by seven point one billion dollars.
+
+116
+00:08:05,114 --> 00:08:06,344
+That is the tip.
+
+117
+00:08:06,344 --> 00:08:10,344
+Now the part below the water — and this is Tirole's real point.
+
+118
+00:08:10,344 --> 00:08:13,114
+What we observe is the misbehaviour that got through.
+
+119
+00:08:13,114 --> 00:08:19,883
+Underneath it is everything that was prevented: the covenants, the board, the auditors, the threat of a takeover, the lender who refused.
+
+120
+00:08:19,883 --> 00:08:21,729
+He calls them "the averted ones".
+
+121
+00:08:21,729 --> 00:08:23,883
+This matters for how you read evidence.
+
+122
+00:08:23,883 --> 00:08:31,575
+A country, or a firm, with few scandals might have excellent governance — or so little outside finance that there is nothing left to steal.
+
+123
+00:08:31,575 --> 00:08:35,575
+The size of the visible tip tells you surprisingly little about the iceberg.
+
+124
+00:08:35,575 --> 00:08:38,037
+And it tells you something about our founder.
+
+125
+00:08:38,037 --> 00:08:40,806
+Her lenders' refusal is one of the averted ones.
+
+126
+00:08:40,806 --> 00:08:42,344
+It never makes the news.
+
+127
+00:08:42,344 --> 00:08:44,806
+It is governance working — at a cost.
+
+128
+00:08:52,323 --> 00:08:59,707
+If the danger is that managers act against the outsiders, the obvious fix is to make the managers outsiders too: give them a stake.
+
+129
+00:08:59,707 --> 00:09:02,477
+Tirole lists the instruments in section one point two.
+
+130
+00:09:02,477 --> 00:09:04,938
+Monetary compensation — salary, bonus, shares, stock options.
+
+131
+00:09:04,938 --> 00:09:09,246
+Implicit incentives — the threat of being fired, taken over, or pushed into bankruptcy.
+
+132
+00:09:09,246 --> 00:09:11,707
+Monitoring by the board and by large investors.
+
+133
+00:09:11,707 --> 00:09:13,554
+And competition in the product market.
+
+134
+00:09:13,554 --> 00:09:15,707
+How strong are these incentives in practice?
+
+135
+00:09:15,707 --> 00:09:19,400
+Here is the most famous measurement, and we will write it out.
+
+136
+00:09:19,400 --> 00:09:25,554
+Michael Jensen and Kevin Murphy looked at the chief executives of the two hundred and fifty largest American public firms.
+
+137
+00:09:25,554 --> 00:09:29,861
+The median one held a quarter of one per cent of the firm's shares.
+
+138
+00:09:29,861 --> 00:09:32,323
+Now take a one-thousand-dollar increase in shareholder wealth.
+
+139
+00:09:32,323 --> 00:09:40,015
+Add up everything that moves the chief executive's pocket: shares, options, this year's and next year's salary, the change in the chance of being dismissed.
+
+140
+00:09:40,015 --> 00:09:43,092
+The total, on average, is three dollars and twenty-five cents.
+
+141
+00:09:43,092 --> 00:09:44,323
+Three twenty-five, per thousand.
+
+142
+00:09:44,323 --> 00:09:47,400
+Divide: that is about a third of one per cent.
+
+143
+00:09:47,400 --> 00:09:49,554
+Tirole's comment is the line to remember.
+
+144
+00:09:49,554 --> 00:09:56,938
+Suppose your grocer kept zero point three cents out of every extra dollar of profit, and gave ninety-nine point seven cents to other people.
+
+145
+00:09:56,938 --> 00:10:01,554
+One might imagine that the grocer would start eating the apples on the fruit stand.
+
+146
+00:10:01,554 --> 00:10:03,400
+Two caveats, both from the book.
+
+147
+00:10:03,400 --> 00:10:12,323
+Later studies, by Hall and Liebman, find larger numbers once stock options are counted properly — a mean of twenty-five dollars per thousand, a median of five dollars thirty.
+
+148
+00:10:12,323 --> 00:10:19,400
+And a stake can be too large: a risk-averse manager with all her wealth in one firm will refuse risky but valuable projects.
+
+149
+00:10:19,400 --> 00:10:22,169
+So the question is never "incentives or no incentives".
+
+150
+00:10:22,169 --> 00:10:27,400
+It is how much of the pie the insider must keep for the rest to be safe.
+
+151
+00:10:27,400 --> 00:10:28,323
+Hold that sentence.
+
+152
+00:10:28,323 --> 00:10:30,477
+In Act Four it becomes an equation.
+
+153
+00:10:37,989 --> 00:10:41,066
+If a stake is the answer, what kind of stake?
+
+154
+00:10:41,066 --> 00:10:46,604
+Tirole compares the two standard forms, and the comparison is worth drawing, because the picture does the arguing.
+
+155
+00:10:46,604 --> 00:10:51,220
+On the horizontal axis, the share price P on the day the stake pays out.
+
+156
+00:10:51,220 --> 00:10:53,681
+On the vertical axis, what the manager receives.
+
+157
+00:10:53,681 --> 00:10:54,912
+First, a straight share.
+
+158
+00:10:54,912 --> 00:10:55,835
+It pays P.
+
+159
+00:10:55,835 --> 00:11:01,373
+A straight line through the origin: every real of extra value moves her pocket by the same amount.
+
+160
+00:11:01,373 --> 00:11:07,220
+Second, a stock option with strike price P S — the right to buy a share at P S.
+
+161
+00:11:07,220 --> 00:11:11,835
+If the price ends above the strike, she exercises and gains P minus P S.
+
+162
+00:11:11,835 --> 00:11:14,604
+If it ends below, she walks away with nothing.
+
+163
+00:11:14,604 --> 00:11:23,527
+So the option pays the maximum of zero and P minus P S: flat at zero, then a kink at the strike, then a line rising one for one.
+
+164
+00:11:23,527 --> 00:11:25,989
+Compare them at the same cost to shareholders.
+
+165
+00:11:25,989 --> 00:11:36,758
+An option is cheaper than a share, so for the same budget the firm can give many more options than shares — and above the strike, each one moves just as much as a share.
+
+166
+00:11:36,758 --> 00:11:39,835
+Per real spent, options give stronger incentives near the top.
+
+167
+00:11:39,835 --> 00:11:41,681
+But look at the flat part.
+
+168
+00:11:41,681 --> 00:11:49,374
+If the price has fallen well below the strike, the option is "under water", out of the money, and worth little unless something remarkable happens.
+
+169
+00:11:49,374 --> 00:11:54,912
+A manager holding only under-water options has nothing to lose from a wild gamble and something to win.
+
+170
+00:11:54,912 --> 00:11:58,604
+That is the gamble for resurrection from Row three of our table.
+
+171
+00:11:58,604 --> 00:12:00,758
+And the promise behind options is fragile.
+
+172
+00:12:00,758 --> 00:12:05,989
+When the price falls, boards often reprice them — lower the strike — or grant new ones.
+
+173
+00:12:05,989 --> 00:12:11,835
+Tirole's example: Ascend Communications, whose stock fell from eighty dollars to twenty-three, and whose executives' strikes were cut accordingly.
+
+174
+00:12:11,835 --> 00:12:17,989
+He notes that more than half of all stock options were out of the money in two thousand and two.
+
+175
+00:12:17,989 --> 00:12:24,450
+So even the instrument meant to align insiders with outsiders has a shape that, in bad states, points the other way.
+
+176
+00:12:24,450 --> 00:12:28,143
+The design of the insider's slice is itself part of the problem.
+
+177
+00:12:38,188 --> 00:12:40,650
+Pay is only one of Tirole's four instruments.
+
+178
+00:12:40,650 --> 00:12:42,804
+The other three work through people watching.
+
+179
+00:12:42,804 --> 00:12:43,727
+Implicit incentives first.
+
+180
+00:12:43,727 --> 00:12:46,188
+A manager who performs badly risks being replaced.
+
+181
+00:12:46,188 --> 00:12:54,804
+The evidence says the risk is real: top-executive turnover rises after poor performance, and Tirole reports that the pattern is similar in the United States, Germany and Japan.
+
+182
+00:12:54,804 --> 00:12:56,342
+And financial distress sharpens it.
+
+183
+00:12:56,342 --> 00:13:04,957
+Stuart Gilson found that fifty-two per cent of financially distressed firms replace senior management, against nineteen per cent of firms with equally poor stock performance but no distress.
+
+184
+00:13:04,957 --> 00:13:07,727
+Debt, in other words, is itself a disciplining device.
+
+185
+00:13:07,727 --> 00:13:09,573
+Hold that thought for Class eight.
+
+186
+00:13:09,573 --> 00:13:14,188
+Second, monitoring, which Tirole splits in two, and the split organises half of this course.
+
+187
+00:13:14,188 --> 00:13:24,342
+Active monitoring is forward-looking: someone with control rights intervenes to change what the firm will do — a large shareholder on the board, a bank renegotiating a loan, a creditor in a restructuring.
+
+188
+00:13:24,342 --> 00:13:35,419
+Speculative monitoring is backward-looking: someone takes a picture of what the firm has done and acts on it without controlling anything — a stock analyst, a rating agency, a short-term lender who refuses to roll over.
+
+189
+00:13:35,419 --> 00:13:38,496
+It disciplines through prices and through the threat of leaving.
+
+190
+00:13:38,496 --> 00:13:40,958
+And third, the watchers have their own incentives.
+
+191
+00:13:40,958 --> 00:13:44,650
+Analysts may push the shares of firms their bank wants as clients.
+
+192
+00:13:44,650 --> 00:13:57,265
+Auditors may be paid more for consulting than for auditing: in two thousand and one, non-audit fees made up more than half of the fees paid to accounting firms by twenty-eight of the thirty companies in the Dow Jones Industrial Average.
+
+193
+00:13:57,265 --> 00:14:03,419
+Finally, competition in the product market helps — a rival's performance is a yardstick, and a weak firm risks bankruptcy.
+
+194
+00:14:03,419 --> 00:14:07,419
+But in Tirole's words, it "will never substitute for a proper governance structure".
+
+195
+00:14:14,921 --> 00:14:18,921
+So far the story has an American shape: dispersed shareholders, a powerful manager.
+
+196
+00:14:18,921 --> 00:14:22,921
+Tirole is careful to say that this is only one of two shapes.
+
+197
+00:14:22,921 --> 00:14:25,690
+On the left, the firm Berle and Means described.
+
+198
+00:14:25,690 --> 00:14:27,228
+Many small shareholders, one manager.
+
+199
+00:14:27,228 --> 00:14:29,075
+Frequent, he says, in Anglo-Saxon countries.
+
+200
+00:14:29,075 --> 00:14:32,767
+The conflict runs between the manager and the shareholders as a group.
+
+201
+00:14:32,767 --> 00:14:42,613
+On the right, the shape typical of continental Europe: a controlling shareholder — a family, a holding company, sometimes the state — with a block of votes, and minority shareholders around it.
+
+202
+00:14:42,613 --> 00:14:45,690
+Now the conflict runs between the controller and the minority.
+
+203
+00:14:45,690 --> 00:14:48,152
+The controller can monitor the manager perfectly well.
+
+204
+00:14:48,152 --> 00:14:50,305
+The question is who monitors the controller.
+
+205
+00:14:50,305 --> 00:14:52,152
+Brazil sits firmly on the right.
+
+206
+00:14:52,152 --> 00:14:59,536
+Most listed Brazilian firms have a controlling shareholder, often a family, often holding control through voting shares while the public holds non-voting preferred shares.
+
+207
+00:14:59,536 --> 00:15:07,228
+The protection of minority shareholders — a phrase Tirole lists among the household terms of the field — is the Brazilian version of the problem.
+
+208
+00:15:07,228 --> 00:15:09,382
+Concentrated ownership is not simply a defect.
+
+209
+00:15:09,382 --> 00:15:17,690
+Tirole cites a study of seven hundred and fifty French listed firms in which two-thirds had significant family ownership — and family ownership went with better performance.
+
+210
+00:15:17,690 --> 00:15:21,382
+A large owner has the incentive to watch that dispersed shareholders lack.
+
+211
+00:15:21,382 --> 00:15:27,228
+And Burkart and coauthors put the logic in one line: with lower investor protection, ownership concentration is called for.
+
+212
+00:15:27,228 --> 00:15:31,536
+When the law protects outsiders badly, the outsiders protect themselves by not being outsiders.
+
+213
+00:15:31,536 --> 00:15:34,305
+And Brazil's institutional answers map directly onto the theory.
+
+214
+00:15:34,305 --> 00:15:46,305
+The Novo Mercado listing segment, created at the start of the two thousands, admits only firms with a single class of voting shares: one share, one vote, so control cannot be held with a small slice of the capital.
+
+215
+00:15:46,305 --> 00:15:49,998
+And many large Brazilian firms list American depositary receipts in New York.
+
+216
+00:15:49,998 --> 00:15:51,844
+Tirole gives the reason that works.
+
+217
+00:15:51,844 --> 00:15:57,382
+Countries with strong investor protection limit managers' ability to squander investor money, and so have lower agency costs.
+
+218
+00:15:57,382 --> 00:16:02,921
+Cross-listing in a jurisdiction with strong protection lets a firm import that protection — and it eases financing.
+
+219
+00:16:02,921 --> 00:16:04,459
+Keep the word "agency cost".
+
+220
+00:16:04,459 --> 00:16:10,613
+In Act Four it will have a symbol, and our founder's whole problem will be that hers is too large.
+
+221
+00:16:15,653 --> 00:16:18,422
+Now the benchmark — the theorem from the opening.
+
+222
+00:16:18,422 --> 00:16:23,961
+In nineteen fifty-eight, Franco Modigliani and Merton Miller published a result that Tirole calls "striking and somewhat counterintuitive".
+
+223
+00:16:23,961 --> 00:16:32,576
+Under some conditions, the total value of a firm — the value of all the claims on its income together — is independent of how it is financed.
+
+224
+00:16:32,576 --> 00:16:40,268
+How much debt, how much equity, what collateral, who is senior to whom, how much is paid in dividends: none of it changes total value.
+
+225
+00:16:40,268 --> 00:16:42,422
+It only changes who gets which slice.
+
+226
+00:16:42,422 --> 00:16:43,961
+Tirole's image is a pie.
+
+227
+00:16:43,961 --> 00:16:48,884
+Here it is, cut into a thin slice of debt and a large slice of equity.
+
+228
+00:16:48,884 --> 00:16:53,191
+Now cut it again: a large slice of debt, a thin slice of equity.
+
+229
+00:16:53,191 --> 00:16:53,807
+Same pie.
+
+230
+00:16:53,807 --> 00:16:58,730
+In his words, "the size of the pie is unaffected by the way it is carved".
+
+231
+00:16:58,730 --> 00:17:01,191
+The conditions matter, so let us list them.
+
+232
+00:17:01,191 --> 00:17:01,807
+Complete markets.
+
+233
+00:17:01,807 --> 00:17:02,730
+No transaction costs.
+
+234
+00:17:02,730 --> 00:17:03,345
+No taxes.
+
+235
+00:17:03,345 --> 00:17:04,268
+No bankruptcy costs.
+
+236
+00:17:04,268 --> 00:17:12,268
+And — this is the one that is easy to miss, and Tirole spells it out a page later — the firm's decisions are themselves contractible.
+
+237
+00:17:12,268 --> 00:17:16,268
+Nobody can change the size of the pie by changing what they do.
+
+238
+00:17:16,268 --> 00:17:19,960
+One assumption you might expect is not on the list: risk neutrality.
+
+239
+00:17:19,960 --> 00:17:31,037
+Tirole illustrates the result with risk-neutral investors because the algebra is shorter, but he notes that the proof goes through with risk aversion too, by valuing each state of the world at its own state price.
+
+240
+00:17:31,037 --> 00:17:33,807
+What drives the result is not attitudes to risk.
+
+241
+00:17:33,807 --> 00:17:39,653
+It is that every unit of income goes to somebody, and markets let investors undo any split they dislike.
+
+242
+00:17:39,653 --> 00:17:41,499
+He calls the theorem a detonator.
+
+243
+00:17:41,499 --> 00:17:44,576
+It was a benchmark whose assumptions "needed to be relaxed".
+
+244
+00:17:44,576 --> 00:17:48,268
+Everything you will study in this course is one of those relaxations.
+
+245
+00:17:48,268 --> 00:17:53,499
+So before relaxing anything, let us prove it — twice, the way Tirole does on page seventy-eight.
+
+246
+00:18:01,051 --> 00:18:04,128
+First proof: debt and equity add up to the firm.
+
+247
+00:18:04,128 --> 00:18:08,128
+Let R be the firm's random income at the end of the period.
+
+248
+00:18:08,128 --> 00:18:14,590
+Careful — in this beat R is total income; later it will mean something slightly different, and I will say so.
+
+249
+00:18:14,590 --> 00:18:17,359
+The firm owes its debtholders a face value D.
+
+250
+00:18:17,359 --> 00:18:20,744
+Investors are risk-neutral, so a claim is worth its expected payoff.
+
+251
+00:18:20,744 --> 00:18:25,974
+Tirole writes expectations with round brackets, E of something, to avoid confusion with the letter for equity.
+
+252
+00:18:25,974 --> 00:18:28,128
+Line one: what do the shareholders get?
+
+253
+00:18:28,128 --> 00:18:31,820
+If income exceeds D, they get what is left, R minus D.
+
+254
+00:18:31,820 --> 00:18:35,513
+If income falls short, limited liability protects them and they get zero.
+
+255
+00:18:35,513 --> 00:18:38,897
+So equity pays the maximum of zero and R minus D.
+
+256
+00:18:38,897 --> 00:18:41,051
+Line two: what do the debtholders get?
+
+257
+00:18:41,051 --> 00:18:44,128
+If income exceeds D, they are paid in full, D.
+
+258
+00:18:44,128 --> 00:18:46,590
+If not, they take everything there is, R.
+
+259
+00:18:46,590 --> 00:18:49,359
+So debt pays the minimum of R and D.
+
+260
+00:18:49,359 --> 00:18:51,513
+Line three: add them, case by case.
+
+261
+00:18:51,513 --> 00:18:53,359
+Suppose R is at least D.
+
+262
+00:18:53,359 --> 00:18:57,051
+Equity gets R minus D, debt gets D; the sum is R.
+
+263
+00:18:57,051 --> 00:18:59,205
+Line four: suppose R is below D.
+
+264
+00:18:59,205 --> 00:19:02,282
+Equity gets zero, debt gets R; the sum is R.
+
+265
+00:19:02,282 --> 00:19:10,282
+Line five: so, in every state of the world, the maximum of zero and R minus D, plus the minimum of R and D, equals R.
+
+266
+00:19:10,282 --> 00:19:13,974
+The face value has cancelled out of the sum, state by state.
+
+267
+00:19:13,974 --> 00:19:16,128
+Line six: take expectations of both sides.
+
+268
+00:19:16,128 --> 00:19:20,744
+The value of equity plus the value of debt equals the expected value of R.
+
+269
+00:19:20,744 --> 00:19:24,128
+Line seven: and the right-hand side has no D in it.
+
+270
+00:19:24,128 --> 00:19:27,205
+Total value is independent of the face value of debt.
+
+271
+00:19:27,205 --> 00:19:30,282
+Choose any leverage you like; the pie does not change.
+
+272
+00:19:30,282 --> 00:19:38,282
+Tirole draws the conclusion immediately: since the split does not matter, the firm may as well issue a single claim — a hundred per cent equity.
+
+273
+00:19:38,282 --> 00:19:41,051
+An all-equity firm is as good as any other.
+
+274
+00:19:41,051 --> 00:19:42,282
+Try it with numbers.
+
+275
+00:19:42,282 --> 00:19:49,051
+A firm's income is zero or two hundred, each with probability one half, so the expected value of R is one hundred.
+
+276
+00:19:49,051 --> 00:19:51,513
+Set the face value of debt at eighty.
+
+277
+00:19:51,513 --> 00:19:53,667
+Debt pays zero or eighty: worth forty.
+
+278
+00:19:53,667 --> 00:19:56,744
+Equity pays zero or one hundred and twenty: worth sixty.
+
+279
+00:19:56,744 --> 00:19:58,282
+Forty plus sixty, one hundred.
+
+280
+00:19:58,282 --> 00:20:01,359
+Now raise the face value to one hundred and fifty.
+
+281
+00:20:01,359 --> 00:20:04,436
+Debt pays zero or one hundred and fifty: worth seventy-five.
+
+282
+00:20:04,436 --> 00:20:06,590
+Equity pays zero or fifty: worth twenty-five.
+
+283
+00:20:06,590 --> 00:20:08,436
+Seventy-five plus twenty-five: one hundred again.
+
+284
+00:20:08,436 --> 00:20:10,590
+The slices moved; the pie did not.
+
+285
+00:20:10,590 --> 00:20:12,128
+Notice what did the work.
+
+286
+00:20:12,128 --> 00:20:14,590
+Not an economic argument — an accounting identity.
+
+287
+00:20:14,590 --> 00:20:17,667
+Whatever income there is, all of it goes to somebody.
+
+288
+00:20:17,667 --> 00:20:25,051
+That is only interesting because, in the real world, it is false: some of the income goes to nobody, because it is never produced.
+
+289
+00:20:40,116 --> 00:20:42,270
+Second proof: dividends do not matter either.
+
+290
+00:20:42,270 --> 00:20:48,424
+This one is longer, so we go line by line, and I will number the lines we come back to.
+
+291
+00:20:48,424 --> 00:20:52,116
+Time runs in periods: t equals zero, one, two, and so on.
+
+292
+00:20:52,116 --> 00:21:05,347
+In period t the firm earns revenue R sub t, invests I sub t, has n sub t shares outstanding, pays a dividend of d sub t per share, and its shares trade at price P sub t, measured just after the dividend.
+
+293
+00:21:05,347 --> 00:21:07,808
+Investors discount the future by a factor beta.
+
+294
+00:21:07,808 --> 00:21:09,347
+Line one, the arbitrage condition.
+
+295
+00:21:09,347 --> 00:21:12,116
+Buying a share at t costs P sub t.
+
+296
+00:21:12,116 --> 00:21:15,193
+Holding it pays next period's dividend plus next period's price.
+
+297
+00:21:15,193 --> 00:21:20,116
+If those were not equal in discounted expectation, investors would buy or sell until they were.
+
+298
+00:21:20,116 --> 00:21:26,885
+So P sub t equals beta times the expected value of d sub t plus one, plus P sub t plus one.
+
+299
+00:21:26,885 --> 00:21:28,116
+Call this equation one.
+
+300
+00:21:28,116 --> 00:21:29,962
+Line two, the firm's cash identity.
+
+301
+00:21:29,962 --> 00:21:31,808
+Money in must equal money out.
+
+302
+00:21:31,808 --> 00:21:41,962
+In: revenue R sub t, plus whatever new shares raise — the price P sub t times the change in the number of shares, n sub t minus n sub t minus one.
+
+303
+00:21:41,962 --> 00:21:48,731
+Out: dividends on the shares that were outstanding, n sub t minus one times d sub t, plus investment I sub t.
+
+304
+00:21:48,731 --> 00:21:49,962
+Call this equation two.
+
+305
+00:21:49,962 --> 00:21:57,962
+Line three: define the value of the firm, V sub t, as the number of shares times the price, n sub t times P sub t.
+
+306
+00:21:57,962 --> 00:22:00,731
+Line four: multiply equation one by n sub t.
+
+307
+00:22:00,731 --> 00:22:09,655
+Then V sub t equals beta times the expectation of n sub t times d sub t plus one, plus n sub t times P sub t plus one.
+
+308
+00:22:09,655 --> 00:22:11,808
+Line five: now the step that matters.
+
+309
+00:22:11,808 --> 00:22:19,501
+Write equation two one period ahead, at t plus one, and solve it for total dividends, n sub t times d sub t plus one.
+
+310
+00:22:19,501 --> 00:22:26,270
+That equals revenue R sub t plus one, plus new shares issued times their price, minus investment I sub t plus one.
+
+311
+00:22:26,270 --> 00:22:28,116
+Line six: substitute into line four.
+
+312
+00:22:28,116 --> 00:22:40,424
+The new-share term and n sub t times P sub t plus one combine: together they are exactly n sub t plus one times P sub t plus one — which is next period's value, V sub t plus one.
+
+313
+00:22:40,424 --> 00:22:49,347
+Line seven: so V sub t equals beta times the expectation of R sub t plus one, minus I sub t plus one, plus V sub t plus one.
+
+314
+00:22:49,347 --> 00:22:56,116
+Line eight: repeat the substitution for V sub t plus one, then V sub t plus two, and so on, by induction.
+
+315
+00:22:56,116 --> 00:23:01,039
+V sub t is the expected discounted sum, over all future periods, of revenue minus investment.
+
+316
+00:23:01,039 --> 00:23:05,039
+Look at what survived: revenue and investment, the real side of the firm.
+
+317
+00:23:05,039 --> 00:23:08,424
+Look at what disappeared: the dividend, and the number of shares.
+
+318
+00:23:08,424 --> 00:23:16,424
+Pay out more today and you must issue shares to fund the same investment; the new shareholders' claim exactly offsets the cash the old ones received.
+
+319
+00:23:16,424 --> 00:23:20,732
+Value depends only on investment policy and net income — Tirole's words, "real characteristics".
+
+320
+00:23:20,732 --> 00:23:25,347
+Which, again, assumes that the investment policy does not change when the payout policy does.
+
+321
+00:23:40,383 --> 00:23:42,844
+Two proofs, one message: financial structure is irrelevant.
+
+322
+00:23:42,844 --> 00:23:46,844
+Now let us do the obvious thing and apply it to our founder.
+
+323
+00:23:46,844 --> 00:23:48,383
+The project needs one hundred.
+
+324
+00:23:48,383 --> 00:23:50,229
+Expected return, one hundred and twenty-eight.
+
+325
+00:23:50,229 --> 00:23:51,767
+Net present value, plus twenty-eight.
+
+326
+00:23:51,767 --> 00:24:01,306
+In the Modigliani–Miller world, the financing question has one answer: offer investors any claim worth ninety in expectation — debt, equity, it does not matter which — and keep the rest.
+
+327
+00:24:01,306 --> 00:24:03,152
+Investors break even, she keeps twenty-eight.
+
+328
+00:24:03,152 --> 00:24:03,459
+Funded.
+
+329
+00:24:03,459 --> 00:24:04,998
+But she was not funded.
+
+330
+00:24:04,998 --> 00:24:08,383
+Let us write the conclusion in red and cross it out.
+
+331
+00:24:08,383 --> 00:24:12,690
+This is our wrong first attempt, and it is wrong in an instructive way.
+
+332
+00:24:12,690 --> 00:24:14,536
+Nothing in either proof was mistaken.
+
+333
+00:24:14,536 --> 00:24:17,613
+The mistake is in a premise we used without noticing.
+
+334
+00:24:17,613 --> 00:24:22,229
+Tirole names it in one sentence, and it is the key sentence of the chapter.
+
+335
+00:24:22,229 --> 00:24:33,305
+Whenever managerial decisions cannot be perfectly specified contractually, the incentives given to those who pick those decisions affect the firm's income — the size of the pie — and therefore the split of the pie matters.
+
+336
+00:24:33,305 --> 00:24:35,152
+Look back at the value-additivity proof.
+
+337
+00:24:35,152 --> 00:24:40,382
+It treated R as given — something that happens to the firm, the same whatever the split.
+
+338
+00:24:40,382 --> 00:24:52,075
+But if the founder's effort decides whether R is one hundred and sixty or zero, and her effort depends on how much of R she keeps, then the size of the pie depends on how it is carved.
+
+339
+00:24:52,075 --> 00:24:57,305
+Tirole lists what outsiders can do about it, and each item is a chapter of this course.
+
+340
+00:24:57,305 --> 00:25:02,536
+They can write covenants — but covenants can only be based on public, and therefore coarse, information.
+
+341
+00:25:02,536 --> 00:25:10,536
+They can give the insider high-powered incentives — a large slice — but that is costly, because the slice is no longer available to pay investors.
+
+342
+00:25:10,536 --> 00:25:20,998
+Or they can delegate monitoring to a large claimholder, a bank or a big shareholder — but monitoring is partly a public good, so it is undersupplied unless someone holds a large enough stake.
+
+343
+00:25:20,998 --> 00:25:25,613
+Covenants, incentives, monitoring: none is free, so the split of the pie always costs something.
+
+344
+00:25:25,613 --> 00:25:28,690
+That is the whole difference between Modigliani–Miller and corporate finance.
+
+345
+00:25:28,690 --> 00:25:32,998
+Before we compute it, let us see whether the data agree that financing matters.
+
+346
+00:25:32,998 --> 00:25:36,998
+If the theorem were right, firms would finance themselves in no particular way.
+
+347
+00:25:36,998 --> 00:25:37,921
+They do not.
+
+348
+00:25:47,982 --> 00:25:49,212
+Act Three: the facts.
+
+349
+00:25:49,212 --> 00:25:55,366
+If financing were irrelevant, there would be no reason for firms in every country to finance themselves the same way.
+
+350
+00:25:55,366 --> 00:25:57,520
+Here is how they actually do it.
+
+351
+00:25:57,520 --> 00:26:00,905
+This is Table two point two in Tirole, from Colin Mayer.
+
+352
+00:26:00,905 --> 00:26:06,443
+The average financing of non-financial firms, as a percentage of all sources, from nineteen seventy to nineteen eighty-five.
+
+353
+00:26:06,443 --> 00:26:08,597
+We take five countries and four rows.
+
+354
+00:26:08,597 --> 00:26:12,289
+Row one: retentions — profits the firm kept instead of paying out.
+
+355
+00:26:12,289 --> 00:26:13,828
+United States, sixty-seven per cent.
+
+356
+00:26:13,828 --> 00:26:14,751
+United Kingdom, seventy-two.
+
+357
+00:26:14,751 --> 00:26:15,366
+Germany, fifty-five.
+
+358
+00:26:15,366 --> 00:26:15,982
+France, forty-four.
+
+359
+00:26:15,982 --> 00:26:16,597
+Japan, thirty-four.
+
+360
+00:26:16,597 --> 00:26:17,520
+Row two: loans.
+
+361
+00:26:17,520 --> 00:26:22,135
+United States twenty-three, United Kingdom twenty-one, Germany twenty-one, France forty-one and a half, Japan forty-one.
+
+362
+00:26:22,135 --> 00:26:23,059
+Row three: bonds.
+
+363
+00:26:23,059 --> 00:26:29,212
+Under ten per cent everywhere — nearly ten in the United States, under one per cent in Britain and Germany.
+
+364
+00:26:29,212 --> 00:26:30,443
+Row four: new shares.
+
+365
+00:26:30,443 --> 00:26:32,905
+Under one per cent in the United States.
+
+366
+00:26:32,905 --> 00:26:33,828
+Two in Germany.
+
+367
+00:26:33,828 --> 00:26:34,751
+Five in Britain.
+
+368
+00:26:34,751 --> 00:26:36,597
+Three and a half in Japan.
+
+369
+00:26:36,597 --> 00:26:39,674
+The largest of the five is France, at under eleven.
+
+370
+00:26:39,674 --> 00:26:43,059
+Tirole draws three conclusions, and the table makes each one visible.
+
+371
+00:26:43,059 --> 00:26:47,366
+One: in all countries, internal financing — retained earnings — is the dominant source.
+
+372
+00:26:47,366 --> 00:26:53,520
+Two: bank loans provide the bulk of external financing, well ahead of new equity, which is a small fraction everywhere.
+
+373
+00:26:53,520 --> 00:26:56,905
+Three: bond markets play a minor role, except in North America.
+
+374
+00:26:56,905 --> 00:26:59,674
+The countries differ in the middle of the table.
+
+375
+00:26:59,674 --> 00:27:05,520
+In France and Japan, loans are about forty-one per cent of all financing — nearly as much as retentions.
+
+376
+00:27:05,520 --> 00:27:08,597
+In Britain and the United States they are about twenty-two.
+
+377
+00:27:08,597 --> 00:27:13,212
+But in every column, the top row beats the bottom row, by a wide margin.
+
+378
+00:27:13,212 --> 00:27:21,212
+Notice the order: money the firm already has first, then a bank that can watch it closely, then — rarely — strangers on a stock exchange.
+
+379
+00:27:21,212 --> 00:27:26,135
+It is the order of increasing distance between the insiders and the people supplying the money.
+
+380
+00:27:26,135 --> 00:27:31,982
+A theory in which financing does not matter has nothing to say about why it should be that order.
+
+381
+00:27:44,515 --> 00:27:49,745
+The share row is even smaller than it looks, because those are gross figures in some countries.
+
+382
+00:27:49,745 --> 00:27:53,130
+Look at what the United States actually did in the mid-nineteen-eighties.
+
+383
+00:27:53,130 --> 00:27:56,822
+Rajan and Zingales studied American firms from nineteen eighty-four to nineteen eighty-six.
+
+384
+00:27:56,822 --> 00:28:00,207
+New share issues amounted to sixty-five per cent of external financing.
+
+385
+00:28:00,207 --> 00:28:01,130
+That sounds large.
+
+386
+00:28:01,130 --> 00:28:04,822
+But share buybacks and other equity reductions amounted to sixty-eight per cent.
+
+387
+00:28:04,822 --> 00:28:06,053
+Sixty-five in, sixty-eight out.
+
+388
+00:28:06,053 --> 00:28:07,592
+Net equity issuance was negative.
+
+389
+00:28:07,592 --> 00:28:10,361
+In Tirole's words, basically all external financing was debt.
+
+390
+00:28:10,361 --> 00:28:18,976
+And external financing itself was small: net external financing was fourteen per cent of the sum of operating cash flow and net external financing over those three years.
+
+391
+00:28:18,976 --> 00:28:22,053
+Most investment was paid for with the firm's own cash.
+
+392
+00:28:22,053 --> 00:28:24,207
+More recent data tell the same story.
+
+393
+00:28:24,207 --> 00:28:30,976
+Here, as bars: the share of gross fixed-capital formation raised through new equity in nineteen ninety-nine, counting both first-time and later issues.
+
+394
+00:28:30,976 --> 00:28:32,515
+United States, twelve per cent.
+
+395
+00:28:32,515 --> 00:28:33,438
+United Kingdom, nine.
+
+396
+00:28:33,438 --> 00:28:34,053
+France, nine.
+
+397
+00:28:34,053 --> 00:28:34,669
+Japan, eight.
+
+398
+00:28:34,669 --> 00:28:35,284
+Germany, six.
+
+399
+00:28:35,284 --> 00:28:38,053
+Tirole adds a caution I want to pass on.
+
+400
+00:28:38,053 --> 00:28:39,899
+Do not over-read the word "internal".
+
+401
+00:28:39,899 --> 00:28:46,361
+Retained earnings are cash that shareholders agree to leave in the firm; new shares are cash shareholders hand to the firm.
+
+402
+00:28:46,361 --> 00:28:48,207
+Either way, it is shareholders' money.
+
+403
+00:28:48,207 --> 00:28:51,284
+The real puzzle is not where the money comes from.
+
+404
+00:28:51,284 --> 00:28:59,284
+It is why handing over money one way — leaving profits in — is so much easier than the other way — buying newly issued shares.
+
+405
+00:28:59,284 --> 00:29:02,053
+We will answer it in Classes eleven and twelve.
+
+406
+00:29:02,053 --> 00:29:05,746
+For now, register it as a fact a theory has to match.
+
+407
+00:29:13,248 --> 00:29:15,094
+Next fact: how much firms borrow.
+
+408
+00:29:15,094 --> 00:29:20,325
+Table two point four, from White, on a very large sample of American firms in nineteen eighty-five.
+
+409
+00:29:20,325 --> 00:29:25,555
+Two columns: equity as a share of debt plus equity, and the ratio of debt to equity.
+
+410
+00:29:25,555 --> 00:29:32,017
+All industries: equity is thirty-two per cent of the total, so debt is about twice equity — two point one one.
+
+411
+00:29:32,017 --> 00:29:35,709
+Tirole's summary: a typical debt–equity ratio in this sample lies around two.
+
+412
+00:29:35,709 --> 00:29:38,478
+Manufacturing: equity forty-five per cent, debt-to-equity one point two.
+
+413
+00:29:38,478 --> 00:29:40,940
+Wholesale and retail trade: two point four nine.
+
+414
+00:29:40,940 --> 00:29:42,478
+Services: two point two five.
+
+415
+00:29:42,478 --> 00:29:45,863
+And then commercial banks: equity eight per cent of the total.
+
+416
+00:29:45,863 --> 00:29:47,402
+Debt is eleven times equity.
+
+417
+00:29:47,402 --> 00:29:49,863
+Other studies Tirole cites fill in the extremes.
+
+418
+00:29:49,863 --> 00:29:59,709
+Telephone, gas and electricity companies — regulated, with very stable revenue — had long-term debt of over half of debt plus market equity, against twenty-nine per cent for the average American firm.
+
+419
+00:29:59,709 --> 00:30:03,094
+Some leveraged buyouts run debt at ten or twenty times equity.
+
+420
+00:30:03,094 --> 00:30:12,017
+And despite all this variation across firms, the aggregate market-based ratio in the United States has been remarkably stable, at around zero point three two, for half a century.
+
+421
+00:30:12,017 --> 00:30:14,478
+Who borrows a lot, and who does not?
+
+422
+00:30:14,478 --> 00:30:15,709
+Tirole lists the pattern.
+
+423
+00:30:15,709 --> 00:30:21,863
+Firms with safe, steady cash flows and assets that could be resold — buildings, aircraft, inventory — carry high debt.
+
+424
+00:30:21,863 --> 00:30:28,632
+Risky firms, firms with little cash flow, and firms whose value is intangible — research, brands, growth options — carry low debt.
+
+425
+00:30:28,632 --> 00:30:31,402
+Read that list again with our founder in mind.
+
+426
+00:30:31,402 --> 00:30:40,325
+What makes debt easy is something an outsider can count on without trusting the insider: cash that arrives regardless of effort, an asset that can be seized and sold.
+
+427
+00:30:40,325 --> 00:30:44,632
+What makes debt hard is value that depends on what the insider does next.
+
+428
+00:30:44,632 --> 00:30:48,325
+That is the shape of the answer we are about to derive.
+
+429
+00:30:58,381 --> 00:31:02,688
+The aggregate picture hides a second pattern: countries differ in who supplies the debt.
+
+430
+00:31:02,688 --> 00:31:09,150
+Table two point five in Tirole compares the liabilities of non-financial firms in two thousand and two, from the national accounts.
+
+431
+00:31:09,150 --> 00:31:10,381
+Six countries, three rows.
+
+432
+00:31:10,381 --> 00:31:13,150
+Row one: securities other than stocks — essentially bonds.
+
+433
+00:31:13,150 --> 00:31:15,919
+United States, fifteen point six per cent of liabilities.
+
+434
+00:31:15,919 --> 00:31:17,458
+United Kingdom, ten point six.
+
+435
+00:31:17,458 --> 00:31:18,073
+Japan, eight.
+
+436
+00:31:18,073 --> 00:31:18,688
+France, seven.
+
+437
+00:31:18,688 --> 00:31:20,535
+Germany and Italy, two point three.
+
+438
+00:31:20,535 --> 00:31:22,996
+Row two: credit — loans, mostly from banks.
+
+439
+00:31:22,996 --> 00:31:24,535
+United States, ten per cent.
+
+440
+00:31:24,535 --> 00:31:25,150
+Germany, forty-three.
+
+441
+00:31:25,150 --> 00:31:26,688
+Japan, thirty-nine and a half.
+
+442
+00:31:26,688 --> 00:31:27,304
+Italy, thirty-two.
+
+443
+00:31:27,304 --> 00:31:28,227
+United Kingdom, thirty-one.
+
+444
+00:31:28,227 --> 00:31:28,842
+France, twenty-four.
+
+445
+00:31:28,842 --> 00:31:34,381
+Row three: stocks, at market value, between twenty-eight per cent in Japan and fifty-three in Britain and France.
+
+446
+00:31:34,381 --> 00:31:38,381
+So American firms borrow from markets; German and Japanese firms borrow from banks.
+
+447
+00:31:38,381 --> 00:31:41,150
+The textbook names are market-based and bank-based financial systems.
+
+448
+00:31:41,150 --> 00:31:49,150
+Brazil, with large public and private banks and a development bank, BNDES, supplying long-term credit, has historically looked more like the second column than the first.
+
+449
+00:31:49,150 --> 00:31:51,612
+Why would that matter, if debt is debt?
+
+450
+00:31:51,612 --> 00:31:54,996
+Because a bank and a bondholder watch the firm very differently.
+
+451
+00:31:54,996 --> 00:31:58,996
+A bank can monitor actively, renegotiate, and learn about the borrower over time.
+
+452
+00:31:58,996 --> 00:32:02,073
+A dispersed bondholder can only read the price and leave.
+
+453
+00:32:02,073 --> 00:32:09,458
+Which of the two a firm faces changes what the insiders can get away with — the active and speculative monitoring we just met.
+
+454
+00:32:09,458 --> 00:32:10,689
+That is Class thirteen.
+
+455
+00:32:18,247 --> 00:32:20,093
+Last fact, and the most surprising.
+
+456
+00:32:20,093 --> 00:32:25,324
+What happens to a firm's share price on the day it announces how it will raise money?
+
+457
+00:32:25,324 --> 00:32:29,324
+Table two point six, from Eckbo and Masulis, summarising studies of American firms.
+
+458
+00:32:29,324 --> 00:32:36,093
+The average two-day abnormal return when the announcement is made — the price move beyond what the market as a whole did.
+
+459
+00:32:36,093 --> 00:32:42,247
+An industrial firm announces a new issue of common stock, underwritten: its share price falls three point one per cent.
+
+460
+00:32:42,247 --> 00:32:43,478
+Convertible bonds: minus two.
+
+461
+00:32:43,478 --> 00:32:47,785
+Straight bonds: minus zero point three, and that is not statistically different from zero.
+
+462
+00:32:47,785 --> 00:32:53,324
+So the market reads a share issue as bad news, and a bond issue as roughly no news.
+
+463
+00:32:53,324 --> 00:32:58,862
+And Tirole adds the other side: when a firm announces a bank loan agreement, its share price rises.
+
+464
+00:32:58,862 --> 00:33:01,016
+Under Modigliani and Miller this is inexplicable.
+
+465
+00:33:01,016 --> 00:33:07,785
+If the split does not change the pie, then announcing how you will split it cannot move the value of the pie.
+
+466
+00:33:07,785 --> 00:33:14,247
+Yet the average firm loses three per cent of its market value on an announcement that the theorem says is irrelevant.
+
+467
+00:33:14,247 --> 00:33:22,247
+The explanation — that issuing shares tells the market the insiders think the shares are overpriced — is asymmetric information, the first of Tirole's three asymmetries.
+
+468
+00:33:22,247 --> 00:33:24,093
+It is Classes eleven and twelve.
+
+469
+00:33:24,093 --> 00:33:27,785
+Today it is a fact, and a fact the benchmark cannot explain.
+
+470
+00:33:35,314 --> 00:33:42,391
+One more family of facts, and Tirole calls it one of the best documented in corporate finance: financing moves with the business cycle.
+
+471
+00:33:42,391 --> 00:33:44,544
+Six items, in a list that builds.
+
+472
+00:33:44,544 --> 00:33:46,083
+One: bank finance is countercyclical.
+
+473
+00:33:46,083 --> 00:33:49,468
+Firms that issue bonds in booms turn to banks in recessions.
+
+474
+00:33:49,468 --> 00:33:55,621
+Two: firms with strong balance sheets extend more trade credit to weaker firms, and issue more commercial paper, in recessions.
+
+475
+00:33:55,621 --> 00:34:00,852
+Three: small and medium-sized firms, which depend on banks, are hit harder by downturns than large ones.
+
+476
+00:34:00,852 --> 00:34:05,160
+Four: equity issues are more frequent in upswings, both absolutely and relative to debt.
+
+477
+00:34:05,160 --> 00:34:12,237
+Five: the negative price reaction to a share issue — the minus three per cent we just saw — is smaller in expansions.
+
+478
+00:34:12,237 --> 00:34:18,083
+Six: firms issue shares after their own share price has risen, and buy them back after it has fallen.
+
+479
+00:34:18,083 --> 00:34:20,852
+That last one has a name: equity market timing.
+
+480
+00:34:20,852 --> 00:34:24,852
+Firms issue when shares are dear and buy back when they are cheap.
+
+481
+00:34:24,852 --> 00:34:32,852
+Tirole lists the candidate explanations without choosing: investment really is more productive in booms; adverse selection is milder when times are good; bubbles; or irrational markets.
+
+482
+00:34:32,852 --> 00:34:34,698
+For today, one observation is enough.
+
+483
+00:34:34,698 --> 00:34:38,391
+If financing were irrelevant, firms would have no reason to time it.
+
+484
+00:34:38,391 --> 00:34:39,621
+They time it constantly.
+
+485
+00:34:39,621 --> 00:34:49,468
+And items two and three — the strong lending to the weak, the small hit harder — are the seeds of the macroeconomic story in the last two classes of the course.
+
+486
+00:34:59,514 --> 00:35:04,744
+Let us collect the facts, and next to each, the part of this course that explains it.
+
+487
+00:35:04,744 --> 00:35:11,206
+Firms rely on retained earnings and bank loans, and rarely issue shares: agency costs and borrowing capacity, Classes six to eight.
+
+488
+00:35:11,206 --> 00:35:15,514
+Leverage tracks safe cash flow and resaleable assets: collateral and pledgeable income, Class seven.
+
+489
+00:35:15,514 --> 00:35:23,206
+Share issues lower the share price, bank loans raise it: asymmetric information, Classes eleven and twelve; and monitoring by banks and large investors, Class thirteen.
+
+490
+00:35:23,206 --> 00:35:28,129
+Some countries borrow from banks and others from markets: active versus speculative monitoring, Class thirteen again.
+
+491
+00:35:28,129 --> 00:35:35,513
+Financing follows the business cycle, and the small are hit hardest: liquidity, Classes nine and ten, and the macroeconomic implications, Classes fifteen and sixteen.
+
+492
+00:35:35,513 --> 00:35:45,975
+Tirole closes the chapter by naming what all of this points to: the key role of information and incentives in general, and of capital, liquidity, the value of collateral, and external monitoring more specifically.
+
+493
+00:35:45,975 --> 00:35:49,360
+Every one of those words is a lecture in this course.
+
+494
+00:35:49,360 --> 00:35:52,129
+And all of them start from the same place.
+
+495
+00:35:52,129 --> 00:35:55,206
+So let us go back to the founder, and compute.
+
+496
+00:35:57,714 --> 00:35:58,329
+Act Four.
+
+497
+00:35:58,329 --> 00:36:04,791
+This is the model Tirole calls the workhorse of his book: the fixed-investment model of credit rationing, from Holmström and Tirole.
+
+498
+00:36:04,791 --> 00:36:06,021
+Section three point two.
+
+499
+00:36:06,021 --> 00:36:07,252
+A word on notation.
+
+500
+00:36:07,252 --> 00:36:10,021
+From here on, R no longer means total revenue.
+
+501
+00:36:10,021 --> 00:36:13,098
+It means the income the project produces if it succeeds.
+
+502
+00:36:13,098 --> 00:36:16,791
+Here are the parameters, with our founder's numbers, in thousands of reais.
+
+503
+00:36:16,791 --> 00:36:18,637
+I, the investment, is one hundred.
+
+504
+00:36:18,637 --> 00:36:22,637
+A, her own assets — Tirole calls it net worth — is ten.
+
+505
+00:36:22,637 --> 00:36:24,791
+She must borrow I minus A, ninety.
+
+506
+00:36:24,791 --> 00:36:28,175
+If the project succeeds it yields R, one hundred and sixty.
+
+507
+00:36:28,175 --> 00:36:30,021
+If it fails it yields zero.
+
+508
+00:36:30,021 --> 00:36:31,252
+Now the moral hazard.
+
+509
+00:36:31,252 --> 00:36:34,329
+After the money is raised, she chooses how to behave.
+
+510
+00:36:34,329 --> 00:36:41,406
+If she behaves — she works hard, she picks the careful option — the project succeeds with probability p H, eighty per cent.
+
+511
+00:36:41,406 --> 00:36:47,560
+If she misbehaves, it succeeds with probability p L, forty per cent; but she enjoys a private benefit B, twenty.
+
+512
+00:36:47,560 --> 00:36:53,098
+B is whatever she gains from shirking: an easier life, a pet project, a friend hired as supplier.
+
+513
+00:36:53,098 --> 00:36:54,637
+Investors cannot see her choice.
+
+514
+00:36:54,637 --> 00:36:58,637
+Delta p, the difference p H minus p L, is zero point four.
+
+515
+00:36:58,637 --> 00:37:01,099
+The timeline: first the loan agreement is signed.
+
+516
+00:37:01,099 --> 00:37:02,637
+Then the investment is made.
+
+517
+00:37:02,637 --> 00:37:05,099
+Then she chooses how to behave — unseen.
+
+518
+00:37:05,099 --> 00:37:08,175
+Then the outcome is realised and the money is shared.
+
+519
+00:37:08,175 --> 00:37:15,868
+Everyone is risk-neutral, the interest rate is zero, she has limited liability, and lenders are competitive: they accept any deal on which they break even.
+
+520
+00:37:15,868 --> 00:37:18,329
+Each assumption is there to remove a distraction.
+
+521
+00:37:18,329 --> 00:37:23,252
+Risk neutrality removes insurance motives, so the only reason to give her a slice is incentives.
+
+522
+00:37:23,252 --> 00:37:27,252
+A zero interest rate removes discounting, so every number is in today's reais.
+
+523
+00:37:27,252 --> 00:37:37,714
+Competition among lenders means that if the deal is financeable at all, she gets all the surplus — we are asking whether the pie can be baked, not how it is shared among lenders.
+
+524
+00:37:37,714 --> 00:37:39,560
+Two assumptions, checked with our numbers.
+
+525
+00:37:39,560 --> 00:37:46,945
+First, the project is good if she behaves: p H times R minus I is one hundred and twenty-eight minus one hundred, plus twenty-eight.
+
+526
+00:37:46,945 --> 00:37:55,868
+Second, it is bad if she misbehaves, even counting her private benefit: p L times R minus I plus B is sixty-four minus one hundred plus twenty, minus sixteen.
+
+527
+00:37:55,868 --> 00:37:57,714
+So investors want her to behave.
+
+528
+00:37:57,714 --> 00:38:00,176
+The question is whether they can make her.
+
+529
+00:38:10,178 --> 00:38:12,024
+The contract is a sharing rule.
+
+530
+00:38:12,024 --> 00:38:21,563
+If the project succeeds, she gets R b — b for borrower — and the lenders get R l, l for lenders, with R b plus R l equal to R.
+
+531
+00:38:21,563 --> 00:38:26,486
+If it fails, there is nothing, and limited liability means she cannot be made to pay.
+
+532
+00:38:26,486 --> 00:38:28,024
+Line one: the incentive constraint.
+
+533
+00:38:28,024 --> 00:38:31,717
+She behaves only if behaving pays at least as much as misbehaving.
+
+534
+00:38:31,717 --> 00:38:33,870
+Behaving gives p H times R b.
+
+535
+00:38:33,870 --> 00:38:37,563
+Misbehaving gives p L times R b, plus the private benefit B.
+
+536
+00:38:37,563 --> 00:38:42,793
+So p H times R b must be at least p L times R b plus B.
+
+537
+00:38:42,793 --> 00:38:44,947
+Line two: collect the R b terms.
+
+538
+00:38:44,947 --> 00:38:48,024
+Delta p times R b must be at least B.
+
+539
+00:38:48,024 --> 00:38:49,870
+Line three: divide by delta p.
+
+540
+00:38:49,870 --> 00:38:52,947
+R b must be at least B over delta p.
+
+541
+00:38:52,947 --> 00:38:54,793
+Twenty over zero point four: fifty.
+
+542
+00:38:54,793 --> 00:38:56,024
+Stop on that line.
+
+543
+00:38:56,024 --> 00:39:00,947
+To make her behave, she must keep at least fifty thousand reais of the success income.
+
+544
+00:39:00,947 --> 00:39:07,409
+Not because she is greedy — because if her slice is any smaller, shirking pays her better, and everyone knows it.
+
+545
+00:39:07,409 --> 00:39:12,640
+Why can lenders not simply punish her on failure instead — a fine if the project fails?
+
+546
+00:39:12,640 --> 00:39:13,870
+Because of limited liability.
+
+547
+00:39:13,870 --> 00:39:18,794
+Failure leaves nothing, and she cannot be made to pay from wealth she has already invested.
+
+548
+00:39:18,794 --> 00:39:23,409
+The only lever is the reward on success, so the reward has to be large.
+
+549
+00:39:23,409 --> 00:39:29,563
+If she could be fined, a small slice would do; it is the floor at zero that makes incentives expensive.
+
+550
+00:39:29,563 --> 00:39:36,332
+Line four: so the most that can be promised to lenders if the project succeeds is R minus B over delta p.
+
+551
+00:39:36,332 --> 00:39:39,409
+One hundred and sixty minus fifty: one hundred and ten.
+
+552
+00:39:39,409 --> 00:39:43,717
+Line five: lenders are paid only on success, which happens with probability p H.
+
+553
+00:39:43,717 --> 00:39:48,640
+So the most they can expect is p H times R minus B over delta p.
+
+554
+00:39:48,640 --> 00:39:51,101
+Tirole calls this the pledgeable income, script P.
+
+555
+00:39:51,101 --> 00:39:53,870
+Zero point eight times one hundred and ten: eighty-eight.
+
+556
+00:39:53,870 --> 00:39:56,640
+Line six: compare the two numbers on the screen.
+
+557
+00:39:56,640 --> 00:40:00,640
+The project's expected income is p H times R, one hundred and twenty-eight.
+
+558
+00:40:00,640 --> 00:40:02,178
+The pledgeable income is eighty-eight.
+
+559
+00:40:02,178 --> 00:40:11,101
+The difference, forty, is p H times B over delta p: the part of the expected income that must stay with her for the project to work at all.
+
+560
+00:40:11,101 --> 00:40:12,947
+Tirole calls it the agency rent.
+
+561
+00:40:12,947 --> 00:40:14,794
+There is the founder's missing something.
+
+562
+00:40:14,794 --> 00:40:20,332
+Of one hundred and twenty-eight thousand reais of expected income, only eighty-eight can be promised to anyone else.
+
+563
+00:40:32,844 --> 00:40:34,382
+Now ask the lenders' question.
+
+564
+00:40:34,382 --> 00:40:36,228
+They put in I minus A.
+
+565
+00:40:36,228 --> 00:40:38,690
+They expect back at most the pledgeable income.
+
+566
+00:40:38,690 --> 00:40:40,844
+They lend only if it is enough.
+
+567
+00:40:40,844 --> 00:40:42,690
+Line one: the lenders' participation constraint.
+
+568
+00:40:42,690 --> 00:40:46,382
+Script P, the pledgeable income, must be at least I minus A.
+
+569
+00:40:46,382 --> 00:40:49,767
+Tirole labels it I R l: individual rationality for the lenders.
+
+570
+00:40:49,767 --> 00:40:51,613
+Line two: write script P out.
+
+571
+00:40:51,613 --> 00:40:56,536
+p H times, R minus B over delta p, must be at least I minus A.
+
+572
+00:40:56,536 --> 00:41:00,536
+Line three: move A to the left and everything else to the right.
+
+573
+00:41:00,536 --> 00:41:05,767
+A must be at least I minus p H R plus p H B over delta p.
+
+574
+00:41:05,767 --> 00:41:07,921
+Line four: rearrange into two recognisable pieces.
+
+575
+00:41:07,921 --> 00:41:16,228
+A must be at least p H B over delta p — the agency rent — minus, p H R minus I — the net present value.
+
+576
+00:41:16,228 --> 00:41:18,382
+Tirole calls the right-hand side A bar.
+
+577
+00:41:18,382 --> 00:41:20,536
+This is his equation three point three.
+
+578
+00:41:20,536 --> 00:41:21,767
+Line five: our numbers.
+
+579
+00:41:21,767 --> 00:41:23,305
+The agency rent is forty.
+
+580
+00:41:23,305 --> 00:41:25,152
+The net present value is twenty-eight.
+
+581
+00:41:25,152 --> 00:41:27,305
+A bar is forty minus twenty-eight: twelve.
+
+582
+00:41:27,305 --> 00:41:28,844
+Line six: she has ten.
+
+583
+00:41:28,844 --> 00:41:30,382
+Ten is less than twelve.
+
+584
+00:41:30,382 --> 00:41:31,613
+The lenders' constraint fails.
+
+585
+00:41:31,613 --> 00:41:32,844
+She is turned down.
+
+586
+00:41:32,844 --> 00:41:34,382
+Check it the other way.
+
+587
+00:41:34,382 --> 00:41:35,921
+She needs ninety from lenders.
+
+588
+00:41:35,921 --> 00:41:38,382
+The most they can be promised is eighty-eight.
+
+589
+00:41:38,382 --> 00:41:39,305
+Short by two.
+
+590
+00:41:39,305 --> 00:41:44,844
+And her own assets fall short of the threshold — ten against twelve — by the same two.
+
+591
+00:41:44,844 --> 00:41:46,690
+Two ways to see one gap.
+
+592
+00:41:46,690 --> 00:41:48,844
+Notice that A bar can be negative.
+
+593
+00:41:48,844 --> 00:41:58,075
+If the project created, say, fifty of value instead of twenty-eight, A bar would be forty minus fifty, minus ten, and a founder with nothing at all would be funded.
+
+594
+00:41:58,075 --> 00:42:06,690
+Tirole assumes A bar is positive precisely to study the interesting case: when the value the project creates is smaller than the rent its manager must be left.
+
+595
+00:42:06,690 --> 00:42:08,536
+Read the threshold as a sentence.
+
+596
+00:42:08,536 --> 00:42:13,152
+The founder must bring at least the agency rent, minus the value the project creates.
+
+597
+00:42:13,152 --> 00:42:18,690
+If the project creates more value than the rent she must keep, she needs nothing of her own.
+
+598
+00:42:18,690 --> 00:42:22,075
+If the rent is bigger, she must cover the difference herself.
+
+599
+00:42:22,075 --> 00:42:26,075
+As Tirole puts it, quoting conventional wisdom: one only lends to the rich.
+
+600
+00:42:43,842 --> 00:42:48,458
+To see that the threshold is the whole story, give the founder a richer sister.
+
+601
+00:42:48,458 --> 00:42:50,612
+Same project, same behaviour, same private benefit.
+
+602
+00:42:50,612 --> 00:42:53,996
+The sister has twenty thousand reais of her own, not ten.
+
+603
+00:42:53,996 --> 00:42:56,765
+Twenty is above twelve, so she should be funded.
+
+604
+00:42:56,765 --> 00:43:00,150
+Let us write her contract out and check that it works.
+
+605
+00:43:00,150 --> 00:43:03,842
+Line one: she borrows I minus A, one hundred minus twenty: eighty.
+
+606
+00:43:03,842 --> 00:43:05,689
+Line two: competitive lenders break even.
+
+607
+00:43:05,689 --> 00:43:09,073
+They are paid R l on success, with probability p H.
+
+608
+00:43:09,073 --> 00:43:11,535
+So p H times R l equals eighty.
+
+609
+00:43:11,535 --> 00:43:14,612
+R l is eighty over zero point eight: one hundred.
+
+610
+00:43:14,612 --> 00:43:17,073
+Line three: she keeps the rest on success.
+
+611
+00:43:17,073 --> 00:43:21,689
+R b equals R minus R l: one hundred and sixty minus one hundred, sixty.
+
+612
+00:43:21,689 --> 00:43:23,535
+Line four: check the incentive constraint.
+
+613
+00:43:23,535 --> 00:43:27,535
+She needs R b at least B over delta p, which is fifty.
+
+614
+00:43:27,535 --> 00:43:28,458
+She has sixty.
+
+615
+00:43:28,458 --> 00:43:30,919
+Sixty is at least fifty, so she behaves.
+
+616
+00:43:30,919 --> 00:43:32,150
+The contract is self-enforcing.
+
+617
+00:43:32,150 --> 00:43:33,381
+Line five: her payoff.
+
+618
+00:43:33,381 --> 00:43:37,073
+On success, with probability zero point eight, she gets sixty: expected forty-eight.
+
+619
+00:43:37,073 --> 00:43:39,227
+Subtract the twenty she put in: twenty-eight.
+
+620
+00:43:39,227 --> 00:43:40,765
+Exactly the net present value.
+
+621
+00:43:40,765 --> 00:43:44,765
+The lenders broke even, so all the value the project creates is hers.
+
+622
+00:43:44,765 --> 00:43:46,304
+Line six: the interest rate.
+
+623
+00:43:46,304 --> 00:43:50,304
+Tirole writes the lenders' success payment as one plus iota, times the loan.
+
+624
+00:43:50,304 --> 00:43:59,535
+One hundred equals one plus iota, times eighty, so one plus iota is one point two five: a nominal rate of twenty-five per cent, with the riskless rate at zero.
+
+625
+00:43:59,535 --> 00:44:02,612
+Line seven: and that is exactly one over p H.
+
+626
+00:44:02,612 --> 00:44:05,688
+One over zero point eight is one point two five.
+
+627
+00:44:05,688 --> 00:44:12,458
+The twenty-five per cent is pure default premium — compensation for the twenty per cent chance of failure — and nothing else.
+
+628
+00:44:12,458 --> 00:44:19,227
+Now notice what does not appear: the sister pays no penalty for being watched, and no extra interest for the moral hazard.
+
+629
+00:44:19,227 --> 00:44:23,227
+Once she is above the threshold, moral hazard costs her nothing at all.
+
+630
+00:44:23,227 --> 00:44:25,073
+Below it, it costs her everything.
+
+631
+00:44:25,073 --> 00:44:29,381
+The cost of the agency problem is not a smooth premium on the loan.
+
+632
+00:44:29,381 --> 00:44:30,611
+It is a cliff.
+
+633
+00:44:40,641 --> 00:44:42,487
+The cliff is at A bar.
+
+634
+00:44:42,487 --> 00:44:44,333
+So the question "who gets funded?"
+
+635
+00:44:44,333 --> 00:44:45,872
+becomes "what moves A bar?"
+
+636
+00:44:45,872 --> 00:44:49,872
+We can answer it line by line, by differentiating equation three point three.
+
+637
+00:44:49,872 --> 00:44:55,102
+Recall it: A bar equals p H B over delta p, minus, p H R minus I.
+
+638
+00:44:55,102 --> 00:44:56,641
+Line one: the private benefit.
+
+639
+00:44:56,641 --> 00:45:01,256
+The derivative of A bar with respect to B is p H over delta p.
+
+640
+00:45:01,256 --> 00:45:04,641
+With our numbers, zero point eight over zero point four: two.
+
+641
+00:45:04,641 --> 00:45:08,641
+Every extra thousand reais of private benefit raises the threshold by two thousand.
+
+642
+00:45:08,641 --> 00:45:11,718
+A firm where insiders can divert more needs richer owners.
+
+643
+00:45:11,718 --> 00:45:13,256
+Line two: the success income.
+
+644
+00:45:13,256 --> 00:45:17,564
+The derivative with respect to R is minus p H: minus zero point eight.
+
+645
+00:45:17,564 --> 00:45:24,025
+A more valuable project lowers the threshold — but by less than one for one, because only the success state pays.
+
+646
+00:45:24,025 --> 00:45:25,256
+Line three: the investment.
+
+647
+00:45:25,256 --> 00:45:28,025
+The derivative with respect to I is plus one.
+
+648
+00:45:28,025 --> 00:45:32,025
+Every extra real of investment must be found, real for real, by somebody.
+
+649
+00:45:32,025 --> 00:45:33,256
+Line four: the probabilities.
+
+650
+00:45:33,256 --> 00:45:42,795
+Divide the rent by p H, and it depends on delta p over p H — what Tirole calls the likelihood ratio: how much more likely success is when she behaves.
+
+651
+00:45:42,795 --> 00:45:48,948
+The larger that ratio, the more informative success is about her behaviour, the smaller the rent, the lower the threshold.
+
+652
+00:45:48,948 --> 00:45:50,795
+So, read across the four lines.
+
+653
+00:45:50,795 --> 00:46:00,333
+Funding is easier when insiders have more of their own money, when they can divert less, when the project is more valuable or cheaper, and when outcomes reveal more about behaviour.
+
+654
+00:46:00,333 --> 00:46:03,410
+Each of those is the subject of a later class.
+
+655
+00:46:03,410 --> 00:46:09,564
+Tirole's section on the determinants of borrowing capacity — Class seven — is this list, one item at a time.
+
+656
+00:46:17,106 --> 00:46:20,491
+Now draw what the founder gets, against how much she has.
+
+657
+00:46:20,491 --> 00:46:22,645
+On the horizontal axis, her assets A.
+
+658
+00:46:22,645 --> 00:46:28,799
+On the vertical axis, her utility U b — what she ends up with, net of what she put in.
+
+659
+00:46:28,799 --> 00:46:32,799
+Below the threshold A bar, she is not funded, and she gets zero.
+
+660
+00:46:32,799 --> 00:46:39,260
+At the threshold and above, she is funded, competitive lenders break even, and she collects the whole net present value: twenty-eight.
+
+661
+00:46:39,260 --> 00:46:40,799
+Tirole's equation three point six.
+
+662
+00:46:40,799 --> 00:46:46,029
+So the curve is flat at zero, and then jumps to twenty-eight at A bar equals twelve.
+
+663
+00:46:46,029 --> 00:46:48,799
+Here is our founder: a red dot at ten.
+
+664
+00:46:48,799 --> 00:46:51,260
+Two units to the left of the jump.
+
+665
+00:46:51,260 --> 00:46:55,260
+Her project is worth exactly as much as it would be at twelve.
+
+666
+00:46:55,260 --> 00:46:56,799
+She loses all of it.
+
+667
+00:46:56,799 --> 00:46:58,953
+And she is not the only loser.
+
+668
+00:46:58,953 --> 00:47:07,260
+The twenty-eight thousand reais was value for the economy, not just for her: the output that would have been produced, the jobs it would have paid for.
+
+669
+00:47:07,260 --> 00:47:10,029
+When the project is not funded, nobody gets it.
+
+670
+00:47:10,029 --> 00:47:17,106
+The investors are no worse off — they keep their ninety — but the economy is twenty-eight poorer than it could have been.
+
+671
+00:47:17,106 --> 00:47:24,799
+That is what economists mean by credit rationing being inefficient: a transaction that would make someone better off and nobody worse off does not happen.
+
+672
+00:47:24,799 --> 00:47:27,260
+Now play the comparative statics on the picture.
+
+673
+00:47:27,260 --> 00:47:31,876
+Give her more of her own wealth and the dot moves right, across the jump.
+
+674
+00:47:31,876 --> 00:47:35,568
+Raise B by one and the jump itself moves right by two.
+
+675
+00:47:35,568 --> 00:47:38,953
+Make success more informative about behaviour and the jump moves left.
+
+676
+00:47:38,953 --> 00:47:45,414
+Every policy that helps founders like her works through one of those two motions: move the dot, or move the cliff.
+
+677
+00:47:45,414 --> 00:47:47,260
+And here Brazil comes back in.
+
+678
+00:47:47,260 --> 00:47:52,491
+One natural reading of B is how much an insider can take from investors without being stopped.
+
+679
+00:47:52,491 --> 00:47:58,953
+Tirole notes that countries with strong investor protection limit managers' ability to squander investor money, and so have lower agency costs.
+
+680
+00:47:58,953 --> 00:48:06,030
+Courts, disclosure rules, a listing segment that gives minorities a vote, a cross-listing under a stricter regulator — each of these lowers B.
+
+681
+00:48:06,030 --> 00:48:10,953
+A lower B moves the jump to the left, and firms like our founder's get funded.
+
+682
+00:48:10,953 --> 00:48:15,568
+That is the precise sense in which institutions change how much finance an economy gets.
+
+683
+00:48:25,573 --> 00:48:28,957
+One last move, and it closes the loop with the opening.
+
+684
+00:48:28,957 --> 00:48:32,957
+Take the private benefit B and shrink it, all the way to zero.
+
+685
+00:48:32,957 --> 00:48:33,881
+Watch the threshold.
+
+686
+00:48:33,881 --> 00:48:37,265
+A bar equals the agency rent minus the net present value.
+
+687
+00:48:37,265 --> 00:48:42,496
+As B goes to zero, the agency rent, p H B over delta p, goes to zero.
+
+688
+00:48:42,496 --> 00:48:45,573
+A bar becomes minus the net present value: minus twenty-eight.
+
+689
+00:48:45,573 --> 00:48:48,342
+The jump has slid to the left of zero.
+
+690
+00:48:48,342 --> 00:48:51,419
+Every founder — even one with nothing — is funded.
+
+691
+00:48:51,419 --> 00:48:52,957
+Our red dot turns green.
+
+692
+00:48:52,957 --> 00:49:04,342
+With B equal to zero, there is nothing to gain from misbehaving, so behaviour does not need to be bought, so all the expected income is pledgeable, so any project with positive net present value finds money.
+
+693
+00:49:04,342 --> 00:49:07,419
+The split no longer affects the size of the pie.
+
+694
+00:49:07,419 --> 00:49:10,496
+That is Modigliani and Miller, recovered as a special case.
+
+695
+00:49:10,496 --> 00:49:14,496
+There is a subtler echo of Modigliani and Miller inside the model, too.
+
+696
+00:49:14,496 --> 00:49:27,727
+With only two outcomes, success and failure, it does not matter whether we call the lenders' claim debt or equity: a claim to one hundred and ten on success and zero on failure is both a loan and a share of the income.
+
+697
+00:49:27,727 --> 00:49:31,419
+Tirole makes exactly this point in section three point two point three.
+
+698
+00:49:31,419 --> 00:49:37,265
+The model does not tell us which security to issue — only how much can be promised in total.
+
+699
+00:49:37,265 --> 00:49:41,573
+Choosing between securities becomes interesting later, when outsiders have their own decisions to make.
+
+700
+00:49:41,573 --> 00:49:48,342
+So the two worlds of this video differ by exactly one thing: whether the insider's behaviour can be written into the contract.
+
+701
+00:49:48,342 --> 00:49:50,188
+When it can, financing is irrelevant.
+
+702
+00:49:50,188 --> 00:49:52,650
+When it cannot, financing is the whole problem.
+
+703
+00:50:05,173 --> 00:50:07,019
+Here is the picture to keep.
+
+704
+00:50:07,019 --> 00:50:10,096
+The step: zero, then a jump to twenty-eight at twelve.
+
+705
+00:50:10,096 --> 00:50:11,634
+Our founder, red, at ten.
+
+706
+00:50:11,634 --> 00:50:19,019
+Above it, her pie: a blue slice of fifty that she must keep, and a teal slice — all that investors can be promised.
+
+707
+00:50:19,019 --> 00:50:23,634
+Modigliani and Miller is the world where the step sits to the left of zero.
+
+708
+00:50:23,634 --> 00:50:26,403
+Corporate finance is the world where it does not.
+
+709
+00:50:26,403 --> 00:50:29,480
+The rest of the course moves pieces of this picture.
+
+710
+00:50:29,480 --> 00:50:32,250
+Valuation, in Classes two and three, prices the pie.
+
+711
+00:50:32,250 --> 00:50:36,250
+Classes four and five finish Modigliani and Miller, with taxes and default costs.
+
+712
+00:50:36,250 --> 00:50:41,480
+Classes six to eight extend the model you just derived — borrowing capacity, debt overhang, control rights.
+
+713
+00:50:41,480 --> 00:50:44,865
+Liquidity asks what happens when the pie needs more money midway.
+
+714
+00:50:44,865 --> 00:50:49,788
+Asymmetric information asks what happens when the lender does not know how big the pie is.
+
+715
+00:50:49,788 --> 00:50:52,250
+Activism and takeovers ask who watches the insider.
+
+716
+00:50:52,250 --> 00:50:58,096
+And the last classes ask what happens when every founder in an economy is near the jump at once.
+
+717
+00:50:58,096 --> 00:51:07,634
+For practice, Tirole's exercises three point one to three point three, on page one hundred and forty-four, use exactly this model, and their answers are in the back of the book.
+
+718
+00:51:07,634 --> 00:51:14,096
+Before you open them, try one thing yourself: redo our founder's numbers with a private benefit of fifteen instead of twenty.
+
+719
+00:51:14,096 --> 00:51:19,634
+Compute the minimum stake, the pledgeable income, and A bar — and decide whether she gets the money.
+
+720
+00:51:19,634 --> 00:51:20,558
+Ten against twelve.
+
+721
+00:51:20,558 --> 00:51:23,327
+Two thousand reais of something that is not money.
+
+722
+00:51:23,327 --> 00:51:24,558
+That is corporate finance.
