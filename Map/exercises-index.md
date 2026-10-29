@@ -9,6 +9,25 @@ date: 2026-10-09
 
 Lookup table for `/exercise-plan`. Pages are **printed** page numbers (PDF page = printed + 13), read from `Livros/Jean Tirole - The Theory of Corporate Finance-Princeton University Press (2005).md`. *Answer* = solution in Part VII "Answers to Selected Exercises" (printed pp. 571–624). Levels are a heuristic (Ch. 12–16 and continuous/dynamic/general-equilibrium variants = advanced; first three exercises of Ch. 3–6 = foundational; rest = exam).
 
+## Ricca syllabus crosswalk (2026-10-24)
+
+The *Topic(s)* tags predate the real syllabus (Prof. Ricca). Map them to its topics as below.
+Berk, DeMarzo & Harford and Grinblatt & Titman were indexed on 2026-10-24, together with Ross
+Cap. 20; Ross Cap. 18–19 and Higgins Ch. 2–3 working-capital rows were retagged from
+`Liquidity`/`—` to `Working capital & trade credit`.
+
+| Ricca topic | Tag(s) | Main sources |
+|---|---|---|
+| R1 Introduction, accounting revision, capital structure | Introduction & stylized facts | Berk Ch. 1–2; Ross Cap. 1–2, 15; Higgins Ch. 1–2 (untagged `—`), 4; G&T Ch. 1–3 |
+| R2 Valuation: FCF, discount rates, NPV | Valuation | Berk Ch. 3–13, 18; Ross Cap. 5–10, 12–14; Higgins Ch. 7–9; G&T Ch. 7, 9–12; Amaro de Matos Ch. 1 |
+| R3 Frictionless benchmark, taxes, distress, trade-off | MM benchmark | Berk Ch. 16–17; Ross Cap. 16–17; Higgins Ch. 6, 8; G&T Ch. 12–16; Amaro de Matos Ch. 2, 4 |
+| R4 Moral hazard, financing capacity, debt vs. equity | Agency & capital structure | Tirole Ch. 3–4, 7, 10; Berk 15.3, 16.24–28; G&T Ch. 16–18; Amaro de Matos Ch. 3, 5 |
+| R5 Asymmetric information and capital structure | Asymmetric information | Tirole Ch. 6–7; G&T Ch. 19; Berk 16.29, 17.14–18; Ross Cap. 15, 17; Amaro de Matos Ch. 3–4, 6, 8 |
+| R5b Trade credit and working capital | Working capital & trade credit | Berk Ch. 19–20; Ross Cap. 18–20; Higgins Ch. 2–3 |
+| R6 Liquidity and risk management | Liquidity | Tirole Ch. 5 (and 12, 15); G&T Ch. 21–23; Berk Ch. 20; Ross Cap. 19 (cash buffer rows); Higgins Ch. 5–6 |
+
+`Activism`, `M&A` and `Macro implications` rows are outside the Ricca syllabus.
+
 ## Tirole, *The Theory of Corporate Finance* (Princeton, 2005 printing)
 
 #book/tirole
@@ -262,35 +281,35 @@ Pages are **printed** page numbers (PDF page = printed + 21), read from `Livros/
 | 1.13 | Ch. 1 | 35 | Coca-Cola market vs. book value of equity | Valuation | foundational | yes | yes |
 | 1.14 | Ch. 1 | 36 | Whistler Corporation financial statements spreadsheet | — | exam | no | yes |
 | 2.1 | Ch. 2 | 71 | Vintage Apparel CEO pressured to boost ROE | — | foundational | yes | yes |
-| 2.2 | Ch. 2 | 71 | Higher price-to-earnings ratio: Alphabet or railroad? | Valuation | foundational | no | yes |
-| 2.3 | Ch. 2 | 71 | True or false: ROE and ratios | — | foundational | yes | yes |
+| 2.2 | Ch. 2 | 71 | Higher price-to-earnings ratio: Alphabet or railroad? | Valuation; Working capital & trade credit | foundational | no | yes |
+| 2.3 | Ch. 2 | 71 | True or false: ROE and ratios | Working capital & trade credit | foundational | yes | yes |
 | 2.4 | Ch. 2 | 72 | Acquisition of a promising technology company | Valuation | foundational | no | yes |
-| 2.5 | Ch. 2 | 72 | Amberjack Corporation selected financial data | — | exam | yes | yes |
+| 2.5 | Ch. 2 | 72 | Amberjack Corporation selected financial data | Working capital & trade credit | exam | yes | yes |
 | 2.6 | Ch. 2 | 73 | Division performance measured by return on investment | — | exam | no | yes |
 | 2.7 | Ch. 2 | 73 | Questions on table data, 30 percent tax | — | exam | yes | yes |
-| 2.8 | Ch. 2 | 73 | Ratio analysis of R&E Supplies, 2018-2021 | — | exam | no | yes |
-| 2.9 | Ch. 2 | 73 | Bartlett Pickle Company missing balance sheet | — | exam | yes | yes |
+| 2.8 | Ch. 2 | 73 | Ratio analysis of R&E Supplies, 2018-2021 | Working capital & trade credit | exam | no | yes |
+| 2.9 | Ch. 2 | 73 | Bartlett Pickle Company missing balance sheet | Working capital & trade credit | exam | yes | yes |
 | 2.10 | Ch. 2 | 74 | Natural Selection computer dating service, 2020 | — | exam | no | yes |
-| 2.11 | Ch. 2 | 74 | Complete the balance sheet from given information | — | exam | yes | yes |
-| 2.12 | Ch. 2 | 75 | Key ratios for six U.S. corporations | — | exam | no | yes |
-| 2.13 | Ch. 2 | 75 | Selected 2020 annual income statement data | — | exam | yes | yes |
-| 2.14 | Ch. 2 | 75 | Glacier Ski and Sports, seasonal industry | — | exam | no | yes |
-| 2.15 | Ch. 2 | 76 | Nike, Inc. spreadsheet, fiscal 2017-2020 | — | exam | Connect | yes |
+| 2.11 | Ch. 2 | 74 | Complete the balance sheet from given information | Working capital & trade credit | exam | yes | yes |
+| 2.12 | Ch. 2 | 75 | Key ratios for six U.S. corporations | Working capital & trade credit | exam | no | yes |
+| 2.13 | Ch. 2 | 75 | Selected 2020 annual income statement data | Working capital & trade credit | exam | yes | yes |
+| 2.14 | Ch. 2 | 75 | Glacier Ski and Sports, seasonal industry | Working capital & trade credit | exam | no | yes |
+| 2.15 | Ch. 2 | 76 | Nike, Inc. spreadsheet, fiscal 2017-2020 | Working capital & trade credit | exam | Connect | yes |
 | 2.16 | Ch. 2 | 76 | Boeing Company financial statements questions | — | exam | no | yes |
 | 3.1 | Ch. 3 | 103 | Negative external financing required: interpretation | — | foundational | yes | yes |
 | 3.2 | Ch. 3 | 103 | Pro forma statements as predictions | — | foundational | no | yes |
 | 3.3 | Ch. 3 | 103 | Pro forma balance sheet vs. cash budget | — | foundational | yes | yes |
-| 3.4 | Ch. 3 | 103 | True or false: forecasting | — | foundational | no | yes |
+| 3.4 | Ch. 3 | 103 | True or false: forecasting | Working capital & trade credit | foundational | no | yes |
 | 3.5 | Ch. 3 | 104 | Universal Products Co. pro forma statements 2022 | — | exam | yes | yes |
-| 3.6 | Ch. 3 | 104 | Sequoia Furniture Company sales and cash | — | exam | no | yes |
+| 3.6 | Ch. 3 | 104 | Sequoia Furniture Company sales and cash | Working capital & trade credit | exam | no | yes |
 | 3.7 | Ch. 3 | 104 | R&E Supplies 2022 pro forma statements | — | exam | yes | yes |
 | 3.8 | Ch. 3 | 105 | R&E Supplies spreadsheet for external financing required | — | exam | no | yes |
 | 3.9 | Ch. 3 | 105 | R&E Supplies 2022 pro forma spreadsheet | — | exam | yes | yes |
-| 3.10 | Ch. 3 | 106 | Westmark Industrial treasurer estimates financing needs | — | exam | no | yes |
-| 3.11 | Ch. 3 | 106 | Westmark Industrial income statement and balance sheet | — | exam | yes | yes |
-| 3.12 | Ch. 3 | 107 | Westmark Industrial first-quarter cash flow forecast | — | exam | no | yes |
-| 3.13 | Ch. 3 | 107 | Toys-4-Kids quarterly seasonal forecast | — | exam | yes | yes |
-| 3.14 | Ch. 3 | 108 | Toys-4-Kids production manager's proposal | — | exam | no | yes |
+| 3.10 | Ch. 3 | 106 | Westmark Industrial treasurer estimates financing needs | Working capital & trade credit | exam | no | yes |
+| 3.11 | Ch. 3 | 106 | Westmark Industrial income statement and balance sheet | Working capital & trade credit | exam | yes | yes |
+| 3.12 | Ch. 3 | 107 | Westmark Industrial first-quarter cash flow forecast | Working capital & trade credit | exam | no | yes |
+| 3.13 | Ch. 3 | 107 | Toys-4-Kids quarterly seasonal forecast | Working capital & trade credit | exam | yes | yes |
+| 3.14 | Ch. 3 | 108 | Toys-4-Kids production manager's proposal | Working capital & trade credit | exam | no | yes |
 | 3.15 | Ch. 3 | 109 | One- and five-year forecasts, sensitivity analysis | — | exam | Connect | yes |
 | 3.16 | Ch. 3 | 109 | Noble Equipment Corp. financial statements | — | exam | no | yes |
 | 3.17 | Ch. 3 | 110 | Construct a simple simulation model | — | exam | Connect | yes |
@@ -404,7 +423,7 @@ Pages are **printed** page numbers (PDF page = printed + 21), read from `Livros/
 
 #book/ross
 
-Pages are **printed** page numbers (PDF page = printed + 24), read per problem from `Livros/ROSS, WESTERFIELD, JORDAN_ LAMB - Fundamentos de Administração Financeira 9 (2013, McGraw Hill_ Bookman) - libgen.li.md`; the page is where the problem's number appears. Only in-scope chapters are indexed (Cap. 1, 2, 5–10, 12–19 and appendix 19A; Cap. 1 has no "Questões e Problemas", only conceptual questions). Numbering: `C.N` = "Questões e Problemas" problem N of chapter C; `CQ C.N` = "Revisão de conceitos e questões instigantes" item N; `R C.N` = "Revisão do capítulo e teste de conhecimentos" worked problem C.N. *Level* = the book's own labels (BÁSICO → foundational, INTERMEDIÁRIO → exam, DESAFIO → advanced); CQ rows = conceptual, R rows = foundational. *Answer*: R = yes (full solution printed right after, in "Respostas da revisão do capítulo…"); C.N = ext. (the book says answers to *selected* problems are in Apêndice C, which is web-only material and not in the MD, so which ones are answered is unknown); CQ = no. Note the book's own range typo in Cap. 15 (BÁSICO 1-8, INTERMEDIÁRIO 8-14): 15.8 is listed as foundational. Excluded: Minicasos, "Exercícios na Internet", spreadsheet questions.
+Pages are **printed** page numbers (PDF page = printed + 24), read per problem from `Livros/ROSS, WESTERFIELD, JORDAN_ LAMB - Fundamentos de Administração Financeira 9 (2013, McGraw Hill_ Bookman) - libgen.li.md`; the page is where the problem's number appears. Only in-scope chapters are indexed (Cap. 1, 2, 5–10, 12–20 and appendices 19A, 20A; Cap. 1 has no "Questões e Problemas", only conceptual questions). Numbering: `C.N` = "Questões e Problemas" problem N of chapter C; `CQ C.N` = "Revisão de conceitos e questões instigantes" item N; `R C.N` = "Revisão do capítulo e teste de conhecimentos" worked problem C.N. *Level* = the book's own labels (BÁSICO → foundational, INTERMEDIÁRIO → exam, DESAFIO → advanced); CQ rows = conceptual, R rows = foundational. *Answer*: R = yes (full solution printed right after, in "Respostas da revisão do capítulo…"); C.N = ext. (the book says answers to *selected* problems are in Apêndice C, which is web-only material and not in the MD, so which ones are answered is unknown); CQ = no. Note the book's own range typo in Cap. 15 (BÁSICO 1-8, INTERMEDIÁRIO 8-14): 15.8 is listed as foundational. Excluded: Minicasos, "Exercícios na Internet", spreadsheet questions.
 
 | Exercise | Chapter | Page | Title | Topic(s) | Level | Answer | Verified |
 |---|---|---|---|---|---|---|---|
@@ -990,70 +1009,834 @@ Pages are **printed** page numbers (PDF page = printed + 24), read per problem f
 | 17.14 | Cap. 17 | 618 | Dividendos e impostos | MM benchmark | advanced | ext. | yes |
 | 17.15 | Cap. 17 | 618 | Dividendos versus reinvestimento | MM benchmark | advanced | ext. | yes |
 | 17.16 | Cap. 17 | 618 | Dividendos versus reinvestimento | MM benchmark | advanced | ext. | yes |
-| R 18.1 | Cap. 18 | 650 | Os ciclos operacional e financeiro | Liquidity | foundational | yes | yes |
-| R 18.2 | Cap. 18 | 651 | Saldo de caixa da Companhia Vargas | Liquidity | foundational | yes | yes |
-| CQ 18.1 | Cap. 18 | 652 | Ciclo operacional | Liquidity | conceptual | no | yes |
-| CQ 18.2 | Cap. 18 | 652 | Ciclo financeiro | Liquidity | conceptual | no | yes |
-| CQ 18.3 | Cap. 18 | 652 | Fontes e usos | Liquidity | conceptual | no | yes |
-| CQ 18.4 | Cap. 18 | 652 | Custo do ativo circulante | Liquidity | conceptual | no | yes |
-| CQ 18.5 | Cap. 18 | 652 | Ciclos operacional e financeiro | Liquidity | conceptual | no | yes |
-| CQ 18.6 | Cap. 18 | 652 | Ciclos operacional e financeiro | Liquidity | conceptual | no | yes |
-| CQ 18.7 | Cap. 18 | 652 | Ciclos operacional e financeiro | Liquidity | conceptual | no | yes |
-| CQ 18.8 | Cap. 18 | 653 | Ética nos negócios | Liquidity | conceptual | no | yes |
-| CQ 18.9 | Cap. 18 | 653 | Prazo médio de pagamento | Liquidity | conceptual | no | yes |
-| CQ 18.10 | Cap. 18 | 653 | Prazo médio de pagamento | Liquidity | conceptual | no | yes |
-| 18.1 | Cap. 18 | 653 | Variação no caixa | Liquidity | foundational | ext. | yes |
-| 18.2 | Cap. 18 | 653 | Equação do caixa | Liquidity | foundational | ext. | yes |
-| 18.3 | Cap. 18 | 653 | Variações no ciclo operacional | Liquidity | foundational | ext. | yes |
-| 18.4 | Cap. 18 | 653 | Variações nos ciclos | Liquidity | foundational | ext. | yes |
-| 18.5 | Cap. 18 | 654 | Cálculo dos recebimentos de caixa | Liquidity | foundational | ext. | yes |
-| 18.6 | Cap. 18 | 654 | Cálculo dos ciclos | Liquidity | foundational | ext. | yes |
-| 18.7 | Cap. 18 | 654 | Necessidade de capital de giro | Liquidity | foundational | ext. | yes |
-| 18.8 | Cap. 18 | 654 | Cálculo de pagamentos | Liquidity | foundational | ext. | yes |
-| 18.9 | Cap. 18 | 655 | Cálculo de pagamentos | Liquidity | foundational | ext. | yes |
-| 18.10 | Cap. 18 | 655 | Cálculo de recebimentos de caixa | Liquidity | foundational | ext. | yes |
-| 18.11 | Cap. 18 | 655 | Cálculo do orçamento de caixa | Liquidity | foundational | ext. | yes |
-| 18.12 | Cap. 18 | 656 | Fontes e usos | Liquidity | foundational | ext. | yes |
-| 18.13 | Cap. 18 | 656 | Custos de empréstimos | Liquidity | exam | ext. | yes |
-| 18.14 | Cap. 18 | 657 | Custos de empréstimo | Liquidity | exam | ext. | yes |
-| 18.15 | Cap. 18 | 657 | Cálculo do orçamento de caixa | Liquidity | exam | ext. | yes |
-| 18.16 | Cap. 18 | 658 | Política de administração de caixa | Liquidity | exam | ext. | yes |
-| 18.17 | Cap. 18 | 658 | Custos de empréstimos | Liquidity | advanced | ext. | yes |
-| 18.18 | Cap. 18 | 658 | Custos de empréstimo | Liquidity | advanced | ext. | yes |
-| 18.19 | Cap. 18 | 658 | Custos de empréstimo | Liquidity | advanced | ext. | yes |
-| 18.20 | Cap. 18 | 658 | Custos de empréstimo | Liquidity | advanced | ext. | yes |
-| R 19.1 | Cap. 19 | 689 | Medição do float | Liquidity | foundational | yes | yes |
+| R 18.1 | Cap. 18 | 650 | Os ciclos operacional e financeiro | Working capital & trade credit | foundational | yes | yes |
+| R 18.2 | Cap. 18 | 651 | Saldo de caixa da Companhia Vargas | Working capital & trade credit | foundational | yes | yes |
+| CQ 18.1 | Cap. 18 | 652 | Ciclo operacional | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.2 | Cap. 18 | 652 | Ciclo financeiro | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.3 | Cap. 18 | 652 | Fontes e usos | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.4 | Cap. 18 | 652 | Custo do ativo circulante | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.5 | Cap. 18 | 652 | Ciclos operacional e financeiro | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.6 | Cap. 18 | 652 | Ciclos operacional e financeiro | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.7 | Cap. 18 | 652 | Ciclos operacional e financeiro | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.8 | Cap. 18 | 653 | Ética nos negócios | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.9 | Cap. 18 | 653 | Prazo médio de pagamento | Working capital & trade credit | conceptual | no | yes |
+| CQ 18.10 | Cap. 18 | 653 | Prazo médio de pagamento | Working capital & trade credit | conceptual | no | yes |
+| 18.1 | Cap. 18 | 653 | Variação no caixa | Working capital & trade credit | foundational | ext. | yes |
+| 18.2 | Cap. 18 | 653 | Equação do caixa | Working capital & trade credit | foundational | ext. | yes |
+| 18.3 | Cap. 18 | 653 | Variações no ciclo operacional | Working capital & trade credit | foundational | ext. | yes |
+| 18.4 | Cap. 18 | 653 | Variações nos ciclos | Working capital & trade credit | foundational | ext. | yes |
+| 18.5 | Cap. 18 | 654 | Cálculo dos recebimentos de caixa | Working capital & trade credit | foundational | ext. | yes |
+| 18.6 | Cap. 18 | 654 | Cálculo dos ciclos | Working capital & trade credit | foundational | ext. | yes |
+| 18.7 | Cap. 18 | 654 | Necessidade de capital de giro | Working capital & trade credit | foundational | ext. | yes |
+| 18.8 | Cap. 18 | 654 | Cálculo de pagamentos | Working capital & trade credit | foundational | ext. | yes |
+| 18.9 | Cap. 18 | 655 | Cálculo de pagamentos | Working capital & trade credit | foundational | ext. | yes |
+| 18.10 | Cap. 18 | 655 | Cálculo de recebimentos de caixa | Working capital & trade credit | foundational | ext. | yes |
+| 18.11 | Cap. 18 | 655 | Cálculo do orçamento de caixa | Working capital & trade credit | foundational | ext. | yes |
+| 18.12 | Cap. 18 | 656 | Fontes e usos | Working capital & trade credit | foundational | ext. | yes |
+| 18.13 | Cap. 18 | 656 | Custos de empréstimos | Working capital & trade credit; Liquidity | exam | ext. | yes |
+| 18.14 | Cap. 18 | 657 | Custos de empréstimo | Working capital & trade credit; Liquidity | exam | ext. | yes |
+| 18.15 | Cap. 18 | 657 | Cálculo do orçamento de caixa | Working capital & trade credit | exam | ext. | yes |
+| 18.16 | Cap. 18 | 658 | Política de administração de caixa | Working capital & trade credit; Liquidity | exam | ext. | yes |
+| 18.17 | Cap. 18 | 658 | Custos de empréstimos | Working capital & trade credit; Liquidity | advanced | ext. | yes |
+| 18.18 | Cap. 18 | 658 | Custos de empréstimo | Working capital & trade credit | advanced | ext. | yes |
+| 18.19 | Cap. 18 | 658 | Custos de empréstimo | Working capital & trade credit | advanced | ext. | yes |
+| 18.20 | Cap. 18 | 658 | Custos de empréstimo | Working capital & trade credit | advanced | ext. | yes |
+| R 19.1 | Cap. 19 | 689 | Medição do float | Working capital & trade credit | foundational | yes | yes |
 | CQ 19.1 | Cap. 19 | 690 | Administração de caixa | Liquidity | conceptual | no | yes |
 | CQ 19.2 | Cap. 19 | 690 | Administração de caixa | Liquidity | conceptual | no | yes |
 | CQ 19.3 | Cap. 19 | 690 | Problemas de agência | Liquidity; Agency & capital structure | conceptual | no | yes |
 | CQ 19.4 | Cap. 19 | 690 | Motivações para reter caixa | Liquidity | conceptual | no | yes |
-| CQ 19.5 | Cap. 19 | 690 | Gestão de caixa versus gestão da liquidez | Liquidity | conceptual | no | yes |
+| CQ 19.5 | Cap. 19 | 690 | Gestão de caixa versus gestão da liquidez | Working capital & trade credit; Liquidity | conceptual | no | yes |
 | CQ 19.6 | Cap. 19 | 690 | Investimentos de curto prazo | Liquidity | conceptual | no | yes |
-| CQ 19.7 | Cap. 19 | 690 | Floats de cobrança e de desembolso | Liquidity | conceptual | no | yes |
-| CQ 19.8 | Cap. 19 | 690 | Float | Liquidity | conceptual | no | yes |
+| CQ 19.7 | Cap. 19 | 690 | Floats de cobrança e de desembolso | Working capital & trade credit | conceptual | no | yes |
+| CQ 19.8 | Cap. 19 | 690 | Float | Working capital & trade credit | conceptual | no | yes |
 | CQ 19.9 | Cap. 19 | 690 | Investimentos de curto prazo | Liquidity | conceptual | no | yes |
 | CQ 19.10 | Cap. 19 | 690 | Problemas de agência | Liquidity; Agency & capital structure | conceptual | no | yes |
-| CQ 19.11 | Cap. 19 | 690 | Uso do caixa excedente | Liquidity | conceptual | no | yes |
+| CQ 19.11 | Cap. 19 | 690 | Uso do caixa excedente | Working capital & trade credit; Liquidity | conceptual | no | yes |
 | CQ 19.12 | Cap. 19 | 690 | Uso do caixa excedente | Liquidity | conceptual | no | yes |
-| CQ 19.13 | Cap. 19 | 690 | Float | Liquidity | conceptual | no | yes |
-| 19.1 | Cap. 19 | 691 | Cálculo do float | Liquidity | foundational | ext. | yes |
-| 19.2 | Cap. 19 | 691 | Cálculo do float líquido | Liquidity | foundational | ext. | yes |
-| 19.3 | Cap. 19 | 691 | Custos do float | Liquidity | foundational | ext. | yes |
-| 19.4 | Cap. 19 | 691 | Float e prazo médio ponderado | Liquidity | foundational | ext. | yes |
-| 19.5 | Cap. 19 | 691 | VPL e prazo de recebimento | Liquidity | foundational | ext. | yes |
-| 19.6 | Cap. 19 | 691 | Uso do prazo médio ponderado | Liquidity | foundational | ext. | yes |
-| 19.7 | Cap. 19 | 692 | Valor do prazo | Liquidity | foundational | ext. | yes |
-| 19.8 | Cap. 19 | 692 | VPL e redução do float | Liquidity | foundational | ext. | yes |
-| 19.9 | Cap. 19 | 692 | Receber em D0 ou receber em D1 | Liquidity | exam | ext. | yes |
-| 19.10 | Cap. 19 | 692 | Receber em D0 ou receber em D1 | Liquidity | exam | ext. | yes |
-| R 19A.1 | Cap. 19A | 700 | O modelo BAT | Liquidity | foundational | yes | yes |
-| 19A.1 | Cap. 19A | 700 | Alterações na meta para o saldo de caixa | Liquidity | foundational | ext. | yes |
-| 19A.2 | Cap. 19A | 701 | Uso do modelo BAT | Liquidity | foundational | ext. | yes |
-| 19A.3 | Cap. 19A | 701 | Custo de oportunidade versus custo de transação | Liquidity | foundational | ext. | yes |
-| 19A.4 | Cap. 19A | 701 | Custos e o modelo BAT | Liquidity | foundational | ext. | yes |
-| 19A.5 | Cap. 19A | 701 | Determinação dos saldos de caixa ideais | Liquidity | foundational | ext. | yes |
-| 19A.6 | Cap. 19A | 701 | Interpretação de Miller–Orr | Liquidity | foundational | ext. | yes |
-| 19A.7 | Cap. 19A | 701 | Uso de Miller–Orr | Liquidity | foundational | ext. | yes |
-| 19A.8 | Cap. 19A | 701 | Interpretação de Miller-Orr | Liquidity | foundational | ext. | yes |
-| 19A.9 | Cap. 19A | 701 | Uso de Miller-Orr | Liquidity | foundational | ext. | yes |
-| 19A.10 | Cap. 19A | 701 | Uso de BAT | Liquidity | foundational | ext. | yes |
+| CQ 19.13 | Cap. 19 | 690 | Float | Working capital & trade credit | conceptual | no | yes |
+| 19.1 | Cap. 19 | 691 | Cálculo do float | Working capital & trade credit | foundational | ext. | yes |
+| 19.2 | Cap. 19 | 691 | Cálculo do float líquido | Working capital & trade credit | foundational | ext. | yes |
+| 19.3 | Cap. 19 | 691 | Custos do float | Working capital & trade credit | foundational | ext. | yes |
+| 19.4 | Cap. 19 | 691 | Float e prazo médio ponderado | Working capital & trade credit | foundational | ext. | yes |
+| 19.5 | Cap. 19 | 691 | VPL e prazo de recebimento | Working capital & trade credit | foundational | ext. | yes |
+| 19.6 | Cap. 19 | 691 | Uso do prazo médio ponderado | Working capital & trade credit | foundational | ext. | yes |
+| 19.7 | Cap. 19 | 692 | Valor do prazo | Working capital & trade credit | foundational | ext. | yes |
+| 19.8 | Cap. 19 | 692 | VPL e redução do float | Working capital & trade credit | foundational | ext. | yes |
+| 19.9 | Cap. 19 | 692 | Receber em D0 ou receber em D1 | Working capital & trade credit | exam | ext. | yes |
+| 19.10 | Cap. 19 | 692 | Receber em D0 ou receber em D1 | Working capital & trade credit | exam | ext. | yes |
+| R 19A.1 | Cap. 19A | 700 | O modelo BAT | Working capital & trade credit | foundational | yes | yes |
+| 19A.1 | Cap. 19A | 700 | Alterações na meta para o saldo de caixa | Working capital & trade credit; Liquidity | foundational | ext. | yes |
+| 19A.2 | Cap. 19A | 701 | Uso do modelo BAT | Working capital & trade credit | foundational | ext. | yes |
+| 19A.3 | Cap. 19A | 701 | Custo de oportunidade versus custo de transação | Working capital & trade credit | foundational | ext. | yes |
+| 19A.4 | Cap. 19A | 701 | Custos e o modelo BAT | Working capital & trade credit | foundational | ext. | yes |
+| 19A.5 | Cap. 19A | 701 | Determinação dos saldos de caixa ideais | Working capital & trade credit | foundational | ext. | yes |
+| 19A.6 | Cap. 19A | 701 | Interpretação de Miller–Orr | Working capital & trade credit; Liquidity | foundational | ext. | yes |
+| 19A.7 | Cap. 19A | 701 | Uso de Miller–Orr | Working capital & trade credit; Liquidity | foundational | ext. | yes |
+| 19A.8 | Cap. 19A | 701 | Interpretação de Miller-Orr | Working capital & trade credit; Liquidity | foundational | ext. | yes |
+| 19A.9 | Cap. 19A | 701 | Uso de Miller-Orr | Working capital & trade credit; Liquidity | foundational | ext. | yes |
+| 19A.10 | Cap. 19A | 701 | Uso de BAT | Working capital & trade credit | foundational | ext. | yes |
+| R 20.1 | Cap. 20 | 730 | Política de crédito | Working capital & trade credit | foundational | yes | yes |
+| R 20.2 | Cap. 20 | 731 | Crédito para quem merece | Working capital & trade credit | foundational | yes | yes |
+| R 20.3 | Cap. 20 | 731 | O MLE | Working capital & trade credit | foundational | yes | yes |
+| CQ 20.1 | Cap. 20 | 732 | Instrumentos de crédito | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.2 | Cap. 20 | 732 | Formas de crédito comercial | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.3 | Cap. 20 | 732 | Custos de contas a receber | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.4 | Cap. 20 | 732 | Cinco Cs do crédito | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.5 | Cap. 20 | 732 | Duração do prazo do crédito | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.6 | Cap. 20 | 732 | Duração do prazo do crédito | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.7 | Cap. 20 | 732 | Tipos de estoque | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.8 | Cap. 20 | 732 | Estoque just-in-time | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.9 | Cap. 20 | 732 | Custos de estoque | Working capital & trade credit | conceptual | no | yes |
+| CQ 20.10 | Cap. 20 | 732 | Prazo médio de estocagem | Working capital & trade credit | conceptual | no | yes |
+| 20.1 | Cap. 20 | 733 | Descontos financeiros | Working capital & trade credit | foundational | ext. | yes |
+| 20.2 | Cap. 20 | 733 | Tamanho das contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.3 | Cap. 20 | 733 | PMR e contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.4 | Cap. 20 | 733 | Tamanho das contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.5 | Cap. 20 | 733 | Condições de venda | Working capital & trade credit | foundational | ext. | yes |
+| 20.6 | Cap. 20 | 733 | PMR e giro de contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.7 | Cap. 20 | 733 | Tamanho das contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.8 | Cap. 20 | 733 | Tamanho das contas a receber | Working capital & trade credit | foundational | ext. | yes |
+| 20.9 | Cap. 20 | 733 | Avaliação da política de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20.10 | Cap. 20 | 734 | Avaliação da política de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20.11 | Cap. 20 | 734 | MLE | Working capital & trade credit | foundational | ext. | yes |
+| 20.12 | Cap. 20 | 734 | MLE | Working capital & trade credit | foundational | ext. | yes |
+| 20.13 | Cap. 20 | 734 | Derivação do MLE | Working capital & trade credit | exam | ext. | yes |
+| 20.14 | Cap. 20 | 734 | Avaliação da política de crédito | Working capital & trade credit | exam | ext. | yes |
+| 20.15 | Cap. 20 | 734 | Avaliação da política de crédito | Working capital & trade credit | exam | ext. | yes |
+| 20.16 | Cap. 20 | 735 | Política de crédito | Working capital & trade credit | exam | ext. | yes |
+| 20.17 | Cap. 20 | 735 | Quantidade no ponto de equilíbrio | Working capital & trade credit | advanced | ext. | yes |
+| 20.18 | Cap. 20 | 735 | Markup de crédito | Working capital & trade credit | advanced | ext. | yes |
+| 20.19 | Cap. 20 | 735 | Markup de crédito | Working capital & trade credit | advanced | ext. | yes |
+| 20.20 | Cap. 20 | 736 | Estoques de segurança e ponto de renovação de pedidos | Working capital & trade credit | advanced | ext. | yes |
+| R 20A.1 | Cap. 20A | 740 | Política de crédito | Working capital & trade credit | foundational | yes | yes |
+| R 20A.2 | Cap. 20A | 740 | Descontos e risco de inadimplência | Working capital & trade credit | foundational | yes | yes |
+| 20A.1 | Cap. 20A | 741 | Avaliação da política de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20A.2 | Cap. 20A | 741 | Avaliação da política de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20A.3 | Cap. 20A | 741 | Análise de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20A.4 | Cap. 20A | 741 | Análise de crédito | Working capital & trade credit | foundational | ext. | yes |
+| 20A.5 | Cap. 20A | 742 | VPL da mudança na política de crédito | Working capital & trade credit | foundational | ext. | yes |
+
+## Berk, DeMarzo & Harford, *Fundamentals of Corporate Finance* (Prentice Hall, 2nd ed., 2011)
+
+#book/berk
+
+Pages are **printed** page numbers (PDF page = printed + 31), read per problem from `Livros/Fundamentals of Corporate Finance, 2nd Edition {Jonathan Berk, Peter DeMarzo, Jarrad Harford}(2011, Prentice Hall){91822989} libgen.li.md`; the page is where the problem's number appears, checked against the printed page number in the running head of every page. Only the end-of-chapter "Problems" of Ch. 1–13 and 15–21 are indexed (Ch. 14, 22 and 23 are out of scope). Numbering: `C.N` = "Problems" item N of chapter C; *Title* is the book's problem-section subheading (shortened to at most six words where needed). *Level*: the book marks harder problems with an asterisk (`*`), and starred problems (plus 3.16, 10.7, 11.7 and 11.10, which have a starred part) are advanced; unstarred problems are conceptual (no numbers to compute), foundational (a single computation) or exam (multi-part or multi-step computation), set by a heuristic on the problem text and spot-checked. *Answer* = no: the book prints no answers or solutions (they are in the instructor's manual and MyFinanceLab). Excluded: "Critical Thinking" review questions, Data Cases, and the spreadsheet-only problems 11.6, 12.19 and 12.20 (their data exist only on MyFinanceLab or the book's Web site). This is **not** Berk & DeMarzo, *Corporate Finance* (the syllabus book): chapter numbers and contents differ, so do not mix the two numberings.
+
+| Exercise | Chapter | Page | Title | Topic(s) | Level | Answer | Verified |
+|---|---|---|---|---|---|---|---|
+| 1.1 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | conceptual | no | yes |
+| 1.2 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | conceptual | no | yes |
+| 1.3 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | conceptual | no | yes |
+| 1.4 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | conceptual | no | yes |
+| 1.5 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | conceptual | no | yes |
+| 1.6 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | foundational | no | yes |
+| 1.7 | Ch. 1 | 21 | The Four Types of Firms | Introduction & stylized facts | foundational | no | yes |
+| 1.8 | Ch. 1 | 21 | The Financial Manager | Introduction & stylized facts | conceptual | no | yes |
+| 1.9 | Ch. 1 | 21 | The Financial Manager | Introduction & stylized facts | conceptual | no | yes |
+| 1.10 | Ch. 1 | 21 | Financial Manager’s Place in Corporation | Introduction & stylized facts | conceptual | no | yes |
+| 1.11 | Ch. 1 | 21 | Financial Manager’s Place in Corporation | Introduction & stylized facts | conceptual | no | yes |
+| 1.12 | Ch. 1 | 21 | Financial Manager’s Place in Corporation | Introduction & stylized facts | conceptual | no | yes |
+| 1.13 | Ch. 1 | 21 | Financial Manager’s Place in Corporation | Introduction & stylized facts | conceptual | no | yes |
+| 1.14 | Ch. 1 | 22 | The Stock Market | Introduction & stylized facts | conceptual | no | yes |
+| 1.15 | Ch. 1 | 22 | The Stock Market | Introduction & stylized facts | conceptual | no | yes |
+| 1.16 | Ch. 1 | 22 | The Stock Market | Introduction & stylized facts | conceptual | no | yes |
+| 1.17 | Ch. 1 | 22 | The Stock Market | Introduction & stylized facts | conceptual | no | yes |
+| 1.18 | Ch. 1 | 22 | The Stock Market | Introduction & stylized facts | foundational | no | yes |
+| 1.19 | Ch. 1 | 22 | Financial Institutions | Introduction & stylized facts | conceptual | no | yes |
+| 1.20 | Ch. 1 | 22 | Financial Institutions | Introduction & stylized facts | conceptual | no | yes |
+| 1.21 | Ch. 1 | 22 | Financial Institutions | Introduction & stylized facts | conceptual | no | yes |
+| 1.22 | Ch. 1 | 22 | Financial Institutions | Introduction & stylized facts | conceptual | no | yes |
+| 2.1 | Ch. 2 | 52 | Firms’ Disclosure of Financial Information | Introduction & stylized facts | conceptual | no | yes |
+| 2.2 | Ch. 2 | 52 | Firms’ Disclosure of Financial Information | Introduction & stylized facts | conceptual | no | yes |
+| 2.3 | Ch. 2 | 52 | Firms’ Disclosure of Financial Information | Introduction & stylized facts | exam | no | yes |
+| 2.4 | Ch. 2 | 52 | The Balance Sheet | Introduction & stylized facts | exam | no | yes |
+| 2.5 | Ch. 2 | 53 | The Balance Sheet | Introduction & stylized facts | foundational | no | yes |
+| 2.6 | Ch. 2 | 53 | The Balance Sheet | Introduction & stylized facts | foundational | no | yes |
+| 2.7 | Ch. 2 | 53 | The Balance Sheet | Introduction & stylized facts | foundational | no | yes |
+| 2.8 | Ch. 2 | 53 | Balance Sheet Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.9 | Ch. 2 | 53 | Balance Sheet Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.10 | Ch. 2 | 53 | Balance Sheet Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.11 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.12 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.13 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.14 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.15 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.16 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.17 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.18 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.19 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | advanced | no | yes |
+| 2.20 | Ch. 2 | 54 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.21 | Ch. 2 | 55 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.22 | Ch. 2 | 55 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.23 | Ch. 2 | 55 | Income Statement and Its Analysis | Introduction & stylized facts | advanced | no | yes |
+| 2.24 | Ch. 2 | 55 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.25 | Ch. 2 | 55 | Income Statement and Its Analysis | Introduction & stylized facts | advanced | no | yes |
+| 2.26 | Ch. 2 | 56 | Income Statement and Its Analysis | Introduction & stylized facts | foundational | no | yes |
+| 2.27 | Ch. 2 | 56 | Income Statement and Its Analysis | Introduction & stylized facts | exam | no | yes |
+| 2.28 | Ch. 2 | 56 | The Statement of Cash Flows | Introduction & stylized facts | exam | no | yes |
+| 2.29 | Ch. 2 | 56 | The Statement of Cash Flows | Introduction & stylized facts | exam | no | yes |
+| 2.30 | Ch. 2 | 57 | The Statement of Cash Flows | Introduction & stylized facts | exam | no | yes |
+| 2.31 | Ch. 2 | 57 | The Statement of Cash Flows | Introduction & stylized facts | exam | no | yes |
+| 2.32 | Ch. 2 | 57 | Other Financial Statement Information | Introduction & stylized facts | exam | no | yes |
+| 2.33 | Ch. 2 | 58 | Financial Reporting in Practice | Introduction & stylized facts | conceptual | no | yes |
+| 3.1 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | foundational | no | yes |
+| 3.2 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | foundational | no | yes |
+| 3.3 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | exam | no | yes |
+| 3.4 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | exam | no | yes |
+| 3.5 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | foundational | no | yes |
+| 3.6 | Ch. 3 | 80 | Cost-Benefit Analysis | Valuation | foundational | no | yes |
+| 3.7 | Ch. 3 | 81 | Market Prices and the Valuation Principle | Valuation | exam | no | yes |
+| 3.8 | Ch. 3 | 81 | Market Prices and the Valuation Principle | Valuation | exam | no | yes |
+| 3.9 | Ch. 3 | 81 | Time Value and Interest Rates | Valuation | foundational | no | yes |
+| 3.10 | Ch. 3 | 81 | Time Value and Interest Rates | Valuation | foundational | no | yes |
+| 3.11 | Ch. 3 | 81 | Time Value and Interest Rates | Valuation | exam | no | yes |
+| 3.12 | Ch. 3 | 81 | Time Value and Interest Rates | Valuation | foundational | no | yes |
+| 3.13 | Ch. 3 | 81 | Valuing Cash Flows Across Time | Valuation | exam | no | yes |
+| 3.14 | Ch. 3 | 81 | Valuing Cash Flows Across Time | Valuation | exam | no | yes |
+| 3.15 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | advanced | no | yes |
+| 3.16 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | advanced | no | yes |
+| 3.17 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | exam | no | yes |
+| 3.18 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | foundational | no | yes |
+| 3.19 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | foundational | no | yes |
+| 3.20 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | exam | no | yes |
+| 3.21 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | exam | no | yes |
+| 3.22 | Ch. 3 | 82 | Valuing Cash Flows Across Time | Valuation | advanced | no | yes |
+| 4.1 | Ch. 4 | 108 | Valuing a Stream of Cash Flows | Valuation | foundational | no | yes |
+| 4.2 | Ch. 4 | 108 | Valuing a Stream of Cash Flows | Valuation | foundational | no | yes |
+| 4.3 | Ch. 4 | 108 | Valuing a Stream of Cash Flows | Valuation | foundational | no | yes |
+| 4.4 | Ch. 4 | 108 | Valuing a Stream of Cash Flows | Valuation | exam | no | yes |
+| 4.5 | Ch. 4 | 108 | Valuing a Stream of Cash Flows | Valuation | exam | no | yes |
+| 4.6 | Ch. 4 | 109 | Valuing a Stream of Cash Flows | Valuation | foundational | no | yes |
+| 4.7 | Ch. 4 | 109 | Perpetuities | Valuation | foundational | no | yes |
+| 4.8 | Ch. 4 | 109 | Perpetuities | Valuation | foundational | no | yes |
+| 4.9 | Ch. 4 | 109 | Perpetuities | Valuation | exam | no | yes |
+| 4.10 | Ch. 4 | 109 | Annuities | Valuation | foundational | no | yes |
+| 4.11 | Ch. 4 | 109 | Annuities | Valuation | foundational | no | yes |
+| 4.12 | Ch. 4 | 109 | Annuities | Valuation | exam | no | yes |
+| 4.13 | Ch. 4 | 109 | Annuities | Valuation | advanced | no | yes |
+| 4.14 | Ch. 4 | 109 | Annuities | Valuation | foundational | no | yes |
+| 4.15 | Ch. 4 | 109 | Annuities | Valuation | foundational | no | yes |
+| 4.16 | Ch. 4 | 110 | Annuities | Valuation | advanced | no | yes |
+| 4.17 | Ch. 4 | 110 | Annuities | Valuation | advanced | no | yes |
+| 4.18 | Ch. 4 | 111 | Growing Cash Flows | Valuation | exam | no | yes |
+| 4.19 | Ch. 4 | 111 | Growing Cash Flows | Valuation | advanced | no | yes |
+| 4.20 | Ch. 4 | 111 | Growing Cash Flows | Valuation | exam | no | yes |
+| 4.21 | Ch. 4 | 111 | Growing Cash Flows | Valuation | exam | no | yes |
+| 4.22 | Ch. 4 | 111 | Growing Cash Flows | Valuation | foundational | no | yes |
+| 4.23 | Ch. 4 | 111 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.24 | Ch. 4 | 111 | Solving for Other Variables | Valuation | exam | no | yes |
+| 4.25 | Ch. 4 | 111 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.26 | Ch. 4 | 111 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.27 | Ch. 4 | 112 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.28 | Ch. 4 | 112 | Solving for Other Variables | Valuation | advanced | no | yes |
+| 4.29 | Ch. 4 | 112 | Solving for Other Variables | Valuation | advanced | no | yes |
+| 4.30 | Ch. 4 | 112 | Solving for Other Variables | Valuation | advanced | no | yes |
+| 4.31 | Ch. 4 | 112 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.32 | Ch. 4 | 112 | Solving for Other Variables | Valuation | foundational | no | yes |
+| 4.33 | Ch. 4 | 112 | Solving for Other Variables | Valuation | advanced | no | yes |
+| 4.34 | Ch. 4 | 112 | Solving for Other Variables | Valuation | advanced | no | yes |
+| 5.1 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | exam | no | yes |
+| 5.2 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | foundational | no | yes |
+| 5.3 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | exam | no | yes |
+| 5.4 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | foundational | no | yes |
+| 5.5 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | foundational | no | yes |
+| 5.6 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | foundational | no | yes |
+| 5.7 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | foundational | no | yes |
+| 5.8 | Ch. 5 | 140 | Interest Rate Quotes and Adjustments | Valuation | exam | no | yes |
+| 5.9 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.10 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.11 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.12 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.13 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.14 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.15 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.16 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | exam | no | yes |
+| 5.17 | Ch. 5 | 141 | Application: Discount Rates and Loans | Valuation | foundational | no | yes |
+| 5.18 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.19 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.20 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.21 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.22 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | advanced | no | yes |
+| 5.23 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | exam | no | yes |
+| 5.24 | Ch. 5 | 142 | Application: Discount Rates and Loans | Valuation | exam | no | yes |
+| 5.25 | Ch. 5 | 143 | Application: Discount Rates and Loans | Valuation | exam | no | yes |
+| 5.26 | Ch. 5 | 143 | The Determinants of Interest Rates | Valuation | foundational | no | yes |
+| 5.27 | Ch. 5 | 143 | The Determinants of Interest Rates | Valuation | foundational | no | yes |
+| 5.28 | Ch. 5 | 143 | The Determinants of Interest Rates | Valuation | foundational | no | yes |
+| 5.29 | Ch. 5 | 143 | The Determinants of Interest Rates | Valuation | foundational | no | yes |
+| 5.30 | Ch. 5 | 143 | The Determinants of Interest Rates | Valuation | foundational | no | yes |
+| 5.31 | Ch. 5 | 143 | The Opportunity Cost of Capital | Valuation | foundational | no | yes |
+| 6.1 | Ch. 6 | 172 | Bond Terminology | Valuation | exam | no | yes |
+| 6.2 | Ch. 6 | 172 | Bond Terminology | Valuation | exam | no | yes |
+| 6.3 | Ch. 6 | 172 | Bond Terminology | Valuation | foundational | no | yes |
+| 6.4 | Ch. 6 | 172 | Zero-Coupon Bonds | Valuation | exam | no | yes |
+| 6.5 | Ch. 6 | 172 | Zero-Coupon Bonds | Valuation | foundational | no | yes |
+| 6.6 | Ch. 6 | 172 | Zero-Coupon Bonds | Valuation | foundational | no | yes |
+| 6.7 | Ch. 6 | 172 | Zero-Coupon Bonds | Valuation | foundational | no | yes |
+| 6.8 | Ch. 6 | 173 | Coupon Bonds | Valuation | exam | no | yes |
+| 6.9 | Ch. 6 | 173 | Coupon Bonds | Valuation | foundational | no | yes |
+| 6.10 | Ch. 6 | 173 | Coupon Bonds | Valuation | foundational | no | yes |
+| 6.11 | Ch. 6 | 173 | Coupon Bonds | Valuation | exam | no | yes |
+| 6.12 | Ch. 6 | 173 | Coupon Bonds | Valuation | foundational | no | yes |
+| 6.13 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.14 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.15 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | exam | no | yes |
+| 6.16 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.17 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.18 | Ch. 6 | 173 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.19 | Ch. 6 | 174 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.20 | Ch. 6 | 174 | Why Bond Prices Change | Valuation | exam | no | yes |
+| 6.21 | Ch. 6 | 174 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.22 | Ch. 6 | 174 | Why Bond Prices Change | Valuation | foundational | no | yes |
+| 6.23 | Ch. 6 | 174 | Why Bond Prices Change | Valuation | exam | no | yes |
+| 6.24 | Ch. 6 | 174 | Corporate Bonds | Valuation | exam | no | yes |
+| 6.25 | Ch. 6 | 175 | Corporate Bonds | Valuation | exam | no | yes |
+| 6.26 | Ch. 6 | 175 | Corporate Bonds | Valuation | exam | no | yes |
+| 6.27 | Ch. 6 | 175 | Corporate Bonds | Valuation | exam | no | yes |
+| 7.1 | Ch. 7 | 204 | Stock Basics | Valuation | foundational | no | yes |
+| 7.2 | Ch. 7 | 204 | Stock Basics | Valuation | foundational | no | yes |
+| 7.3 | Ch. 7 | 204 | Stock Basics | Valuation | foundational | no | yes |
+| 7.4 | Ch. 7 | 204 | The Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.5 | Ch. 7 | 204 | The Dividend-Discount Model | Valuation | exam | no | yes |
+| 7.6 | Ch. 7 | 204 | The Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.7 | Ch. 7 | 204 | The Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.8 | Ch. 7 | 204 | The Dividend-Discount Model | Valuation | exam | no | yes |
+| 7.9 | Ch. 7 | 205 | The Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.10 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.11 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.12 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | exam | no | yes |
+| 7.13 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.14 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | advanced | no | yes |
+| 7.15 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | exam | no | yes |
+| 7.16 | Ch. 7 | 205 | Estimating Dividends in the Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.17 | Ch. 7 | 206 | Estimating Dividends in the Dividend-Discount Model | Valuation | foundational | no | yes |
+| 7.18 | Ch. 7 | 206 | Estimating Dividends in the Dividend-Discount Model | Valuation | advanced | no | yes |
+| 7.19 | Ch. 7 | 206 | Repurchases and Total Payout Model | Valuation | foundational | no | yes |
+| 7.20 | Ch. 7 | 206 | Repurchases and Total Payout Model | Valuation | foundational | no | yes |
+| 7.21 | Ch. 7 | 206 | Repurchases and Total Payout Model | Valuation | foundational | no | yes |
+| 7.22 | Ch. 7 | 206 | Repurchases and Total Payout Model | Valuation | advanced | no | yes |
+| 8.1 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | foundational | no | yes |
+| 8.2 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | foundational | no | yes |
+| 8.3 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | foundational | no | yes |
+| 8.4 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | exam | no | yes |
+| 8.5 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | exam | no | yes |
+| 8.6 | Ch. 8 | 241 | The NPV Decision Rule | Valuation | foundational | no | yes |
+| 8.7 | Ch. 8 | 241 | Using the NPV Rule | Valuation | exam | no | yes |
+| 8.8 | Ch. 8 | 242 | Using the NPV Rule | Valuation | exam | no | yes |
+| 8.9 | Ch. 8 | 242 | Using the NPV Rule | Valuation | exam | no | yes |
+| 8.10 | Ch. 8 | 242 | Using the NPV Rule | Valuation | advanced | no | yes |
+| 8.11 | Ch. 8 | 242 | Using the NPV Rule | Valuation | exam | no | yes |
+| 8.12 | Ch. 8 | 242 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.13 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.14 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.15 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.16 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.17 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | exam | no | yes |
+| 8.18 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | exam | no | yes |
+| 8.19 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | exam | no | yes |
+| 8.20 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.21 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | advanced | no | yes |
+| 8.22 | Ch. 8 | 243 | Alternative Decision Rules | Valuation | advanced | no | yes |
+| 8.23 | Ch. 8 | 244 | Alternative Decision Rules | Valuation | foundational | no | yes |
+| 8.24 | Ch. 8 | 244 | Choosing Between Projects | Valuation | exam | no | yes |
+| 8.25 | Ch. 8 | 244 | Choosing Between Projects | Valuation | exam | no | yes |
+| 8.26 | Ch. 8 | 244 | Choosing Between Projects | Valuation | exam | no | yes |
+| 8.27 | Ch. 8 | 244 | Choosing Between Projects | Valuation | exam | no | yes |
+| 8.28 | Ch. 8 | 245 | Evaluating Projects with Different Lives | Valuation | foundational | no | yes |
+| 8.29 | Ch. 8 | 245 | Evaluating Projects with Different Lives | Valuation | exam | no | yes |
+| 8.30 | Ch. 8 | 245 | Choosing Projects, Limited Resources | Valuation | exam | no | yes |
+| 8.31 | Ch. 8 | 245 | Choosing Projects, Limited Resources | Valuation | exam | no | yes |
+| 8.32 | Ch. 8 | 245 | Choosing Projects, Limited Resources | Valuation | exam | no | yes |
+| 9.1 | Ch. 9 | 273 | Forecasting Incremental Earnings | Valuation | foundational | no | yes |
+| 9.2 | Ch. 9 | 273 | Forecasting Incremental Earnings | Valuation | foundational | no | yes |
+| 9.3 | Ch. 9 | 273 | Forecasting Incremental Earnings | Valuation | foundational | no | yes |
+| 9.4 | Ch. 9 | 273 | Forecasting Incremental Earnings | Valuation | exam | no | yes |
+| 9.5 | Ch. 9 | 273 | Forecasting Incremental Earnings | Valuation | exam | no | yes |
+| 9.6 | Ch. 9 | 274 | Forecasting Incremental Earnings | Valuation | exam | no | yes |
+| 9.7 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.8 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.9 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.10 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.11 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | exam | no | yes |
+| 9.12 | Ch. 9 | 274 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.13 | Ch. 9 | 275 | Determining Incremental Free Cash Flow | Valuation | exam | no | yes |
+| 9.14 | Ch. 9 | 275 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.15 | Ch. 9 | 275 | Determining Incremental Free Cash Flow | Valuation | foundational | no | yes |
+| 9.16 | Ch. 9 | 275 | Determining Incremental Free Cash Flow | Valuation | advanced | no | yes |
+| 9.17 | Ch. 9 | 275 | Determining Incremental Free Cash Flow | Valuation | advanced | no | yes |
+| 9.18 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | foundational | no | yes |
+| 9.19 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | foundational | no | yes |
+| 9.20 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | exam | no | yes |
+| 9.21 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | foundational | no | yes |
+| 9.22 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | exam | no | yes |
+| 9.23 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | foundational | no | yes |
+| 9.24 | Ch. 9 | 276 | Other Effects on Incremental FCF | Valuation | exam | no | yes |
+| 9.25 | Ch. 9 | 277 | Other Effects on Incremental FCF | Valuation | exam | no | yes |
+| 9.26 | Ch. 9 | 277 | Analyzing the Project | Valuation | exam | no | yes |
+| 9.27 | Ch. 9 | 278 | Analyzing the Project | Valuation | advanced | no | yes |
+| 9.28 | Ch. 9 | 279 | Real Options in Capital Budgeting | Valuation | conceptual | no | yes |
+| 9.29 | Ch. 9 | 279 | Real Options in Capital Budgeting | Valuation | conceptual | no | yes |
+| 9.30 | Ch. 9 | 279 | Real Options in Capital Budgeting | Valuation | foundational | no | yes |
+| 10.1 | Ch. 10 | 306 | The Discounted Free Cash Flow Model | Valuation | foundational | no | yes |
+| 10.2 | Ch. 10 | 306 | The Discounted Free Cash Flow Model | Valuation | exam | no | yes |
+| 10.3 | Ch. 10 | 307 | The Discounted Free Cash Flow Model | Valuation | foundational | no | yes |
+| 10.4 | Ch. 10 | 307 | The Discounted Free Cash Flow Model | Valuation | foundational | no | yes |
+| 10.5 | Ch. 10 | 307 | The Discounted Free Cash Flow Model | Valuation | exam | no | yes |
+| 10.6 | Ch. 10 | 307 | The Discounted Free Cash Flow Model | Valuation | advanced | no | yes |
+| 10.7 | Ch. 10 | 307 | The Discounted Free Cash Flow Model | Valuation | advanced | no | yes |
+| 10.8 | Ch. 10 | 308 | The Discounted Free Cash Flow Model | Valuation | exam | no | yes |
+| 10.9 | Ch. 10 | 308 | Valuation Based on Comparable Firms | Valuation | foundational | no | yes |
+| 10.10 | Ch. 10 | 308 | Valuation Based on Comparable Firms | Valuation | foundational | no | yes |
+| 10.11 | Ch. 10 | 308 | Valuation Based on Comparable Firms | Valuation | foundational | no | yes |
+| 10.12 | Ch. 10 | 308 | Valuation Based on Comparable Firms | Valuation | exam | no | yes |
+| 10.13 | Ch. 10 | 309 | Valuation Based on Comparable Firms | Valuation | exam | no | yes |
+| 10.14 | Ch. 10 | 309 | Valuation Based on Comparable Firms | Valuation | advanced | no | yes |
+| 10.15 | Ch. 10 | 309 | Information, Competition, and Stock Prices | Valuation | exam | no | yes |
+| 10.16 | Ch. 10 | 309 | Information, Competition, and Stock Prices | Valuation | exam | no | yes |
+| 10.17 | Ch. 10 | 309 | Information, Competition, and Stock Prices | Valuation | exam | no | yes |
+| 10.18 | Ch. 10 | 310 | Information, Competition, and Stock Prices | Valuation | advanced | no | yes |
+| 10.19 | Ch. 10 | 310 | Individual Biases and Trading | Valuation | foundational | no | yes |
+| 10.20 | Ch. 10 | 310 | Individual Biases and Trading | Valuation | foundational | no | yes |
+| 11.1 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.2 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.3 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | exam | no | yes |
+| 11.4 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.5 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.7 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | advanced | no | yes |
+| 11.8 | Ch. 11 | 342 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.9 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.10 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | advanced | no | yes |
+| 11.11 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | conceptual | no | yes |
+| 11.12 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | exam | no | yes |
+| 11.13 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.14 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.15 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.16 | Ch. 11 | 343 | Historical Risks and Returns of Stocks | Valuation | foundational | no | yes |
+| 11.17 | Ch. 11 | 343 | Common Versus Independent Risk | Valuation | advanced | no | yes |
+| 11.18 | Ch. 11 | 344 | Diversification in Stock Portfolios | Valuation | conceptual | no | yes |
+| 12.1 | Ch. 12 | 373 | The Expected Return of a Portfolio | Valuation | foundational | no | yes |
+| 12.2 | Ch. 12 | 373 | The Expected Return of a Portfolio | Valuation | foundational | no | yes |
+| 12.3 | Ch. 12 | 373 | The Expected Return of a Portfolio | Valuation | exam | no | yes |
+| 12.4 | Ch. 12 | 374 | The Expected Return of a Portfolio | Valuation | foundational | no | yes |
+| 12.5 | Ch. 12 | 374 | The Expected Return of a Portfolio | Valuation | conceptual | no | yes |
+| 12.6 | Ch. 12 | 374 | The Volatility of a Portfolio | Valuation | foundational | no | yes |
+| 12.7 | Ch. 12 | 374 | The Volatility of a Portfolio | Valuation | exam | no | yes |
+| 12.8 | Ch. 12 | 374 | The Volatility of a Portfolio | Valuation | foundational | no | yes |
+| 12.9 | Ch. 12 | 374 | The Volatility of a Portfolio | Valuation | foundational | no | yes |
+| 12.10 | Ch. 12 | 375 | The Volatility of a Portfolio | Valuation | foundational | no | yes |
+| 12.11 | Ch. 12 | 375 | The Volatility of a Portfolio | Valuation | exam | no | yes |
+| 12.12 | Ch. 12 | 375 | The Volatility of a Portfolio | Valuation | exam | no | yes |
+| 12.13 | Ch. 12 | 375 | The Volatility of a Portfolio | Valuation | foundational | no | yes |
+| 12.14 | Ch. 12 | 375 | The Volatility of a Portfolio | Valuation | exam | no | yes |
+| 12.15 | Ch. 12 | 376 | Measuring Systematic Risk | Valuation | foundational | no | yes |
+| 12.16 | Ch. 12 | 376 | Measuring Systematic Risk | Valuation | foundational | no | yes |
+| 12.17 | Ch. 12 | 376 | Measuring Systematic Risk | Valuation | conceptual | no | yes |
+| 12.18 | Ch. 12 | 376 | Measuring Systematic Risk | Valuation | exam | no | yes |
+| 12.21 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | foundational | no | yes |
+| 12.22 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | conceptual | no | yes |
+| 12.23 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | foundational | no | yes |
+| 12.24 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | exam | no | yes |
+| 12.25 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | advanced | no | yes |
+| 12.26 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | advanced | no | yes |
+| 12.27 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | foundational | no | yes |
+| 12.28 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | foundational | no | yes |
+| 12.29 | Ch. 12 | 377 | The Capital Asset Pricing Model | Valuation | advanced | no | yes |
+| 13.1 | Ch. 13 | 403 | A First Look at the WACC | Valuation | foundational | no | yes |
+| 13.2 | Ch. 13 | 403 | A First Look at the WACC | Valuation | foundational | no | yes |
+| 13.3 | Ch. 13 | 403 | A First Look at the WACC | Valuation | exam | no | yes |
+| 13.4 | Ch. 13 | 403 | A First Look at the WACC | Valuation | exam | no | yes |
+| 13.5 | Ch. 13 | 403 | Costs of Debt and Equity Capital | Valuation | exam | no | yes |
+| 13.6 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.7 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.8 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.9 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.10 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.11 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | foundational | no | yes |
+| 13.12 | Ch. 13 | 404 | Costs of Debt and Equity Capital | Valuation | exam | no | yes |
+| 13.13 | Ch. 13 | 404 | A Second Look at the WACC | Valuation | foundational | no | yes |
+| 13.14 | Ch. 13 | 404 | A Second Look at the WACC | Valuation | foundational | no | yes |
+| 13.15 | Ch. 13 | 404 | A Second Look at the WACC | Valuation | exam | no | yes |
+| 13.16 | Ch. 13 | 405 | Using the WACC to Value Projects | Valuation | foundational | no | yes |
+| 13.17 | Ch. 13 | 405 | Using the WACC to Value Projects | Valuation | foundational | no | yes |
+| 13.18 | Ch. 13 | 405 | Project-Based Costs of Capital | Valuation | foundational | no | yes |
+| 13.19 | Ch. 13 | 405 | Project-Based Costs of Capital | Valuation | foundational | no | yes |
+| 13.20 | Ch. 13 | 405 | Project-Based Costs of Capital | Valuation | exam | no | yes |
+| 13.21 | Ch. 13 | 405 | Project-Based Costs of Capital | Valuation | exam | no | yes |
+| 13.22 | Ch. 13 | 405 | When Raising External Capital Is Costly | Valuation | foundational | no | yes |
+| 13.23 | Ch. 13 | 406 | When Raising External Capital Is Costly | Valuation | foundational | no | yes |
+| 15.1 | Ch. 15 | 453 | Corporate Debt | Valuation | exam | no | yes |
+| 15.2 | Ch. 15 | 454 | Corporate Debt | Valuation | foundational | no | yes |
+| 15.3 | Ch. 15 | 454 | Bond Covenants | Agency & capital structure | exam | no | yes |
+| 15.4 | Ch. 15 | 454 | Repayment Provisions | Valuation | exam | no | yes |
+| 15.5 | Ch. 15 | 454 | Repayment Provisions | Valuation | exam | no | yes |
+| 15.6 | Ch. 15 | 454 | Repayment Provisions | Valuation | foundational | no | yes |
+| 15.7 | Ch. 15 | 454 | Repayment Provisions | Valuation | foundational | no | yes |
+| 15.8 | Ch. 15 | 454 | Repayment Provisions | Valuation | exam | no | yes |
+| 16.1 | Ch. 16 | 490 | Capital Structure in Perfect Capital Markets | MM benchmark | exam | no | yes |
+| 16.2 | Ch. 16 | 491 | Capital Structure in Perfect Capital Markets | MM benchmark | exam | no | yes |
+| 16.3 | Ch. 16 | 491 | Capital Structure in Perfect Capital Markets | MM benchmark | exam | no | yes |
+| 16.4 | Ch. 16 | 491 | Capital Structure in Perfect Capital Markets | MM benchmark | advanced | no | yes |
+| 16.5 | Ch. 16 | 491 | Capital Structure in Perfect Capital Markets | MM benchmark | exam | no | yes |
+| 16.6 | Ch. 16 | 492 | Capital Structure in Perfect Capital Markets | MM benchmark | foundational | no | yes |
+| 16.7 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.8 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.9 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.10 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.11 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.12 | Ch. 16 | 492 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.13 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.14 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.15 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.16 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.17 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.18 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | advanced | no | yes |
+| 16.19 | Ch. 16 | 493 | Debt and Taxes | MM benchmark | exam | no | yes |
+| 16.20 | Ch. 16 | 494 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.21 | Ch. 16 | 494 | Debt and Taxes | MM benchmark | foundational | no | yes |
+| 16.22 | Ch. 16 | 494 | Optimal Capital Structure: The Tradeoff Theory | MM benchmark | exam | no | yes |
+| 16.23 | Ch. 16 | 494 | Optimal Capital Structure: The Tradeoff Theory | MM benchmark | exam | no | yes |
+| 16.24 | Ch. 16 | 494 | Leverage: Agency Costs and Information | Agency & capital structure | exam | no | yes |
+| 16.25 | Ch. 16 | 494 | Leverage: Agency Costs and Information | Agency & capital structure | exam | no | yes |
+| 16.26 | Ch. 16 | 495 | Leverage: Agency Costs and Information | Agency & capital structure | advanced | no | yes |
+| 16.27 | Ch. 16 | 495 | Leverage: Agency Costs and Information | Agency & capital structure | advanced | no | yes |
+| 16.28 | Ch. 16 | 495 | Leverage: Agency Costs and Information | Agency & capital structure | advanced | no | yes |
+| 16.29 | Ch. 16 | 496 | Leverage: Agency Costs and Information | Asymmetric information | advanced | no | yes |
+| 17.1 | Ch. 17 | 527 | Cash Distributions to Shareholders | MM benchmark | exam | no | yes |
+| 17.2 | Ch. 17 | 527 | Cash Distributions to Shareholders | MM benchmark | foundational | no | yes |
+| 17.3 | Ch. 17 | 527 | Cash Distributions to Shareholders | MM benchmark | foundational | no | yes |
+| 17.4 | Ch. 17 | 527 | Cash Distributions to Shareholders | MM benchmark | exam | no | yes |
+| 17.5 | Ch. 17 | 527 | Cash Distributions to Shareholders | MM benchmark | foundational | no | yes |
+| 17.6 | Ch. 17 | 527 | Dividends vs. Repurchases, Perfect Markets | MM benchmark | exam | no | yes |
+| 17.7 | Ch. 17 | 528 | Dividends vs. Repurchases, Perfect Markets | MM benchmark | exam | no | yes |
+| 17.8 | Ch. 17 | 528 | Dividends vs. Repurchases, Perfect Markets | MM benchmark | foundational | no | yes |
+| 17.9 | Ch. 17 | 528 | The Tax Disadvantage of Dividends | MM benchmark | exam | no | yes |
+| 17.10 | Ch. 17 | 528 | The Tax Disadvantage of Dividends | MM benchmark | exam | no | yes |
+| 17.11 | Ch. 17 | 528 | Payout Versus Retention of Cash | MM benchmark | exam | no | yes |
+| 17.12 | Ch. 17 | 528 | Payout Versus Retention of Cash | MM benchmark | foundational | no | yes |
+| 17.13 | Ch. 17 | 528 | Payout Versus Retention of Cash | MM benchmark | exam | no | yes |
+| 17.14 | Ch. 17 | 529 | Signaling with Payout Policy | Asymmetric information | foundational | no | yes |
+| 17.15 | Ch. 17 | 529 | Signaling with Payout Policy | Asymmetric information | foundational | no | yes |
+| 17.16 | Ch. 17 | 529 | Signaling with Payout Policy | Asymmetric information | advanced | no | yes |
+| 17.17 | Ch. 17 | 529 | Signaling with Payout Policy | Asymmetric information | conceptual | no | yes |
+| 17.18 | Ch. 17 | 529 | Signaling with Payout Policy | Asymmetric information | advanced | no | yes |
+| 17.19 | Ch. 17 | 529 | Stock Dividends, Splits, and Spin-Offs | MM benchmark | exam | no | yes |
+| 17.20 | Ch. 17 | 529 | Stock Dividends, Splits, and Spin-Offs | MM benchmark | exam | no | yes |
+| 17.21 | Ch. 17 | 529 | Stock Dividends, Splits, and Spin-Offs | MM benchmark | foundational | no | yes |
+| 17.22 | Ch. 17 | 529 | Stock Dividends, Splits, and Spin-Offs | MM benchmark | exam | no | yes |
+| 18.1 | Ch. 18 | 558 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.2 | Ch. 18 | 558 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.3 | Ch. 18 | 558 | The Percent of Sales Method | Valuation | exam | no | yes |
+| 18.4 | Ch. 18 | 559 | The Percent of Sales Method | Valuation | exam | no | yes |
+| 18.5 | Ch. 18 | 559 | The Percent of Sales Method | Valuation | exam | no | yes |
+| 18.6 | Ch. 18 | 559 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.7 | Ch. 18 | 559 | The Percent of Sales Method | Valuation | exam | no | yes |
+| 18.8 | Ch. 18 | 560 | The Percent of Sales Method | Valuation | exam | no | yes |
+| 18.9 | Ch. 18 | 560 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.10 | Ch. 18 | 560 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.11 | Ch. 18 | 560 | The Percent of Sales Method | Valuation | foundational | no | yes |
+| 18.12 | Ch. 18 | 560 | Forecasting a Planned Expansion | Valuation | foundational | no | yes |
+| 18.13 | Ch. 18 | 560 | Forecasting a Planned Expansion | Valuation | exam | no | yes |
+| 18.14 | Ch. 18 | 561 | Forecasting a Planned Expansion | Valuation | foundational | no | yes |
+| 18.15 | Ch. 18 | 561 | Forecasting a Planned Expansion | Valuation | foundational | no | yes |
+| 18.16 | Ch. 18 | 561 | Growth and Firm Value | Valuation | exam | no | yes |
+| 18.17 | Ch. 18 | 561 | Growth and Firm Value | Valuation | conceptual | no | yes |
+| 18.18 | Ch. 18 | 561 | Growth and Firm Value | Valuation | foundational | no | yes |
+| 18.19 | Ch. 18 | 561 | Growth and Firm Value | Valuation | foundational | no | yes |
+| 18.20 | Ch. 18 | 561 | Valuing the Expansion | Valuation | foundational | no | yes |
+| 18.21 | Ch. 18 | 561 | Valuing the Expansion | Valuation | foundational | no | yes |
+| 18.22 | Ch. 18 | 561 | Valuing the Expansion | Valuation | foundational | no | yes |
+| 19.1 | Ch. 19 | 586 | Overview of Working Capital | Working capital & trade credit | foundational | no | yes |
+| 19.2 | Ch. 19 | 586 | Overview of Working Capital | Working capital & trade credit | foundational | no | yes |
+| 19.3 | Ch. 19 | 586 | Overview of Working Capital | Working capital & trade credit | foundational | no | yes |
+| 19.4 | Ch. 19 | 586 | Overview of Working Capital | Working capital & trade credit | foundational | no | yes |
+| 19.5 | Ch. 19 | 586 | Overview of Working Capital | Working capital & trade credit | foundational | no | yes |
+| 19.6 | Ch. 19 | 587 | Overview of Working Capital | Working capital & trade credit | exam | no | yes |
+| 19.7 | Ch. 19 | 587 | Trade Credit | Working capital & trade credit | foundational | no | yes |
+| 19.8 | Ch. 19 | 587 | Trade Credit | Working capital & trade credit | foundational | no | yes |
+| 19.9 | Ch. 19 | 587 | Trade Credit | Working capital & trade credit | advanced | no | yes |
+| 19.10 | Ch. 19 | 587 | Trade Credit | Working capital & trade credit | advanced | no | yes |
+| 19.11 | Ch. 19 | 587 | Receivables Management | Working capital & trade credit | foundational | no | yes |
+| 19.12 | Ch. 19 | 588 | Receivables Management | Working capital & trade credit | foundational | no | yes |
+| 19.13 | Ch. 19 | 588 | Payables Management | Working capital & trade credit | foundational | no | yes |
+| 19.14 | Ch. 19 | 588 | Payables Management | Working capital & trade credit | exam | no | yes |
+| 19.15 | Ch. 19 | 588 | Payables Management | Working capital & trade credit | advanced | no | yes |
+| 19.16 | Ch. 19 | 589 | Inventory Management | Working capital & trade credit | foundational | no | yes |
+| 19.17 | Ch. 19 | 589 | Inventory Management | Working capital & trade credit | exam | no | yes |
+| 20.1 | Ch. 20 | 612 | Forecasting Short-Term Financing Needs | Liquidity | exam | no | yes |
+| 20.2 | Ch. 20 | 612 | Forecasting Short-Term Financing Needs | Liquidity | exam | no | yes |
+| 20.3 | Ch. 20 | 613 | Accounts Payable | Liquidity; Working capital & trade credit | foundational | no | yes |
+| 20.4 | Ch. 20 | 613 | Accounts Payable | Liquidity; Working capital & trade credit | foundational | no | yes |
+| 20.5 | Ch. 20 | 613 | Accounts Payable | Liquidity; Working capital & trade credit | foundational | no | yes |
+| 20.6 | Ch. 20 | 613 | Accounts Payable | Liquidity; Working capital & trade credit | foundational | no | yes |
+| 20.7 | Ch. 20 | 613 | Accounts Payable | Liquidity; Working capital & trade credit | foundational | no | yes |
+| 20.8 | Ch. 20 | 613 | Short-Term Financing with Bank Loans | Liquidity | exam | no | yes |
+| 20.9 | Ch. 20 | 613 | Short-Term Financing with Bank Loans | Liquidity | foundational | no | yes |
+| 20.10 | Ch. 20 | 613 | Short-Term Financing with Bank Loans | Liquidity | exam | no | yes |
+| 20.11 | Ch. 20 | 614 | Short-Term Financing with Bank Loans | Liquidity | foundational | no | yes |
+| 20.12 | Ch. 20 | 614 | Short-Term Financing with Commercial Paper | Liquidity | foundational | no | yes |
+| 20.13 | Ch. 20 | 614 | Short-Term Financing with Commercial Paper | Liquidity | foundational | no | yes |
+| 20.14 | Ch. 20 | 614 | Short-Term Financing with Commercial Paper | Liquidity | foundational | no | yes |
+| 20.15 | Ch. 20 | 614 | Short-Term Financing with Commercial Paper | Liquidity | foundational | no | yes |
+| 20.16 | Ch. 20 | 614 | Short-Term Financing with Secured Financing | Liquidity | foundational | no | yes |
+| 20.17 | Ch. 20 | 614 | Short-Term Financing with Secured Financing | Liquidity | foundational | no | yes |
+| 20.18 | Ch. 20 | 614 | Creating a Short-Term Financial Plan | Liquidity | exam | no | yes |
+| 21.1 | Ch. 21 | 644 | Option Basics | Valuation | exam | no | yes |
+| 21.2 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | exam | no | yes |
+| 21.3 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | exam | no | yes |
+| 21.4 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | exam | no | yes |
+| 21.5 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | exam | no | yes |
+| 21.6 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | foundational | no | yes |
+| 21.7 | Ch. 21 | 645 | Option Payoffs at Expiration | Valuation | exam | no | yes |
+| 21.8 | Ch. 21 | 646 | Option Payoffs at Expiration | Valuation | advanced | no | yes |
+| 21.9 | Ch. 21 | 646 | Option Payoffs at Expiration | Valuation | conceptual | no | yes |
+| 21.10 | Ch. 21 | 646 | Factors Affecting Option Prices | Valuation | conceptual | no | yes |
+| 21.11 | Ch. 21 | 646 | Factors Affecting Option Prices | Valuation | conceptual | no | yes |
+| 21.12 | Ch. 21 | 646 | Put-Call Parity | Valuation | foundational | no | yes |
+| 21.13 | Ch. 21 | 646 | Put-Call Parity | Valuation | foundational | no | yes |
+| 21.14 | Ch. 21 | 646 | Options and Corporate Finance | Agency & capital structure; Valuation | advanced | no | yes |
+| 21.15 | Ch. 21 | 646 | Options and Corporate Finance | Agency & capital structure; Valuation | conceptual | no | yes |
+
+## Grinblatt & Titman, *Financial Markets and Corporate Strategy* (McGraw-Hill, 2nd ed., © 2002)
+
+#book/grinblatt-titman
+
+Pages are **printed** page numbers, read per exercise from the running header of the page where the exercise number appears in `Livros/Financial Markets And Corporate Strategy{Mark Grinblatt, Sheridan Titman}(2001, McGraw-Hill_Irwin){91152295} libgen.li.md` (the number that closes the "Grinblatt−Titman: Financial Markets and Corporate Strategy, Second Edition … © The McGraw−Hill Companies, 2002" block). The PDF offset is not constant: PDF page = printed + 14 in Part I (Ch. 1–3) and printed + 13 from Ch. 4 onward. Every row's page was cross-checked against the PDF text layer. Only in-scope chapters are indexed (Ch. 1–3, 7, 9–19, 21–23; Ch. 4–6, 8 and 20 are skipped). Numbering: `C.N` = item N of chapter C's end-of-chapter "Exercises"; `10A.N` = "Exercises for Appendix 10A", the only appendix with its own exercises. *Level* is a heuristic, because the book does not grade or flag its exercises: "explain/discuss" questions = conceptual; single-step numeric = foundational; multi-step numeric = exam; derivations, proofs, long multi-part problems and option-based multi-factor hedges = advanced. *Answer* = no on every row, since the back matter holds only Appendix A (mathematical tables) and the name and subject indexes, with no printed solutions. This 2nd edition (© 2002) is the Titman & Grinblatt (2002) text cited in the syllabus.
+
+| Exercise | Chapter | Page | Title | Topic(s) | Level | Answer | Verified |
+|---|---|---|---|---|---|---|---|
+| 1.1 | Ch. 1 | 27 | Rights issues common in Europe | Introduction & stylized facts | conceptual | no | yes |
+| 1.2 | Ch. 1 | 27 | Rights-offering exercise price choice | Introduction & stylized facts | conceptual | no | yes |
+| 1.3 | Ch. 1 | 27 | Competitive vs negotiated underwriting | Introduction & stylized facts | conceptual | no | yes |
+| 1.4 | Ch. 1 | 27 | Costs and benefits of insider-trading ban | Introduction & stylized facts | conceptual | no | yes |
+| 1.5 | Ch. 1 | 27 | Small firms rely on private capital | Introduction & stylized facts | conceptual | no | yes |
+| 1.6 | Ch. 1 | 27 | Largest banks in Japan, Germany | Introduction & stylized facts | conceptual | no | yes |
+| 2.1 | Ch. 2 | 65 | Rating-agency incentives critique | Introduction & stylized facts | conceptual | no | yes |
+| 2.2 | Ch. 2 | 65 | Eurobond market has become boring | Introduction & stylized facts | conceptual | no | yes |
+| 2.3 | Ch. 2 | 65 | Convertible-bond enthusiasm (The Economist) | Introduction & stylized facts | conceptual | no | yes |
+| 2.4 | Ch. 2 | 66 | Default rates of rated bonds | Introduction & stylized facts | conceptual | no | yes |
+| 2.5 | Ch. 2 | 66 | Semiannual coupon and accrued interest | Introduction & stylized facts | foundational | no | yes |
+| 2.6 | Ch. 2 | 66 | Accrued interest, four day-count methods | Introduction & stylized facts | exam | no | yes |
+| 2.7 | Ch. 2 | 66 | LIBOR-plus floating-rate loan payments | Introduction & stylized facts | foundational | no | yes |
+| 2.8 | Ch. 2 | 66 | Corporate bond price from yield | Introduction & stylized facts | exam | no | yes |
+| 2.9 | Ch. 2 | 66 | Bank loan rate: LIBOR plus spread | Introduction & stylized facts | foundational | no | yes |
+| 2.10 | Ch. 2 | 66 | Amazon convertible conversion price | Introduction & stylized facts | foundational | no | yes |
+| 3.1 | Ch. 3 | 89 | Wrigley dual-class voting control | Introduction & stylized facts | foundational | no | yes |
+| 3.2 | Ch. 3 | 89 | Underwriters' pricing-accuracy reputation | Introduction & stylized facts | conceptual | no | yes |
+| 3.3 | Ch. 3 | 89 | Transaction costs of a 75-million IPO | Introduction & stylized facts | foundational | no | yes |
+| 3.4 | Ch. 3 | 89 | Designing a fixed-plus-upside security | Introduction & stylized facts | conceptual | no | yes |
+| 3.5 | Ch. 3 | 89 | Investment bankers' conflicting incentives | Introduction & stylized facts | conceptual | no | yes |
+| 3.6 | Ch. 3 | 89 | Internet IPO underpricing, late 1990s | Introduction & stylized facts | conceptual | no | yes |
+| 3.7 | Ch. 3 | 89 | Market vs limit order for Ajax | Introduction & stylized facts | foundational | no | yes |
+| 7.1 | Ch. 7 | 253 | Two-period risk-neutral derivative formula | Valuation | advanced | no | yes |
+| 7.2 | Ch. 7 | 254 | Valuing a convertible bond (binomial) | Valuation | exam | no | yes |
+| 7.3 | Ch. 7 | 254 | Valuing a risky corporate bond | Valuation | exam | no | yes |
+| 7.4 | Ch. 7 | 254 | Callable bond, backward induction | Valuation | advanced | no | yes |
+| 7.5 | Ch. 7 | 255 | Three-period binomial stock (±50%) | Valuation | exam | no | yes |
+| 7.6 | Ch. 7 | 255 | IBM forward contract value | Valuation | foundational | no | yes |
+| 7.7 | Ch. 7 | 255 | Sony and Disney forwards mispricing | Valuation | exam | no | yes |
+| 7.8 | Ch. 7 | 255 | Forward exchange rate from LIBORs | Valuation | foundational | no | yes |
+| 7.9 | Ch. 7 | 255 | Hewlett-Packard futures binomial tree | Valuation | exam | no | yes |
+| 7.10 | Ch. 7 | 255 | Two-period binomial stock (±20%) | Valuation | exam | no | yes |
+| 7.11 | Ch. 7 | 255 | Binomial step sizes from volatility | Valuation | foundational | no | yes |
+| 7.12 | Ch. 7 | 256 | Risk-neutral probabilities and forward prices | Valuation | foundational | no | yes |
+| 7.13 | Ch. 7 | 256 | European "Tootsie Square" contract | Valuation | advanced | no | yes |
+| 9.1 | Ch. 9 | 325 | Growing perpetuity shifted one period | Valuation | advanced | no | yes |
+| 9.2 | Ch. 9 | 326 | Time to double at 8 percent | Valuation | foundational | no | yes |
+| 9.3 | Ch. 9 | 326 | 30-year mortgage, 1,500 monthly payments | Valuation | foundational | no | yes |
+| 9.4 | Ch. 9 | 326 | Equivalent daily compounded rate | Valuation | foundational | no | yes |
+| 9.5 | Ch. 9 | 326 | Keogh retirement savings plan | Valuation | exam | no | yes |
+| 9.6 | Ch. 9 | 326 | PV of a deferred perpetuity | Valuation | foundational | no | yes |
+| 9.7 | Ch. 9 | 326 | 30- vs 15-year mortgage | Valuation | exam | no | yes |
+| 9.8 | Ch. 9 | 326 | Graph zero-coupon PV vs rate | Valuation | exam | no | yes |
+| 9.9 | Ch. 9 | 326 | Stock value from future dividends | Valuation | foundational | no | yes |
+| 9.10 | Ch. 9 | 326 | Injured employee's lost wages | Valuation | exam | no | yes |
+| 9.11 | Ch. 9 | 326 | Simple interest account (Bob) | Valuation | foundational | no | yes |
+| 9.12 | Ch. 9 | 326 | Nine-month T-bill simple rate | Valuation | foundational | no | yes |
+| 9.13 | Ch. 9 | 326 | Ranking rates by compounding frequency | Valuation | foundational | no | yes |
+| 9.14 | Ch. 9 | 326 | Seven-month T-bill present value | Valuation | foundational | no | yes |
+| 9.15 | Ch. 9 | 326 | Daniela's grocery delivery program | Valuation | exam | no | yes |
+| 9.16 | Ch. 9 | 327 | Jones Inc. irregular cash inflows | Valuation | exam | no | yes |
+| 9.17 | Ch. 9 | 327 | Holding period from future value | Valuation | foundational | no | yes |
+| 9.18 | Ch. 9 | 327 | Lottery payoff programs compared | Valuation | exam | no | yes |
+| 9.19 | Ch. 9 | 327 | Home insurance premium plans | Valuation | exam | no | yes |
+| 9.20 | Ch. 9 | 327 | Inheritance as a varying perpetuity | Valuation | exam | no | yes |
+| 9.21 | Ch. 9 | 327 | Funding a son's college tuition | Valuation | exam | no | yes |
+| 9.22 | Ch. 9 | 327 | Retirement account from age 35 | Valuation | exam | no | yes |
+| 9.23 | Ch. 9 | 327 | Seasonal quarterly cash flows PV | Valuation | exam | no | yes |
+| 9.24 | Ch. 9 | 328 | Floating-rate mortgage payments | Valuation | exam | no | yes |
+| 9.25 | Ch. 9 | 328 | Allocated CEO pay and cash flows | Valuation | conceptual | no | yes |
+| 9.26 | Ch. 9 | 328 | Redo Exhibit 9.1 with inflation | Valuation | exam | no | yes |
+| 9.27 | Ch. 9 | 328 | PV of revised hydrogenerator cash flows | Valuation | foundational | no | yes |
+| 9.28 | Ch. 9 | 328 | Inflation-adjusted Exhibit 9.1 figures | Valuation | exam | no | yes |
+| 9.29 | Ch. 9 | 328 | ExxonMobil unlevered cash flow | Valuation | exam | no | yes |
+| 10.1 | Ch. 10 | 360 | Glupto regional expansion under budget | Valuation | exam | no | yes |
+| 10.2 | Ch. 10 | 360 | Wheatena milling machine break-even price | Valuation | exam | no | yes |
+| 10.3 | Ch. 10 | 361 | Small Corp. project X cash flows | Valuation | exam | no | yes |
+| 10.4 | Ch. 10 | 361 | Tracking portfolio for project X | Valuation | exam | no | yes |
+| 10.5 | Ch. 10 | 361 | Zero-coupon prices and term structure | Valuation | exam | no | yes |
+| 10.6 | Ch. 10 | 361 | Project X early vs late flows | Valuation | exam | no | yes |
+| 10.7 | Ch. 10 | 361 | Finco Midwest investment opportunities | Valuation | exam | no | yes |
+| 10.8 | Ch. 10 | 361 | ABC Metalworks sheetcutter choice | Valuation | exam | no | yes |
+| 10.9 | Ch. 10 | 362 | Investco computer technology level | Valuation | exam | no | yes |
+| 10A.1 | Ch. 10 | 368 | Two zero-coupon bonds, arbitrage check | Valuation | exam | no | yes |
+| 10A.2 | Ch. 10 | 369 | Annuity and par yields from spots | Valuation | foundational | no | yes |
+| 10A.3 | Ch. 10 | 369 | Spot and annuity yields from par | Valuation | exam | no | yes |
+| 11.1 | Ch. 11 | 416 | Certainty equivalent of a 1-million flow | Valuation | foundational | no | yes |
+| 11.2 | Ch. 11 | 416 | Marriott expected restaurant cash flow | Valuation | foundational | no | yes |
+| 11.3 | Ch. 11 | 416 | Cash-flow covariance and beta | Valuation | foundational | no | yes |
+| 11.4 | Ch. 11 | 416 | Certainty equivalent from market premium | Valuation | foundational | no | yes |
+| 11.5 | Ch. 11 | 416 | Discount certainty equivalent at risk-free rate | Valuation | foundational | no | yes |
+| 11.6 | Ch. 11 | 416 | Why answer differs from Example 11.2 | Valuation | conceptual | no | yes |
+| 11.7 | Ch. 11 | 416 | Derive certainty-equivalent formula | Valuation | advanced | no | yes |
+| 11.8 | Ch. 11 | 416 | Asset values rise 10 percent | Valuation | exam | no | yes |
+| 11.9 | Ch. 11 | 416 | Negative-beta certainty equivalent intuition | Valuation | conceptual | no | yes |
+| 11.10 | Ch. 11 | 416 | Lockheed and Northrop unlevered betas | Valuation | foundational | no | yes |
+| 11.11 | Ch. 11 | 416 | Hughes asset beta, no taxes | Valuation | foundational | no | yes |
+| 11.12 | Ch. 11 | 416 | Hughes cost of capital, no taxes | Valuation | foundational | no | yes |
+| 11.13 | Ch. 11 | 416 | Value Hughes at estimated cost | Valuation | exam | no | yes |
+| 11.14 | Ch. 11 | 417 | Value Hughes at GM's cost | Valuation | foundational | no | yes |
+| 11.15 | Ch. 11 | 417 | Two-factor APT for Dell | Valuation | exam | no | yes |
+| 11.16 | Ch. 11 | 417 | Rockwell space-shuttle cash flows | Valuation | exam | no | yes |
+| 12.1 | Ch. 12 | 455 | Maytag–Whirlpool merger P/E ratio | Valuation | exam | no | yes |
+| 12.2 | Ch. 12 | 455 | XYZ DRAM chip factory | Valuation | exam | no | yes |
+| 12.3 | Ch. 12 | 456 | Vacant land: condos vs homes | Valuation | exam | no | yes |
+| 12.4 | Ch. 12 | 456 | Silver mine extraction schedule | Valuation | exam | no | yes |
+| 12.5 | Ch. 12 | 456 | Widget one-year production cycle | Valuation | exam | no | yes |
+| 12.6 | Ch. 12 | 457 | Valuing oil reserves with futures | Valuation | advanced | no | yes |
+| 12.7 | Ch. 12 | 457 | Risk-neutral probabilities, Example 12.2 mine | Valuation | foundational | no | yes |
+| 12.8 | Ch. 12 | 457 | Short-sighted managers, single discount rate | Valuation | conceptual | no | yes |
+| 12.9 | Ch. 12 | 457 | Leverage and P/E, Example 12.9 | Valuation; MM benchmark | foundational | no | yes |
+| 12.10 | Ch. 12 | 457 | Overinvesting in capacity (Porter–Spence) | Valuation | conceptual | no | yes |
+| 12.11 | Ch. 12 | 457 | Unlevered P/E from equation (12.1) | Valuation | foundational | no | yes |
+| 12.12 | Ch. 12 | 457 | Leveraged recapitalization, Example 12.11 | Valuation; MM benchmark | exam | no | yes |
+| 13.1 | Ch. 13 | 492 | Hughes comparison firms' unlevered betas | Valuation; MM benchmark | foundational | no | yes |
+| 13.2 | Ch. 13 | 492 | Hughes unlevered asset beta | Valuation; MM benchmark | foundational | no | yes |
+| 13.3 | Ch. 13 | 493 | Hughes equity beta at target debt | Valuation; MM benchmark | foundational | no | yes |
+| 13.4 | Ch. 13 | 493 | WACC for the Hughes acquisition | Valuation; MM benchmark | foundational | no | yes |
+| 13.5 | Ch. 13 | 493 | Value Hughes with the WACC | Valuation; MM benchmark | foundational | no | yes |
+| 13.6 | Ch. 13 | 493 | Value Hughes at GM's WACC | Valuation; MM benchmark | foundational | no | yes |
+| 13.7 | Ch. 13 | 493 | APV valuation of Hughes | Valuation; MM benchmark | exam | no | yes |
+| 13.8 | Ch. 13 | 493 | Marriott restaurant division WACC | Valuation; MM benchmark | exam | no | yes |
+| 13.9 | Ch. 13 | 493 | GT Associates widget company | Valuation; MM benchmark | exam | no | yes |
+| 13.10 | Ch. 13 | 493 | HTT Company new product | Valuation; MM benchmark | exam | no | yes |
+| 13.11 | Ch. 13 | 493 | Mold NPV, zero debt capacity | Valuation; MM benchmark | foundational | no | yes |
+| 13.12 | Ch. 13 | 493 | Unitron debt value rises with project | MM benchmark; Agency & capital structure | exam | no | yes |
+| 13.13 | Ch. 13 | 493 | AMD office lease vs purchase | MM benchmark | exam | no | yes |
+| 13.14 | Ch. 13 | 493 | SL Inc. leverage and beta | MM benchmark | exam | no | yes |
+| 13.15 | Ch. 13 | 494 | Akron Company riskless debt and equity | MM benchmark | exam | no | yes |
+| 13.16 | Ch. 13 | 494 | Akron debt-for-equity exchange offer | MM benchmark | exam | no | yes |
+| 14.1 | Ch. 14 | 526 | Tax rate making investors indifferent | MM benchmark | foundational | no | yes |
+| 14.2 | Ch. 14 | 526 | Binomial firm with debt: share price | MM benchmark | foundational | no | yes |
+| 14.3 | Ch. 14 | 527 | New debt of equal seniority | MM benchmark; Agency & capital structure | exam | no | yes |
+| 14.4 | Ch. 14 | 527 | IGWT Industries, inflation and debt | MM benchmark | exam | no | yes |
+| 14.5 | Ch. 14 | 527 | ABC Industries owner's capital structure | MM benchmark | exam | no | yes |
+| 14.6 | Ch. 14 | 527 | Inflation and capital structure | MM benchmark | conceptual | no | yes |
+| 14.7 | Ch. 14 | 527 | AAA bonds vs municipal bonds | MM benchmark | foundational | no | yes |
+| 14.8 | Ch. 14 | 527 | Airline leasing in the early 1990s | MM benchmark | conceptual | no | yes |
+| 14.9 | Ch. 14 | 527 | Franchising and subchapter S corporations | MM benchmark | conceptual | no | yes |
+| 14.10 | Ch. 14 | 527 | REITs and the use of debt | MM benchmark | conceptual | no | yes |
+| 14.11 | Ch. 14 | 527 | X-Tex vs Unique Scientific debt | MM benchmark | conceptual | no | yes |
+| 14.12 | Ch. 14 | 527 | Finstrat.com: equity vs debt dispute | MM benchmark | conceptual | no | yes |
+| 14.13 | Ch. 14 | 528 | Implied personal tax rate on debt | MM benchmark | exam | no | yes |
+| 14.14 | Ch. 14 | 528 | Jack and Tyler Pizza Co. | MM benchmark | exam | no | yes |
+| 15.1 | Ch. 15 | 554 | Rise of share repurchases | MM benchmark | conceptual | no | yes |
+| 15.2 | Ch. 15 | 554 | Buying IBM before ex-dividend | MM benchmark | foundational | no | yes |
+| 15.3 | Ch. 15 | 554 | Tax Reform Act of 1986, repurchases | MM benchmark | conceptual | no | yes |
+| 15.4 | Ch. 15 | 554 | Hot Shot Uranium capital structure, payout | MM benchmark | conceptual | no | yes |
+| 15.5 | Ch. 15 | 555 | Manager resisting share repurchases | MM benchmark; Agency & capital structure | conceptual | no | yes |
+| 15.6 | Ch. 15 | 555 | Hunter Industries: invest or distribute cash | MM benchmark | exam | no | yes |
+| 15.7 | Ch. 15 | 555 | Rising capital-gains tax, Microsoft repurchase | MM benchmark | conceptual | no | yes |
+| 15.8 | Ch. 15 | 555 | XYZ growing dividend valuation | MM benchmark | foundational | no | yes |
+| 15.9 | Ch. 15 | 555 | Alpha Corporation effective dividend tax | MM benchmark | foundational | no | yes |
+| 15.10 | Ch. 15 | 555 | Acme Industries LBO tax argument | MM benchmark | exam | no | yes |
+| 16.1 | Ch. 16 | 591 | Choosing project A or B | Agency & capital structure | exam | no | yes |
+| 16.2 | Ch. 16 | 591 | Nigel's zippers: taxes vs bankruptcy | MM benchmark | exam | no | yes |
+| 16.3 | Ch. 16 | 592 | Senior bond and subordinated loan | Agency & capital structure | exam | no | yes |
+| 16.4 | Ch. 16 | 592 | Hiroko Fashion: Dress vs Cosmetic | Agency & capital structure | exam | no | yes |
+| 16.5 | Ch. 16 | 592 | Sigma Design R&D, debt vs equity | Agency & capital structure | exam | no | yes |
+| 16.6 | Ch. 16 | 592 | Japanese banks holding borrower equity | MM benchmark; Agency & capital structure | conceptual | no | yes |
+| 16.7 | Ch. 16 | 592 | Zero-beta returns on stocks vs bonds | MM benchmark | conceptual | no | yes |
+| 16.8 | Ch. 16 | 592 | ABC Corp. two 100-dollar projects | Agency & capital structure | exam | no | yes |
+| 16.9 | Ch. 16 | 592 | Tailways after a recapitalization | Agency & capital structure | advanced | no | yes |
+| 16.10 | Ch. 16 | 593 | Control passes to debt holders | Agency & capital structure | conceptual | no | yes |
+| 16.11 | Ch. 16 | 593 | Short-term debt and incentive problems | Agency & capital structure | conceptual | no | yes |
+| 16.12 | Ch. 16 | 593 | Ajax Manufacturing R&D and bonds | Agency & capital structure | exam | no | yes |
+| 16.13 | Ch. 16 | 593 | Ajax with capital-intensive technology | Agency & capital structure | exam | no | yes |
+| 16.14 | Ch. 16 | 593 | Debtor-in-possession (DIP) financing | MM benchmark; Agency & capital structure | conceptual | no | yes |
+| 16.15 | Ch. 16 | 593 | Emax Industries flexible investment strategy | Agency & capital structure | conceptual | no | yes |
+| 16.16 | Ch. 16 | 593 | Atways Industries: two mining projects | Agency & capital structure | conceptual | no | yes |
+| 17.1 | Ch. 17 | 619 | Direct vs indirect bankruptcy costs | Agency & capital structure | conceptual | no | yes |
+| 17.2 | Ch. 17 | 619 | Employee interest in capital structure | Agency & capital structure | conceptual | no | yes |
+| 17.3 | Ch. 17 | 619 | Franchised hotel vs tech start-up | Agency & capital structure | conceptual | no | yes |
+| 17.4 | Ch. 17 | 619 | Auto maker before union negotiations | Agency & capital structure | exam | no | yes |
+| 17.5 | Ch. 17 | 619 | BCD repurchase vs supplier credit | Agency & capital structure; Working capital & trade credit | exam | no | yes |
+| 17.6 | Ch. 17 | 619 | Carcinogens-R-Us and Lung Decay | Agency & capital structure | exam | no | yes |
+| 17.7 | Ch. 17 | 619 | Apple vs Marriott debt levels | Agency & capital structure | conceptual | no | yes |
+| 17.8 | Ch. 17 | 619 | Pricing decisions and leverage | Agency & capital structure | conceptual | no | yes |
+| 17.9 | Ch. 17 | 619 | Weston Tractor layoffs and leverage | Agency & capital structure | exam | no | yes |
+| 17.10 | Ch. 17 | 619 | Compass Computers: why not issue equity | Agency & capital structure | conceptual | no | yes |
+| 17.11 | Ch. 17 | 619 | Competitor with high or low leverage | Agency & capital structure | conceptual | no | yes |
+| 17.12 | Ch. 17 | 619 | Compton Industries equity offering | Agency & capital structure | exam | no | yes |
+| 17.13 | Ch. 17 | 620 | Dell capital-structure advice | Agency & capital structure | exam | no | yes |
+| 17.14 | Ch. 17 | 620 | Chrysler cash and Kerkorian buyback | Agency & capital structure | conceptual | no | yes |
+| 17.15 | Ch. 17 | 620 | Grocery prices after rival LBOs | Agency & capital structure | conceptual | no | yes |
+| 17.16 | Ch. 17 | 620 | Falling issuance costs and capital structure | Agency & capital structure | conceptual | no | yes |
+| 18.1 | Ch. 18 | 653 | Why managers want growth | Agency & capital structure | conceptual | no | yes |
+| 18.2 | Ch. 18 | 653 | Determinants of ownership concentration | Agency & capital structure | conceptual | no | yes |
+| 18.3 | Ch. 18 | 653 | High Tech: equity issue vs subsidiary | Agency & capital structure | exam | no | yes |
+| 18.4 | Ch. 18 | 653 | Three firms with differing board control | Agency & capital structure | exam | no | yes |
+| 18.5 | Ch. 18 | 653 | Law limiting large shareholders' private benefits | Agency & capital structure | conceptual | no | yes |
+| 18.6 | Ch. 18 | 653 | CEO pay at Chrysler vs Chevron | Agency & capital structure | conceptual | no | yes |
+| 18.7 | Ch. 18 | 653 | Stock compensation and market-to-book | Agency & capital structure | conceptual | no | yes |
+| 18.8 | Ch. 18 | 653 | Cybertex management and higher leverage | Agency & capital structure | exam | no | yes |
+| 18.9 | Ch. 18 | 654 | Chicago Bulls coach compensation | Agency & capital structure | conceptual | no | yes |
+| 19.1 | Ch. 19 | 687 | Investment when management watches stock price | Asymmetric information | conceptual | no | yes |
+| 19.2 | Ch. 19 | 687 | Raising debt after favorable information | Asymmetric information | conceptual | no | yes |
+| 19.3 | Ch. 19 | 687 | Industrials vs utilities issue reactions | Asymmetric information | conceptual | no | yes |
+| 19.4 | Ch. 19 | 687 | Investment depends on available cash | Asymmetric information | conceptual | no | yes |
+| 19.5 | Ch. 19 | 687 | Retiring manager picks higher debt | Asymmetric information | conceptual | no | yes |
+| 19.6 | Ch. 19 | 687 | ABC Industries undervalued equity issue | Asymmetric information | exam | no | yes |
+| 19.7 | Ch. 19 | 687 | Disclosure quality and signaling incentives | Asymmetric information | conceptual | no | yes |
+| 19.8 | Ch. 19 | 687 | Management selling shares while levering | Asymmetric information | conceptual | no | yes |
+| 19.9 | Ch. 19 | 687 | Abracadabra debt as a signal | Asymmetric information | advanced | no | yes |
+| 19.10 | Ch. 19 | 687 | Infotech: debt, equity, or nothing | Asymmetric information | advanced | no | yes |
+| 19.11 | Ch. 19 | 688 | CEOs Chan and Smith, debt choice | Asymmetric information | conceptual | no | yes |
+| 19.12 | Ch. 19 | 688 | Hopewell covered-warrant announcement | Asymmetric information | conceptual | no | yes |
+| 19.13 | Ch. 19 | 688 | Stock prices after leverage exchange offers | Asymmetric information | conceptual | no | yes |
+| 19.14 | Ch. 19 | 688 | Innovative Technologies financing strategy | Asymmetric information | exam | no | yes |
+| 19.15 | Ch. 19 | 688 | Divided Industries dividend increase | Asymmetric information | conceptual | no | yes |
+| 19.16 | Ch. 19 | 688 | Takeover threat and short-termism | Asymmetric information; Agency & capital structure | conceptual | no | yes |
+| 19.17 | Ch. 19 | 688 | Example 19.7 debt above 400 million | Asymmetric information | foundational | no | yes |
+| 21.1 | Ch. 21 | 771 | Small firms hedge less | Liquidity | conceptual | no | yes |
+| 21.2 | Ch. 21 | 771 | Currency hedging with volatile inflation | Liquidity | conceptual | no | yes |
+| 21.3 | Ch. 21 | 771 | Whistler Resorts exchange-rate exposure | Liquidity | conceptual | no | yes |
+| 21.4 | Ch. 21 | 771 | Easier hedging and capital structure | Liquidity | conceptual | no | yes |
+| 21.5 | Ch. 21 | 771 | XYZ plants in Turkey and Japan | Liquidity | conceptual | no | yes |
+| 21.6 | Ch. 21 | 771 | PPP and long-term FX hedging | Liquidity | conceptual | no | yes |
+| 21.7 | Ch. 21 | 771 | Oil firms hedge only partly | Liquidity | conceptual | no | yes |
+| 21.8 | Ch. 21 | 771 | Harwood Outboard risk management | Liquidity | conceptual | no | yes |
+| 22.1 | Ch. 22 | 814 | National Petroleum put options | Liquidity | exam | no | yes |
+| 22.2 | Ch. 22 | 814 | AB Cable copper purchase hedge | Liquidity | exam | no | yes |
+| 22.3 | Ch. 22 | 814 | ExxonMobil two-factor profit hedge | Liquidity | exam | no | yes |
+| 22.4 | Ch. 22 | 814 | GM yen acquisition hedging choices | Liquidity | conceptual | no | yes |
+| 22.5 | Ch. 22 | 814 | Schering-Plough French production hedge | Liquidity | exam | no | yes |
+| 22.6 | Ch. 22 | 815 | Dell Europe regression hedge | Liquidity | exam | no | yes |
+| 22.7 | Ch. 22 | 815 | Breaking into the British market | Liquidity | exam | no | yes |
+| 22.8 | Ch. 22 | 815 | Oil hedge with forwards and futures | Liquidity | exam | no | yes |
+| 22.9 | Ch. 22 | 815 | EXCO oil delivery obligation hedge | Liquidity | exam | no | yes |
+| 22.10 | Ch. 22 | 815 | GM oil delivery hedged with options | Liquidity | advanced | no | yes |
+| 22.11 | Ch. 22 | 815 | Disney–Metallgesellschaft currency swap | Liquidity | exam | no | yes |
+| 22.12 | Ch. 22 | 816 | Two-factor hedge with securities | Liquidity | advanced | no | yes |
+| 22.13 | Ch. 22 | 816 | Ford Taurus factory hedge | Liquidity | advanced | no | yes |
+| 22.14 | Ch. 22 | 816 | NBA Eastern–Western team mix | Liquidity | exam | no | yes |
+| 23.1 | Ch. 23 | 851 | 3-year coupon bond yield, duration | Liquidity | exam | no | yes |
+| 23.2 | Ch. 23 | 851 | Prove duration under parallel shift | Liquidity | advanced | no | yes |
+| 23.3 | Ch. 23 | 851 | DV01 hedge of bond A | Liquidity | foundational | no | yes |
+| 23.4 | Ch. 23 | 852 | Treasury bond vs note DV01 | Liquidity | exam | no | yes |
+| 23.5 | Ch. 23 | 852 | 2-year bond from zero prices | Liquidity | exam | no | yes |
+| 23.6 | Ch. 23 | 852 | Duration, DV01, convexity: 3-year bond | Liquidity | exam | no | yes |
+| 23.7 | Ch. 23 | 852 | Duration, DV01, convexity: 2-year bond | Liquidity | exam | no | yes |
+| 23.8 | Ch. 23 | 852 | Hedging 3-year bond with 2-year | Liquidity | exam | no | yes |
+| 23.9 | Ch. 23 | 852 | Hedge with 10 percent premium bond | Liquidity | exam | no | yes |
+| 23.10 | Ch. 23 | 852 | Hedge when term structure not flat | Liquidity | conceptual | no | yes |

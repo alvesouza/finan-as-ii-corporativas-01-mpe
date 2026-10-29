@@ -1,0 +1,119 @@
+             Corporate Finance - Problem Set 2
+
+Exercise 1 Consider an economy with complete markets and two equally probable states:
+slump and boom. The market prices and payoﬀs of a stock and a bond are given by:
+
+                              Payoﬀ (t=1)
+
+                  Price (t=0) Slump Boom
+
+        Stock        1.05     0       2.5
+
+        Bond         0.92     1          1
+
+A penniless entrepreneur has access to the following project:
+
+                              Payoﬀ (t=1)
+
+        Investment (t=0) Slump Boom
+
+                  1           0.5     3
+
+The assumptions of the Modigliani-Miller framework are satisﬁed, including zero corpo-
+rate taxes.
+
+(a) What is the no-arbitrage price of a contingent claim that pays 1 in the slump state
+and zero otherwise? What is the no-arbitrage price of a contingent claim that pays 1 in
+the boom state and zero otherwise?
+
+(b) Denote by C(K) the no-arbitrage price of a call option on the project assets with
+strike K. Find C(1) and C(1.5).
+
+(c) Denote by P (K) the no-arbitrage price of a put option on the project assets with
+strike K. Find P (1) and P (1.5).
+
+(d) Show that
+
+C(1) +  1         − P (1) = C(1.5) +  1.5                      − P (1.5)
+
+        (1/0.92)                      (1/0.92)
+
+Interpret the result.
+
+(e) Suppose the entrepreneur decides to raise 1 by issuing debt. What would be the face
+value of debt? Find rD, rE, rA, E, A and D.
+
+(e) Suppose the entrepreneur decides to raise an amount D by issuing debt, and the
+remainder 1 − D by issuing equity. What would be the face value of debt for a given D?
+Find rD, rE, rA, E, A and D for all D ∈ {0.01, 0.02, 0.03, ..., 0.98, 0.99, 1}.
+
+(f ) The penniless entrepreneur needs to consume a minimum amount at t = 0. Suppose
+the entrepreneur decides to raise 1.1 by issuing debt, out of which 0.1 will be used to pay
+a dividend at t = 0, and the remainder 1 will be used to ﬁnance the project. What is the
+value of the ﬁrm after the dividend is paid? Is the entrepreneur better oﬀ?
+
+                           1
+Exercise 2 Company A currently has no debt in its capital structure and 10 million shares
+outstanding. The beta of its equity is 1.20. Company A’s expected future free cash ﬂow is
+$25 million per year in perpetuity, starting next year. Company A is considering changing
+its capital structure by issuing debt and using the proceeds to buy back stock in such a
+way that it will have a constant debt-equity ratio of 25% after the change (continuously
+adjusted). Assume that A’s debt cost of capital will be 3%. The corporate tax rate is
+25%, and there are no other market imperfections. Assume that the CAPM holds, the
+risk-free rate is 3%, and the expected return on the market is 8%.
+
+(a) Compute the rate of return of the equity before and after the change in the capital
+structure.
+
+(b) Compute the ﬁrm’s new WACC.
+
+(c) Compute the value of the all-equity ﬁrm and the stock price before and after the
+announcement of the change. Find the value of the levered ﬁrm and the tax shield (after
+the change). Find the stock price and the new number of outstanding shares after the
+issue.
+
+(d) Assume only for this question that company A issues debt, but instead of keeping a
+constant debt-equity ratio equal to 25% the ﬁrm keeps interest expenses equal to 20% of
+its free cash ﬂow. Compute the value of the tax shields in this new situation.
+
+(e) Assume only for this question that company A issues debt, but instead of keeping a
+constant debt-equity ratio equal to 25% the ﬁrm issues $100 million of perpetual debt.
+Compute the value of the ﬁrm’s tax shields, the stock price, and the new number of
+outstanding shares after the issue.
+
+Exercise 3 Consider an entrepreneur with a project that requires an investment of
+I = 60 today. The project generates (unlevered) free cash ﬂow of 100 or 60 tomorrow
+with probability 50% each. The expected return on assets is rA = 15%. Assume there
+are no market imperfections and corporate taxes are zero.
+
+(a) Find the value of the all-equity ﬁrm.
+
+(b) Suppose the entrepreneur chooses to raise 60 by issuing debt and that creditors
+demand a return of 6.6%. What is the face value of debt? What is the market value of
+equity?
+
+(c) Now assume that if bankruptcy occurs, the ﬁrm must pay 7% of the realized cash
+ﬂow to lawyers (direct bankruptcy costs). Find the face value of debt and the market
+value of equity. Which party is “paying” for the bankruptcy costs?
+
+Exercise 4 Consider the Modigliani-Miller framework. Yerba Industries is an all-equity
+ﬁrm whose stock has a beta of 1.2 and an expected return of 12.5%. Suppose it issues
+new risk-free debt with a 5% yield and repurchases 40% of its stock. Assume perfect
+capital markets.
+
+(a) What is the beta of Yerba stock after this transaction?
+
+(b) What is the expected return of Yerba stock after this transaction?
+
+Suppose that before this transaction, Yerba expected earnings per share this coming year
+
+                                                        2
+of £1.50, with a forward P/E ratio (that is, the share price divided by the expected
+earnings for the coming year) of 14.
+(c) What is Yerba’s expected earnings per share after this transaction? Does this change
+beneﬁt shareholders? Explain.
+(d) What is Yerba’s forward P/E ratio after this transaction? Is this change in P/E ratio
+reasonable? Explain.
+
+                                                        3
+

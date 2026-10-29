@@ -1,0 +1,983 @@
+Corporate Finance
+       Topic 1
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 63
+References
+
+       Main references:
+
+              Berk, J. and DeMarzo, P. (2011). Corporate ﬁnance, global ed. Essex:
+              Person Education Limited
+
+              Tirole, J. (2010). The theory of corporate ﬁnance. Princeton University
+              Press
+       Complementary references:
+
+              Higgins, R. (2011). Analysis for ﬁnancial management, 10e. Burr
+              Ridge: McGraw-Hill
+              Brealey, R. A., Myers, S. C., Allen, F., and Mohanty, P. (2018).
+              Principles of Corporate Finance. McGraw-Hill Education
+
+                                                                                                                                                                                   2 / 63
+Evaluation
+
+       Final exam (60%)
+       Midterm exam (20%)
+       Groups of 2 students:
+
+              Problem sets (10%). The TA will randomly select one question to grade
+              per problem set
+              Presentation of a paper (10%)
+
+                                                                                                                                                                                   3 / 63
+Financial economics
+
+       Asset pricing: the goal is to understand the price of claims to
+       uncertain future payments (e.g. stocks, derivatives, bonds)
+
+              Many assets (e.g. stocks and corporate bonds) are issued by
+              corporations
+              Asset pricing models yield the appropriate risk-premium of a security
+              ⇒ essential for the calculation of appropriate discount rates in the
+              valuation process
+
+                                                                                                                                                                                   4 / 63
+Financial economics
+
+       Corporate ﬁnance: the goal is to understand some aspects of
+       corporations (e.g. governance, board structure, CEO compensation)
+       and how ﬁrms choose to ﬁnance their operations (e.g. stocks, bonds,
+       bank debt, convertible bonds)
+
+              Corporate ﬁnance also studies how different ﬁnancing choices affect
+              the decisions of a ﬁrm and ultimately its value
+
+       Banking: the goal is to understand the characteristics and impacts of
+       banks and ﬁnancial intermediaries more generally
+
+              Corporations contract loans and buy services from banks (e.g.
+              issuance of ﬁnancial contracts, ﬁnancial and M&A advice)
+
+                                                                                                                                                                                   5 / 63
+Accounting review
+
+       Goal: introduction to basic ﬁnancial statements
+       Key to measuring and understanding relevant aspects of ﬁrms
+       Three main (ﬁnancial) accounting statements:
+
+              Balance sheet: information about a ﬁrm’s ﬁnancial condition at a point
+              in time
+              Income (or earnings) statement: information about a ﬁrm’s ﬁnancial
+              performance over a period of time
+              Cash ﬂow statement: information about the sources and uses of a
+              ﬁrm’s cash over a period of time
+
+                                                                                                                                                                                   6 / 63
+The balance sheet
+
+       A balance sheet is a snapshot of the ﬁrm’s ﬁnancial position taken at
+       a given point in time
+       The ﬁrm’s ﬁnancial position includes all the assets the ﬁrm owns and
+       all the claims against those assets
+       It is divided into two sides: assets (A ) on the left side and liabilities
+       (L ) and shareholders’ equity (E) on the right
+       Assets (A ) summarize how the ﬁrm uses its capital, and the right
+      side (L + E) summarizes the sources of capital
+
+                                                                                                                                                                                   7 / 63
+The balance sheet view of the corporation
+
+   Assets (A )             Liabilities (L )
+
+   “Resources that         “Promises made to
+generate current and           third parties”
+
+  future cash ﬂows           Equity (E)
+ for the corporation”
+                       “Resources not promised
+                         away to third parties”
+
+Accounting identity: A = L + E
+The identity holds in book value or in market value
+In corporate ﬁnance we are mostly interested in market values
+
+                                                                                                                                                                      8 / 63
+The balance sheet
+
+       Every transaction preserves the accounting identity:
+
+              Purchase of a $1B plant on credit: assets: +$1B; liabilities: +$1B
+
+       Which assets and liabilities are recognized?
+
+              In general, the more tangible the asset is, the easier it is to assign a
+              value to it and thus the more likely it is to be recognized (e.g. cash,
+              buildings, receivables)
+
+              Intangible assets such as patents, customer data, algorithms, and
+              brand reputation are more difﬁcult to measure and their recognition
+              and valuation are treated more conservatively...
+
+              ... but intangible assets are increasingly important (some estimates: as
+              much as 90% of S&P 500’s total enterprise value)
+
+                                                                                                                                                                                   9 / 63
+The balance sheet
+
+       How are assets and liabilities valued?
+       Acquisition (historical cost): the original price at which the asset
+       was purchased (or the amount received for an obligation)
+
+              Different than the market value: the current market price for the asset
+              or liability
+              Recent example: Silicon Valley Bank (held-to-maturity versus
+              available-for-sale securities)
+
+       Rules and regulations whether assets and liabilities are measured at
+       acquisition of market value are complex and evolving...
+
+                                                                                                                                                                                 10 / 63
+The balance sheet view of the corporation
+
+       Corporations sell two things
+       (i) Goods and services
+
+              Firms invest in assets (property, plant, and equipment or PP&E,
+              working capital, etc.) and hire workers that enable those sales
+              The sales generate current and future cash ﬂows that underpin the
+              market value of its assets
+
+       (ii) Promises
+              Firms must raise money to invest in their assets
+              They are able to raise money by promising to outside investors part of
+              the future cash ﬂows generated from their sales
+
+                                                                                                                                                                                 11 / 63
+Promises
+
+       There are two types of promises
+       Liabilities or promises to non-owners (creditors): senior (e.g.
+       bonds, bank loans, payables)
+       Equity or promises to owners (shareholders): junior (e.g. stocks)
+       Owners are residual claimants: they receive future cash ﬂows that
+       are not promised away to non-owners (creditors)
+       The choice between different types of promises is a key question in
+       corporate ﬁnance
+
+                                                                                                                                                                                 12 / 63
+The balance sheet view of the corporation
+
+       The fact that cash ﬂows generated from assets are split into
+       payments to owners and non-owners explains the accounting identity
+       in market value
+       Recall that the value of an asset is the expected discounted value of
+       its future payments
+      FCFA = FCFL + FCFE =⇒ A = L + E
+
+                                                                                                                                                                                 13 / 63
+The cash ﬂow-production cycle
+
+                          ∆ equity Taxes    liabilities
+                                          ∆
+
+              Investment  Cash                           Collection of receivables
+
+Fixed assets              Production                                        Accounts
+                                                               Cash sales  receivable
+
+Depreciation              Inventory                                        Credit sales
+
+Source: Higgins (2011)
+
+                                                                                                                                                                                14 / 63
+Financial statements: a quick review
+
+       We will closely follow Berk and DeMarzo (2011)
+
+       Current assets: assets that can be converted into cash within one
+       year (liquid assets)
+       Examples:
+
+              Cash and other marketable securities: short-term, liquid, and low-risk
+              investments (money market investments, government debt, bank
+              deposits)
+              Accounts receivable: amount owed by customers who have purchased
+              goods and services on credit
+              Inventories: raw materials, work-in-progress, and ﬁnished goods
+
+                                                                                                                                                                                 15 / 63
+Assets
+
+       Non-current assets: “long-term” assets. Examples:
+              Fixed assets such as property, plant, and equipment
+              Goodwill: the difference between the market and the fair value (the
+              accountant’s estimate of the potential value of an asset, not
+              necessarily equal to book value) of an acquisition
+
+       Over time, ﬁxed assets are worn out. The accountant reduces the
+       book value of ﬁxed assets by an amount known as depreciation
+
+       Depreciation is not a cash expense
+
+       The book value of an asset: acquisition cost minus accumulated
+       depreciation
+
+                                                                                                                                                                                 16 / 63
+Assets: rise in corporate cash
+
+Source: Faulkender et al. (2019)
+
+                                                                                                                                                                                 17 / 63
+Liabilities
+
+       Current liabilities: obligations that are due within one year
+       Examples:
+
+              All debt payments due in the next year (from short-term as well as
+              long-term debt instruments)
+              Accounts payable: amounts owed to suppliers for products or services
+              purchased with credit
+              Accrual items such as salary and taxes that are owed but have not yet
+              been paid
+              Deferred or unearned revenue: cash that has been received for
+              products that have not yet been delivered
+
+                                                                                                                                                                                 18 / 63
+Liabilities
+
+       Non-current liabilities: obligations that extend beyond one year
+       (“long-term”)
+       Example: debt payments that are not due within the next accounting
+       year
+
+                                                                                                                                                                                 19 / 63
+Net working capital
+
+       The difference between current assets and current liabilities is the
+       ﬁrm’s net working capital (NWC), or simply working capital
+       It is a measure of the ﬁrm’s ﬁnancial health in the short-term: ﬁrms
+       with low net working capital might not have enough resources to meet
+       short-term obligations
+
+                                                                                                                                                                                 20 / 63
+Example: GPA
+
+Table: Balance sheet as of 31/12/2020 (in millions of BRL)
+
+                     Assets           Liabilities & shareholders’ equity
+
+Current assets               17,641   Current liabilities                       18,483
+Cash and equivalents          8,711   Trade payable, net                        11,424
+Trade receivable, net            686  Borrowings and ﬁnancing
+Inventories                   6,536   Lease liabilities                          2,309
+Other                         1,708   Financing of property and equipment           947
+                                      Other                                         100
+Non-current assets           35,654   Non-current liabilities
+Property and equipment, net  19,888   Borrowings and ﬁnancing                    3,703
+Intangible                            Lease liabilities                         18,005
+Other                         6,164   Other
+                              9,602   Total liabilities                          6,842
+Total assets                          Shareholders’ equity                       7,427
+                             53,295   Total liabilities & shareholders’ equity   3,736
+                                                                                36,488
+                                                                                16,807
+                                                                                53,295
+
+Remark: note the importance of suppliers in the provision of
+short-term ﬁnancing (trade payable)
+
+                                                                                                                                                                    21 / 63
+Shareholders’ equity
+
+       Difference between assets and liabilities: book value of equity
+
+       Accounting measure of the net worth of the ﬁrm
+
+       The book value of equity differs from the actual amount that investors
+       are willing to pay for the equity portion of the ﬁrm, known as the
+       market value or market capitalization or market cap
+
+       Market value of a publicly traded company: share price times the
+       number of common shares outstanding
+
+       Market values are forward-looking (they reﬂect the expected
+       discounted value of future payoffs to shareholders), while book
+       values are backward-looking
+
+                                                                                                                                                                                 22 / 63
+Shareholders’ equity
+
+       Examples of drivers of the difference between book and market
+       values
+
+       The values of most of the assets on the balance sheet are computed
+       using historical costs rather than their current market value
+
+              Historical costs do not incorporate changes to the future income the
+              assets might generate
+
+              Only a few assets and liabilities are actively traded and can be marked
+              to market
+
+       Many of the ﬁrms’ valuable assets (or liabilities) do not appear on the
+       balance sheet:
+
+              Assets: quality of the employees and the management team, value of
+              future R&D innovations, reputation, loyal customers; liabilities: pending
+              lawsuits (e.g. regarding product liability claims)
+
+                                                                                                                                                                                 23 / 63
+Example: Starbucks
+
+Table: Balance sheet as of 27/12/2020 (in millions of USD)
+
+                         Assets               Liabilities & shareholder’s equity
+Current assets
+Cash and equivalents                  8,358   Current liabilities                             7,884
+Accounts receivable, net              5,028   Accounts payable                                1,051
+Inventories                                   Accrued payroll and beneﬁts
+Other                                    888  Current portion of operating lease liability      685
+                                      1,472   Short-term debt                                 1,268
+Non-current assets                            Current portion of long-term debt
+Property and equipment, net              970  Stored value card liability and current           493
+Operating lease, right-of-use asset           portion of deferred revenue                       750
+Goodwill                             21,611   Other                                           1,871
+Other                                 6,118   Non-current liabilities
+                                      8,199   Long-term debt                                  1,767
+Total assets                          3,707   Operating lease liability                     29,989
+                                      3,587   Other                                         14,674
+                                              Total liabilities
+                                     29,968   Shareholders’ equity (deﬁcit)                   7,755
+                                              Total liabilities & equity                      7,561
+                                                                                            37,872
+                                                                                            (7,904)
+                                                                                            29,968
+
+Negative book value of USD 7.9B
+
+                                                                                                     24 / 63
+Example: Starbucks
+
+       Is Starbucks insolvent?
+       No. Negative book value of USD 7.9B, yet the market capitalization
+       was 122.6B on Dec 28
+       This example highlights the importance of using market values
+
+                                                                                                                                                                                 25 / 63
+Intangible assets
+
+Source: https://www.visualcapitalist.com/intangible-assets-driver-compan
+y-value/
+
+                                                                                                                                                                                 26 / 63
+Market-to-book ratio
+
+       Market-to-book ratio: market cap divided by the book value of
+       equity
+       Growth stocks: high market-to-book ratio
+       Value stocks: low market-to-book ratio
+
+                                                                                                                                                                                 27 / 63
+Debt-equity ratio
+
+       Debt-equity ratio: total liabilities divided by shareholders’ equity
+
+       We can compute this measure using either book or market values for
+       equity and debt
+
+       It is a measure of the ﬁrm’s leverage
+
+       The market debt-equity ratio is more informative about the ﬁrm’s
+       leverage and capacity to meet future debt payments
+
+              Even ﬁrms with negative book equity (recall the Starbucks example)
+              might be able to contract a lot of debt because they are expected to be
+              proﬁtable in the future
+
+              Particularly useful for assessing the leverage of high-growth and
+              start-up ﬁrms
+
+                                                                                                                                                                                 28 / 63
+Debt-equity ratio
+
+       It is common to use the book value of debt as a proxy for the market
+       value of debt
+       It is also common to replace debt with net debt, deﬁned by liabilities
+       less cash and marketable securities
+
+              It is a better way to measure the leverage of companies with large
+              excess balances of cash
+              We can view cash and marketable securities as negative debt: they
+              can be used on short notice to repay debts
+
+                                                                                                                                                                                 29 / 63
+Enterprise value
+
+       Proxy for the value of the business as a whole, or the value of the
+       business assets of the ﬁrm
+       Enterprise value = Market equity value + Debt - Cash
+       How much cash does an investor need to be the single owner of all
+       the assets of a ﬁrm?
+       Total cash required to buy all equity and pay off the debts, but
+       subtracting the cash that the ﬁrm has (the investor can use this cash
+       to pay off the debt for instance)
+
+                                                                                                                                                                                 30 / 63
+Current ratio
+
+       Current ratio: ratio of current assets to current liabilities
+       Liquidity ratio (or quick ratio or acid test): ratio of current assets
+       other than inventory to current liabilities
+       It is a measure of the ﬁrm’s ability to meet short-term obligations
+       Some debt covenants require the current ratio to be above a certain
+       value
+
+                                                                                                                                                                                 31 / 63
+Income statement
+
+       The income statement or proﬁt and loss statement (P&L)
+       attempts to measure the proﬁts the ﬁrm generates during a period of
+       time
+
+              It lists the ﬁrm’s revenues and expenses over a period of time
+
+              Revenues increase the book value of equity, while expenses reduce it
+
+       Accountants apply the accrual principle: revenue is recognized at
+       the time of the sale, not when the customer pays. Similarly, expenses
+       are recorded when goods and services are purchased, not when
+       suppliers are paid
+
+       The accrual method matches revenues and expenses in the period in
+       which the transaction occurs (the matching principle)
+
+                                                                                                                                                                                 32 / 63
+Income statement: accrual principle
+
+                                         Cash ﬂow? Revenue / expense?
+
+A customer makes a purchase,             Yes  Yes
+
+and pays in cash
+
+A customer pays the bill for a purchase  Yes  No
+
+they made on a previous date
+
+A customer makes a purchase,             No   Yes
+
+but agrees to make the payment later
+
+                                                   33 / 63
+Income statement
+
+       The accountant does not charge the full cost of a long-term ﬁxed
+       asset in the year of the investment
+
+              The proﬁt would be too low in the year of the investment, and too high
+              in the other productive years of the asset (as the asset contributes to
+              revenues but not to expenses)
+
+       The solution is to spread the cost of the asset over its productive life
+       in the form of depreciation
+
+       It is a way to properly match revenues and expenses during a period
+
+       Depreciation is not a cash expense; the cash outlay only occurs at
+       the time of the investment
+
+                                                                                                                                                                                 34 / 63
+Income statement
+
+       The amount of depreciation depends on the length of the productive
+       life of the asset, its salvage value, and the method of allocation
+       (straight line, accelerated)
+       Also following the matching principle, accountants do not record
+       increases in inventories as an expense
+
+                                                                                                                                                                                 35 / 63
+Income statement
+
+       Gross proﬁt: revenues from sales of products minus costs incurred
+       to make and sell the products (costs of goods sold or cost of
+       sales)
+
+       Other operating expenses: expenses from the ordinary course of
+       running the business that are not directly related to producing the
+       goods being sold (that is, other than costs of goods sold). Examples:
+       administrative expenses and overhead, salaries, marketing costs,
+       R&D expenses, depreciation
+
+       We can assume that most of the expenses in costs of goods sold are
+       variable (change as sales vary), while most of the other operating
+       expenses are ﬁxed (independent of the amount of sales)
+
+              Companies with a high proportion of ﬁxed costs are more vulnerable to
+              sale declines (high operating leverage)
+
+                                                                                                                                                                                 36 / 63
+Income statement
+
+       Operating income: revenues net of operating expenses
+
+       Earnings before interest and taxes (EBIT): operating income plus
+       any net income related to activities that are not a core part of the
+       ﬁrm’s business (nonoperating income)
+
+              It is a measure of the ﬁrm’s income before it is split among
+              debtholders, equityholders, and the tax authorities
+
+       Net income or (net) earnings or (net) proﬁts or bottom line: EBIT
+       minus interest expenses and taxes
+
+              Apart from any equity issuance or payout to equityholders, net income
+              determines the growth in book equity
+
+                                                                                                                                                                                 37 / 63
+Statement of equity
+
+       Shareholder equity = [ paid in capital + retained earnings ]
+       The statement of equity or statement of changes in equity reports the
+       changes in the ﬁrm’s equity
+      [ Beginning book equity + net income - dividends +/- other changes ]
+       = Ending book equity
+       Other changes include issuance of equity, treasury share
+       transactions, stock-based compensation
+
+                                                                                                                                                                                 38 / 63
+Example GM
+
+Table: Income statement as of 31/12/2020 (in millions of USD)
+
+Net sales automotive                                                108,673
+Net sales Financial                                                  13,812
+Net sales
+Automotive and other cost of sales                                  122,485
+GM ﬁnancial interest, operating and other expenses                   97,539
+Cost of sales                                                        11,274
+Gross proﬁt
+Automotive and other selling, general, and administrative expenses  108,813
+Operating income                                                     13,672
+Nonoperating income                                                    7,038
+EBIT                                                                   6,634
+Interest expense                                                       2,559
+Pre-tax income                                                         9,193
+Taxes                                                                  1,098
+Net income                                                             8,095
+                                                                       1,774
+                                                                       6,321
+
+                                                                              39 / 63
+Income statement analysis
+
+       Earnigs per share (EPS): net income divided by the total number of
+       shares outstanding
+       If the company compensates employees with stock options or if the
+       ﬁrm has issued convertible bonds, the number of outstanding shares
+       might increase
+       This growth in the number of stocks is known as dilution
+       Diluted (EPS): net income divided by the total number of shares
+       assuming that stock options have been exercised and convertible
+       debt has been converted outstanding
+
+                                                                                                                                                                                 40 / 63
+Income statement analysis
+
+       Gross margin: ratio of gross proﬁt to sales
+
+              It is a measure of the ability to sell a product for more than the direct
+              cost of producing it
+
+              It also measures the contribution of sales to the payment of ﬁxed costs
+              and proﬁts
+
+       Operating margin: ratio of operating income to sales. This measure
+       includes indirect operating costs
+
+              It is a measure of the ability to sell a product for more than the direct
+              and indirect cost of producing it
+
+              It is a measure of the efﬁciency of the ﬁrm’s operations
+
+              But it is also affected by the ability of a ﬁrm to charge higher
+              mark-ups/prices (market power)
+
+                                                                                                                                                                                 41 / 63
+Economic earnings
+
+       Does a positive net income imply that equityholders are properly
+       compensated?
+       Equityholders make a proﬁt if they obtain a return larger than the
+       required rate of return on equity (hurdle rate)
+       The required rate of return takes into account the time value of
+       money and the amount of risk of the investment
+
+                                                                                                                                                                                 42 / 63
+Income statement analysis
+
+       Net proﬁt margin: ratio of net income to sales
+              Share of each dollar of sales that is available to shareholders after the
+              ﬁrm pays its expenses (including interest expenses) and taxes
+              It is also a measure of the efﬁciency of the ﬁrm’s operations
+              But it can be affected by the capital structure of the ﬁrm (e.g. a highly
+              leveraged ﬁrm pays a lot of interest to creditors)
+
+                                                                                                                                                                                 43 / 63
+Income statement analysis
+
+       Accounts receivable days: ratio of accounts receivable to average
+       daily sales
+
+              It is a measure of the amount of time to collect payments from
+              customers
+       Accounts payable days: ratio of accounts payable to average daily
+       purchases
+
+                                                                                                                                                                                 44 / 63
+Income statement analysis
+
+       EBITDA: earnings before interest, taxes, depreciation and
+       amortization
+
+              As depreciation and amortization (depreciation of intangible assets)
+              are not cash expenses, it is a better measure of the cash the ﬁrm
+              obtains from its operations
+
+       Interest coverage ratio: ratio of EBIT to interest expenses
+
+              It is a measure of the ﬁrm’s current ability to meet interest payments
+
+              Companies with the same leverage can have different coverage ratios
+              due to differences in proﬁtability
+
+              Companies with low coverage ratios might still be able to borrow
+              because they are expected to generate large cash ﬂows in the future
+              (e.g. start-up, rapidly growing ﬁrms)
+
+                                                                                                                                                                                 45 / 63
+Income statement analysis
+
+       Return on equity (ROE): ratio of net income to the book value of
+       equity
+
+              It is a measure of the return the ﬁrm has earned on its past equity
+              investments
+              But it can also be affected by the capital structure of the ﬁrm
+
+       Return on assets (ROA): ratio of net income to the book value of
+       assets
+
+       Asset turnover: ratio of sales to the book value of assets
+              It is a measure of how efﬁciently the ﬁrm is using its assets to generate
+              sales
+
+                                                                                                                                                                                 46 / 63
+The DuPont identity
+
+       The DuPont identity decomposes ROE into
+
+ROE =  Net income        ×  Sales               ×  Total assets
+
+       Sales                Total assets Total equity
+
+       Net proﬁt margin     Asset turnover         Financial leverage
+
+       Return on assets (ROA)
+
+ROE increases if (other things constant)
+
+Earnings obtained for each dollar of sales increase (net proﬁt margin)
+
+Sales generated for each dollar of assets increase (asset turnover)
+
+The amount of equity used to ﬁnance the assets decreases (or
+ﬁnancial leverage increases)
+
+Should managers maximize ﬁnancial leverage?
+
+                                                                                                                                                                    47 / 63
+The DuPont identity
+
+                        Table: Determinants of ROE, 2013
+
+Google          ROE     Net proﬁt margin  Asset turnover  Financial leverage
+JPMorgan
+Hyundai Motor  14.80%         21.60%            0.54               1.27
+Chevron        8.50%          18.60%            0.04              11.44
+               15.90%         10.30%            0.65               2.36
+               14.40%         9.70%             0.87
+                                                                    1.7
+
+Source: Higgins (2011)
+
+Net proﬁt margin and asset turnover tend to vary inversely:
+companies that add a lot of value to a product and thus can charge
+higher prices usually require lots of assets
+
+                                                                              48 / 63
+ROE as a measure of performance
+
+       Is a company with a high ROE better than a company with a smaller
+       one? Does an increase in ROE mean the ﬁrm’s performance has
+       improved?
+
+       Not necessarily. ROE is backward-looking and focused on a single
+       year
+
+              It would fall after an equity issuance to fund a project because the
+              investment takes a while to turn into proﬁts
+
+       ROE ignores risk: ROE might be high simply because the business is
+       very risky
+
+       ROE measures the return over the book value of equity, not the
+       market value (the current value of shares)
+
+                                                                                                                                                                                 49 / 63
+Return on invested capital (ROIC)
+
+       Also known as return on net assets (RONA), ROIC is deﬁned by
+
+                                               EBIT(1 - Tax rate)
+                          ROIC =
+
+                                       Interest-bearing debt + Equity
+
+       This measures controls for some of the distortions of ROA and ROE.
+       Example with two identical companies
+
+Debt (10% interest)     Company A  Company B
+Equity
+                             900          0
+EBIT                         100       1000
+Interest expense
+Earnings before tax          120        120
+Tax (40%)                     90          0
+Net income                    30
+                              12        120
+ROE                           18         48
+ROA                                      72
+ROIC                        18%
+                            1.8%       7.2%
+                            7.2%       7.2%
+                                       7.2%
+
+Source: Higgins (2011)
+
+                                              50 / 63
+Valuation ratios
+
+Price-earnings ratio (P/E): ration of market capitalization to net
+income
+
+P/E ratio =       Market capitalization  =  Share price
+
+                  Net income                Earnings per share
+
+Better growth prospects increase the P/E ratio, while increases in risk
+decrease it
+
+P/E ratios can vary over time and across industries
+
+It can be useful to make intra-industry comparisons of how ﬁrms are
+priced in the market: a high P/E ratio (relative to peers in the same
+industry) could indicate that the ﬁrm is overvalued
+
+P/E ratios are also inﬂuenced by the capital structure (leverage)
+
+                                                                    51 / 63
+Statement of cash ﬂows
+
+       The income statement measures the ﬁrm proﬁt over a period of time
+       But it does not indicate the amount of cash the ﬁrm has generated:
+
+              The income statement has non-cash entries such as depreciation and
+              amortization
+              Some cash expenses, such as capital expenditures or expenditures on
+              inventory, are not reported on the income statement
+       In other words, proﬁts do not equal cash ﬂow
+              It is possible that a proﬁtable ﬁrm has not enough cash to meet its
+              obligations
+
+                                                                                                                                                                                 52 / 63
+Statement of cash ﬂows
+
+       The statement of cash ﬂows reports how much cash ﬂow a ﬁrm has
+       generated during a given period and how that cash ﬂow has been
+       allocated
+       It measures how the ﬁrm’s cash balance changes over time
+       Investors are ultimately interested in the amount of cash ﬂows they
+       can extract from the business
+
+                                                                                                                                                                                 53 / 63
+Statement of cash ﬂows: operating activities
+
+       The statement of cash ﬂows is divided into three sections
+       Operating activities: it starts with net income and adds back all
+       non-cash entries (e.g. depreciation, deferred taxes) related to the
+       ﬁrm’s operating activities
+       Depreciation: it is deducted when computing net income but it is not
+       a cash expense. Therefore, we add it back to net income to measure
+       the amount of cash the ﬁrm has generated
+       Same with other non-cash expenses such as amortization and
+       accrued items such as salaries and taxes
+
+                                                                                                                                                                                 54 / 63
+Statement of cash ﬂows: operating activities
+
+       Accounts receivable: sales are recorded as part of net income even
+       when the payment has not been received. We must adjust cash ﬂows
+       by deducting the increases in accounts receivable
+       Similarly, we add back increases in accounts payable: purchases
+       from suppliers that have not been paid yet
+       We deduct increases to inventory, as they are not recorded as an
+       expense in the income statement
+
+                                                                                                                                                                                 55 / 63
+Statement of cash ﬂows: investing activity
+
+       Purchases of property, plant, and equipment (capital expenditures)
+       are not recorded in the income statement
+       Instead, the the ﬁrm depreciates (consumes) these assets and
+       deducts depreciation over time
+       We have to subtract capital expenditures
+
+                                                                                                                                                                                 56 / 63
+Statement of cash ﬂows: ﬁnancing activity
+
+       It includes cash outﬂows to equityholders such as dividend payments
+       and share repurchases
+       It also includes changes in borrowing, such as issuance of new debt
+       and principal payments
+
+                                                                                                                                                                                 57 / 63
+Example: GM
+
+         Table: Statement of cash ﬂows as of 31/12/2020 (in millions of USD)
+
+                   Cash ﬂows from operating activities     6,321
+Net income                                                12,815
+Depreciation and amortization                            (1,341)
+Accounts receivable
+Accounts payable                                               42
+Inventories                                                 (104)
+Other adjustments                                        (1,063)
+Net cash provided by operating activities                 16,670
+
+                   Cash ﬂown from investing activities   (5,300)
+Expenditures for property                               (16,204)
+Available-for-sale marketable securities, acquisitions
+Available-for-sale marketable securities, liquidation     11,941
+Other adjustments                                       (12,263)
+Net cash used in investing activities                   (21,826)
+
+                    Cash ﬂow from ﬁnancing activities         277
+Net increase (decrease) in short-term debt                78,527
+Debt issuance (original maturities > 3 months)          (72,663)
+Debt payments (original maturities > 3 months)
+Stock issuance                                                492
+Dividends paid                                              (669)
+Other ﬁnancing activituies                                  (412)
+Net cash provided by (used in) ﬁnancing activities         5,552
+
+Foreign exchange adjustment                                 (222)
+Net increase in cash and cash equivalents                     174
+Cash and cash equivalents at the beginning of period
+Cash and cash equivalents at end of period                22,943
+                                                          23,117
+
+                                                                              58 / 63
+Measures of cash ﬂow
+
+       Net cash ﬂow or cash earnings: net income + noncash items
+
+       Cash ﬂow from operating activities: net cash ﬂow +- changes in
+       current assets and liabilities
+
+              +- changes in current assets and liabilities or - changes in net working
+              capital
+              On the cash ﬂow statement, net cash provided by operating activities
+              The amount of cash generated by the ﬁrm’s core operations over a
+              period of time
+
+      ∆ cash= net income - ∆ noncash assets + ∆ liabilities + ∆ paid in
+       capital - dividends
+
+                                                                                                                                                                                 59 / 63
+Measures of cash ﬂow
+
+       Free cash ﬂow (FCF) to the ﬁrm or unlevered free cash ﬂow: total
+       cash available for distribution to owners and creditors after funding all
+       investment activities:
+
+       FCF = EBIT(1 - Tax rate) + Depreciation - Capital expenditures -
+       Working capital investments
+
+              EBIT(1 - Tax rate): income the company earns regardless of how the
+              business is ﬁnanced, that is, excluding interest expenses associated
+              with debt ﬁnancing (unlevered or all-equity)
+
+              Depreciation (and any other noncash items) are not cash outlays
+
+              Working capital investment: increase in current assets necessary to
+              support the ﬁrm’s operations, minus any increase in non-interest
+              bearing current liabilities
+
+                                                                                                                                                                                 60 / 63
+Measures of cash ﬂow
+
+       Free cash ﬂow to equity (FCFE) or levered free cash ﬂow: total
+       cash available for distribution to equityholders or for reinvestment in
+       the business after meeting interest payments
+
+              Essentially, cash ﬂow from operating activities minus capital
+              expenditures
+
+              Or FCF minus (after tax) interest expenses
+
+              We should also include net debt issuance (or deduct net debt
+              repayment) if the ﬁrm is changing its level of debt
+
+       Forecasts of FCF are used to compute the market enterprise value,
+       while forecasts of FCFE are used to determine the market equity
+       value
+
+                                                                                                                                                                                 61 / 63
+Uses of free cash ﬂow to the ﬁrm
+
+                                       After-tax payment
+                                          to debtholders
+
+Free cash ﬂow                                             Retain      Invest in
+  to the ﬁrm                                                       new projects
+
+                 Free cash                                         Increase cash
+               ﬂow to equity                                          reserves
+                                                                      Share re-
+                                                          Pay out     purchase
+
+                                                                      Dividend
+
+                                                                                                   62 / 63
+Bibliography I
+
+Berk, J. and DeMarzo, P. (2011). Corporate ﬁnance, global ed. Essex:
+   Person Education Limited.
+
+Brealey, R. A., Myers, S. C., Allen, F., and Mohanty, P. (2018). Principles
+   of Corporate Finance. McGraw-Hill Education.
+
+Faulkender, M. W., Hankins, K. W., and Petersen, M. A. (2019). Under-
+   standing the rise in corporate cash: Precautionary savings or foreign
+   taxes. The Review of Financial Studies, 32(9):3299–3334.
+
+Higgins, R. (2011). Analysis for ﬁnancial management, 10e. Burr Ridge:
+   McGraw-Hill.
+
+Tirole, J. (2010). The theory of corporate ﬁnance. Princeton University
+   Press.
+
+                                                                                                                                                                                 63 / 63
+

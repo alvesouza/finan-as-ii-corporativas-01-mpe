@@ -131,6 +131,13 @@ These three tables make the file self-contained and consumable by `/study-pack`.
 
 Show: number of exercises per subtopic and per level; sources used; any **"to confirm"** items (not verified in an MD); file saved. Suggest `/solution <source> <exercise>` to solve a specific one, `/exam-gen <topic>` for an original list, or `/study-pack <file>` to extract the recommended pages into a single PDF.
 
+Then ask (one AskUserQuestion call, two questions), every time:
+
+1. **Split the study roadmap into a PDF?** *Yes* runs `/study-pack` on the saved file.
+2. **Write the solutions of the plan's exercises as a PDF?** *Yes* solves every exercise with `/solution` in plan order (each cited by number and page, never restated) and compiles `Listas/pratica-<topic>-solutions.pdf`.
+
+Rule: `rules/00_estilo_avaliacao.md` §9.
+
 ## Principles
 
 - **References only** (number + page); **never** reproduce problem statements (they belong to the sources).

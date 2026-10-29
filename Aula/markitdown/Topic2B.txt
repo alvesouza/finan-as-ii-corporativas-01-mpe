@@ -1,0 +1,1039 @@
+Corporate Finance
+     Topic 2 – B
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 63
+Taxes
+
+Consider two ﬁrms with the same assets but a different capital
+structure (mix of debt and equity)
+
+                  EBITDA    Levered  Unlevered
+            Depreciation
+                              2150      2150
+                      EBIT    300        300
+       Interest expense       1850      1850
+                              350
+        Pre-tax income        1500        0
+            Taxes (35%)       525       1850
+             Net income       975       647.5
+                                       1202.5
+
+Because interest expenses are tax deductible, the levered ﬁrm pays
+less taxes than the unlevered ﬁrm
+
+                                                                2 / 63
+Taxes
+
+      The difference 647.5 − 525 = 122.5 is referred to as the interest tax
+       shield (ITS)
+      Note that 122.5 = 350 × 35% = interest expenses × τ, where τ
+       denotes the corporate taxes
+       As interest expenses are equal to the amount of debt, D, times the
+       interest rate, rD ,
+
+                                        ITS = τ × D × rD
+
+                                                                                                                                                                                   3 / 63
+Taxes
+
+       Does our measure of free cash ﬂow (to the ﬁrm) take this tax
+       advantage into account?
+
+EBIT(1-35%)     Levered  Unlevered
+Depreciation
+                1202.5     1202.5
+           FCF    300        300
+
+                1502.5     1502.5
+
+Our deﬁnition of FCFs does not take into account tax beneﬁts of
+debt
+
+They are referred to as unlevered FCF because it is as if the ﬁrm
+had no leverage
+
+We will account for the tax beneﬁts of debt by adjusting the WACC or
+computing their expected discounted value directly
+
+                                                                                                                                                                      4 / 63
+Taxes
+
+       With taxes, the capital structure affects cash ﬂows accruing to debt
+       and equity holders
+       The issue is not tax per se, but differential tax treatment of interest
+       and dividends
+       In most countries, debt has a tax advantage at the corporate level
+       because:
+
+              Interest payments are tax-deductible
+              Dividends and retained earnings are taxed
+
+                                                                                                                                                                                   5 / 63
+Taxes
+
+Consider a ﬁrm with a perpetual growth rate g that generates X at
+t = 1 and has a constant level of perpetual safe debt D
+
+In each period, if the (net) risk-free rate is rf , the after-tax cash ﬂow is
+
+       (1 − τ)(X − rf D) + rf D
+
+       after-tax cash ﬂow     cash ﬂow
+        to equityholders   to debtholders
+
+which can be rewritten as
+
+       (1 − τ)X + τrf D
+
+       after-tax cash ﬂow  interest tax
+       all-equity, unlevered, ﬁrm shield (ITS)
+
+In each period the ﬁrm can save on taxes the interest tax shield
+
+                                                                   6 / 63
+Taxes
+
+Thus, relative to an identical unlevered ﬁrm, the levered ﬁrm can pay
+out τrf D more to its investors in each period
+
+Assuming perpetuity
+
+                     VITS  =  τrf D  =    τD
+                               rf
+
+and thus the value of the levered ﬁrm is
+
+       VL =          (1 − τ)X                    + τD
+                      rU − g
+                                                       VITS
+
+                     VU: value of the
+
+                     hypothetical unlevered ﬁrm
+
+where rU is the rate of return on the unlevered ﬁrm’s assets (assets of
+the ﬁrm excluding the present value of tax beneﬁts)
+
+                                                             7 / 63
+Taxes
+
+       (MM I with corporate taxes) The value of a levered ﬁrm equals that
+       of an unlevered ﬁrm plus the present value of the interest tax shield
+
+                                        VL = VU + VITS
+
+       If investors cannot get an equivalent tax break on homemade
+       leverage, they are willing to pay a premium for levered ﬁrms
+       All the tax beneﬁts from leverage accrue to the shareholders
+
+                                                                                                                                                                                   8 / 63
+Taxes
+
+       Balance sheet with taxes
+
+VU: market value                 Market value
+of the unlevered                   of debt D
+                                     rD , βD
+   ﬁrm’s assets
+       rU, βU                    Market value
+                                  of equity E
+        VITS
+     rITS , βITS                     rE , βE
+
+VL = VU + VITS = D + E
+
+              Assets of
+          the levered ﬁrm
+
+                                               9 / 63
+Taxes
+
+From the balance sheet above, we have the identity
+
+       D    D         +  D  E         =  VU  VU      rU  +  VU  VITS    rITS
+            + E rD          + E rE           + VITS             + VITS
+
+Similarly,
+
+       D    D  E  βD  +  D  E  E  βE  =  VU  VU      βU  +  VU  VITS    βITS
+            +               +                + VITS             + VITS
+
+                                                                              10 / 63
+Taxes
+
+How do we estimate rITS ?
+
+rITS = rD is the ﬁrm maintains a constant market value debt
+amount in perpetuity. In this case,
+
+                          VITS  =   τDrD   = τD
+                                     rD
+
+and       D               E                VU                τD
+          +               +                +              VU + τD
+       D     E rD   +  D     E  rE  =  VU      τD  rU  +           rD
+
+       D  D  E  βD  +  D  E  E βE   =  VU  VU  τD  βU  +  VU  τD  τD  βD
+          +               +                +                  +
+
+                                                                          11 / 63
+Taxes
+
+If the ﬁrm continuously adjust its capital structure to maintain a
+constant market debt-to-equity ratio(target ratio), debt rises with
+assets and so do tax shields
+
+Therefore, βITS = βU, rITS = rU and
+
+       D  D        +  D  E         =  VU  VU      rU  +  VU  VITS    rU  =  rU
+          + E rD         + E rE           + VITS             + VITS
+
+       D  D  E βD  +  D  E  E  βE  =  VU  VU      βU  +  VU  VITS    βU  =  βU
+          +              +                + VITS             + VITS
+
+This is the usual assumption in valuation
+
+                                                                                12 / 63
+Taxes
+
+Three closed-form formulas for a ﬁrm whose unlevered free cash
+ﬂows grow at a rate g in perpetuity (DeMarzo, 2005; Jagannathan
+et al., 2017; Stanton and Seasholes, 2005):
+
+       Constant debt level:
+
+                                     VITS = τD
+
+       Constant debt-to-equity ratio (annually adjusted):
+
+                             VITS =  τrD D   1 + rU
+                                     ru − g  1 + rg
+
+       Constant debt-to-equity ratio (continuously adjusted):
+
+                             VITS    =  τrD D
+                                        ru − g
+
+                                                                 13 / 63
+Example
+
+       Example: an unlevered ﬁrm with a value of 600 and 1000 shares (0.6
+       per share) plans to (safely) borrow (perpetuity) debt to immediately
+       repurchase 500 worth of shares
+
+      Assume τ = 40%
+
+       We have seen that the value of the levered ﬁrm is
+      600 + 40% × 500 = 800
+
+       What would be the new share price?
+
+      The value of equity would be 800 − 500 = 300, and this value must
+       be equal to the new share price P times the number or outstanding
+      shares, 1000 − N, where N is the number of shares repurchased
+
+                                                                                                                                                                                 14 / 63
+Example
+
+       Under competition and perfect information, share repurchases are
+       zero NPV transactions, and investors must be indifferent between
+       selling or keeping their shares
+
+                                          500 = P × N
+
+                                                       amount raised
+
+      As PN = 500 and 300 = P(1000 − N), P = 0.8
+      Each shareholder will become richer by 0.8 − 0.6 = 0.2
+       As there are initially 1000 shares, the total wealth gain to
+      shareholders is 0.2 × 1000 = 200, which is exactly VITS
+
+                                                                                                                                                                                 15 / 63
+Taxes
+
+With tax-deductible interest, the effective return on debt if rD (1 − τ)
+
+If the ﬁrm continuously adjust its capital structure to keep a constant
+(target) debt-to-equity ratio, the WACC with corporate taxes (the
+after-tax WACC) is
+
+       rWACC  =  E  E  D rE  +  E  D  D rD (1  −  τ)
+                    +              +
+
+If we discount the unlevered free cash ﬂows with the after-tax
+WACC, we obtain the correct value of the levered ﬁrm
+
+                                                                          16 / 63
+Taxes
+
+Source: Berk and DeMarzo (2011)
+
+                                                                                                                                                                                 17 / 63
+WACC: three cases
+
+Three closed-form formulas for a ﬁrm whose unlevered free cash
+ﬂows grow at a rate g in perpetuity (DeMarzo, 2005; Jagannathan
+et al., 2017; Stanton and Seasholes, 2005):
+
+Constant debt level:
+
+                         rWACC =   1−τ D        rU
+                                         D +E
+
+Constant debt-to-equity ratio (annually adjusted):
+
+                   rWACC = rU − τrD     D       1 + rU
+                                     D +E       1 + rg
+
+Constant debt-to-equity ratio (continuously adjusted):
+
+rWACC  = rU           −  τrD D  =     E      +  E   D  D  rD  (1  −  τ)
+                         D +E      E + D rE         +
+
+                                                                         18 / 63
+Valuation with taxes
+
+       Two methods that take into account the tax advantage of debt: the
+       adjusted present value (APV) method and the weighted average
+       cost of capital (WACC) method
+       The APV method is theoretically more ﬂexible, but less commonly
+       used
+       The WACC method is more commonly used, but it requires strong
+       assumptions
+
+                                                                                                                                                                                 19 / 63
+The adjusted present value (APV) method
+
+       Steps:
+              Compute the project’s unlevered after-tax free cash ﬂows
+              Estimate the unlevered asset β using the comparables approach
+              Find the value of the unlevered ﬁrm: the present value of these cash
+              ﬂows using the estimated unlevered asset β
+              Find the VITS and add to the value of the unlevered ﬁrm
+
+                                                                                                                                                                                 20 / 63
+The adjusted present value (APV) method
+
+       VITS :
+              If the project is partially ﬁnanced with debt, the VITS is the present
+              value of tax savings on current and future incremental interest
+              payments
+              If the increase in debt is not permanent, calculate the VITS as an
+              annuity rather than a perpetuity
+              Use the appropriate rITS
+              Use the marginal tax rate, that is, the tax rate of the ﬁrm including the
+              project
+
+                                                                                                                                                                                 21 / 63
+The weighted average cost of capital (WACC) method
+
+       Steps:
+              Compute the project’s unlevered after-tax free cash ﬂows
+              Estimate the unlevered asset βU using the comparables approach
+              Relever that asset β using the target debt-to-equity ratio to get the
+              expected return on equity
+              Compute the project’s debt cost of capital (using debt returns on
+              similarly related projects)
+              Compute the after-tax WACC
+
+                                                                                                                                                                                 22 / 63
+The weighted average cost of capital (WACC) method
+
+If FCFt denotes the unlevered free cash ﬂow in period t, the value of
+the levered ﬁrm is
+
+VL  =     FCF1    +       FCF2      +       FCF3      + ...
+       1 + rWACC     (1 + rWACC )2     (1 + rWACC )3
+
+If leverage changes a lot over time, we should compute rWACC for
+different periods separately
+
+                                                                  23 / 63
+APV and WACC
+
+  APV                    Cash ﬂows                                Discount rate
+WACC
+       Unlevered free cash ﬂow       Unlevered (asset) cost of capital, rU
+                Interest tax shield          Tax shield cost of capital, rITS
+
+       Unlevered free cash ﬂow                        After-tax WACC, rWACC
+
+                                                                                 24 / 63
+Equivalency of the APV and WACC methods when D/E
+is constant
+
+Suppose that the unlevered FCF one period from now is equal to
+FCF1 and that this cash ﬂow will grow in perpetuity at a growth rate g
+
+Using the WACC method, we have that
+
+       VL  =     FCF1
+               rWACC − g
+
+Using the formula for the after-tax WACC,
+
+VL  =             FCF1
+
+       E   rE  +  D   rD  (1         −     τ)  −  g
+       VL         VL
+
+                                                     25 / 63
+Equivalency of the APV and WACC methods when D/E
+is constant
+
+When D/E is constant,
+
+                       E          D
+                       VL rE + VL rD = rU
+
+so                     VL  =         FCF1
+Rearranging
+                              rU  −  D   rD τ  −  g
+                                     VL
+
+             VL (rU − g) − DrD τ = FCF1
+
+                                                     26 / 63
+Equivalency of the APV and WACC methods when D/E
+is constant
+
+Then
+
+      VL  =  FCF1    +  DrD τ
+             rU − g     rU − g
+
+             =VU        =VITS
+
+The APV and WACC methods are equivalent when D/E is constant
+
+                                27 / 63
+Equivalency of the APV and WACC: example
+
+       You are considering investing 60,000 in a project today:
+
+              Incremental unlevered FCF in period 1 is 7,500 and then it will grow at
+              a 4% rate thereafter
+              Tax rate, τ, is 40%
+              Target leverage ratio of the project is D/(D + E) is 25% (not
+              necessarily the same as the target leverage of the ﬁrm)
+              rE = 14.33%, rD = 5% (pre-tax)
+
+Year  0  1  2  3 ...
+
+Unlevered FCF -60,000 7,500 7,800 8,112 ...
+
+                                             28 / 63
+Equivalency of the APV and WACC: example
+
+       The after-tax WACC is
+                  rWACC = 75%14.33% + 25%5%(1 − 40%) = 11.5%
+
+The value of the levered ﬁrm using the WACC method is
+
+VL  =  FCF1  =     7, 500   =  100, 000
+       r −g     11.5% − 4%
+
+The NPV of the project is 100,000-60,000=40,000
+
+                                                              29 / 63
+Equivalency of the APV and WACC: example
+
+Given that VL = 100, 000 and D/VL = 25%, D = 25, 000
+
+The unlevered (asset) cost of capital, rU, is
+
+rU = 75% × 14.33% + 25% × 5% = 12%
+
+The value of the unlevered ﬁrm is
+
+VU  =  FCF1    =    7, 500                     =  93, 750
+       rU − g     12% − 4%
+
+                                                           30 / 63
+Equivalency of the APV and WACC: example
+
+       As the ﬁrm is growing at 4% and the proportion of debt is constant,
+       debt is also growing at 4% and so does ITS
+
+       The present value of ITS is
+
+VITS  =  DrD τ   =  25, 000 × 5% × 40%  =  6, 250
+         rU − g           12% − 4%
+
+The value of the levered ﬁrm using the APV method is then
+
+              VL = VU + VITS = 93.750 + 6, 250 = 100, 000
+The NPV is 40,000
+
+                                                                            31 / 63
+APV: ﬂexibility when D/E is not constant
+
+Suppose now a different leverage policy: the ﬁrm will borrow 60,000
+at t = 0, and repay 60,000 in 5 years
+
+The value of the unlevered ﬁrm does not change: VU = 93, 750
+
+What about VITS ?
+
+            Year      0       1       2       3       4        5
+                   60,000
+Net borrowing              -3,000  -3,000  -3,000  -3,000  -60,000
+ Interest (5%)     5,195   1,200   1,200   1,200   1,200   -3,000
+                                                            1,200
+     ITS (40%)
+    VITS at 5%
+
+In this case, VL = 93, 750 + 5, 195 = 98, 945
+
+                                                                    32 / 63
+Taxes
+
+Suppose that an unlevered ﬁrm issues debt level D, which will remain
+ﬁxed in perpetuity, to repurchase equity
+
+If τ = 35%, then
+
+       VL = VU + 35%D       ⇒  VL          35% × D
+                                   =1+
+                               VU  VU
+
+For D = 20%VU, the value of the ﬁrm increases by 7%; for
+D = 50%VU, the value of the ﬁrm increases by 17.5%
+
+It seems that the optimal capital structure is attained with 100% debt
+
+Obviously this is not true
+
+                                                          33 / 63
+Jagannathan et al. (2017)
+
+                                                                                                                                                                                 34 / 63
+Graham et al. (2015)
+
+                                                                                                                                                                                 35 / 63
+Bankruptcy costs
+
+       More leverage increases the risk of ﬁnancial distress and bankruptcy
+       A bankruptcy process transfers ownership to debtholders
+       This transfer of control is not a violation of MM per se
+       The violation comes from bankruptcy costs:
+
+              Direct costs
+              Indirect costs
+       Such bankruptcy costs may countervail the tax advantage of debt
+       ﬁnancing
+
+                                                                                                                                                                                 36 / 63
+Direct bankruptcy costs
+
+       Ex post or direct costs are incurred conditional on actual liquidation or
+       reorganization:
+
+              Legal and administrative costs
+              Time and resources spent by managers and creditors dealing with
+              bankruptcy
+              Fire sales of assets due to asset speciﬁcity and illiquid assets
+
+                                                                                                                                                                                 37 / 63
+Indirect bankruptcy costs
+
+       Ex ante or indirect costs can take place even before a ﬁrm declares
+       bankruptcy
+
+       Decrease in demand, especially in industries that rely on long-term
+       relationships with customers such as airlines (frequent ﬂier programs)
+       and automobiles (warranties, replacement parts, and maintenance)
+
+              Hortac¸su et al. (2013): An increase in a manufacturer’s credit default
+              swaps signiﬁcantly decreases the prices of its cars at auction,
+              especially cars with longer expected service lives.
+
+       Inability to access credit from suppliers and banks (due to credit
+       market imperfections)
+
+                                                                                                                                                                                 38 / 63
+Indirect bankruptcy costs
+
+       Loss of current employees; more difﬁcult to attract new ones
+
+              Risk-averse workers prefer stable jobs and want to avoid the scarring
+              effects of unemployment
+
+              Brown and Matsa (2016): Firms attract signiﬁcantly fewer applications
+              per job opening during periods of corporate distress.
+
+              Baghai et al. (2021): Firms lose workers with the highest cognitive and
+              noncognitive skills as they approach bankruptcy. (...) Consistent with
+              talent dependence being associated with higher labor costs of ﬁnancial
+              distress, ﬁrms that rely more on talent have more conservative capital
+              structures.
+
+              Van Doornik et al. (2022): More generous unemployment insurance
+              (UI) system shifts labor supply from safer to riskier ﬁrms and reduces
+              the compensating wage differentials that risky ﬁrms need to pay.
+
+                                                                                                                                                                                 39 / 63
+Indirect bankruptcy costs
+
+       Conﬂict of interest between equityholders and creditors might lead to
+       poor investment decisions:
+
+              Debt overhang: underinvestment
+              Asset substitution or risk-shifting: excessive risk-taking
+              Cashing out: shareholders might try to withdraw cash from the ﬁrm in
+              anticipation of losing it to senior claimants
+
+                                                                                                                                                                                 40 / 63
+Trade-off theory
+
+       In the presence of bankruptcy costs, the optimal capital structure
+       trades-off the tax advantage of debt versus the costs of ﬁnancial
+       distress
+
+Consider a ﬁrm that has at t = 0 debt outstanding that requires a
+total repayment of K at t = 1
+
+At t = 1:
+
+The ﬁrm generates random cash ﬂows X distributed over the interval
+
+[X , X¯ ] with a p.d.f h(X ) and an associated c.d.f.
+
+H(a) = Pr(X ≤ a) =   a  h (x )dx
+                    X
+
+The full amount K is tax deductible (for simplicity) and the ﬁrm pays
+taxes τ if solvent (X ≥ K )
+
+Bankruptcy (X < K ) imposes a ﬁxed cost C < X
+
+                                                                           41 / 63
+Trade-off theory
+
+All investors are risk-neutral and require an expected return of rf
+
+The market value of the unlevered ﬁrm is
+
+           1         X¯   −  τ)Xh (X )dX          =  (1  −  τ)E[X ]
+VU = 1 + rf
+                      (1                                 1 + rf
+
+                     X
+
+With risk-free debt K < X , the ﬁrm’s market value is
+
+                1        X¯
+VL (K ) = 1 + rf
+                           [(1 − τ)(X − K ) + K ]h(X)dX
+
+                        X
+
+                  =  (1 − τ)E[X − K ]  +    K                 τK
+                           1 + rf         1 + rf  = VU + 1 + rf
+
+                                                                     42 / 63
+Trade-off theory
+
+With risky debt, the market value of debt is
+
+                       1         X¯
+         E(K ) =
+                     1 + rf K     (1 − τ)(X − K )h(X)dX
+
+and the market value of debt is
+
+                  1  K                        1       X¯
+
+D(K ) =  1 + rf X       (X − C)h(X)dX +       1 + rf K    Kh (X )dX
+
+                  1  K                        K [1 − H(K )]
+
+=        1 + rf X       (X − C)h(X)dX +       1 + rf
+
+                                                                     43 / 63
+Trade-off theory
+
+Adding E(K ) and D(K ) yields
+
+                      1  τ   K
+V (K ) = VU + 1 + rf
+                               Xh(x)dx + K [1 − H(K )] − CH(K )
+
+                            X
+
+An increase in K has two effects
+
+It increases the value of the tax shield
+
+                                               K
+
+                         τ Xh(x)dx + K [1 − H(K )]
+
+                                             X
+
+But it increases the expected bankruptcy cost C: CH(K )
+
+                                                                 44 / 63
+Trade-off theory
+
+       The optimal debt level K ∗ is such that the marginal beneﬁt of debt
+       equals the marginal expected bankruptcy costs
+      K ∗ increases with the tax beneﬁts τ
+       K ∗ decreases with bankruptcy costs C
+       With bankruptcy costs,
+
+                         VL = VU + VITS − PV (bankruptcy costs)
+      We can adjust the APV method to consider PV(bankruptcy costs)
+
+                                                                                                                                                                                 45 / 63
+Application: the debate about optimal bank capital
+regulation
+
+       Heated debate about tighter ﬁnancial regulation following the
+       2007-2008 ﬁnancial crisis, including higher capital requirements
+
+       Banks: negative consequences to credit markets and, consequently,
+       economic growth
+
+       Admati et al. (2013): no!
+
+              Bank equity is not socially expensive
+              They use many of the arguments discussed in this lecture
+              They call for larger capital requirements, that is, less leverage in the
+              banking industry
+
+                                                                                                                                                                                 46 / 63
+Application: the debate about optimal bank capital
+regulation
+
+       True or false?
+
+              Statement 1: “Increased equity requirements will hurt bank
+              shareholders since it would lower the banks’ return on equity (ROE).”
+
+              Statement 2: “Increased equity requirements increase the funding
+              costs for banks because they must use more equity, which has a
+              higher required return.”
+
+              Statement 3: “Increased equity requirements increase the funding
+              costs for banks because they reduce the ability of banks to beneﬁt
+              from the tax shield associated with interest payments on debt.”
+              ... negative externality because the increase in leverage raises the
+              probability of a bank failure, weakening the ﬁnancial system and
+              imposing losses on the broader economy.
+
+                                                                                                                                                                                 47 / 63
+MM - dividend irrelevance
+
+       The MM logic applies to all aspects of ﬁnancial policy as all purely
+       ﬁnancial transactions have a zero NPV
+
+              Other ﬁnancing instruments such as convertible bonds, preferred
+              stocks, ...
+              Choice between long-term and short-term debt
+              Risk management
+       (MM dividend irrelevance proposition) A ﬁrm’s total market value is
+       independent of its dividend policy
+
+                                                                                                                                                                                 48 / 63
+MM - dividend irrelevance
+
+       If the investment policy is ﬁxed, a given change in the payout policy
+       has to be met by a change in the ﬁnancing policy
+
+       For example, an increase in dividends has to be ﬁnanced with a
+       new/greater equity or debt issue
+
+       Consider an all-equity ﬁrm with risk-neutral investors
+      At each time t = 1, 2, ... the ﬁrm generates some random cash ﬂow
+       Xt and
+
+              pays a per-share dividend Dt
+              makes an investment It
+              has nt shares outstanding
+
+                                                                                                                                                                                 49 / 63
+MM - dividend irrelevance
+
+Let δ be the discount factor and Pt the share price at the end of
+period t (after the cash ﬂow is realized, dividends paid and share
+number adjusted)
+
+We have that Pt = δE[Dt+1 + Pt+1]
+
+New shareholders in year t do not receive Dt , so they buy shares at a
+price Pt . It must be the case that
+
+                                     amount from
+                                   the equity issue
+
+nt−1Dt + It = Xt + Pt (nt − nt−1)
+
+use of funds               sources of funds
+                           (earned or raised)
+
+                                                                    50 / 63
+MM - dividend irrelevance
+
+       The total share value at the end of period t is
+
+Vt = nt Pt = δE[nt Dt+1 + nt Pt+1]
+
+Using the equality between uses and sources of funds for the period
+t + 1, we get
+
+Vt = nt Pt = δE[Xt+1 + Pt+1(nt+1 − nt ) − It+1 + nt Pt+1]
+
+= δE[Xt+1 − It+1 + Vt+1]
+
+Solving recursively
+
+                             +∞
+
+                     Vt = E       δi(Xt+1 − It+1)
+
+                             i=1
+
+The value of the all-equity ﬁrm does not depend on the payout policy
+as long as the investment plan It is ﬁxed
+
+Result extends to debt issuance and risk-aversion
+
+                                                                                                                                                                    51 / 63
+Bibliography I
+
+Admati, A. R., DeMarzo, P. M., Hellwig, M. F., and Pﬂeiderer, P. C. (2013).
+   Fallacies, irrelevant facts, and myths in the discussion of capital regula-
+   tion: Why bank equity is not socially expensive. Max Planck Institute for
+   Research on Collective Goods, 23:13–7.
+
+Baghai, R. P., Silva, R. C., Thell, V., and Vig, V. (2021). Talent in dis-
+   tressed ﬁrms: Investigating the labor costs of ﬁnancial distress. The
+   Journal of Finance, 76(6):2907–2961.
+
+Berk, J. and DeMarzo, P. (2011). Corporate ﬁnance, global ed. Essex:
+   Person Education Limited.
+
+Brown, J. and Matsa, D. A. (2016). Boarding a sinking ship? An investi-
+   gation of job applications to distressed ﬁrms. The Journal of Finance,
+   71(2):507–550.
+
+DeMarzo, P. M. (2005). Discounting tax shields and the unlevered cost of
+   capital. Available at SSRN 1488437.
+
+                                                                                                                                                                                 52 / 63
+Bibliography II
+
+Graham, J. R., Leary, M. T., and Roberts, M. R. (2015). A century of capi-
+   tal structure: The leveraging of corporate America. Journal of Financial
+   Economics, 118(3):658–683.
+
+Hortac¸su, A., Matvos, G., Syverson, C., and Venkataraman, S. (2013).
+   Indirect costs of ﬁnancial distress in durable goods industries: The case
+   of auto manufacturers. The Review of Financial Studies, 26(5):1248–
+   1290.
+
+Jagannathan, R., Liberti, J., Liu, B., and Meier, I. (2017). A ﬁrm’s cost of
+   capital. Annual Review of Financial Economics, 9:259–282.
+
+Stanton, R. and Seasholes, M. S. (2005). The assumptions and math
+   behind WACC and APV calculations. Available at SSRN 837384.
+
+Van Doornik, B., Fazio, D., Schoenherr, D., and Skrastins, J. (2022). Un-
+   employment insurance as a subsidy to risky ﬁrms. The Review of Finan-
+   cial Studies.
+
+                                                                                                                                                                                 53 / 63
+Appendix: WACC derivation
+
+      As VL = D + E = VU + VITS , the expected return on the assets (=
+       assets of the unleverd ﬁrm + PV of tax shields) of the levered ﬁrm is
+
+                   D                   E
+                   rL = D + E rD + D + E rE
+
+If we assume that
+
+the ﬁrm keeps a constant leverage ratio (continuously adjusted)
+
+rU, the expected return on the unlevered ﬁrm, is not time-varying
+(same for all t)
+
+we have that, for any period, rL = rU
+
+See Stanton and Seasholes (2005) and DeMarzo (2005) for a formal
+treatment
+
+                                                                                                                                                                    54 / 63
+Appendix: WACC derivation
+
+The (expected) cash ﬂow available to creditors and shareholders in
+period t + 1,
+
+CL ,t +1                    = FCFt+1 + rd Dt τ
+
+cash ﬂow available to                unlevered free interest tax
+                                     cash ﬂow  shield
+creditors and shareholders
+
+Because the investment continues after period t + 1, there is a
+continuation value VL,t+1
+
+The value of the ﬁrm in period t is
+
+VL ,t  =  FCFt+1 + rd Dt τ + VL,t+1
+                     1 + rL
+
+                                                                    55 / 63
+Appendix: WACC derivation
+
+The same is true for the period t + 1
+
+          VL ,t +1  =  FCFt+2 + rd Dt+1τ + VL,t+2
+                                    1 + rL
+
+Plugging this expression for VL,t+1 into the expression for VL,t , we
+have that
+
+VL ,t  =  FCFt+1 + rd Dt τ  +      FCFt +2  + rd Dt+1τ   +  VL ,t +2
+                1 + rL                       (1 + rL )2
+
+       =  CL ,t +1  +   CL ,t +2   +    VL ,t +2
+          1 + rL       (1 + rL )2      (1 + rL )2
+
+                                                                       56 / 63
+Appendix: WACC derivation
+
+Plugging the expression for VL,t+2 into the expression for VL,t , we
+have that
+
+VL ,t  =      CL ,t +1  +   CL ,t +2   +   CL ,t +3   +   VL ,t +3
+              1 + rL       (1 + rL )2     (1 + rL )3     (1 + rL )3
+
+Doing these operations N times, we have that
+
+       VL ,t  =  CL ,t +1  + ... +   CL ,t +N   +   VL ,t +N
+                 1 + rL             (1 + rL )N     (1 + rL )N
+
+When N → ∞, the term
+
+                            VL,t+N → 0
+                           (1 + rL )N
+
+                                                                      57 / 63
+Appendix: WACC derivation
+
+Thus
+
+      VL ,t  =  CL ,t +1  +   CL ,t +2   +   CL ,t +3   + ...
+                1 + rL       (1 + rL )2     (1 + rL )3
+
+             =   ∞    CL ,t +i
+                i=1  (1 + rL )i
+
+This is the standard valuation formula for an inﬁnitely-lived asset
+(going concern)
+
+In practice, it is not used: we need an estimate of the interest tax
+shield for all periods
+
+The WACC method simpliﬁes our life
+
+                                                                      58 / 63
+Appendix: WACC derivation
+
+Recall that         VL ,t   =      FCFt+1 + rd Dt τ + VL,t+1
+and                                           1 + rL
+Then
+                        rL  =      Dt  Dt  Et   rD  +     Dt  Et  Et  rE
+                                       +                      +
+
+                        VL,t (1 + rL ) − rd Dt τ = FCFt+1 + VL,t+1
+
+(⇒)          VL ,t  (1  +   rL  )  −   VL,t rd  Dt     Dt τ   =   FCFt +1  +  VL ,t +1
+                                                VL ,t
+
+             (⇒)        VL ,t   1 + rL     −   rd  Dt     τ   = FCFt+1 + VL,t+1
+                                                   VL ,t
+
+                                                                                        59 / 63
+Appendix: WACC derivation
+
+                   (⇒)       VL ,t    = FCFt+1 + VL,t+1
+                                                           τ Dt
+                                          1  +  rL  −  rd
+                                                           VL ,t
+
+But note that
+
+1  +  rL  −    rd  Dt     τ  =  1  +     Dt   Et  rD  +  Dt  Et   Et  rE  −  rd  Dt     τ
+                   VL ,t              Dt +                   +                   VL ,t
+
+                             =  1  +  Dt  Dt  Et  rD  +  Dt  Et   Et  rE  −  rd  Dt  Dt    Et  τ
+                                          +                  +                       +
+
+                             =  1  +  Dt  Dt  Et  rD (1  −  τ)  +  Dt  Et    Et  rE
+                                          +                            +
+
+                             = 1 + rWACC
+
+                                                                                                  60 / 63
+Appendix: WACC derivation
+
+Then
+
+                     VL ,t     =  FCFt+1 + VL,t+1
+                                      1 + rWACC
+
+Doing the same interactions as before, we can show that
+
+      VL ,t  =  FCFL ,t +1  +    FCFL ,t +2   +    FCFL ,t +3   + ...
+                1 + rWACC      (1 + rWACC )2     (1 + rWACC )3
+
+             =   ∞     FCFL ,t +i
+                i=1  (1 + rWACC )i
+
+We only need to project the unlevered free cash ﬂows if we know the
+rWACC
+
+                                                                       61 / 63
+Appendix: Comment on rD
+
+If debt is risky, is the interest tax shield equal to rD Dt τ?
+
+Suppose that a ﬁrm issued a bond in the past at par with an interest
+rate (=coupon payment) of 5% and a face value of 1000
+
+The coupon payment is 5% × 1000 = 50
+
+The bond matures in the next period
+
+The expected return on the debt, rD is
+
+Dt  =  E[Ct+1 + Dt+1]    ⇐⇒          rD  =  Ct +1  + Dt+1  − Dt
+            1 + rD                                   Dt
+
+where E[Ct+1] = 50 and E[Dt+1] = 1000 if the bond is risk-free
+
+                                                                 62 / 63
+Appendix: Comment on rD
+
+Suppose the debt is risky
+
+For instance, E[Ct+1 + Dt+1] = 700 < 1050, and the market value of
+debt is 525
+
+This means that rD = 33.33%
+Is the expected interest payment equal to 525 × 33% = 175?
+
+No. The return that determines the interest expense is
+
+                           ¯rD  =  E[Ct +1 ]
+                                      Dt
+
+and the after-tax cost of debt is rD − τ¯rD
+
+                                                            63 / 63
+

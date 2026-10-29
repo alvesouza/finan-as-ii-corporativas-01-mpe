@@ -5,9 +5,15 @@ date: 2026-10-09
 
 # Class Plan and Study Guide — 16 classes
 
-**Status: proposal.** Built from the syllabus content list (`Finanças II.pdf`), not from the
-professor's calendar. The course is 30 h, so 16 classes ≈ 1 h 50 min each. Replace class
+**Status: proposal, partly superseded.** The real syllabus (`syllabus(1).pdf`, Prof. Bernardo
+Ricca) and the first slides have arrived: Topic 1 = accounting review, Topic 2A = valuation + MM,
+Topic 2B = taxes, distress, trade-off. They are mapped in [[Map/lectures-index|lectures-index]]
+and cover Classes 1–5 below in a different order and emphasis (accounting replaces the Tirole
+stylized facts). The rest of this plan was built from the ementário (`Finanças II.pdf`), not from
+the professor's calendar. The course is 30 h, so 16 classes ≈ 1 h 50 min each. Replace class
 contents with the real slides as they arrive in `Aula/` (via `/intake`).
+
+- **Notes:** [[Notas/L01/L01-00-map|L01 — Topic 1]] · [[Notas/L02/L02-00-map|L02 — Topic 2A]] · [[Notas/L03/L03-00-map|L03 — Topic 2B]] (index: [[Notas/00-index|Notas]])
 
 Pages are printed pages. Exercise IDs are from [[Map/exercises-index|exercises-index]]:
 Tirole `C.N`; Amaro de Matos `subsection #n`; Higgins `C.N` (odd ones have answers);

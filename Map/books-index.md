@@ -10,8 +10,8 @@ Source: [[Livros/Jean Tirole - The Theory of Corporate Finance-Princeton Univers
 Section descriptions summarise the section's subject from its title and opening; named results
 marked *(to confirm)* have not been checked against the text yet.
 
-All four books are local; Ross and Higgins are not the syllabus editions — see [[Livros/BOOKS|BOOKS]].
-Page offsets (PDF = printed + n): Tirole 13 · Amaro de Matos 18 · Higgins 21 · Ross 24.
+All six books are local; Ross, Higgins and Berk are not the syllabus editions — see [[Livros/BOOKS|BOOKS]].
+Page offsets (PDF = printed + n): Tirole 13 · Amaro de Matos 18 · Higgins 21 · Ross 24 · Berk 31 · Grinblatt–Titman 14 (Ch. 1–3) / 13.
 
 ---
 
@@ -983,3 +983,364 @@ Exchange markets, PPP, interest-rate parity, international capital budgeting, ex
 
 ## Questions that require this knowledge
 No lists, quizzes or exams are in the project yet; re-run `/study-map .` when they arrive.
+
+# Berk, DeMarzo & Harford, *Fundamentals of Corporate Finance* (Prentice Hall, 2nd ed., 2011)
+
+#book/berk
+
+Printed pages (PDF = printed + 31), from the PDF bookmarks. **Not** the syllabus book (Berk & DeMarzo, *Corporate Finance*): match by subject, not by chapter number. *Ricca* = syllabus topic (R1 accounting/capital structure · R2 valuation · R3 MM/taxes/distress/trade-off · R4 moral hazard/financing capacity · R5 asymmetric information · R5b trade credit/working capital · R6 liquidity/risk management).
+
+### Ch. 1 — Corporate Finance and the Financial Manager (pp. 2–22)
+
+| § | Section | p. |
+|---|---|---|
+| 1.1 | Why Study Finance? | 4 |
+| 1.2 | The Four Types of Firms | 4 |
+| 1.3 | The Financial Manager | 9 |
+| 1.4 | The Financial Manager’s Place in the Corporation | 11 |
+| 1.5 | The Stock Market | 14 |
+| 1.6 | Financial Institutions | 17 |
+| — | Problems | 21 |
+
+**Ricca:** R1 · R4 (§1.4 agency) · **Rules:** [[rules/01_introducao_fatos|R1]] · [[rules/04_agencia_estrutura_governanca|R4]]
+
+### Ch. 2 — Introduction to Financial Statement Analysis (pp. 23–61)
+
+| § | Section | p. |
+|---|---|---|
+| 2.1 | Firms’ Disclosure of Financial Information | 25 |
+| 2.2 | The Balance Sheet | 26 |
+| 2.3 | Balance Sheet Analysis | 30 |
+| 2.4 | The Income Statement | 33 |
+| 2.5 | Income Statement Analysis | 35 |
+| 2.6 | The Statement of Cash Flows | 42 |
+| 2.7 | Other Financial Statement Information | 45 |
+| 2.8 | Financial Reporting in Practice | 46 |
+| — | Problems | 52 |
+| — | Data Case | 58 |
+
+**Ricca:** R1 · **Rules:** [[rules/01_introducao_fatos|R1]]
+
+### Ch. 3 — Time Value of Money: An Introduction (pp. 62–82)
+
+| § | Section | p. |
+|---|---|---|
+| 3.1 | Cost-Benefit Analysis | 64 |
+| 3.2 | Market Prices and the Valuation Principle | 66 |
+| 3.3 | The Time Value of Money and Interest Rates | 68 |
+| 3.4 | Valuing Cash Flows at Different Points in Time | 73 |
+| — | Problems | 80 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 4 — Time Value of Money: Valuing Cash Flow Streams (pp. 83–116)
+
+| § | Section | p. |
+|---|---|---|
+| 4.1 | Valuing a Stream of Cash Flows | 85 |
+| 4.2 | Perpetuities | 89 |
+| 4.3 | Annuities | 92 |
+| 4.4 | Growing Cash Flows | 96 |
+| 4.5 | Solving for Variables Other Than Present Value or Future Value | 99 |
+| — | Problems | 108 |
+| — | Data Case | 113 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 5 — Interest Rates (pp. 117–143)
+
+| § | Section | p. |
+|---|---|---|
+| 5.1 | Interest Rate Quotes and Adjustments | 119 |
+| 5.2 | Application: Discount Rates and Loans | 124 |
+| 5.3 | The Determinants of Interest Rates | 127 |
+| 5.4 | The Opportunity Cost of Capital | 136 |
+| — | Problems | 140 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 6 — Bonds (pp. 144–181)
+
+| § | Section | p. |
+|---|---|---|
+| 6.1 | Bond Terminology | 146 |
+| 6.2 | Zero-Coupon Bonds | 147 |
+| 6.3 | Coupon Bonds | 151 |
+| 6.4 | Why Bond Prices Change | 156 |
+| 6.5 | Corporate Bonds | 164 |
+| — | Problems | 172 |
+| — | Data Case | 175 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 7 — Stock Valuation (pp. 182–209)
+
+| § | Section | p. |
+|---|---|---|
+| 7.1 | Stock Basics | 184 |
+| 7.2 | The Mechanics of Stock Trades | 187 |
+| 7.3 | The Dividend-Discount Model | 188 |
+| 7.4 | Estimating Dividends in the Dividend-Discount Model | 192 |
+| 7.5 | Limitations of the Dividend-Discount Model | 198 |
+| 7.6 | Share Repurchases and the Total Payout Model | 200 |
+| 7.7 | Putting It All Together | 201 |
+| — | Problems | 204 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 8 — Investment Decision Rules (pp. 210–246)
+
+| § | Section | p. |
+|---|---|---|
+| 8.1 | The NPV Decision Rule | 212 |
+| 8.2 | Using the NPV Rule | 214 |
+| 8.3 | Alternative Decision Rules | 216 |
+| 8.4 | Choosing Between Projects | 226 |
+| 8.5 | Evaluating Projects with Different Lives | 232 |
+| 8.6 | Choosing Among Projects When Resources Are Limited | 235 |
+| 8.7 | Putting It All Together | 238 |
+| — | Problems | 241 |
+| — | Data Case | 246 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 9 — Fundamentals of Capital Budgeting (pp. 247–281)
+
+| § | Section | p. |
+|---|---|---|
+| 9.1 | The Capital Budgeting Process | 249 |
+| 9.2 | Forecasting Incremental Earnings | 250 |
+| 9.3 | Determining Incremental Free Cash Flow | 254 |
+| 9.4 | Other Effects on Incremental Free Cash Flows | 260 |
+| 9.5 | Analyzing the Project | 265 |
+| 9.6 | Real Options in Capital Budgeting | 270 |
+| — | Problems | 273 |
+| — | Data Case | 279 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 10 — Stock Valuation: A Second Look (pp. 282–315)
+
+| § | Section | p. |
+|---|---|---|
+| 10.1 | The Discounted Free Cash Flow Model | 284 |
+| 10.2 | Valuation Based on Comparable Firms | 288 |
+| 10.3 | Information, Competition, and Stock Prices | 296 |
+| 10.4 | Individual Biases and Trading | 302 |
+| — | Problems | 306 |
+| — | Data Case | 310 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 11 — Risk and Return in Capital Markets (pp. 316–344)
+
+| § | Section | p. |
+|---|---|---|
+| 11.1 | A First Look at Risk and Return | 318 |
+| 11.2 | Historical Risks and Returns of Stocks | 320 |
+| 11.3 | The Historical Tradeoff Between Risk and Return | 331 |
+| 11.4 | Common Versus Independent Risk | 332 |
+| 11.5 | Diversification in Stock Portfolios | 334 |
+| — | Problems | 342 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 12 — Systematic Risk and the Equity Risk Premium (pp. 345–380)
+
+| § | Section | p. |
+|---|---|---|
+| 12.1 | The Expected Return of a Portfolio | 347 |
+| 12.2 | The Volatility of a Portfolio | 350 |
+| 12.3 | Measuring Systematic Risk | 358 |
+| 12.4 | Putting It All Together: The Capital Asset Pricing Model | 366 |
+| — | Problems | 373 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 13 — The Cost of Capital (pp. 381–409)
+
+| § | Section | p. |
+|---|---|---|
+| 13.1 | A First Look at the Weighted Average Cost of Capital | 383 |
+| 13.2 | The Firm’s Costs of Debt and Equity Capital | 386 |
+| 13.3 | A Second Look at the Weighted Average Cost of Capital | 390 |
+| 13.4 | Using the WACC to Value a Project | 394 |
+| 13.5 | Project-Based Costs of Capital | 396 |
+| 13.6 | When Raising External Capital Is Costly | 399 |
+| — | Problems | 403 |
+| — | Data Case | 406 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 14 — Raising Equity Capital (pp. 410–437)
+
+| § | Section | p. |
+|---|---|---|
+| 14.1 | Equity Financing for Private Companies | 412 |
+| 14.2 | Taking Your Firm Public: The Initial Public Offering | 416 |
+| 14.3 | IPO Puzzles | 425 |
+| 14.4 | Raising Additional Capital: The Seasoned Equity Offering | 429 |
+| — | Problems | 434 |
+
+**Ricca:** R1 · **Rules:** [[rules/01_introducao_fatos|R1]]
+
+### Ch. 15 — Debt Financing (pp. 438–459)
+
+| § | Section | p. |
+|---|---|---|
+| 15.1 | Corporate Debt | 440 |
+| 15.2 | Bond Covenants | 445 |
+| 15.3 | Repayment Provisions | 446 |
+| — | Problems | 453 |
+
+**Ricca:** R1 · **Rules:** [[rules/01_introducao_fatos|R1]]
+
+### Ch. 16 — Capital Structure (pp. 460–497)
+
+| § | Section | p. |
+|---|---|---|
+| 16.1 | Capital Structure Choices | 462 |
+| 16.2 | Capital Structure in Perfect Capital Markets | 464 |
+| 16.3 | Debt and Taxes | 473 |
+| 16.4 | The Costs of Bankruptcy and Financial Distress | 479 |
+| 16.5 | Optimal Capital Structure: The Tradeoff Theory | 480 |
+| 16.6 | Additional Consequences of Leverage: Agency Costs and Information | 482 |
+| 16.7 | Capital Structure: Putting It All Together | 487 |
+| — | Problems | 490 |
+
+**Ricca:** R3 · R4 · R5 · **Rules:** [[rules/03_benchmark_mm|R3]] · [[rules/04_agencia_estrutura_governanca|R4]] · [[rules/06_assimetria_informacao|R5]]
+
+### Ch. 17 — Payout Policy (pp. 498–533)
+
+| § | Section | p. |
+|---|---|---|
+| 17.1 | Cash Distributions to Shareholders | 500 |
+| 17.2 | Dividends Versus Share Repurchases in a Perfect Capital Market | 503 |
+| 17.3 | The Tax Disadvantage of Dividends | 509 |
+| 17.4 | Payout Versus Retention of Cash | 514 |
+| 17.5 | Signaling with Payout Policy | 518 |
+| 17.6 | Stock Dividends, Splits, and Spin-Offs | 522 |
+| 17.7 | Advice for the Financial Manager | 524 |
+| — | Problems | 527 |
+| — | Data Case | 529 |
+
+**Ricca:** R3 · R5 · **Rules:** [[rules/03_benchmark_mm|R3]] · [[rules/06_assimetria_informacao|R5]]
+
+### Ch. 18 — Financial Modeling and Pro Forma Analysis (pp. 534–563)
+
+| § | Section | p. |
+|---|---|---|
+| 18.1 | Goals of Long-Term Financial Planning | 536 |
+| 18.2 | Forecasting Financial Statements: The Percent of Sales Method | 537 |
+| 18.3 | Forecasting a Planned Expansion | 542 |
+| 18.4 | Growth and Firm Value | 547 |
+| 18.5 | Valuing the Expansion | 551 |
+| — | Problems | 558 |
+
+**Ricca:** R2 · **Rules:** [[rules/02_valuation|R2]]
+
+### Ch. 19 — Working Capital Management (pp. 564–590)
+
+| § | Section | p. |
+|---|---|---|
+| 19.1 | Overview of Working Capital | 566 |
+| 19.2 | Trade Credit | 570 |
+| 19.3 | Receivables Management | 574 |
+| 19.4 | Payables Management | 578 |
+| 19.5 | Inventory Management | 580 |
+| 19.6 | Cash Management | 582 |
+| — | Problems | 586 |
+| — | Data Case | 589 |
+
+**Ricca:** R5b · **Rules:** [[rules/06_assimetria_informacao|R5]]
+
+### Ch. 20 — Short-Term Financial Planning (pp. 591–621)
+
+| § | Section | p. |
+|---|---|---|
+| 20.1 | Forecasting Short-Term Financing Needs | 593 |
+| 20.2 | The Matching Principle | 598 |
+| 20.3 | Short-Term Financing with Bank Loans | 601 |
+| 20.4 | Short-Term Financing with Commercial Paper | 604 |
+| 20.5 | Short-Term Financing with Secured Financing | 606 |
+| 20.6 | Putting It All Together: Creating a Short-Term Financial Plan | 609 |
+| — | Problems | 612 |
+
+**Ricca:** R5b · R6 · **Rules:** [[rules/06_assimetria_informacao|R5]] · [[rules/05_liquidez|R6]]
+
+### Ch. 21 — Option Applications and Corporate Finance (pp. 622–647)
+
+| § | Section | p. |
+|---|---|---|
+| 21.1 | Option Basics | 624 |
+| 21.2 | Option Payoffs at Expiration | 627 |
+| 21.3 | Factors Affecting Option Prices | 634 |
+| 21.4 | The Black-Scholes Option Pricing Formula | 636 |
+| 21.5 | Put-Call Parity | 638 |
+| 21.6 | Options and Corporate Finance | 641 |
+| — | Problems | 644 |
+| — | Data Case | 646 |
+
+**Ricca:** R3 · R6 · **Rules:** [[rules/03_benchmark_mm|R3]] · [[rules/05_liquidez|R6]]
+
+### Ch. 22 — Mergers and Acquisitions (pp. 648–678)
+
+| § | Section | p. |
+|---|---|---|
+| 22.1 | Background and Historical Trends | 650 |
+| 22.2 | Market Reaction to a Takeover | 652 |
+| 22.3 | Reasons to Acquire | 653 |
+| 22.4 | The Takeover Process | 659 |
+| 22.5 | Takeover Defenses | 665 |
+| 22.6 | Who Gets the Value Added from a Takeover? | 669 |
+| — | Problems | 676 |
+
+**Ricca:** out of Ricca scope (M&A)
+
+### Ch. 23 — International Corporate Finance (pp. 679–—)
+
+| § | Section | p. |
+|---|---|---|
+| 23.1 | Foreign Exchange | 681 |
+| 23.2 | Exchange Rate Risk | 683 |
+| 23.3 | Internationally Integrated Capital Markets | 692 |
+| 23.4 | Valuation of Foreign Currency Cash Flows | 694 |
+| 23.5 | Valuation and International Taxation | 698 |
+| 23.6 | Internationally Segmented Capital Markets | 700 |
+| 23.7 | Capital Budgeting with Exchange Rate Risk | 703 |
+| — | Problems | 707 |
+
+**Ricca:** out of Ricca scope
+
+
+# Grinblatt & Titman, *Financial Markets and Corporate Strategy* (McGraw-Hill, 2nd ed., © 2002)
+
+#book/grinblatt-titman
+
+Chapter level only (the PDF has no bookmarks). Printed pages: PDF = printed + 14 in Part I (Ch. 1–3), + 13 from Ch. 4 on. This edition matches the syllabus's Titman & Grinblatt (2002). Exercises: see [[Map/exercises-index|exercise index]]. Math symbols (=, +, −, Greek letters) are lost in the `.md`; read formulas from the PDF.
+
+| Ch. | Title | pp. | Ricca |
+|---|---|---|---|
+| 1 | Raising Capital | 2–28 | R1 |
+| 2 | Debt Financing | 29–67 | R1 |
+| 3 | Equity Financing | 68–96 | R1 |
+| 4 | Portfolio Tools | 97–129 | R2 (background) |
+| 5 | Mean-Variance Analysis and the Capital Asset Pricing Model | 130–174 | R2 |
+| 6 | Factor Models and the Arbitrage Pricing Theory | 175–213 | R2 (background) |
+| 7 | Pricing Derivatives | 214–256 | R2 · R3 (state prices, complete markets) |
+| 8 | Options | 257–300 | R3 (background) |
+| 9 | Discounting and Valuation | 301–328 | R2 |
+| 10 | Investing in Risk-Free Projects | 329–369 | R2 |
+| 11 | Investing in Risky Projects | 370–421 | R2 |
+| 12 | Allocating Capital and Corporate Strategy | 422–459 | R2 |
+| 13 | Corporate Taxes and the Impact of Financing on Real Asset Valuation | 460–499 | R2 · R3 |
+| 14 | How Taxes Affect Financing Choices | 500–530 | R3 |
+| 15 | How Taxes Affect Dividends and Share Repurchases | 531–556 | R3 |
+| 16 | Bankruptcy Costs and Debt Holder-Equity Holder Conflicts | 557–594 | R3 · R4 |
+| 17 | Capital Structure and Corporate Strategy | 595–626 | R3 · R4 · R5b (17.5) |
+| 18 | How Managerial Incentives Affect Financial Decisions | 627–655 | R4 |
+| 19 | The Information Conveyed by Financial Decisions | 656–690 | R5 |
+| 20 | Mergers and Acquisitions | 691–738 | out of Ricca scope |
+| 21 | Risk Management and Corporate Strategy | 739–772 | R6 |
+| 22 | The Practice of Hedging | 773–817 | R6 |
+| 23 | Interest Rate Risk Management | 818–855 | R6 |

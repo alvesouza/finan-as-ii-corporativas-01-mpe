@@ -24,7 +24,7 @@ Videos/<slug>/
 ├── audio/               ← one synthesised clip per beat, plus the padded WAVs
 ├── media/               ← Manim's render tree (gitignored)
 ├── companion.html       ← only if /companion was asked for; never auto-built
-├── <slug>.mp4           ← THE DELIVERABLE: one file, video + narration
+├── <slug>.mp4           ← THE DELIVERABLE: one file, video + narration (gitignored)
 ├── <slug>.srt           ← subtitles, generated from beats.json
 └── provenance.md        ← sources cited, voice used, versions, render settings, checksums
 ```
@@ -682,10 +682,14 @@ deliberately left out and where it belongs; and anything that could not be verif
   is still out of scope.
 - **Do not animate exercise statements** from a textbook — reference them by number and page,
   the same rule `/exercise-plan` and `/speechify` follow.
-- **Render artefacts stay out of git**: `Videos/*/media/`, `Videos/*/audio/`, the concat lists
-  and the intermediate `video.mp4`/`track.wav`. Keep `plan.md`, `script.md`, `beats.json`,
-  `scenes.py`, `companion.html`, `provenance.md` and the final `<slug>.mp4` if it is small
-  enough to version.
+- **Every generated `.mp4` stays out of git — the final `<slug>.mp4` included.** It is
+  rebuilt from versioned sources, so `.gitignore` must carry `Videos/*/media*/` (any
+  `--media_dir` variant, e.g. `media_nocache/`), `Videos/*/audio/`, `Videos/*/build/`,
+  `Videos/**/*.mp4` (recursive: every mp4 at any depth) and `Videos/*/*.log`; add any that
+  are missing before the first render. After compiling, run
+  `git check-ignore -v "Videos/<slug>/<slug>.mp4"` and fix the ignore if it prints nothing.
+  Version `plan.md`, `script.md`, `beats.json`, `scenes.py`, `<slug>.srt`, `companion.html`
+  and `provenance.md` (which records the mp4's checksum).
 - **TTS and rendering both cost.** Re-synthesise only changed beats; draft at `-ql` and go to
   `-qh` once.
 

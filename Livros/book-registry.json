@@ -1,0 +1,45 @@
+{
+ "_comment": "Page mapping for each book PDF. Used by /study-pack to convert printed page numbers to PDF page indices. Formula: pdf_page_index (0-based) = (printed_page + offset) // scale. Verified offsets should not be re-detected.",
+ "Tirole": {
+  "file": "Jean Tirole - The Theory of Corporate Finance-Princeton University Press (2005).pdf",
+  "offset": 12,
+  "scale": 1,
+  "verified": true,
+  "notes": "Printed = PDF(1-based) - 13 (Livros/BOOKS.md, Map/exercises-index.md)."
+ },
+ "Amaro": {
+  "file": "de Matos, João Amaro - Theoretical Foundations of Corporate Finance (2002, Princeton University Press) [10.1515_9780691188478] - libgen.li.pdf",
+  "offset": 17,
+  "scale": 1,
+  "verified": true,
+  "notes": "Amaro de Matos. Printed = PDF(1-based) - 18."
+ },
+ "Higgins": {
+  "file": "Jennifer L. Koski_ Robert C. Higgins_ Todd Mitton - Analysis for financial management (2022) - libgen.li.pdf",
+  "offset": 20,
+  "scale": 1,
+  "verified": true,
+  "notes": "Koski, Higgins & Mitton 13e. Printed = PDF(1-based) - 21."
+ },
+ "Ross": {
+  "file": "ROSS, WESTERFIELD, JORDAN_ LAMB - Fundamentos de Administração Financeira 9 (2013, McGraw Hill_ Bookman) - libgen.li.pdf",
+  "offset": 23,
+  "scale": 1,
+  "verified": true,
+  "notes": "Fundamentos 9e. Printed = PDF(1-based) - 24."
+ },
+ "Berk": {
+  "file": "Fundamentals of Corporate Finance, 2nd Edition {Jonathan Berk, Peter DeMarzo, Jarrad Harford}(2011, Prentice Hall){91822989} libgen.li.pdf",
+  "offset": 30,
+  "scale": 1,
+  "verified": true,
+  "notes": "Berk, DeMarzo & Harford 2e. Printed = PDF(1-based) - 31; checked: printed 273 (Problem 9.1) = PDF 304, printed 496 (*16.29) = PDF 527."
+ },
+ "Grinblatt": {
+  "file": "Financial Markets And Corporate Strategy{Mark Grinblatt, Sheridan Titman}(2001, McGraw-Hill_Irwin){91152295} libgen.li.pdf",
+  "offset": 12,
+  "scale": 1,
+  "verified": true,
+  "notes": "Grinblatt & Titman 2e. Printed = PDF(1-based) - 13 from Ch. 4 on; Part I (Ch. 1-3) is PDF - 14 (offset 13), which a single offset cannot express: Ch. 1-3 pages come out one page early."
+ }
+}

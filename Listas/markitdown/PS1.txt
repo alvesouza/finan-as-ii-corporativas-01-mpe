@@ -1,0 +1,62 @@
+             Corporate Finance - Problem Set 1
+
+Exercise 1 Answer the following questions.
+
+(a) Why do we need to discount free cash ﬂows (FCFs) instead of a ready-to-use account-
+ing ﬁgure, such as net income? State and explain the diﬀerences between net income and
+free cash ﬂows.
+
+(b) Taxes that accrue in one period are not necessarily paid in the same period. As a re-
+sult, income taxes — as recorded in the income statement — may diﬀer from the amount
+actually paid in taxes in the current period. This diﬀerence is recorded as deferred tax
+liability in the balance sheet. So income taxes recorded on the income statement = taxes
+paid (cash) + changes in deferred taxes. In real world applications, should we adjust the
+textbook FCF formula, F CFt = EBITt(1 − τc) + Depreciation − CAP EXt − ∆N W Ct,
+to include changes in deferred taxes?
+
+Exercise 2 You are considering an investment of 25 million in a new equipment. You pay
+a consultancy company 1 million to help you with the analysis. You open the consultants’
+report and ﬁnd the following estimates (in thousands of dollars) for the project:
+
+Sales revenue            1       2       3       4       5       6       7       8       9      10
+Costs of gods sold
+Gross proﬁt           30,000  30,000  30,000  30,000  30,000  30,000  30,000  30,000  30,000  30,000
+Overhead              18,000  18,000  18,000  18,000  18,000  18,000  18,000  18,000  18,000  18,000
+Depreciation          12,000  12,000  12,000  12,000  12,000  12,000  12,000  12,000  12,000  12,000
+Net operating income
+Income tax             2,000   2,000   2,000   2,000   2,000   2,000   2,000   2,000   2,000   2,000
+Net income             2,500   2,500   2,500   2,500   2,500   2,500   2,500   2,500   2,500   2,500
+                       7,500   7,500   7,500   7,500   7,500   7,500   7,500   7,500   7,500   7,500
+                        2625    2625    2625    2625    2625    2625    2625    2625    2625    2625
+                       4,875   4,875   4,875   4,875   4,875   4,875   4,875   4,875   4,875   4,875
+
+All of the estimates in the report seem correct. You note that the consultants used straight
+line depreciation for the new equipment that will be purchased today (year 0), which is
+what the accounting department recommended. The project will require 10 million in
+working capital upfront (year 0), which will be fully recovered in year 10. Next, you see
+they have attributed 2 million of overhead to the project but you know that 1 million of
+this amount will be incurred even if the project is not accepted.
+
+(a) Given the available information, what are the free cash ﬂows in years 0 through 10
+that should be used to evaluate the proposed project?
+
+(b) If the cost of capital for this project is 14%, what is your estimate of the value of the
+new project?
+
+Exercise 3 One year ago, your company purchased a machine in manufacturing for
+110,000. You have learned that a new machine is available that oﬀers many advantages;
+you can purchase it for 150,000 today. It will be depreciated on a straight-line basis over 10
+years, after which it has no salvage value. You expect that the new machine will produce
+additional EBITDA (Earnings before interest, taxes, depreciation and amortization) of
+$40,000 per year for the next 10 years. The current machine is expected to produce
+
+                                                        1
+additional EBITDA of 20,000 per year. The current machine is being depreciated on a
+straight-line basis over a useful life of 11 years, after which it will have no salvage value,
+so depreciation expenses for the current machine is 10,000 per year. All other expenses
+of the two machines are identical. The market value today of the current machine is
+50,000. Your company’s tax rate is 45%, and the opportunity cost of capital for this type
+of equipment is 10%. Is it proﬁtable to replace the year-old machine?
+
+                                                        2
+

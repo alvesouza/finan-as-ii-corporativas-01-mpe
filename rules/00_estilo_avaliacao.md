@@ -91,6 +91,27 @@ Classes follow the proposed 16-class plan in `Map/study-guide.md` until the real
   pledgeable income vs. investment, credit rationing). The rubric scores **labelled axes,
   named curves/regions and the direction of shifts** separately from the verbal conclusion.
 
+- **Equations, notation and layout (every solution).**
+  1. Number every equation a later step uses (`\label`/`\eqref`, or `(1)`, `(2)`... in
+     Markdown) and name the source at each step: "Using (2) and (4)...", "Substituting (7)
+     into (5)...". Equations of the statement keep the statement's numbers. *Why:* a step
+     that does not say where its terms come from cannot be checked line by line.
+  2. Open each solution with a **Notation** list: every variable and parameter, what it
+     means, and its admissible range. Define any new symbol on the line where it first
+     appears. *Why:* the same letter means different things across topics ($\rho$ is the
+     liquidity shock in Tirole ch. 5 and a discount rate elsewhere; $B$ is private benefit,
+     not bond value).
+  3. One operation per displayed line. Use display equations, not long inline chains, with a
+     short sentence between displays saying what was done. *Why:* clustered math hides the
+     step where an error happens.
+  4. Show every substitution as its own line: write the receiving equation with the substituted
+     expression in place, in parentheses, before simplifying. With (1) $A=B+C$ and (2) $B=2A$,
+     "substituting (2) into (1)" gives $A=(2A)+C$ on one line, and only the next line gives
+     $C=-A$. Plugging in numbers is a substitution too: show the numbers in place, then the
+     result, e.g. $V_L=(1000)+(0.34)(400)$, then $=1136$. The displayed arithmetic must
+     reproduce the printed result (carry enough decimals), and keep any check script
+     asserting that value.
+
 ## 5. Uso da bibliografia (obrigatório)
 
 Ancore conteúdo e referências nos livros do curso, via `Map/` e `rules/` quando existirem:
@@ -240,3 +261,28 @@ economically (max. half the item); a cross-topic question answered inside one mo
 ignoring the link (max. half the item). A requested graph is scored on its own lines: axes
 and labels, each locus with its slope, the shift or dynamics (arrows, saddle path, jump), and
 the point read off it; a graph contradicting the student's algebra loses the graph points.
+
+## 9. Study-roadmap PDF and practice-plan solutions (every exercise list)
+
+- After building any exercise list, ask the user whether to split its study roadmap into a
+  PDF. This covers `/exam-gen` lists and mock exams, and `/exercise-plan` practice plans built
+  from existing book exercises. Ask once, at the end, after the list exists; it is never a
+  silent default in either direction.
+  *Why:* the roadmap lists reading pages and exercise pages scattered across several book
+  PDFs; without the extracted PDF the student re-finds each page by hand, and generating it
+  unasked costs a build the student may not want.
+  *Check:* the final report of every list ends with this question (AskUserQuestion), and a
+  "yes" produces `/study-pack <roadmap file>`.
+- On "yes", run `/study-pack` on the file that carries the roadmap tables (an `/exercise-plan`
+  file already does; for an `/exam-gen` list, first write the reading and roadmap tables of the
+  `/exercise-plan` format to `Listas/roteiro-<topic>.md`).
+- After building an `/exercise-plan` practice plan, also ask whether to write the solutions of
+  its exercises as a PDF, in the same AskUserQuestion call as the roadmap question.
+  *Why:* a practice plan points to book exercises whose answers are usually not in the books,
+  so without solutions the student cannot check the work; writing 30 solutions unasked is a
+  long build the student may not want. (`/exam-gen` lists already ship their answer key.)
+  *Check:* the plan's final question offers both PDFs; a "yes" produces
+  `Listas/pratica-<topic>-solutions.pdf`.
+- On "yes", solve every exercise of the plan with `/solution` in plan order, cite each one by
+  number and page without restating it, and compile one pdflatex PDF (lmodern + cmap) from
+  `Listas/pratica-<topic>-solutions.tex`, with a check script for every computed number.

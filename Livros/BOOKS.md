@@ -11,6 +11,20 @@ Bibliography from `Finanças II.pdf` (Insper ementário, curriculum 202431). Sea
 | Complementar | Ross, S. A. et al. *Administração Financeira*, 10th ed., AMGH, 2015 | ⚠️ Different book | Local: Ross, Westerfield, **Jordan** & Lamb, *Fundamentos de Administração Financeira*, 9th ed., Bookman, 2013 (+ `.md`). The syllabus book is Ross, Westerfield, **Jaffe** & Lamb, still missing. |
 | Complementar | Higgins, R. *Analysis for Financial Management*, McGraw-Hill, 2011 (edition left blank in the syllabus) | ⚠️ Newer edition | Local: Koski, Higgins & Mitton, **13th ed.** (© 2023, file says 2022) (+ `.md`). Printed page = PDF − 21 |
 
+### Added 2026-10-24 (Ricca syllabus books)
+
+The real syllabus (Prof. Bernardo Ricca, `syllabus(1).pdf`) cites Berk & DeMarzo (2011) as a
+main reference and Titman & Grinblatt (2002) as complementary.
+
+| Role (Ricca) | Book | Status | Local copy |
+|---|---|---|---|
+| Main | Berk, J. & DeMarzo, P. *Corporate Finance*, global ed., Pearson, 2011 | ⚠️ Different book | Local: Berk, DeMarzo & **Harford**, *Fundamentals of Corporate Finance*, 2nd ed., Prentice Hall, 2011 (+ `.md`). Printed page = PDF − 31. The introductory sibling: syllabus chapter numbers (6, 7, 12, 14–19, 26–27) do **not** apply; see the chapter crosswalk in `Map/books-index.md`. |
+| Complementary | Titman, S. & Grinblatt, M. *Financial Markets and Corporate Strategy*, McGraw-Hill, 2002 | ✅ Found — 2nd ed. (© 2002; file says 2001) | `Livros/Financial Markets And Corporate Strategy{...}.pdf` (+ `.md`). Printed page from the running header. |
+
+`... libgen.li (1).pdf` is a byte-identical duplicate of the Berk PDF. Both new `.md` files
+were extracted with PyMuPDF (blocks in reading order, right column after left), with the same
+`<!-- page N -->` (PDF page) markers.
+
 ## Notes
 
 - **Tirole edition.** The local PDF is the 2005 Princeton printing of the 1st edition; the

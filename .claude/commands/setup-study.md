@@ -325,8 +325,9 @@ Then create `.env.example` in the project root (committed, no values) and add `.
 `.env.*`, `!.env.example` to `.gitignore`. The real key goes in `.env`, which is never
 committed. Verify the ignore actually works with `git check-ignore -v .env` — do not assume it.
 
-Also add the render artefacts to `.gitignore`: `Videos/*/media/`, `Videos/*/audio/`,
-`Videos/*/build/`.
+Also add the render artefacts to `.gitignore`: `Videos/*/media*/` (covers any `--media_dir`
+variant such as `media_nocache/`), `Videos/*/audio/`, `Videos/*/build/`, `Videos/**/*.mp4`
+(every generated video at any depth, the final one included) and `Videos/*/*.log`.
 
 Tell the user what `/explainer` needs that this step cannot provide: a **Speechify API key**
 in `.env` as `SPEECHIFY_API_KEY`, **Manim CE** (`python -m pip install manim`), **ffmpeg** on

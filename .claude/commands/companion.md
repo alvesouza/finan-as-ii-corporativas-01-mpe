@@ -46,7 +46,7 @@ For content with no video — a lecture mechanism, a lista's comparative static 
 material it serves and name it for the model, not for the lecture number.
 
 **The companion is versioned; render artefacts are not.** `.gitignore` already excludes
-`Videos/*/media/`, `Videos/*/audio/`, `Videos/*/build/` and `Videos/*/*.mp4`. The `.html` is a
+`Videos/*/media*/`, `Videos/*/audio/`, `Videos/*/build/` and `Videos/**/*.mp4`. The `.html` is a
 source file: it is committed, diffable, and the thing a future run edits instead of re-deriving.
 Verify with `git check-ignore -v <path>` rather than assuming.
 

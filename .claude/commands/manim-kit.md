@@ -320,8 +320,9 @@ cp ~/.claude/commands/templates/manim_kit.py "<video-dir>/manim_kit.py"
   ```
   `kittest.py` is a four-step scene against one beat id — a balance sheet and two notes. It
   exists to prove the kit, LaTeX and ffmpeg all work **before** twenty beats depend on them.
-- Add the render artefacts to `.gitignore` (`media/`, `audio/`, `build/`). The kit, `scenes.py`
-  and `beats.json` are versioned; renders are not.
+- Add the render artefacts to `.gitignore` (`media*/` — any `--media_dir` name, `audio/`, `build/`,
+  `**/*.mp4` recursively, `*.log` under the video dir). The kit, `scenes.py` and `beats.json` are versioned; renders and every
+  generated `.mp4` are not.
 
 ### Step 3: Take the timing from `beats.json`, never from a guess
 

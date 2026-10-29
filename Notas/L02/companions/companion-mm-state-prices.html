@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The State-Price Balance Sheet</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+/* Layout: control rail on the left, answer + tiles + two linked panels (values and returns against the face value F) on the right. */
+:root{
+  --paper:#eef1f4; --surface:#ffffff; --ink:#14202c; --muted:#5f6e7c;
+  --line:#d3dae1; --accent:#1f5f8b; --warn:#b4521a; --good:#2f6b4f; --hi:#8a5fb4; --grid:#dfe5ea;
+  --shadow:0 1px 2px rgba(20,32,44,.06),0 8px 24px rgba(20,32,44,.05);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f161d; --surface:#17212b; --ink:#dde5ec; --muted:#8fa0af; --line:#2a3846;
+  --accent:#63a8d4; --warn:#e08a4d; --good:#6fb68f; --hi:#b592d8; --grid:#243240;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --paper:#0f161d; --surface:#17212b; --ink:#dde5ec; --muted:#8fa0af; --line:#2a3846;
+  --accent:#63a8d4; --warn:#e08a4d; --good:#6fb68f; --hi:#b592d8; --grid:#243240;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35); color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.55;
+  margin:0 auto;max-width:1120px;padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  -webkit-font-smoothing:antialiased}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,40px);line-height:1.1;margin:0;
+  text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px;text-wrap:balance}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:0 0 10px}
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:26px;position:relative}
+.lede{margin:12px 0 0;max-width:64ch}
+.prov{margin:10px 0 0;font-size:12.5px;color:var(--muted);font-family:var(--mono)}
+.theme{position:absolute;top:0;right:0}
+header .eyebrow{padding-right:84px}
+main{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start}
+@media(max-width:840px){main{grid-template-columns:1fr}}
+.rail{display:flex;flex-direction:column;gap:14px}
+.ctl{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 13px;box-shadow:var(--shadow)}
+.ctl .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ctl .nm{font-weight:600;font-size:13.5px}
+.ctl .sym{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:15px}
+.ctl .val{font-family:var(--mono);font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctl .doc{font-size:12px;color:var(--muted);margin:3px 0 8px;line-height:1.4}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+input[type=range]:focus-visible,button:focus-visible{outline:2px solid var(--warn);outline-offset:2px}
+button{font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;background:var(--ink);color:var(--paper);
+  border:0;border-radius:5px;padding:9px 14px}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.right{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:16px 18px;box-shadow:var(--shadow)}
+.card p.sub{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+.panels{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:980px){.panels{grid-template-columns:1fr}}
+svg{display:block;width:100%;height:auto;max-width:100%}
+.answer{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--good);border-radius:6px;
+  padding:16px 18px;box-shadow:var(--shadow)}
+.answer .k{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.answer .v{font-family:var(--mono);font-weight:600;font-size:clamp(30px,6vw,42px);font-variant-numeric:tabular-nums;
+  color:var(--good);line-height:1.1;margin-top:2px}
+.answer .note{font-size:13.5px;margin-top:8px;max-width:68ch}
+.answer .note b{color:var(--warn)}
+.pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:2px 8px;border-radius:999px;border:1px solid currentColor;margin-left:8px;vertical-align:middle}
+.pill.safe{color:var(--good)} .pill.risky{color:var(--warn)} .pill.none{color:var(--muted)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.tile{background:var(--surface);padding:10px 12px}
+.tile .k{font-size:11px;color:var(--muted);letter-spacing:.06em;font-weight:600}
+.tile .v{font-family:var(--mono);font-size:17px;font-weight:600;font-variant-numeric:tabular-nums;margin-top:1px}
+.tile .u{font-size:11px;color:var(--muted)}
+.verdict{font-size:13.5px;padding:10px 12px;border-radius:5px;background:var(--surface);border:1px dashed var(--line);margin:10px 0 0}
+.verdict b{color:var(--warn)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:14px;height:3px;vertical-align:middle;margin-right:5px}
+footer{margin-top:34px;border-top:1px solid var(--line);padding-top:18px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;font-size:12.5px;width:100%;min-width:660px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.foot{font-size:12px;color:var(--muted);margin-top:14px;max-width:72ch}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <button class="ghost theme" id="themeBtn" type="button">Theme</button>
+  <p class="eyebrow">Finanças II &middot; L02 &middot; Topic 2A, slides 55&ndash;105</p>
+  <h1>The State-Price Balance Sheet</h1>
+  <p class="lede">A one-period firm with two equally likely states, priced by two state prices.
+  Raise the face value of debt and watch the split between debt and equity move while the
+  value of the assets stays put (MM I). The cost of equity climbs in a straight line while debt is
+  safe and goes flat once debt can default (MM II).</p>
+  <p class="prov">Ricca, Topic 2A slides 55&ndash;81 (entrepreneur example), 90&ndash;96 (risky debt, put&ndash;call parity), 97&ndash;105 (MM II, r<sub>D</sub> vs. the yield). State probabilities fixed at 1/2 (slide 55).</p>
+</header>
+
+<main>
+  <div class="rail">
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">X<sub>b</sub></span> &middot; boom payoff</span><span class="val" id="v_xb"></span></div>
+      <p class="doc">What the project's assets pay at t = 1 if the economy booms.</p>
+      <input type="range" id="xb" min="0" max="5" step="0.05" aria-label="Boom payoff">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">X<sub>s</sub></span> &middot; slump payoff</span><span class="val" id="v_xs"></span></div>
+      <p class="doc">What the assets pay in the slump. Debt with face at or below the smaller payoff never defaults.</p>
+      <input type="range" id="xs" min="0" max="3" step="0.05" aria-label="Slump payoff">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">p<sub>b</sub></span> &middot; boom state price</span><span class="val" id="v_pb"></span></div>
+      <p class="doc">Price today of 1 paid only in the boom. Cheap, because an extra unit is worth little when everyone is rich.</p>
+      <input type="range" id="pb" min="0.05" max="0.9" step="0.001" aria-label="Boom state price">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">p<sub>s</sub></span> &middot; slump state price</span><span class="val" id="v_ps"></span></div>
+      <p class="doc">Price today of 1 paid only in the slump. With p<sub>b</sub> it fixes the risk-free rate: 1 + r<sub>f</sub> = 1/(p<sub>b</sub> + p<sub>s</sub>).</p>
+      <input type="range" id="ps" min="0.05" max="0.9" step="0.001" aria-label="Slump state price">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">F</span> &middot; face value of debt</span><span class="val" id="v_F"></span></div>
+      <p class="doc">The fixed repayment promised at t = 1. Creditors get min(X, F); shareholders get max(X &minus; F, 0).</p>
+      <input type="range" id="F" min="0" max="5" step="0.005" aria-label="Face value of debt">
+    </div>
+    <div class="btns">
+      <button id="reset" type="button">Reset: slides, D = 1</button>
+      <button id="d04" class="ghost" type="button">D = 0.4 (slide 78)</button>
+      <button id="d05" class="ghost" type="button">D = 0.5 (slide 80)</button>
+      <button id="d0" class="ghost" type="button">All equity</button>
+      <button id="risky" class="ghost" type="button">Risky debt, F = 2.1</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="answer">
+      <div class="k">Value of the assets, A = D + E <span class="pill" id="a_pill"></span></div>
+      <div class="v" id="a_v"></div>
+      <div class="note" id="a_note"></div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="k">Debt D</div><div class="v" id="t_D"></div><div class="u">value today</div></div>
+      <div class="tile"><div class="k">Equity E</div><div class="v" id="t_E"></div><div class="u">= call on X, strike F</div></div>
+      <div class="tile"><div class="k">NPV (cost 1)</div><div class="v" id="t_npv"></div><div class="u">kept by the entrepreneur</div></div>
+      <div class="tile"><div class="k">r<sub>D</sub></div><div class="v" id="t_rD"></div><div class="u" id="t_y"></div></div>
+      <div class="tile"><div class="k">r<sub>E</sub></div><div class="v" id="t_rE"></div><div class="u" id="t_de"></div></div>
+      <div class="tile"><div class="k">r<sub>A</sub> = r<sub>WACC</sub></div><div class="v" id="t_rA"></div><div class="u" id="t_rf"></div></div>
+    </div>
+
+    <div class="card">
+      <div class="panels">
+        <div>
+          <h2>Values against F</h2>
+          <p class="sub">Debt and equity trade places; their sum is flat.</p>
+          <svg id="svgA" viewBox="0 0 420 320" role="img" aria-label="Values of debt, equity and assets against the face value of debt"></svg>
+          <div class="legend"><span><i style="background:var(--accent)"></i>debt D(F)</span><span><i style="background:var(--warn)"></i>equity E(F)</span><span><i style="background:var(--good)"></i>assets A</span></div>
+        </div>
+        <div>
+          <h2>Expected returns against F</h2>
+          <p class="sub">r<sub>E</sub> rises with F while debt is safe (a straight line in D/E, not in F) and goes flat once debt can default.</p>
+          <svg id="svgB" viewBox="0 0 420 320" role="img" aria-label="Expected returns on debt, equity and assets against the face value of debt"></svg>
+          <div class="legend"><span><i style="background:var(--accent)"></i>r<sub>E</sub></span><span><i style="background:var(--warn)"></i>r<sub>D</sub></span><span><i style="background:var(--good)"></i>r<sub>A</sub></span><span><i style="background:var(--muted)"></i>r<sub>f</sub></span></div>
+        </div>
+      </div>
+      <p class="verdict" id="bridge"></p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="eyebrow">The control contract</p>
+  <div class="scroll"><table>
+    <thead><tr><th>Control</th><th>Symbol</th><th>What it is</th><th>Range</th><th>Step</th><th>Default</th><th>Unit</th><th>Source</th><th>What visibly moves</th></tr></thead>
+    <tbody>
+      <tr><td>Boom payoff</td><td>X<sub>b</sub></td><td>asset payoff in the boom</td><td class="n">0 &ndash; 5</td><td class="n">0.05</td><td class="n">3.15</td><td>currency at t = 1</td><td>slide 55</td><td>A, NPV, E, r<sub>A</sub>, r<sub>E</sub></td></tr>
+      <tr><td>Slump payoff</td><td>X<sub>s</sub></td><td>asset payoff in the slump</td><td class="n">0 &ndash; 3</td><td class="n">0.05</td><td class="n">1.05</td><td>currency at t = 1</td><td>slide 55</td><td>A; the safe/risky boundary on both panels</td></tr>
+      <tr><td>Boom state price</td><td>p<sub>b</sub></td><td>price of 1 in the boom only</td><td class="n">0.05 &ndash; 0.9</td><td class="n">0.001</td><td class="n">1/2.8 = 0.3571&hellip;</td><td>&mdash;</td><td>slide 65</td><td>every value; r<sub>f</sub></td></tr>
+      <tr><td>Slump state price</td><td>p<sub>s</sub></td><td>price of 1 in the slump only</td><td class="n">0.05 &ndash; 0.9</td><td class="n">0.001</td><td class="n">1/1.05 &minus; 1/2.8 = 0.5952&hellip;</td><td>&mdash;</td><td>slide 66</td><td>every value; r<sub>f</sub></td></tr>
+      <tr><td>Face value of debt</td><td>F</td><td>promised repayment at t = 1</td><td class="n">0 &ndash; 5</td><td class="n">0.005</td><td class="n">1.05 (D = 1)</td><td>currency at t = 1</td><td>slides 57&ndash;58</td><td>the D/E split, r<sub>D</sub>, r<sub>E</sub>, the marker on both panels</td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">Expressions (state probabilities q = 1/2): A = p<sub>b</sub>X<sub>b</sub> + p<sub>s</sub>X<sub>s</sub> (slide 68);
+  D = p<sub>b</sub>min(X<sub>b</sub>, F) + p<sub>s</sub>min(X<sub>s</sub>, F) and E = p<sub>b</sub>max(X<sub>b</sub> &minus; F, 0) + p<sub>s</sub>max(X<sub>s</sub> &minus; F, 0) (slides 44, 90&ndash;93);
+  1 + r<sub>f</sub> = 1/(p<sub>b</sub> + p<sub>s</sub>); r<sub>k</sub> = E[payoff<sub>k</sub>]/value<sub>k</sub> &minus; 1 for k = D, E, A (slide 18);
+  put P(F) = p<sub>b</sub>max(F &minus; X<sub>b</sub>, 0) + p<sub>s</sub>max(F &minus; X<sub>s</sub>, 0), so D = F/(1 + r<sub>f</sub>) &minus; P(F) (slide 92);
+  yield y = F/D &minus; 1 (slide 104). Defaults reproduce slides 68&ndash;71: A = 1.75, D = 1, E = 0.75, NPV = 0.75, r<sub>D</sub> = 5%, r<sub>E</sub> = 40%, r<sub>A</sub> = 20%.
+  The default state prices are the exact fractions; the sliders display them rounded to 0.357 and 0.595, and dragging either replaces the exact value with the slider grid.
+  Presets: D = 0.4 is F = 0.42 (slide 78: E = 1.35, r<sub>E</sub> = 24.4%); D = 0.5 is F = 0.525 (slide 80: E = 1.25, r<sub>E</sub> = 26%); F = 2.1 is a risky-debt case built on the slides' economy for these notes (D = 1.375, r<sub>D</sub> = 14.55%, y = 52.7%).
+  Notes that link this page: L02-04, L02-05, L02-06, L02-07 (Notas/L02/).</p>
+</footer>
+
+<script>
+var EX = {xb:3.15, xs:1.05, pb:1/2.8, ps:1/1.05-1/2.8};
+var D0 = Object.assign({F:1.05}, EX);
+var KEYS = ['xb','xs','pb','ps','F'];
+var S = Object.assign({}, D0);
+var $ = function(id){ return document.getElementById(id); };
+
+// MODEL-BEGIN  (the whole model: every read-out and every curve comes from here)
+function model(s){
+  var q = 0.5;
+  var A = s.pb*s.xb + s.ps*s.xs;
+  var dB = Math.min(s.xb, s.F), dS = Math.min(s.xs, s.F);
+  var eB = Math.max(s.xb - s.F, 0), eS = Math.max(s.xs - s.F, 0);
+  var D = s.pb*dB + s.ps*dS;
+  var E = s.pb*eB + s.ps*eS;
+  var bond = s.F*(s.pb + s.ps);                          // F/(1+rf)
+  var put = s.pb*Math.max(s.F - s.xb, 0) + s.ps*Math.max(s.F - s.xs, 0);
+  var tiny = 1e-12;
+  return {
+    A: A, npv: A - 1, D: D, E: E, bond: bond, put: put,
+    rf: 1/(s.pb + s.ps) - 1,
+    rA: A > tiny ? q*(s.xb + s.xs)/A - 1 : null,
+    rD: D > tiny ? q*(dB + dS)/D - 1 : null,
+    rE: E > tiny ? q*(eB + eS)/E - 1 : null,
+    y:  D > tiny ? s.F/D - 1 : null,
+    de: E > tiny ? D/E : null,
+    safe: s.F <= Math.min(s.xb, s.xs)
+  };
+}
+// MODEL-END
+
+var pct = function(x,d){ return x===null ? '—' : (x<0?'−':'') + Math.abs(100*x).toFixed(d===undefined?2:d) + '%'; };
+var num = function(x,d){ return (x<0?'−':'') + Math.abs(x).toFixed(d===undefined?3:d); };
+
+var NS='http://www.w3.org/2000/svg';
+function el(n,a){ var e=document.createElementNS(NS,n); for(var k in a){ e.setAttribute(k,a[k]); } return e; }
+function txt(x,y,s,a){ var t=el('text',Object.assign({x:x,y:y},a)); t.textContent=s; return t; }
+var L=54,R=404,T=16,B=268;
+function ticks(lo,hi){
+  var raw=(hi-lo)/5, p=Math.pow(10,Math.floor(Math.log10(raw))), st=p;
+  [1,2,2.5,5,10].some(function(k){ st=k*p; return k*p>=raw; });
+  var out=[], v=Math.ceil(lo/st-1e-9)*st;
+  for(;v<=hi+1e-9;v+=st){ out.push(Math.round(v/st)*st); }
+  return out;
+}
+function frame(svg,xlo,xhi,ylo,yhi,xlab,yfmt){
+  var X=function(v){ return L+(v-xlo)/(xhi-xlo)*(R-L); };
+  var Y=function(v){ return B-(v-ylo)/(yhi-ylo)*(B-T); };
+  ticks(ylo,yhi).forEach(function(v){
+    svg.appendChild(el('line',{x1:L,x2:R,y1:Y(v),y2:Y(v),stroke:'var(--grid)','stroke-width':1}));
+    svg.appendChild(txt(L-7,Y(v)+4,yfmt(v),{fill:'var(--muted)','font-size':11,'text-anchor':'end','font-family':'var(--mono)'}));
+  });
+  ticks(xlo,xhi).forEach(function(v){
+    svg.appendChild(txt(X(v),B+17,String(+v.toFixed(2)),{fill:'var(--muted)','font-size':11,'text-anchor':'middle','font-family':'var(--mono)'}));
+  });
+  svg.appendChild(el('line',{x1:L,x2:R,y1:B,y2:B,stroke:'var(--line)','stroke-width':1.5}));
+  if(ylo<0){ svg.appendChild(el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),stroke:'var(--line)','stroke-width':1})); }
+  svg.appendChild(txt((L+R)/2,B+40,xlab,{fill:'var(--muted)','font-size':11.5,'text-anchor':'middle'}));
+  return {X:X,Y:Y};
+}
+function path(svg,pts,X,Y,col,w,dash){
+  var d='', pen=false;
+  pts.forEach(function(p){
+    if(p[1]===null){ pen=false; return; }
+    d += (pen?'L':'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1) + ' '; pen=true;
+  });
+  if(d){ var a={d:d,fill:'none',stroke:col,'stroke-width':w||2.2}; if(dash){ a['stroke-dasharray']=dash; } svg.appendChild(el('path',a)); }
+}
+function dot(svg,x,y,col){ svg.appendChild(el('circle',{cx:x,cy:y,r:4.5,fill:col,stroke:'var(--surface)','stroke-width':1.5})); }
+var FMAX=5, N=500;
+function grid(){ var g=[]; for(var i=0;i<=N;i++){ var F=FMAX*i/N; g.push([F, model(Object.assign({},S,{F:F}))]); } return g; }
+function vline(svg,f,x,col,lab){
+  svg.appendChild(el('line',{x1:f.X(x),x2:f.X(x),y1:T,y2:B,stroke:col,'stroke-width':1,'stroke-dasharray':'3 3'}));
+  if(lab){ svg.appendChild(txt(f.X(x)+4,T+11,lab,{fill:col,'font-size':10.5,'font-family':'var(--mono)'})); }
+}
+
+function drawA(g,m){
+  var svg=$('svgA'); svg.textContent='';
+  var hi=Math.max(m.A,0.1)*1.15;
+  var f=frame(svg,0,FMAX,0,hi,'face value of debt F',function(v){ return String(+v.toFixed(2)); });
+  vline(svg,f,Math.min(S.xb,S.xs),'var(--muted)','safe ≤ '+Math.min(S.xb,S.xs).toFixed(2));
+  path(svg,g.map(function(r){return [r[0],r[1].A];}),f.X,f.Y,'var(--good)',2.4);
+  path(svg,g.map(function(r){return [r[0],r[1].D];}),f.X,f.Y,'var(--accent)');
+  path(svg,g.map(function(r){return [r[0],r[1].E];}),f.X,f.Y,'var(--warn)');
+  var x=f.X(Math.min(S.F,FMAX));
+  dot(svg,x,f.Y(m.D),'var(--accent)'); dot(svg,x,f.Y(m.E),'var(--warn)'); dot(svg,x,f.Y(m.A),'var(--good)');
+}
+function drawB(g,m){
+  var svg=$('svgB'); svg.textContent='';
+  var vals=[m.rf]; g.forEach(function(r){ [r[1].rA,r[1].rD,r[1].rE].forEach(function(v){ if(v!==null) vals.push(v); }); });
+  var lo=Math.min.apply(null,vals.concat([0])), hi=Math.max.apply(null,vals.concat([0.05]));
+  var pad=Math.max((hi-lo)*0.08,0.01); lo-=pad; hi+=pad;
+  var f=frame(svg,0,FMAX,lo,hi,'face value of debt F',function(v){ return Math.round(100*v)+'%'; });
+  vline(svg,f,Math.min(S.xb,S.xs),'var(--muted)','');
+  path(svg,g.map(function(r){return [r[0],r[1].rf];}),f.X,f.Y,'var(--muted)',1.4,'5 4');
+  path(svg,g.map(function(r){return [r[0],r[1].rA];}),f.X,f.Y,'var(--good)',2.4);
+  path(svg,g.map(function(r){return [r[0],r[1].rD];}),f.X,f.Y,'var(--warn)');
+  path(svg,g.map(function(r){return [r[0],r[1].rE];}),f.X,f.Y,'var(--accent)');
+  var x=f.X(Math.min(S.F,FMAX));
+  if(m.rD!==null) dot(svg,x,f.Y(m.rD),'var(--warn)');
+  if(m.rE!==null) dot(svg,x,f.Y(m.rE),'var(--accent)');
+  if(m.rA!==null) dot(svg,x,f.Y(m.rA),'var(--good)');
+}
+
+function render(){
+  $('v_xb').textContent=S.xb.toFixed(2); $('v_xs').textContent=S.xs.toFixed(2);
+  $('v_pb').textContent=S.pb.toFixed(3); $('v_ps').textContent=S.ps.toFixed(3);
+  $('v_F').textContent=S.F.toFixed(3);
+  var m=model(S);
+  $('a_v').textContent=num(m.A);
+  var pill=$('a_pill');
+  if(S.F<=0){ pill.className='pill none'; pill.textContent='no debt'; }
+  else if(m.safe){ pill.className='pill safe'; pill.textContent='safe debt'; }
+  else { pill.className='pill risky'; pill.textContent='risky debt'; }
+  var n='Debt '+num(m.D)+' + equity '+num(m.E)+' = '+num(m.D+m.E)+'. <b>A does not depend on F</b>: drag F end to end and the green line on the left never moves (MM I). ';
+  if(S.F<=0) n+='All equity: the shareholders own the whole payoff and r<sub>E</sub> = r<sub>A</sub>.';
+  else if(m.safe) n+='F is at or below both payoffs, so debt never defaults and earns r<sub>D</sub> = r<sub>f</sub> = '+pct(m.rf)+'.';
+  else if(m.E<=1e-12) n+='F is at or above both payoffs: creditors take everything and <b>equity is worthless</b>.';
+  else n+='F exceeds the '+(S.xs<=S.xb?'slump':'boom')+' payoff, so debt defaults there: r<sub>D</sub> rises above r<sub>f</sub> and the yield ('+pct(m.y)+') overstates r<sub>D</sub>.';
+  if(m.A<=1e-12) n+=' <b>Both payoffs are zero</b>: there is nothing to value, and every return is undefined.';
+  $('a_note').innerHTML=n;
+  $('t_D').textContent=num(m.D); $('t_E').textContent=num(m.E);
+  $('t_npv').textContent=num(m.npv);
+  $('t_rD').textContent=m.rD===null?'no debt':pct(m.rD);
+  $('t_y').textContent=m.y===null?'yield —':'yield '+pct(m.y);
+  $('t_rE').textContent=m.rE===null?(m.A>1e-12?'E = 0':'—'):pct(m.rE);
+  $('t_de').textContent=m.de===null?'D/E undefined':'D/E '+m.de.toFixed(3);
+  $('t_rA').textContent=pct(m.rA);
+  $('t_rf').innerHTML='r<sub>f</sub> '+pct(m.rf);
+  var parity=m.E + m.bond - m.put;
+  $('bridge').innerHTML='Put–call parity at strike F: call '+num(m.E)+' + safe bond F/(1 + r<sub>f</sub>) '+num(m.bond)+
+    ' − put '+num(m.put)+' = <b>'+num(parity)+'</b>, the value of the assets. Risky debt is the safe bond minus the put: '+
+    num(m.bond)+' − '+num(m.put)+' = '+num(m.D)+'.'+
+    (m.rf<0?' <b>p<sub>b</sub> + p<sub>s</sub> &gt; 1</b>: these state prices imply a negative risk-free rate.':'');
+  var g=grid(); drawA(g,m); drawB(g,m);
+}
+
+function load(P){ Object.assign(S,P); KEYS.forEach(function(k){ $(k).value=S[k]; }); render(); }
+KEYS.forEach(function(k){
+  var inp=$(k); inp.value=D0[k];
+  inp.addEventListener('input',function(e){ S[k]=parseFloat(e.target.value); render(); });
+});
+$('reset').addEventListener('click',function(){ load(D0); });
+$('d04').addEventListener('click',function(){ load(Object.assign({},EX,{F:0.42})); });
+$('d05').addEventListener('click',function(){ load(Object.assign({},EX,{F:0.525})); });
+$('d0').addEventListener('click',function(){ load(Object.assign({},EX,{F:0})); });
+$('risky').addEventListener('click',function(){ load(Object.assign({},EX,{F:2.1})); });
+$('themeBtn').addEventListener('click',function(){
+  var r=document.documentElement;
+  var dark=r.getAttribute('data-theme')==='dark' || (!r.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+  r.setAttribute('data-theme', dark ? 'light' : 'dark');
+});
+render();
+</script>
+</body>
+</html>

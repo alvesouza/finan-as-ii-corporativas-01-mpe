@@ -5,9 +5,10 @@ date: 2026-10-09
 
 # Topics Index
 
-Topic names here are the ones [[Map/exercises-index|exercises-index]] uses. No lectures, lists,
-quizzes, exams or tutorials exist yet — rows for them are placeholders until `/study-map .` is
-re-run. Complementary-book chapters per topic are in [[rules/10_curso_programa|course program]]. Tirole links point to [[Livros/Jean Tirole - The Theory of Corporate Finance-Princeton University Press (2005)|Tirole]]; pages are printed pages.
+Topic names here are the ones [[Map/exercises-index|exercises-index]] uses. Real lectures
+(Topic 1, 2A, 2B), problem sets (PS1, PS2) and their quizzes are mapped block by block in
+[[Map/lectures-index|lectures-index]]; the real syllabus differs from the ementário this index was
+built on (see the note there). Complementary-book chapters per topic are in [[rules/10_curso_programa|course program]]. Tirole links point to [[Livros/Jean Tirole - The Theory of Corporate Finance-Princeton University Press (2005)|Tirole]]; pages are printed pages.
 
 ## Topic: Introduction & stylized facts
 #topic/introduction
@@ -18,9 +19,11 @@ re-run. Complementary-book chapters per topic are in [[rules/10_curso_programa|c
 
 **Difficulty progression:**
 1. 📖 Isolated concept: Tirole Introduction (pp. 1–12); Ch. 1 §1.1–1.2 (pp. 15–28); Ch. 2 §2.3–2.5 (pp. 80–102)
-2. 🎓 Lecture: Class 1 (proposed, [[Map/study-guide|class plan]]) — slides not yet in `Aula/`
+2. 🎓 Lecture: [[Aula/Topic1.pdf|Topic 1 — Accounting review]] (balance sheet, income statement, ratios, DuPont, ROIC, FCF/FCFE) — [[Map/lectures-index#Topic 1 — Introduction and accounting review|blocks]]
 3. 📝 Rules: [[rules/01_introducao_fatos|Topic 1 rules]]
-4. ✏️ Exercises: none in Tirole (descriptive chapters)
+4. 📖 Accounting backing: Higgins 13e Ch. 1–2 (pp. 3–76); Ross *Fundamentos* Cap. 2–3 (pp. 24–92)
+5. ✏️ Exercises: PS1 Ex. 1 (net income vs. FCF, deferred taxes); none in Tirole (descriptive chapters)
+6. 🧪 Quiz: [[Simulados/quiz-topic1-accounting-2026-10-24|Topic 1 quiz]] (10, conceptual)
 
 ## Topic: Valuation
 #topic/valuation
@@ -37,6 +40,9 @@ re-run. Complementary-book chapters per topic are in [[rules/10_curso_programa|c
 5. 📖 Formal: Amaro de Matos Ch. 1 (Fisher separation, state prices, real options)
 6. 📝 Rules: [[rules/02_valuation|Topic 2 rules]]
 7. ✏️ Exercises: Ross 5.x–14.x (BÁSICO → DESAFIO), Higgins 7.x–9.x, Amaro de Matos Ch. 1 — see [[Map/exercises-index|index]]
+8. 🎓 Lecture: [[Aula/Topic2A.pdf|Topic 2A]] slides 2–38 (PV, CAPM, comparables and unlevering, incremental FCF, NPV rule, IRR pitfalls)
+9. ✏️ Problem sets: PS1 Ex. 2 (incremental FCF), Ex. 3 (replacement decision)
+10. 🧪 Quiz: [[Simulados/quiz-topic2a-valuation-mm-2026-10-24|Topic 2A quiz]], tag `val`
 
 ## Topic: MM benchmark
 #topic/mm-benchmark
@@ -51,6 +57,13 @@ re-run. Complementary-book chapters per topic are in [[rules/10_curso_programa|c
 3. 📖 Formal treatment: Amaro de Matos Ch. 2 (MM1 p. 42, MM2 p. 43, taxes), §4.1 (MM3, p. 100)
 4. 📖 Textbook treatment: Ross *Fundamentos* 16.2–16.4 (Proposições I e II de M&M); Higgins Ch. 6 appendix "The Irrelevance Proposition" (pp. 223–227)
 5. ✏️ Exercises: Amaro de Matos Ch. 2; Ross 16.x; Higgins 6.x
+6. 🎓 Lectures: [[Aula/Topic2A.pdf|Topic 2A]] slides 39–105 (complete markets, MM I by arbitrage and put–call parity, MM II, $r_D$ vs. yield); [[Aula/Topic2B.pdf|Topic 2B]] (tax shield, APV vs. WACC, bankruptcy costs, static trade-off, dividend irrelevance)
+7. ✏️ Problem sets: PS2 Ex. 1, 3, 4 (no taxes); PS2 Ex. 2 (taxes, WACC, tax-shield cases)
+8. 🧪 Quizzes: [[Simulados/quiz-topic2a-valuation-mm-2026-10-24|Topic 2A quiz]] (tag `mm`); [[Simulados/quiz-topic2b-taxes-tradeoff-2026-10-24|Topic 2B quiz]]
+
+**Cross-topic synthesis (Hard):**
+- With Introduction: ROE/EPS/P/E rise with leverage while value does not (Topic 1 slides 47–51 ↔ Topic 2A MM II; PS2 Ex. 4)
+- With Agency: debt overhang and risk-shifting as indirect distress costs (Topic 2B slide 40 → Tirole Ch. 3)
 
 ## Topic: Agency & capital structure
 #topic/agency

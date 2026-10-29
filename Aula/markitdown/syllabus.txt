@@ -1,0 +1,68 @@
+Course Syllabus: Finance II (Corporate Finance)
+
+Availability: This course is available on the executive master’s in Economics
+
+Instructor: Bernardo Ricca
+
+Email: BernardoOGR@insper.edu.br
+
+Teaching assistant: Lucas Negreiros
+
+Email: lucasno1@al.insper.edu.br
+
+Summary: This is a course in corporate ﬁnance and ﬁnancial intermediation. The course covers both key
+aspects of the theory and empirics of corporate ﬁnance.
+
+Objectives: The main goal of the course is to enable students to develop a solid knowledge of theoretical
+corporate ﬁnance, get acquainted with recent empirical research in the ﬁeld, and make the correct use of the
+tools in their professional lives.
+
+Course requirements: Students are required to submit solutions to the problem sets and present a research
+paper. Assignments may be completed in pairs.
+
+Grading policy: Problem sets (10%), presentation of a research paper (10%), midterm exam (20%), ﬁnal
+exam (60%).
+
+Course content (tentative)
+
+1. Introduction, accounting revision and the capital structure
+Berk and DeMarzo (2011), Chapter 1
+2. Valuation: free cash ﬂows, discount rates, and the NPV rule
+Berk and DeMarzo (2011), Chapters 6, 7, and 12
+3. A frictionless benchmark, taxes, distress and static trade-oﬀ theory
+Berk and DeMarzo (2011), Chapters 14, 15, 16, 18 and 19
+Hortac¸su, A., Matvos, G., Syverson, C., and Venkataraman, S. (2013). Indirect costs of ﬁnancial distress in
+durable goods industries: The case of auto manufacturers. The Review of Financial Studies, 26(5):1248–1290
+4. Moral hazard, ﬁnancing capacity, investment-cash ﬂow sensitivities, and the choice between debt and
+equity
+
+                                                                      1
+Tirole (2010), Chapter 3
+Fazzari, S. M. and Petersen, B. C. (1988). Financing constraints and corporate investment. Brookings Papers
+on Economic Activity, 1988(1):141–195
+Gilje, E. P. (2016). Do ﬁrms engage in risk-shifting? Empirical evidence. The Review of Financial Studies,
+29(11):2925–2954
+5. Asymmetric Information and capital structure
+Tirole (2010), Chapter 6
+Holmstrom, B. (2015). Understanding the role of debt in the ﬁnancial system
+Karlan, D. and Zinman, J. (2009). Observing unobservables: Identifying information asymmetries with a
+consumer credit ﬁeld experiment. Econometrica, 77(6):1993–2008
+5. Trade credit and working capital management
+Berk and DeMarzo (2011), Chapters 26 and 27
+Giannetti, M., Burkart, M., and Ellingsen, T. (2011). What you sell is what you lend? explaining trade credit
+contracts. The Review of Financial Studies, 24(4):1261–1298
+6. Liquidity and risk management
+Tirole (2010), Chapter 5
+
+Main references:
+    • Berk, J. and DeMarzo, P. (2011). Corporate ﬁnance, global ed. Essex: Person Education Limited
+    • Tirole, J. (2010). The theory of corporate ﬁnance. Princeton University Press
+
+Complementary references:
+    • Titman, S. and Grinblatt, M. (2002). Financial markets and corporate strategy. NY: McGraw-Hill, 892p
+    • Brealey, R. A., Myers, S. C., Allen, F., and Mohanty, P. (2018). Principles of Corporate Finance. McGraw-
+       Hill Education
+    • Higgins, R. (2011). Analysis for ﬁnancial management, 10e. Burr Ridge: McGraw-Hill
+
+                                                                      2
+

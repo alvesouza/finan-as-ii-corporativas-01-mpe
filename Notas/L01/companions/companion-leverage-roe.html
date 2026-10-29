@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leverage and ROE</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+:root{
+  --paper:#eef1f4; --surface:#ffffff; --ink:#14202c; --muted:#6b7a88;
+  --line:#d3dae1; --accent:#1f5f8b; --warn:#b4521a; --good:#2f6b4f; --hi:#8a5fb4; --grid:#dfe5ea;
+  --shadow:0 1px 2px rgba(20,32,44,.06),0 8px 24px rgba(20,32,44,.05);
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,Segoe UI,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0f161d; --surface:#17212b; --ink:#dde5ec; --muted:#8fa0af; --line:#2a3846;
+  --accent:#63a8d4; --warn:#e08a4d; --good:#6fb68f; --hi:#b592d8; --grid:#243240;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}}
+:root[data-theme="dark"]{
+  --paper:#0f161d; --surface:#17212b; --ink:#dde5ec; --muted:#8fa0af; --line:#2a3846;
+  --accent:#63a8d4; --warn:#e08a4d; --good:#6fb68f; --hi:#b592d8; --grid:#243240;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+  font-size:15px;line-height:1.55;padding:0 16px;padding-block:28px 48px;
+  max-width:1120px;margin:0 auto;-webkit-font-smoothing:antialiased}
+h1{font-family:var(--serif);font-weight:600;font-size:clamp(28px,5vw,40px);
+  line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 4px;text-wrap:balance}
+.eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);
+  font-weight:600;margin:0 0 10px}
+header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:26px}
+.lede{margin:12px 0 0;max-width:64ch}
+.prov{margin:10px 0 0;font-size:12.5px;color:var(--muted);font-family:var(--mono)}
+main{display:grid;grid-template-columns:300px 1fr;gap:26px;align-items:start}
+@media(max-width:840px){main{grid-template-columns:1fr}}
+.rail{display:flex;flex-direction:column;gap:14px}
+.ctl{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+  padding:12px 13px;box-shadow:var(--shadow)}
+.ctl .top{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.ctl .nm{font-weight:600;font-size:13.5px}
+.ctl .sym{font-family:var(--serif);font-style:italic;color:var(--accent);font-size:15px}
+.ctl .val{font-family:var(--mono);font-size:14px;font-weight:600;
+  font-variant-numeric:tabular-nums;color:var(--accent)}
+.ctl .doc{font-size:12px;color:var(--muted);margin:3px 0 8px;line-height:1.4}
+input[type=range]{width:100%;accent-color:var(--accent);margin:0}
+input[type=range]:focus-visible,button:focus-visible{outline:2px solid var(--warn);outline-offset:2px}
+button{font-family:var(--sans);font-size:13px;font-weight:600;cursor:pointer;
+  background:var(--ink);color:var(--paper);border:0;border-radius:5px;padding:9px 14px}
+button.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+.right{display:flex;flex-direction:column;gap:20px;min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:6px;
+  padding:16px 18px;box-shadow:var(--shadow)}
+.card p.sub{margin:0 0 10px;font-size:12.5px;color:var(--muted)}
+svg{display:block;width:100%;height:auto;max-width:100%}
+.answer{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--good);
+  border-radius:6px;padding:16px 18px;box-shadow:var(--shadow)}
+.answer .k{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.answer .v{font-family:var(--mono);font-weight:600;font-size:clamp(30px,6vw,42px);
+  font-variant-numeric:tabular-nums;color:var(--good);line-height:1.1;margin-top:2px}
+.answer .note{font-size:13.5px;color:var(--ink);margin-top:8px;max-width:66ch}
+.answer .note b{color:var(--warn)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:1px;
+  background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.tile{background:var(--surface);padding:10px 12px}
+.tile .k{font-size:11px;color:var(--muted);letter-spacing:.06em;font-weight:600}
+.tile .v{font-family:var(--mono);font-size:17px;font-weight:600;
+  font-variant-numeric:tabular-nums;margin-top:1px}
+.tile .u{font-size:11px;color:var(--muted)}
+.verdict{font-size:13.5px;padding:10px 12px;border-radius:5px;background:var(--surface);
+  border:1px dashed var(--line);margin:10px 0 0}
+.verdict b{color:var(--warn)}
+footer{margin-top:34px;border-top:1px solid var(--line);padding-top:18px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;font-size:12.5px;width:100%}
+table.contract{min-width:660px}
+th,td{text-align:left;padding:6px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.n{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+table.is td.n{min-width:84px}
+table.is tr.sum td{font-weight:600}
+.foot{font-size:12px;color:var(--muted);margin-top:14px;max-width:72ch}
+.hd{position:relative}
+.theme{position:absolute;top:0;right:0}
+.hd .eyebrow{padding-right:84px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:5px;border-radius:2px}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <button class="ghost theme" id="themeBtn" type="button">Theme</button>
+  <p class="eyebrow">Corporate Finance &middot; Topic 1 &middot; Notes L01</p>
+  <h1>Leverage and ROE</h1>
+  <p class="lede">Two firms with the same operations and different financing. Return on invested capital
+  measures the operations and ignores the financing. Return on equity adds leverage times a spread:
+  ROIC minus the after-tax cost of debt. Move the debt share and the interest rate and watch ROE rise
+  or fall along a straight line in D/E, while ROIC stays where it is.</p>
+  <p class="prov">Topic 1 slide 50 (Higgins two-firm example, &tau; = 40%); Higgins 13e Ch. 2 &ldquo;Return on Invested Capital&rdquo;, printed pp. 55&ndash;56 (same firms, &tau; = 25%); identity derived in Notas/L01/L01-05, eq. (5.20)</p>
+</header>
+
+<main>
+  <div class="rail">
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">EBIT</span> &middot; operating profit</span><span class="val" id="v_ebit"></span></div>
+      <p class="doc">Earnings before interest and taxes: the operations, before the pie is split among lenders, the state and owners.</p>
+      <input type="range" id="ebit" min="0" max="400" step="10" aria-label="EBIT, currency units">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">D+E</span> &middot; invested capital</span><span class="val" id="v_cap"></span></div>
+      <p class="doc">Interest-bearing debt plus book equity. In the slide&rsquo;s example this is also total assets.</p>
+      <input type="range" id="cap" min="500" max="2000" step="50" aria-label="Invested capital, currency units">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">D/(D+E)</span> &middot; debt share</span><span class="val" id="v_w"></span></div>
+      <p class="doc">How the same capital is financed. 0.90 is Company A (900 of 1,000); 0 is Company B.</p>
+      <input type="range" id="w" min="0" max="0.9" step="0.05" aria-label="Debt share of invested capital">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">r<sub>D</sub></span> &middot; interest rate</span><span class="val" id="v_rd"></span></div>
+      <p class="doc">Interest paid per unit of debt. Its after-tax value r<sub>D</sub>(1&minus;&tau;) against ROIC sets the sign of the leverage effect.</p>
+      <input type="range" id="rd" min="0" max="20" step="0.5" aria-label="Interest rate on debt, percent">
+    </div>
+    <div class="ctl">
+      <div class="top"><span class="nm"><span class="sym">&tau;</span> &middot; tax rate</span><span class="val" id="v_tau"></span></div>
+      <p class="doc">Proportional tax on earnings before tax. Losses earn a refund at the same rate (full loss offset), which keeps the identity exact.</p>
+      <input type="range" id="tau" min="0" max="50" step="1" aria-label="Corporate tax rate, percent">
+    </div>
+    <div class="btns">
+      <button id="bA" type="button">Slide 50: Company A</button>
+      <button id="bB" class="ghost" type="button">Company B: all equity</button>
+      <button id="bFlat" class="ghost" type="button">Flat: r<sub>D</sub>(1&minus;&tau;) = ROIC</button>
+      <button id="b13" class="ghost" type="button">Higgins 13e: &tau; = 25%</button>
+      <button id="bNeg" class="ghost" type="button">Negative spread</button>
+    </div>
+  </div>
+
+  <div class="right">
+    <div class="answer">
+      <div class="k">Return on equity</div>
+      <div class="v" id="a_v"></div>
+      <div class="note" id="a_note"></div>
+    </div>
+
+    <div class="tiles">
+      <div class="tile"><div class="k">ROIC</div><div class="v" id="t_roic"></div><div class="u">EBIT(1&minus;&tau;)/(D+E)</div></div>
+      <div class="tile"><div class="k">ROA</div><div class="v" id="t_roa"></div><div class="u">NI/assets</div></div>
+      <div class="tile"><div class="k">D/E</div><div class="v" id="t_de"></div><div class="u">book</div></div>
+      <div class="tile"><div class="k">After-tax r<sub>D</sub></div><div class="v" id="t_atrd"></div><div class="u">r<sub>D</sub>(1&minus;&tau;)</div></div>
+      <div class="tile"><div class="k">Spread</div><div class="v" id="t_spr"></div><div class="u">ROIC &minus; r<sub>D</sub>(1&minus;&tau;)</div></div>
+      <div class="tile"><div class="k">ROE swing</div><div class="v" id="t_mult"></div><div class="u">1 + D/E: ROE moves this many times ROIC</div></div>
+    </div>
+
+    <div class="card">
+      <h2>Returns against book leverage</h2>
+      <p class="sub">Same EBIT, same capital, the debt share swept from 0 to 0.90 (D/E from 0 to 9). ROE is a straight line in D/E; ROA bends down; ROIC is flat.</p>
+      <svg id="svg" viewBox="0 0 640 330" role="img" aria-label="ROE, ROA and ROIC plotted against the book debt-to-equity ratio, with the current firm marked"></svg>
+      <div class="legend"><span><i style="background:var(--good)"></i>ROE</span><span><i style="background:var(--accent)"></i>ROA</span><span><i style="background:var(--hi)"></i>ROIC</span></div>
+      <p class="verdict" id="bridge"></p>
+    </div>
+
+    <div class="card">
+      <h2>The income statement, levered and unlevered</h2>
+      <p class="sub">The current firm beside its all-equity twin (same EBIT and capital), laid out as slide 50.</p>
+      <div class="scroll"><table class="is">
+        <thead><tr><th></th><th style="text-align:right">This firm</th><th style="text-align:right">All-equity twin</th></tr></thead>
+        <tbody id="is"></tbody>
+      </table></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p class="eyebrow">The control contract</p>
+  <div class="scroll"><table class="contract">
+    <thead><tr><th>Control</th><th>Symbol</th><th>What it is</th><th>Range</th><th>Step</th><th>Default</th><th>Unit</th><th>Source</th><th>What visibly moves</th></tr></thead>
+    <tbody>
+      <tr><td>Operating profit</td><td>EBIT</td><td>earnings before interest and taxes</td><td class="n">0 &ndash; 400</td><td class="n">10</td><td class="n">120</td><td>currency</td><td>slide 50</td><td>ROIC level; the whole ROE line</td></tr>
+      <tr><td>Invested capital</td><td>D+E</td><td>interest-bearing debt + book equity</td><td class="n">500 &ndash; 2000</td><td class="n">50</td><td class="n">1000</td><td>currency</td><td>slide 50</td><td>ROIC</td></tr>
+      <tr><td>Debt share</td><td>D/(D+E)</td><td>leverage</td><td class="n">0 &ndash; 0.90</td><td class="n">0.05</td><td class="n">0.90</td><td>&mdash;</td><td>slide 50 (900 of 1000)</td><td>the point on the ROE line</td></tr>
+      <tr><td>Interest rate</td><td>r<sub>D</sub></td><td>cost of debt</td><td class="n">0 &ndash; 20</td><td class="n">0.5</td><td class="n">10</td><td>%</td><td>slide 50</td><td>slope sign of ROE in D/E</td></tr>
+      <tr><td>Tax rate</td><td>&tau;</td><td>corporate tax, full loss offset</td><td class="n">0 &ndash; 50</td><td class="n">1</td><td class="n">40</td><td>%</td><td>slide 50</td><td>ROIC and the spread</td></tr>
+    </tbody>
+  </table></div>
+  <p class="foot">Expressions: D = w(D+E), E = (1&minus;w)(D+E); interest = r<sub>D</sub>D; EBT = EBIT &minus; interest; tax = &tau;&middot;EBT; NI = EBT &minus; tax;
+  ROIC = EBIT(1&minus;&tau;)/(D+E); ROE = NI/E; ROA = NI/(D+E) (assets = invested capital, as in slide 50); identity ROE = ROIC + (D/E)[ROIC &minus; r<sub>D</sub>(1&minus;&tau;)] (L01-05, eq. 5.20).
+  Defaults reproduce slide 50&rsquo;s Company A: ROE 18%, ROA 1.8%, ROIC 7.2%. &ldquo;Company B&rdquo; gives 7.2% three times. &ldquo;Flat&rdquo; sets r<sub>D</sub> = 12%, where r<sub>D</sub>(1&minus;&tau;) = 7.2% = ROIC and leverage leaves ROE at 7.2%.
+  &ldquo;Higgins 13e&rdquo; sets &tau; = 25%: ROE 22.5%, ROA 2.3% (2.25%), ROIC 9.0% (pp. 55&ndash;56). &ldquo;Negative spread&rdquo; sets r<sub>D</sub> = 16%: after-tax 9.6% &gt; 7.2%, ROE &minus;14.4%.
+  With EBT &lt; 0 the tax line is a refund; without full loss offset the identity fails there. The page is an accounting identity, not a valuation: whether the higher ROE is worth having is MM&rsquo;s question (L02).</p>
+</footer>
+
+<script>
+var D = {ebit:120, cap:1000, w:0.9, rd:10, tau:40};
+var P = {
+  A:   {ebit:120, cap:1000, w:0.9, rd:10, tau:40},
+  B:   {ebit:120, cap:1000, w:0,   rd:10, tau:40},
+  flat:{ebit:120, cap:1000, w:0.9, rd:12, tau:40},
+  h13: {ebit:120, cap:1000, w:0.9, rd:10, tau:25},
+  neg: {ebit:120, cap:1000, w:0.9, rd:16, tau:40}
+};
+var KEYS = ['ebit','cap','w','rd','tau'];
+var S = Object.assign({}, D);
+var $ = function(id){ return document.getElementById(id); };
+var pct = function(x,d){ return (x<0?'−':'') + Math.abs(100*x).toFixed(d===undefined?2:d) + '%'; };
+var num = function(x,d){ return (x<0?'−':'') + Math.abs(x).toFixed(d===undefined?1:d); };
+
+// MODEL-BEGIN  (every read-out comes from here; check_companions.py runs this block in node)
+function model(s){
+  var t = s.tau/100, r = s.rd/100;
+  var D = s.w*s.cap, E = (1-s.w)*s.cap;
+  var interest = r*D, ebt = s.ebit - interest, tax = t*ebt, ni = ebt - tax;
+  var roic = s.ebit*(1-t)/s.cap;
+  var de = D/E;
+  var spread = roic - r*(1-t);
+  return {D:D, E:E, de:de, interest:interest, ebt:ebt, tax:tax, ni:ni,
+    roic:roic, roe:ni/E, roa:ni/s.cap, atrd:r*(1-t), spread:spread,
+    identity: roic + de*spread, swing: 1 + de};
+}
+// MODEL-END
+
+var NS='http://www.w3.org/2000/svg';
+function el(n,a){ var e=document.createElementNS(NS,n); for(var k in a){ e.setAttribute(k,a[k]); } return e; }
+function txt(x,y,s,a){ var o=Object.assign({x:x,y:y},a); var t=el('text',o); t.textContent=s; return t; }
+var L=56,R=620,T=14,B=282;
+function ticks(lo,hi){
+  var raw=(hi-lo)/5, p=Math.pow(10,Math.floor(Math.log10(raw))), st=p;
+  [1,2,2.5,5,10].some(function(k){ st=k*p; return k*p>=raw; });
+  var out=[], v=Math.ceil(lo/st-1e-9)*st;
+  for(;v<=hi+1e-9;v+=st){ out.push(Math.round(v/st)*st); }
+  return out;
+}
+
+function draw(){
+  var svg=$('svg'); svg.textContent='';
+  var ws=[], i;
+  for(i=0;i<=90;i++){ ws.push(i/100); }
+  var pts=ws.map(function(w){ return model(Object.assign({},S,{w:w})); });
+  var ys=[];
+  pts.forEach(function(m){ ys.push(m.roe, m.roa, m.roic); });
+  var cur=model(S);
+  var lo=Math.min(0, Math.min.apply(null,ys)), hi=Math.max(0.01, Math.max.apply(null,ys));
+  var pad=(hi-lo)*0.08; lo-=pad; hi+=pad;
+  var X=function(v){ return L+v/9*(R-L); };
+  var Y=function(v){ return B-(v-lo)/(hi-lo)*(B-T); };
+  ticks(lo*100,hi*100).forEach(function(v){
+    svg.appendChild(el('line',{x1:L,x2:R,y1:Y(v/100),y2:Y(v/100),stroke:'var(--grid)','stroke-width':1}));
+    svg.appendChild(txt(L-7,Y(v/100)+4,+v.toFixed(2)+'%',{fill:'var(--muted)','font-size':11,'text-anchor':'end','font-family':'var(--mono)'}));
+  });
+  [0,1,2,3,4,5,6,7,8,9].forEach(function(v){
+    svg.appendChild(txt(X(v),B+17,String(v),{fill:'var(--muted)','font-size':11,'text-anchor':'middle','font-family':'var(--mono)'}));
+  });
+  svg.appendChild(el('line',{x1:L,x2:R,y1:Y(0),y2:Y(0),stroke:'var(--line)','stroke-width':1.5}));
+  svg.appendChild(txt((L+R)/2,B+40,'book debt-to-equity ratio D/E',{fill:'var(--muted)','font-size':11.5,'text-anchor':'middle'}));
+  function line(key,col,w){
+    var d=pts.map(function(m,j){ return (j?'L':'M')+X(m.de).toFixed(1)+' '+Y(m[key]).toFixed(1); }).join(' ');
+    svg.appendChild(el('path',{d:d,fill:'none',stroke:col,'stroke-width':w}));
+  }
+  line('roic','var(--hi)',2);
+  line('roa','var(--accent)',2);
+  line('roe','var(--good)',2.8);
+  svg.appendChild(el('line',{x1:X(cur.de),x2:X(cur.de),y1:Y(cur.roe),y2:Y(cur.roa),stroke:'var(--muted)','stroke-width':1,'stroke-dasharray':'3 3'}));
+  [['roe','var(--good)','ROE'],['roa','var(--accent)','ROA'],['roic','var(--hi)','ROIC']].forEach(function(k){
+    svg.appendChild(el('circle',{cx:X(cur.de),cy:Y(cur[k[0]]),r:5,fill:k[1],stroke:'var(--surface)','stroke-width':1.5}));
+  });
+  var lx = cur.de>6 ? -8 : 8, anchor = cur.de>6 ? 'end' : 'start';
+  svg.appendChild(txt(X(cur.de)+lx,Y(cur.roe)-8,'ROE '+pct(cur.roe,1),{fill:'var(--good)','font-size':11.5,'font-weight':600,'text-anchor':anchor,'font-family':'var(--mono)'}));
+}
+
+function isRows(m, m0){
+  var rows=[['Debt',m.D,m0.D],['Equity',m.E,m0.E],['EBIT',S.ebit,S.ebit],['Interest expense',m.interest,m0.interest],
+    ['Earnings before tax',m.ebt,m0.ebt],['Tax ('+S.tau+'%)',m.tax,m0.tax],['Net income',m.ni,m0.ni]];
+  var h=rows.map(function(r){ return '<tr'+(r[0]==='Net income'?' class="sum"':'')+'><td>'+r[0]+'</td><td class="n">'+num(r[1])+'</td><td class="n">'+num(r[2])+'</td></tr>'; }).join('');
+  h+='<tr class="sum"><td>ROE</td><td class="n">'+pct(m.roe)+'</td><td class="n">'+pct(m0.roe)+'</td></tr>';
+  h+='<tr><td>ROA</td><td class="n">'+pct(m.roa)+'</td><td class="n">'+pct(m0.roa)+'</td></tr>';
+  h+='<tr><td>ROIC</td><td class="n">'+pct(m.roic)+'</td><td class="n">'+pct(m0.roic)+'</td></tr>';
+  return h;
+}
+
+function render(){
+  $('v_ebit').textContent=S.ebit.toFixed(0);
+  $('v_cap').textContent=S.cap.toFixed(0);
+  $('v_w').textContent=S.w.toFixed(2);
+  $('v_rd').textContent=S.rd.toFixed(1)+'%';
+  $('v_tau').textContent=S.tau.toFixed(0)+'%';
+  var m=model(S), m0=model(Object.assign({},S,{w:0}));
+  $('a_v').textContent=pct(m.roe);
+  var n;
+  if(S.w===0){ n='No debt: <b>ROE = ROA = ROIC = '+pct(m.roic)+'</b>. Every measure reads the operations alone.'; }
+  else if(Math.abs(m.spread)<5e-6){ n='The after-tax cost of debt equals ROIC, so the spread is zero: <b>leverage leaves ROE at '+pct(m.roe)+'</b> whatever the debt share.'; }
+  else if(m.spread>0){ n='ROIC '+pct(m.roic)+' beats the after-tax cost of debt '+pct(m.atrd)+' by '+pct(m.spread)+', and D/E = '+m.de.toFixed(2)+
+    ' multiplies that spread: ROE = '+pct(m.roic)+' + '+m.de.toFixed(2)+' &times; '+pct(m.spread)+' = <b>'+pct(m.identity)+'</b>.'; }
+  else { n='The after-tax cost of debt '+pct(m.atrd)+' exceeds ROIC '+pct(m.roic)+': each unit of D/E <b>lowers</b> ROE by '+pct(-m.spread)+
+    ', to '+pct(m.identity)+'.'; }
+  if(m.ebt<0){ n+=' EBT is negative, so the tax line is a <b>refund</b> of '+num(-m.tax)+'; the identity needs that full loss offset.'; }
+  $('a_note').innerHTML=n;
+  $('t_roic').textContent=pct(m.roic);
+  $('t_roa').textContent=pct(m.roa);
+  $('t_de').textContent=m.de.toFixed(2);
+  $('t_atrd').textContent=pct(m.atrd);
+  $('t_spr').textContent=(m.spread>=0?'+':'')+pct(m.spread);
+  $('t_mult').textContent=m.swing.toFixed(2)+'×';
+  $('bridge').innerHTML='ROE equals ROIC plus D/E times the spread. Leverage magnifies both ways: since ROE = (1 + D/E)&middot;ROIC &minus; (D/E)&middot;r<sub>D</sub>(1&minus;&tau;), '+
+    'a one-point fall in ROIC lowers ROE by <b>'+m.swing.toFixed(2)+' points</b> here. A higher ROE bought with leverage is a riskier ROE, which is why the slide&rsquo;s '+
+    'question &ldquo;should managers maximize financial leverage?&rdquo; has no answer in accounting terms.';
+  $('is').innerHTML=isRows(m,m0);
+  draw();
+}
+
+function load(p){ Object.assign(S,p); KEYS.forEach(function(k){ $(k).value=S[k]; }); render(); }
+KEYS.forEach(function(k){
+  var inp=$(k);
+  inp.value=D[k];
+  inp.addEventListener('input',function(e){ S[k]=parseFloat(e.target.value); render(); });
+});
+$('bA').addEventListener('click',function(){ load(P.A); });
+$('bB').addEventListener('click',function(){ load(P.B); });
+$('bFlat').addEventListener('click',function(){ load(P.flat); });
+$('b13').addEventListener('click',function(){ load(P.h13); });
+$('bNeg').addEventListener('click',function(){ load(P.neg); });
+$('themeBtn').addEventListener('click',function(){
+  var r=document.documentElement;
+  var dark=r.getAttribute('data-theme')==='dark'
+    || (!r.getAttribute('data-theme') && matchMedia('(prefers-color-scheme: dark)').matches);
+  r.setAttribute('data-theme', dark ? 'light' : 'dark');
+});
+render();
+</script>
+</body>
+</html>

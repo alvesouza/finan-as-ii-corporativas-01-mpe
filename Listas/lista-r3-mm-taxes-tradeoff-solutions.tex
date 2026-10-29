@@ -1,0 +1,896 @@
+% =============================================================================
+% Exercise list R3 -- worked solutions (MM benchmark, taxes, distress, trade-off)
+% Statements: Listas/lista-r3-mm-taxes-tradeoff.md (not restated here).
+% Numbers: Listas/lista-r3-mm-taxes-tradeoff-solutions_check.py (python -I, prints PASS).
+% Compile: pdflatex (2x); check pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazil,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finanças II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R3 --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\makeatletter
+\renewcommand\@seccntformat[1]{\csname the#1\endcsname.\quad}
+\makeatother
+\numberwithin{equation}{section}
+
+\newcommand{\notation}{\par\smallskip\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\smallskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\smallskip\noindent\textbf{Intuition.}~}
+\newcommand{\assumption}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\bookans}{\par\smallskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}[1]{\par\smallskip\noindent{\footnotesize\color{black!65}\textbf{Ref:} #1}\par}
+\newcommand{\E}{\mathbb{E}}
+
+\begin{document}
+\begin{center}
+  {\Large\bfseries Finanças II -- Corporativas (MPE Insper)}\\[3pt]
+  {\large Exercise list R3 --- A frictionless benchmark, taxes, distress and static trade-off}\\[3pt]
+  \textit{Worked solutions}
+\end{center}
+
+\noindent\small Statements are in \texttt{Listas/lista-r3-mm-taxes-tradeoff.md} and are not
+restated; each section cites the exercise by number and printed page. Editions cited are the
+local copies: Berk, DeMarzo \& Harford, \textit{Fundamentals of Corporate Finance}, 2nd ed.\
+(2011); Ross, Westerfield, Jordan \& Lamb, \textit{Fundamentos de Administração Financeira},
+9th ed.\ (2013); Koski, Higgins \& Mitton, \textit{Analysis for Financial Management}, 13th
+ed.\ (2023); Grinblatt \& Titman, \textit{Financial Markets and Corporate Strategy}, 2nd ed.\
+(2002); Amaro de Matos, \textit{Theoretical Foundations of Corporate Finance} (2001). Every
+number below is reproduced by \texttt{lista-r3-mm-taxes-tradeoff-solutions\_check.py}.
+Amounts are in dollars unless a section says ``millions''.\normalsize
+
+% =============================================================================
+\section{Two-outcome project financed with equity or safe debt --- Berk 16.1, p.~490}
+
+\notation
+\begin{itemize}
+  \item $C_{\text{low}}=130{,}000$, $C_{\text{high}}=180{,}000$: project free cash flow at $t=1$ in the two states; $p=\tfrac12$: probability of the low state.
+  \item $I=100{,}000$: initial investment; $r_U=0.20$: project (unlevered) cost of capital; $r_f=0.10$: risk-free rate.
+  \item $V_U$: value of the project's cash flows (= unlevered equity); $\mathit{NPV}=V_U-I$.
+  \item $D=100{,}000$: amount borrowed at $r_f$; $E_L$: value of levered equity; $r_E$: its expected return; $r_D=r_f$.
+\end{itemize}
+
+\step{1}{Expected cash flow}
+\begin{align}
+  \E[C] &= p\,C_{\text{low}}+(1-p)\,C_{\text{high}} \label{eq:1EC}\\
+        &= (0.5)(130{,}000)+(0.5)(180{,}000) \nonumber\\
+        &= 155{,}000. \nonumber
+\end{align}
+
+\step{2}{(a) NPV} Discounting \eqref{eq:1EC} at the project's cost of capital,
+\begin{align}
+  V_U &= \frac{\E[C]}{1+r_U} \label{eq:1VU}\\
+      &= \frac{(155{,}000)}{(1.20)} \nonumber\\
+      &= 129{,}166.67, \nonumber\\
+  \mathit{NPV} &= V_U - I \label{eq:1NPV}\\
+      &= (129{,}166.67)-(100{,}000) \nonumber\\
+      &= 29{,}166.67. \nonumber
+\end{align}
+
+\step{3}{(b) Unlevered equity} All-equity holders receive exactly $C_s$, so by the law of one
+price their claim is worth \eqref{eq:1VU}: $E_U=V_U=129{,}166.67$. Selling the equity raises
+\$129{,}166.67, more than $I$; the surplus is the NPV.
+
+\step{4}{(c) Levered equity cash flows} The safe loan requires a repayment of
+\begin{align}
+  D(1+r_f) &= (100{,}000)(1.10) \nonumber\\
+           &= 110{,}000, \label{eq:1rep}
+\end{align}
+which is below the lowest $C_s$, so the debt is indeed riskless. Equity receives
+$C-110{,}000$, i.e.\ $130{,}000-110{,}000=20{,}000$ or $180{,}000-110{,}000=70{,}000$.
+
+\step{5}{(c) Value by MM I} With no taxes or distress costs, MM I gives $E_L+D=V_U$, so
+\begin{align}
+  E_L &= V_U - D \label{eq:1EL}\\
+      &= (129{,}166.67)-(100{,}000) \nonumber\\
+      &= 29{,}166.67. \nonumber
+\end{align}
+
+\step{6}{Consistency with MM II} Expected equity cash flow is $(0.5)(20{,}000)+(0.5)(70{,}000)=45{,}000$, so
+\begin{align}
+  r_E &= \frac{45{,}000}{E_L}-1 \label{eq:1rE}\\
+      &= \frac{45{,}000}{(29{,}166.67)}-1 \nonumber\\
+      &= 0.542857, \nonumber
+\end{align}
+and MM II, $r_E=r_U+\tfrac{D}{E_L}(r_U-r_D)$, with $\tfrac{D}{E_L}=\tfrac{100{,}000}{29{,}166.67}=3.428571$, gives
+\begin{align}
+  r_E &= (0.20)+(3.428571)(0.20-0.10) \nonumber\\
+      &= 0.542857, \nonumber
+\end{align}
+the same as \eqref{eq:1rE}: levered equity is worth \$29{,}166.67 and earns 54.29\%.
+
+\intuition Borrowing slices the same cash flows differently; it does not change their total
+value. The entrepreneur captures the same NPV, \$29{,}166.67, either as the excess of the
+equity sale over $I$ or as the value of the levered equity left after the loan. The riskier
+levered equity simply demands a higher expected return.
+\refbib{Berk Ch.~16, §16.2 ``Capital Structure in Perfect Capital Markets'', pp.~464--472 (MM I, MM II).}
+
+% =============================================================================
+\section{One-time dividend or repurchase in a perfect market --- Berk 17.7, p.~528}
+
+\notation
+\begin{itemize}
+  \item $N=500$ million shares; $P_0=15$: cum-payout share price; $C=250$ million: excess cash paid out.
+  \item $d$: dividend per share; $P_{\text{ex}}$: ex-dividend price; $n_R$: shares repurchased (millions); $P_R$: post-repurchase price.
+\end{itemize}
+
+\step{1}{Market value of the firm} Equity (the firm has no debt) is worth
+$N P_0=(500)(15)=7{,}500$ million, cash included.
+
+\step{2}{(a) Ex-dividend price}
+\begin{align}
+  d &= \frac{C}{N}=\frac{(250)}{(500)}=0.50, \label{eq:2d}\\
+  P_{\text{ex}} &= \frac{N P_0 - C}{N} \label{eq:2Pex}\\
+     &= \frac{(7{,}500)-(250)}{(500)} \nonumber\\
+     &= 14.50. \nonumber
+\end{align}
+
+\step{3}{(b) Repurchase} In a perfect market the shares are bought at the fair price $P_0$:
+\begin{align}
+  n_R &= \frac{C}{P_0}=\frac{(250)}{(15)}=16.6667, \label{eq:2nR}\\
+  P_R &= \frac{N P_0 - C}{N-n_R} \label{eq:2PR}\\
+      &= \frac{(7{,}500)-(250)}{(500)-(16.6667)} \nonumber\\
+      &= \frac{7{,}250}{483.3333} \nonumber\\
+      &= 15.00. \nonumber
+\end{align}
+
+\step{4}{(c) Comparison} Per original share, the dividend leaves $P_{\text{ex}}+d=(14.50)+(0.50)=15.00$
+in stock plus cash, by \eqref{eq:2d}--\eqref{eq:2Pex}; the repurchase leaves either a share worth
+15.00 by \eqref{eq:2PR} or 15.00 in cash for a tendered share. Wealth is \$15 per share under
+both policies: neither makes investors better off.
+
+\intuition Paying out cash shrinks the firm by exactly the cash paid. With a dividend the price
+falls by the dividend; with a repurchase the share count falls instead and the price stays put.
+Any investor can create the other pattern for herself (sell shares, or reinvest the dividend),
+so payout policy is irrelevant (MM).
+\refbib{Berk Ch.~17, §17.2 ``Dividends Versus Share Repurchases in a Perfect Capital Market'', pp.~503--508.}
+
+% =============================================================================
+\section{MM I with corporate taxes --- Ross 16.14, p.~578}
+
+\notation
+\begin{itemize}
+  \item $\mathit{EBIT}=92{,}000$ per year forever; $R_U=0.15$: unlevered cost of equity; $R_D=0.09$: borrowing rate.
+  \item $T_C=0.35$: corporate tax rate; $D=60{,}000$: perpetual debt used to buy back shares.
+  \item $V_U$, $V_L$: unlevered and levered firm values; $E$: levered equity value.
+\end{itemize}
+
+\step{1}{Unlevered value} Cash flow to the all-equity firm is $\mathit{EBIT}(1-T_C)=(92{,}000)(1-0.35)=59{,}800$ forever, so
+\begin{align}
+  V_U &= \frac{\mathit{EBIT}(1-T_C)}{R_U} \label{eq:3VU}\\
+      &= \frac{(59{,}800)}{(0.15)} \nonumber\\
+      &= 398{,}666.67. \nonumber
+\end{align}
+
+\step{2}{Value of the tax shield} The yearly saving is $T_C R_D D=(0.35)(0.09)(60{,}000)=1{,}890$, a
+perpetuity as risky as the debt, hence discounted at $R_D$:
+\begin{align}
+  \mathit{PV}(\text{TS}) &= \frac{T_C R_D D}{R_D} \label{eq:3TS}\\
+      &= T_C D \nonumber\\
+      &= \frac{(1{,}890)}{(0.09)} \nonumber\\
+      &= 21{,}000. \nonumber
+\end{align}
+
+\step{3}{Levered value (MM I with taxes)} Adding \eqref{eq:3TS} to \eqref{eq:3VU},
+\begin{align}
+  V_L &= V_U + T_C D \label{eq:3VL}\\
+      &= (398{,}666.67)+(21{,}000) \nonumber\\
+      &= 419{,}666.67, \nonumber
+\end{align}
+of which equity is $E=V_L-D=(419{,}666.67)-(60{,}000)=359{,}666.67$.
+
+\intuition The government's claim on EBIT falls by \$1{,}890 a year once interest is
+deductible; that perpetual saving, worth $T_C D$, accrues to the firm's investors. The
+borrowing rate does not affect the answer because it scales both the saving and its discount
+rate.
+\refbib{Ross Cap.~16, §16.4 ``Proposições I e II de M\&M com impostos sobre o lucro da pessoa jurídica'', pp.~551--556.}
+
+% =============================================================================
+\section{APV with constant debt --- Higgins 8.23, p.~333}
+
+\notation
+\begin{itemize}
+  \item $\mathit{NPV}_0=500{,}000$: base-case NPV of the project's free cash flows.
+  \item $D=1{,}000{,}000$: constant debt for $T=3$ years; $r=0.08$: interest and discount rate of the shields; $t=0.40$: tax rate.
+  \item $\mathit{TS}$: annual interest tax shield, received at the end of years 1--3; $\mathit{APV}$: adjusted present value.
+\end{itemize}
+
+\step{1}{Annual shield}
+\begin{align}
+  \mathit{TS} &= D\,r\,t \label{eq:4TS}\\
+       &= (1{,}000{,}000)(0.08)(0.40) \nonumber\\
+       &= 32{,}000. \nonumber
+\end{align}
+
+\step{2}{Three-year annuity factor at 8\%}
+\begin{align}
+  A &= \frac{1}{1.08}+\frac{1}{1.08^2}+\frac{1}{1.08^3} \label{eq:4A}\\
+    &= (0.925926)+(0.857339)+(0.793832) \nonumber\\
+    &= 2.577097. \nonumber
+\end{align}
+
+\step{3}{PV of the shields and APV} Using \eqref{eq:4TS} and \eqref{eq:4A},
+\begin{align}
+  \mathit{PV}(\text{TS}) &= \mathit{TS}\cdot A \label{eq:4PV}\\
+      &= (32{,}000)(2.577097) \nonumber\\
+      &= 82{,}467.10, \nonumber\\
+  \mathit{APV} &= \mathit{NPV}_0+\mathit{PV}(\text{TS}) \label{eq:4APV}\\
+     &= (500{,}000)+(82{,}467.10) \nonumber\\
+     &= 582{,}467.10. \nonumber
+\end{align}
+
+\bookans Matches the book's answer, \$582{,}467 (p.~425).
+
+\intuition APV separates the value of the operations (\$500{,}000) from the value created by the
+financing side effect. With a fixed debt the shields are as safe as the debt, so they are
+discounted at the debt rate.
+\refbib{Higgins Ch.~8, Appendix ``Asset Beta and Adjusted Present Value'', pp.~318--325 (APV, p.~321).}
+
+% =============================================================================
+\section{MM II with a rising cost of debt --- Berk 16.5, p.~491}
+
+\notation
+\begin{itemize}
+  \item $r_U=0.12$: expected return on unlevered equity (= on the assets, unchanged by leverage without taxes).
+  \item $D/E$: debt-equity ratio (0.50 or 1.50); $r_D$: debt cost of capital (0.06 or 0.08); $r_E$: expected return on levered equity.
+\end{itemize}
+
+\step{1}{MM II} With no taxes, the asset return is the value-weighted average of the claims,
+$r_U=\tfrac{E}{D+E}r_E+\tfrac{D}{D+E}r_D$; solving for $r_E$,
+\begin{align}
+  r_E = r_U + \frac{D}{E}\,(r_U-r_D). \label{eq:5MM2}
+\end{align}
+
+\step{2}{(a) $D/E=0.50$, $r_D=6\%$} Substituting into \eqref{eq:5MM2},
+\begin{align}
+  r_E &= (0.12)+(0.50)(0.12-0.06) \nonumber\\
+      &= 0.15. \label{eq:5a}
+\end{align}
+
+\step{3}{(b) $D/E=1.50$, $r_D=8\%$} Substituting into \eqref{eq:5MM2},
+\begin{align}
+  r_E &= (0.12)+(1.50)(0.12-0.08) \nonumber\\
+      &= 0.18. \label{eq:5b}
+\end{align}
+
+\step{4}{Check: the WACC is unchanged} With $E/V=1/1.5$ and $D/V=0.5/1.5$ in (a), and $E/V=1/2.5$, $D/V=1.5/2.5$ in (b),
+\begin{align}
+  \text{(a)}\quad & \tfrac{1}{1.5}(0.15)+\tfrac{0.5}{1.5}(0.06)=0.12, \nonumber\\
+  \text{(b)}\quad & \tfrac{1}{2.5}(0.18)+\tfrac{1.5}{2.5}(0.08)=0.12. \nonumber
+\end{align}
+
+\step{5}{(c) Reply to the manager} The higher expected return in \eqref{eq:5b} is pure
+compensation for higher risk: equity bears the same business risk on a thinner base. By MM I the
+firm's value, and therefore the share price, is the same at every debt level; the WACC stays at
+12\%. Choosing leverage to maximise $r_E$ does not raise shareholder wealth; shareholders can
+also lever up on their own (homemade leverage) if they want a riskier, higher-return position.
+Shareholders care about the value of their claim, not its expected return.
+
+\intuition The cost of equity rises linearly with $D/E$ at slope $r_U-r_D$. When debt becomes
+riskier ($r_D$ rises), part of the risk moves to creditors and $r_E$ rises less steeply, but the
+total required return on the assets is still $r_U$.
+\refbib{Berk Ch.~16, §16.2, pp.~464--472 (MM II, leverage and the cost of equity).}
+
+% =============================================================================
+\section{Tax shields on amortising debt --- Berk 16.11, p.~492}
+
+\notation
+\begin{itemize}
+  \item $B_t$: debt outstanding during year $t=1,\dots,4$ (millions); $B_1=100$, $B_{t+1}=B_t-25$.
+  \item $r_D=0.10$: interest rate and discount rate of the shields; $\tau_c=0.40$: marginal corporate tax rate.
+  \item $\mathit{TS}_t=\tau_c r_D B_t$: tax shield received at the end of year $t$.
+\end{itemize}
+
+\assumption The first \$25 million repayment is made one year from now, together with the
+first interest payment, and interest in year $t$ is charged on the balance at the start of the
+year. The loan is then repaid after four years.
+
+\step{1}{Schedule} Balances are $100, 75, 50, 25$, so interest $r_D B_t$ is $10, 7.5, 5, 2.5$ and
+\begin{align}
+  \mathit{TS}_t &= (0.40)(0.10)B_t \in \{4,\ 3,\ 2,\ 1\}. \label{eq:6TS}
+\end{align}
+
+\step{2}{Present value} Discounting \eqref{eq:6TS} at $r_D$ (same risk as the loan),
+\begin{align}
+  \mathit{PV}(\text{TS}) &= \sum_{t=1}^{4}\frac{\mathit{TS}_t}{(1+r_D)^t} \label{eq:6PV}\\
+      &= \frac{(4)}{1.10}+\frac{(3)}{1.10^2}+\frac{(2)}{1.10^3}+\frac{(1)}{1.10^4} \nonumber\\
+      &= 3.636364+2.479339+1.502630+0.683013 \nonumber\\
+      &= 8.301346. \nonumber
+\end{align}
+The interest tax shields are worth about \$8.30 million.
+
+\intuition Each year's shield is proportional to the debt still outstanding, so amortisation
+shrinks the shield stream. A permanent \$100 million loan would be worth $\tau_c D=\$40$
+million in shields; repaying it over four years leaves only about a fifth of that.
+\refbib{Berk Ch.~16, §16.3 ``Debt and Taxes'', pp.~473--479 (value of the interest tax shield).}
+
+% =============================================================================
+\section{Homemade leverage between twin firms --- Ross 16.18, p.~578}
+
+\notation
+\begin{itemize}
+  \item $X=400{,}000$: perpetual operating income of each firm (random, identical for both); no taxes.
+  \item Weber (unlevered): $E_W=V_W=2{,}500{,}000$. Cavaleiro (levered): $E_C=1{,}632{,}000$, $D_C=1{,}200{,}000$, interest $I_C=72{,}000$ per year, so $r_D=72{,}000/1{,}200{,}000=0.06$.
+  \item $\alpha=0.05$: fraction bought; $r=0.06$: personal borrowing rate; $L$: amount borrowed personally.
+\end{itemize}
+
+\assumption ``Os custos líquidos das estratégias sejam iguais'' is read as: both strategies
+require the same own funds today, the \$81{,}600 that 5\% of Cavaleiro costs.
+
+\step{1}{Strategy C: 5\% of Cavaleiro} Equity income is $X-I_C=400{,}000-72{,}000=328{,}000$, so
+\begin{align}
+  \text{cost}_C &= \alpha E_C=(0.05)(1{,}632{,}000)=81{,}600, \label{eq:7cC}\\
+  \text{income}_C &= \alpha (X-I_C)=(0.05)(328{,}000)=16{,}400, \label{eq:7iC}
+\end{align}
+a return of $16{,}400/81{,}600=20.10\%$.
+
+\step{2}{Strategy W: 5\% of Weber with the same own funds} The stake costs $(0.05)(2{,}500{,}000)=125{,}000$
+and earns $(0.05)(400{,}000)=20{,}000$. With own funds \eqref{eq:7cC},
+\begin{align}
+  L &= 125{,}000-81{,}600 = 43{,}400, \label{eq:7L}\\
+  \text{income}_W &= 20{,}000 - rL = (20{,}000)-(0.06)(43{,}400) \nonumber\\
+      &= (20{,}000)-(2{,}604) = 17{,}396, \label{eq:7iW}
+\end{align}
+a return of $17{,}396/81{,}600=21.32\%$.
+
+\step{3}{(a) The return is higher at no extra risk} Both incomes contain $0.05X$, so they move
+one-for-one with the same operating risk; \eqref{eq:7iW} exceeds \eqref{eq:7iC} by
+$17{,}396-16{,}400=996$ in every state. Yes: the investor raises her return by buying Weber and
+borrowing, and the position is no riskier (it even uses less leverage: \$43{,}400 of personal debt
+against her 5\% share of Cavaleiro's \$1{,}200{,}000, i.e.\ \$60{,}000).
+
+\step{4}{The underlying arbitrage} Replicating strategy C exactly needs $L=\alpha D_C=(0.05)(1{,}200{,}000)=60{,}000$:
+income $20{,}000-(0.06)(60{,}000)=16{,}400$, identical to \eqref{eq:7iC}, for own funds
+$125{,}000-60{,}000=65{,}000$. The saving is
+\begin{align}
+  81{,}600-65{,}000 = 16{,}600 = \alpha (V_C-V_W) = (0.05)(2{,}832{,}000-2{,}500{,}000), \label{eq:7arb}
+\end{align}
+and investing it at 6\% yields $(0.06)(16{,}600)=996$ a year, the gap found in Step~3.
+
+\step{5}{(b) What investors do and when it stops} Every Cavaleiro shareholder gains by selling
+Cavaleiro shares and buying Weber shares with personal borrowing. Selling pressure lowers $E_C$
+and buying pressure raises $E_W$ until the arbitrage profit \eqref{eq:7arb} is zero, i.e.\ until
+$V_C=V_W$ (MM I). If Weber's value stays at \$2.5 million, it stops when
+$E_C=2{,}500{,}000-1{,}200{,}000=1{,}300{,}000$; Cavaleiro's cost of equity is then
+$328{,}000/1{,}300{,}000=25.23\%$, which is MM II: $0.16+\tfrac{1.2}{1.3}(0.16-0.06)=25.23\%$,
+with $r_U=400{,}000/2{,}500{,}000=0.16$.
+
+\intuition Investors can borrow on the same terms as the firm, so corporate leverage adds
+nothing they cannot build themselves. A levered firm that trades at a premium is selling
+something investors can make more cheaply at home, and arbitrage removes the premium.
+\refbib{Ross Cap.~16, §16.2 ``O efeito da alavancagem financeira'' (homemade leverage), pp.~542--547; §16.3, pp.~547--551 (Propositions I and II).}
+
+% =============================================================================
+\section{Announcement effect of a debt-financed repurchase with distress costs --- Berk 16.22, p.~494}
+
+\notation
+\begin{itemize}
+  \item $P_0=5.50$, $N=10$ million shares, so $E_0=(5.50)(10)=55$ million.
+  \item $D=20$ million of permanent new debt; $\tau_c=0.30$; $P_1$: price after the announcement; $\mathit{PV}(\text{FDC})$: PV of financial distress costs.
+\end{itemize}
+
+\assumption The announcement is credible and all the value change is priced at once; shares are
+later bought back at the post-announcement price, so the repurchase itself transfers no value.
+
+\step{1}{(a) Taxes only} Permanent debt adds $\tau_c D=(0.30)(20)=6$ million (cf.\ \eqref{eq:3TS}), all of it to the current shareholders:
+\begin{align}
+  P_1 &= \frac{E_0+\tau_c D}{N} \label{eq:8P1}\\
+      &= \frac{(55)+(6)}{(10)} \nonumber\\
+      &= 6.10. \nonumber
+\end{align}
+
+\step{2}{(b) Taxes and distress costs} By the trade-off identity $V_L=V_U+\tau_c D-\mathit{PV}(\text{FDC})$,
+the observed equity gain is
+\begin{align}
+  (5.75)(10)-(55) &= 2.5 = \tau_c D-\mathit{PV}(\text{FDC}), \nonumber\\
+  \mathit{PV}(\text{FDC}) &= (6)-(2.5) \nonumber\\
+      &= 3.5 \text{ million}. \label{eq:8FDC}
+\end{align}
+
+\intuition The market pays the shareholders for the expected tax savings and charges them for
+expected distress costs. The smaller price jump (\$0.25 against \$0.60) shows that the market
+expects distress costs to eat more than half of the tax benefit of this debt.
+\refbib{Berk Ch.~16, §16.3 pp.~473--479 and §16.5 ``Optimal Capital Structure: The Tradeoff Theory'', pp.~480--482.}
+
+% =============================================================================
+\section{After-tax WACC with riskless perpetual debt, then a debt-for-equity exchange --- Grinblatt \& Titman 13.15--13.16, p.~494}
+
+\notation
+\begin{itemize}
+  \item $D=50$, $E=50$ (millions): perpetual riskless debt and equity; $A=D+E=100$: market value of the assets.
+  \item $\beta_E=1.2$; $r_f=0.08$; $\E[r_M]=0.13$; CAPM holds; $r_D=r_f$ (riskless debt); $T_c=0.40$.
+  \item $\mathit{UA}$, $\mathit{TX}$: unlevered assets and debt tax shield, $A=\mathit{UA}+\mathit{TX}$; $\beta_{UA}$, $r_{UA}$: their beta and expected return.
+  \item Primes ($D'$, $E'$, $V'$, $\mathit{WACC}'$) denote values after the exchange offer.
+\end{itemize}
+
+\step{1}{13.15: cost of equity (CAPM)}
+\begin{align}
+  r_E &= r_f+\beta_E(\E[r_M]-r_f) \nonumber\\
+      &= (0.08)+(1.2)(0.13-0.08) \nonumber\\
+      &= 0.14. \label{eq:9rE}
+\end{align}
+
+\step{2}{13.15: WACC} G\&T's after-tax WACC (13.8) with \eqref{eq:9rE}:
+\begin{align}
+  \mathit{WACC} &= \frac{E}{D+E}\,r_E+\frac{D}{D+E}\,r_D(1-T_c) \label{eq:9W}\\
+      &= (0.5)(0.14)+(0.5)(0.08)(1-0.40) \nonumber\\
+      &= 0.094. \nonumber
+\end{align}
+
+\step{3}{Unlevered cost of capital (Hamada)} With static perpetual riskless debt, $\mathit{TX}=T_cD$ (13.2) and
+$\mathit{UA}=D+E-T_cD=100-(0.40)(50)=80$ (13.3). Unlevering the equity beta with (13.7),
+\begin{align}
+  \beta_{UA} &= \frac{\beta_E}{1+(1-T_c)D/E} \label{eq:9bUA}\\
+      &= \frac{(1.2)}{1+(1-0.40)(1)} \nonumber\\
+      &= 0.75, \nonumber\\
+  r_{UA} &= r_f+\beta_{UA}(\E[r_M]-r_f) \label{eq:9rUA}\\
+      &= (0.08)+(0.75)(0.05) \nonumber\\
+      &= 0.1175. \nonumber
+\end{align}
+Check with the adjusted cost of capital formula (p.~482), $\mathit{WACC}=r_{UA}\bigl(1-T_c\tfrac{D}{D+E}\bigr)$:
+$(0.1175)(1-(0.40)(0.5))=0.094$, equal to \eqref{eq:9W}.
+
+\step{4}{13.16: values after retiring \$25 million of debt} The unlevered assets do not change;
+the shield shrinks to $T_cD'=(0.40)(25)=10$. Hence
+\begin{align}
+  V' &= \mathit{UA}+T_cD' = (80)+(10) = 90, \label{eq:9V}\\
+  E' &= V'-D' = (90)-(25) = 65, \nonumber
+\end{align}
+of which \$25 million is the new shares given to the old creditors and $50-(0.40)(25)=40$ is the
+old shareholders' stake: they bear the \$10 million loss of shield value.
+
+\step{5}{13.16: new WACC} Substituting $D'/V'=25/90=0.277778$ into the adjusted cost of capital formula with \eqref{eq:9rUA},
+\begin{align}
+  \mathit{WACC}' &= r_{UA}\Bigl(1-T_c\frac{D'}{V'}\Bigr) \label{eq:9W2}\\
+      &= (0.1175)\bigl(1-(0.40)(0.277778)\bigr) \nonumber\\
+      &= (0.1175)(0.888889) \nonumber\\
+      &= 0.104444. \nonumber
+\end{align}
+
+\step{6}{Cross-check through the cost of equity} By (13.6), $\beta_E'=\beta_{UA}\bigl(1+(1-T_c)\tfrac{D'}{E'}\bigr)
+=(0.75)\bigl(1+(0.6)\tfrac{25}{65}\bigr)=(0.75)(1.230769)=0.923077$, so $r_E'=(0.08)+(0.923077)(0.05)=0.126154$ and
+\begin{align}
+  \mathit{WACC}' &= \tfrac{65}{90}(0.126154)+\tfrac{25}{90}(0.08)(0.6) \nonumber\\
+      &= (0.091111)+(0.013333) = 0.104444, \nonumber
+\end{align}
+the same as \eqref{eq:9W2}. The WACC rises from 9.40\% to 10.44\%.
+
+\assumption The debt ratio in \eqref{eq:9W2} is measured at post-exchange market values. Using
+$D'/V=25/100$ (ignoring the lost shield) would give $(0.1175)(1-0.40\cdot0.25)=10.575\%$; that
+mixes the old firm value with the new debt and is not consistent with the Hamada model.
+
+\intuition In the Hamada model the only thing debt adds is a riskless tax shield. Cutting the debt
+removes part of that cheap, government-funded slice of the financing, so the WACC moves back
+toward the unlevered cost of capital, 11.75\%.
+\refbib{Grinblatt \& Titman Ch.~13: Hamada model, eqs.\ (13.1)--(13.7), pp.~463--466; WACC (13.8), p.~476; adjusted cost of capital formula, pp.~481--482.}
+
+% =============================================================================
+\section{Taxes vs.\ bankruptcy costs in two states --- Grinblatt \& Titman 16.2, p.~591}
+
+\notation
+\begin{itemize}
+  \item $C_G=210$, $C_B=66$: pre-tax cash flows next period in the favourable and unfavourable state, each with probability $\tfrac12$.
+  \item $t=\tfrac13$: tax rate of the all-equity firm; $s=0.05$: tax saved per dollar of debt financing; $r_f=0.10$; investors are risk neutral.
+  \item $F$: face value of the zero-coupon debt; $D$: its market value today; $K=20$: bankruptcy cost; $V_U$, $E$, $V$: unlevered value, equity, levered firm value.
+\end{itemize}
+
+\assumption ``Debt financing used'' is the amount raised today, $D$; the saving $sD$ is
+realised next period in both states (if the firm defaults it accrues to the creditors who take
+it over). The answer to (e) does not depend on this reading (Step~6).
+
+\step{1}{(a) All-equity value} After-tax flows are $210(1-\tfrac13)=140$ and $66(1-\tfrac13)=44$, so
+\begin{align}
+  V_U &= \frac{\tfrac12(140)+\tfrac12(44)}{1.10} \label{eq:10VU}\\
+      &= \frac{920}{11} \nonumber\\
+      &= 83.6364. \nonumber
+\end{align}
+
+\step{2}{(b) Debt with $F=44$} Guess the debt is safe: $D=44/1.10=40$, so the saving is $sD=(0.05)(40)=2$.
+In the bad state the firm then has $44+2=46\ge 44$: no default, confirming the guess. The firm
+receives $D=40$.
+
+\step{3}{(c) Equity} Equity gets $140+2-44=98$ (good) and $46-44=2$ (bad):
+\begin{align}
+  E &= \frac{\tfrac12(98)+\tfrac12(2)}{1.10} \label{eq:10E}\\
+    &= \frac{500}{11} \nonumber\\
+    &= 45.4545. \nonumber
+\end{align}
+
+\step{4}{(d) Firm value}
+\begin{align}
+  V &= D+E \label{eq:10V}\\
+    &= (40)+(45.4545) \nonumber\\
+    &= 85.4545, \nonumber
+\end{align}
+equal to $V_U+\tfrac{2}{1.10}=\tfrac{920}{11}+\tfrac{20}{11}=\tfrac{940}{11}$: the PV of the tax saving, $1.8182$, is the whole gain.
+
+\step{5}{(e) Debt with $F=70$} Now $44+sD<70$ in the bad state, so the firm defaults; creditors
+take over and receive $44+0.05D-20=24+0.05D$. In the good state they get 70. Hence
+\begin{align}
+  D &= \frac{\tfrac12(70)+\tfrac12(24+0.05D)}{1.10} \label{eq:10De}\\
+  1.10\,D &= 47+0.025\,D \nonumber\\
+  D &= \frac{47}{1.075} = 43.72093. \nonumber
+\end{align}
+With $sD=2.18605$, the bad-state recovery is $26.18605<70$ (default confirmed) and equity gets
+$70+2.18605=72.18605$ in the good state and 0 in the bad state:
+\begin{align}
+  E &= \frac{\tfrac12(72.18605)}{1.10} \nonumber\\
+    &= 32.81184, \nonumber\\
+  V &= D+E \label{eq:10Ve}\\
+    &= (43.72093)+(32.81184) \nonumber\\
+    &= 76.53277. \nonumber
+\end{align}
+Equivalently $V=V_U+\mathit{PV}(sD)-\mathit{PV}(K)=(83.63636)+(1.98732)-(9.09091)=76.53277$, using $2.18605/1.10=1.98732$ and $\tfrac12(20)/1.10=9.09091$.
+No: the firm is worth less with a \$70 obligation (76.53 against 85.45).
+
+\step{6}{Robustness} Whatever the basis of the saving, it is at most $0.05\times70$ next period,
+worth $3.18182$, while expected bankruptcy costs are worth $9.09091$; so
+$V\le(83.63636)+(3.18182)-(9.09091)=77.72727<85.4545$ under any reading.
+
+\intuition This is the static trade-off in miniature. Safe debt adds a small tax subsidy at no
+cost. Debt large enough to default in the bad state buys a little more subsidy but triggers a
+deadweight loss of \$20 with probability one half, which dominates.
+\refbib{Grinblatt \& Titman Ch.~16, §16.1 ``Bankruptcy'' (direct bankruptcy costs vs.\ the debt tax advantage), pp.~559--561.}
+
+% =============================================================================
+\section{Risky debt in a binomial market and new debt of equal seniority --- Grinblatt \& Titman 14.2--14.3, pp.~526--527}
+
+\notation
+\begin{itemize}
+  \item $C_G=210$, $C_B=80$: firm cash flow in the good/bad state; risk-neutral probability $\tfrac12$ each; $r_f=0$; no taxes.
+  \item $F_0=50$: face of the existing debt; $F_1=50$: face of the new equal-seniority debt; 100 shares initially.
+  \item $V$: firm (machine) value; $D_0$, $D_1$: market values of old and new debt; $P$: share price; $n_R$: shares repurchased.
+\end{itemize}
+
+\step{1}{14.2: share price} With $r_f=0$, values are risk-neutral expectations:
+\begin{align}
+  V &= \tfrac12(210)+\tfrac12(80) = 145, \label{eq:11V}
+\end{align}
+the old debt is safe ($80\ge50$), $D_0=50$, equity is $145-50=95$, and $P=95/100=0.95$.
+
+\step{2}{(a) Price of the new debt} Total face becomes $F_0+F_1=100>80$, so in the bad state the
+\$80 is shared pro rata, 40 to each issue. The new debt is worth
+\begin{align}
+  D_1 &= \tfrac12(50)+\tfrac12(40) = 45. \label{eq:11D1}
+\end{align}
+The old debt now has the same payoff, so $D_0$ also falls from 50 to 45.
+
+\step{3}{(b) Share price at the announcement} The firm holds the machine plus the \$45 cash raised, and owes debt worth $2\times45=90$:
+\begin{align}
+  E &= (145)+(45)-(90) = 100, \qquad P = \frac{100}{100} = 1.00. \label{eq:11P}
+\end{align}
+The firm then buys back $n_R=45/1.00=45$ shares; 55 remain, and equity is $145-90=55$, paying 110
+or 0, worth $\tfrac12(110)=55$, i.e.\ still \$1.00 per share.
+
+\assumption ``A shareholder with 20 percent of the shares'' holds 20 of the 100 shares before
+the announcement; ``undoing the leverage change'' means rebuilding the pre-announcement payoff
+exposure with personal trades.
+
+\step{4}{(c) Undoing the leverage} Before: 20\% of an equity paying $(160,30)$, i.e.\ $(32,6)$,
+worth $\tfrac12(32)+\tfrac12(6)=19$. After the announcement the 20 shares are worth 20. Keep
+$0.2\times55=11$ shares (paying $(22,0)$) and sell $20-11=9$ shares at \$1.00; with the \$9 buy
+20\% of the new debt, $0.2\times45=9$, which pays $0.2\times(50,40)=(10,8)$. The position pays
+\begin{align}
+  (22+10,\ 0+8) = (32,\ 8), \qquad \text{worth } \tfrac12(32)+\tfrac12(8) = 20. \label{eq:11c}
+\end{align}
+This beats the old payoff $(32,6)$ state by state; the gain $20-19=1$ is 20\% of the \$5 lost by
+the old creditors. Alternatively, she can rebuild $(32,6)$ exactly with $12.25$ shares and 7.5\%
+of all the debt (paying $0.075\times(100,80)=(7.5,6)$), at a cost of $12.25(1.00)+0.075(90)=19.00$, and keep \$1 in cash.
+
+\step{5}{(d) MM still holds} Total firm value is $50+95=145$ before and $90+55=145$ after, as
+\eqref{eq:11V} requires: changing the capital structure did not change the value of the
+claims taken together, and investors can undo it (Step~4). The share price rose only because
+equal-seniority debt diluted the old creditors, a transfer of \$5 from them to the
+shareholders, not value creation.
+
+\intuition MM is a statement about the size of the pie, not about how it is cut. Issuing new
+debt that ranks equally with old debt cuts the old creditors' slice; without protective
+covenants, shareholders pocket that slice.
+\refbib{Grinblatt \& Titman Ch.~14, §14.1 ``The Modigliani-Miller Theorem'' p.~501, §14.2 ``How an Individual Investor Can `Undo' a Firm's Capital Structure Choice'' p.~505, §14.3 ``How Risky Debt Affects the Modigliani-Miller Theorem'' pp.~506--508.}
+
+% =============================================================================
+\section{Leveraged recapitalisation with corporate taxes --- Berk 16.18, p.~493}
+
+\notation
+\begin{itemize}
+  \item $N_0=20$ million shares at $P_0=7.50$; all equity before the announcement.
+  \item $D=50$ million of permanent interest-only debt; $\tau_c=0.40$; $P_1$: share price after the debt is issued; $n_R$: shares repurchased (millions).
+\end{itemize}
+
+\step{1}{(a) Existing assets} With no debt, assets equal equity: $N_0P_0=(20)(7.50)=150$ million.
+
+\step{2}{(b) Assets after the issue, before the repurchase} The firm holds the old assets, the
+\$50 million cash, and the tax shield of permanent debt, $\tau_c D=(0.40)(50)=20$:
+\begin{align}
+  A_1 &= (150)+(50)+(20) = 220 \text{ million}. \label{eq:12A}
+\end{align}
+
+\step{3}{(c) Price and shares repurchased} Equity is $A_1-D=(220)-(50)=170$ million, so
+\begin{align}
+  P_1 &= \frac{170}{20} = 8.50, \label{eq:12P}\\
+  n_R &= \frac{D}{P_1} = \frac{(50)}{(8.50)} = 5.882353 \text{ million shares}. \label{eq:12n}
+\end{align}
+
+\step{4}{(d) After the repurchase} The cash is gone:
+\begin{center}
+\begin{tabular}{lr@{\qquad}lr}
+\toprule
+Assets & (\$m) & Liabilities and equity & (\$m)\\
+\midrule
+Existing assets & 150 & Debt & 50\\
+Tax shield & 20 & Equity & 120\\
+\midrule
+Total & 170 & Total & 170\\
+\bottomrule
+\end{tabular}
+\end{center}
+With $20-5.882353=14.117647$ million shares left, the price is $120/14.117647=8.50$, unchanged by
+the repurchase itself.
+
+\intuition The whole tax benefit, \$20 million or \$1 per share, is capitalised into the price at
+the announcement. Shareholders who sell in the buyback and those who stay share it equally, since
+the repurchase is at the fair price \$8.50.
+\refbib{Berk Ch.~16, §16.3 ``Debt and Taxes'', pp.~473--479 (recapitalising to capture the tax shield).}
+
+% =============================================================================
+\section{Derive the MM adjusted cost of capital --- Ross 16.19, p.~578}
+
+\notation
+\begin{itemize}
+  \item $\mathit{EBIT}$: constant perpetual operating income, fully paid out; $T_C\in[0,1)$: corporate tax rate (no personal taxes).
+  \item $D$: perpetual riskless debt with rate $R_D$; $E$: levered equity value; $V=E+D=V_L$: levered firm value; $V_U$: unlevered value.
+  \item $R_U$: unlevered cost of capital; $R_E$: cost of levered equity; $\text{CMPC}=\tfrac{E}{V}R_E+\tfrac{D}{V}R_D(1-T_C)$ (Ross's WACC). Assume $E>0$, $V>0$.
+\end{itemize}
+
+\textbf{Claim.} $\text{CMPC}=R_U\bigl[1-T_C(D/V)\bigr]$.
+
+\step{1}{Valuation identities (Ross §16.4)} The unlevered firm's perpetual cash flow is
+$\mathit{EBIT}(1-T_C)$, so by definition of $R_U$
+\begin{align}
+  \mathit{EBIT}(1-T_C) = R_U V_U. \label{eq:13VU}
+\end{align}
+The shield $T_C R_D D$ is a perpetuity as risky as the debt, worth $T_C D$ (cf.\ \eqref{eq:3TS}), so MM I with taxes is
+\begin{align}
+  V = V_U + T_C D. \label{eq:13MM1}
+\end{align}
+
+\step{2}{Returns of the claims} Shareholders receive $(\mathit{EBIT}-R_D D)(1-T_C)$ forever and
+debtholders $R_D D$ (a perpetuity worth $D$ at rate $R_D$); valuing the equity stream as a perpetuity gives
+\begin{align}
+  E\,R_E &= (\mathit{EBIT}-R_D D)(1-T_C). \label{eq:13RE}
+\end{align}
+
+\step{3}{Multiply the CMPC by $V$} From the definition,
+\begin{align}
+  V\cdot\text{CMPC} &= E\,R_E + D\,R_D(1-T_C) \nonumber\\
+     &= \bigl[(\mathit{EBIT}-R_D D)(1-T_C)\bigr] + R_D D(1-T_C) && \text{(substituting \eqref{eq:13RE})} \nonumber\\
+     &= \mathit{EBIT}(1-T_C) \nonumber\\
+     &= \bigl[R_U V_U\bigr] && \text{(substituting \eqref{eq:13VU})} \nonumber\\
+     &= R_U\bigl[V - T_C D\bigr] && \text{(substituting \eqref{eq:13MM1})}. \label{eq:13VW}
+\end{align}
+
+\step{4}{Divide by $V>0$}
+\begin{align}
+  \text{CMPC} = R_U\Bigl[1-T_C\frac{D}{V}\Bigr]. \qquad\blacksquare \label{eq:13res}
+\end{align}
+
+\step{5}{Same result through MM II} Substituting $\mathit{EBIT}(1-T_C)=R_U(E+D-T_CD)$ (from
+\eqref{eq:13VU} and \eqref{eq:13MM1}) into \eqref{eq:13RE} and dividing by $E$ gives MM II with
+taxes, $R_E=R_U+(R_U-R_D)\tfrac{D}{E}(1-T_C)$. Then
+\begin{align}
+  \text{CMPC} &= \tfrac{E}{V}\bigl[R_U+(R_U-R_D)\tfrac{D}{E}(1-T_C)\bigr]+\tfrac{D}{V}R_D(1-T_C) \nonumber\\
+     &= \tfrac{E}{V}R_U+\tfrac{D}{V}R_U(1-T_C) \nonumber\\
+     &= R_U\Bigl[\tfrac{E+D}{V}-T_C\tfrac{D}{V}\Bigr] = R_U\Bigl[1-T_C\tfrac{D}{V}\Bigr], \nonumber
+\end{align}
+since $E+D=V$.
+
+\step{6}{Numerical check with Exercise 3} There $T_CD/V=21{,}000/419{,}666.67=0.05003971$, so
+$\text{CMPC}=(0.15)(1-0.05003971)=0.14249404$, and $(0.14249404)(419{,}666.67)=59{,}800.00=\mathit{EBIT}(1-T_C)$,
+as \eqref{eq:13VW} requires. Directly: $R_E=56{,}290/359{,}666.67=0.156506$ and
+$\tfrac{359{,}666.67}{419{,}666.67}(0.156506)+\tfrac{60{,}000}{419{,}666.67}(0.09)(0.65)=0.142494$.
+
+\intuition The levered firm's investors, taken together, receive the unlevered cash flow
+$\mathit{EBIT}(1-T_C)$ \emph{plus} the tax saving; the CMPC nets the saving out of the debt cost,
+so it must discount the unlevered cash flow to the levered value. Since $V$ exceeds $V_U$ by
+$T_CD$, the rate falls below $R_U$ by exactly $R_U T_C D/V$. The formula relies on fixed
+perpetual debt; under a constant leverage ratio the shield is riskier and the formula changes.
+\refbib{Ross Cap.~16, §16.4, pp.~551--556 (Proposition I with taxes; taxes, WACC and Proposition II).}
+
+% =============================================================================
+\section{Miller's gain from leverage with personal taxes --- Amaro de Matos 2.2.7 \#1, p.~58}
+
+\notation
+\begin{itemize}
+  \item $X$: random operating income per period of two otherwise identical firms, $u$ (unlevered) and $l$ (levered), forever.
+  \item $B$: market value of $l$'s perpetual riskless debt, which pays $rB$ per period; $r>0$ is the bond rate.
+  \item $\tau_c,\tau_s,\tau_b\in[0,1)$: corporate tax rate (interest deductible), personal tax rate on equity income, personal tax rate on interest income.
+  \item $S_u=V_u$, $S_l$: equity values; $V_l=S_l+B$; $\alpha\in(0,1]$: fraction held; $L$: personal loan; $G_L=V_l-V_u$: gain from leverage.
+\end{itemize}
+
+\assumption As in Amaro's §2.2 and Appendix answer, individuals borrow and lend at the bond rate
+$r$, and personal interest is taxed (lending) or deductible (borrowing) at $\tau_b$; there are no
+transaction costs and no arbitrage.
+
+\step{1}{Payoff of the levered equity} The firm pays corporate tax on $X-rB$, and the holder pays $\tau_s$ on what she receives:
+\begin{align}
+  Y_l = \alpha(X-rB)(1-\tau_c)(1-\tau_s). \label{eq:14Yl}
+\end{align}
+
+\step{2}{Payoff of the unlevered equity}
+\begin{align}
+  Y_u = \alpha X(1-\tau_c)(1-\tau_s). \label{eq:14Yu}
+\end{align}
+
+\step{3}{Size of the personal loan} A loan $L$ at $r$ costs $rL(1-\tau_b)$ per period after tax.
+Choose $L$ so this equals the debt-service part of \eqref{eq:14Yl}:
+\begin{align}
+  rL(1-\tau_b) &= \alpha rB(1-\tau_c)(1-\tau_s) \nonumber\\
+  L &= \alpha B\,\frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b}. \label{eq:14L}
+\end{align}
+
+\step{4}{Replication} Buying $\alpha$ of $u$ and borrowing $L$ pays, by \eqref{eq:14Yu} and \eqref{eq:14L},
+\begin{align}
+  Y_u - rL(1-\tau_b) &= \alpha X(1-\tau_c)(1-\tau_s)-\bigl[\alpha rB(1-\tau_c)(1-\tau_s)\bigr] \nonumber\\
+     &= \alpha(X-rB)(1-\tau_c)(1-\tau_s) = Y_l, \nonumber
+\end{align}
+in every state and every period. Its cost today is $\alpha S_u-L$.
+
+\step{5}{Law of one price} If $\alpha S_l>\alpha S_u-L$, a holder of $l$'s shares sells them, builds the
+replica and keeps the difference with unchanged future income. If $\alpha S_l<\alpha S_u-L$, a holder
+of $u$'s shares sells them, buys $\alpha$ of $l$'s shares and lends $L$ (after-tax interest
+$rL(1-\tau_b)$, restoring $Y_u$ by Step~4 read backwards), again pocketing the difference.
+No arbitrage therefore requires
+\begin{align}
+  \alpha S_l &= \alpha S_u - L \nonumber\\
+  S_l &= S_u - B\,\frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b} && \text{(substituting \eqref{eq:14L}, dividing by } \alpha). \label{eq:14Sl}
+\end{align}
+
+\step{6}{Firm values and the gain} Adding $B$ to both sides of \eqref{eq:14Sl} and using $V_l=S_l+B$, $V_u=S_u$:
+\begin{align}
+  V_l &= V_u + B - B\,\frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b}, \nonumber\\
+  G_L = V_l - V_u &= \Bigl[1-\frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b}\Bigr]B. \qquad\blacksquare \label{eq:14GL}
+\end{align}
+The gain goes to the stockholders who decide to lever: they collect $B$ at issue and keep shares
+worth $S_l$, a total of $V_l$ instead of $V_u$.
+
+\step{7}{Special cases} (i) $\tau_s=\tau_b$ (including no personal taxes): $G_L=\tau_cB$, the MM
+(1963) result, Amaro (2.7). (ii) Miller's equilibrium (2.11), $(1-\tau_c)(1-\tau_s)=1-\tau_b$:
+$G_L=0$, so no single firm gains from leverage. (iii) $(1-\tau_c)(1-\tau_s)>1-\tau_b$: $G_L<0$,
+and the firm should not borrow.
+
+\bookans The final expression matches the book's answer (p.~255). The intermediate line printed
+there, ``$\alpha S_l=\alpha S_u+\alpha B\frac{(1-\tau_c)(1-\tau_s)}{(1-\tau_b)}$'', has a sign typo:
+it must be a minus, as in \eqref{eq:14Sl}, since the investor \emph{borrows} that amount and the
+book's own next line, $V_l=V_u+B[1-\cdots]$, follows only with the minus.
+
+\intuition Debt moves a dollar of income from the corporate-plus-equity tax channel, where it
+keeps $(1-\tau_c)(1-\tau_s)$, to the interest channel, where it keeps $(1-\tau_b)$. Leverage
+creates value only to the extent that the second channel is less taxed than the first.
+\refbib{Amaro de Matos Ch.~2, §2.2 ``Personal and Corporate Taxation'', pp.~48--52 (Miller equilibrium, $G_L$ on p.~52); Appendix C.2.2, p.~255.}
+
+% =============================================================================
+\section{MM I with perpetual debt, and when borrowing and lending rates differ --- Amaro de Matos 2.1.5 \#3--\#4, p.~48}
+
+\notation
+\begin{itemize}
+  \item $X$: random operating income per period (the time average of the stream), identical for firms $u$ (unlevered) and $l$ (levered); any distribution.
+  \item $B$: market value of $l$'s perpetual riskless debt, paying $rB$ per period; $r$: corporate interest rate.
+  \item $\tau\in[0,1)$: corporate tax rate, interest deductible ($\tau=0$ is the no-tax case); no personal taxes.
+  \item $V_u=S_u$, $V_l=S_l+B$; $\alpha\in(0,1]$: fraction of a firm held by an investor.
+  \item \#4 only: $\bar r$ and $\underline r$: individual borrowing and lending rates, $\bar r>r>\underline r>0$.
+\end{itemize}
+
+\assumption In \#3 individuals borrow and lend at $r$, as firms do; there are no transaction
+costs. In \#4, as in the book's answer, $\tau=0$ and individuals can lend only at $\underline r$
+(they cannot buy $l$'s bonds at yield $r$).
+
+\subsection*{\#3 --- MM I with and without taxes}
+
+\step{1}{Payoffs} Shareholders of $u$ and $l$ receive, each period,
+\begin{align}
+  Y_u = X(1-\tau), \qquad Y_l = (X-rB)(1-\tau). \label{eq:15Y}
+\end{align}
+
+\step{2}{Replicating $l$'s equity} Buy $\alpha$ of $u$ and borrow $\alpha(1-\tau)B$ at $r$. By \eqref{eq:15Y} the income is
+\begin{align}
+  \alpha X(1-\tau) - r\,\alpha(1-\tau)B = \alpha(X-rB)(1-\tau) = \alpha Y_l, \nonumber
+\end{align}
+at a cost of $\alpha S_u-\alpha(1-\tau)B$ today.
+
+\step{3}{Upper bound} If $S_l>S_u-(1-\tau)B$, a holder of $\alpha$ of $l$'s shares sells them for
+$\alpha S_l$, builds the replica of Step~2 and keeps, with identical future income,
+\begin{align}
+  \alpha\bigl[S_l-S_u+(1-\tau)B\bigr] &= \alpha\bigl[(V_l-B)-V_u+(1-\tau)B\bigr] \nonumber\\
+      &= \alpha\bigl[V_l-V_u-\tau B\bigr] > 0, \nonumber
+\end{align}
+an arbitrage. Hence $V_l\le V_u+\tau B$.
+
+\step{4}{Replicating $u$'s equity} Buy $\alpha$ of $l$'s shares and $\alpha(1-\tau)$ of its debt (or lend $\alpha(1-\tau)B$ at $r$):
+\begin{align}
+  \alpha(X-rB)(1-\tau)+\alpha(1-\tau)rB = \alpha X(1-\tau) = \alpha Y_u, \nonumber
+\end{align}
+at a cost of $\alpha\bigl[S_l+(1-\tau)B\bigr]$.
+
+\step{5}{Lower bound} If $S_u>S_l+(1-\tau)B$, i.e.\ $V_l<V_u+\tau B$, a holder of $u$'s shares sells them,
+buys the replica of Step~4 and keeps $\alpha[V_u+\tau B-V_l]>0$. Hence $V_l\ge V_u+\tau B$.
+
+\step{6}{MM I} Steps 3 and 5 give
+\begin{align}
+  V_l = V_u + \tau B \quad\text{(with taxes)}, \qquad V_l = V_u \quad (\tau=0). \qquad\blacksquare \label{eq:15MM1}
+\end{align}
+
+\bookans Matches the book's answer (pp.~252--253), $V_u+\tau B=V_l$. The book's switching
+portfolio invests all the proceeds in the other firm instead of replicating exactly, which leads
+to the same two inequalities.
+
+\subsection*{\#4 --- Different borrowing and lending rates ($\tau=0$)}
+
+\step{7}{Replicating $l$'s equity with costly borrowing} The replica must still hold $\alpha$ of $u$
+(the only other claim on $X$), so its debt service has to equal $\alpha rB$ at the rate $\bar r$:
+\begin{align}
+  \bar r\,\bar L = \alpha rB \quad\Longrightarrow\quad \bar L = \alpha B\,\frac{r}{\bar r}, \label{eq:15Lbar}
+\end{align}
+which gives income $\alpha X-\alpha rB=\alpha Y_l$ at a cost of $\alpha\bigl(S_u-B\,r/\bar r\bigr)$.
+(Borrowing the full $\alpha B$ would cost $\alpha\bar rB>\alpha rB$ per period: not a replica.)
+
+\step{8}{Upper bound} No arbitrage against an overvalued $l$ requires $S_l\le S_u-B\,r/\bar r$; adding $B$,
+\begin{align}
+  V_l \le V_u + B\Bigl(1-\frac{r}{\bar r}\Bigr) = V_u + B\,\frac{\bar r-r}{\bar r}. \label{eq:15up}
+\end{align}
+
+\step{9}{Replicating $u$'s equity with poor lending} Buy $\alpha$ of $l$'s shares and lend $\underline L$ at $\underline r$ with
+\begin{align}
+  \underline r\,\underline L = \alpha rB \quad\Longrightarrow\quad \underline L = \alpha B\,\frac{r}{\underline r}>\alpha B, \label{eq:15Llow}
+\end{align}
+giving income $\alpha(X-rB)+\alpha rB=\alpha Y_u$ at a cost of $\alpha\bigl(S_l+B\,r/\underline r\bigr)$.
+
+\step{10}{Lower bound} No arbitrage against an overvalued $u$ requires $S_u\le S_l+B\,r/\underline r$, i.e.\ $V_u\le V_l-B+B\,r/\underline r$:
+\begin{align}
+  V_l \ge V_u - B\,\frac{r-\underline r}{\underline r}. \label{eq:15low}
+\end{align}
+
+\step{11}{What happens to MM1} Combining \eqref{eq:15up} and \eqref{eq:15low},
+\begin{align}
+  V_u - B\,\frac{r-\underline r}{\underline r} \;\le\; V_l \;\le\; V_u + B\,\frac{\bar r-r}{\bar r}. \qquad\blacksquare \label{eq:15band}
+\end{align}
+MM1 no longer pins down $V_l$: arbitrage only confines it to a band around $V_u$ whose width grows
+with the debt $B$ and with the spreads. With $\bar r=r+\epsilon$, $\underline r=r-\epsilon$ the band is
+$V_u-\epsilon B/(r-\epsilon)\le V_l\le V_u+\epsilon B/(r+\epsilon)$, and it collapses to $V_l=V_u$
+as $\epsilon\to0$. Leverage can now raise firm value (up to the upper bound): the firm borrows
+more cheaply than individuals, so corporate leverage is a service investors cannot fully copy.
+If individuals could buy $l$'s bonds at yield $r$, Step~4 would apply and the lower bound would
+tighten to $V_l\ge V_u$.
+
+\bookans Differs from the book's printed band (p.~254), $V_u(1-\epsilon B_l/X)\le V_l\le V_u(1+\epsilon B_l/X)$.
+The qualitative conclusion is the same (a band around $V_u$, proportional to $\epsilon B$, vanishing at
+$\epsilon=0$), but the bounds differ. The book's portfolios keep the investor's capital fixed (all
+proceeds go into the other firm, and the full principal $B_l$ is borrowed or lent), so the two
+incomes differ by a multiple of the random $X$ minus a fixed amount. Its inequality therefore holds
+only for a given value of $X$ (or in expectation), not state by state. The portfolios above match
+incomes exactly, so \eqref{eq:15band} is a true no-arbitrage band for any distribution of $X$. The
+two coincide only if $X/V_u$ happens to equal $\bar r$ (upper bound) or $\underline r$ (lower bound).
+
+\intuition MM1 rests on investors being able to copy corporate leverage on the same terms. When
+personal borrowing is dearer and lending cheaper than corporate debt, homemade leverage is an
+imperfect substitute: arbitrage still limits mispricing, but only to within the cost of the
+personal-borrowing wedge.
+\refbib{Amaro de Matos Ch.~2, §2.1.1--2.1.3, pp.~40--46 (MM1, MM2, MM with taxes); Appendix C.2.1, pp.~252--254.}
+
+\end{document}

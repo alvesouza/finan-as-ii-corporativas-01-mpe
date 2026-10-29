@@ -48,6 +48,14 @@ primary exercise source for `/exercise-plan`.
 - Higgins, R. *Analysis for Financial Management*, McGraw-Hill, 2011 (edition number blank in the syllabus; 2011 printing is the 10th ed.).
   ⚠️ Local copy is Koski, Higgins & Mitton, **13th ed.** (© 2023); chapters and pages differ from 2011.
 
+**Added from the Ricca syllabus (2026-10-24)**
+- Berk, J. & DeMarzo, P. *Corporate Finance*, global ed., Pearson, 2011 (Ricca: main reference).
+  ⚠️ Local copy is a **different book**: Berk, DeMarzo & Harford, *Fundamentals of Corporate
+  Finance*, 2nd ed., 2011 (471 indexed problems, no answers). Syllabus chapter numbers do not apply.
+- Titman, S. & Grinblatt, M. *Financial Markets and Corporate Strategy*, McGraw-Hill, 2002
+  (Ricca: complementary). Local copy: same 2nd edition (235 indexed exercises, no answers).
+- Ricca topic ↔ book crosswalk: [[Map/exercises-index#Ricca syllabus crosswalk (2026-10-24)|exercise index]].
+
 Usage: Tirole for every model and proof; Amaro de Matos for the formal MM/asymmetric-info
 treatment; Ross *Fundamentos* and Higgins for valuation and practitioner computations.
 Macro implications has no complementary source; Activism is only lightly covered outside Tirole.
