@@ -1,0 +1,81 @@
+% =============================================================================
+% Short answer key for Listas/PS1.pdf. Full derivations: Listas/PS1-solutions.tex.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% Numbers: python -I Listas/PS1-solutions_check.py  -> PASS
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Problem Set 1 --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Corporate Finance --- Problem Set 1}\\[4pt]
+  {\large Answer key (full derivations in \texttt{PS1-solutions.pdf})}
+\end{center}
+
+\section*{Exercise 1}
+
+\textbf{(a)} Value is the present value of the \emph{cash} investors receive, dated when they
+receive it; net income is an accrual number. The differences:
+$$FCF = NI + (1-\tau_c)Int + Dep - CAPEX - \Delta NWC .$$
+Net income (i) deducts depreciation, which is not cash; (ii) ignores capex when it is paid, spreading
+it over time as depreciation; (iii) ignores cash tied up in working capital (sales on credit,
+inventory, payables); (iv) is after interest, so it mixes financing with operations. Financing is
+handled in the discount rate (WACC), so FCF is computed before payments to any investor.
+
+\textbf{(b)} Yes. FCF must use taxes actually paid. Since
+$T^{cash} = T^{book} - \Delta DTL$,
+$$FCF_t = EBIT_t(1-\tau_c) + Dep_t + \Delta DTL_t - CAPEX_t - \Delta NWC_t .$$
+The deferred tax is a non-cash expense, like depreciation. Use only operating deferred taxes (a rise
+in deferred tax \emph{assets} is subtracted). Do not also subtract the DTL as debt when moving from
+enterprise to equity value, and model the reversal or steady growth of the DTL in the terminal value.
+Equivalently, compute taxes on EBIT with the tax-depreciation schedule.
+
+\section*{Exercise 2 \normalsize(thousands of dollars)}
+
+Tax rate $=2{,}625/7{,}500=35\%$. The 1{,}000 consultancy fee is sunk: exclude it. Only 1{,}000 of
+overhead is incremental.
+\begin{itemize}[leftmargin=1.4em]
+  \item $EBIT = 30{,}000-18{,}000-1{,}000-2{,}500 = 8{,}500$; $\;EBIT(1-0.35)=5{,}525$.
+  \item Years 1--9: $FCF = 5{,}525 + 2{,}500 = 8{,}025$.
+\end{itemize}
+
+\textbf{(a)} $FCF_0 = -25{,}000-10{,}000 = -35{,}000$; $\;FCF_1=\dots=FCF_9 = 8{,}025$;
+$\;FCF_{10} = 8{,}025+10{,}000 = 18{,}025$.
+
+\textbf{(b)} With $A(0.14,10)=5.216116$ and $1.14^{-10}=0.269744$:
+$$\mathrm{NPV} = -35{,}000 + 8{,}025(5.216116) + 10{,}000(0.269744) = 9{,}556.77 .$$
+The project is worth about \$9.56 million: accept (IRR $\approx 20.2\%$).
+
+\section*{Exercise 3 \normalsize(dollars)}
+
+\begin{itemize}[leftmargin=1.4em]
+  \item Old machine's book value: $110{,}000-10{,}000 = 100{,}000$. Selling at $50{,}000$ gives a loss
+        with tax saving $0.45\times50{,}000 = 22{,}500$, so the after-tax sale is $72{,}500$.
+  \item $\Delta FCF_0 = -150{,}000 + 72{,}500 = -77{,}500$.
+  \item Years 1--10: $\Delta EBITDA = 20{,}000$, $\Delta Dep = 15{,}000-10{,}000 = 5{,}000$, so
+        $\Delta FCF = 20{,}000(0.55) + 0.45(5{,}000) = 13{,}250$.
+\end{itemize}
+$$\Delta\mathrm{NPV} = -77{,}500 + 13{,}250\times A(0.10,10) = -77{,}500 + 13{,}250(6.144567) = 3{,}915.51 > 0 .$$
+\textbf{Yes, replace} (incremental IRR $\approx 11.2\% > 10\%$). Without the tax saving on the sale
+the NPV would be $-18{,}584.49$: the tax effect of selling below book value decides the answer.
+
+\end{document}
