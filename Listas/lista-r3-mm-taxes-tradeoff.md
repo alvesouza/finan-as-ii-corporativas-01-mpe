@@ -39,7 +39,11 @@ b. Suppose that to raise the funds for the initial investment, the project is so
 
 c. Suppose the initial \$100,000 is instead raised by borrowing at the risk-free interest rate. What are the cash flows of the levered equity, and what is its initial value according to MM?
 
-*Context: Berk §16.2 problem set, section instruction: "For problems in this section assume no taxes or distress costs."*
+#### Context needed to solve it
+
+*From Berk Ch. 16, Problems, section "Capital Structure in Perfect Capital Markets" (instruction that heads this problem section), p. 490 (PDF 521):*
+
+For problems in this section assume no taxes or distress costs.
 
 ---
 
@@ -81,7 +85,11 @@ b. Suppose instead Hardmon borrows to the point that its debt-equity ratio is 1.
 
 c. A senior manager argues that it is in the best interest of the shareholders to choose the capital structure that leads to the highest expected return for the stock. How would you respond to this argument?
 
-*Context: Berk §16.2 problem set, section instruction: "For problems in this section assume no taxes or distress costs."*
+#### Context needed to solve it
+
+*From Berk Ch. 16, Problems, section "Capital Structure in Perfect Capital Markets" (instruction that heads this problem section), p. 490 (PDF 521):*
+
+For problems in this section assume no taxes or distress costs.
 
 ---
 
@@ -130,7 +138,84 @@ b. Suppose the only imperfections are corporate taxes and financial distress cos
 
 **[13.16]** Akron, from the last example, is considering an exchange offer where half of Akron's outstanding debt (\$25 million) is retired. The purchase of this debt would be financed by issuing \$25 million in equity to the debt holders of Akron. Assuming debt policy that is consistent with the Hamada model, what will Akron's new WACC be after the exchange offer?
 
-*Context: Grinblatt & Titman Ch. 13, the Hamada model (static perpetual risk-free debt) and the adjusted cost of capital formula, pp. 464–465 and 482.*
+#### Context needed to solve it
+
+*From Grinblatt & Titman Ch. 13, Eq. (13.8), p. 476 (PDF 489):*
+
+$$\text{WACC} = w_E \bar r_E + w_D (1 - T_c) \bar r_D \qquad (13.8)$$
+
+where
+
+- WACC = weighted average cost of capital
+- $w_E = \dfrac{E}{D + E}$ = market value of equity over market value of all financing
+- $w_D = \dfrac{D}{D + E}$ = market value of debt over market value of all financing
+- $T_c$ = marginal corporate tax rate if interest is fully tax deductible (or, more generally, the debt financing subsidy in percentage terms)
+
+The costs of the financing components are
+
+- $\bar r_E$ = the expected return on equity to investors
+- $\bar r_D$ = the expected return on debt to investors
+
+*From Grinblatt & Titman Ch. 13, Exhibit 13.1 and "Static Perpetual Risk-Free Debt", pp. 464–465 (PDF 477–478):*
+
+Exhibit 13.1 — Balance Sheet for a Firm with Leverage When Debt Interest Is Corporate Tax Deductible
+
+| Assets | | Liabilities and Equity | |
+|---|---|---|---|
+| Debt Tax Shield ($TX$) | $T_c D$ | Debt | $D$ |
+| Unlevered Assets ($UA$) | $D + E - T_c D$ | Equity | $E$ |
+
+Viewing the assets of the firm with value $A$ as a portfolio of unlevered assets with value $UA$ and debt tax shields with value $TX$ implies that the beta (or expected return) of the assets is the portfolio-weighted average of the betas (or expected returns) of the unlevered assets and debt tax shields; that is
+
+$$\beta_A = \left(\frac{UA}{D + E}\right)\beta_{UA} + \left(\frac{TX}{D + E}\right)\beta_{TX} \qquad (13.1a)$$
+
+and
+
+$$\bar r_A = \left(\frac{UA}{D + E}\right)\bar r_{UA} + \left(\frac{TX}{D + E}\right)\bar r_{TX} \qquad (13.1b)$$
+
+where $\beta_{UA}$ = beta risk of the unlevered assets, $\beta_{TX}$ = beta risk of the debt tax shield, $\bar r_{UA}$ = expected return of the unlevered assets, $\bar r_{TX}$ = expected return of the debt tax shield.
+
+**Static Perpetual Risk-Free Debt.** Let $T_c$ denote the effective corporate tax rate. Exhibit 13.1 has the firm's debt tax shield expressed as
+
+$$TX = T_c D \qquad (13.2)$$
+
+and thus
+
+$$UA = D + E - T_c D \qquad (13.3)$$
+
+The values for $TX$ and $UA$ both in Exhibit 13.1 and in equations (13.2) and (13.3) are developed in a model by Hamada (1972). If the firm issues default-free perpetual debt (that is, debt that never matures) with aggregate face amount of $D$ and interest payments equal to the risk-free rate, each interest payment of $D r_f$ saves $T_c D r_f$ in taxes in the year it is paid. The present value of the tax savings from the interest payments […] is
+
+$$T_c D = \frac{T_c D r_f}{r_f}$$
+
+The same present value is also achieved when the risk-free rate changes over time and the firm rolls over one-period risk-free debt.
+
+The Hamada model assumes that the tax shield is riskless and thus, each period's tax deduction arising from an interest payment should be discounted back to date 0 at the risk-free rate. This implies that the beta of the debt tax shield in the Hamada model is zero. Using this observation, and substituting equations (13.2) and (13.3) into equation (13.1a) yields
+
+$$\beta_A = \left[\frac{D + E - T_c D}{D + E}\right]\beta_{UA} \qquad (13.4)$$
+
+[…] The key assumptions that lead to this result are: (1) The debt is perpetual; in other words, it is either a perpetuity or consists of rolled over short-term debt positions. (2) The debt is default-free and pays the risk-free rate. (3) The face value of the debt and the tax rate do not change over time. The third assumption distinguishes the Hamada model from other models that will be discussed later in this chapter.
+
+**Equity Betas and Asset Betas.** Equity betas are also affected by taxes. Chapter 11 indicated that (assuming risk-free debt) the equity beta is
+
+$$\beta_E = \left(1 + \frac{D}{E}\right)\beta_A \qquad (13.5)$$
+
+[…] With a little simplification, this equation, which is based on the Hamada model, becomes
+
+$$\beta_E = \left[1 + (1 - T_c)\frac{D}{E}\right]\beta_{UA} \qquad (13.6)$$
+
+*From Grinblatt & Titman Ch. 13, Eq. (13.11), p. 481 (PDF 494):*
+
+$$\text{WACC} = \bar r_A - \left(\frac{D}{D + E}\right) T_c\, \bar r_D \qquad (13.11)$$
+
+*From Grinblatt & Titman Ch. 13, "The Adjusted Cost of Capital Formula", p. 482 (PDF 495):*
+
+In the Hamada model, with static perpetual debt, both debt and its tax shield are risk-free, implying $\bar r_D = r_f$, $\beta_{TX} = 0$, and $TX = T_c D$. In this case, the portfolio-weighted average of the expected returns of the unlevered assets and the debt tax shield, given in equation (13.1b), simplifies to
+
+$$\bar r_A = \left(1 - \frac{T_c D}{D + E}\right)\bar r_{UA} + \frac{T_c D}{D + E}\bar r_D$$
+
+If we substitute this equation into equation (13.11), equation (13.11) reduces to Modigliani and Miller's (1963) adjusted cost of capital formula, which gives the firm's WACC as a function of its debt to value ratio:
+
+$$\text{WACC} = \bar r_{UA}\left[1 - T_c \frac{D}{D + E}\right]$$
 
 ---
 
@@ -190,6 +275,42 @@ d. What are Kurz's market value balance sheet and share price after the share re
 
 Em um mundo com impostos apenas sobre lucros da pessoa jurídica, mostre que o CMPC pode ser escrito como $\text{CMPC} = R_U \times [1 - T_C(D/V)]$.
 
+#### Context needed to solve it
+
+*From Ross Cap. 16, "Impostos e Proposição I de M&M" and "Impostos, o CMPC e a Proposição II", p. 553 (PDF 577):*
+
+Suponhamos que o custo de capital da empresa U seja de 10%. Chamaremos isso de **custo não alavancado de capital** e usaremos o símbolo $R_U$ para representá-lo. Podemos imaginar o $R_U$ como o custo de capital que uma empresa teria se não tivesse dívida. […] O valor da empresa não alavancada ($V_U$) é simplesmente:
+
+$$V_U = \frac{\text{Lajir} \times (1 - T_C)}{R_U}$$
+
+O valor da empresa alavancada ($V_L$) é:
+
+$$V_L = V_U + T_C \times D$$
+
+[…] No Capítulo 14, vimos que, após considerarmos o efeito dos impostos, o CMPC é:
+
+$$\text{CMPC} = (E/V) \times R_E + (D/V) \times R_D \times (1 - T_C)$$
+
+Para calcular esse CMPC, precisamos saber qual é o custo do capital próprio. A Proposição II de M&M com impostos da pessoa jurídica afirma que o custo do capital próprio é:
+
+$$R_E = R_U + (R_U - R_D) \times (D/E) \times (1 - T_C) \qquad [16.4]$$
+
+*From Ross Cap. 16, Tabela 16.6 "Resumo de Modigliani e Miller", part II, p. 555 (PDF 579):*
+
+II. O caso com impostos sobre lucros da pessoa jurídica
+
+A. Proposição I com impostos: o valor da empresa alavancada ($V_L$) é igual ao valor da empresa não alavancada ($V_U$) mais o valor presente do benefício fiscal dos juros:
+
+$$V_L = V_U + T_C \times D$$
+
+onde $T_C$ é a alíquota de impostos da pessoa jurídica, e $D$ é o montante da dívida.
+
+B. Proposição II com impostos: o custo do capital próprio ($R_E$) é:
+
+$$R_E = R_U + (R_U - R_D) \times (D/E) \times (1 - T_C)$$
+
+onde $R_U$ é o custo não alavancado de capital, isto é, o custo de capital da empresa caso não haja dívida.
+
 ---
 
 ### 14. Miller's gain from leverage with personal taxes
@@ -201,7 +322,27 @@ $$G_L = \left[1 - \frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b}\right] B$$
 
 where $B$ denotes the market value of the debt in the leveraged firm.
 
-*Context: Amaro de Matos §2.2 (Miller's personal and corporate taxation equilibrium), pp. 48–57.*
+#### Context needed to solve it
+
+*From Amaro de Matos §2.2 "Personal and Corporate Taxation" and §2.2.1 "Demand for Bonds", p. 49 (PDF 67):*
+
+On the basis of Miller's argument, there is the underlying assumption that taxes are differentiated. Consider here that besides the tax on corporate profits under which interest payments are deductible, hereby denoted by $\tau_c$, there are also personal income taxes denoted by $\tau_b$ and $\tau_s$ that are applicable, respectively, to bonds and to shares. […]
+
+To study the demand for bonds, consider the existence of two types of bonds: fully tax-exempt bonds, with equilibrium rate of return $r_\circ$, and the other bonds, which are not tax-exempt and have a required rate of return $r_b$. The after-tax rate of return on these latter bonds is $(1 - \tau_b) r_b$. There is demand for the nonexempt bonds provided that this after-tax rate of return is greater than $r_\circ$. This means that
+
+$$r_b \ge \frac{r_\circ}{1 - \tau_b}.$$
+
+Consider a firm that raises equity at a cost of capital before taxes denoted by $\rho$. If this equity is within the same class of risk as the tax-exempt bonds, with rate of return $r_\circ$ as just described, one would require the same rate of return for the equity after paying the taxes due. Thus
+
+$$r_\circ = (1 - \tau_s)(1 - \tau_c)\rho.$$
+
+*From Amaro de Matos §2.2.3 "The Equilibrium", p. 52 (PDF 70):*
+
+[…] To see why, notice that to raise a certain amount $K$ of capital, one can issue either debt or equity. In the first case, the stockholders pay back $r_b(1 - \tau_c)K$, whereas in the second, they pay $\rho(1 - \tau_c)K$. But since in equilibrium $r_b^* = \rho$, there is no relative advantage in one form of raising capital with respect to the other.
+
+Alternatively, the relative advantage of leverage for stockholders, $G_L$, is written as
+
+$$G_L = [\rho(1 - \tau_c) - r_b^*(1 - \tau_c)]K = \left[1 - \frac{(1 - \tau_s)(1 - \tau_c)}{1 - \tau_b(B^*)}\right]\frac{r_\circ K}{(1 - \tau_s)}.$$
 
 ---
 
@@ -212,4 +353,82 @@ where $B$ denotes the market value of the debt in the leveraged firm.
 
 **[2.1.5 #4]** In the context of the previous exercise, suppose that an individual in the economy faces a borrowing interest rate $\bar r$ and a lending interest rate $\underline{r}$ such that $\bar r > r > \underline{r}$, where $r$ is the corporate interest rate. What happens to MM1?
 
-*Context: Amaro de Matos §2.1 (the MM propositions, with and without taxes), pp. 40–47.*
+#### Context needed to solve it
+
+*From Amaro de Matos §2.1.1 "The Irrelevancy Statement", pp. 40–42 (PDF 58–60) — MM1 without taxes:*
+
+Assume that a firm starts at time $t = 0$ and has payoffs $\Gamma_j(t)$ in state $j$ at any point in time $t$, with $j = 1, 2, \dots k(t)$ denoting the possible states of nature at time $t$.
+
+In the setting to be considered here, it is assumed that markets do not allow for arbitrage opportunities and also that markets are perfect, in the sense that there are no frictions of any type, taxes included. Also, there are two ways to finance the firm: either through equity only or through equity together with debt. When debt is issued, the firm is said to be *levered*; otherwise it is *unlevered*.
+
+Equityholders and debtholders have different claims on the final payoff of the firm. Debtholders, also known as *bondholders* or *creditors*, buy a debt contract issued by the firm giving them the claim to a face value $F$ at time $T$. If at that point in time the state of nature is such that $\Gamma_j(T)$ is less than $F$, the firm is said to go *bankrupt*, in which case the creditholder will receive $\Gamma_j(T)$, if positive. Let $V_j(T)$ denote the positive part of $\Gamma_j(T)$, or $V_j(T) \equiv [\Gamma_j(T)]^+$. […] The payoff to a debt instrument in the $j$-th state of nature is thus
+
+$$B_j(T) = \min\{F, V_j(T)\}.$$
+
+If $K$ is the number of possible states of nature at time $T$, then, under the absence of arbitrage opportunities, there exists a strictly positive vector $\psi \in R^K$ such that the present value of the debt is
+
+$$B = \sum_{j=1}^{K} \psi_j B_j(T).$$
+
+Notice that, if there is no state leading to bankruptcy, $B_j(T) = F$ and the preceding expression implies that
+
+$$B = F \sum_{j=1}^{K} \psi_j \Rightarrow B = \frac{F}{R}. \qquad (2.1)$$
+
+[…] In other words, the payoff to equityholders in state $j$ is
+
+$$S_j(T) = [\Gamma_j(T) - \min\{F, V_j(T)\}]^+ = V_j(T) - \min\{F, V_j(T)\} = \max[0, V_j(T) - F], \qquad (2.2)$$
+
+implying that
+
+$$V_j(T) = S_j(T) + B_j(T).$$
+
+The present value of the equity is thus
+
+$$S = \sum_{j=1}^{K} \psi_j S_j(T).$$
+
+In this setting, it is clear that the value of the unlevered firm $V_u$ is equal to the value $V_l$ of a levered firm since
+
+$$V_l = S + B = \sum_{j=1}^{K} \psi_j [B_j(T) + S_j(T)] = \sum_{j=1}^{K} \psi_j V_j(T) = V_u$$
+
+This result is known as the first proposition of Modigliani and Miller and may be stated as
+
+**Proposition 2.1.1 (MM1).** *The market value of any firm is independent of its capital structure*
+
+$$V_l = V_u. \qquad (2.3)$$
+
+*From Amaro de Matos §2.1.3 "The MM Propositions with Taxes", pp. 44–45 (PDF 62–63) — MM1 with taxes:*
+
+[…] In this section it is assumed that firms pay taxes at a rate $\tau \in [0, 1]$.
+
+Consider the case of a levered firm. In that case, let $T$ be the point in time where both taxes and the creditholders are paid. In case of bankruptcy, no taxes are paid; otherwise, the firm pays $\tau[V_j(T) - F]$. In other words, in any case the taxes are calculated in state $j$ as
+
+$$\theta_j^\tau(T) = \tau[V_j(T) - F]^+.$$
+
+[…] The debtholders will receive in state $j$
+
+$$B_j(T) = \min\{F, [V_j(T) - \theta_j^\tau(T)]^+\} = \min\{F, V_j(T)\},$$
+
+exactly the same payoff as without taxes. The equityholders are left in state $j$ with
+
+$$S_j^\tau(T) = V_j(T) - B_j(T) - \theta_j^\tau(T). \qquad (2.5)$$
+
+[…] Given the payoffs in the presence of taxes, the value of the unlevered firm is
+
+$$V_u^\tau = (1 - \tau)\sum_{j=1}^{K} \psi_j V_j(T).$$
+
+In the case of the levered firm, the firm generates for equity and debtholders the value
+
+$$V_l^\tau = \sum_{j=1}^{K} \psi_j [S_j^\tau(T) + B_j(T)].$$
+
+[…] In other words,
+
+$$V_l^\tau = (1 - \tau)\sum_{j=1}^{K} \psi_j V_j(T) + \tau \sum_{j=1}^{K} \psi_j B_j(T) = V_u^\tau + \tau B.$$
+
+This result is known as the proposition of Modigliani and Miller under taxes and is summarized as
+
+**Proposition 2.1.3.** *Under the absence of arbitrage opportunities and in the presence of taxes, the value of the firm increases linearly with the level of debt as*
+
+$$V_l^\tau = V_u^\tau + \tau B. \qquad (2.7)$$
+
+*From Amaro de Matos §1.2.5 "Beta Values", p. 26 (PDF 44) — the symbol $R$ in (2.1):*
+
+[…] The return on the preceding portfolio will be denoted by $R$ and is given by $R = 1 + r$. Such a portfolio is risk-free by construction and, as one would expect, for each unit invested at time 0 it gives back $(1 + r)$ units at $t = 1$.

@@ -239,7 +239,43 @@ b. What was Global's income in 2010?
 
 c. If Global's P/E ratio and number of shares outstanding remained unchanged, what was Global's share price in 2010?
 
-*Context: Berk Ch. 2, Table 2.3 (Global Corporation's income statement), p. 34; Global's P/E ratio (Eq. 2.19), p. 39.*
+#### Context needed to solve it
+
+*From Berk Ch. 2, Table 2.3 "Global Corporation's Income Statement Sheet for 2010 and 2009", p. 34 (PDF 65):*
+
+GLOBAL CORPORATION — Income Statement — Year ended December 31 (in \$ millions)
+
+| | 2010 | 2009 |
+|---|---|---|
+| Net sales | 186.7 | 176.1 |
+| Cost of sales | −153.4 | −147.3 |
+| **Gross Profit** | 33.3 | 28.8 |
+| Selling, general, and administrative expenses | −13.5 | −13 |
+| Research and development | −8.2 | −7.6 |
+| Depreciation and amortization | −1.2 | −1.1 |
+| **Operating Income** | 10.4 | 7.1 |
+| Other income | — | — |
+| **Earnings Before Interest and Taxes (EBIT)** | 10.4 | 7.1 |
+| Interest income (expense) | −7.7 | −4.6 |
+| **Pretax Income** | 2.7 | 2.5 |
+| Taxes | −0.7 | −0.6 |
+| **Net Income** | 2.0 | 1.9 |
+| Earnings per share: | \$0.56 | \$0.53 |
+| Diluted earnings per share: | \$0.53 | \$0.50 |
+
+*From Berk Ch. 2, Eq. 2.8, p. 34 (PDF 65):*
+
+Net income represents the total earnings of the firm's equity holders. It is often reported on a per-share basis as the firm's earnings per share (EPS), which we compute by dividing net income by the total number of shares outstanding:
+
+$$\text{EPS} = \frac{\text{Net Income}}{\text{Shares Outstanding}} = \frac{\$2.0 \text{ million}}{3.6 \text{ million shares}} = \$0.56 \text{ per share} \qquad (2.8)$$
+
+*From Berk Ch. 2, "Valuation Ratios", Eq. 2.19, p. 39 (PDF 70):*
+
+Analysts and investors use a number of ratios to gauge the market value of the firm. The most important is the firm's price-earnings ratio (P/E):
+
+$$\text{P/E Ratio} = \frac{\text{Market Capitalization}}{\text{Net Income}} = \frac{\text{Share Price}}{\text{Earnings per Share}} \qquad (2.19)$$
+
+That is, the P/E ratio is the ratio of the value of equity to the firm's earnings, either on a total basis or on a per-share basis. Following Eq. 2.19, Global's P/E ratio in 2010 was $36/2.0 = 10/0.56 = 18$.
 
 ---
 

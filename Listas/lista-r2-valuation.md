@@ -264,7 +264,51 @@ Consider a one-period economy with two possible states of nature at time $t = 1$
 
 (b) Consider another project (project 2) with payoffs $\Gamma_{21} = -2$ and $\Gamma_{22} = 4$. The investment necessary to do project 1 is 5; to do project 2, we must invest 2. Will an agent invest in both projects?
 
-*Context: Amaro de Matos §1.2.1–1.2.4, pp. 18–24.*
+#### Context needed to solve it
+
+*From Amaro de Matos §1.2.1 "One-Period Model", pp. 18–19 (PDF 36–37):*
+
+Uncertainty is thus described by a set of states belonging to a finite sample space $\Omega = \{w_1, w_2, \dots, w_K\}$, where each state $w_j$ occurs with probability $p(w_j)$, denoted for simplicity as $p_j$. […] Also, instead of having one single project to consider for investment, assume that the investor faces a bundle of $N$ different one-period projects. Each of these projects has an initial value $V_i$, $i = 1, \dots, N$, and at time $t = 1$ pays $\Gamma_i(w_j)$ in state $j = 1, 2, \dots, K$. For simplicity of notation, let $\Gamma_i(w_j)$ be denoted by $\Gamma_{ij}$. These values define a value vector $V \in R^N$ and a payoff $N \times K$ matrix $\Gamma$, given by
+
+$$\Gamma = (\Gamma_1, \Gamma_2, \dots, \Gamma_K) = \begin{bmatrix} \Gamma_{11} & \Gamma_{12} & \cdots & \Gamma_{1K} \\ \Gamma_{21} & \Gamma_{22} & \cdots & \Gamma_{2K} \\ \vdots & \vdots & \ddots & \vdots \\ \Gamma_{N1} & \Gamma_{N2} & \cdots & \Gamma_{NK} \end{bmatrix}$$
+
+where $\Gamma_j$ denotes the $N$-dimensional column vector of payoffs in state $j$.
+
+*From Amaro de Matos §1.2.1, p. 21 (PDF 39):*
+
+In other words, completeness of the market is equivalent to having the number of projects with linearly independent payoffs $N$ equal to the number of states $K$. […] In other words, an optimal portfolio choice links the $N$-dimensional value vector of the projects $V$ to the $N \times K$ matrix of future payoffs by the relationship
+
+$$V = \sum_{j=1}^{K} p_j \Gamma_j \frac{\partial U/\partial y_j}{\partial U/\partial x} = \sum_{j=1}^{K} \Gamma_j \psi_j,$$
+
+where
+
+$$p_j \frac{\partial U/\partial y_j}{\partial U/\partial x} \equiv \psi_j > 0 \qquad (1.12)$$
+
+given the assumption that utilities are strictly increasing. […] For that reason the $K$-dimensional vector $\psi$ is termed the vector of *state-prices* and $\psi_j$ is called the price of state $j$.
+
+*From Amaro de Matos §1.2.2 "Value and the Absence of Arbitrage", pp. 22–23 (PDF 40–41):*
+
+**Proposition 1.2.1.** *The absence of arbitrage opportunities is equivalent to the existence of a strictly positive vector of state-prices $\psi \in R^K_+$ such that $V = \Gamma\psi$.*
+
+[…] Again, if the market is complete at $t = 0$, the $K$ components of $\psi$ solve a system of $K = N$ independent linear equations. In other words, the vector of state-prices is clearly uniquely defined as
+
+$$\psi = \Gamma^{-1} V.$$
+
+*From Amaro de Matos §1.2.3 "Arbitrage Opportunities and Investment", p. 23 (PDF 41):*
+
+In fact, under the absence of arbitrage opportunities, the required investment $I^\top\theta$ in a portfolio $\theta$ must equal its value $V^\top\theta$. Otherwise an arbitrage opportunity exists, allowing an increase of current consumption by $(V - I)^\top\theta$, for fixed future consumption or, equivalently, increasing future consumption by $(V - I)^\top\theta(1 + r)$, for fixed current consumption. In the language of the first section of this chapter, $(V - I)^\top\theta$ would be the net present value of such an arbitrage opportunity.
+
+*From Amaro de Matos §1.2.4 "Value and the Martingale Measure", p. 24 (PDF 42):*
+
+Assume the existence of an investment such that its payoff is a constant and therefore does not depend on state of nature to be realized in the future. Such an investment is said to be *risk-free*. As in section 1.1, assume that for each unit invested at time 0, a number $(1 + r)$ of consumption units are received at time 1. It then follows from Proposition 1.2.1 that
+
+$$1 = (1 + r) \sum_{j=1}^{K} \psi_j$$
+
+and the value vector may be rewritten as
+
+$$V = \frac{1}{1 + r} \Gamma \pi, \qquad (1.13)$$
+
+where $\pi$ is an $K$-dimensional vector with components $\pi_i = \psi_i \big/ \sum_{j=1}^{K} \psi_j$.
 
 ---
 
@@ -273,4 +317,48 @@ Consider a one-period economy with two possible states of nature at time $t = 1$
 
 Consider two agents, A and B, who live in a one-period economy defined by two points in time. They are given endowments at both points in time. Both agents have the possibility of making productive investments. However, there is uncertainty with respect to the return of this investment in the future. With probability $p$ it is $F_1(\epsilon)$ and with probability $1 - p$ it is $F_2(\epsilon)$. As a consequence, an agent who makes a productive investment cannot be certain about the future consumption. With probability $p$ agent $i$ can consume $y_i^1$ and with probability $1 - p$ can consume $y_i^2$. Their preferences are described by a utility function $V_i = EU_i(x, y)$ where $U_i(x, y)$ has the properties described in section 1.1. Find sufficient conditions for the level of investment to be independent of the preferences and of the endowments of the agents.
 
-*Context: Amaro de Matos §1.1, pp. 5–17 (Fisher separation under certainty), and §1.2, pp. 18–28.*
+#### Context needed to solve it
+
+*From Amaro de Matos §1.1.1 "The Robinson Crusoe Economy", pp. 5–6 (PDF 23–24) — the properties of $U(x, y)$:*
+
+He lives in a one-period economy, defined by two points in time: now and the future (say, one year from now). […] He is given endowments in a nonperishable good. Let $X$ denote the initial endowment and $Y$ denote the promised future endowment. Given this situation, Robinson faces a problem—namely, to choose how much to consume today, $x$, as compared to how much to consume in the second period, $y$. […] Let us assume that his time preferences for consumption are fully characterized by a utility function $U(x, y)$ defined in $R^2_+$ […]
+
+**Assumption 1.1.1.** *The utility function $U(x, y)$ is continuous and twice differentiable in its two arguments.*
+
+Within this context the derivatives with respect to the first and second arguments are denoted, respectively, by $U_1$ and $U_2$. The second derivatives are denoted accordingly, and we incorporate the usual assumption that
+
+**Assumption 1.1.2.** *Utility functions increase in both arguments at decreasing rates.*
+
+In other words, both $U_1$ and $U_2$ are positive, and both $U_{11}$ and $U_{22}$ are negative. […]
+
+**Assumption 1.1.3.** *The utility function $U(x, Y + X - x)$ is strictly concave as a function of $x$.*
+
+*From Amaro de Matos §1.1.3 "Production Opportunities", p. 8 (PDF 26):*
+
+**Assumption 1.1.4.** *At an investment level $I$, assume that an additional marginal investment has a marginal nonincreasing rate of return $\varphi(I)$, which is always positive.*
+
+*From Amaro de Matos §1.1.5 "Consumption and Investment with Capital Markets", pp. 11–12 (PDF 29–30) — the certainty benchmark (Fisher separation):*
+
+**Assumption 1.1.5.** *The infimum of the marginal decreasing rate of return $\varphi(I)$, which is always positive, is smaller than the interest rate $r$.*
+
+[…] Given the endowment pair $(X, Y)$, the existence of financial markets allows us to borrow money for investment. Let $\epsilon$ be the amount to be invested in the investment schedule. Thus, consuming $x$ at the initial time $t = 0$, the amount available for the investment is $X - x$. If the required investment $\epsilon$ is greater than $X - x$, the amount $\epsilon - (X - x)$ must be borrowed from the bank. This implies that at time $t = 1$ the investor must pay back $[\epsilon - (X - x)](1 + r)$ to the bank. If, on the other hand, the required investment $\epsilon$ is smaller than $X - x$, the amount $(X - x) - \epsilon$ must be lent to the bank. Hence, in any case, the future consumption will be given by
+
+$$y(x) = Y + \int_0^{\epsilon} [1 + \varphi(I)]\, dI - [\epsilon - (X - x)](1 + r) \qquad (1.5)$$
+
+$$= X + Y - x + \int_0^{\epsilon} \varphi(I)\, dI - [\epsilon - (X - x)]\, r. \qquad (1.6)$$
+
+Then the problem is to maximize the utility $U(x, y)$ subject to the possibilities allowed by the production schedule or, equivalently, maximizing $U(x, y(x))$ with $y(x)$ given by equation (1.5), subject to $\epsilon \ge 0$. Maximization must be performed with respect to $x$ and $\epsilon$. It is simple to check that the first-order condition with respect to $\epsilon$ does not depend on $x$ and $y$, leading to an optimal value $\epsilon^*$ of $\epsilon$ given by
+
+$$\epsilon^* = \begin{cases} 0 & r \ge \varphi(0) \\ \varphi^{-1}(r) & \varphi(0) \ge r. \end{cases}$$
+
+This result may be interpreted as follows: The optimal level of investment $\epsilon^*$ does not depend on the preferences of the agents over the levels of consumption in both periods. […]
+
+**Proposition 1.1.1 (Fisher separation).** *The optimal production decision is determined by an objective market criterion independently of individuals' subjective preferences that define their consumption decisions.*
+
+*From Amaro de Matos §1.2.1 "One-Period Model", pp. 18–19 and 21 (PDF 36–37, 39) — expected utility and complete markets:*
+
+Uncertainty is thus described by a set of states belonging to a finite sample space $\Omega = \{w_1, w_2, \dots, w_K\}$, where each state $w_j$ occurs with probability $p(w_j)$, denoted for simplicity as $p_j$. […] A commonly accepted utility representation is the *von Neumann-Morgenstern utility function*,
+
+$$U^*(x, y) = EU(x, y) = \sum_{j=1}^{K} U(x, y_j)\, p_j,$$
+
+also known as the *expected utility function*. […] In other words, completeness of the market is equivalent to having the number of projects with linearly independent payoffs $N$ equal to the number of states $K$.

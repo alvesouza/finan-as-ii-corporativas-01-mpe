@@ -57,7 +57,7 @@ Rationale and verification commands for each rule: `rules/core.md`
 Load what matches. Index: `rules/INDEX.md`. Cite as `pack-id#n`.
 
 <!-- GENERATED:packs:start -->
-`rules/` holds 6 packs: 3 engineering · 1 languages · 2 domain.
+`rules/` holds 7 packs: 3 engineering · 1 languages · 3 domain.
 
 **Read `rules/INDEX.md` to find the one that matches your task** — it maps pack to subject in one table. Load only that pack. Each pack may point to a `rules/references/<id>.md` appendix; load that only when implementing.
 <!-- GENERATED:packs:end -->

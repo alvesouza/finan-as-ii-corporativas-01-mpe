@@ -81,7 +81,85 @@ $$\hat A = A.$$
 
 How does the probability that the project is undertaken vary with $A$?
 
-*Context: Tirole §3.2, pp. 115–125.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
+
+*From Tirole §3.2.1, footnote 9, p. 116 (PDF 129):*
+
+"Random financing" contracts, in which the borrower brings equity in exchange for a probability between 0 and 1 of being financed may in some cases be optimal when the investment size is fixed (as it is here) or more generally in the presence of indivisibilities or increasing returns to scale (see Exercise 3.1). For simplicity, we focus on deterministic contracts.
 
 ---
 
@@ -100,7 +178,81 @@ $$p_H^A - p_L^A = p_H^B - p_L^B.$$
 
 Which variant is less prone to credit rationing?
 
-*Context: Tirole §3.2, pp. 115–125.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
 
 ---
 
@@ -117,7 +269,89 @@ Which variant is less prone to credit rationing?
 
 $$\max_c \left\{ \frac{\rho_1 - 1 - c}{1 - \rho_0 + (p_H/\Delta p)[b(c) + c - B]} \right\}.$$
 
-*Context: Tirole §3.4, pp. 127–130.*
+#### Context needed to solve it
+
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. […] we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
+As in Section 3.2, we assume that investment has positive NPV (net present value), here per unit of investment, if the borrower behaves,
+
+$$p_H R > 1, \qquad (3.7)$$
+
+but negative NPV otherwise,
+
+$$1 > p_L R + B, \qquad (3.8)$$
+
+so that unless one can control the agency problem the investment cannot be funded. We also make an assumption that guarantees that the equilibrium investment is finite:
+
+$$p_H R < 1 + \frac{p_H B}{\Delta p}. \qquad (3.9)$$
+
+[…] Finally, we keep assuming that the capital market is competitive. […]
+
+*From Tirole §3.4.2 "The Lenders' Credit Analysis", pp. 127–128 (PDF 140–141):*
+
+Following the steps of Section 3.2, the incentive compatibility and the breakeven conditions are
+
+$$(\Delta p) R_b \geqslant BI \qquad (\text{IC}_b)$$
+
+and
+
+$$p_H(RI - R_b) \geqslant I - A. \qquad (\text{IR}_l)$$
+
+In equilibrium, competitive lenders make no profit on the contract that is most advantageous for the borrower; the borrower's net utility is therefore equal to the social surplus brought about by the investment:
+
+$$U_b = (p_H R - 1) I. \qquad (3.10)$$
+
+From (3.10) it is optimal for the borrower to invest as much as possible. The upper bound on investment and in turn her borrowing capacity ("outside financing capacity" or "debt capacity") are determined by constraints (IC$_b$) and (IR$_l$). Substituting (IC$_b$) into (IR$_l$), we obtain
+
+$$I \leqslant kA, \qquad (3.11)$$
+
+where
+
+$$k = \frac{1}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.12)$$
+
+[…] the fact that $k > 1$ shows that the borrower can lever her wealth, $k$ being the multiplier. […]
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, and using (3.10) and (3.11), we have
+
+$$U_b^g \equiv vA, \qquad (3.14)$$
+
+where the shadow value of equity is
+
+$$v = \frac{p_H B/\Delta p}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.15)$$
+
+[…] Finally, let us introduce some notation that will be used repeatedly throughout the book. Let
+
+$$\rho_1 \equiv p_H R$$
+
+denote the expected payoff per unit of investment and
+
+$$\rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the expected pledgeable income per unit of investment. Assumptions (3.7) and (3.9) can be rewritten as
+
+$$\rho_1 > 1 > \rho_0.$$
+
+The equity multiplier is then
+
+$$k = \frac{1}{1 - \rho_0}, \qquad (3.11')$$
+
+the debt capacity per unit of net worth
+
+$$d = \frac{\rho_0}{1 - \rho_0}, \qquad (3.12')$$
+
+and the borrower's gross utility
+
+$$U_b^g = vA = \frac{\rho_1 - \rho_0}{1 - \rho_0} A. \qquad (3.14')$$
+
+The borrower's net utility can then be written as
+
+$$U_b^n = U_b = U_b^g - A = \frac{\rho_1 - 1}{1 - \rho_0} A = (\rho_1 - 1) I,$$
+
+as one could have expected.
 
 ---
 
@@ -146,7 +380,163 @@ Assume that $\bar A > 0$ and that the *lender* makes a take-it-or-leave-it offer
 
 (ii) *Variable investment.* Answer the first two bullets in question (i) (lender's optimal contract and impact of lender market power on the investment decision) in the variable-investment version. In particular, show that lender market power reduces the scale of investment. (Reminder: $I$ is chosen in $[0, \infty)$. The project yields $RI$ if successful and 0 if it fails. Shirking, which reduces the probability of success from $p_H$ to $p_L$, yields private benefit $BI$. Assume that $p_H R > 1 > p_H(R - B/\Delta p)$. Hint: show that the two constraints in the lender's program are binding.)
 
-*Context: Tirole §3.2, pp. 115–125, and §3.4, pp. 127–130.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
+
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. […] we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
+As in Section 3.2, we assume that investment has positive NPV (net present value), here per unit of investment, if the borrower behaves,
+
+$$p_H R > 1, \qquad (3.7)$$
+
+but negative NPV otherwise,
+
+$$1 > p_L R + B, \qquad (3.8)$$
+
+so that unless one can control the agency problem the investment cannot be funded. We also make an assumption that guarantees that the equilibrium investment is finite:
+
+$$p_H R < 1 + \frac{p_H B}{\Delta p}. \qquad (3.9)$$
+
+[…] Finally, we keep assuming that the capital market is competitive. […]
+
+*From Tirole §3.4.2 "The Lenders' Credit Analysis", pp. 127–128 (PDF 140–141):*
+
+Following the steps of Section 3.2, the incentive compatibility and the breakeven conditions are
+
+$$(\Delta p) R_b \geqslant BI \qquad (\text{IC}_b)$$
+
+and
+
+$$p_H(RI - R_b) \geqslant I - A. \qquad (\text{IR}_l)$$
+
+In equilibrium, competitive lenders make no profit on the contract that is most advantageous for the borrower; the borrower's net utility is therefore equal to the social surplus brought about by the investment:
+
+$$U_b = (p_H R - 1) I. \qquad (3.10)$$
+
+From (3.10) it is optimal for the borrower to invest as much as possible. The upper bound on investment and in turn her borrowing capacity ("outside financing capacity" or "debt capacity") are determined by constraints (IC$_b$) and (IR$_l$). Substituting (IC$_b$) into (IR$_l$), we obtain
+
+$$I \leqslant kA, \qquad (3.11)$$
+
+where
+
+$$k = \frac{1}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.12)$$
+
+[…] the fact that $k > 1$ shows that the borrower can lever her wealth, $k$ being the multiplier. […]
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, and using (3.10) and (3.11), we have
+
+$$U_b^g \equiv vA, \qquad (3.14)$$
+
+where the shadow value of equity is
+
+$$v = \frac{p_H B/\Delta p}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.15)$$
+
+[…] Finally, let us introduce some notation that will be used repeatedly throughout the book. Let
+
+$$\rho_1 \equiv p_H R$$
+
+denote the expected payoff per unit of investment and
+
+$$\rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the expected pledgeable income per unit of investment. Assumptions (3.7) and (3.9) can be rewritten as
+
+$$\rho_1 > 1 > \rho_0.$$
+
+The equity multiplier is then
+
+$$k = \frac{1}{1 - \rho_0}, \qquad (3.11')$$
+
+the debt capacity per unit of net worth
+
+$$d = \frac{\rho_0}{1 - \rho_0}, \qquad (3.12')$$
+
+and the borrower's gross utility
+
+$$U_b^g = vA = \frac{\rho_1 - \rho_0}{1 - \rho_0} A. \qquad (3.14')$$
+
+The borrower's net utility can then be written as
+
+$$U_b^n = U_b = U_b^g - A = \frac{\rho_1 - 1}{1 - \rho_0} A = (\rho_1 - 1) I,$$
+
+as one could have expected.
 
 ---
 
@@ -169,7 +559,81 @@ Compute the minimum equity level $\bar A$ for which the project is financed by r
 
 (ii) Generalize the analysis to risk aversion. Let $u(c)$ denote the entrepreneur's utility from consumption with $u' > 0$, $u'' < 0$. Conduct the analysis assuming either limited liability or the absence of limited liability.
 
-*Context: Tirole §3.2, pp. 115–125.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
 
 ---
 
@@ -186,7 +650,135 @@ $$R \equiv R^S - R^F$$
 
 denote the increase in income from the low to the high level. Show that the debt contract is optimal, but unlike in the variable-investment case it may not be uniquely optimal.
 
-*Context: Tirole §3.2, pp. 115–125, and §3.4.3, pp. 128–130.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
+
+*From Tirole §3.4.3 "Collateral Values: Outside Debt and the Maximal Incentives Principle", pp. 128–129 (PDF 141–142):*
+
+We now return to the indeterminacy of the financial structure (debt or equity) discussed earlier. It turns out that this indeterminacy was an artefact of the absence of profit in the case of failure.
+
+Thus, assume that, for investment size $I$, the profit is $R^S I$ in the case of success and $R^F I$ in the case of failure, where $R^F$ is now positive. $R^F I$ can be thought of as the salvage value of assets and
+
+$$RI \equiv (R^S - R^F) I$$
+
+as the increase in profit brought about by success. […]
+
+The model is otherwise the same as in the rest of Section 3.4: the private benefit ($BI$ in the case of misbehavior, 0 otherwise) is also proportional to investment.
+
+The generalization of the condition that the NPV per unit of investment is positive while the pledgeable income per unit of investment is negative ($p_H R > 1 > p_H(R - B/\Delta p)$) is
+
+$$p_H R + R^F > 1 > p_H\left(R - \frac{B}{\Delta p}\right) + R^F.$$
+
+A contract specifies an investment level $I$ and a sharing rule, or equivalently a reward for the entrepreneur for each performance level: $\{R_b^S, R_b^F\}$, with $R_b^S, R_b^F \geqslant 0$ due to limited liability.
+
+The optimal contract maximizes the entrepreneur's expected compensation,
+
+$$U_b = \max_{\{R_b^S, R_b^F, I\}} \{p_H R_b^S + (1 - p_H) R_b^F - A\},$$
+
+subject to two constraints (that will turn out to be binding at the optimum): the entrepreneur's incentive constraint,
+
+$$(\Delta p)(R_b^S - R_b^F) \geqslant BI,$$
+
+and the investors' breakeven constraint,
+
+$$p_H(R^S I - R_b^S) + (1 - p_H)(R^F I - R_b^F) \geqslant I - A.$$
+
+To show that the investors' breakeven constraint is binding, note that, if it were not, then the entrepreneur could increase $R_b^S$ and $R_b^F$ by an equal and small amount without affecting the incentive compatibility constraint. This uniform increase in compensation would raise the entrepreneur's payoff. As is now familiar, we conclude that the investors receive no surplus, and so (by substituting the breakeven constraint into the objective function) the entrepreneur's utility is equal to the NPV:
+
+$$U_b = (p_H R + R^F - 1) I.$$
+
+Because the NPV per unit of investment is positive, the entrepreneur therefore chooses the highest possible investment.
+
+Next, note that the incentive constraint is binding (otherwise, the optimal investment would be infinite, which would violate the two constraints combined).
+
+Lastly, suppose that $R_b^F > 0$ at the optimum. And consider a small increase $\delta R_b^S > 0$ in managerial compensation in the case of success together with a small decrease $\delta R_b^F < 0$ in the case of failure that keeps the investors' profitability constant:
+
+$$p_H \delta R_b^S + (1 - p_H) \delta R_b^F = 0.$$
+
+This small change (which is feasible only if $R_b^F > 0$) also keeps the objective function constant. But the incentive constraint is now slack, a contradiction. We thus conclude that at the optimum
+
+$$R_b^F = 0.$$
+
+Hence, an all-equity firm cannot be optimal: in the absence of debt, the entrepreneur would receive $R^F I$ times her share of stocks in the firm, and therefore would be rewarded even in the case of failure. By contrast, investors' holding debt $D \geqslant R^F I$ is an optimal financial structure. Using the fact that the two constraints are binding, the borrowing capacity is given by
+
+$$R^F I + p_H\left(R - \frac{B}{\Delta p}\right) I = I - A$$
+
+or
+
+$$I = \frac{A}{1 - [p_H(R - B/\Delta p) + R^F]}. \qquad (3.16)$$
 
 ---
 
@@ -199,7 +791,85 @@ denote the increase in income from the low to the high level. Show that the debt
 
 (ii) Show that it is possible that the first project is funded even though it would not be funded if the second project did not exist and even though the entrepreneur cannot pledge at date 1 income resulting from the second project.
 
-*Context: Tirole §3.2, pp. 115–125.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
+
+*From Tirole §3.4.2, p. 128 (PDF 141) — definition of the shadow value of equity:*
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, […]
 
 ---
 
@@ -214,7 +884,89 @@ denote the increase in income from the low to the high level. Show that the debt
 
 (ii) How does the shadow value $v$ of assets (the derivative of the borrower's gross utility with respect to assets) vary with the level of assets?
 
-*Context: Tirole §3.4, pp. 127–130.*
+#### Context needed to solve it
+
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. […] we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
+As in Section 3.2, we assume that investment has positive NPV (net present value), here per unit of investment, if the borrower behaves,
+
+$$p_H R > 1, \qquad (3.7)$$
+
+but negative NPV otherwise,
+
+$$1 > p_L R + B, \qquad (3.8)$$
+
+so that unless one can control the agency problem the investment cannot be funded. We also make an assumption that guarantees that the equilibrium investment is finite:
+
+$$p_H R < 1 + \frac{p_H B}{\Delta p}. \qquad (3.9)$$
+
+[…] Finally, we keep assuming that the capital market is competitive. […]
+
+*From Tirole §3.4.2 "The Lenders' Credit Analysis", pp. 127–128 (PDF 140–141):*
+
+Following the steps of Section 3.2, the incentive compatibility and the breakeven conditions are
+
+$$(\Delta p) R_b \geqslant BI \qquad (\text{IC}_b)$$
+
+and
+
+$$p_H(RI - R_b) \geqslant I - A. \qquad (\text{IR}_l)$$
+
+In equilibrium, competitive lenders make no profit on the contract that is most advantageous for the borrower; the borrower's net utility is therefore equal to the social surplus brought about by the investment:
+
+$$U_b = (p_H R - 1) I. \qquad (3.10)$$
+
+From (3.10) it is optimal for the borrower to invest as much as possible. The upper bound on investment and in turn her borrowing capacity ("outside financing capacity" or "debt capacity") are determined by constraints (IC$_b$) and (IR$_l$). Substituting (IC$_b$) into (IR$_l$), we obtain
+
+$$I \leqslant kA, \qquad (3.11)$$
+
+where
+
+$$k = \frac{1}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.12)$$
+
+[…] the fact that $k > 1$ shows that the borrower can lever her wealth, $k$ being the multiplier. […]
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, and using (3.10) and (3.11), we have
+
+$$U_b^g \equiv vA, \qquad (3.14)$$
+
+where the shadow value of equity is
+
+$$v = \frac{p_H B/\Delta p}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.15)$$
+
+[…] Finally, let us introduce some notation that will be used repeatedly throughout the book. Let
+
+$$\rho_1 \equiv p_H R$$
+
+denote the expected payoff per unit of investment and
+
+$$\rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the expected pledgeable income per unit of investment. Assumptions (3.7) and (3.9) can be rewritten as
+
+$$\rho_1 > 1 > \rho_0.$$
+
+The equity multiplier is then
+
+$$k = \frac{1}{1 - \rho_0}, \qquad (3.11')$$
+
+the debt capacity per unit of net worth
+
+$$d = \frac{\rho_0}{1 - \rho_0}, \qquad (3.12')$$
+
+and the borrower's gross utility
+
+$$U_b^g = vA = \frac{\rho_1 - \rho_0}{1 - \rho_0} A. \qquad (3.14')$$
+
+The borrower's net utility can then be written as
+
+$$U_b^n = U_b = U_b^g - A = \frac{\rho_1 - 1}{1 - \rho_0} A = (\rho_1 - 1) I,$$
+
+as one could have expected.
 
 ---
 
@@ -233,7 +985,157 @@ $$\rho_0' \equiv p_H\left(R - \frac{p_H}{p_H + p_L}\frac{B}{\Delta p}\right) < 1
 
 (ii) Compute the borrower's utility under cross-pledging.
 
-*Context: Tirole §3.4, pp. 127–130, and §4.2, pp. 158–164.*
+#### Context needed to solve it
+
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. […] we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
+As in Section 3.2, we assume that investment has positive NPV (net present value), here per unit of investment, if the borrower behaves,
+
+$$p_H R > 1, \qquad (3.7)$$
+
+but negative NPV otherwise,
+
+$$1 > p_L R + B, \qquad (3.8)$$
+
+so that unless one can control the agency problem the investment cannot be funded. We also make an assumption that guarantees that the equilibrium investment is finite:
+
+$$p_H R < 1 + \frac{p_H B}{\Delta p}. \qquad (3.9)$$
+
+[…] Finally, we keep assuming that the capital market is competitive. […]
+
+*From Tirole §3.4.2 "The Lenders' Credit Analysis", pp. 127–128 (PDF 140–141):*
+
+Following the steps of Section 3.2, the incentive compatibility and the breakeven conditions are
+
+$$(\Delta p) R_b \geqslant BI \qquad (\text{IC}_b)$$
+
+and
+
+$$p_H(RI - R_b) \geqslant I - A. \qquad (\text{IR}_l)$$
+
+In equilibrium, competitive lenders make no profit on the contract that is most advantageous for the borrower; the borrower's net utility is therefore equal to the social surplus brought about by the investment:
+
+$$U_b = (p_H R - 1) I. \qquad (3.10)$$
+
+From (3.10) it is optimal for the borrower to invest as much as possible. The upper bound on investment and in turn her borrowing capacity ("outside financing capacity" or "debt capacity") are determined by constraints (IC$_b$) and (IR$_l$). Substituting (IC$_b$) into (IR$_l$), we obtain
+
+$$I \leqslant kA, \qquad (3.11)$$
+
+where
+
+$$k = \frac{1}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.12)$$
+
+[…] the fact that $k > 1$ shows that the borrower can lever her wealth, $k$ being the multiplier. […]
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, and using (3.10) and (3.11), we have
+
+$$U_b^g \equiv vA, \qquad (3.14)$$
+
+where the shadow value of equity is
+
+$$v = \frac{p_H B/\Delta p}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.15)$$
+
+[…] Finally, let us introduce some notation that will be used repeatedly throughout the book. Let
+
+$$\rho_1 \equiv p_H R$$
+
+denote the expected payoff per unit of investment and
+
+$$\rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the expected pledgeable income per unit of investment. Assumptions (3.7) and (3.9) can be rewritten as
+
+$$\rho_1 > 1 > \rho_0.$$
+
+The equity multiplier is then
+
+$$k = \frac{1}{1 - \rho_0}, \qquad (3.11')$$
+
+the debt capacity per unit of net worth
+
+$$d = \frac{\rho_0}{1 - \rho_0}, \qquad (3.12')$$
+
+and the borrower's gross utility
+
+$$U_b^g = vA = \frac{\rho_1 - \rho_0}{1 - \rho_0} A. \qquad (3.14')$$
+
+The borrower's net utility can then be written as
+
+$$U_b^n = U_b = U_b^g - A = \frac{\rho_1 - 1}{1 - \rho_0} A = (\rho_1 - 1) I,$$
+
+as one could have expected.
+
+*From Tirole §4.2 "Boosting the Ability to Borrow: Diversification and Its Limits", pp. 158–160 (PDF 171–173):*
+
+[…] diversification may bring substantial incentive benefits when projects are independent. Intuitively, the borrower can cross-pledge the incomes of various projects. That is, she can use the income she receives on a successful project as collateral for other projects. Such cross-pledging is useless when projects are correlated, because, when a project fails, the collateral posted for this project (the income from other projects) is valueless.
+
+*4.2.1 The Benefits of Diversification: The Case of Two Projects.* Let us consider two independent and identical projects with fixed investment size $I$. That is, the two projects are as described in Section 3.2. Projects succeed (yield $R$) or fail (yield 0). The probability of success is $p_H$ if the entrepreneur behaves (but then receives no private benefit) and $p_L$ if she misbehaves (and receives private benefit $B$). Let $2A$ denote the entrepreneur's initial wealth, that is, $A$ per project. The borrower is risk neutral and protected by limited liability. The lenders are risk neutral and demand an expected rate of return equal to 0.
+
+If both projects are funded, then the borrower can work on both, shirk on both, or work on either of them. There can also be four outcomes: both projects succeed, they both fail, or only one of them succeeds. It is clear that two projects are undertaken only if the incentive scheme induces the borrower to work on both projects. Otherwise, the borrower would be better off undertaking one project or none.
+
+*4.2.1.1 Project Financing.* Let us begin with the benchmark of stand-alone financing for each project. Project financing refers to the provision of funding for a given, well-identified project. The analysis is then that of Section 3.2 for each project taken in isolation. The borrower receives $R_b$ in the case of success and 0 in the case of failure of a given project, independently of what happens in the borrower's other activity. As usual, the incentive constraint for a given project is
+
+$$(\Delta p) R_b \geqslant B,$$
+
+and the per-project financing condition is that the pledgeable income exceeds the investors' initial outlay:
+
+$$p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A$$
+
+or
+
+$$A \geqslant \bar A.$$
+
+This condition can be interpreted as a capital or net worth requirement. If $A < \bar A$, project financing is not viable.
+
+Note that project financing does not make full use of the borrower's potential liability. When project 1, say, fails, then with conditional probability $p_H$ (which is the prior probability under statistical independence of the two projects), project 2 is successful and returns $R_b$ to the entrepreneur. Even under limited liability the entrepreneur's income on the first project can be brought down to $[-R_b]$ (conditional on the second project succeeding) rather than 0. We now make use of this observation.
+
+*4.2.1.2 Cross-Pledging.* Let us now bring the two projects under a single roof (a "firm"), or at least allow joint liability between the two projects, so that the income on one project is used as collateral for the other project. Let $R_2$, $R_1$, $R_0$ denote the borrower's reward when the number of successful projects is 2, 1, 0, respectively. A risk-neutral borrower cares only about her expected reward, and thus the loan agreement should be structured so as to provide the borrower with maximal incentives for a given expected reward
+
+$$p_H^2 R_2 + 2 p_H (1 - p_H) R_1 + (1 - p_H)^2 R_0.$$
+
+Intuitively, this requires that the borrower be rewarded only when the two projects are successful, namely, $R_2 > 0$, $R_1 = R_0 = 0$ (or, more precisely, there always exists *one* optimal incentive scheme which rewards the borrower only in the case of full success). […] Note that $R_1 = 0$ corresponds to full cross-pledging (contrast this with project financing, under which $R_1 = R_b > 0$, where $R_b$ is the entrepreneur's compensation in the case of success in a given project).
+
+Taking this feature of the incentive scheme for granted, the condition that guarantees that the borrower prefers to work on both projects to working on neither is
+
+$$p_H^2 R_2 - 2B \geqslant p_L^2 R_2$$
+
+or
+
+$$(p_H + p_L) R_2 \geqslant 2 \frac{B}{\Delta p}. \qquad (4.1)$$
+
+Note that this condition implies that the borrower also prefers to work on both projects to working on a single one: by shirking on the second project, say, the borrower reduces the probability of full success by $p_H$ (the probability that the first project succeeds) times $\Delta p$ (the reduction in the second project's probability of success). And thus the second incentive constraint can be written as
+
+$$p_H (\Delta p) R_2 \geqslant B. \qquad (4.2)$$
+
+Since $p_H > \frac{1}{2}(p_H + p_L)$, this second constraint (4.2) is automatically satisfied if the first, (4.1), is.
+
+Let us now compute the expected pledgeable income. It is equal to the expected return on the projects, $2 p_H R$, minus the minimum expected payoff to the borrower, $p_H^2 R_2$, that is consistent with incentive compatibility. From (4.1) the latter is
+
+$$p_H^2 R_2 = \frac{2 p_H^2 B}{(p_H + p_L) \Delta p} = 2(1 - d_2) \frac{p_H B}{\Delta p},$$
+
+where
+
+$$d_2 \equiv \frac{p_L}{p_L + p_H} \in \left(0, \tfrac{1}{2}\right)$$
+
+is an agency-based measure of economies of diversification into two independent projects. Letting $2A$ denote the borrower's initial net worth (so, $A$ is her per-project cash on hand), the two projects can be funded if
+
+$$2 p_H R - 2(1 - d_2) \frac{p_H B}{\Delta p} \geqslant 2I - 2A,$$
+
+or
+
+$$p_H\left[R - (1 - d_2) \frac{B}{\Delta p}\right] \geqslant I - A, \qquad (4.3)$$
+
+or
+
+$$A \geqslant \bar{\bar A}, \quad \text{with } \bar{\bar A} \equiv I - p_H\left[R - (1 - d_2) \frac{B}{\Delta p}\right] < \bar A.$$
+
+Thus, cross-pledging facilitates financing. […]
+
+*Variable investment size.* In the case of fixed investment sizes, the benefit from diversification takes the form of a facilitated access to financing. Conditional on getting financing, the total NPV ($2(p_H R - I)$) is, of course, unchanged. With variable investment sizes, the extent of financing, rather than the access to financing, is the issue. Then diversification increases the borrowing capacity and therefore the NPV (see Exercise 4.10).
 
 ---
 
@@ -270,7 +1172,81 @@ $$\tfrac{1}{2}R^2 > (I_L + I_H) - 2A,$$
 
 and so both projects can be financed by pooling resources. Do the entrepreneurs, behind the veil of ignorance, want to pool their resources and commit to force the lucky firm to cross-subsidize the unlucky one? (Hint: show that under pooling, and, if both invest, the net worth is split so that both entrepreneurs have the same stake in success.)
 
-*Context: Tirole §3.2, pp. 115–125.*
+#### Context needed to solve it
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
 
 ---
 
@@ -332,4 +1308,170 @@ Show that the entrepreneur hedges.
 
 (v) *Liquidity and risk management.* Suppose, in contrast with Froot et al.'s analysis, that the entrepreneur can sign a contract with investors at date 0. Show that the entrepreneur's utility can be maximized by insulating the date-1 volume of investment from the realization of $\varepsilon$, i.e., with full hedging, even in situations where gambling was optimal when funding was secured only at date 1.
 
-*Context: Tirole §3.2, pp. 115–125, and §3.4, pp. 127–130.*
+#### Context needed to solve it
+
+**Part 0 — the model of Exercise 3.20 that question (ii) refers to.** *From Tirole, Ch. 3, Exercise 3.20, p. 152 (PDF 165) · Answer in book: yes, p. 580:*
+
+An entrepreneur has cash $A$ and wants to invest $I > A$ into a fixed-size project. The project yields $R$ with probability $p$ and 0 with probability $1 - p$. Reaching a probability of success $p$ requires the entrepreneur to sink (unobservable) effort cost $\frac{1}{2}p^2$ (there is no private benefit in this version). The borrower is risk neutral and is protected by limited liability. Investors are risk neutral and the market rate of interest is 0. Assume that $\sqrt{2I} < R < 1$.
+
+(i) Note that, had the borrower no need to borrow ($A \geqslant I$), the borrower's net utility would be
+
+$$U_b = V^* = \tfrac{1}{2}R^2 - I,$$
+
+independently of $A$.
+
+*From Tirole §3.2.1 "The Fixed-Investment Model", pp. 115–116 (PDF 128–129):*
+
+Variants of the following entrepreneurial model will be used in the following: an entrepreneur (also called the "insider" or the "borrower," "she") has a project. This project requires a fixed investment $I$. The entrepreneur initially has "assets" ("cash on hand" or "net worth") $A < I$. For the moment we interpret these assets as being cash or liquid securities that can be used toward covering the cost of investment. […] The entrepreneur's cash can either be invested in the project or used for consumption. To implement the project the entrepreneur must borrow $I - A$ from lenders. […]
+
+*Project.* If undertaken, the project either succeeds, that is, yields verifiable income $R > 0$, or fails, that is, yields no income. The probability of success is denoted by $p$. The project is subject to moral hazard. The entrepreneur can "behave" ("work," "exert effort," "take no private benefit") or "misbehave" ("shirk," "take a private benefit") […].
+
+Behaving yields probability $p = p_H$ of success and no private benefit to the entrepreneur, and misbehaving results in probability $p = p_L < p_H$ of success and private benefit $B > 0$ (measured in units of account) to the entrepreneur. In the "effort interpretation," $B$ can also be interpreted as a disutility of effort saved by the entrepreneur when shirking. Let $\Delta p \equiv p_H - p_L$.
+
+*Preferences and the loan agreement.* Both the borrower and the potential lenders (or "investors") are risk neutral. For notational simplicity, there is no time preference; the rate of return expected by investors (which is also the riskless rate, due to risk neutrality) is taken to be 0. The borrower is protected by limited liability, and so her income cannot take negative values.
+
+Lenders behave competitively in the sense that the loan, if any, makes zero profit. […]
+
+Let us turn to the loan contract. A contract first stipulates whether the project is financed. If so, it further specifies how the profit is shared between the lenders and the borrower. The borrower's limited liability will imply that both sides receive 0 in the case of failure […]. In the case of success, the two parties share the profit $R$; $R_b$ goes to the borrower and $R_l$ to the lenders. To sum up, we posit an incentive scheme for the entrepreneur of the following form: $R_b$ in the case of success, 0 in the case of failure.
+
+[…] We summarize the timing in Figure 3.1.
+
+Figure 3.1 (timeline, left to right): Loan agreement (sharing rule) → Investment → Moral hazard → Outcome.
+
+We assume that the project is viable only in the absence of moral hazard. That is, the project has positive NPV if the entrepreneur behaves,
+
+$$p_H R - I > 0, \qquad (3.1)$$
+
+but negative NPV, even if one includes the borrower's private benefit, if she does not,
+
+$$p_L R - I + B < 0. \qquad (3.2)$$
+
+*From Tirole §3.2.2 "The Lenders' Credit Analysis", pp. 116–117 (PDF 129–130):*
+
+[…] the borrower will therefore behave if the following "incentive compatibility constraint" is satisfied:
+
+$$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B. \qquad (\text{IC}_b)$$
+
+From this incentive compatibility constraint we infer that the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives is
+
+$$R - \frac{B}{\Delta p}.$$
+
+The *(expected) pledgeable income* is then
+
+$$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
+
+Because the lenders must break even in order to be willing to finance the project, a necessary condition for the borrower to receive a loan is that the expected pledgeable income exceed the lenders' initial outlay:
+
+$$\mathcal{P} \equiv p_H\left(R - \frac{B}{\Delta p}\right) \geqslant I - A, \qquad (\text{IR}_l)$$
+
+[…] Thus a necessary condition for financing to be arranged is
+
+$$A \geqslant \bar A = p_H \frac{B}{\Delta p} - (p_H R - I). \qquad (3.3)$$
+
+To make things interesting, we will assume that
+
+$$\bar A > 0 \iff p_H R - I < p_H \frac{B}{\Delta p}, \qquad (3.4)$$
+
+otherwise even a borrower with no wealth of her own would be able to obtain credit. […]
+
+Thus, *the borrower must have enough assets in order to be granted a loan.* Note that, if $A < \bar A$, the project has positive NPV and yet is not funded. […] There is *credit rationing*. […]
+
+Conversely, if $A \geqslant \bar A$, the entrepreneur is able to secure financing, and so condition (3.3) is both a necessary and a sufficient condition for financing. The entrepreneur offers claim $R_l$ to competitive investors so as not to leave them with a surplus:
+
+$$p_H R_l = I - A.$$
+
+Her stake,
+
+$$R_b = R - R_l = R - \frac{I - A}{p_H} \geqslant R - \frac{I - \bar A}{p_H} = \frac{B}{\Delta p}, \qquad (3.5)$$
+
+then induces her to behave.
+
+[…] Using the breakeven condition for the lenders ($p_H R_l = I - A$), the borrower obtains net utility or payoff (where "net" means that we subtract the consumption utility, $A$, that the entrepreneur would get by not undertaking the project):
+
+$$U_b = \begin{cases} 0 & \text{if } A < \bar A, \\ p_H R_b - A = p_H(R - R_l) - A = p_H R - I & \text{if } A \geqslant \bar A. \end{cases} \qquad (3.6)$$
+
+As could have been expected from the zero-profit condition for the lenders, *the borrower receives the entire social surplus or net present value if the project is funded.*
+
+So, the borrower's utility jumps up at $A = \bar A$. […]
+
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. […] we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
+As in Section 3.2, we assume that investment has positive NPV (net present value), here per unit of investment, if the borrower behaves,
+
+$$p_H R > 1, \qquad (3.7)$$
+
+but negative NPV otherwise,
+
+$$1 > p_L R + B, \qquad (3.8)$$
+
+so that unless one can control the agency problem the investment cannot be funded. We also make an assumption that guarantees that the equilibrium investment is finite:
+
+$$p_H R < 1 + \frac{p_H B}{\Delta p}. \qquad (3.9)$$
+
+[…] Finally, we keep assuming that the capital market is competitive. […]
+
+*From Tirole §3.4.2 "The Lenders' Credit Analysis", pp. 127–128 (PDF 140–141):*
+
+Following the steps of Section 3.2, the incentive compatibility and the breakeven conditions are
+
+$$(\Delta p) R_b \geqslant BI \qquad (\text{IC}_b)$$
+
+and
+
+$$p_H(RI - R_b) \geqslant I - A. \qquad (\text{IR}_l)$$
+
+In equilibrium, competitive lenders make no profit on the contract that is most advantageous for the borrower; the borrower's net utility is therefore equal to the social surplus brought about by the investment:
+
+$$U_b = (p_H R - 1) I. \qquad (3.10)$$
+
+From (3.10) it is optimal for the borrower to invest as much as possible. The upper bound on investment and in turn her borrowing capacity ("outside financing capacity" or "debt capacity") are determined by constraints (IC$_b$) and (IR$_l$). Substituting (IC$_b$) into (IR$_l$), we obtain
+
+$$I \leqslant kA, \qquad (3.11)$$
+
+where
+
+$$k = \frac{1}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.12)$$
+
+[…] the fact that $k > 1$ shows that the borrower can lever her wealth, $k$ being the multiplier. […]
+
+Another important concept (which will be used, for example, in computing the value of retained earnings in a dynamic context) is the *shadow value $v$ of equity (here cash)*. The entrepreneur derives gross utility $v > 1$ from one more unit of equity. Letting $U_b^g \equiv A + U_b$ denote the borrower's gross utility, and using (3.10) and (3.11), we have
+
+$$U_b^g \equiv vA, \qquad (3.14)$$
+
+where the shadow value of equity is
+
+$$v = \frac{p_H B/\Delta p}{1 - p_H(R - B/\Delta p)} > 1. \qquad (3.15)$$
+
+[…] Finally, let us introduce some notation that will be used repeatedly throughout the book. Let
+
+$$\rho_1 \equiv p_H R$$
+
+denote the expected payoff per unit of investment and
+
+$$\rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the expected pledgeable income per unit of investment. Assumptions (3.7) and (3.9) can be rewritten as
+
+$$\rho_1 > 1 > \rho_0.$$
+
+The equity multiplier is then
+
+$$k = \frac{1}{1 - \rho_0}, \qquad (3.11')$$
+
+the debt capacity per unit of net worth
+
+$$d = \frac{\rho_0}{1 - \rho_0}, \qquad (3.12')$$
+
+and the borrower's gross utility
+
+$$U_b^g = vA = \frac{\rho_1 - \rho_0}{1 - \rho_0} A. \qquad (3.14')$$
+
+The borrower's net utility can then be written as
+
+$$U_b^n = U_b = U_b^g - A = \frac{\rho_1 - 1}{1 - \rho_0} A = (\rho_1 - 1) I,$$
+
+as one could have expected.

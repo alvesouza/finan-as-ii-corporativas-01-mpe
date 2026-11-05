@@ -1,0 +1,528 @@
+% =============================================================================
+% Worked solutions for Listas/PS2.pdf (Corporate Finance -- Problem Set 2).
+% Short answer key: Listas/PS2-solutions-short.tex.
+% Compile: python -I Listas/PS2-solutions_check.py (writes PS2-solutions-table.tex), then
+%          pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Problem Set 2 --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
+\makeatother
+\numberwithin{equation}{section}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newenvironment{notation}{\par\noindent\textbf{Notation.}\begin{itemize}[leftmargin=1.4em]}{\end{itemize}}
+\newcommand{\intuition}[1]{\par\medskip\noindent\textbf{Intuition.}~#1}
+\newcommand{\refline}[1]{\par\smallskip\noindent{\small\color{black!70}\textbf{Ref:} #1}}
+\newcommand{\remark}[1]{\par\smallskip\noindent\textit{Remark.}~#1}
+\newcommand{\answer}[1]{\par\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Answer.}~#1}}\par}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Corporate Finance --- Problem Set 2}\\[4pt]
+  {\large Worked solutions}
+\end{center}
+
+\noindent Statement: \texttt{Listas/PS2.pdf}. Each exercise is restated briefly, then solved
+step by step. Rates are written as decimals inside equations. References are to the lecture
+slides (\texttt{Aula/Topic2A.pdf}, \texttt{Aula/Topic2B.pdf}) and to Berk, DeMarzo \& Harford,
+\emph{Fundamentals of Corporate Finance}, 2nd ed.\ (2011). Every number below is reproduced by
+\texttt{Listas/PS2-solutions\_check.py}, which also generates the table of Appendix~A. A short
+answer key is in \texttt{Listas/PS2-solutions-short.pdf}. The statement labels two parts of
+Exercise~1 as ``(e)''; the second is called (e$'$) here.
+
+% =============================================================================
+\section{Exercise 1 --- State prices, options and MM in a complete market}
+
+\noindent\textbf{Data.} Two equally likely states at $t=1$, slump ($s$) and boom ($b$). Stock: price
+$1.05$, payoff $(0,\ 2.5)$. Bond: price $0.92$, payoff $(1,\ 1)$. Project: investment $1$ at $t=0$,
+payoff $(0.5,\ 3)$. MM assumptions hold, no taxes. The entrepreneur has no money.
+
+\begin{notation}
+  \item $\psi_s,\psi_b>0$: state prices, the $t=0$ price of 1 paid only in the slump (boom).
+  \item $r_f$: risk-free rate; $q_s,q_b$: risk-neutral probabilities, $q_\omega=\psi_\omega(1+r_f)$.
+  \item $X=(X_s,X_b)=(0.5,\,3)$: project payoff; $A$: market value of the project (the firm's assets).
+  \item $C(K)$, $P(K)$: prices of a call and a put on the project with strike $K\ge0$.
+  \item $D$: amount raised with debt (= market value of debt); $F$: face value of debt.
+  \item $E$: market value of equity; $r_A,r_D,r_E$: expected returns, computed with the true
+        probabilities $\tfrac12,\tfrac12$.
+\end{notation}
+
+\subsection*{(a) State prices}
+
+\step{1}{Pricing equations} A traded asset's price is the sum of its payoffs times state prices:
+\begin{align}
+  \text{Stock:}\quad 0\,\psi_s + 2.5\,\psi_b &= 1.05, \label{eq:1stock}\\
+  \text{Bond:}\quad 1\,\psi_s + 1\,\psi_b &= 0.92. \label{eq:1bond}
+\end{align}
+
+\step{2}{Solve} From \eqref{eq:1stock}:
+\begin{equation}\label{eq:1psib}
+  \psi_b = \frac{1.05}{2.5} = 0.42 .
+\end{equation}
+Substituting \eqref{eq:1psib} into \eqref{eq:1bond}:
+\begin{equation}\label{eq:1psis}
+  \psi_s + (0.42) = 0.92 \quad\Longrightarrow\quad \psi_s = 0.50 .
+\end{equation}
+
+\step{3}{Implied rates and probabilities} The bond pays 1 for sure, so
+$1+r_f = 1/0.92$, i.e.\ $r_f = 0.086957$ (8.70\%). The risk-neutral probabilities are
+$q_s = 0.50/0.92 = 0.543478$ and $q_b = 0.42/0.92 = 0.456522$.
+
+\answer{The slump claim costs $\psi_s=0.50$ and the boom claim $\psi_b=0.42$.}
+
+\intuition{The two states are equally likely, yet a unit in the slump costs more than a unit in the
+boom ($0.50>0.42$). Investors value consumption most when they are poor; insurance against the
+slump is expensive. Equivalently, the risk-neutral probability of the slump (54.3\%) exceeds its
+true probability (50\%).}
+
+\step{4}{Value of the project} Using \eqref{eq:1psib}--\eqref{eq:1psis}:
+\begin{align}
+  A &= (0.5)(0.50) + (3)(0.42) \notag\\
+    &= 0.25 + 1.26 = 1.51 . \label{eq:1A}
+\end{align}
+The project costs 1 and is worth 1.51: $\mathrm{NPV}=0.51$.
+
+\subsection*{(b) Calls on the project}
+
+A call with strike $K$ pays $\max(X_\omega-K,0)$ in state $\omega$.
+\begin{align}
+  C(1)   &= \max(0.5-1,0)(0.50) + \max(3-1,0)(0.42) = 0 + (2)(0.42) = 0.84, \label{eq:1C1}\\
+  C(1.5) &= \max(0.5-1.5,0)(0.50) + \max(3-1.5,0)(0.42) = 0 + (1.5)(0.42) = 0.63. \label{eq:1C15}
+\end{align}
+
+\subsection*{(c) Puts on the project}
+
+A put with strike $K$ pays $\max(K-X_\omega,0)$.
+\begin{align}
+  P(1)   &= \max(1-0.5,0)(0.50) + \max(1-3,0)(0.42) = (0.5)(0.50) + 0 = 0.25, \label{eq:1P1}\\
+  P(1.5) &= \max(1.5-0.5,0)(0.50) + \max(1.5-3,0)(0.42) = (1)(0.50) + 0 = 0.50. \label{eq:1P15}
+\end{align}
+
+\subsection*{(d) Put--call parity and MM}
+
+\step{1}{The middle term} $K/(1/0.92) = 0.92K$ is the price of a safe bond paying $K$ at $t=1$,
+since $1/0.92 = 1+r_f$.
+
+\step{2}{Substitute \eqref{eq:1C1}--\eqref{eq:1P15}}
+\begin{align}
+  C(1) + 0.92(1) - P(1)       &= (0.84) + 0.92 - (0.25) = 1.51, \label{eq:1lhs}\\
+  C(1.5) + 0.92(1.5) - P(1.5) &= (0.63) + 1.38 - (0.50) = 1.51. \label{eq:1rhs}
+\end{align}
+Both sides equal $A$ from \eqref{eq:1A}.
+
+\step{3}{Why it holds for every $K$} State by state, for any payoff $X_\omega$ and strike $K$:
+\begin{equation}\label{eq:1parity}
+  \max(X_\omega-K,0) + K - \max(K-X_\omega,0) = X_\omega .
+\end{equation}
+(If $X_\omega\ge K$: $(X_\omega-K)+K-0$; if $X_\omega<K$: $0+K-(K-X_\omega)$.) Pricing both sides with
+state prices gives $C(K) + K/(1+r_f) - P(K) = A$ for every $K$: put--call parity.
+
+\answer{Both sides equal $1.51=A$, the value of the project, for any strike.}
+
+\intuition{Read $K$ as the face value of debt. With limited liability, equity pays
+$\max(X-K,0)$: it is a call on the assets, worth $C(K)$. Risky debt pays $\min(X,K) = K - \max(K-X,0)$:
+a safe bond minus a put, worth $K/(1+r_f)-P(K)$. The put is the creditors' loss from limited liability.
+By \eqref{eq:1parity} equity plus debt is worth $A$ whatever $K$ is. A higher face value moves value
+from the call to the bond, but the total does not change. This is MM~I, proved by put--call parity.}
+
+\refline{Slides Topic 2A (complete markets, state prices, MM I with risky debt); Berk
+\S21.5--21.6 (put--call parity; equity as a call), \S16.1--16.2.}
+
+\subsection*{(e) All debt: raise 1 with debt}
+
+\step{1}{Is the debt safe?} If $F\le0.5$ the debt pays $F$ in both states and is worth $0.92F$.
+Raising 1 would need $F = 1/0.92 = 1.087 > 0.5$, a contradiction. So the debt defaults in the slump:
+it pays $\min(X,F) = (0.5,\ F)$ with $0.5<F\le3$.
+
+\step{2}{Face value} Debt must be worth what it raises:
+\begin{equation}
+  (0.5)(0.50) + F(0.42) = 1 \quad\Longrightarrow\quad F = \frac{1-0.25}{0.42} = 1.785714. \label{eq:1F}
+\end{equation}
+
+\step{3}{Values} The firm's assets are the project, $A=1.51$ \eqref{eq:1A}; $D=1$; and
+\begin{equation}\label{eq:1E}
+  E = A - D = 1.51 - 1 = 0.51 = C(F) = (3-1.785714)(0.42).
+\end{equation}
+
+\step{4}{Expected returns} Expected payoffs use the true probabilities $\tfrac12$:
+\begin{align}
+  r_A &= \frac{0.5(0.5)+0.5(3)}{1.51} - 1 = \frac{1.75}{1.51} - 1 = 0.158940, \label{eq:1rA}\\
+  r_D &= \frac{0.5(0.5)+0.5(1.785714)}{1} - 1 = 1.142857 - 1 = 0.142857, \label{eq:1rD}\\
+  r_E &= \frac{0.5(0) + 0.5(3-1.785714)}{0.51} - 1 = \frac{0.607143}{0.51} - 1 = 0.190476. \label{eq:1rE}
+\end{align}
+
+\step{5}{Check MM} The value-weighted average of \eqref{eq:1rD} and \eqref{eq:1rE} must equal
+\eqref{eq:1rA}: $\tfrac{1}{1.51}(0.142857) + \tfrac{0.51}{1.51}(0.190476) = 0.094607 + 0.064333 = 0.158940$. \checkmark
+
+\answer{$F=1.7857$; $A=1.51$, $D=1$, $E=0.51$; $r_A=15.89\%$, $r_D=14.29\%$, $r_E=19.05\%$.}
+
+\remark{The promised yield, $F/D-1=78.57\%$, is far above the expected return on debt, 14.29\%:
+creditors are promised 1.786 but receive only 0.5 in the slump. The yield is not the cost of debt.
+The entrepreneur keeps the whole equity, worth $0.51$: exactly the project's NPV.}
+
+\subsection*{(e$'$) Any mix: raise $D$ with debt and $1-D$ with equity}
+
+\step{1}{Face value as a function of $D$} Debt is safe as long as $F\le0.5$, i.e.\ $D=0.92F\le0.46$.
+\begin{equation}\label{eq:1Fgen}
+  F(D) = \begin{cases}
+    \dfrac{D}{0.92}, & 0 < D \le 0.46 \quad\text{(safe debt)},\\[8pt]
+    \dfrac{D - (0.5)(0.50)}{0.42} = \dfrac{D-0.25}{0.42}, & 0.46 < D \le 1.51 \quad\text{(risky debt)}.
+  \end{cases}
+\end{equation}
+The two branches meet at $D=0.46$, where both give $F=0.5$.
+
+\step{2}{Values} $A=1.51$ for every $D$, and $E = 1.51 - D$. Outside shareholders pay $1-D$ for
+their stake, so the entrepreneur's stake is worth $(1.51-D)-(1-D) = 0.51$, the NPV, for every mix.
+
+\step{3}{Returns, safe region ($D\le0.46$)} $r_D=r_f=8.70\%$ and $r_A=15.89\%$ \eqref{eq:1rA}. MM~II
+follows from $A\,r_A = D\,r_D + E\,r_E$:
+\begin{equation}\label{eq:1mm2}
+  r_E = r_A + \frac{D}{E}\,(r_A - r_D) .
+\end{equation}
+For example, $D=0.20$: $F = 0.20/0.92 = 0.217391$, $E=1.31$, and by \eqref{eq:1mm2}
+\begin{equation}
+  r_E = 0.158940 + \frac{0.20}{1.31}(0.071984) = 0.158940 + (0.152672)(0.071984) = 0.169930. \notag
+\end{equation}
+
+\step{4}{Returns, risky region ($D>0.46$)} Debt pays $(0.5,\ F)$, so
+\begin{equation}\label{eq:1rDgen}
+  r_D = \frac{0.5(0.5) + 0.5\,F(D)}{D} - 1 ,
+\end{equation}
+rising with $D$ (8.92\% at $D=0.47$, 14.29\% at $D=1$). Equity pays $(0,\ 3-F)$: nothing in the
+slump. It is a multiple of the pure boom claim, so its expected return is that of the boom claim,
+\begin{equation}\label{eq:1rEflat}
+  r_E = \frac{0.5}{\psi_b} - 1 = \frac{0.5}{0.42} - 1 = 0.190476 ,
+\end{equation}
+the same for every $D$ in this region. Equation \eqref{eq:1mm2} still holds, now with the rising $r_D$.
+
+\answer{$F(D)$ is given by \eqref{eq:1Fgen}; $A=1.51$ and $r_A=15.89\%$ for every $D$; $E=1.51-D$.
+For $D\le0.46$: $r_D=8.70\%$ and $r_E$ rises linearly in $D/E$ from 15.89\% to 19.05\%. For
+$D>0.46$: $r_D$ rises from 8.70\% to 14.29\% and $r_E$ stays at 19.05\%. The full table for
+$D=0.01,\dots,1.00$ is in Appendix~A.}
+
+\intuition{This is MM~II with risky debt. While debt is safe, each extra unit of leverage loads all
+the asset risk onto equity, so $r_E$ rises linearly. Once debt defaults in the slump, creditors take
+the slump payoff and start bearing risk. Equity is left with a boom-only claim whose risk can grow
+no further, so $r_E$ flattens and the extra leverage shows up in a rising $r_D$. Through it all, the
+WACC equals $r_A$ and the firm is worth 1.51.}
+
+\subsection*{(f) Debt-financed dividend}
+
+\step{1}{Face value} Raising 1.1 is in the risky region of \eqref{eq:1Fgen}:
+$F = (1.1-0.25)/0.42 = 2.023810$.
+
+\step{2}{Value of the firm} After the dividend, the firm holds only the project: $A = 1.51$, split as
+$D = 1.1$ and $E = 1.51 - 1.1 = 0.41$. (Before the dividend it also held 0.1 of cash, so it was worth 1.61.)
+
+\step{3}{The entrepreneur's wealth} Dividend plus equity: $0.1 + 0.41 = 0.51$, exactly what she had
+with no dividend \eqref{eq:1E}.
+
+\answer{The firm is worth 1.51 after the dividend ($D=1.1$, $E=0.41$). The entrepreneur is not better
+off: her wealth stays at 0.51. The dividend only moves 0.1 of it from $t=1$ to $t=0$.}
+
+\intuition{The creditors pay a fair 1.1 for a claim worth 1.1, so they transfer no value. The cash
+paid out is the entrepreneur's own money, taken out early and paid for with a higher face value. She
+could get the same $t=0$ consumption by selling 0.1 of her equity. With complete markets and no
+frictions, payout and capital structure only change the timing of her wealth, not its amount. This
+is the dividend-irrelevance argument of Topic 2B.}
+
+% =============================================================================
+\section{Exercise 2 --- Leverage, WACC and three debt policies}
+
+\noindent\textbf{Data (millions of dollars).} 10 million shares, no debt; equity beta 1.20; FCF $=25$
+per year in perpetuity from next year. Target $D/E = 0.25$, continuously rebalanced; $r_D=0.03$;
+$\tau_c = 0.25$; CAPM with $r_f=0.03$ and $E[R_m]=0.08$.
+
+\begin{notation}
+  \item $r_U$, $\beta_U$: expected return and beta of the unlevered firm (its assets).
+  \item $r_E$, $\beta_E$: of levered equity; $r_D=0.03$: cost of debt; $\tau_c=0.25$: tax rate.
+  \item $V_U$, $V_L$: values of the unlevered and levered firm; $V_{TS}$: present value of the interest tax shields.
+  \item $D$, $E$: market values of debt and equity; $N$: number of shares; $p$: share price.
+\end{notation}
+
+\subsection*{(a) Cost of equity before and after}
+
+\step{1}{Before (all equity)} By the CAPM:
+\begin{equation}\label{eq:2rU}
+  r_U = r_f + \beta_U(E[R_m]-r_f) = 0.03 + 1.2(0.08-0.03) = 0.09 .
+\end{equation}
+
+\step{2}{After} With continuous rebalancing, debt moves with firm value, so the tax shields are as
+risky as the assets: $r_{TS}=r_U$ (slides, Topic 2B). Then the pre-tax WACC equals $r_U$, and MM~II
+keeps its no-tax form:
+\begin{align}
+  r_E &= r_U + \frac{D}{E}(r_U - r_D) \notag\\
+      &= 0.09 + 0.25(0.09 - 0.03) = 0.105 . \label{eq:2rE}
+\end{align}
+Check through betas: $r_D=r_f$ means $\beta_D=0$, so $\beta_E = \beta_U(1+D/E) = 1.2\times1.25 = 1.5$
+and $r_E = 0.03 + 1.5(0.05) = 0.105$.
+
+\answer{$r_E = 9\%$ before and $10.5\%$ after.}
+
+\subsection*{(b) New WACC}
+
+$D/E=0.25$ means $D/V = 0.25/1.25 = 0.20$ and $E/V=0.80$. Using \eqref{eq:2rE}:
+\begin{align}
+  r_{WACC} &= \frac{E}{V}r_E + \frac{D}{V}r_D(1-\tau_c) \notag\\
+           &= (0.80)(0.105) + (0.20)(0.03)(0.75) = 0.084 + 0.0045 = 0.0885 . \label{eq:2wacc}
+\end{align}
+Check with the slides' form for continuous rebalancing:
+\begin{equation*}
+  r_{WACC} = r_U - \frac{D}{V}\tau_c r_D = 0.09 - (0.20)(0.25)(0.03) = 0.0885 . \quad\checkmark
+\end{equation*}
+
+\answer{$r_{WACC} = 8.85\%$.}
+
+\subsection*{(c) Values, price and repurchase}
+
+\step{1}{Before} Using \eqref{eq:2rU}:
+\begin{equation}\label{eq:2VU}
+  V_U = \frac{25}{0.09} = 277.78, \qquad p_{\text{before}} = \frac{277.78}{10} = 27.78 .
+\end{equation}
+
+\step{2}{Levered firm and tax shield} Using \eqref{eq:2wacc}:
+\begin{equation}\label{eq:2VL}
+  V_L = \frac{25}{0.0885} = 282.49, \qquad V_{TS} = V_L - V_U = 282.49 - 277.78 = 4.71 .
+\end{equation}
+
+\step{3}{Price at the announcement} When the plan is announced, no debt has been issued yet. The
+shareholders own the assets plus the expected tax shields, so the whole gain goes to them at once:
+\begin{equation}\label{eq:2p}
+  p = \frac{V_U + V_{TS}}{N} = \frac{282.49}{10} = 28.25 .
+\end{equation}
+
+\step{4}{Issue and repurchase} The debt issued is $D = 0.20\,V_L = 0.20(282.49) = 56.50$. It buys
+back shares at the fair price \eqref{eq:2p}:
+\begin{equation}\label{eq:2rep}
+  \text{Shares repurchased} = \frac{56.50}{28.25} = 2.00, \qquad N_{\text{after}} = 10 - 2 = 8.00 .
+\end{equation}
+Check: $E = 0.80(282.49) = 225.99$ and $225.99/8 = 28.25$; the repurchase leaves the price unchanged.
+
+\answer{$V_U = 277.78$; price 27.78 before, 28.25 after the announcement; $V_L = 282.49$, $V_{TS} = 4.71$;
+2 million shares repurchased with \$56.50 million of debt; 8 million shares remain, at \$28.25.}
+
+\subsection*{(d) Interest equal to 20\% of FCF}
+
+Interest is $0.20\times25 = 5$ per year, so the tax shield is $\tau_c\times5 = 0.25\times5 = 1.25$ per
+year. Because interest is tied to FCF, the shield is exactly as risky as FCF and is discounted at
+$r_U$ \eqref{eq:2rU}:
+\begin{equation}\label{eq:2TSd}
+  V_{TS} = \frac{1.25}{0.09} = 13.89 .
+\end{equation}
+
+\answer{$V_{TS} = \$13.89$ million.}
+
+\remark{Interest of 5 at $r_D=3\%$ corresponds to debt of about $5/0.03 = 166.67$ on average. That
+is far more debt than in (c), hence the larger shield. The discount rate is still $r_U$, not $r_D$,
+because the amount of debt moves with the firm's cash flows.}
+
+\subsection*{(e) \$100 million of perpetual debt}
+
+\step{1}{Tax shield} The debt is fixed and riskless, so the shield $\tau_c r_D D$ is discounted at $r_D$:
+\begin{equation}\label{eq:2TSe}
+  V_{TS} = \frac{\tau_c r_D D}{r_D} = \tau_c D = 0.25(100) = 25 .
+\end{equation}
+
+\step{2}{Price and shares} $V_L = 277.78 + 25 = 302.78$. At the announcement $p = 302.78/10 = 30.28$.
+The repurchase buys $100/30.28 = 3.30$ million shares, leaving $10-3.30 = 6.70$ million. Check:
+$E = 302.78 - 100 = 202.78$ and $202.78/6.70 = 30.28$.
+
+\answer{$V_{TS} = \$25$ million; price \$30.28; 3.30 million shares repurchased; 6.70 million remain.}
+
+\intuition{The three policies give shields of 4.71, 13.89 and 25. Two things drive the value: how
+much debt there is, and how risky the shield is. A fixed amount of debt makes the shield as safe as
+the debt; a policy tied to firm value or FCF makes it as risky as the assets. This is why the WACC
+formula depends on the debt policy, and why APV is the safer tool when debt follows a known schedule.}
+
+\refline{Slides Topic 2B (value of the tax shield; continuous rebalancing; WACC formulas and appendix);
+Berk \S16.3 (the interest tax deduction and firm value; value of the interest tax shield; permanent debt; leverage and the WACC with taxes), pp.~473--478.}
+
+% =============================================================================
+\section{Exercise 3 --- Risky debt and who pays for bankruptcy costs}
+
+\noindent\textbf{Data.} Investment $I=60$; FCF $=100$ or $60$ with probability $\tfrac12$ each;
+$r_A = 0.15$; no taxes or other frictions.
+
+\begin{notation}
+  \item $V_U$, $V_L$: value of the all-equity and the levered firm; $D=60$: amount borrowed.
+  \item $F$: face value of debt; $r_D$: expected return demanded by creditors; $E$: value of equity.
+  \item $BC$: bankruptcy cost paid in default, a fraction $0.07$ of the realised cash flow.
+\end{notation}
+
+\subsection*{(a) All-equity firm}
+
+\begin{equation}\label{eq:3VU}
+  V_U = \frac{0.5(100) + 0.5(60)}{1.15} = \frac{80}{1.15} = 69.57 .
+\end{equation}
+The project's NPV is $69.57 - 60 = 9.57$.
+
+\subsection*{(b) Debt of 60 at an expected return of 6.6\%}
+
+\step{1}{Expected payoff creditors need} $60(1.066) = 63.96$.
+
+\step{2}{Face value} If the debt were safe, $F = 63.96 > 60$, so it could not be paid in the bad
+state: the debt is risky. Creditors get 60 (everything) in the bad state and $F$ in the good one:
+\begin{equation}\label{eq:3Fb}
+  0.5(60) + 0.5F = 63.96 \quad\Longrightarrow\quad F = 2(63.96) - 60 = 67.92 .
+\end{equation}
+
+\step{3}{Equity} By MM the levered firm is worth $V_U$, so
+\begin{equation}\label{eq:3Eb}
+  E = V_L - D = 69.57 - 60 = 9.57 .
+\end{equation}
+Equity pays $100 - 67.92 = 32.08$ in the good state and 0 in the bad state. Its expected payoff is
+$16.04$, so $r_E = 16.04/9.57 - 1 = 67.69\%$. Check: $\tfrac{60}{69.57}(0.066) +
+\tfrac{9.57}{69.57}(0.6769) = 0.15 = r_A$.
+
+\answer{$F = 67.92$; $E = 9.57$ (the NPV, kept by the entrepreneur).}
+
+\subsection*{(c) Bankruptcy costs of 7\% of the realised cash flow}
+
+\step{1}{What creditors get in default} Default happens in the bad state ($60<F$). Lawyers take
+$0.07(60) = 4.2$, so creditors receive $55.8$.
+
+\step{2}{Face value} Keeping the creditors' required expected return at 6.6\%:
+\begin{equation}\label{eq:3Fc}
+  0.5(55.8) + 0.5F = 63.96 \quad\Longrightarrow\quad F = 2(63.96) - 55.8 = 72.12 .
+\end{equation}
+
+\step{3}{Value of the firm and of equity} Bankruptcy costs are a deadweight loss. The expected cost
+is $0.5(4.2) = 2.1$. It is a part of the project's cash flow, so we discount it at $r_A$:
+\begin{align}
+  V_L &= V_U - PV(BC) = \frac{80 - 2.1}{1.15} = 69.57 - 1.83 = 67.74, \label{eq:3VLc}\\
+  E   &= V_L - D = 67.74 - 60 = 7.74 . \label{eq:3Ec}
+\end{align}
+
+\step{4}{Who pays} Creditors still get a fair expected return on their 60; the higher face value
+\eqref{eq:3Fc} compensates them for the 4.2 lost in default. Equity falls from 9.57 \eqref{eq:3Eb} to
+7.74 \eqref{eq:3Ec}, a loss of $1.83 = PV(BC)$.
+
+\answer{$F = 72.12$; $E = 7.74$. The shareholders (the entrepreneur) pay the whole present value of
+the bankruptcy costs, 1.83. They pay it ex ante, through the higher face value, even though the
+lawyers are paid out of the creditors' recovery in default.}
+
+\intuition{Creditors anticipate the loss in default and price it in. The cost therefore falls on
+whoever raises the money, at the time it is raised. This is why expected distress costs enter the
+firm's capital-structure choice (the trade-off theory), even though shareholders get nothing in
+default.}
+
+\remark{A fully consistent pricing gives the same answer to the question ``who pays''. The market
+data of (a) and (b) imply state prices $\psi_{good}=0.2982$ and $\psi_{bad}=0.6625$ (risk-free rate
+4.10\%). The bad-state cost is then worth $4.2\times0.6625 = 2.78$, and equity is worth
+$69.57 - 2.78 - 60 = 6.78$. Debt worth 60 would need $F = 77.25$, so the creditors' expected return
+rises to 10.88\% because their claim is now riskier. The main answer keeps 6.6\% and discounts at
+$r_A$, as the statement suggests. Either way, shareholders bear the full present value of the cost.}
+
+\refline{Slides Topic 2B (bankruptcy costs; $V_L = V_U + V_{TS} - PV(\text{bankruptcy costs})$);
+Berk \S16.4--16.5 (costs of bankruptcy and financial distress; the tradeoff theory), pp.~479--482.}
+
+% =============================================================================
+\section{Exercise 4 --- Yerba Industries: leverage, EPS and the P/E}
+
+\noindent\textbf{Data.} All-equity, $\beta_U=1.2$, $r_U=0.125$. Issues risk-free debt at $0.05$ and
+buys back 40\% of its shares. Perfect markets. Before: expected EPS \pounds1.50, forward P/E 14.
+
+\begin{notation}
+  \item $D/V=0.40$, $E/V=0.60$: weights after the transaction (the repurchase swaps 40\% of the
+        equity for debt at market value, so $V$ does not change); $D/E = 0.4/0.6 = 2/3$.
+  \item $\beta_D=0$, $r_D=0.05$: risk-free debt; $\beta_E$, $r_E$: of equity after the transaction.
+\end{notation}
+
+\subsection*{(a) Equity beta after}
+
+With $\beta_D=0$, the asset beta is $\beta_U = \tfrac{E}{V}\beta_E$, so
+\begin{equation}\label{eq:4beta}
+  \beta_E = \beta_U\left(1+\frac{D}{E}\right) = 1.2\left(1+\frac{0.4}{0.6}\right) = 2.0 .
+\end{equation}
+
+\subsection*{(b) Expected return on equity after}
+
+By MM~II:
+\begin{equation}\label{eq:4rE}
+  r_E = r_U + \frac{D}{E}(r_U - r_D) = 0.125 + \frac{2}{3}(0.125-0.05) = 0.175 .
+\end{equation}
+Check with the CAPM: the market risk premium is $(0.125-0.05)/1.2 = 0.0625$, so
+$r_E = 0.05 + 2.0(0.0625) = 0.175$.
+
+\subsection*{(c) Earnings per share after}
+
+\step{1}{Price} Before: $p = 1.50\times14 = \pounds21$. Under MM the transaction does not change it.
+
+\step{2}{Per original share} Debt raised per original share: $0.40\times21 = 8.40$. Interest:
+$0.05\times8.40 = 0.42$. Earnings left for equity: $1.50 - 0.42 = 1.08$, now shared by
+$0.60$ shares:
+\begin{equation}\label{eq:4eps}
+  EPS_{\text{after}} = \frac{1.08}{0.60} = \pounds1.80 .
+\end{equation}
+
+\answer{EPS rises from \pounds1.50 to \pounds1.80 (+20\%), but shareholders do not benefit: the share
+price stays at \pounds21. The higher expected EPS is exactly the compensation for the higher risk of
+leveraged equity ($\beta_E$ from 1.2 to 2.0, $r_E$ from 12.5\% to 17.5\%).}
+
+\subsection*{(d) P/E after}
+
+\begin{equation}\label{eq:4pe}
+  P/E_{\text{after}} = \frac{21}{1.80} = 11.67 .
+\end{equation}
+
+\answer{The forward P/E falls from 14 to 11.67. This is reasonable: each pound of expected earnings
+is now riskier, so investors pay less for it. The earnings yield rises from $1.50/21 = 7.14\%$ to
+$1.80/21 = 8.57\%$, in line with the higher cost of equity.}
+
+\intuition{Leverage raises EPS whenever the return on assets exceeds the cost of debt, and that says
+nothing about value. Price is expected earnings capitalised at a rate that reflects their risk; MM~II
+says the rate rises just enough to offset the higher EPS. A manager who targets EPS or ROE growth
+through leverage creates no value in a perfect market (the slides' ``borrow more, value rises''
+fallacy).}
+
+\refline{Slides Topic 2A (MM II; leverage and EPS); Berk \S16.2 (the effect of leverage on risk and return; leverage and the cost of capital; capital structure fallacies), pp.~467--471.}
+
+% =============================================================================
+\appendix
+\section{Exercise 1(e$'$): full table for $D = 0.01,\dots,1.00$}
+
+Generated by \texttt{Listas/PS2-solutions\_check.py}, which also checks $\tfrac{D}{A}r_D +
+\tfrac{E}{A}r_E = r_A$ on every row. Debt is safe up to $D=0.46$ ($F\le0.5$) and risky beyond.
+Returns in \%.
+
+{\footnotesize
+\begin{longtable}{rrrrrrr}
+  \toprule
+  $D$ & $F$ & $r_D$ & $r_E$ & $r_A$ & $E$ & $A$ \\
+  \midrule
+  \endfirsthead
+  \toprule
+  $D$ & $F$ & $r_D$ & $r_E$ & $r_A$ & $E$ & $A$ \\
+  \midrule
+  \endhead
+  \bottomrule
+  \endfoot
+  \input{PS2-solutions-table}
+\end{longtable}
+}
+
+\end{document}

@@ -58,9 +58,22 @@ course books for personal study; pages printed (PDF in brackets).> Links: [[Map/
   (`$...$`, `$$...$$`), rebuild tables as Markdown tables, undo hyphenation/line breaks, drop
   interleaved sidebars/glossary/"MyFinanceLab" margin text that is not part of the problem.
   Currency: write `\$` (escaped), never a bare `$` for money.
-- If the problem depends on a model in the chapter text (e.g. "Consider the model of section
-  3.2"), keep the statement verbatim and add one italic line after it:
-  `*Context: <book> §x.y, pp. a–b.*` — never paste the chapter text.
+- **Self-contained (rule `exercise-lists#2`, 2026-10-31; replaces the old one-line `*Context:*`
+  pointer).** Every block must be solvable without opening the book. After the verbatim
+  statement, add a `#### Context needed to solve it` sub-block with everything the statement
+  points to, each piece headed by its own source (`*From Tirole §3.2, pp. 113–115 (PDF 126–128):*`):
+  - a model the statement invokes ("the fixed-investment model of Section 3.2", "properties
+    described in section 1.1"): copy verbatim the book passage that sets it up — assumptions,
+    timing, notation, and the result equations the question uses (e.g. the threshold $\bar A$,
+    pledgeable income). Copy the setup, not the whole section; stop once every symbol and
+    assumption in the statement is defined;
+  - a table, figure or example the statement reads from ("Table 2.3", "Figure 6.5"): copy the
+    table as a Markdown table; transcribe a figure with every value, label and timing step;
+  - an earlier problem ("Given your answer to Problem 17", "the firm in exercise 14.2", "the
+    preceding problem"): copy it in full, with its own Source line, as **Part 0** inside this
+    sub-block.
+  Keep the statement itself first (right after the Source line) so `tools/check_lists.py` still
+  anchors on it.
 - **Garbled math or tables in the MD** (Grinblatt–Titman always: =, +, −, Greek letters and tables
   are stripped; Tirole/Amaro sometimes): read the PDF page itself with the Read tool
   (`pages: "<pdf page>"`) and typeset from the image. Never guess a symbol.

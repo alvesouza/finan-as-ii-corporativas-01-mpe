@@ -20,9 +20,9 @@ from [[Map/books-index|books-index]], printed pages).
 
 | Lecture | Slides | Syllabus item | Rules | Problem set | Quiz | Audio prompt |
 |---|---|---|---|---|---|---|
-| [[Aula/Topic1.pdf\|Topic 1]] — Accounting review | 63 | 1 | [[rules/01_introducao_fatos\|Topic 1]] | PS1 Ex. 1 | [[Simulados/quiz-topic1-accounting-2026-10-24\|quiz]] | `NotebookLM/audio/topic1-audio.md` |
-| [[Aula/Topic2A.pdf\|Topic 2A]] — Valuation, NPV, MM | 105 | 2 → 3 | [[rules/02_valuation\|Topic 2]] · [[rules/03_benchmark_mm\|Topic 3]] | PS1 Ex. 2–3; PS2 Ex. 1, 3(a–b), 4 | [[Simulados/quiz-topic2a-valuation-mm-2026-10-24\|quiz]] | `NotebookLM/audio/topic2a-audio.md` |
-| [[Aula/Topic2B.pdf\|Topic 2B]] — Taxes, distress, trade-off | 63 | 3 | [[rules/03_benchmark_mm\|Topic 3]] | PS2 Ex. 2, 3(c) | [[Simulados/quiz-topic2b-taxes-tradeoff-2026-10-24\|quiz]] | `NotebookLM/audio/topic2b-audio.md` |
+| [[Aula/Topic1.pdf\|Topic 1]] — Accounting review | 63 | 1 | [[rules/01_introducao_fatos\|Topic 1]] | PS1 Ex. 1 | [[Simulados/quiz-topic1-accounting-2026-10-24\|quiz]] | `NotebookLM/audio/topic1-audio-part1…3.md` |
+| [[Aula/Topic2A.pdf\|Topic 2A]] — Valuation, NPV, MM | 105 | 2 → 3 | [[rules/02_valuation\|Topic 2]] · [[rules/03_benchmark_mm\|Topic 3]] | PS1 Ex. 2–3; PS2 Ex. 1, 3(a–b), 4 | [[Simulados/quiz-topic2a-valuation-mm-2026-10-24\|quiz]] | `NotebookLM/audio/topic2a-audio-part1…3.md` |
+| [[Aula/Topic2B.pdf\|Topic 2B]] — Taxes, distress, trade-off | 63 | 3 | [[rules/03_benchmark_mm\|Topic 3]] | PS2 Ex. 2, 3(c) | [[Simulados/quiz-topic2b-taxes-tradeoff-2026-10-24\|quiz]] | `NotebookLM/audio/topic2b-audio-part1…3.md` |
 
 ---
 

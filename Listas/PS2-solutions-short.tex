@@ -1,0 +1,95 @@
+% =============================================================================
+% Short answer key for Listas/PS2.pdf. Full derivations: Listas/PS2-solutions.tex.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% Numbers: python -I Listas/PS2-solutions_check.py  -> PASS
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Problem Set 2 --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt,leftmargin=1.6em}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Corporate Finance --- Problem Set 2}\\[4pt]
+  {\large Answer key (full derivations in \texttt{PS2-solutions.pdf})}
+\end{center}
+
+\section*{Exercise 1 \normalsize(slump, boom; probabilities $\tfrac12$)}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Stock: $2.5\psi_b = 1.05 \Rightarrow \psi_b = 0.42$. Bond: $\psi_s+\psi_b=0.92 \Rightarrow \psi_s = 0.50$.
+        ($r_f = 8.70\%$; project value $A = 0.5(0.50)+3(0.42) = 1.51$, NPV $=0.51$.)
+  \item $C(1) = 2(0.42) = 0.84$; $\;C(1.5) = 1.5(0.42) = 0.63$.
+  \item $P(1) = 0.5(0.50) = 0.25$; $\;P(1.5) = 1(0.50) = 0.50$.
+  \item $0.84 + 0.92 - 0.25 = 1.51 = 0.63 + 1.38 - 0.50$. Put--call parity: $C(K) + K/(1+r_f) - P(K) = A$
+        for any $K$. With $K$ = face value, equity is the call and risky debt is a safe bond minus a put,
+        so $E + D = A$ whatever the face value: MM~I.
+  \item Debt of 1 is risky ($1/0.92 > 0.5$): $0.25 + 0.42F = 1 \Rightarrow F = 1.7857$.
+        $A = 1.51$, $D = 1$, $E = 0.51$; $r_A = 1.75/1.51 - 1 = 15.89\%$,
+        $r_D = (0.25+0.5F)/1 - 1 = 14.29\%$, $r_E = 0.5(3-F)/0.51 - 1 = 19.05\%$.
+\end{enumerate}
+
+\textbf{(e$'$)} $F = D/0.92$ for $D \le 0.46$ (safe debt); $F = (D-0.25)/0.42$ for $D > 0.46$.
+$A = 1.51$, $r_A = 15.89\%$ and $E = 1.51 - D$ for every $D$, and the entrepreneur always keeps 0.51.
+Safe region: $r_D = 8.70\%$, $r_E = r_A + \frac{D}{E}(r_A - r_D)$ rises from 15.89\% to 19.05\%.
+Risky region: $r_D = (0.25 + 0.5F)/D - 1$ rises to 14.29\% at $D=1$, and $r_E = 0.5/0.42 - 1 = 19.05\%$
+stays flat, because equity then pays only in the boom. Full table: Appendix A of the detailed solution.
+
+\textbf{(f)} $F = (1.1-0.25)/0.42 = 2.0238$. Firm value after the dividend: $A = 1.51$ ($D = 1.1$,
+$E = 0.41$). The entrepreneur has $0.1 + 0.41 = 0.51$, the same as before: \textbf{not better off}.
+The dividend only moves part of her wealth to $t=0$.
+
+\section*{Exercise 2 \normalsize(millions of dollars)}
+
+\begin{enumerate}[label=(\alph*)]
+  \item $r_U = 3\% + 1.2(5\%) = 9\%$ before. After (continuous rebalancing, $r_{TS} = r_U$):
+        $r_E = 9\% + 0.25(9\% - 3\%) = 10.5\%$.
+  \item $r_{WACC} = 0.8(10.5\%) + 0.2(3\%)(0.75) = 8.85\%$.
+  \item $V_U = 25/0.09 = 277.78$, price 27.78. $V_L = 25/0.0885 = 282.49$, $V_{TS} = 4.71$.
+        Price after the announcement 28.25. Debt $= 0.2(282.49) = 56.50$ buys back $2.00$ million shares;
+        8.00 million remain at 28.25.
+  \item Interest $= 0.2(25) = 5$, shield $= 1.25$ per year with FCF risk: $V_{TS} = 1.25/0.09 = 13.89$.
+  \item $V_{TS} = \tau_c D = 25$; $V_L = 302.78$; price 30.28; $100/30.28 = 3.30$ million shares
+        repurchased; 6.70 million remain.
+\end{enumerate}
+
+\section*{Exercise 3}
+
+\begin{enumerate}[label=(\alph*)]
+  \item $V_U = 80/1.15 = 69.57$ (NPV 9.57).
+  \item Creditors need $60(1.066) = 63.96$; debt is risky: $0.5(60) + 0.5F = 63.96 \Rightarrow F = 67.92$.
+        $E = 69.57 - 60 = 9.57$.
+  \item In default creditors get $60 - 0.07(60) = 55.8$: $0.5(55.8) + 0.5F = 63.96 \Rightarrow F = 72.12$.
+        $V_L = (80 - 2.1)/1.15 = 67.74$, $E = 7.74$. \textbf{Shareholders pay}: equity falls by
+        $1.83 = PV(BC)$. Creditors price the loss in through the higher face value.
+\end{enumerate}
+
+\section*{Exercise 4}
+
+\begin{enumerate}[label=(\alph*)]
+  \item $D/E = 0.4/0.6$, $\beta_D = 0$: $\beta_E = 1.2(1 + 2/3) = 2.0$.
+  \item $r_E = 12.5\% + \frac{2}{3}(12.5\% - 5\%) = 17.5\%$.
+  \item Price $= 1.50 \times 14 = \pounds21$. Interest per original share $= 0.05(0.4 \times 21) = 0.42$;
+        $EPS = (1.50 - 0.42)/0.6 = \pounds1.80$. \textbf{No benefit}: the price stays at \pounds21; the
+        higher EPS only compensates for the higher risk.
+  \item $P/E = 21/1.80 = 11.67$ (from 14). Reasonable: riskier earnings are worth less per pound.
+\end{enumerate}
+
+\end{document}

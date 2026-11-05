@@ -23,8 +23,8 @@ Covers the cash conversion cycle, the cost of trade credit (discount terms, effe
 | 11 | Exam | Ross | 18 | 18.15 | 657 (PDF 681) | no | Seasonal cash budget from collection/payment periods; short-term financing plan |
 | 12 | Really hard | Grinblatt | 17 | 17.5 | 619 (PDF 632) | no | Supplier credit as a cost of leverage vs. the debt tax shield |
 | 13 | Really hard | Berk | 19 | *19.15 | 588 (PDF 619) | no | Two-year CCC diagnosis and payables management against net-30 terms |
-| 14 | Really hard | Ross | 20 | 20.14 + 20.18 (DESAFIO) | 734–735 (PDF 758) | no | Switch-to-credit NPV and the break-even credit price |
-| 15 | Really hard | Higgins | 3 | 3.13 + 3.14 | 107–108 (PDF 128) | yes (3.13 only), p. 408 | Seasonal vs. level production: inventory build-up and external financing |
+| 14 | Really hard | Ross | 20 | 20.14 + 20.18 (DESAFIO) | 734–735 (PDF 758–759) | no | Switch-to-credit NPV and the break-even credit price |
+| 15 | Really hard | Higgins | 3 | 3.13 + 3.14 | 107–109 (PDF 128–130) | yes (3.13 only), p. 408 | Seasonal vs. level production: inventory build-up and external financing |
 
 ## Tier 1 — Easy
 
@@ -181,6 +181,36 @@ c. Suponha que os clientes que paguem tornem-se clientes e façam o mesmo pedido
 
 d. Descreva em termos gerais o motivo pelo qual as condições de crédito serão mais liberais quando pedidos repetidos forem uma possibilidade.
 
+#### Context needed to solve it
+
+*From Ross, Cap. 20, “Quando o crédito deve ser concedido?” (Uma venda única; Negócios repetidos), pp. 717–718 (PDF 741–742) — the one-period credit model and the NPV formulas behind parts (a)–(d):*
+
+**Uma venda única** Começaremos avaliando o caso mais simples. Um cliente novo deseja comprar uma unidade a prazo, a um preço $P$ por unidade. Se o crédito for negado, o cliente não fará a compra.
+
+Além disso, assumimos que, se o crédito for concedido, em um mês o cliente fará ou não o pagamento. A probabilidade de o segundo evento ocorrer é $\pi$. Nesse caso, a probabilidade ($\pi$) pode ser interpretada como a porcentagem dos novos clientes que não pagarão. Nossa empresa não tem clientes antigos. Portanto, a rigor, essa é uma venda única. Por fim, o retorno exigido sobre as contas a receber é $R$ por mês, e o custo variável é $v$ por unidade.
+
+A análise aqui é objetiva. Se a empresa negar o crédito, o fluxo de caixa incremental será zero. Se ela conceder o crédito, gastará $v$ (o custo variável) neste mês e esperará receber $(1 - \pi)P$ no mês seguinte. O VPL da concessão de crédito será:
+
+$$\text{VPL} = -v + (1 - \pi)P/(1 + R) \qquad [20.8]$$
+
+[…] Observe que dividimos por $(1 + R)$ aqui em vez de $R$ porque, agora, assumimos que essa é uma transação única.
+
+Nosso exemplo ilustra um ponto importante. Ao conceder crédito a um novo cliente, uma empresa arrisca seu custo variável ($v$). Isso permite obter o preço total ($P$). Portanto, para um cliente novo, o crédito pode ser concedido mesmo que a probabilidade de inadimplência seja alta. Por exemplo, nesse caso, a probabilidade no ponto de equilíbrio pode ser determinada definindo o VPL como zero e calculando $\pi$: […]
+
+**Negócios repetidos** Um segundo e importante fator a ser lembrado é a possibilidade de negócios repetidos. Podemos ilustrar isso ampliando nosso exemplo da venda única. Fazemos em pressuposto importante aqui: um cliente novo que paga na primeira vez permanecerá cliente para sempre e nunca deixará de pagar.
+
+Se a empresa conceder crédito, ela gastará $v$ neste mês. No mês seguinte, ela nada terá se o cliente não pagar ou terá $P$ se o cliente pagar. Se o cliente pagar, ele comprará outra unidade a prazo, e a empresa gastará $v$ novamente. Portanto, a entrada de caixa líquida do mês será $P - v$. A cada mês subsequente, esse mesmo $P - v$ ocorrerá à medida que o cliente pagar o pedido do mês anterior e fizer outro pedido.
+
+Concluímos da nossa discussão que, em um mês, a empresa receberá \$0 com probabilidade $\pi$. No entanto, com probabilidade $(1 - \pi)$, a empresa terá um cliente novo permanente. O valor do cliente novo é igual ao valor presente de $(P - v)$ a cada mês para sempre:
+
+$$VP = (P - v)/R$$
+
+Então, o VPL da concessão de crédito é:
+
+$$\text{VPL} = -v + (1 - \pi)(P - v)/R \qquad [20.9]$$
+
+[…]
+
 ---
 
 ### 11. Lince S/A: seasonal cash budget and short-term financial plan
@@ -285,7 +315,13 @@ b. IMC's suppliers offer terms of net 30. Does it appear that IMC is doing a goo
 ---
 
 ### 14. Senna S/A: credit-policy NPV and the break-even credit price
-**Source:** Ross, Cap. 20, Exercises 20.14 (part 0) and 20.18 (DESAFIO), pp. 734–735 (PDF 758) · Answer in book: no
+**Source:** Ross, Cap. 20, Exercise 20.18 (DESAFIO), p. 735 (PDF 759); Part 0 = Exercise 20.14, p. 734 (PDF 758) · Answer in book: no
+
+18. ***Markup* de crédito** [OA2] No Problema 14, qual é o preço por unidade no ponto de equilíbrio que deve ser cobrado de acordo com a nova política de crédito? Assuma que, na nova política, o número de vendas seja de 4.100 unidades e que todos os outros valores permaneçam iguais.
+
+#### Context needed to solve it
+
+**Part 0** — *Source: Ross, Cap. 20, Exercise 20.14, p. 734 (PDF 758) · Answer in book: no*
 
 14. **Avaliação da política de crédito** [OA2] A Senna S/A está pensando em mudar sua política atual de vendas somente à vista. A nova condição seria para vendas com pagamento em um período pelo valor integral da compra. Com base nas seguintes informações, determine se a empresa deve ou não continuar com a proposta. O retorno exigido é de 2,5% por período.
 
@@ -295,12 +331,30 @@ b. IMC's suppliers offer terms of net 30. Does it appear that IMC is doing a goo
 | Custo por unidade | \$47 | \$47 |
 | Vendas unitárias por mês | 3.850 | 3.940 |
 
-18. **Markup de crédito** [OA2] No Problema 14, qual é o preço por unidade no ponto de equilíbrio que deve ser cobrado de acordo com a nova política de crédito? Assuma que, na nova política, o número de vendas seja de 4.100 unidades e que todos os outros valores permaneçam iguais.
-
 ---
 
 ### 15. Toys-4-Kids: seasonal vs. level production
-**Source:** Higgins, Ch. 3, Exercises 13 (part 0) and 14, pp. 107–108 (PDF 128) · Answer in book: yes for 13, p. 408; no for 14
+**Source:** Higgins, Ch. 3, Exercise 14, pp. 108–109 (PDF 129–130); Part 0 = Exercise 13, pp. 107–108 (PDF 128–129) · Answer in book: no for 14; yes for 13 (Part 0), p. 408
+
+14. Continuing with Toys-4-Kids, introduced in the preceding problem, the company's production manager has argued for years that it is inefficient to produce on a seasonal basis. She believes the company should switch to level production throughout the year, building up finished goods inventory in the first two quarters to meet the peak selling needs in the last two. She believes the company can reduce its cost of goods sold from 70 percent to 65 percent with level production. (Keep in mind that production managers typically want to restrict production to left shoes only so as to reduce costs.)
+
+a. Prepare a revised pro forma forecast assuming level production. In your forecast, assume that quarterly accounts payable under level production equal 10 percent of *average* quarterly sales for the year. To estimate quarterly inventory, use the following two formulas:
+
+$$\text{Inventory}_{eoq} = \text{Inventory}_{boq} + \text{Quarterly production} - \text{Quarterly cost of sales}$$
+
+$$\text{Quarterly production} = \text{Annual cost of sales}/4$$
+
+where eoq and boq refer to end of quarter and beginning of quarter, respectively. Please ignore the effect of increased external financing required on interest expense.
+
+b. What is the effect of the switch from seasonal to level production on annual profits?
+
+c. What effect does the switch have on the company's quarterly ending inventory? On the company's quarterly need for external financing?
+
+d. Do you think the company will be able to borrow the amount of money required by level production? What obsolescence risks does the company incur by building up inventory in anticipation of future sales? Might this be a concern to lenders?
+
+#### Context needed to solve it
+
+**Part 0** — *Source: Higgins, Ch. 3, Exercise 13, pp. 107–108 (PDF 128–129) · Answer in book: yes, p. 408*
 
 13. Toys-4-Kids manufactures plastic toys. Sales and production are highly seasonal. The following is a quarterly pro forma forecast indicating external financing needs for 2022. Assumptions are in parentheses.
 
@@ -336,19 +390,3 @@ b. Why are cash balances in the first two quarters greater than the minimum requ
 c. How was "external financing required" (appearing at the bottom of the forecast) determined?
 
 d. Do you think Toys-4-Kids will be able to borrow the external financing required as indicated by the forecast?
-
-14. Continuing with Toys-4-Kids, introduced in the preceding problem, the company's production manager has argued for years that it is inefficient to produce on a seasonal basis. She believes the company should switch to level production throughout the year, building up finished goods inventory in the first two quarters to meet the peak selling needs in the last two. She believes the company can reduce its cost of goods sold from 70 percent to 65 percent with level production. (Keep in mind that production managers typically want to restrict production to left shoes only so as to reduce costs.)
-
-a. Prepare a revised pro forma forecast assuming level production. In your forecast, assume that quarterly accounts payable under level production equal 10 percent of average quarterly sales for the year. To estimate quarterly inventory, use the following two formulas:
-
-$$\text{Inventory}_{eoq} = \text{Inventory}_{boq} + \text{Quarterly production} - \text{Quarterly cost of sales}$$
-
-$$\text{Quarterly production} = \text{Annual cost of sales}/4$$
-
-where eoq and boq refer to end of quarter and beginning of quarter, respectively. Please ignore the effect of increased external financing required on interest expense.
-
-b. What is the effect of the switch from seasonal to level production on annual profits?
-
-c. What effect does the switch have on the company's quarterly ending inventory? On the company's quarterly need for external financing?
-
-d. Do you think the company will be able to borrow the amount of money required by level production? What obsolescence risks does the company incur by building up inventory in anticipation of future sales? Might this be a concern to lenders?

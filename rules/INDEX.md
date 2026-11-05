@@ -34,6 +34,12 @@ reader lives in `docs/09-bibliography.md` and is never required to apply a rule.
 | `microeconomics.md` | Choice, duality, GE, uncertainty, mechanism design | `/econ` |
 | `game-theory.md` | Equilibria, repeated games, auctions, matching | `/econ` |
 
+## Course materials
+
+| Pack | Covers | Skill |
+|---|---|---|
+| `exercise-lists.md` | Lists of real exercises: source first, full self-contained statements | `/list-exercises`, `/exercise-plan`, `/exam-gen` |
+
 ## Rule citation
 
 Rules are cited `<pack-id>#<number>` — e.g. `outbox-cdc#1`, `quant-ml#3`. Use the
