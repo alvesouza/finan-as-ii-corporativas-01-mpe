@@ -1,0 +1,989 @@
+Corporate Finance
+     Topic 4 – B
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 62
+The asset substitution problem
+
+       Consider a ﬁrm that generates a random liquidating payoff of X
+      tomorrow (at t = 1)
+
+              We can think of X as the resale value of the ﬁrm
+
+      The ﬁrm has debt with a face value of K at t = 1
+
+      Debt is risky, meaning that with positive probability X ≤ K
+      The equity payoff is max{X − K , 0}, the same payoff of a long
+       position in a call option on the assets of the ﬁrm, X , with strike K
+
+              The equityholder bears the upside (any quantity above K accrues to
+              him/her), and obtains zero whenever losses are such that X < K ⇒
+              preference for riskier projects
+
+                                                                                                                                                                                   2 / 62
+The asset substitution problem
+
+      The debt payoff is min{X, K } = K − max{0, K − X} the same payoff of
+       a long position in a risk-free bond with face value K and a short
+       position in a put option on the assets of the ﬁrm, X , with strike K
+
+              Debtholders have priority and they only care about the ﬁrst K dollars ⇒
+              preference for safer projects
+
+      Different payoffs ⇒ conﬂict of interest between equity and
+       debtholders
+
+       The preferred choices of debtholders and shareholders can differ and
+       are not necessarily equal to the choice that maximizes ﬁrm value
+
+       As equityholders have control rights, ﬁrms tend to pick riskier projects
+       when leverage is high, and not necessarily the ones that maximize
+       ﬁrm value (the asset substitution or risk-shifting problem)
+
+                                                                                                                                                                                   3 / 62
+Asset substitution: an example
+
+      Everyone is risk-neutral (⇒ discount rates are always equal to the
+       risk-free rate)
+      The risk-free rate is rf = 20%
+      The assets of the ﬁrm today (t = 0) consist of a cash balance of 100
+       The ﬁrm contracted debt with face value 120 in the past that is due at
+      t =1
+      Three states at t = 1: bust (with probability 20%), neutral (60%) and
+       boom (20%)
+
+                                                                                                                                                                                   4 / 62
+Asset substitution: an example
+
+       Three investment opportunities
+       Project 1 is the one that maximizes the ﬁrm value
+
+                 Table: Projects payoffs
+
+                     Payoff (t=1)
+
+           Investment (t=0) Bust Neutral Boom Exp. payoff NPV
+
+Project 1  -100  110 130 150                              130    8.3
+Project 2  -100
+Project 3  -100  60  90                   240             114    -5.0
+
+                 120 122 125                              122.2  1.8
+
+                                                                       5 / 62
+Asset substitution: an example
+
+Yet, equityholders prefer project 2...
+
+              Table: Equityholders’ payoffs
+
+              Payoff (t=1)
+
+           Bust Neutral Boom            Exp. payoff  Market value
+
+Project 1  0  10            30               12            10
+Project 2                                    24            20
+Project 3  0  0             120              2.2           1.8
+
+           0  2             5
+
+                                                                   6 / 62
+Asset substitution: an example
+
+... whereas debtholders prefer project 3
+
+               Table: Debtholders’ payoffs
+
+               Payoff (t=1)
+
+           Bust Neutral Boom      Exp. payoff  Market value
+
+Project 1  110 120 120                 118          98.3
+Project 2                              90           75.0
+Project 3  60  90            120       120           100
+
+           120 120 120
+
+                                                             7 / 62
+Asset substitution: an example
+
+       Shareholders have control rights and thus project 2 is chosen
+       The project that maximizes ﬁrm value is not chosen: the presence of
+       risky debt leads to inefﬁciency
+      The (market value) balance sheet of the ﬁrm at t = 0 is A = 95,
+      D = 75 and E = 20
+
+                                                                                                                                                                                   8 / 62
+Asset substitution: an example
+
+      Suppose now the ﬁrm has no cash at t = 0 and needs to raise 100
+       from outside investors
+       Suppose the ﬁrm attempts to raise 100 by issuing debt
+       Are debtholders willing to price the bond as a risk-free asset and ask
+      for only 100(1 + rf ) = 100(1 + 20%) = 120 at t = 1?
+
+                                                                                                                                                                                   9 / 62
+Asset substitution: an example
+
+      Suppose now the ﬁrm has no cash at t = 0 and needs to raise 100
+       from outside investors
+       Suppose the ﬁrm attempts to raise 100 by issuing debt
+       Are debtholders willing to price the bond as a risk-free asset and ask
+      for only 100(1 + rf ) = 100(1 + 20%) = 120 at t = 1?
+       No! The risk-shifting problem implies that equityholders would
+       undertake project 2
+       Debtholders would suffer a loss: they would “pay” 100 for an asset
+       that is worth 75
+
+                                                                                                                                                                                   9 / 62
+Asset substitution: an example
+
+       Debtholders anticipate the problem and do not provide ﬁnance
+       (market breakdown) in this case because the preferred choice, project
+       2, has a negative NPV
+
+              As the project destroys value, it is impossible for lenders to get back
+              their investment of 100
+       The risk-shifting problem prevents the ﬁnancing of a ﬁrm that has
+       proﬁtable investment opportunities
+       What if the preferred choice has a positive NPV?
+
+                                                                                                                                                                                 10 / 62
+Asset substitution: an example
+
+       If the preferred choice has a positive NPV, ﬁnancing would take place
+       but at a higher interest rate
+
+Consider the following alternative payoffs for project 2:
+
+           Table: Alternative project payoffs
+
+Project 1  Investment (t=0)         Payoff (t=1)  Exp. payoff  NPV
+Project 2
+Project 3         -100       Bust Neutral Boom         130      8.3
+                  -100                                 124      3.3
+                  -100       110 130 150             122.2      1.8
+                              80 100 240
+                             120 122 125
+
+Anticipating the choice of project 2, lenders would charge an interest
+rate of 120% (a face value of 220)!
+
+At this interest rate the market value of debt is 100
+
+                                                                                                                                                                    11 / 62
+Asset substitution: an example
+
+       What about outside equity ﬁnancing? Let’s return to the original
+       values of the example
+
+      If the ﬁrm raises 100 by selling a fraction α to outside investors,
+      original owners retain a share 1 − α of the ﬁrm
+
+       No risk-shifting problem: they choose the project that maximizes the
+       ﬁrm value: project 1
+
+Project 1  Firm value  Inside equity  Outside equity
+Project 2
+Project 3     108.3     (1-α)108.3        α 108.3
+                95        (1-α)95           α 95
+
+              101.8     (1-α)101.8        α 101.8
+
+There is no conﬂict of interest between inside and outside equity
+(same claim)
+
+                                                                                                                                                                    12 / 62
+Asset substitution: an example
+
+Given that project 1 is chosen, outside investors invest 100 in
+
+exchange for a share
+
+                      α  =   100
+                            108.3
+
+of the ﬁrm
+
+Financing takes place and the choice that maximizes surplus is
+chosen
+
+                                                                 13 / 62
+Asset substitution: implications
+
+       Firms whose business activities are such that managers (acting in the
+       interest of shareholders) have more discretion with regard to risk
+       choices should have less debt and prioritize equity ﬁnancing
+
+       On the other hand, ﬁrms in which managers have little discretion with
+       regard to risk can have more debt
+
+              E.g. mature industries, regulated public utilities
+
+       Risk-shifting distortions are higher when the ﬁrm is in ﬁnancial
+       distress (gambling for resurrection)
+
+              In particular, owners might delay ﬁling for bankruptcy so as to keep the
+              option value of equity alive
+
+                                                                                                                                                                                 14 / 62
+Asset substitution: mitigation
+
+       Our framework is static (one-period)
+
+       In a multi-period setting the need to access markets in the future
+       generates an incentive to build a good reputation and can mitigate the
+       problem
+
+       Jensen and Meckling (1976):
+
+       It seems clear, for instance, that the expectation of future sales of
+       outside equity and debt will change the costs and beneﬁts facing the
+       manager in making decisions which beneﬁt himself at the (short–run)
+       expense of the current bondholders and stockholders. If he develops
+       a reputation for such dealings, he can expect this to unfavorably
+       inﬂuence the terms at which he can obtain future capital from outside
+       sources. This will tend to increase the beneﬁts associated with
+       “sainthood” and will tend to reduce the size of the agency costs.
+
+                                                                                                                                                                                 15 / 62
+Asset substitution: mitigation
+
+       Short-term debt: frequent repricing that incorporates any increases in
+       risk and the threat to not be able to rollover the debt lessen incentives
+       for excessive risk taking
+
+       Covenants (provisions that restrict the actions that ﬁrms can take):
+       e.g. prohibit investments in new, unrelated lines of business; indirect
+       effects of strict covenants if safer projects enable ﬁrms to meet the
+       required ratios (e.g. safer projects generate cash ﬂows earlier, as in
+       Gilje, 2016)
+
+       Convertible debt: debtholders can exercise the option to become
+       equityholders if the business booms
+
+              Equityholders are no longer the sole residual claimants in case of
+              success: part of the gains accrue to debtholders
+
+                                                                                                                                                                                 16 / 62
+Asset substitution: empirical evidence
+
+       Very challenging: exogenous variation in leverage + measurement of
+       the riskness of ﬁrm investment
+       Gilje (2016): ﬁrms reduce risk when they approach distress
+
+              Sample: ﬁrms in the oil & gas industry
+              Evidence for mitigating factors such as short-term debt and covenants
+
+                                                                                                                                                                                 17 / 62
+Asset substitution: friction
+
+       What is the friction underlying the risk-shifting problem?
+       Commitment: managers (acting on behalf of shareholders) cannot
+       commit to taking good investments once debt is contracted
+       Similar to the Holmstrom and Tirole (1997) model, shareholders pay
+       the cost by not receiving funding or paying a higher interest rate
+       If equity is costly/difﬁcult to raise, ﬁrms might forgo proﬁtable
+       investment opportunities
+       Impossible to write contracts on project choices to guarantee such a
+       commitment
+
+                                                                                                                                                                                 18 / 62
+Debt overhang
+
+       After debt is contracted, proﬁtable investments connected to the
+       assets in place of a ﬁrm might not be undertaken
+       The reason is that borrowers (existing shareholders) bear all the
+       investment costs (money, time, effort) but part of the returns accrue to
+       existing creditors
+       In other words, debt in place acts as an implicit tax on investment, the
+       tax rate being related to the probability of default
+
+                                                                                                                                                                                 19 / 62
+Debt overhang (cont’d)
+
+       The problem is more severe when default is more likely, as the portion
+       of returns that accrue to lenders (the ‘tax burden’) increases
+       The problem is less severe if the value of the relationship with the
+       original creditors is large or if default costs are increasing in the
+       amount owed (dynamic repayment incentives)
+       Originally a conjecture about ﬁrms’ behavior (Myers, 1977), the notion
+       of debt overhang has been extended (and documented) to individuals
+
+                                                                                                                                                                                 20 / 62
+Some empirical evidence
+
+       Borrowers with negative home equity (value of the house is smaller
+       that the mortgage balance) invests less in home improvements and
+       maintenance (Melzer, 2017)
+
+       Borrowers that are heavily indebted will share a signiﬁcant part of
+       their future income with creditors, potentially affecting their labor
+       supply decisions (time, effort, search, occupation). See Dobbie and
+       Song (2020) and Di Maggio et al. (2020)
+
+       We say that debt introduces ex post inefﬁciency:
+
+              The efﬁciency loss is larger for investment opportunities whose value
+              added wane if not undertaken immediately
+
+              Example: investments in education, house maintenance investments
+              such as ﬁxing a foundation problem or a plumbing leak
+
+                                                                                                                                                                                 21 / 62
+An example
+
+       For simplicity, the risk-free rate is zero, existing debtholders and
+       equityholders are risk-neutral, and the ﬁrm is owned by a single
+       equityholder
+
+              Risk-neutrality means that the risk premium is zero, so discount rates
+              are r = rf + risk-premium = rf , where rf is the risk-free rate. Since the
+              rf = 0, cash ﬂows at t = 1 are discounted by 1 + r = 1
+       The ﬁrm has assets in place A that have a (market) value at date 1 of
+              500 with probability 0.5 (boom state)
+              200 with probability 0.5 (slump state)
+
+      The ﬁrm has outstanding debt with face value F = 300 due at date 1
+
+                                                                                                                                                                                 22 / 62
+An example (cont’d)
+
+As debt is senior to equity, the current market values (at date 0) are
+
+Table: Baseline market values of A , D, and E
+
+Assets (A )          Boom  slump  Market value
+Debt (D)
+Equity (E)            500   200         350
+A =D+E                300   200         250
+                      200               100
+                      500     0         350
+                            200
+
+Remark: note that the market value of debt is smaller than its face
+value even with a zero discount rate (250<300). The bond is selling at
+a discount due to a positive default probability
+
+                                                                        23 / 62
+An example (cont’d)
+
+       Suppose the ﬁrm owner has access to project that requires an
+       investment of 60 at date 0 and increases the value of the assets in
+       place by 100 at date 1 in both states (boom and slump)
+
+      The project is proﬁtable: it has a positive NPV of 100 − 60 = 40 > 0.
+       Therefore the investment should be undertaken in a ﬁrst-best
+       allocation
+
+       Assumption: the cash ﬂows of the project cannot be obtained
+       separately from those of the assets in place (the project needs to be
+       carried out “inside” the ﬁrm). Otherwise the project can be
+       undertaken in separate entity with no existing debtholders
+
+                                                                                                                                                                                 24 / 62
+An example (cont’d)
+
+       Given that the project is proﬁtable, is the ﬁrm owner willing to invest in
+       this project?
+
+       The answer is no!
+
+       If the ﬁrm owner decides to spend 60 and undertake this project, the
+       market values would change to
+
+Table: Market values of A , D, and E if the project is undertaken
+
+Assets (A )  Boom  slump  Market value
+Debt (D)
+Equity (E)    600   300         450
+A =D+E        300   300         300
+              300               150
+              600     0         450
+                    300
+
+                                                                   25 / 62
+An example (cont’d)
+
+       Even though the project has a positive NPV of 100-60=40, if the
+       owner invests 60, the equity value increases only by 50, from 100 to
+       150
+
+       The reason is that the ﬁrm owner bears the entire investment cost but
+       part of the gain goes to debtholders: the market value of debt
+       increases from 250 to 300
+
+       This is the debt overhang problem: proﬁtable investment opportunities
+       might not be pursued if the borrower is heavily indebted
+
+       As the investment is not undertaken, the market values remain
+      D = 250 and E = 100
+
+                                                                                                                                                                                 26 / 62
+An example (cont’d)
+
+       Renegotiation can be a win-win solution
+
+Suppose the ﬁrm and the debtholders agree on a new face value of
+debt, say F = 280 < 300, conditional on the entrepreneur
+undertaking the project (this condition can written down in a contract)
+
+If the ﬁrm owner decides to undertake this project, the market values
+would change to
+
+Table: Market values of A , D, and E if the project is undertaken and debt is
+renegotiated
+
+Assets (A )  Boom  slump                        Market value
+Debt (D)
+Equity (E)    600   300                               450
+D +E          280   280                               280
+              320    20                               170
+              600   300                               450
+
+                                                              27 / 62
+An example (cont’d)
+
+Now the increase in equity value is 70 = 170 − 100, which is bigger
+than the investment cost, 60
+
+The equityholder is willing to make the investment, as
+
+170 − 60 = 110 >                                 100
+
+new equity value investment  previous equity value
+
+The market value of debt increases from 250 to 280
+
+With renegotiation, both parties are better off
+
+                                                        28 / 62
+An example (cont’d)
+
+We assumed that renegotiation takes place conditional on the
+entrepreneur undertaking the project
+
+What if debtholders cannot force the entrepreneur to invest
+(unconditional renegotiation)?
+
+If the entrepreneur renegotiates and does not invest the payoffs are
+
+Table: Market values of A , D, and E if the project is not undertaken and debt
+is renegotiated
+
+Assets (A)           Boom  slump  Market value
+Debt (D)
+Equity (E)            500   200         350
+A=D+E                 280   200         240
+                      220               110
+                      500     0         350
+                            200
+
+                                                              29 / 62
+An example (cont’d)
+
+       The payoffs with renegotiation are the same with (170-60=110) or
+       without the investment (110), thus we can assume that the investment
+       is undertaken even in an unconditional renegotiation
+       Remark: the new face value of 280 is of the of the possible outcomes
+       of the renegotiation
+
+              In general, the new face value will depend on the bargaining power of
+              the parties
+
+                                                                                                                                                                                 30 / 62
+Debt overhang: mitigation
+
+       Ex post ways: issuance of senior claims to existing debt (issuance of
+       claims junior to existing debt would not solve the problem)
+
+              Sometimes not feasible because of covenants
+              Rationale for debtor-in-possession (DIP) ﬁnancing: lending to a ﬁrm
+              that ﬁled for bankruptcy protection under Chapter 11
+              This type of debt is senior to existing claims and allows ﬁrms in distress
+              to keep investing
+
+       Ex ante ways: debt structure that is easier to renegotiate, such as
+       banks rather than public debt (bonds) and fewer creditors
+
+                                                                                                                                                                                 31 / 62
+The beneﬁts of debt renegotiation
+
+       Debt renegotiation alleviates the debt overhang problem and can
+       restore (ex post) incentives
+
+              Investment decisions are less distorted
+              Both creditors and debtors are better off (win-win)
+              Smaller face value, yet smaller probability of default or smaller loss
+              given default
+       In economic jargon, we say that renegotiation can be ex post efﬁcient
+
+                                                                                                                                                                                 32 / 62
+The beneﬁts of debt renegotiation (cont’d)
+
+       If the borrower is risk-averse, renegotiation also provides insurance to
+       “bad luck” shocks, such as unemployment in a recession, health
+       shocks, etc.
+
+       By keeping the borrower with a clean credit record and a manageable
+       debt payment plan, renegotiation might allow the borrower to retain
+       some access to credit markets
+
+       Individuals that are less liquidity constrained have more time to
+       search for better jobs and negative credit information can adversely
+       affect labor market prospects (Bos et al., 2018)
+
+       Individuals might be able to keep physical assets that are important to
+       sustain their labor income (e.g. motorcycle) or the enrollment in an
+       education program
+
+                                                                                                                                                                                 33 / 62
+The beneﬁts of debt renegotiation (cont’d)
+
+       A wave of defaults (and liquidations) in a recession can amplify
+       shocks to the banking sector
+       Defaults also have externalities:
+
+              Example: foreclosed houses deplete the prices of non-foreclosed
+              houses in the same neighborhood (Campbell et al., 2011)
+
+                                                                                                                                                                                 34 / 62
+The prevalence of private renegotiation
+
+       Out of court loan renegotiation is common
+
+              In the US, even though individuals can choose to ﬁle for bankruptcy
+              under Chapters 7 or 13, the majority of debt restructuring take place
+              outside the bankruptcy system (Dawsey et al., 2013)
+
+              According to the Central Bank of Brazil, 4.6 million borrowers were
+              overindebted in December 2019 (more than 90 days overdue, ratio
+              debt service to income larger than 50%) and around 252 thousand
+              individuals per month restructure their debts1
+
+       Private renegotiation is potentially more relevant in places with
+       inefﬁcient judicial systems, where it is too costly and ineffective to ﬁle
+       a case against a borrower in default
+
+     1Relato´ rio de Economia Banca´ ria, 2018 and 2019.
+
+                                                                                                                                                                                 35 / 62
+Private renegotiation and public policy
+
+       Renegotiation can be inﬂuenced by policy
+
+              Accounting and regulatory (capital requirements, loan loss provision)
+              treatment of restructured operations
+
+              Personal bankruptcy law / institutional environment
+
+       Should governments promote renegotiation (or forbearance)?
+       Examples:
+
+              Coronavirus Aid, Relief, and Economic Security (CARES) Act during
+              the COVID-19 pandemic
+
+              Home Affordable Modiﬁcation Plan (HAMP) during the Great
+              Recession
+
+              Ongoing debate about cancelling student-loan debt
+
+                                                                                                                                                                                 36 / 62
+The costs of debt renegotiation
+
+As we saw, under certain assumptions, the debt contract arises as an
+optimal contract in the presence of moral hazard, in the sense that it
+is the best way to provide correct incentives
+
+    Loan   Moral hazard                                   Maturity
+agreement       stage                               (repayment date)
+
+                 Noncontractible actions that             If default takes place,
+                    beneﬁt the borrower but         no ﬁnancial payoff (liquidation)
+                   hurt the lender. Example:         and ‘punishment’ (checkered
+
+              hours worked, wasteful spending,       credit record, less access to
+           pet projects with poor ﬁnancial returns         credit in the future)
+
+                                                                      37 / 62
+The costs of debt renegotiation (cont’d)
+
+       The prospect of renegotiation makes the debt contract soft
+
+       The anticipation of renegotiation in the future undermines incentives
+       at the moral hazard stage
+
+    Loan                   Moral hazard                        Maturity
+agreement                       stage                   (repayment date)
+
+                 Noncontractible actions that         If default takes place,
+                    beneﬁt the borrower but           borrowers have some
+                   hurt the lender. Example:        ﬁnancial payoff and face
+                                                    a less harsh ‘punishment’
+              hours worked, wasteful spending,         (clean credit record,
+           pet projects with poor ﬁnancial returns   drop in access to credit
+
+                                                          is not so severe)
+
+                                                    38 / 62
+The costs of debt renegotiation (cont’d)
+
+       By undermining incentives, the prospect renegotiation in the future
+       can increase the default risk of debt contracts, leading to credit
+       rationing and higher costs
+       The prospect of renegotiation can also trigger a strategic default:
+       individuals can claim they do not have enough cash to repay the loan
+       even if they have so, in order to obtain better conditions (Mayer et al.,
+       2014)
+
+              Strategic default differs from a liquidity default, a situation in which the
+              borrower is not able to repay because he does have enough cash
+
+                                                                                                                                                                                 39 / 62
+The costs of debt renegotiation (cont’d)
+
+       In economic jargon, we say that the prospect of renegotiation can be
+       ex ante inefﬁcient
+       The moral hazard costs of renegotiation are similar to the concern
+       that too-big-to-fail banks take too much risk because they know that
+       they will be bailed out in case of insolvency
+       Public policy should take into account costs and beneﬁts
+
+                                                                                                                                                                                 40 / 62
+Default as insurance
+
+       Based on Indarte (2023)
+       In the next period, an individual has
+
+              A debt payment D
+              Liquid assets A < D, which lenders cannot seize
+              Income Y ∈ [Y , Y¯ ] distributed according to a cdf F(.)
+
+                                       Pr[Y ≤ a] = F(a)
+      The individual is risk-averse with utility u(C), where u(0) = 0, u > 0
+      and u < 0
+
+                                                                                                                                                                                 41 / 62
+Default as insurance
+
+       In case of default, courts determine that the individual retains
+      minimum income level E, where E < Y
+
+              Creditors receive Y − E (wage garnishment) up to the amount due D
+      Default entails a non-pecuniary cost σ > 0
+      If A + Y < D, individuals cannot repay (cash ﬂow default)
+      If A + Y ≥ D, individuals can choose not to repay (strategic default)
+
+              If they repay, they consume A + Y − D
+              If they default, they consume A + E
+
+                                                                                                                                                                                 42 / 62
+Default as insurance
+
+      When A + Y ≥ D (or Y ≥ D − A ), the individual defaults whenever
+                               u(A + Y − D) < u(A + E) − σ
+
+      As long as u(A + E) − σ > 0, there is a Y ∗ > D − A such that
+                              u(A + Y ∗ − D) = u(A + E) − σ
+
+      The individual defaults whenever Y < Y ∗
+
+              Default acts as insurance whenever the income drops below a given
+              level ⇒ it guarantees a consumption of A + E when income is too low
+              Since the individual is risk-averse, default can increase welfare by
+              making the individual bear less income risk
+
+                                                                                                                                                                                 43 / 62
+Default as insurance
+
+The default probability is then p = Pr[Y ≤ Y ∗] = F(Y ∗)
+
+An increase in the generosity of debt relief E provides more
+insurance...
+
+... but it also increases default rates (and thus interest rates in
+
+equilibrium)
+
+              ∂p      =  F  (Y ∗)    u (A + E)      >  0
+              ∂E                  u  (A + Y ∗ − D)
+
+                                                                     44 / 62
+Identifying information asymmetries in credit markets
+
+       In general, it is difﬁcult to disentangle adverse selection and moral
+       hazard
+
+       Consider the following experiment:
+              Randomly allocate individuals into different groups
+              Then offer the same loan contract at different prices (interest rates) to
+              the groups of otherwise identical individuals
+
+       A positive correlation between interest rates and default can arise due
+       to
+
+              Adverse selection: those with a relatively high probability of default are
+              more likely to accept a high rate; or
+              Moral hazard: a high interest rate can undermine incentives and
+              increase the default probability
+
+                                                                                                                                                                                 45 / 62
+Karlan and Zinman (2009): research design
+
+       Randomization of interest rates across three dimensions:
+              Interest rate offered in a direct-mail solicitation: the offer rate
+              Actual interest rate on the loan contract: the contract rate
+              Interest rate on future loans (conditional on not defaulting): dynamic
+              repayment incentive
+
+       The design enables the comparison of
+              Borrowers who select in at different rates and then face identical
+              repayment incentives: adverse selection
+              Borrowers who select at identical rates and then face different
+              repayment incentives: moral hazard
+
+                                                                                                                                                                                 46 / 62
+Possible to disentangle:
+      Hidden information, deﬁned as ex-ante selection effects, which
+      includes both selection on unobserved risk and selection on
+      unobserved anticipated effort
+
+from
+      Hidden action: ex-post incentive effects
+
+The design cannot disentangle the two sources of hidden information
+
+                                                                                                                                                                    47 / 62
+Model
+
+Three stages:
+
+       Stage 1: the individual decides whether or not to take up a loan with
+       an exogenous interest rate ro. The rate ro does not convey any
+       information about interest rates of future loans: the individuals believe
+       that future loans will be offered at a normal rate r.
+
+       Stage 2: The lender randomly lowers the interest rate for some
+      borrowers to rc < r0. With an independent randomization, the lender
+      lowers the interest rate of future loans to rf = rc < r for some
+       borrowers (conditional on repaying the loan). Given rc and rf the
+       borrower chooses how much effort to put into generating cash ﬂows
+       to repay the current loan
+
+       Stage 3: Cash ﬂows are realized and the borrower decides whether
+       or not to repay the loan
+
+                                                                                                                                                                                 48 / 62
+A penniless risk-neutral individual has access to a project that
+requires an investment of I = 1
+
+The loan can be obtained from a single lender
+
+There is no need to model the lender’s behavior: the decisions are
+randomized
+
+Individuals are indexed by a risk type θi ∈ [θ, θ¯] and exert effort
+e ∈ [e, e¯] at a cost c(θi, e) = e
+
+If the project succeeds (state g), it generates (unveriﬁable) cashﬂow
+Y (θi); if it fails (state b), the cashﬂow is zero
+
+The probability of success is π(θi, e) is a function of both the risk type
+and the effort provision
+
+                                                                                                                                                                    49 / 62
+The borrowers is subject to a state-speciﬁc cost of default: Ci(rf ),
+i = g, b, where Ci(rf ) is decreasing in rf and Cb (rf ) < Cg(rf )
+
+      We can think of Ci(rf ) as the forgone discounted proﬁts from future
+      loans. Hence the assumption that Ci(rf ) is decreasing in rf
+
+Remark: The model features both hidden information and hidden
+action
+
+      Hidden information manifests itself in the form of unobservable risk
+      type θi and anticipated effort
+
+                                                                                                                                                                    50 / 62
+Assumptions:
+
+(A1) Y (θi) > 1 + ro for all θi: if the project succeeds the loan can be
+repaid at the offer interest rate
+
+(A2)  ∂π(θi ,e)  >  0  and   ∂2π(θi ,e)  <  0:  the  probability  of   success  is
+         ∂e                     ∂e2
+
+increasing and concave in effort
+
+(A3)  ∂π(θi ,e)  <  0:  the  higher      the  risk  type,  the  lower  the  probability  of
+         ∂θi
+success (and thus the higher the probability of a liquidity default)
+
+(A4) π(θi, e)Y (θi) = Y¯ (e) for all θi: for a ﬁxed e, all risk types
+generate the same expected return. Projects with a higher θi are
+riskier in terms of second-order stochastic dominance
+
+(mean-preserving spread)
+
+(A5) Cg(rf ) ≥ 1 + ro for all relevant rf : the borrower repays the loan
+when the project succeeds (there is no strategic default)
+
+                                                                                                                                                                    51 / 62
+Stage 3: given (A1) and (A5), the borrower repays if and only if the
+project succeeds
+
+Stage 2: The borrower with type θi solves
+      max π(θi, e) Y (θi) − (1 + rc) + (1 − π(θi, e)) − Cb (rf ) − e
+
+       e∈[e,e¯]
+
+FOC:  ∂π(θi ,e)  Y (θi) − (1 + rc ) + Cb (rf )  =1
+         ∂e
+
+Hidden action effect 1: Given (A2), effort is decreasing in rc
+
+Hidden action effect 2: Given (A1), (A2) and (A5), effort increases
+as the cost of default increases. Thus, repayment increases when rf
+
+decreases (dynamic repayment incentive)
+
+                                                                      52 / 62
+Given  (A4),  ∂π(θi ,e)  Y  (θi  )  =  Y¯  (e),  we  can  rewrite    the  FOC  as
+                 ∂e
+
+              [1         −  Y¯ (e)]Y (θi)        =  Cb (rf )  −  (1  +  rc)
+                            Y¯ (e)
+
+Given (A2), Y¯ (e) > 0 and Y¯ (e) < 0
+
+Then the optimal effort level eˆ(rc, Cb (rf ), θi) is a decreasing function
+of the risk type θi
+
+                                                                                   53 / 62
+Stage 1: individuals decide to take up a loan with a rate ro if the
+expected gains from the project are bigger than the outside option,
+which yields a zero payoff by assumption.
+
+Given the optimal effort level eˆ(ro, Cb (rf ), θi) and the belief that future
+interest rates will be offered at a normal rate r, an individual accepts
+the offer ro if and only if
+π(θi, eˆ(ro, Cb (r), θi)) Y (θi)−(1+ro)+Cb (r) −Cb (r)−eˆ(ro, Cb (r), θi) ≥ 0
+Given (A4) we can rewrite
+
+ Y¯ (eˆ(ro, Cb (r), θi)) + π(θi, eˆ(ro, Cb (r), θi)) Cb (r) − (1 + ro) − Cb (r)
+                                                             −eˆ(ro, Cb (r), θi) ≥ 0
+
+                                                                                                                                                                    54 / 62
+If Cb (r) < 1 + ro, then the left-hand side is increasing in θi
+
+Therefore there exists a threshold θ(ro) such that risk types θi > θ(ro)
+take up the loan
+
+By the implicit function theorem and the envelope theorem
+
+d θ(r o )  =  −  −π(θi, eˆ(ro, Cb (r), θi))                    >0
+  dr o
+                 ∂π(θi ,eˆ(ro ,Cb (r),θi )  Cb (r) − (1 + ro)
+                           ∂θi
+
+Hidden information effect: A higher offer interest rate leads to a
+riskier pool of clients and thus a higher default rate
+
+Note: for a discrete change in ro, the envelope theorem does not
+hold: besides the direct effect of ro, we also have to consider the
+indirect effect of ro on the optimal effort choice
+
+                                                                     55 / 62
+Experiment
+
+      Offer rate can be low or high, ro ∈ {rL , rH}, with rL < rH
+
+      Of those that take up the high ro = rH, some are randomly surprised
+      with a new lower contract rate rc = rL ro, while the remainder
+      continue to receive the high rate ro = rc = rH
+
+       Hidden information: comparison of the repayment behavior of those
+      that were offered and accepted the low rate, ro = rc = rL , with those
+      that were offered and accepted the high rate, ro = rH, but ended up
+      with a low contract rate rc = rL
+
+       Hidden action: comparison of the repayment behavior of those that
+       took up the high rate and were not offered a low contract rate,
+      ro = rc = rH, with those that were offered and accepted the high rate,
+      ro = rH, but ended up with a low contract rate rc = rL
+
+                                                                                                                                                                                 56 / 62
+57 / 62
+Regression
+
+       Empirical model
+                          Yi = α + βoro + βc rc + βb C + Xi + o
+
+       where Yi is a measure of default
+      βc > 0 identiﬁes any hidden action effect 1 (effect of a higher
+       repayment on effort)
+      βb < 0 identiﬁes any hidden action effect 2 (effect of higher dynamic
+       incentives on effort)
+      βo > 0 identiﬁes adverse selection (hidden information effect, effect of
+       a higher offer rate on default)
+
+                                                                                                                                                                                 58 / 62
+59 / 62
+References I
+
+Bos, M., Breza, E., and Liberman, A. (2018). The labor market effects of
+   credit market information. The Review of Financial Studies,
+   31(6):2005–2037.
+
+Campbell, J. Y., Giglio, S., and Pathak, P. (2011). Forced sales and house
+   prices. American Economic Review, 101(5):2108–31.
+
+Dawsey, A. E., Hynes, R. M., and Ausubel, L. M. (2013). Non-judicial debt
+   collection and the consumer’s choice among repayment, bankruptcy
+   and informal bankruptcy. Am. Bankr. LJ, 87:1.
+
+Di Maggio, M. D., Kalda, A., and Yao, V. (2020). Second chance: Life
+   without student debt. Technical report, National Bureau of Economic
+   Research.
+
+Dobbie, W. and Song, J. (2020). Targeted debt relief and the origins of
+   ﬁnancial distress: Experimental evidence from distressed credit card
+   borrowers. American Economic Review, 110(4):984–1018.
+
+                                                                                                                                                                                 60 / 62
+References II
+
+Gilje, E. P. (2016). Do ﬁrms engage in risk-shifting? Empirical evidence.
+   The Review of Financial Studies, 29(11):2925–2954.
+
+Holmstrom, B. and Tirole, J. (1997). Financial intermediation, loanable
+   funds, and the real sector. the Quarterly Journal of economics,
+   112(3):663–691.
+
+Indarte, S. (2023). Moral hazard versus liquidity in household bankruptcy.
+   The Journal of Finance, 78(5):2421–2464.
+
+Jensen, M. C. and Meckling, W. H. (1976). Theory of the ﬁrm: Managerial
+   behavior, agency costs and ownership structure. Journal of ﬁnancial
+   economics, 3(4):305–360.
+
+Karlan, D. and Zinman, J. (2009). Observing unobservables: Identifying
+   information asymmetries with a consumer credit ﬁeld experiment.
+   Econometrica, 77(6):1993–2008.
+
+Mayer, C., Morrison, E., Piskorski, T., and Gupta, A. (2014). Mortgage
+   modiﬁcation and strategic behavior: evidence from a legal settlement
+   with countrywide. American Economic Review, 104(9):2830–57.
+
+                                                                                                                                                                                 61 / 62
+References III
+
+Melzer, B. T. (2017). Mortgage debt overhang: Reduced investment by
+   homeowners at risk of default. The Journal of Finance, 72(2):575–612.
+
+Myers, S. C. (1977). Determinants of corporate borrowing. Journal of
+   Financial Economics, 5(2):147–175.
+
+                                                                                                                                                                                 62 / 62
+

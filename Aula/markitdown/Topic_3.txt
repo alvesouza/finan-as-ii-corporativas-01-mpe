@@ -1,0 +1,1482 @@
+Corporate Finance
+       Topic 3
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 91
+Hidden information
+
+       In many markets, on side has better information than the other
+
+       Examples:
+
+              Sellers of used cars know more about the quality of their cars than
+              potential buyers
+
+              Clients seeking for insurance know more than the insurance providers
+              about their accident risk
+
+              Workers know more than employers about their abilities
+
+              Borrowers know more than lenders about their default probability, the
+              value of assets in place and pledged collateral, and the private beneﬁt
+              associated with different investment choices
+
+              In an IPO some (connected) investors know more about the ﬁrm than
+              others
+
+                                                                                                                                                                                   2 / 91
+Some potential implications
+
+       Adverse selection: at a given interest rate, only riskier borrowers are
+       willing to apply for a loan
+       Cross-subsidization: low-risk borrowers have to pay higher interest
+       rates due to the presence of high-risk borrowers
+
+              High-risk borrowers might obtain ﬁnancing and invest in negative NPV
+              projects due to the subsidy they receive (overinvestment)
+       Extreme case: market breakdown
+              Credit rationing can arise: even positive NPV projects ate not ﬁnanced
+              (underinvestment)
+
+                                                                                                                                                                                   3 / 91
+A model of ﬁnancing under asymmetric information
+
+       A penniless borrower (entrepreneur, ﬁrm) needs I to invest in a
+       project that generates R in case of success and 0 in case of failure
+      (A1) The borrower and the outside investors are risk-neutral ⇒ all
+       future payoffs are discounted at the risk-free rate (risk premium = 0)
+      (A2) The risk-free interest rate is normalized to zero: rf = 0
+      (A1) + (A2) ⇒ discount rate for any future payoff is r = 0
+
+                                     r = risk premium + rf = 0
+       Capital markets are competitive and outside investors have access to
+       a risk-free bond that yields a zero net return
+
+                                                                                                                                                                                   4 / 91
+Private information about default probabilities
+
+       The entrepreneur can be one of two types (privately known):
+              Good type (low default risk): probability of success p
+              Bad type (high default risk): probability of success q
+
+      where 1 > p > q > 0
+       The entrepreneur has private information about his type: outside
+       investors cannot tell bad and good borrowers apart
+      Outside investors assign probability α ∈ (0, 1) on the borrower being
+       a good type
+
+              We can interpret α as the share of good types in a large population
+
+                                                                                                                                                                                   5 / 91
+Efﬁciency
+
+We assume that I ≤ pR: if the borrower is a good type, the project
+has a positive NPV
+
+From a social surplus perspective, the good type should be able to
+obtain ﬁnancing and undertake the project: he/she can transform the
+investment of I into a higher value
+
+           I ≤ PV(expected future cash ﬂows) =  pR   = pR
+
+investment                                      1+r
+
+                                                                    6 / 91
+Efﬁciency
+
+       Regarding the bad type, we will study two cases
+      (i) I ≤ qR: the project also has a positive NPV
+
+              From a social surplus perspective, the bad type should be able to
+              undertake the project
+
+      (ii) I > qR: the project has a negative NPV
+
+              From a social surplus perspective, the bad type should not be able to
+              undertake the project, as it destroys value
+
+                  I > PV(expected future cash ﬂows) = qR = qR
+                                                                         1+r
+
+                    investment
+
+                                                                                                                                                                                   7 / 91
+Efﬁciency
+
+When qR < I, it would be more efﬁcient if the bank denies credit to
+the borrower and invests at the zero risk-free interest rate (a zero
+NPV transaction, instead of a negative one):
+
+Investing I at the zero risk-free rate:
+
+           PV(expected future cash ﬂows) =  I    =I
+
+                                            1+r
+
+Investing I in the project:
+
+           PV(expected future cash ﬂows) = qR = qR < I
+                                                        1+r
+
+                                                                      8 / 91
+Private information about default probabilities
+
+Under asymmetric information, outside investors assign a probability
+of success of
+
+                                m = αp + (1 − α)q
+
+As m is an average of p and q and α ∈ (0, 1), p > m > q
+
+When qR ≥ I, mR ≥ I (for any α)
+
+When qR < I, we might have mR ≥ I or mR < I, depending on α:
+
+mR ≥ I ⇔ α ≥ I/R − q and mR < I ⇔ α < I/R − q
+p−q                                              p−q
+
+                                                              9 / 91
+Contracts
+
+       The borrower is protected by limited liability, that is, the borrower
+       cannot pay the lender out of his/her own wealth
+      Outside (uninformed) investors receive Ru ≤ R if the project succeeds
+       and zero if the project fails
+      The entrepreneur (ﬁrm) receives Rf = R − Ru in case of success and
+       zero otherwise
+
+                                                                                                                                                                                 10 / 91
+Benchmark: symmetric information
+
+       Symmetric information: the lender can observe the entrepreneur’s
+       type (default/repayment probability)
+
+       Two different credit markets (one for each type of entrepreneur), with
+       two different equilibrium contracts
+
+              A market for good type entrepreneurs, with an equilibrium contract
+              establishing a repayment RuG to outside investors in case of success if
+              the transaction takes place
+              A market for bad type entrepreneurs, with an equilibrium contract
+              establishing a repayment RuB to outside investors in case of success if
+              the transaction takes place
+
+                                                                                                                                                                                 11 / 91
+Good type contract: symmetric information
+
+The good type entrepreneur obtains ﬁnancing and the project has a
+positive NPV
+
+As capital markets are competitive, the payment to outside investors
+in case of success satisﬁes (break-even condition)
+
+pRuG = I  ⇐⇒  RuG  =  I
+                      p
+
+The expected payoff (utility) of the entrepreneur is
+
+pRfG = p(R − RuG) = pR − I, that is, the entrepreneur receives the
+entire NPV
+
+                                                                    12 / 91
+Bad type contract: symmetric information
+
+If qR < I, the bad type entrepreneur does not obtain ﬁnancing as the
+outsider investors cannot break even:
+
+      The maximum expected amount lenders can obtain (known as the
+      expected pledgeable income), qR, is smaller than I
+
+If qR ≥ I, the bad type entrepreneur obtains ﬁnancing and competitive
+capital markets imply that
+
+qRuB = I  ⇐⇒  RuB  =  I
+                      q
+
+Moreover, the expected payoff (utility) of the entrepreneur is
+
+qRfB = q(R − RuB ) = qR − I, that is, the entrepreneur receives the
+entire NPV
+
+                                                                     13 / 91
+Benchmark: symmetric information
+
+Note that, as p > q, the good type repays a smaller amount in case of
+success
+
+       RuG           =I<I=               RuB
+                         pq
+
+repayment good type                   repayment low type
+
+Alternatively, if we interpret the contract as a debt contract, the good
+type pays a lower interest rate
+
+iG  =  RuG − I  =    1  −1  <  1  −1  =  RuB − I  =  iB
+          I          p         q            I
+
+The outcome under symmetric information is efﬁcient (maximizes
+social surplus) as only value-creating, NPV > 0, projects are ﬁnanced
+
+                                                          14 / 91
+Asymmetric information
+
+       We now assume again that the repayment probability is private
+       information
+
+       Is symmetric-information outcome, with one contract for each type,
+       implementable?
+
+       No. The bad type entrepreneur would lie and pretend to be a good
+       entrepreneur in order to repay RuG instead of RuB
+       As all types choose the repayment RuG, the outside investors’
+       expected proﬁt would be negative
+
+                                 m RuG − I < pRuG − I = 0
+
+                                       αp+(1−α)q
+
+                                                                                                                                                                                 15 / 91
+Asymmetric information
+
+       As lenders cannot distinguish between good and bad borrowers,
+       there is only one equilibrium contract for both types that requires a
+       repayment of Ru in case of success
+      As Ru ≤ R because of limited liability, Rf = R − Ru ≥ 0 and both the
+       good and the bad types prefer this contract and investing in the
+       project to not being ﬁnanced (even if the project has a negative NPV)
+       Outside investors’ expected proﬁt is
+
+                              mRu − I = [αp + (1 − α)q]Ru − I
+      In particular, the maximum proﬁt of outside investors is mR − I
+
+                                                                                                                                                                                 16 / 91
+Market breakdown and underinvestment
+
+If mR < I, lenders cannot break even and there is no lending: market
+breakdown
+
+This case arises whenever qR < I and the probability that the
+
+borrower is a good borrower is low enough, that is, whenever α < α∗,
+
+where
+
+       [α∗p + (1 − α∗)q]R = I ⇒ α∗ = I/R − q
+                                                     p−q
+
+Underinvestment: the good borrower does not invest even though
+the project has a positive NPV . The outcome is inefﬁcient
+
+The good borrower is hurt because of the presence of bad types and
+the fact that outside investors suspect that the good type might be a
+bad type
+
+                                                                17 / 91
+Cross-subsidization
+
+      If mR ≥ I, there is lending
+
+       Competition implies zero expected proﬁts, that is,
+                                                                    I
+
+                                   mRu = I ⇐⇒ Ru = m
+      As q < m < p, RuG < Ru < RuB (cross-subsidization): the good type
+       pays more in comparison to the symmetric information case (“fair
+       value”), there is dilution and they receive less than the NPV
+
+       Bad-type borrowers, on the other hand, pay less in comparison to the
+       symmetric information case
+
+       Alternatively, outside investors make money on the good type and
+       lose money on the bad type
+
+       Good type is again negatively affected by the presence of bad types,
+       although to a lesser extent than in a market breakdown
+
+                                                                                                                                                                                 18 / 91
+Overinvestment
+
+      When mR ≥ I and qR ≥ I, there is cross-subsidization but the
+       outcome is still efﬁcient: only positive NPV projects are undertaken
+      When mR ≥ I but qR < I, there is overinvestment: bad borrower
+       invests even though his/her project has a negative NPV (the outcome
+       is inefﬁcient)
+       There is adverse selection in the sense that the quality of
+       entrepreneurs who obtain ﬁnancing is worse than in the symmetric
+       information benchmark
+
+                                                                                                                                                                                 19 / 91
+Cost incurred by the good type
+
+In the asymmetric-information case, when mR > I, the borrower’s
+expected payoff is
+
+                          I  = (pR − I) −                    χ
+       pRf = p R − m                                       1 − χI
+
+                             symmetric information         discount due to
+                                                      information asymmetry
+                             payoff
+
+where                                                 p−q
+                                                        p
+       χ = (1 − α)
+
+                             probability of bad type
+
+χ is a measure of adverse selection: the higher its value, the higher
+the discount due to information asymmetry
+
+                                                                             20 / 91
+Example
+
+      R = 50, I = 30, p = 0.8, q = 0.7, α = 0.5
+       The project has a positive NPV regardless of the borrower’s type:
+
+              Good type: NPV = −30 + 0.8 × 50 = 10
+              Bad type: NPV = −30 + 0.7 × 10 = 5
+
+                                                                                                                                                                                 21 / 91
+Example
+
+       Symmetric information: both types invest as projects have positive
+       NPV
+       Fair prices (no cross-subsidization), expected utility equal to the NPV:
+
+              Good type: RuG = 30/0.8 = 37.5, iG = 25%, UG = 0.8(50 − 37.5) = 10
+              Bad type: RuB = 30/0.7 = 42.9, iB = 42.9%, UB = 0.7(50 − 42.9) = 5
+              Expected discounted value of future cash ﬂows:
+              αp 50 + (1 − α)q50 = 37.5
+
+                                                                                                                                                                                 22 / 91
+Example
+
+       Asymmetric information: lenders assign probability of success
+      m = 0.5 × 0.8 + 0.5 × 0.7 = 0.75
+
+      Both types invest, as mR ≥ I
+
+      Both types promise to repay Ru = 40, i = 33.3%
+
+       Cross-subsidization:
+
+              Good type has expected utility UG = 0.8(50 − 40) = 8 (smaller than in
+              the symmetric information case)
+
+              Bad type has expected utility UB = 0.7(50 − 40) = 7 (larger than in the
+              symmetric information case)
+
+       Expected discounted value of future cash ﬂows:
+      αp 50 + (1 − α)q50 = 37.5 (same as in the symmetric information
+      case ⇒ outcome is still efﬁcient)
+
+                                                                                                                                                                                 23 / 91
+Example
+
+      Now, let’s assume that q = 0.5
+
+       The project has a negative NPV if the borrower is a bad type:
+      NPV = −30 + 0.5 × 50 = −5
+
+       Symmetric information: only good type invests, same repayments
+       and interest rates as before; bad type does not obtain credit
+       (expected utility zero)
+
+       Expected discounted value of future cash ﬂows:
+
+              Since lenders do not fund the bad type, they invest 30 at the zero
+              risk-free rate, obtaining 30 in the next period with probability 1
+              The expected discounted value is then: αp 50 + (1 − α)30 = 35
+
+                                                                                                                                                                                 24 / 91
+Example
+
+       Asymmetric information: lenders assign probability of success
+      m = 0.5 × 0.8 + 0.5 × 0.5 = 0.65
+
+      Both types invest, as mR ≥ I
+
+      Both types promise to repay Ru = 46.15, i = 53.8%
+
+       Cross-subsidization:
+
+              Good type has expected utility UG = 0.8(50 − 46.15) = 3.1 (smaller
+              than in the symmetric information case, 10)
+
+              Bad type has expected utility UB = 0.5(50 − 46.15) = 1.9 (larger than
+              in the symmetric information case, 0)
+
+       Expected discounted value of future cash ﬂows:
+      αp 50 + (1 − α)q50 = 32.5 (smaller than in the symmetric
+      information case ⇒ outcome is inefﬁcient (overinvestment))
+
+                                                                                                                                                                                 25 / 91
+Example
+
+      What if α = 0.2 and q = 0.5?
+
+       Symmetric information: only good type invests, same repayments
+       and interest rates as before; bad type does not obtain credit
+       (expected utility zero)
+
+              The expected discounted value of future cash ﬂows is then:
+              αp 50 + (1 − α)30 = 32
+
+       Asymmetric information: no credit (market breakdown), as
+      m = 0.2 × 0.8 + 0.8 × 0.6 = 0.56 and mR < I
+
+              Both types obtain zero expected utility
+
+              Expected value of discounted cash ﬂows is 30 (all money in the
+              risk-free bond, smaller than in the symmetric information case ⇒
+              outcome is inefﬁcient (underinvestment))
+
+                                                                                                                                                                                 26 / 91
+Example
+
+      Recall that α∗ is such that [α∗0.8 + (1 − α∗)0.5]R = I, which yields
+      α∗ = 1/3
+       In general, we have two cases under asymmetric information:
+
+              Case 1: if the proportion of good types satisﬁes α ≥ 1/3, mR ≥ I, both
+              types invest, cross-subsidization and overinvestment
+              Case 2: if the proportion of good types satisﬁes α < 1/3, mR < I,
+              neither type invests, market breakdown and underinvestment
+
+                                                                                                                                                                                 27 / 91
+More information: the introduction of a credit bureau
+
+       Suppose lenders can now observe a characteristic x, where either
+      x = xG (good information) or x = xB (bad information)
+
+              Example: credit bureau that mandates the reporting of defaults and
+              delinquencies; xB would mean a checkered credit history, while xG
+              would mean a clean credit history
+
+      Let’s assume that R = 50, I = 30, p = 0.8, q = 0.7
+
+      We assume that P(xG) = P(xB ) = α = 0.5
+
+       In absence of the public mandatory signal x, the lenders’ belief about
+       the probability of success is:
+
+               m = αp + (1 − α)q = 0.5 × 0.8 + 0.5 × 0.7 = 0.75
+
+                                                                                                                                                                                 28 / 91
+More information: the introduction of a credit bureau
+
+      Good types (p = 0.8) are more likely to have good information xG:
+
+              The probability of observing good information xG given that the
+              borrower is a good type is P(xG|good type) = 0.9
+
+      Bad types (q = 0.7) are more likely to have bad information xB :
+
+              The probability of observing bad information xB given that the borrower
+              is a bad type is P(xB |bad type) = 0.9
+
+      As probabilities add up to one, P(xB |good type) = 0.1 and
+      P(xG|bad type) = 0.1
+
+                                                                                                                                                                                 29 / 91
+More information: the introduction of a credit bureau
+
+After observing xG lenders update their belief about a borrower being
+a good type using the Bayes’ rule
+
+P (good  type |xG )  =  P (xG |good  type) × P(good  type)  =  0.9 ×  α  =  0.9
+                                       P (xG )                   0.5
+
+Therefore, P(bad type|xG) = 0.1 and the belief about the probability
+of success conditional on observing xG is now
+
+            mxG = P(good type|xG) × p + P(bad type|xG) × q
+                  = 0.9 × 0.8 + 0.1 × 0.7 = 0.79 > 0.75 = m
+
+                                                                            30 / 91
+More information: the introduction of a credit bureau
+
+Similarly, after observing xB lenders update their belief about a
+borrower being a good type using the Bayes’ rule
+
+P (good  type|xB )  =  P(xB |good  type) × P(good  type)  =  0.1 ×  α  =  0.1
+                                     P(xB )                    0.5
+
+Therefore, P(bad type|xB ) = 0.9 and the belief about the probability
+of success conditional on observing xB is now
+
+            mxB = P(good type|xB ) × p + P(bad type|xB ) × q
+                  = 0.1 × 0.8 + 0.9 × 0.7 = 0.71 < 0.75 = m
+
+                                                                          31 / 91
+More information: the introduction of a credit score
+
+       Now we have “two” markets: one for xG and one for xB :
+       One equilibrium repayment RxG conditional on observing xG such
+       that:
+
+              If RmxG ≥ I, both types that have information xG receive credit and
+              RxG mxG = I
+              Otherwise, if RmxG < I, the market collapses (neither type receives
+              credit)
+
+      In the example, mxG R = 0.79 × 50 = 39.5 > 30 and thus
+      RxG = 30/0.79 = 37.97 and ixG = 26.58%
+
+                                                                                                                                                                                 32 / 91
+More information: the introduction of a credit score
+
+       One equilibrium repayment RxB conditional on observing xB such
+       that:
+
+              If RmxB ≥ I, both types that have information xB receive credit and
+              RxB mxB = I
+              Otherwise, if RmxB < I, the market collapses (neither type receives
+              credit)
+      In the example, mxB R = 0.71 × 50 = 35.5 > 30 and thus
+      RxG = 30/0.71 = 42.25 and ixB = 40.85%
+
+                                                                                                                                                                                 33 / 91
+More information: the introduction of a credit score
+
+Information Receives                       Interest rate
+
+structure credit? Good type Bad type
+
+                    Symmetric  Both types  25.0%  42.9%
+  Asymmetric (no bureau)       Both types  33.3%  33.3%
+Asymmetric (good inf. xG)      Both types  26.6%  26.6%
+ Asymmetric (bad inf. xB )     Both types  40.8%  40.8%
+
+                                                          34 / 91
+More information: the introduction of a credit score
+
+       The expected utility of the good type is
+            P(xG|good type) × 9.62 + P(xB |good type) × 6.2 = 9.27 > 8
+
+       The expected utility of the bad type is
+             P(xG|bad type) × 8.42 + P(xB |bad type) × 5.42 = 5.72 < 7
+
+       Less cross-subsidization: good type is better off in comparison to the
+       situation without a credit bureau
+
+       Ex ante expected value of future cash ﬂows:
+                          P(xG) × mxG R + P(xB ) × mxB R = 37.5
+
+       same as before (no efﬁciency gains)
+
+                                                                                                                                                                                 35 / 91
+More information: the introduction of a credit score
+
+Can more information also improve efﬁciency?
+Consider the case again that R = 50, I = 30, p = 0.8, q = 0.5
+
+Information Receives                       Interest rate
+
+structure credit? Good type Bad type
+
+                    Symmetric  Both types   25.0%     No credit
+  Asymmetric (no bureau)       Both types   53.8%      53.8%
+Asymmetric (good inf. xG)      Both types   29.9%      29.9%
+ Asymmetric (bad inf. xB )     Both types  No credit
+                                                      No credit
+
+                                                                 36 / 91
+More information: the introduction of a credit score
+
+       Ex ante expected value of future cash ﬂows:
+              Symmetric information: 0.5 × p50 + 0.5 × 30 = 35
+              Asymmetric information (no bureau): 0.5 × p50 + 0.5 × q50 = 32.5
+              Asymmetric information (with bureau):
+              P(xG) × mxG R + P(xB ) × 30 = 34.5 > 32.5
+
+       The introduction of a credit bureau improves the capital allocation in
+       the economy
+
+                                                                                                                                                                                 37 / 91
+Pecking-order hypothesis
+
+       To minimize adverse selection costs, ﬁrms prefer to use internal funds
+       to ﬁnance the projects
+      If, in the model above, the entrepreneurs had wealth A < I, the good
+      type would choose to borrow only I − A to minimize the adverse
+       selection discount
+       To avoid being detected, the bad type would follow suit
+       What about external funding? The pecking-order hypothesis posits
+       that debt is preferred to equity
+       The reason is that debt is less information-sensitive than equity
+
+                                                                                                                                                                                 38 / 91
+Pecking-order hypothesis
+
+       An intuitive way to minimize cross-subsidization is to issue risk-free or
+       over-collateralized debt
+
+       Holmstrom (2015):
+        Trading in debt that is sufﬁciently over-collateralized is a cheap way to avoid
+         adverse selection. When both parties know that there is enough collateral,
+       more precise private information about the collateral becomes irrelevant and
+         will not impair liquidity. We saw this in the pawn contract. It did not matter
+
+              that the pawnbroker’s valuation of the watch was different from the
+            borrower’s. It sufﬁced that the pawnbroker felt conﬁdent that he could
+         recover the loan by selling the watch, while the borrower was protected by
+
+                                      the right to redeem the watch.
+
+                                                                                                                                                                                 39 / 91
+Pecking-order hypothesis
+
+       To be able to distinguish debt and equity contracts let’s suppose that
+       the project pays RS in case of success and RF in case of failure
+
+       Assumptions are the same as before: no assets in place (internal
+       funding is not possible), the good type entrepreneur has a probability
+       of success of p, the bad type entrepreneur has a probability of
+       success of q, the investment costs I, the market believes that the
+      share of good types is α, and the prior about the probability of
+      success is m = αp + (1 − α)q
+
+      We assume that pRS + (1 − p)RF > qRS + (1 − q)RF > I (both
+       projects have a positive NPV)
+
+                                                                                                                                                                                 40 / 91
+Pecking-order hypothesis
+
+The payoff of the projects can be split into a riskless and a risky part
+
+pRS + (1 − p)RF = RF +p (RS − RF )
+
+                          riskless  risky
+
+qRS + (1 − q)RF = RF +q (RS − RF )
+
+                          riskless  risky
+
+There is no asymmetric information about the riskless part
+
+                                                            41 / 91
+Pecking-order hypothesis
+
+      If RF > I, both parties can issue riskless debt: asymmetric
+       information about the probability of success is irrelevant
+      Let’s assume that RF < I
+       We will see that the contract that minimizes cross-subsidization (and
+       thus is the preferred choice of good types) involves pledging all the
+       riskless (or information-insensitive) part to investors
+
+                                                                                                                                                                                 42 / 91
+Pecking-order hypothesis
+
+       Contracts divide cash ﬂows subject to limited liability:
+              In case of success, the entrepreneur receives RfS and investors receive
+              RuS = RS − RfS
+              In case of failure, the entrepreneur receives RfF and investors receive
+              RuF = RF − RfF
+
+                                                                                                                                                                                 43 / 91
+Pecking-order hypothesis
+
+       To reap the beneﬁts of cross-subsidization, bad-type entrepreneurs
+       will want to pool (choose to issue the same contract) as the good-type
+
+      Therefore, any contract {RuS , RuF } must satisfy the investors’
+       break-even condition:
+
+                                    mRuS + (1 − m)RuF = I
+       The goal of the good type is to minimize costs due to informational
+       asymmetries (underpricing)
+
+       That is, good type promises to repay RuS in case of success and RuF in
+       case of failure such that the break-even condition is satisﬁed and
+       his/her utility is maximized
+
+                                                                                                                                                                                 44 / 91
+Pecking-order hypothesis
+
+       The utility of the good type is
+       p(RS − RuS ) + (1 − p)(RF − RuF )
+
+= pRS + (1 − p)RF − I +  I                − [pRuS + (1 − p)RuF ]
+
+NPV                      amount raised           actual value of
+                         from investors       the investors’ claim
+
+= pRS + (1 − p)RF − I + [mRuS + (1 − m)RuF ] − [pRuS + (1 − p)RuF ]
+
+NPV                                       =I     actual value of
+
+                                                 the investors’ claim
+
+= pRS + (1 − p)RF − I + [RuF + m(RuS − RuF )] − [RuF + p(RuS − RuF )]
+
+NPV                                       =I     actual value of
+
+                                                 the investors’ claim
+
+= pRS + (1 − p)RF − I + (m − p)(RuS − RuF )
+
+NPV                           discount due to
+                         asymmetric information
+
+                                                                       45 / 91
+Pecking-order hypothesis
+
+The quantity RuS − RuF is minimized under a debt contract with face
+value F ≥ RF
+
+That is, RuF = RF and RuS is such that
+
+mRuS + (1 − m)RF = I      ⇐⇒            RuS  =  RF  +  I  − RF
+                                                           m
+
+This is a debt contract with face value RuS
+
+Alternatively, the entrepreneur issues riskless debt with face value RF
+and complements the remainder with an equity issuance
+
+As bad types do not want to separate themselves from good types,
+both types end up preferring debt to equity when ﬁnancing externally
+
+                                                                     46 / 91
+Stiglitz and Weiss (1981)
+
+       Seminal work that studies rationing under imperfect information
+       Notion of risk: mean-preserving spreads
+
+              Projects have the same mean
+              A mean-preserving spread of a random variable X can be obtained by
+              adding a zero-mean random variable to each of the possible
+              realizations of X
+       Asymmetric information and adverse selection may cause the supply
+       curve to be backward-bending for high interest rates
+
+                                                                                                                                                                                 47 / 91
+Stiglitz and Weiss (1981)
+
+       The reason is that the pool of borrowers gets worse once interest
+       rates increase, depleting lenders’ returns and affecting supply
+
+              Think of a situation in which bad-quality borrowers have a higher
+              probability of default
+              As the payoff in the default state does not depend on the level of
+              interest rates, a marginal increase in interest rates affects bad
+              borrowers less than good borrowers
+
+       As a result, supply and demand curves might not intersect
+       In this case, in equilibrium demand might exceed supply at the
+       prevailing interest rate
+       In other words, there is credit rationing
+
+                                                                                                                                                                                 48 / 91
+Stiglitz and Weiss (1981)
+
+                                                                                                                                                                                 49 / 91
+Stiglitz and Weiss (1981): example with two types
+
+       Low risk: project yields RL with probability pL and zero otherwise
+
+       High risk: project yields RH with probability pH and zero otherwise
+
+       Assumptions
+              The probability of success is higher for the low-risk type: pL > pH
+              Alternatively, the probability of failure (default) is higher for the high-risk
+              type: 1 − pH > 1 − pL
+              The projects have the same expected return: pL RL = pHRH = R¯
+              (same mean)
+
+       We say that the high-risk project is a mean-preserving spread of the
+       low-risk project
+
+                                                                                                                                                                                 50 / 91
+Stiglitz and Weiss (1981): example with two types
+
+       Borrowers and lenders are risk-neutral; types are private information
+
+       The project requires an investment of I
+       If lenders require an interest rate of r, the borrowers’ expected payoffs
+       are
+
+              Low risk: pL [RL − (1 + ˆr)I]) = R¯ − pL (1 + r)I
+              High risk: pH[RH − (1 + ˆr)I] = R¯ − pH(1 + r)I
+
+      As pL > pH, note that the expected payoff is smaller for the low-risk
+      type: they have to repay (1 + r)I with a higher probability
+
+       An increase in interest rates affects less high-risk borrowers
+
+                                                                                                                                                                                 51 / 91
+Stiglitz and Weiss (1981): example with two types
+
+There exists a rmax for which neither type applies when r > rmax
+
+rmax is deﬁned by
+
+R¯ − pH(1 + rmax)I = 0  ⇐⇒                 rmax = R¯ − 1
+                                                     pH I
+
+There exists a r∗ such that when r∗ < r < rmax only high risk
+borrowers apply for a loan
+
+r∗ is deﬁned by
+
+                 R¯ − pL (1 + r∗)I = 0 ⇐⇒  r∗ = R¯ − 1
+When r < r∗, both types apply for a loan          pL I
+
+                                                                  52 / 91
+Stiglitz and Weiss (1981): example with two types
+
+      When r∗ < r < rmax, the lender’s expected payoff is
+                                            p¯H(1 + r)
+
+      If α is the proportion of low-risk types in the population, When r < r∗,
+       the lender’s expected payoff is
+
+                         m(1 + r) where m = αpL + (1 − α)pH
+       Remark: the expected return drops sharply around r∗, as the good
+       types leave the market
+       Expected return is not a monotonic function of interest rates
+
+                                                                                                                                                                                 53 / 91
+Stiglitz and Weiss (1981): example with two types
+
+Expected return     Both types          Only high risk
+   to the bank   apply for a loan      borrowers apply
+
+0                                  r∗                   r max  Quoted interest
+
+                                                               rate r
+
+                                                                                54 / 91
+Stiglitz and Weiss (1981): numerical example
+
+      pL = 0.9, XL = 100, pH = 0.6, XH = 150, α = 0.5, I = 85
+      We would have that rmax = 76.5% and r∗ = 17.6%
+
+                                                                                                                                                                                 55 / 91
+Signaling
+
+       In a market with adverse selection, low-risk borrowers might want to
+       signal their types in an attempt to distinguish themselves from bad
+       types
+       Can good borrowers take observable actions that signal their
+       repayment ability, that is, convince the uninformed side of the market
+       about their types?
+       To be a successful “separating” mechanism, the cost of the signaling
+       device has to differ sufﬁciently among the types
+
+                                                                                                                                                                                 56 / 91
+Example: costly collateral pledging
+
+       As before, we assume that
+              Projects require an investment of I and generates R in case of success
+              and 0 otherwise
+              The good type entrepreneur has a probability of success of p, the bad
+              type entrepreneur has a probability of success of q
+              The share of good types is α, and the prior about the probability of
+              success of a rando borrower is m = αp + (1 − α)q
+
+      Both types generate a positive NPV: pR > I, qR > I
+
+              Under asymmetric information, there is lending but the good type
+              would like to minimize cross-subsidization
+
+                                                                                                                                                                                 57 / 91
+Example: costly collateral pledging
+
+       Borrowers still have no cash on hand but they can pledge an (illiquid)
+       asset as collateral
+       Assets pledged as collateral are worth more when in the hands of the
+       borrowers
+       Equivalently, we can assume the existence of liquidation costs
+      Assets that are worth C in the hands of borrowers are worth only δC
+      in the lenders’ hands, where 0 < δ < 1
+      The use of collateral is inefﬁcient: there is a loss of (1 − δ)C in case
+       of default
+
+                                                                                                                                                                                 58 / 91
+Costly collateral pledging under symmetric information
+
+Under symmetric information there is no collateral pledging. Why?
+
+Consider the case of the good borrower. Suppose he/she pledges an
+amount C > 0 as collateral
+
+Competition ⇒ lenders make zero proﬁts ⇒ the repayment Ru in
+case of success satisﬁes
+
+pRu + (1 − p)δC = I     I (1 − p)δC
+                     ⇒  Ru = p −
+                                  p
+
+                                                                   59 / 91
+Costly collateral pledging under symmetric information
+
+The gain in utility of the good type is then
+
+p(R − Ru) + (1 − p)(−C) = pR − I − (1 − p)(1 − δ)C
+
+                                    NPV       with probability 1 − p
+                                                 (1 − δ)C is lost
+                                                   (inefﬁciency)
+
+The best choice is to choose C = 0
+
+Same argument for the bad type
+
+                                                                      60 / 91
+Costly collateral pledging under asymmetric information
+
+Recall that under asymmetric information without the possibility of
+collateral pledging:
+
+Ru                          I  >  I    RuG
+                        =           =
+                        mp
+
+Repayment of                           Repayment of the
+
+both types under                       good type under
+
+asymmetric information                 symmetric information
+
+Can the good type distinguish himself from the bad type by pledging
+collateral?
+
+We refer to a situation in which it is optimal for different types to
+choose different contracts as a separating equilibrium
+
+This outcome might be possible as the marginal cost of pledging
+collateral is higher for the bad type
+
+                                                                       61 / 91
+Costly collateral pledging under asymmetric information
+
+       In a separating equilibrium, each type chooses a different contract
+              Good type: RuG, CG
+              Bad type: RuB , CB
+
+       Differently from a pooling equilibrium, in which different types
+       choose the same contract, in a separating equilibrium lenders can
+       infer the types with certainty by observing contract choices:
+
+              When they observe that a borrower chooses the contract of the bad
+              type, RuB , CB , they know that the probability of success is q
+              When they observe that a borrower chooses the contract of the good
+              type, RuG, CG, they know that the probability of success is p
+
+                                                                                                                                                                                 62 / 91
+Costly collateral pledging
+
+       In a separating equilibrium, it is not in the interest of the bad type to
+       pretend to be a good type:
+
+              The contract RuB , CB yields a higher utility than the contract RuG, CG
+
+       If mimicking the contract choice of the good type is not in the interest
+       of the bad type, the optimal choice of the bad type is not to pledge
+       collateral
+
+              CB = 0
+              Lenders will infer that the individual that does not post collateral has a
+              probability of success of q and then the zero-proﬁt repayment of the
+              bad type is RuB = I/q, which implies RuB = I/q
+
+                                                                                                                                                                                 63 / 91
+Costly collateral pledging
+
+Suppose that the good type chooses a contract {R˜ , C˜ }, where R˜ is
+the repayment to the lender in case of success and C˜ is the collateral
+
+pledged
+
+The no-mimicking condition is
+
+q(R − R˜ ) + (1 − q)(−C˜ ) ≤   q(R − RuB )                    = qR − I
+
+ utility of the bad type             utility of the bad type
+when he/she pretends           when he/she does not pretend
+
+   to be a good type                   to be a good type
+
+                                                                        64 / 91
+Costly collateral pledging
+
+       What is the optimal collateral choice of the good type that is
+       consistent with lenders making zero proﬁts and bad types not having
+       incentives to lie?
+       This is the solution of
+
+                               max p(R − R˜ ) + (1 − p)(−C˜ )
+
+                                            R˜ ,C˜
+
+       subject to
+           q(R − R˜ ) + (1 − q)(−C˜ ) ≤ qR − I (no-mimicking condition)
+           pR˜ + (1 − p)(δC˜ ) ≥ I (lender’s break-even condition)
+
+                                                                                                                                                                                 65 / 91
+Costly collateral pledging
+
+The solution to this problem is (both constraints are binding)
+
+     RuG  =    (1              −  q)  −  δ(1 − p)
+              p(1              −  q)  −  δq(1 − p) I
+
+and                                   I
+
+          CG                =      q(1−p)(1−δ)
+                                        p−q
+                               1+
+
+                                                                66 / 91
+Costly collateral pledging
+
+If the adverse selection cost is very large (e.g. large proportion of bad
+borrowers, 1 − α, or large distance between p and q) the good type is
+better off with the possibility of signaling
+
+p(R − RuG) + (1 − p)(−CG) ≥            I
+                             p(R − )
+
+                                      m
+
+utility under asymmetric     utility under asymmetric
+  information with the       information without the
+ possibility of signaling     possibility of signaling
+
+In this case, signaling can reduce the “burden” of asymmetric
+information on the good type
+
+                                                               67 / 91
+Other signaling devices
+
+       Payout policy
+       Short-term maturities
+       Underdiversiﬁcation (self-ﬁnancing)
+
+                                                                                                                                                                                 68 / 91
+Empirics: example
+
+       Kawai et al. (2022): We study how signaling affects equilibrium
+       outcomes and welfare in an online credit market, using detailed data
+       on loan characteristics and borrower repayment. We build and
+       estimate an equilibrium model in which a borrower may signal her
+       default risk through the reserve interest rate. Comparing markets with
+       and without signaling relative to the benchmark with no asymmetric
+       information, we ﬁnd that adverse selection destroys as much as 34%
+       of total surplus, up to 78% of which can be restored with signaling.
+       We also estimate backward-bending supply curves for some markets,
+       consistent with the prediction made by Stiglitz and Weiss in 1981.
+
+                                                                                                                                                                                 69 / 91
+Empirics: example
+
+       Michaely et al. (2021): Contrary to signaling models’ central
+       predictions, changes in the level of cash ﬂows do not empirically
+       follow changes in dividends. We use the Campbell (1991)
+       decomposition to construct cash-ﬂow and discount-rate news from
+       returns and ﬁnd the following: (1) both dividend changes and
+       repurchase announcements signal changes in cash-ﬂow volatility (in
+       opposite directions); (2) larger cash-ﬂow volatility changes come with
+       larger announcement returns; and (3) neither discount-rate news, nor
+       the level of cash-ﬂow news, nor total stock return volatility change
+       following dividend changes. We conclude cash-ﬂow news—and not
+       discount-rate news—drive payout policy, and payout policy conveys
+       information about future cash-ﬂow volatility.
+
+                                                                                                                                                                                 70 / 91
+Signaling through self-ﬁnancing (optional)
+
+       Entrepreneurs might seek external ﬁnancing even though they have
+       enough wealth to invest in their projects
+       The reason is risk-sharing: risk-averse entrepreneurs may want to
+       diversify their portfolio and sell part of their shares in the ﬁrm
+       Large number of entrepreneurs, each endowed with a risky project
+       All projects require an investment of 1
+       Investors are risk-neutral and capital markets are competitive
+      The project of a type-θ entrepreneur yields a random (gross) return of
+      R˜ (θ) = 1 + ˜r(θ), where ˜r(θ) ∼ N(θ, σ2)
+
+                                                                                                                                                                                 71 / 91
+The type θ is privately known by the entrepreneurs but its distribution
+in the population is common knowledge
+
+Entrepreneurs have enough initial wealth to ﬁnance their projects
+(W0 > 1)
+
+Entrepreneurs are risk-averse with utility u(w) = −e−ρw , where w is
+their ﬁnal wealth and ρ = −u /u > 0 is their (constant) coefﬁcient of
+absolute risk-aversion
+
+There is no discounting and the outside option of investors has a zero
+net return
+
+Note: recall that if X ∼ N(µ, σ2), the random variable Y = eX has a
+log-normal distribution with mean
+
+E[Y ]  =  e  µ+  σ2
+                  2
+
+                                                                     72 / 91
+Symmetric information case
+
+      Suppose that θ is observable and the type-θ entrepreneur sells a
+      share 1 − α of the project (or self-ﬁnances a share α)
+
+       Competitive capital markets imply that outside investors just break
+      even, that is, they obtain a share 1 − α of the project by investing
+       (paying)
+
+                    (1 − α) × E[1 + ˜r(θ)] = (1 − α)(1 + θ)
+
+                                               expected value of the project
+
+After raising this amount, entrepreneurs invest 1 − (1 − α)(1 + θ) and
+their wealth is given
+
+w = W0 − [1 − (1 − α)(1 + θ)] +  α  × [1 + ˜r(θ)]
+
+entrepreneur’s investment entrepreneur’s share gross return
+
+= W0 + (1 − α)θ + α˜r(θ)
+
+                                                                              73 / 91
+If α = 1, the entrepreneur bears all the costs (full self-ﬁnancing),
+
+                w = W0 + ˜r(θ) = W0 − 1 + 1 + ˜r(θ)
+
+                                                                   investment gross return
+
+If α = 0, the entrepreneur just sells the entire project (no
+self-ﬁnancing). In this case, the entrepreneur ”invests” −θ (sells the
+project for θ), that is, investors pay all the investment cost 1 and pay
+the entrepreneur θ for the project / idea
+
+w = W0 +  θ
+
+          price of the project
+
+Note that when α = 0, the entrepreneur is perfectly insured (constant
+wealth across states).
+
+                                                                      74 / 91
+For a general α, the entrepreneur’s expected utility is (using the
+properties of the log-normal distribution)
+
+E[u(w)] = E u W0 + (1 − α)θ + α˜r(θ)
+
+= E − ρe−ρ[W0+(1−α)θ+α˜r(θ)]
+
+=  −ρe  −ρ[W0  +(1−α)θ+αθ−                   ρα2 σ2        ]
+                                                2
+
+= u W0 + θ −                              ρα2σ2
+
+                                          2
+
+                                          disutility cost
+                                          of risk-bearing
+
+Since the expected utility is decreasing in α, the risk-averse
+entrepreneur sells the entire project (α = 0) and is perfectly insured
+
+Risk-neutral investors bear all the risk
+
+                                                                    75 / 91
+θ is unobservable
+
+      Suppose that entrepreneurs can choose either to self-ﬁnance (α = 1)
+      or to sell the entire project (α = 0) at a price P common to all types
+
+When a type-θ entrepreneur self-ﬁnances, they obtain utility
+
+                                        ρσ2
+                         u W0 + θ − 2
+
+When they sell at a price P, they obtain utility u(W0 + P)
+
+At a price P, a type-θ entrepreneurs seeks external ﬁnancing if and
+
+only if
+
+          W0  +P  >  W0  +θ  −  ρσ2  ⇐⇒  θ   <  θˆ =  P  +  ρσ2
+                                 2                           2
+
+Adverse selection: only low-quality entrepreneurs with θ < θˆ seek
+
+ﬁnancing
+
+Equilibrium price: P = E[θ|θ < θˆ]
+
+                                                                                                                                                                    76 / 91
+This equilibrium can be inefﬁcient
+
+Example: two types 1 < θ1 < θ2, and P(θ = θ2) = λ
+
+In the ﬁrst-best, both types should sell the entire project
+
+If both types sell their project when θ is unobservable, the price would
+satisfy P = λθ2 + (1 − λ)θ1
+
+The high-ability entrepreneur would be willing to sell the entire project
+
+if and only if
+
+                λθ2  +  (1  −  λ)θ1  ≥  θ2  −  ρσ2
+                                                2
+
+or
+                      θ2 − [λθ2 + (1 − λ)θ1] ≤ ρσ2/2
+
+                price discount               disutility cost
+                                            of risk-bearing
+
+If this condition is not satisﬁed the equilibrium is inefﬁcient
+
+                                                                 77 / 91
+Partial self-ﬁnance as a signal (Leland and Pyle, 1977)
+
+      Suppose now that the entrepreneur can choose any α ∈ [0, 1]
+
+       Can (partial) self-ﬁnancing be a signal to separate good
+      entrepreneurs (θ2) from bad ones (θ1)?
+
+Deﬁnition
+A PBE is a set of self-ﬁnancing and pricing strategies {α(θ), P(α)} and a
+belief function µ(α) giving the investors’ common belief that the
+entrepreneur has high quality after observing α such that
+(i) Entrepreneur chooses α optimally given the investors’ strategies
+(ii) µ(α) is derived from Bayes’ Rule where possible
+(iii) Investors’ pricing strategies constitute a Nash equilibrium of the
+simultaneous-move game in which the probability Pr(θ = θ2|α) = µ(α)
+
+       Note: change in the meaning of P. Before, I used P to denote the price of
+       the project before the investment of 1 is made. Now P stands for the value of
+       the ”ﬁrm” after 1 is invested. Therefore, when the entrepreneur sells the
+       project, he receives P − 1
+
+                                                                                                                                                                                 78 / 91
+For a given pair (α, P), the expected utility of the entrepreneur is
+
+v(α, P|θ) = E[u(w)]
+
+= E u W0 − [1 − (1 − α)P] + α[1 + ˜r(θ)]
+
+=  u  W0  −          1  +  (1  −  α)P  +  α(1      +  θ)  −  ρα2σ2
+                                                                2
+
+=  u  W0  −          1  +  P   −  α[P  −  (1  +  θ)]  −   ρα2σ2
+                                                             2
+
+                                       mispricing
+
+=  u  W0  −          1  +  P  −α[P     −  (1  +  θ)]  −   ρα2σ2
+                                                             2
+
+                                  cost of self-ﬁnancing
+
+Note that the marginal cost of self-ﬁnancing is smaller for the high
+type
+
+                                                                      79 / 91
+Constructing a separating equilibrium
+
+      P(α) = µ(α)(1 + θ2) + (1 − µ(α))(1 + θ1) ∈ [1 + θ1, 1 + θ2]
+
+In a separating equilibrium, P∗(α∗(θ1)) = 1 + θ1 and
+P∗(α∗(θ2)) = 1 + θ2
+
+In a separating equilibrium, α∗(θ1) = 0
+
+Denote by α˜ the share of self-ﬁnancing that makes bad entrepreneurs
+indifferent between their allocation and the allocation of good ones:
+
+                                                ρα˜2σ2
+    W0 + θ1 = W0 + θ2[1 − α˜] + α˜θ1 − 2
+
+or  α˜2 = 2(θ2 − θ1)
+
+    1 − α˜  ρσ2
+
+Note that α∗(θ2) ≥ α˜, because otherwise bad entrepreneurs would
+prefer the allocation of good ones
+
+                                                                   80 / 91
+And good entrepreneurs prefer their allocation over that allocation of
+the bad entrepreneur if α∗(θ2) ≤ α , where
+
+        W0  + θ2  −  ρα σ2  ≥  W0  + θ1
+                        2
+
+or          α  2  =  2(θ2 − θ1)
+α > α˜                  ρσ2
+
+Again, there is a continuum of equilibria that can be Pareto ranked
+
+The Pareto-dominating equilibrium is characterized by α∗(θ2) = α˜
+
+                                                                     81 / 91
+A possible set of beliefs is given by µ(α) = 1 when α = α∗(θ2) and
+µ(α) = 0 otherwise
+
+In the Pareto-dominating equilibrium, the utility of the bad
+entrepreneur is the same as when types are observable
+
+u(W0 + θ1)
+
+and the utility of the good borrower is
+
+u W0 + θ2 −                              ρα˜2σ2
+                                            2
+
+             informational cost
+
+                                                                    82 / 91
+IPO underpricing
+
+       Empirical evidence: IPOs tend to be underpriced
+       Alternatively, prices tend to rise on the offer day
+       Many potential explanations (see Lowry et al. (2017) for a survey)
+       Here: asymmetric information among investors
+
+                                                                                                                                                                                 83 / 91
+IPO underpricing
+
+      Firm that is issuing stocks has value V ∈ {VB , VG}, where VB < VG
+      The share of good ﬁrms in the economy is α and is public knowledge
+       The current owner of the ﬁrm does not know the true value of the ﬁrm
+       Two types of buyers:
+
+              Uninformed investors believe the ﬁrm value is Vˆ = αVG + (1 − α)VB
+              to it
+              Informed investors (specialists) know the true value of the ﬁrm
+
+                                                                                                                                                                                 84 / 91
+IPO underpricing
+
+      Informed investors have capital λA and uninformed investors have
+      capital (1 − λ)A
+       Assumption: informed investors do not have enough capital to fund
+       the IPO by themselves:
+
+                                  (1 − λ)A > VG > VB > λA
+       In case the offer is oversubscribed, investors are rationed on a
+       pro-rata basis
+
+                                                                                                                                                                                 85 / 91
+IPO underpricing
+
+       When informed and uninformed investors are free to trade, and the
+       order ﬂow is public information, the expected market-clearing
+      equilibrium price has to be Vˆ
+
+       Why?
+
+              When V = VG, informed investors will want to hold the stock if P < VG
+              and everyone infers the true price is VG
+              When V = VB , informed investors will not hold the stock if P > VB and
+              everyone infers the price is VB
+
+      As the ﬁrm is good with probability α, the expected market price after
+      the issuance will be E[P1] = Vˆ
+
+                                                                                                                                                                                 86 / 91
+IPO underpricing
+
+      Let P0 ∈ (VB , VG) be the offer price?
+      Is P0 = E[P1] = Vˆ ?
+
+              If P0 < E[P1], the IPO will be underpriced (on average)
+       Informed investors’ demand
+
+              If V = VG: they know the offer is underpriced and demand
+              DIG = λA /P0
+              If V = VB : they know the offer is overpriced and demand DIB = 0
+
+                                                                                                                                                                                 87 / 91
+IPO underpricing
+
+Uninformed investors’ demand
+
+Is not contingent on the true value of V ⇒ either DU = 0 or
+
+DU  =  (1−λ)A
+          P0
+
+If DU = 0, the IPO fails (insufﬁcient demand)
+
+When   V  =  VG    and  Du  =  (1−λ)A  ,  uninformed  investors  only   get  a
+                                  P0
+
+fraction     DU    = (1 − λ) of the ﬁrm
+          DU +DIG
+
+When   V  =  VB    and  Du  =  (1−λ)A  ,  they  buy  the  whole  issue  (winners’
+                                  P0
+curse)
+
+                                                                                   88 / 91
+IPO underpricing
+
+When  is  DU  =  (1−λ)A  ?
+                    P0
+
+Uninformed investors need to break even on average
+
+α (1 − λ) (VG − P0) +(1 − α) 1 (VB − P0) = 0
+
+share owned if proﬁt if the         share owned if   loss if the
+the ﬁrm is good ﬁrm is good         the ﬁrm is bad   ﬁrm is bad
+
+⇐⇒ Vˆ − P0 − αλ(VG − P0) = 0
+
+⇐⇒ P0  =  Vˆ − λαVG      =   Vˆ  1  − λαVG/Vˆ  < Vˆ  = E[P1]      (as Vˆ < VG)
+            1 − λα                   1 − λα
+
+Despite the underpricing, uninformed investors only break even on
+average
+
+                                                                                89 / 91
+IPO underpricing
+
+Underpricing disappears under symmetric information (λ = 0)
+
+Underpricing increases with the fraction of informed investors:
+
+∂P0  <0
+∂λ
+
+Underpricing can increase if the underwriter favors large, informed
+buyers
+
+Keeping Vˆ constant, underpricing is increases when VG − VB
+increases
+
+                                                                     90 / 91
+References I
+
+Holmstrom, B. (2015). Understanding the role of debt in the ﬁnancial
+   system.
+
+Kawai, K., Onishi, K., and Uetake, K. (2022). Signaling in online credit
+   markets. Journal of Political Economy, 130(6):000–000.
+
+Leland, H. E. and Pyle, D. H. (1977). Informational asymmetries, ﬁnancial
+   structure, and ﬁnancial intermediation. The Journal of Finance,
+   32(2):371–387.
+
+Lowry, M., Michaely, R., Volkova, E., et al. (2017). Initial public offerings: A
+   synthesis of the literature and directions for future research.
+   Foundations and Trends® in Finance, 11(3-4):154–320.
+
+Michaely, R., Rossi, S., and Weber, M. (2021). Signaling safety. Journal of
+   Financial Economics, 139(2):405–427.
+
+Stiglitz, J. E. and Weiss, A. (1981). Credit rationing in markets with
+   imperfect information. The American Economic Review, 71(3):393–410.
+
+                                                                                                                                                                                 91 / 91
+

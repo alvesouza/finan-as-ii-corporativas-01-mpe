@@ -1,0 +1,498 @@
+Corporate Finance
+       Topic 5
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 30
+Nonveriﬁable income
+
+       The entrepreneur can divert income (always report failure) without
+       sanctions. Interpretation:
+
+              Especially for small ﬁrms, sales might not be recorded by invoices
+              Difﬁcult to judge whether some expenses are necessary or perks
+              Sovereign debt: lender cannot seize the cashﬂows (nor collateral) of
+              the borrowing country
+
+       Apart from liquidity default, when the borrower is not able to repay
+       because the project has not generated enough cash, the lender has
+       to worry about strategic default: borrower is able to repay, but
+       chooses not to do so
+
+                                                                                                                                                                                   2 / 30
+Nonveriﬁable income
+
+       Means to deter strategic defaults:
+              Direct bankruptcy costs, such as collateral seizure or penalties
+              When the lender and the borrower interact repeatedly, threatening
+              termination or nonﬁnancing of future projects
+
+                                                                                                                                                                                   3 / 30
+Threat of termination
+
+       Risk-neutral entrepreneur with wealth A has access to a project that
+      costs I at t = 0
+      The project generates nonveriﬁable cashﬂow R˜1 ∈ {0, R1} at t = 1.
+      The probability of success is Pr(R˜ = R1) = p
+       There is no discounting
+      The project is proﬁtable (has positive NPV): pR1 > I
+
+                                                                                                                                                                                   4 / 30
+Threat of termination
+
+      Contracts cannot be contingent on the realization of R˜1, since it is not
+       veriﬁable
+      After obtaining I − A from a lender, the borrower always reports
+      Rˆ1 = 0
+       The project cannot be ﬁnanced
+
+                                                                                                                                                                                   5 / 30
+Threat of termination
+
+      Suppose now that, apart from the t = 1 income, the project generates
+      income R˜2 ∈ {0, R2} at t = 2 if it is not terminated at t = 1
+      The probability of success is Pr(R˜2 = R2) = p
+       There is nothing the lender can do to incentivize truthful reporting at
+      t = 2: borrower will always report Rˆ2 = 0 and pay 0 to the lender
+      However, at t = 1, the lenders can incentivize repayment by
+       threatening to liquidate the project
+
+      If the project is liquidated at t = 1, the entrepreneur receives 0 at
+      t = 2 and lenders receive a liquidation value L at t = 1
+
+                                                                                                                                                                                   6 / 30
+Threat of termination
+
+      Contract: {D, γ0, γ1}, where
+              0 ≤ D ≤ R1 is the repayment at t = 1
+              γ0 ∈ [0, 1] is the probability of continuation if D is not paid
+              γ1 ∈ [0, 1] is the probability of continuation if D is paid
+
+       Assumptions:
+              (A1) Liquidation is inefﬁcient: L < E(R˜2)
+              (A2) 0 ≤ L < I − A
+
+      If the project is successful at t = 1 the borrower truthfully reports
+      Rˆ1 = R1 and repays D if
+
+            R1 − D + γ1E(R˜2) ≥ R1 + γ0E(R˜2) ⇐⇒ (γ1 − γ0)E(R˜2) ≥ D
+
+                                                                                                                                                                                   7 / 30
+Threat of termination
+
+The optimal contract solves
+
+             max p        R1  −D  + γ1E(R˜2)  + (1 − p) γ0E(R˜2)
+
+            {D ,γ0 ,γ1 }
+
+subject to
+
+(IRlender) p D + (1 − γ1)L + (1 − p) (1 − γ0)L ≥ I − A
+
+(ICborrower) (γ1 − γ0)E(R˜2) ≥ D
+
+(LL )       0 ≤ D ≤ R1
+
+Claim 1: (IRlender) is binding
+Note that, given (A2), we must have D > 0 (and, as a result, γ1 > γ0).
+Then it is possible reduce D by a small amount such that all
+constraints are satisﬁed and thus increase the borrower’s payoff
+
+                                                                                                                                                                      8 / 30
+Threat of termination
+
+      Claim 2: γ1 = 1 (there is no liquidation when the borrower repays D)
+      Suppose that 1 > γ1 > γ0 ≥ 0. Increase γ1 by ∈ (0, 1 − γ1] and
+      increase D to D + L such that (IRlender) is satisﬁed. The new
+      contract satisﬁes the (ICborrower)
+      (γ1 + − γ0)E(R˜2) = (γ1 − γ0)E(R˜2) + E(R˜2) > D + E(R˜2) > D + L
+
+       The ﬁrst inequality is due to the fact that the original contract is
+       incentive-compatible, and the second one is due to assumption that
+      liquidation is inefﬁcient: L < E(R˜2). The borrower’s payoff increase by
+      −p L + p E(R˜2) > 0.
+      Liquidation in case of repayment at t = 1 undermines incentives and
+      increases inefﬁciency, as we assumed that L < E(R˜2)
+
+                                                                                                                                                                                   9 / 30
+Threat of termination
+
+      Claim 3: (ICborrower) is binding
+      Note that, since D > 0, we must have γ0 < 1. Then it is possible to
+      increase γ0 to γ0 + and increase D by L (1 − p)/p such that
+      (IRlender) is satisﬁed. By choosing small enough, (ICborrower) is also
+      satisﬁed.1 The borrower’s payoff increase by (1 − p)(E(R˜2) − L ) > 0
+
+      Given these results, the optimal D and γ0 solve
+
+                              pD + (1 − p) (1 − γ0)L = I − A
+                                           (1 − γ0)E(R˜2) = D
+
+1If  <      (γ1 −γ0 )E(R˜2 )−D   ,  then  (γ1  − γ0)E(R˜2) −  E(R˜2) > D +  L  (1−p)  .  Therefore,
+                                                                                p
+            L  (1−p)  +E(R˜2  )
+                 p
+
+(γ1 − γ0 −  )E(R˜2) = (γ1 − γ0)E(R˜2) −        E(R˜2) > D +   L  (1−p)  .
+                                                                  p
+                                                                                                     10 / 30
+Threat of termination
+
+       The probability of liquidation is
+
+1  −  γ0  =          I−A
+             pE(R˜2) + (1
+                                          −  p)L
+
+Liquidation (which is inefﬁcient) is less likely when
+
+      The gain of continuing, E(R˜2), is large: the borrower has more to lose
+      by not honoring the payment D
+
+      The liquidation value L increases: it alleviates the break-even condition
+      of the lender
+
+      The probability p of the ﬁrst-period success increases: lenders are
+      repaid more often
+
+      The borrower net worth increases: the amount borrowed, I − A ,
+      decreases
+
+                                                                                                                                                                    11 / 30
+Threat of termination
+
+       Lenders have to incentivize repayment by engaging in some wasteful
+       (inefﬁcient) activity
+
+              In this model, the inefﬁciency comes from the inefﬁcient liquidation, as
+              E(R˜2) > L
+
+       Costly collateral pledging interpretation: we can interpret L as the
+       value that the lender obtains by seizing some collateral (an asset).
+       Inefﬁciency comes from the fact that this asset is worth more when it
+      is in the borrower’s hands: E(R˜2) > L
+
+       Room for renegotiation: after the termination decision, but before its
+       implementation, the borrower can offer a bribe slight above L (and
+      smaller than E(R˜2) to the lender, who would be happy to accept. This
+       prospect ex ante undermines incentives to pay out income, and
+       reduces welfare
+
+                                                                                                                                                                                 12 / 30
+Sovereign debt
+
+Eaton and Gersovitz (1981), Arellano (2008)
+
+Small open economy has endowments that generate a nonstorable
+and stochastic output y˜t ∈ Y = [y, y¯]
+
+The stochastic process (y˜t )t=0,1,2,.. is a Markov process with a
+transition function f (y , y) giving the density of next period’s output y
+given that current period’s output is y
+
+The country has preferences
+
+                              +∞  
+
+                E0 βt u(ct )
+
+                      t =0
+
+where β ∈ (0, 1), u > 0 and u < 0
+
+                                             13 / 30
+The country can smooth consumption by borrowing to or lending from
+foreign investors
+
+External capital markets are competitive; investors are risk-neutral
+
+Debt contracts (bonds) have a maturity of one period and are not
+state-contingent (i.e. markets are incomplete)
+
+Debt contracts are not enforceable, that is, at any time the country
+can renege on its debt (even if the country has the means to repay)
+
+Default has costs: output loss and exclusion from capital markets
+
+The country defaults whenever this option is more valuable than
+repaying
+
+                                                                                                                                                                    14 / 30
+In equilibrium, endogenous prices (equivalently, interest rates) will
+reﬂect the probability of default
+
+We denote the unit price a bond with face value B by q(B , y), a
+function of the current output y and the bond size B (determinants of
+government’s incentives to default)
+
+The price of a bond with face value B is then q(B , y)B
+
+Alternatively, the interest rate on a bond with face value B is
+
+1  +  r (B  ,  y)  =       B             1
+                      q(B , y)B  = q(B , y)
+
+                                                                       15 / 30
+When the country buys bonds with face value B > 0 (i.e. lends), it
+pays q(B , y)B in the current period and receives B one period later
+
+                                                                        B
+
+current period
+
+                next period
+
+                       −q(B , y)B
+
+When the country buys bonds with face value B < 0 (i.e. sells bonds
+with face value −B > 0 or borrows), it receives −q(B , y)B in the
+current period and pays −B one period later
+
+                       −q(B , y)B
+
+                next period
+
+current period
+
+                B
+
+                                                                          16 / 30
+The country starts with initial assets (debt) B and observes the
+endowment realization y
+
+When the country chooses to repay its debts, the resource constraint
+is
+
+                             c = y + B − q(B , y)B
+When the country defaults, it loses access to foreign credit markets
+(autarky) for a stochastic number of periods
+
+The country will regain access to international markets next period
+with a probability θ
+
+Default also causes a reduction in output during the periods the
+government is in autarky
+
+Instead of consuming the endowment y, the country consumes
+ydef = h(y) ≤ y until it reenters ﬁnancial markets
+
+                                                                                                                                                                    17 / 30
+Foreign investors can invest their funds at a constant international
+interest rate r > 0
+
+Investors can observe y every period and know the stochastic
+process
+
+Competition and risk-neutrality imply that, given a default probability
+δ(B , y), which itself is a function of y and B
+
+  q(B , y)B (1 + r) = B [1 − δ(B , y)] ⇒ q(B , y) = 1 − δ(B , y)
+                                                                          1+r
+
+When B > 0 (the country is lending), the default probability is zero,
+but when B < 0 (the country is borrowing) δ(B , y) ∈ [0, 1]
+
+Prices decrease (equivalently, interest rates increase) then the default
+probability increases
+
+                                                                                                                                                                    18 / 30
+Recursive equilibrium
+
+Given the state variables s = (B, y), the policy functions B (s) for
+government assets, q(s) = q(B (s), y) for bond prices and c(s) for
+consumption determine the equilibrium
+
+Deﬁne V o(B, y) as the value function for the country that has the
+option to default
+
+Let V d(B, y) denote the value function when the country chooses to
+default, and let V c(B, y) denote the value function when the country
+
+chooses to repay
+
+Then
+
+      V o(B, y) = max V d(B, y), V c(B, y)
+
+                                                                      19 / 30
+Value of default is
+
+V d(y) = u(ydef ) + β θV o(0, y ) + (1 − θ)V d(y ) f (y , y)dy
+
+                                        y
+
+The value of repayment is
+
+                                                                 
+
+Vc(B, y) = max u y + B − q(B , y)B + β Vo(B , y )f (y , y)dy 
+B ≥Z                                                           
+                           y
+
+where Z < 0 is a lower bound on debt that prevents Ponzi schemes
+
+                                                                  20 / 30
+Default is optimal if V d(y) > V c(B, y)
+
+At any given period, the set of y ∈ Y for which default takes place
+depends on the level of government’s assets maturing at the period
+B, and is given by
+
+D(B) = y ∈ Y : Vd(y) > Vc(B, y)
+
+The probability that country defaults next period when it contracts
+debt B is
+
+δ(B , y) = Pr[y ∈ D(B )|y] =                     f (y , y)dy
+
+                                          D(B )
+
+                                                                     21 / 30
+Deﬁnition
+The recursive equilibrium for this economy is deﬁned by a set of policy
+functions, deﬁned over the state variables s = (B, y), for (i) consumption
+c(s); (ii) government’s assets holdings B (s) and default sets D(B); and
+price functions for bonds q(B , y) such that:
+
+1. Consumption c(s) satisﬁes the resource constraint
+2. Taking as given the bond price function q(B , y), asset’s holdings B (s)
+and the default set D(B) maximize the country’s utility
+3. Bond prices q(B , y) reﬂect the government’s default probabilities and
+are consistent with zero proﬁts
+
+                                                                                                                                                                                22 / 30
+Claim 1: For a given y ∈ Y, V c(y, B) is increasing in B
+Suppose that B2 ≥ B1. Let B1 and B2 be the optimal choices when
+B = B1 and B = B2, respectively. Then
+
+         V c (y, B2) = u y + B2 − q(B2, y)B2 + βEy V o(y , B2)
+                      ≥ u y + B2 − q(B1, y)B1 + βEy V o(y , B1)
+                      ≥ u y + B1 − q(B1, y)B1 + βEy V o(y , B1)
+                      = V c (y, B1)
+
+Claim 2: If B2 ≥ B1, then D(B2) ⊆ D(B1)
+As V c(y, B) increases with B, while V d(y) remains constant, default
+is more likely when B is smaller (the level of debt is higher)
+
+                                                                                                                                                                    23 / 30
+As
+
+    δ(B , y) = Pr[y ∈ D(B )|y] =                          f (y , y)dy
+
+                                  D(B )
+
+and
+                                            1 − δ(B , y)
+
+                             q(B , y) =
+                                                1+r
+
+by Claim 2 it follows that the equilibrium price function q(B , y) is
+increasing in B (and the interest rate is decreasing)
+
+Let B be the upper bound of assets for which the default set is the
+entire set Y, and let B¯ be the lower bound of assets for which the
+default set is empty, where B ≤ B¯ ≤ 0 (due to claim 1):
+
+                            B = sup {B : D(B) = Y}
+                            B¯ = inf {B : D(B) = ∅}
+
+                                                                       24 / 30
+The i.i.d case when θ = 0 and h(y) = y
+
+      Claim 3: If, for some B, the default set is non-empty, D(B) ∅, then
+      there are no contracts available {q(B ), B } such that the economy
+      can experience capital inﬂows, B − q(B )B > 0
+      Suppose by contradiction that ∃Bˆ such that B − q(Bˆ )Bˆ > 0. Then, for
+       a y for which default is optimal
+
+         V d(y) > V c(y, B)
+          ⇐⇒ u(y) + βE Vd(y ) > u y + B − q(Bˆ )Bˆ + βE Vo(Bˆ , y )
+          ⇐⇒ u(y) − u(y + B − q(Bˆ )Bˆ ) > βE Vo(Bˆ , y ) − βE Vd(y ) ≥ 0
+
+      which is a contradiction as u(.) is increasing
+
+       If the country could roll over the debt, that is, borrow an amount large
+       enough to repay the previous debt, it would choose to do so, given
+       that it can still exercise the option to default in the next period
+
+                                                                                                                                                                                 25 / 30
+Claim 4: Default incentives are stronger the lower the endowment.
+For all y1 ≤ y2, if y2 ∈ D(B) then y1 ∈ D(B)
+Let B1 and B2 be the optimal asset choices in case of repayment
+when y = y1 and y = y2, respectively. If y2 ∈ D(B), then
+
+      u(y2) + βE V d(y ) > u y2 + B − q(B1)B1 + βE V o(B1, y )
+or
+
+    u(y2) − u y2 + B − q(B1)B1 > βE V o(B1, y ) − βE V d(y ) (1)
+Since u(.) is concave, y1 ≤ y2, and, from Claim 3, B − q(B1)B1 < 0,
+
+    u(y1) − u y1 + B − q(B1)B1 ≥ u(y2) − u y2 + B − q(B1)B1 (2)
+Combining (1) and (2)
+
+        u(y1) − u y1 + B − q(B1)B1 > βE V o(B1, y ) − βE V d(y )
+    ⇒ u(y1) + βE V d(y ) > u y1 + B − q(B1)B1 + βE V o(B1, y )
+
+                                                                                                                                                                    26 / 30
+Net repayment is more costly when income is low because u(.) is
+concave [u(x) − u(x − k ) increases when x decreases]
+
+The claims imply that default happens when debt levels are high, the
+country is in a recession and cannot roll over its debt
+
+Corollary: for B < B < B¯ , there exists a threshold y∗(B) such that
+
+default set is
+
+                D(B) = y, y∗(B)
+
+Given a choice B , the default probability is F y∗(B ) where F is the
+cdf of y˜t and thus the price function is
+
+                         1 − F y∗(B )
+
+                q(B ) =  1+r
+
+which does not depend on current endowment y given the i.i.d
+assumption
+
+Note, however, that equilibrium prices depend on y as the optimal
+choice of B depends on y
+
+                                                                                                                                                                    27 / 30
+The maximum increase in consumption in a given period is given by a
+level B∗ that solves
+
+              1 − F y∗(B )
+
+min q(B )B =  1+r           B
+B
+
+Such level exits as bond prices go to zero as debt increases
+
+This endogenous borrowing limit implies that the country faces a
+limited set of feasible consumption levels
+
+Given a bad shock, a country would like to borrow more but such a
+contract is not available
+
+                                                                   28 / 30
+It is never optimal to choose B < B∗ (borrow more than −B∗) as the
+country can raise the same amount with a higher price (and thus a
+smaller repayment next period)
+When B > B¯ , debt is risk-free and q(B) = 1/(1 + r)
+
+                                                                                                                                                                    29 / 30
+References I
+
+Arellano, C. (2008). Default risk and income ﬂuctuations in emerging
+   economies. American Economic Review, 98(3):690–712.
+
+Eaton, J. and Gersovitz, M. (1981). Debt with potential repudiation:
+   Theoretical and empirical analysis. The Review of Economic Studies,
+   48(2):289–309.
+
+                                                                                                                                                                                 30 / 30
+

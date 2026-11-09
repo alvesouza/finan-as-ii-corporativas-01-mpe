@@ -1,0 +1,1094 @@
+Corporate Finance
+     Topic 4 – A
+
+      Bernardo Ricca
+
+                                                                                                                     1 / 69
+Departure from MM: the hidden action framework
+
+       We now introduce asymmetric information about actions in the
+       context of the Holmstrom and Tirole (1997) model
+       This is the hidden action or moral hazard framework
+       Capital structure matters because it affects the assets side of the ﬁrm
+
+                                                                                                                                                                                   2 / 69
+Credit rationing
+
+       The model will allow us to study speciﬁc features of credit markets
+       In competitive markets with symmetric information, price is the
+       equilibrium quantity that clears markets, that is, it makes supply equal
+       to demand
+       If there is excess demand, prices increase so that supply equals
+       demand
+       In particular, there is no rationing
+
+                                                                                                                                                                                   3 / 69
+Credit rationing
+
+       In credit markets, the demand for credit might exceed supply at the
+       equilibrium interest rate
+       Why do credit markets clear through quantities (credit limits) as well
+       as prices (interest rates)?
+       Why does demand exceed supply even though lenders are free to
+       raise the price (the interest rate)?
+
+                                                                                                                                                                                   4 / 69
+Credit rationing
+
+       Bester and Hellwig (1987):
+       A would-be borrower is said to be rationed if he cannot obtain the
+       loan that he wants even though he is willing to pay the interest that
+       the lenders are asking, perhaps even a higher interest rate. In
+       practice such credit rationing seems to be common place. Some
+       borrowers are constrained by ﬁxed lines of credit which they must not
+       exceed in any circumstances, others are refused loans altogether.
+
+                                                                                                                                                                                   5 / 69
+Credit rationing
+
+       Baltensperger (1978): credit rationing occurs when
+
+       (...) some borrower’s demand for credit is turned down, even if this
+       borrower is willing to pay all the price and nonprice elements of the
+       loan contract.
+
+       Priced element: interest rate; nonpriced element: collateral
+       requirement, for example
+
+       Note that a situation in which a borrower is turned down because
+       he/she does not have enough collateral is not classiﬁed as credit
+       rationing
+
+       Similarly, the exclusion of some categories from credit markets
+       (red-lining) because of a lack of future cash ﬂows or collateral is not
+       credit rationing
+
+                                                                                                                                                                                   6 / 69
+Credit rationing
+
+       De Mel et al. (2008):
+       We use randomized grants to generate shocks to capital stock for a
+       set of Sri Lankan microenterprises. We ﬁnd the average real return
+       to capital in these enterprises is 4.6%–5.3% per month,
+       substantially higher than market interest rates. We then examine
+       the heterogeneity of treatment effects. Returns are found to vary with
+       entrepreneurial ability and with household wealth, but not to vary with
+       measures of risk aversion or uncertainty. Treatment impacts are also
+       signiﬁcantly larger for enterprises owned by males; indeed, we ﬁnd no
+       positive return in enterprises owned by females.
+
+                                                                                                                                                                                   7 / 69
+Entrepreneurs (ﬁrms)
+
+      Have a project that requires a ﬁxed initial investment of I > 0 at t = 0
+       Are risk-neutral, that is, they only care about expected returns
+      Have initial wealth A < I
+
+         ⇒ they need to borrow I − A to implement the project
+
+                                                                                                                                                                                   8 / 69
+Outside investors
+
+       Have enough wealth to ﬁnance the entrepreneur
+       Are risk-neutral, that is, they only care about expected returns
+       Are competitive
+       Can invest in an alternative option with a zero net return
+
+         ⇒ They are willing to lend as long as the net expected return from the
+              operation is bigger or equal than zero
+
+                                                                                                                                                                                   9 / 69
+Discounting
+
+      The risk-free interest rate is normalized to zero: rf = 0
+       Both outside investors and entrepreneurs discount any future payoff
+      by r = 0
+
+                                  r = risk premium +rf = 0
+
+                                                      =0 (risk neutrality)
+
+                                                                                                                                                                                 10 / 69
+Project: ﬁnancial returns and moral hazard
+
+The project yields random veriﬁable income R˜ at t = 1:
+
+R˜ = R > 0, if the project is successful
+0,  if the project fails
+
+Moral hazard: the probability of success depends on an
+unobservable action that the entrepreneur chooses between t = 0
+and t = 1
+
+Only the entrepreneur knows about the action (private information)
+but all the parties know about the outcome of the project (success or
+failure)
+
+                                                         11 / 69
+Timeline
+
+t =0                                                 t =1
+
+Financing contract                                   Return R˜ ∈ {0, R} is realized.
+                                                            Repayment date.
+is signed. Investment
+
+I is made.
+
+                       Entrepreneurs chooses an
+
+                    action, which outside investors
+
+            cannot observe (“hidden action”).
+
+                       This action inﬂuences the
+
+            probability of success of the project.
+
+                                                                                      12 / 69
+Project: ﬁnancial returns and moral hazard
+
+Only two possible actions: a ∈ {aL , aH}
+
+      Under aH, the probability that the project succeeds is pH
+      Under aL , the probability that the project succeeds is pL
+
+We have that pH > pL , that is, the probability of success is higher
+when the entrepreneur works hard
+
+Consequently, the NPV of the project is higher when the entrepreneur
+works hard:
+
+pHR + (1 − pH)0 − I = pHR − I > pL R − I = pL R + (1 − pL )0 − I
+
+NPV when a = aH  NPV when a = aL
+
+                                                                      13 / 69
+Project: private beneﬁts
+
+       aL entails a non-pecuniary private beneﬁt to the entrepreneur,
+      which is equivalent to B > 0 dollars
+
+       Two equivalent interpretations of B:
+
+              Effort interpretation: effort is costly in terms of utility (working less
+              and having more time for leisure is preferred to working hard).
+              Therefore, B can be interpreted as the disutility of effort that is saved
+              by shirking. Under this interpretation we use the notation aH = eH (high
+              effort) and aL = eL (low effort, shirking)
+
+              Project choice interpretation: the entrepreneur chooses a project
+              that yields a high probability of success, or one that yields a smaller
+              probability but that he likes more because it is easier to implement, is
+              more prestigious, delivers perks, is more fun, is easier to commit fraud
+              and embezzlement (e.g. buying inputs at an inﬂated price from a friend
+              or family)
+
+                                                                                                                                                                                 14 / 69
+Project: private beneﬁts
+
+       Jensen and Meckling (1976):
+
+           If a wholly owned ﬁrm is managed by the owner, he will make operating
+       decisions which maximize his utility. These decisions will involve not only the
+        beneﬁts he derives from pecuniary returns but also the utility generated by
+       various non-pecuniary aspects of his entrepreneurial activities such as the
+       physical appointments of the ofﬁce, (...), the level of employee discipline, the
+
+            kind and amount of charitable contributions, personal relations (“love”,
+        “respect”, etc.) with employees, a larger than optimal computer to play with,
+
+                           purchase of production inputs from friends, etc.
+
+       While ﬁnancial returns can be shared with outside investors,
+       non-pecuniary aspects (private beneﬁts) accrue to the entrepreneur
+       only
+
+                                                                                                                                                                                 15 / 69
+Timeline
+
+       Implicitly, there are two time periods:
+              At t = 0, the parties agree on a loan contract, outside investors transfer
+              I − A to the entrepreneur and the investment occurs
+              At t = 1, projects yields income R in case of success and 0 otherwise,
+              and the entrepreneur repays investors
+
+      During the execution of the project between t = 0 and t = 1 (the
+       moral hazard or interim stage), the entrepreneur can behave and
+       choose aH or misbehave and choose aL
+
+       As outside investors cannot observe the action choice, we refer to
+       them as uninformed investors
+
+                                                                                                                                                                                 16 / 69
+Contracts
+
+       A contract between entrepreneurs and outside (uninformed) investors
+       is described by a repayment conditional on the project outcome
+       (success or failure)
+       Entrepreneurs are protected by limited liability, that is, they cannot
+       pay outside investors out of their own pocket
+       Limited liability implies that the payment to outside investors cannot
+       be positive in case of failure as the ﬁrm has no cash
+       Therefore the payment to investors if the project fails is zero in any
+       contract
+
+                                                                                                                                                                                 17 / 69
+Contracts
+
+The contract can then simply be described by a payment Ru to
+outside (uninformed) investors if the project is successful
+
+The (ﬁrm) entrepreneur’s compensation in case of success is then
+Rf = R − Ru
+
+                           Failure Success
+
+           Total cash ﬂow  0    R
+
+           Outside investors 0  Ru
+
+           Entrepreneur    0    Rf = R − Ru
+
+                                                                  18 / 69
+Contracts
+
+       As outside investors cannot observe the action chosen by the
+       entrepreneur, contracts cannot specify it
+       If outside investors want the entrepreneur to choose to aH, they must
+       provide incentives
+
+                                                                                                                                                                                 19 / 69
+Contracts: one possible interpretation
+
+We can interpret the contract as a debt contract (loan): entrepreneur
+borrows I − A at t = 0 and promises to repay Ru ( the “face value”) at
+t =1
+
+If the project is successful, the borrower can meet the contractual
+obligation, but if the project fails the borrower defaults on the loan
+
+The interest rate i on the loan is
+
+1 + i = Ru ⇐⇒ i = Ru − 1
+I−A                                 I−A
+
+For a ﬁxed borrowed quantity I − A , the higher the Ru the higher the
+interest rate
+
+                                                                        20 / 69
+Conﬂict of interests
+
+       Entrepreneur chooses the action considering security beneﬁts or
+       ﬁnancial returns, which are shared with outside investors, and private
+      beneﬁts, which accrue to the entrepreneur only ⇒ conﬂict of interest
+
+Given a contract Ru, outside investors always want the entrepreneur
+to choose aH to maximize the expected value of their investment:
+pHRu > pL Ru
+
+Choosing aH also maximizes the entrepreneur’s expected ﬁnancial
+return as pHRf > pL Rf , but choosing aL generates a private beneﬁt B
+that only beneﬁts the entrepreneur
+
+It is possible that
+
+pHRu > pL Ru but pHRf < pL Rf + B
+
+Outside investors    Entrepreneur
+     prefer aH         prefers aL
+
+                                   21 / 69
+Assumptions
+
+       (Assumption A1) If the entrepreneur chooses aH, the project has a
+       positive NPV:
+
+                                           pHR − I > 0
+       (Assumption A2) If the entrepreneur chooses aL , the project has a
+       negative NPV, even accounting for the private beneﬁt gain:
+
+                                        pL R − I + B < 0
+
+                                                                                                                                                                                 22 / 69
+Assumptions: implications
+
+aL is inefﬁcient, that is, total surplus is higher when entrepreneurs
+choose aH:
+
+(pH − pL )R −              B                    >0
+
+      gains from                 costs from
+choosing aH over aL        choosing aH over aL
+
+                                                                       23 / 69
+Assumptions: implications
+
+A contract that induces the choice aL is not viable:
+
+pL R − I + B < 0 ⇒ pL (Ru + Rf ) −I + B + A − A < 0
+
+                           =R                         =0
+
+or
+                    [pL Ru − (I − A )] + [pL Rf + B − A ] < 0
+
+Outside investors’ NPV     Borrower’s NPV
+
+Either the entrepreneur or the outside investors (or both) end up with
+a worse payoff in comparison to the situation in which they do not
+sign a contract, and thus the party that is worse off prefers not to sign
+the contract
+
+Bottom line: the loan contract should provide incentives for the choice
+aH
+
+                                                                                                                                                                    24 / 69
+Incentive constraint
+
+The loan contract incentivizes the choice aH if the incentive constraint
+(IC) is satisﬁed:
+
+                            pHRf ≥ pL Rf + B
+
+                      utility when  utility when
+                      choosing aH   choosing aL
+
+or, letting ∆p = pH − pL ,
+
+∆pRf                                ≥             B
+
+entrepreneur’s expected ﬁnancial entrepreneur’s private beneﬁt
+                                       loss from choosing aH over aL
+gain from choosing aH over aL
+
+                                                                      25 / 69
+Incentive constraint
+
+Rearranging,
+
+              Rf                  ≥  B /∆p
+
+entrepreneur’s compensation          minimum entrepreneur’s
+
+              in case of success     compensation consistent with aH
+
+The entrepreneur must receive a sufﬁciently large share of the returns
+(enough “skin in the game”) to forgo private beneﬁts
+
+As B/∆p is the minimum amount required by the entrepreneur in
+case of success that is consistent with aH being optimal, the
+maximum amount that outside investors can receive is R − B/∆p
+
+We refer to R − B/∆p as the pledgeable income
+
+                                                                      26 / 69
+Pledgeable income
+
+      Note that the pledgeable income R − B/∆p does not depend on A
+      and as a consequence on the amount borrowed I − A
+
+       The maximum amount that outside investors can receive in case of
+       success is the same if
+
+              A is large and thus the amount borrowed I − A is small (low leverage
+              ﬁrm)
+              A is small and thus the amount borrowed I − A is large (high leverage
+              ﬁrm)
+
+       As lenders must break even, it will be easier to ﬁnance “rich”
+       individuals with a large A
+
+                                                                                                                                                                                 27 / 69
+Individual rationality constraint
+
+       The project is ﬁnanced if outside investors breaks even. Otherwise,
+       they prefer to obtain zero from the outside option
+       Thus a necessary condition for a loan to be granted is
+
+                                       pHRu ≥ I − A
+
+                                                 expected payment
+                                                                              lender’s outlay
+
+       We refer to this condition as the individual rationality (IR) or the
+       participation constraint (PC)
+
+                                                                                                                                                                                 28 / 69
+The IR and IC conditions together
+
+       As the maximum amount that outside investors can receive in case of
+      success is R − B/∆p, the maximum expected payment (known as
+       expected pledgeable income) is
+
+                                                         B
+                                           pH R − ∆p
+       Financing takes place if and only if
+
+                                                    B
+                                      pH R − ∆p ≥ I − A
+
+                                                                                                                                                                                 29 / 69
+The IR and IC conditions together
+
+Thus ﬁnancing takes place if and only if the entrepreneur has enough
+initial wealth
+
+B                                  B
+pH R − ∆p ≥ I − A ⇐⇒ A ≥ pH ∆p − (pHR − I)
+
+                                              A
+
+If A > 0, a borrower with wealth A < A is not granted a loan
+
+We make the following assumption to guarantee that some borrowers
+do not obtain a loan
+
+(Assumption A3): A = pH   B  − (pHR − I) > 0
+                         ∆p
+
+                                                              30 / 69
+Equilibrium
+
+If ﬁnancing takes place, that is, if A ≥ A , perfect competition among
+lenders imply zero proﬁts:
+
+                                                            I−A
+                     pHRu − (I − A ) = 0 or Ru = pH
+
+If we interpret Ru as the amount due in a loan of size I − A , the
+interest rate of the contract is
+
+             i=  Ru            1
+                      −1= −1
+                 I−A  pH
+
+Payoff of an entrepreneur with wealth A ≥ A is
+
+                                                I−A
+             pH(R − Ru) − A = pH R − pH − A = pHR − I
+that is, he/she receives the entire NPV (surplus)
+
+                                                                    31 / 69
+Credit rationing
+
+      A borrower with wealth A < A does not obtain credit
+
+      A smaller A means that the amount borrowed, I − A , is larger
+
+       Lenders must break even, so lending a larger amount means that a
+       larger fraction of the return R must be pledged to them
+
+       But lenders anticipate that if the fraction of R that they require
+      increases such that the borrower receives less than B/∆p, the
+       borrower will choose aL and the lenders’ expected payoff will be
+       negative
+
+       Lenders simply turn down entrepreneurs with low A . An increase in
+       the interest rate only exacerbates the moral hazard problem (smaller
+       payoff in case of success, more incentives to choosing aL ).
+
+                                                                                                                                                                                 32 / 69
+Credit rationing
+
+      The borrower is willing to pay the equilibrium interest rate of 1/pH − 1
+       (or even a higher one)
+       Entrepreneurs with low A face a commitment problem: they would be
+       better off by exerting choosing aH. However, once the contract is
+       signed, they have the incentives to choose aL
+       Entrepreneurs with low A do not obtain credit and bear the moral
+       hazard costs
+
+                                                                                                                                                                                 33 / 69
+Credit rationing
+
+Consider a borrower with A < A that promises to repay
+(I − A ) × (1/pH), the amount borrowed plus equilibrium interest
+payments
+
+As A < A , the entrepreneur’s compensation in case of success
+satisﬁes
+
+R− I−A <R− I−A =R− I−  pH   B  − (pHR − I)                     B
+                           ∆p
+                                            =
+pH                pH           pH              ∆p
+
+As the compensation is smaller than the minimum required to induce
+aH, the entrepreneur ends up choosing aL , leaving the lender with
+negative proﬁts
+
+                                                                  34 / 69
+Determinants of credit rationing
+
+       A is increasing in B
+      A decreases in ∆p/pH
+
+              ∆p/pH is a measure of the marginal gain of choosing aH over aL
+              The higher the ratio ∆p/pH, the more informative is the outcome about
+              the action choice
+
+                                                                                                                                                                                 35 / 69
+Efﬁciency of the equilibrium
+
+       The allocation is inefﬁcient:
+              Recall that choosing aH is efﬁcient (it increases total surplus)
+              With no asymmetric information about the action chosen, there is no
+              need for an incentive constraint: aH can simply be speciﬁed in the
+              contract
+              In the competitive equilibrium (ﬁrst-best) all entrepreneurs obtain
+              ﬁnancing and exert aH
+              In particular, there is no credit rationing
+
+                                                                                                                                                                                 36 / 69
+Alternative interpretation of A
+
+       We can interpret A as collateral instead of initial wealth when
+       liquidation costs are zero
+       In this case, entrepreneurs post A as collateral and borrow I
+      The payoff of outside investors is pHRu + (1 − pH)A and the IC
+       constraint becomes
+        pH(R − Ru) + (1 − pH)(−A ) ≥ pL (R − Ru) + (1 − pL )(−A ) + B
+       The cutoff A would be the same
+
+                                                                                                                                                                                 37 / 69
+Sensibility of investment to cash ﬂows
+
+       Credit rationing is a potential explanation for the fact that investment
+       is sensitive to cash ﬂow
+       Fazzari and Petersen (1988):
+
+              Robust relationship between cash ﬂows and investment
+              Larger for more “constrained” ﬁrms
+       Empirical challenge: ﬁnding an exogenous increase in cash ﬂows or
+       cash balances (e.g. De Mel et al., 2008)
+
+                                                                                                                                                                                 38 / 69
+Sensibility of investment to cash ﬂows
+
+       In our model: a small increase in cash ﬂows increase investment for
+      marginal ﬁrms, the ones with initial cash balances just below A¯
+       No effect for “very small” or “very large” ﬁrms
+       Credit rationing makes the marginal value of an increase in cash
+       ﬂows larger than 1:
+
+              An additional unit of cash increases the entrepreneur’s utility by more
+              than one if this additional unit allows the entrepreneur to access credit
+              markets
+
+                                                                                                                                                                                 39 / 69
+Debt versus equity
+
+       To ﬁnance the purchase of ﬁxed assets and inputs (raw materials,
+       wages) that enable the sale of services and products, ﬁrms can issue
+
+              Liabilities or promises to non-owners (creditors): speciﬁc and
+              senior (e.g. bonds, bank loans, payables)
+
+              Equity or promises to owners (shareholders): non-speciﬁc and
+              junior (e.g. stocks)
+
+       Owners are residual claimants (their claim is junior to liabilities): they
+       receive whatever future cash ﬂows that are not promised away to
+       non-owners (creditors)
+
+       In other words, creditors have priority (their claim is senior to equity),
+       and shareholders only get paid after fulﬁlling the promises to creditors
+
+                                                                                                                                                                                 40 / 69
+Standard debt contracts
+
+       A standard debt contract is one of the most common forms of liability
+
+       Does this contract have good properties in terms of facilitating access
+       to funding in the presence of moral hazard?
+       Key characteristics:
+
+              The contract speciﬁes ﬁxed payments to the lender at ﬁxed times
+              If the borrower misses a payment (defaults), the lender can seize the
+              ﬁrm’s assets, leaving equityholders empty-handed
+              Under limited liability, only assets of the ﬁrm can be seized
+              In some cases, in case of default, banks can also report negative
+              information about the borrower to a credit bureau
+
+                                                                                                                                                                                 41 / 69
+Payoffs: equity vs debt
+
+       Consider a ﬁrm (entrepreneur) that ﬁnances its operations with equity
+       and a one-period debt contract that speciﬁes a ﬁxed repayment of D
+       to creditors at maturity
+
+If the ﬁrm has assets A at maturity, we have two outcomes:
+
+      If A < D, the ﬁrm defaults on its debt. Creditors are senior and seize all
+      the assets, receiving A ; equityholders are empty-handed
+
+      If A ≥ D, the ﬁrm can fulﬁll its promise to repay the ﬁxed amount D; the
+      equity value is the residual A − D
+
+The payoffs of debtholders and equityholders are (as a function of A )
+
+Debt    Default  Full repayment
+Equity  A <D          A ≥D
+
+           A             D
+           0          A −D
+
+                                 42 / 69
+Payoffs: equity vs debt
+
+Payoffs at maturity for a debt contract with no coupon payments and
+face value D
+
+                       Payoffs
+
+                                                                                             Equityholder
+
+D                                   Debtholder
+
+       45°                     45°  Firm’s assets at
+0                        D          maturity
+
+                                                      43 / 69
+Direct ﬁnancing: debt or equity?
+
+Payment to outside investors:
+
+Ru  =  I−A  ,         if the project is succeeds
+           pH
+
+0,                     if the project fails
+
+The contract can be interpreted as debt contract: in exchange for
+receiving I − A , entrepreneurs promise to repay a ﬁxed amount (face
+value) of D = Ru
+
+Total cash ﬂow (asset)         Failure (default)  Success (repayment)
+Debt (outside investors)
+Equity (entrepreneurs)                  0                      R
+                                        0                     Ru
+                                        0                  R − Ru
+
+                                                                       44 / 69
+Direct ﬁnancing: debt or equity?
+
+       The contract can also be interpreted as equity: in exchange for
+      receiving I − A , entrepreneurs sell a share α = Ru/R of the ﬁrm to
+       outside investors
+
+Total cash ﬂow (asset)          Failure          Success
+Equity (outside investors)
+Equity (entrepreneurs)             0                 R
+                               α0 = 0           αR = Ru
+                            (1 − α)0 = 0  (1 − α)R = R − Ru
+
+This multiplicity arises because we only have two states (assets can
+take two values only), and in one of them the project yields a zero
+return
+
+In general, the payoffs of debt and equity securities are different. As a
+consequence they can differ in terms of incentives provision and in
+the mitigation of the hazard problem
+
+                                                                                                                                                                    45 / 69
+Debt versus equity
+
+Investor                         Investor
+payoff                           payoff
+
+    Ru         Debt                        Equity
+
+                                                   Lender
+
+                        Lender   Ru
+
+          45°
+
+0                    R  Project  0         R       Project
+
+                        payoff                     payoff
+
+                                                            46 / 69
+Project: new payoffs
+
+To gain insights about security design and the differences between
+debt and equity, assume that the project has a positive payoff in both
+states:
+
+R˜  =                 RS ,  if the project succeeds
+                      RF ,   if the project fails
+
+where RS > RF > 0
+
+The initial investment remains I, where RF < I < RS
+
+                                                         47 / 69
+Contracts
+
+       We assume limited liability
+
+      Contract: outside investors receive RuS ∈ [0, RS ] in case of success
+      and RuF ∈ [0, RF ] in case of failure
+       The entrepreneur receives RfS in case of success and RfF in case of
+       failure
+
+Total cash ﬂow     Failure         Success
+Outside investors
+Entrepreneur         RS               RF
+                     RuS              RuF
+                     RfS              RfF
+
+RS = RuS + RfS and RF = RuF + RfF
+
+                                            48 / 69
+Assumptions
+
+       (A1) Positive NPV if the worker behaves:
+                                 pHRS + (1 − pH)RF − I > 0
+
+       (A2) Negative NPV if the worker shirks (even if B is taken into
+       account):
+
+                              pL RS + (1 − pL )RF + B − I < 0
+
+       Again, given (A2), the loan contract should provide incentives for the
+       action aH, otherwise one of the parties is better off by not participating
+       in the transaction
+
+                                                                                                                                                                                 49 / 69
+First-best
+
+       No asymmetric information: the action choice is observable and
+       veriﬁable
+
+       There is no need to incentivize the entrepreneur (no need for an
+       incentive constraint): the contract can simply specify aH
+
+       Modigliani-Miller result: ﬁnancing choices are irrelevant in the
+       absence of moral hazard
+
+              The entrepreneur can raise I − A by issuing debt
+
+              The entrepreneur can raise I − A by issuing equity (selling part of the
+              ﬁrm)
+
+              Or any combination of debt and equity (say, the entrepreneur can raise
+              half of I − A by issuing debt and the other half by issuing equity)
+
+                                                                                                                                                                                 50 / 69
+First-best: implementation with a debt contract
+
+Assume that I − A > RF (otherwise the entrepreneur can issue
+riskless debt)
+
+Risky debt with face value D > RF such that the payoff to outside
+investors satisﬁes:
+
+Ru  =  D,         if the project succeeds (full repayment)
+       RF ,        if the project fails (default)
+
+where D is such that
+
+pHD + (1 − pH)RF = I − A  ⇒  D = RF + I − A − RF
+                                                 pH
+
+                                                                   51 / 69
+First-best: implementation with an equity contract
+
+Equity: to raise I − A , the entrepreneur sells a share α of the project
+to outside investors:
+
+             Ru  =    αRS ,  if the project succeeds
+                      αRF ,   if the project fails
+
+where α is such that
+
+α[pH R S  +  (1  − pH)RF ]  =    I  −A  ⇒  α  =  pH R S   I  −A
+                                                         +   (1 − pH)RF
+
+Irrespective of the ﬁnancing method (which can include arbitrary
+combinations of debt and equity), the project is always ﬁnanced and
+the entrepreneur gets the entire NPV
+
+                                                                         52 / 69
+Asymmetric information: action is not observable
+
+Financing takes place if and only if
+
+expected pledgeable income ≥          I−A
+
+                                      amount lent / invested
+
+where the expected pleadgeble income is the maximum expected
+amount that lenders can receive that is consistent with entrepreneurs
+having incentives to choose aH
+
+The higher the pledgeable income, the larger the amount that outside
+investors can lend/invest and the smaller the credit rationing problem:
+
+More entrepreneurs (with smaller initial wealth A ) can obtain credit
+
+Which contract – debt or equity – maximizes pledgeable income?
+
+                                                                       53 / 69
+Asymmetric information: action is not observable
+
+       The entrepreneur chooses aH only if such a choice generates more
+       utility than shirking
+
+The incentive constraint is
+
+    pHRfS + (1 − pH)RfF > pL RfS + (1 − pL )RfF + B
+
+or                                            B
+                                             ∆p
+                             RfS  −  RfF  ≥
+
+Note the cost of rewarding the entrepreneur in case of failure:
+
+      A higher reward in case of failure reduces the marginal beneﬁt of aH
+
+      The keep the same marginal beneﬁt of aH we also need to increase the
+      reward in case of success, decreasing the amount that lenders can
+      obtain (i.e. decreasing the pledgeable income)
+
+                                                                                                                                                                    54 / 69
+Asymmetric information: action is not observable
+
+       We will see that the solution that maximizes pledgeable income and
+      minimizes rationing involves RfF = 0
+      Setting RfF = 0 minimizes the costs to provide incentives and thus
+       maximizes the amount that lenders can receive
+
+                                                                                                                                                                                 55 / 69
+The choice that maximizes pledgeable income
+
+Given the IC constraint, the expected pledgeable income or the
+maximum expected payoff of outside investors is
+
+                                      pHRuS + (1 − pH)RuF
+
+               = pH(RS − RfS ) + (1 − pH)(RF − RfF )
+
+   = pH(RS − RF ) + RF − pH(RfS − RfF ) − RfF
+
+                                         max. B/∆p
+
+=  pH (R S  −  RF)  +  RF  −  pH   B  −  RfF
+                                  ∆p
+
+                                            the choice variable
+                                            that determines the
+                                         max. pledgeable income
+
+Setting RfF = 0 (leaving the entrepreneur empty-handed in case of
+failure) maximizes the outside investors’ expected payoff
+
+                                                                   56 / 69
+The choice that maximizes pledgeable income
+
+      How can we obtain RfF = 0?
+      The ﬁnancing choice must contain debt with face value D ≥ RF
+       Otherwise, the entrepreneur will have a positive payoff in case of
+       failure
+       Leaving the entrepreneur empty-handed in case of failure can be
+       interpreted as a “punishment”, which is more likely to occur when the
+       entrepreneur chooses aL
+
+                                                                                                                                                                                 57 / 69
+Suboptimality of all-equity ﬁnancing
+
+All-equity ﬁnancing is sub-optimal because the borrower gets a
+positive payoff in case of failure ⇒ positive reward for aL
+
+Denote by α the share of the project that entrepreneurs sell to outside
+investors, meaning that entrepreneurs retain a share 1 − α of the ﬁrm
+
+The IC constraint is
+
+    (1 − α) pHRS + (1 − pH)RF > (1 − α) pL RS + (1 − pL )RF +B
+
+    ﬁrm value when a = aH             ﬁrm value when a = aL
+
+or                          B
+
+                      1−α≥  ∆p(RS − RF )
+
+                                                                58 / 69
+Suboptimality of all-equity ﬁnancing
+
+In case of failure, the entrepreneur gets at least
+
+        B  −  RF  )  ×R F  >               0
+∆p (R S
+                                      payoff under
+
+1−α                           debt with D > RF
+
+The maximum share of the ﬁrm that outside investors can have is
+                                                B
+
+                                1 − ∆p(RS − RF )
+
+                                                                 59 / 69
+Suboptimality of all-equity ﬁnancing
+
+Financing takes place if the expected pledgeable income is bigger
+than I − A , that is, if outside investors can break even:
+
+             B     pHRS + (1 − pH)RF   ≥I−A
+1−
+
+     ∆p(RS − RF )
+
+Rearranging, the minimum welath required to obtain all-equity
+ﬁnancing is
+
+BR F               B                   pH(RS − RF ) + RF − I
+A all−equity = ∆p(RS − RF ) + pH ∆p −
+
+                                                                   60 / 69
+All-debt ﬁnancing
+
+Consider a debt contract with face value D = RuS > RF
+Then, in case of failure (default), the payoffs are RfF = 0 and
+RuF = RF
+In case of success, the minimum compensation RfS of the
+entrepreneur is B/∆p and thus the maximum compensation RuS of
+outside investors, the pledgeable income, is RS − B/∆p
+
+Therefore expected pledgeable income is
+
+                   pH  RS  −   B  + (1 − pH)RF
+                              ∆p
+
+                                                                 61 / 69
+All-debt ﬁnancing
+
+Financing takes place if the expected pledgeable income is bigger
+than I − A , that is, if outside investors can break even:
+
+                    pH RS − B∆p + (1 − pH)RF ≥ I − A
+
+Rearranging, the minimum welath required to obtain debt ﬁnancing is
+
+                B  pH(RS − RF ) + RF − I
+A debt = pH ∆p −
+
+                                                                   62 / 69
+           A all−equity  =       BR F    +  pH   B  −  pH(RS − RF ) + RF − I
+                            ∆p(RS −RF )         ∆p
+
+0                                                    All-equity ﬁnancing
+       Credit rationed                                                             A
+
+                                            Debt ﬁnancing
+
+A debt  =  pH   B  −    pH(RS − RF ) + RF − I
+               ∆p
+
+Projects of individuals with initial wealth A debt ≤ A < A all−equity can be
+ﬁnanced with debt with face value D ≥ RF , but cannot be ﬁnanced
+with equity only ⇒ debt dominates equity
+
+                                                                                                                                                                    63 / 69
+Debt vs equity
+
+      Setting RfF = 0 maximizes investors’ payoff and thus makes the
+       participation constraint of the lender the least severe
+
+       All projects that can be ﬁnanced with equity can also be ﬁnanced with
+       debt, but the reverse does not hold
+
+       Intuition: debt contract maximizes the return from choosing aH that
+       accrues to the entrepreneur
+
+       Solution is not unique. The ﬁnancial structure can involve debt only,
+      with face value D > RF , or a combination of riskless debt with face
+      value D = RF and some equity. In any case, entrepreneurs must
+       receive zero when the project fails
+
+                                                                                                                                                                                 64 / 69
+Debt versus equity
+
+Investor           Debt            Investor           Equity
+payoff                             payoff
+
+                                                              slope=1
+
+                                                                      slope<1
+
+RuS                                RuS
+
+RuF = RF                           RF
+
+                                   RuF
+
+          45°                                45°
+
+0              RF        RS Project 0             RF          RS Project
+
+                                   payoff                              payoff
+
+               RuF = RF ⇒ RfF = 0                 RuF < RF ⇒ RfF > 0
+
+                                                                       65 / 69
+Optimality of the debt contract: limitations
+
+       Debt is not a panacea
+       Modigliani-Miller: the ﬁnancing method is irrelevant
+       Optimality arises in this speciﬁc moral hazard setting with the
+       assumption of risk-neutrality: high-powered incentives are optimal
+       because there is no need for risk-sharing (and consumption
+       smoothing)
+       If the entrepreneur is risk-averse, the entrepreneur bears too much
+       risk with a debt contract
+
+                                                                                                                                                                                 66 / 69
+Optimality of the debt contract: limitations
+
+       Leverage also increases the risk of bankruptcy or ﬁnancial distress
+
+       Financial distress and bankruptcy have costs that drain resources
+       from the ﬁrm and distort managerial decisions
+
+       Direct bankruptcy costs: legal and administrative costs, time and
+       resources spent by managers and creditors dealing with bankruptcy,
+       ﬁre sales of assets due to asset speciﬁcity and illiquid assets
+
+       Indirect bankruptcy costs: loss of customers, key employees, and
+       access to credit markets, conﬂict of interest between equityholders
+       and creditors might lead to poor investment decisions (debt overhang,
+       asset substitution)
+
+                                                                                                                                                                                 67 / 69
+References I
+
+Baltensperger, E. (1978). Credit rationing: issues and questions. Journal
+   of Money, Credit and Banking, 10(2):170–183.
+
+Bester, H. and Hellwig, M. (1987). Moral hazard and equilibrium credit
+   rationing: An overview of the issues. In Agency theory, information, and
+   incentives, pages 135–166. Springer.
+
+Dasgupta, A. (2015). Financial economics. Lecture Notes, LSE.
+De Mel, S., McKenzie, D., and Woodruff, C. (2008). Returns to capital in
+
+   microenterprises: evidence from a ﬁeld experiment. The quarterly
+   journal of Economics, 123(4):1329–1372.
+Fazzari, S. M. and Petersen, B. C. (1988). Financing constraints and
+   corporate investment. Brookings Papers on Economic Activity,
+   1988(1):141–195.
+Holmstrom, B. and Tirole, J. (1997). Financial intermediation, loanable
+   funds, and the real sector. the Quarterly Journal of economics,
+   112(3):663–691.
+
+                                                                                                                                                                                 68 / 69
+References II
+
+Jensen, M. C. and Meckling, W. H. (1976). Theory of the ﬁrm: Managerial
+   behavior, agency costs and ownership structure. Journal of ﬁnancial
+   economics, 3(4):305–360.
+
+                                                                                                                                                                                 69 / 69
+

@@ -25,6 +25,7 @@ Cap. 20; Ross Cap. 18–19 and Higgins Ch. 2–3 working-capital rows were retag
 | R5 Asymmetric information and capital structure | Asymmetric information | Tirole Ch. 6–7; G&T Ch. 19; Berk 16.29, 17.14–18; Ross Cap. 15, 17; Amaro de Matos Ch. 3–4, 6, 8 |
 | R5b Trade credit and working capital | Working capital & trade credit | Berk Ch. 19–20; Ross Cap. 18–20; Higgins Ch. 2–3 |
 | R6 Liquidity and risk management | Liquidity | Tirole Ch. 5 (and 12, 15); G&T Ch. 21–23; Berk Ch. 20; Ross Cap. 19 (cash buffer rows); Higgins Ch. 5–6 |
+| R7 Lectures 3–5 (slides, 2026-11-08): adverse selection, moral hazard, overhang, strategic default | Asymmetric information; Agency & capital structure | Tirole 3.3, 3.6, 4.9, 4.17, 6.2, 6.7, 7.3; Amaro de Matos 3.1.5 #7, #9, 3.2.6 #2, 5.2.5 #1–2, 6.2.7 #4, #6; G&T 16.1, 16.3, 16.12–13, 16.14, 19.6; Berk 16.26; Ross Cap. 15 #3 — none repeated from R1–R6 |
 
 `Activism`, `M&A` and `Macro implications` rows are outside the Ricca syllabus.
 
