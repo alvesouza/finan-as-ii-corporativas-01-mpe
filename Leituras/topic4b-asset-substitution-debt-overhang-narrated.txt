@@ -1,0 +1,1225 @@
+Finanças Two, Corporate Finance. Topic 4B: asset substitution, debt overhang, and debt renegotiation. Lecture by Professor Bernardo Ricca, sixty-two slides. A listening version of the lecture.
+
+How to listen.
+
+This is the full content of the Topic 4B slides, rewritten to be heard rather than read. It is narration, not a summary. Every example is worked step by step, every number is the one printed on the slides, and every table is walked row by row, in words.
+
+There are ten main parts, in slide order, followed by six support parts.
+
+Part one: the asset substitution problem, equity as a call option and debt as a bond minus a put. Slides 2 and 3.
+
+Part two: the three-project example. Slides 4 to 8.
+
+Part three: financing the example with new debt or with outside equity. Slides 9 to 13.
+
+Part four: implications, mitigation, evidence, and the underlying friction. Slides 14 to 18.
+
+Part five: debt overhang, the idea and the household evidence. Slides 19 to 21.
+
+Part six: the debt overhang example and renegotiation. Slides 22 to 30.
+
+Part seven: mitigating overhang, and the benefits of renegotiation. Slides 31 to 36.
+
+Part eight: the costs of renegotiation. Slides 37 to 40.
+
+Part nine: default as insurance, following Indarte, 2023. Slides 41 to 44.
+
+Part ten: separating adverse selection from moral hazard, following Karlan and Zinman, 2009. Slides 45 to 59.
+
+Then the support parts: the common pitfalls, a spoken formula sheet, the reading route and exercises, a self-test, a glossary, and finally the whole topic in five lines.
+
+A note on how the mathematics sounds. All formulas are spoken the way you would dictate them to someone writing on a board, and then said again in plain words. When you hear "r f", that is the letter r with a subscript f, the risk-free rate. When you hear "theta bar", that is the Greek letter theta with a bar over it, and "theta underbar" has the bar underneath. When you hear "Y star", that is a threshold value of Y. When you hear "u prime", that is the first derivative of the function u.
+
+A note on page numbers. Every page number you hear is the printed page of the book. For Tirole, The Theory of Corporate Finance, the PDF page is the printed page plus thirteen. For Amaro de Matos, Theoretical Foundations of Corporate Finance, the PDF page is the printed page plus eighteen. For Grinblatt and Titman, Financial Markets and Corporate Strategy, the PDF page is also the printed page plus thirteen.
+
+Whenever you hear the words "book material", what follows comes from a textbook and not from the slides. The slides are the spine. The books add depth.
+
+One scope rule applies throughout. The course covers only its nine syllabus topics: corporate governance, valuation, the Modigliani and Miller benchmark, agency costs, liquidity, asymmetric information, activism, mergers and acquisitions, and macroeconomic implications. Nothing here goes beyond those topics or beyond the course bibliography. In the lecture files, Topic 4A and Topic 4B together make up syllabus item four, agency costs and moral hazard, built on Tirole chapter three. Two pieces of this lecture, the Indarte model and the Karlan and Zinman experiment, are not in any course book. For those, the slides and the papers they cite are the only source, and you will hear that said again when we get there.
+
+Before we start, the thesis of the whole lecture in one sentence. Once a firm or a person owes money, the borrower who controls decisions no longer bears the full consequences of those decisions, and this pushes in two directions: toward too much risk, which is asset substitution, and toward too little investment, which is debt overhang. Renegotiating the debt can fix the second problem after the fact, but the expectation of renegotiation weakens incentives before the fact.
+
+Keep that sentence in mind. Every part that follows is one piece of it.
+
+
+Part one. The asset substitution problem: equity as a call, debt as a bond minus a put. Slides 2 and 3.
+
+One point one. The setting.
+
+Consider a firm that generates a random liquidating payoff of X tomorrow, at date t equals one. You can think of X as the resale value of the firm: whatever the firm's assets are worth when everything is wound up.
+
+The firm has debt with a face value of K, due at date one. Face value means the amount promised.
+
+Debt is risky. That means that with positive probability, X is less than or equal to K. In those states the firm is worth less than what it owes.
+
+One point two. The equity payoff is a call option.
+
+Here is the first formula. The equity payoff is the maximum of X minus K and zero.
+
+In words: if the firm is worth more than what it owes, the shareholders pay the debt and keep the rest, X minus K. If the firm is worth less than what it owes, the shareholders walk away with zero, because of limited liability. They never pay out of their own pockets.
+
+That is exactly the payoff of a long position in a call option on the assets of the firm, X, with strike price K. Owning the equity is like owning the right, but not the obligation, to buy the firm from the creditors by paying them K.
+
+The consequence follows at once. The equityholder bears the upside: any quantity above K accrues to him or her. And the equityholder obtains zero whenever losses are such that X is below K, no matter how deep those losses are. Gains are kept in full, losses are capped. So the equityholder has a preference for riskier projects.
+
+One point three. The debt payoff is a bond minus a put.
+
+The second formula. The debt payoff is the minimum of X and K. And that can be rewritten: the minimum of X and K is equal to K minus the maximum of zero and K minus X.
+
+Read the right-hand side slowly. K is the payoff of a risk-free bond with face value K. The maximum of zero and K minus X is the payoff of a put option on the assets of the firm with strike K: it pays off only when the firm is worth less than K, and it pays the shortfall. Subtracting it means being short that put.
+
+So the debt payoff is the same as a long position in a risk-free bond with face value K plus a short position in a put option on the assets of the firm, X, with strike K. The debtholders have, in effect, sold the shareholders an insurance policy against the firm being worth less than K.
+
+Debtholders have priority, and they only care about the first K dollars. Anything above K is irrelevant to them. Anything that makes low outcomes more likely hurts them. So debtholders have a preference for safer projects.
+
+One point four. The conflict.
+
+Different payoffs mean a conflict of interest between equityholders and debtholders.
+
+The preferred choices of debtholders and shareholders can differ, and neither of them is necessarily the choice that maximizes firm value.
+
+And here is the key institutional fact: equityholders have control rights. Managers act on their behalf. So firms tend to pick riskier projects when leverage is high, and not necessarily the projects that maximize firm value. This is called the asset substitution problem, or the risk-shifting problem. The firm substitutes risky assets for safe ones, and in doing so shifts risk onto the creditors.
+
+One point five. Book material: the option view in Amaro de Matos.
+
+Amaro de Matos develops the same idea in section three point one point three, "Agency Costs of Debt", starting on printed page 71. He writes the value of the firm V as the value of its debt B plus the value of its equity S. For a fixed V, an increase in S can only come at the expense of B.
+
+He then takes the case where the only bonds are zero-coupon bonds with face value F due at date T. If the firm is worth more than F at T, bondholders get F and shareholders keep V minus F. If the firm is worth less, bondholders get all of V, and shareholders are left with nothing. As first noted by Black and Scholes, 1973, owning equity is like having the right to buy the company by paying F to the bondholders at T. So the current value of equity is the value of a call option on the future value of the firm, with exercise price F.
+
+From option theory he lists what moves the value of equity, on printed pages 71 and 72. Equity value falls with the face value of debt F: the more the bondholders get at the end, the less is left. Equity value rises with the value of the firm. It rises with the riskless interest rate, because a higher rate lowers the present value of the face value owed. It rises with the volatility of the firm's returns, sigma. And it rises with the time to liquidation, T minus t, which works much like volatility.
+
+The volatility result is the heart of asset substitution. A higher sigma makes very high and very low outcomes more likely. The very low outcomes do not hurt the shareholders, because their payoff there is zero anyway. The very high outcomes help them a lot. So more risk raises the value of the call. And since bonds plus stock add up to the value of the firm, anything that raises equity value without raising firm value is done at the expense of the bondholders.
+
+Grinblatt and Titman make the same point in chapter 16, printed page 569. Equity holders can realize an unlimited upside but can do no worse than lose their investment, so equity is worth more when the firm's managers select riskier investments, while debt becomes less valuable. Increasing risk transfers wealth from debt holders to equity holders.
+
+Recap of part one.
+
+Equity pays the maximum of X minus K and zero: a call on the firm's assets with strike K. Equity keeps the upside and is protected on the downside, so it likes risk.
+
+Debt pays the minimum of X and K, which equals K minus the maximum of zero and K minus X: a risk-free bond minus a put. Debt only cares about the first K, so it likes safety.
+
+Equity controls decisions. So at high leverage, firms pick riskier projects, even ones that do not maximize firm value. That is asset substitution, or risk shifting.
+
+Checklist for part one. You should be able to write the equity payoff and say why it is a call. You should be able to rewrite the minimum of X and K as a bond minus a put. You should be able to explain, using option intuition, why equity likes volatility and debt dislikes it. And you should be able to say why control rights decide whose preference wins.
+
+
+Part two. The three-project example. Slides 4 to 8.
+
+Two point one. The setup, slide 4.
+
+Everyone is risk-neutral. This means discount rates are always equal to the risk-free rate.
+
+The risk-free rate, r f, is 20 per cent.
+
+The assets of the firm today, at t equals zero, consist of a cash balance of 100.
+
+The firm contracted debt in the past with a face value of 120, due at t equals one.
+
+There are three states at t equals one. Bust, with probability 20 per cent. Neutral, with probability 60 per cent. Boom, with probability 20 per cent.
+
+To value any payoff, take its expected value across the three states, weighting by 0.2, 0.6 and 0.2, and divide by 1 plus 20 per cent, that is, by 1.2.
+
+Two point two. The three projects, slide 5.
+
+There are three investment opportunities. Each costs 100 at date zero, which uses up all the firm's cash.
+
+Project one pays 110 in the bust, 130 in the neutral state, and 150 in the boom. Its expected payoff is 130. Let us check: 0.2 times 110 is 22, 0.6 times 130 is 78, 0.2 times 150 is 30, and 22 plus 78 plus 30 is 130. Its present value is 130 divided by 1.2, which is 108.3. Subtract the investment of 100, and the net present value is 8.3.
+
+Project two pays 60 in the bust, 90 in the neutral state, and 240 in the boom. Expected payoff: 0.2 times 60 is 12, 0.6 times 90 is 54, 0.2 times 240 is 48, and the sum is 114. Present value 114 divided by 1.2 is 95. The net present value is minus 5.0. Project two destroys value.
+
+Project three pays 120 in the bust, 122 in the neutral state, and 125 in the boom. Expected payoff: 24 plus 73.2 plus 25, which is 122.2. Present value 122.2 divided by 1.2 is 101.8. The net present value is 1.8.
+
+So project one is the one that maximizes firm value, with a net present value of 8.3. Project three is safe but barely profitable. Project two is the riskiest, with the widest spread from 60 to 240, and it has a negative net present value.
+
+Two point three. The equityholders' payoffs, slide 6.
+
+Now split each project's payoff between equity and debt, remembering that the debt has face value 120.
+
+Equity gets the maximum of the payoff minus 120 and zero.
+
+Project one. In the bust, 110 is below 120, so equity gets zero. In the neutral state, 130 minus 120 is 10. In the boom, 150 minus 120 is 30. Expected payoff: 0.6 times 10 is 6, plus 0.2 times 30 is 6, total 12. Market value: 12 divided by 1.2 is 10.
+
+Project two. Bust: 60 is below 120, equity gets zero. Neutral: 90 is below 120, zero again. Boom: 240 minus 120 is 120. Expected payoff: 0.2 times 120 is 24. Market value: 24 divided by 1.2 is 20.
+
+Project three. Bust: 120 minus 120 is zero. Neutral: 122 minus 120 is 2. Boom: 125 minus 120 is 5. Expected payoff: 0.6 times 2 is 1.2, plus 0.2 times 5 is 1, total 2.2. Market value: 2.2 divided by 1.2 is 1.8.
+
+So equity is worth 10 under project one, 20 under project two, and 1.8 under project three. Equityholders prefer project two, the value-destroying project, and by a wide margin.
+
+Why? Under project two, equity loses nothing extra in the bust and the neutral state, because it gets zero there under any project that falls short of 120. But in the boom it collects 120. All the losses of project two land on the creditors. All its upside lands on equity.
+
+Two point four. The debtholders' payoffs, slide 7.
+
+Debt gets the minimum of the payoff and 120.
+
+Project one. Bust: 110. Neutral: 120. Boom: 120. Expected payoff: 22 plus 72 plus 24, which is 118. Market value: 118 divided by 1.2 is 98.3.
+
+Project two. Bust: 60. Neutral: 90. Boom: 120. Expected payoff: 12 plus 54 plus 24, which is 90. Market value: 90 divided by 1.2 is 75.0.
+
+Project three. Bust: 120. Neutral: 120. Boom: 120. Debt is paid in full in every state. Expected payoff 120, market value 100.
+
+So debt is worth 98.3 under project one, 75 under project two, and 100 under project three. Debtholders prefer project three, the safest one.
+
+Notice the three-way disagreement. Firm value is maximized by project one. Equity wants project two. Debt wants project three. Only the value-maximizing planner would pick project one.
+
+And notice the check that the pieces add up. Under project one, equity 10 plus debt 98.3 is 108.3, the present value of the project. Under project two, 20 plus 75 is 95. Under project three, 1.8 plus 100 is 101.8. Debt plus equity always equals the value of the assets.
+
+Two point five. Who decides, slide 8.
+
+Shareholders have control rights, and thus project two is chosen.
+
+The project that maximizes firm value is not chosen. The presence of risky debt leads to inefficiency.
+
+The market-value balance sheet of the firm at t equals zero, once project two is chosen, is: assets A equal to 95, debt D equal to 75, and equity E equal to 20. And 75 plus 20 is 95.
+
+Compare that with the efficient choice, project one, where the assets would be worth 108.3. Choosing project two lowers the value of the firm, and it also moves value from the debtholders to the shareholders: debt falls from 98.3 to 75, equity rises from 10 to 20.
+
+Two point six. Book material: the same mechanism in Grinblatt and Titman.
+
+Grinblatt and Titman tell the same story with Unistar, a startup that must choose between two production processes, each costing 70 million, on printed pages 569 to 571 of chapter 16. With a zero risk-free rate and equally likely states, process one pays 50 million or 100 million, an expected 75 million and a net present value of 5 million. Process two pays 25 million or 115 million, an expected 70 million and a net present value of zero.
+
+With a debt obligation of 40 million, equity under process one gets 10 million or 60 million, an expected 35 million. Under process two it gets zero or 75 million, an expected 37.5 million. So equity prefers the riskier, lower-value process. Their Result 16.7 says it in one line: the equity holders of a levered firm may prefer a high-risk, low or even negative net present value project to a low-risk, high net present value project.
+
+Recap of part two.
+
+With a risk-free rate of 20 per cent, cash of 100, debt with face value 120, and states bust, neutral and boom with probabilities 20, 60 and 20 per cent, the three projects have net present values of 8.3, minus 5.0 and 1.8.
+
+Equity is worth 10, 20 and 1.8 under the three projects; debt is worth 98.3, 75 and 100. Equity picks project two, debt would pick project three, value is maximized by project one.
+
+Because shareholders control the choice, project two is chosen, and the balance sheet is assets 95, debt 75, equity 20.
+
+Checklist for part two. You should be able to rebuild all three payoff tables from the project payoffs and the face value of 120. You should be able to compute every expected payoff and market value, dividing by 1.2. You should be able to say why equity prefers project two in terms of which states it gets paid in. And you should be able to state the balance sheet under project two and check that it adds up.
+
+
+Part three. Financing the example: new debt, a higher rate, or outside equity. Slides 9 to 13.
+
+Three point one. A firm with no cash, slide 9.
+
+Now change the example. Suppose the firm has no cash at t equals zero and needs to raise 100 from outside investors to fund one of the three projects.
+
+Suppose the firm tries to raise the 100 by issuing debt.
+
+The question on the slide: are debtholders willing to price the bond as a risk-free asset and ask for only 100 times 1 plus r f, which is 100 times 1 plus 20 per cent, which is 120, at t equals one?
+
+Slide 9 appears twice in the deck. The second time it gives the answer.
+
+No. The risk-shifting problem implies that, once the bond with face 120 is issued, equityholders would undertake project two. We already know what debt with face 120 is worth under project two: 75. So debtholders would suffer a loss. They would "pay" 100 for an asset that is worth 75.
+
+Three point two. Market breakdown, slide 10.
+
+Rational debtholders anticipate the problem. And in this case they do not provide finance at all. This is a market breakdown.
+
+Why not simply ask for a higher face value? Because the preferred choice, project two, has a negative net present value. As the project destroys value, it is impossible for lenders to get back their investment of 100.
+
+Here is the logic in one line. The most the lenders can ever receive is everything the project pays. Under project two, everything the project pays is worth 95 today. And 95 is less than 100. No face value, however high, can turn 95 into 100.
+
+So the risk-shifting problem prevents the financing of a firm that has profitable investment opportunities. Project one, with a net present value of 8.3, is sitting right there, and it does not get funded.
+
+Then the slide asks: what if the preferred choice has a positive net present value?
+
+Three point three. A higher interest rate, slide 11.
+
+If the preferred choice has a positive net present value, financing would take place, but at a higher interest rate.
+
+Consider the following alternative payoffs for project two. Projects one and three are unchanged. Project one still pays 110, 130 and 150, expected payoff 130, net present value 8.3. Project three still pays 120, 122 and 125, expected payoff 122.2, net present value 1.8.
+
+The alternative project two pays 80 in the bust, 100 in the neutral state, and 240 in the boom. Its expected payoff is 0.2 times 80, which is 16, plus 0.6 times 100, which is 60, plus 0.2 times 240, which is 48: in total 124. Its present value is 124 divided by 1.2, which is 103.3, and its net present value is 3.3. Still riskier and still worse than project one, but now it creates value.
+
+The slide's punchline: anticipating the choice of project two, lenders would charge an interest rate of 120 per cent, that is, a face value of 220. And at this interest rate, the market value of the debt is 100.
+
+Let us derive the 220. Restate the goal first: lenders want the debt to be worth exactly 100 today, given that project two will be chosen.
+
+Step one. With a face value F somewhere between 100 and 240, the debt is paid 80 in the bust, because the firm only has 80. It is paid 100 in the neutral state, because the firm only has 100. And it is paid F in full in the boom.
+
+Step two. The expected payoff to debt is 0.2 times 80, plus 0.6 times 100, plus 0.2 times F. That is 16 plus 60 plus 0.2 F, or 76 plus 0.2 F.
+
+Step three. Set the present value equal to 100. So 76 plus 0.2 F, divided by 1.2, equals 100. Multiply through: 76 plus 0.2 F equals 120. So 0.2 F equals 44, and F equals 220.
+
+Step four. Check: the debt's expected payoff is 16 plus 60 plus 44, which is 120, and 120 divided by 1.2 is 100. The face value of 220 on a loan of 100 is an interest rate of 120 per cent.
+
+Step five. Check that equity really picks project two at this face value. Under projects one and three, every payoff is below 220, so equity gets zero in every state. Under project two, equity gets 240 minus 220, which is 20, in the boom, and zero otherwise. So project two is the only one that leaves equity anything.
+
+What does this teach? Financing happens, but on terms that price in the risk shifting. The firm ends up with project two, worth 103.3, instead of project one, worth 108.3. The shareholders, who raised 100 and are left with a claim on project two's boom payoff, end up with project two's net present value rather than project one's. The lenders break even. The cost of the inefficiency falls on the shareholders.
+
+Three point four. Outside equity, slide 12.
+
+What about outside equity financing? Return to the original values of the example: project two pays 60, 90 and 240 again.
+
+If the firm raises 100 by selling a fraction alpha of the firm to outside investors, the original owners retain a share 1 minus alpha.
+
+Now there is no risk-shifting problem. Insiders and outsiders hold the same kind of claim, a proportional share of whatever the firm is worth. So the insiders want the firm to be worth as much as possible, and they choose the project that maximizes firm value: project one.
+
+Walk through the table on slide 12. Project one: firm value 108.3, inside equity 1 minus alpha times 108.3, outside equity alpha times 108.3. Project two: firm value 95, inside equity 1 minus alpha times 95, outside equity alpha times 95. Project three: firm value 101.8, inside equity 1 minus alpha times 101.8, outside equity alpha times 101.8.
+
+Whatever alpha is, 1 minus alpha times firm value is highest when firm value is highest, and that is project one. There is no conflict of interest between inside and outside equity, because they hold the same claim.
+
+Three point five. Pricing the equity stake, slide 13.
+
+Given that project one is chosen, outside investors invest 100 in exchange for a share alpha equal to 100 divided by 108.3 of the firm.
+
+Restate why. Outside investors break even when alpha times 108.3 equals 100. Solve for alpha: 100 over 108.3.
+
+What do the insiders keep? 1 minus alpha, times 108.3, which is 108.3 minus 100, which is 8.3. The insiders capture the full net present value of project one.
+
+Financing takes place, and the choice that maximizes surplus is chosen.
+
+Three point six. Book material: who bears the cost.
+
+Amaro de Matos, printed page 73, under the heading "The Cost of Overinvestment", gives the general statement, going back to Jensen and Meckling. If debtholders know that the stockholders can choose between investments of different risk, they presume management will choose the riskier one, and they pay a lower price for the bonds, which raises the cost of debt. Then the stockholders cannot expropriate the bondholders. The firm still loses value, because it takes the riskier investment, but the agency cost is transferred to the stockholders. Amaro de Matos calls this loss in total value the cost of overinvestment.
+
+Grinblatt and Titman, printed page 571, state the same thing as Result 16.8: with sophisticated debt holders, equity holders must bear the costs that arise because of their tendency to substitute high-risk, low net present value projects for low-risk, high net present value projects. They also note a second way out: borrowing only an amount that is safe under any project choice. In the Unistar case, a loan of 25 million is repaid in full under either process, so the shareholders choose process one and keep its net present value of 5 million.
+
+Recap of part three.
+
+With no cash, issuing risk-free-priced debt with face 120 fails: equity would pick project two, and lenders would pay 100 for debt worth 75.
+
+When the preferred risky project has a negative net present value, lenders cannot be compensated at any face value: the market breaks down.
+
+When it has a positive net present value, as with the alternative project two paying 80, 100 and 240, financing happens at a face value of 220, an interest rate of 120 per cent, so that debt is worth 100. The shareholders bear the cost.
+
+Outside equity removes the conflict: insiders and outsiders hold the same claim, project one is chosen, and outsiders get alpha equal to 100 over 108.3.
+
+Checklist for part three. You should be able to explain why the lenders refuse the 120 face value. You should be able to explain why no face value works when the preferred project destroys value. You should be able to derive the face value of 220 by setting the value of debt equal to 100. You should be able to explain why outside equity does not suffer from risk shifting, and compute alpha.
+
+
+Part four. Implications, mitigation, evidence, and the friction. Slides 14 to 18.
+
+Four point one. Implications for capital structure, slide 14.
+
+Three implications follow from the example.
+
+First. Firms whose business activities are such that managers, acting in the interest of shareholders, have more discretion over risk choices should have less debt and should prioritize equity financing.
+
+Second. Firms in which managers have little discretion over risk can carry more debt. The slide's examples are mature industries and regulated public utilities. In those firms, the scope to swap safe assets for risky ones is small, so the agency cost of debt is small.
+
+Third. Risk-shifting distortions are larger when the firm is in financial distress. This is called gambling for resurrection. When equity is close to worthless, it has nothing left to lose on the downside, and only a long-shot gamble can bring it back into the money. In particular, owners might delay filing for bankruptcy so as to keep the option value of equity alive. Recall that the call option has value as long as there is time left before expiry; filing for bankruptcy kills the option.
+
+Book material. Amaro de Matos, section three point one point four, "Empirical Evidence", printed pages 75 to 77, connects this to the data. He argues that the larger a firm's growth opportunities, the larger its potential underinvestment problems with debt, so the lower its leverage should be; and that the more restricted the growth opportunities, the larger the overinvestment problems. He cites Long and Malitz, 1985, who find that the five most levered industries in the United States were very mature, while the least levered had high growth potential and heavy spending on research and development and advertising. He also cites Barclay, Smith and Watts, 1995, who find that companies with high market-to-book ratios, a proxy for growth opportunities, have significantly lower leverage, and Rajan and Zingales, 1995, who find the same in seven countries.
+
+Four point two. Mitigation through reputation, slide 15.
+
+Our framework is static: one period. In a multi-period setting, the need to access markets in the future generates an incentive to build a good reputation, and that can mitigate the problem.
+
+The slide quotes Jensen and Meckling, 1976. Here is the quotation: "It seems clear, for instance, that the expectation of future sales of outside equity and debt will change the costs and benefits facing the manager in making decisions which benefit himself at the (short-run) expense of the current bondholders and stockholders. If he develops a reputation for such dealings, he can expect this to unfavorably influence the terms at which he can obtain future capital from outside sources. This will tend to increase the benefits associated with 'sainthood' and will tend to reduce the size of the agency costs."
+
+In plain words: a firm that will come back to the market again and again has something to lose from exploiting its current lenders. Its future financing terms are a hostage to its present behavior.
+
+Four point three. Short-term debt, covenants, and convertibles, slide 16.
+
+Three more mitigation devices.
+
+Short-term debt. Frequent repricing incorporates any increase in risk, and the threat of not being able to roll over the debt lessens the incentive for excessive risk taking. If the firm increases risk, the next time it borrows the lenders charge for it.
+
+Covenants. Covenants are provisions in the debt contract that restrict the actions the firm can take. One example is a prohibition on investing in new, unrelated lines of business. There are also indirect effects of strict covenants: if safer projects make it easier for the firm to meet the required financial ratios, then the covenant pushes the firm toward safer projects. For instance, safer projects may generate cash flows earlier, as in Gilje, 2016.
+
+Convertible debt. With convertible debt, debtholders can exercise the option to become equityholders if the business booms. Then equityholders are no longer the sole residual claimants in case of success: part of the gains accrue to debtholders. That removes part of the upside that made risk attractive to equity in the first place.
+
+Book material. Grinblatt and Titman, section sixteen point four, printed pages 580 to 585, list six ways firms can minimize these conflicts: protective covenants, bank and privately placed debt, short-term instead of long-term debt, security design, project financing, and management compensation contracts.
+
+On short-term debt, printed pages 584 and 585, they explain that the value of short-term debt is much less sensitive to the firm's investment strategy, because the lending rate is renegotiated after the production process is completed, which largely eliminates the firm's ability to gain at the expense of its lenders. They add the downside: with short-term financing, an unexpected increase in interest rates could bankrupt a highly leveraged firm.
+
+On convertibles, printed page 585, they note that the option component of a convertible bond gains value when volatility rises, which offsets the loss on its straight-bond component. Some researchers suggest designing a convertible whose value is insensitive to volatility, so that equity gains nothing from shifting risk. They cite Mikkelson, 1981, who found that highly leveraged, high-growth firms were the most likely to issue convertible bonds.
+
+Amaro de Matos, printed pages 74 and 75, describes the covenant classes catalogued by Smith and Warner, 1979: restrictions on investment policy and the disposition of assets; restrictions on dividend payments; restrictions on subsequent financing, such as issuing debt of the same or higher priority; and covenants that modify the payoff pattern, such as convertibility, which "lowers the incentives of the stockholders to expropriate the debtholders, since the debtholders will share most of the wealth transfer from bonds to stock." He also explains that writing and enforcing covenants is costly, which he calls monitoring costs, and that the stockholders bear them.
+
+Four point four. Evidence: Gilje, 2016, slide 17.
+
+Testing for asset substitution is very challenging. You need two things at once: exogenous variation in leverage, and a measurement of the riskiness of the firm's investment. Both are hard to come by.
+
+Gilje, 2016, finds that firms reduce risk when they approach distress. That is the opposite of what pure gambling for resurrection would predict.
+
+The sample is firms in the oil and gas industry. And the paper finds evidence for mitigating factors such as short-term debt and covenants. In other words, the mechanisms on slide 16 seem to work in practice, at least in this industry.
+
+Four point five. The friction, slide 18.
+
+What is the friction underlying the risk-shifting problem?
+
+Commitment. Managers, acting on behalf of shareholders, cannot commit to taking good investments once the debt is contracted.
+
+This is similar to the Holmstrom and Tirole, 1997, model you saw in Topic 4A. There, the borrower's inability to commit to behaving reduces pledgeable income. Here, the inability to commit to the right project does the same thing. And in both cases, the shareholders pay the cost, either by not receiving funding or by paying a higher interest rate.
+
+If equity is costly or difficult to raise, firms might forgo profitable investment opportunities altogether.
+
+And it is impossible to write contracts on project choices that would guarantee such a commitment. If the project choice could be written into a contract and enforced, the problem would vanish.
+
+Book material. Grinblatt and Titman, printed page 571, put the commitment point concretely: if the equity holders could commit to the safe process, debt holders would lend on terms that let shareholders capture the full net present value. But if debt holders find it difficult to monitor investments, it may not be easy to write covenants that commit the firm, and the loan terms will reflect the risky process.
+
+Recap of part four.
+
+Firms with more discretion over risk should use less debt; mature firms and regulated utilities can use more. Risk shifting is worst in distress, where owners gamble for resurrection and delay bankruptcy to keep the option alive.
+
+Mitigation comes from reputation, as in the Jensen and Meckling quotation on "sainthood"; from short-term debt, which reprices often; from covenants, directly or through financial ratios; and from convertible debt, which shares the upside with creditors.
+
+Gilje, 2016, finds oil and gas firms reduce risk near distress, consistent with these mitigating forces.
+
+The underlying friction is the lack of commitment to project choice, which cannot be contracted on.
+
+Checklist for part four. You should be able to name the kinds of firms that should carry less debt and why. You should be able to explain gambling for resurrection using the call option. You should be able to explain, for each of reputation, short-term debt, covenants and convertibles, the channel through which it reduces risk shifting. You should be able to state Gilje's finding and sample. And you should be able to name the friction and connect it to Holmstrom and Tirole.
+
+
+Part five. Debt overhang: the idea and the household evidence. Slides 19 to 21.
+
+We now turn from too much risk to too little investment.
+
+Five point one. The definition, slide 19.
+
+After debt is contracted, profitable investments connected to the assets in place of a firm might not be undertaken.
+
+The reason: the borrowers, meaning the existing shareholders, bear all the investment costs, whether money, time or effort, but part of the returns accrue to the existing creditors.
+
+In other words, debt in place acts as an implicit tax on investment, and the tax rate is related to the probability of default. Every unit of value the new investment creates in the states where the firm would otherwise default goes to the creditors first. The shareholder pays the full cost and receives the return net of this tax.
+
+Five point two. When it bites, slide 20.
+
+The problem is more severe when default is more likely, because the portion of the returns that accrues to lenders, the "tax burden", increases.
+
+The problem is less severe in two cases. First, if the value of the relationship with the original creditors is large. Second, if default costs are increasing in the amount owed. The slide calls these dynamic repayment incentives: when the borrower cares about the future, the debt is not simply a tax, because repaying more also buys something.
+
+Debt overhang was originally a conjecture about firms' behavior, due to Myers, 1977, "Determinants of corporate borrowing". The notion has since been extended to individuals, and documented for them.
+
+Five point three. Household evidence, slide 21.
+
+Three pieces of evidence.
+
+Melzer, 2017. Borrowers with negative home equity, meaning the value of the house is smaller than the mortgage balance, invest less in home improvements and maintenance. Any improvement to the house raises its value, but if the household is likely to default, that value goes to the mortgage lender.
+
+Dobbie and Song, 2020, and Di Maggio and coauthors, 2020. Borrowers who are heavily indebted will share a significant part of their future income with creditors. That can affect their labor supply decisions: time, effort, search, and occupation. Earning more is partly earning for the creditors.
+
+We say that debt introduces an ex post inefficiency. Ex post means after the debt has been contracted.
+
+The efficiency loss is larger for investment opportunities whose value added wanes if they are not undertaken immediately. The slide's examples: investments in education, and house maintenance such as fixing a foundation problem or a plumbing leak. Delay makes these investments worth less, or makes the damage worse, so not doing them now is costly.
+
+Five point four. Book material: Myers in Amaro de Matos.
+
+Amaro de Matos, printed pages 73 and 74, under the heading "The Cost of Underinvestment", presents Myers, 1977. Myers shows that even when the investment decision does not affect the variability of returns, debt causes a loss of value. The value of a firm consists not only of assets in place but also of the present value of the opportunity to make future investments. Managers acting for shareholders invest only in states of the world where the return is enough to pay back the debtholders and still leave something for shareholders. The higher the debt, the more selective they become, so the value of the firm is a decreasing function of the promised payment F. He adds that the present value of debt is zero when F is zero and low when F is very high, because repayment becomes less likely; so there is a face value F star at which the present value of debt is largest.
+
+Book material: Grinblatt and Titman, chapter 16, printed pages 563 to 567. They define the debt overhang problem as equity holders passing up positive net present value investments because the firm's existing debt captures most of the project's benefits, and they note that it is sometimes called the underinvestment problem. Two of their examples are worth hearing.
+
+Lily Pharmaceuticals, printed pages 564 and 565. Lily borrowed 100 million to fund research, promising 110 million. If the market for the drug turns out to be unfavorable, the firm must still spend 100 million to finish development and can then sell the marketing rights for 150 million. That is a positive net present value continuation. But with 110 million of senior debt ahead of them, new subordinated investors would put up no more than 40 million, the difference between 150 million and 110 million. So the project cannot be financed. Their Result 16.4: firms that have existing senior debt obligations may not be able to obtain financing for positive net present value investments.
+
+Chan Partners, printed page 566. A building bought with an 80 million mortgage falls in value to 70 million. The partners consider cutting maintenance from 3 million to 2 million a year, saving 1 million a year for eight years, at the cost of lowering the building's value by 18 million at the final repayment date. If default is likely, that 18 million loss falls on the mortgage holder. Proper maintenance, clearly a positive net present value project, is rejected. This is the same story as Melzer's homeowners. Their Result 16.5: with risky debt, equity holders have an incentive to pass up internally financed positive net present value projects when the funds can be paid out to equity holders as a dividend.
+
+Recap of part five.
+
+Debt overhang means profitable investments tied to existing assets are not undertaken, because the borrower pays the whole cost while existing creditors receive part of the return. Debt acts as a tax on investment whose rate rises with the probability of default.
+
+It is milder when the relationship with the creditors is valuable or when default costs rise with the amount owed.
+
+Myers, 1977, proposed it for firms. Melzer, 2017, shows underwater homeowners invest less in maintenance; Dobbie and Song, 2020, and Di Maggio and coauthors, 2020, point to labor supply effects.
+
+The loss is largest for investments that cannot wait, such as education or fixing a leak.
+
+Checklist for part five. You should be able to state the tax interpretation of debt overhang and what the tax rate depends on. You should be able to name the two forces that soften it. You should be able to attribute each piece of household evidence to its paper. And you should be able to say why time-sensitive investments suffer most.
+
+
+Part six. The debt overhang example and renegotiation. Slides 22 to 30.
+
+Six point one. The setup, slide 22.
+
+For simplicity, the risk-free rate is zero. Existing debtholders and equityholders are risk-neutral. And the firm is owned by a single equityholder, whom the slides also call the firm owner or the entrepreneur.
+
+Risk neutrality means the risk premium is zero, so discount rates are r equals r f plus the risk premium, which is just r f. Since r f equals zero, cash flows at t equals one are discounted by 1 plus r, which is 1. So the market value today of any payoff is simply its expected value.
+
+The firm has assets in place, A, with a market value at date one of 500 with probability 0.5, the boom state, and 200 with probability 0.5, the slump state.
+
+The firm has outstanding debt with face value F equal to 300, due at date one.
+
+Six point two. Baseline market values, slide 23.
+
+Debt is senior to equity. Walk through the table.
+
+Assets: 500 in the boom, 200 in the slump. Market value: half of 500 plus half of 200, which is 250 plus 100, which is 350.
+
+Debt: in the boom, the firm can pay the full 300. In the slump, the firm has only 200, so debt gets 200. Market value: half of 300 plus half of 200, which is 150 plus 100, which is 250.
+
+Equity: in the boom, 500 minus 300 is 200. In the slump, zero. Market value: half of 200, which is 100.
+
+Check: debt plus equity is 300 plus 200 equals 500 in the boom, 200 plus zero equals 200 in the slump, and 250 plus 100 equals 350 in market value. A equals D plus E holds in every column.
+
+Remark from the slide. The market value of debt is smaller than its face value even with a zero discount rate: 250 is less than 300. The bond sells at a discount because there is a positive probability of default.
+
+Keep these two numbers in mind for the rest of the example: debt is worth 250 and equity is worth 100 if nothing changes.
+
+Six point three. The project, slide 24.
+
+Suppose the firm owner has access to a project that requires an investment of 60 at date zero and increases the value of the assets in place by 100 at date one in both states, boom and slump.
+
+The project is profitable. Its net present value is 100 minus 60, which is 40, and 40 is greater than zero. So in a first-best allocation, the investment should be undertaken.
+
+An assumption matters here. The cash flows of the project cannot be obtained separately from those of the assets in place: the project has to be carried out inside the firm. Otherwise the project could be undertaken in a separate entity with no existing debtholders, and there would be no overhang.
+
+Six point four. Will the owner invest? Slide 25.
+
+Given that the project is profitable, is the firm owner willing to invest?
+
+The answer is no.
+
+If the owner spends 60 and undertakes the project, the market values change as follows.
+
+Assets: 600 in the boom, 300 in the slump. Market value 450.
+
+Debt: 300 in the boom, and now also 300 in the slump, because the firm has 300 available there. Debt is now paid in full in both states. Market value 300.
+
+Equity: 600 minus 300 is 300 in the boom, and 300 minus 300 is zero in the slump. Market value: half of 300, which is 150.
+
+Check: 300 plus 150 is 450.
+
+Six point five. Why not, slide 26.
+
+Even though the project has a positive net present value of 100 minus 60, which is 40, if the owner invests 60, the equity value increases only by 50, from 100 to 150.
+
+And 50 is less than the 60 the owner must pay. Investing makes the owner worse off by 10.
+
+The reason: the owner bears the entire investment cost, but part of the gain goes to the debtholders. The market value of debt increases from 250 to 300.
+
+Look at where the 100 of extra value goes. In the boom, it all goes to equity: equity rises from 200 to 300. In the slump, it all goes to debt: debt rises from 200 to 300, and equity stays at zero. Since each state has probability one half, equity gains 50 in expectation and debt gains 50 in expectation. The tax rate on the investment, in the language of slide 19, is one half, which is exactly the probability of default.
+
+This is the debt overhang problem: profitable investment opportunities might not be pursued if the borrower is heavily indebted.
+
+As the investment is not undertaken, the market values remain D equal to 250 and E equal to 100.
+
+Six point six. Renegotiation, slide 27.
+
+Renegotiation can be a win-win solution.
+
+Suppose the firm and the debtholders agree on a new face value of debt, F prime, equal to 280, which is less than 300, conditional on the entrepreneur undertaking the project. The slide notes that this condition can be written down in a contract.
+
+If the owner then undertakes the project, the market values are as follows.
+
+Assets: 600 in the boom, 300 in the slump, market value 450.
+
+Debt: 280 in the boom and 280 in the slump. The firm can pay 280 in both states, so the debt becomes riskless. Market value 280.
+
+Equity: 600 minus 280 is 320 in the boom, and 300 minus 280 is 20 in the slump. Market value: half of 320 plus half of 20, which is 160 plus 10, which is 170.
+
+Check: D plus E is 600 in the boom, 300 in the slump, and 450 in market value.
+
+Six point seven. Both sides gain, slide 28.
+
+Now the increase in equity value is 170 minus 100, which is 70. And 70 is bigger than the investment cost of 60.
+
+Say it as an inequality, the way the slide does. The new equity value minus the investment, 170 minus 60, equals 110. And 110 is greater than 100, the previous equity value. So the equityholder is willing to make the investment.
+
+And the creditors? The market value of debt increases from 250 to 280.
+
+With renegotiation, both parties are better off. The creditors accept a lower face value, 280 instead of 300, and end up with a claim worth more, 280 instead of 250. The reason is that the forgiven 20 is what makes the owner willing to invest, and the investment makes the debt safe.
+
+Six point eight. Unconditional renegotiation, slide 29.
+
+So far we assumed renegotiation is conditional on the entrepreneur undertaking the project.
+
+What if debtholders cannot force the entrepreneur to invest? This is unconditional renegotiation: the face value is cut to 280, and the owner is then free to invest or not.
+
+If the entrepreneur renegotiates and does not invest, the values are as follows.
+
+Assets: 500 in the boom, 200 in the slump, market value 350.
+
+Debt: 280 in the boom, and 200 in the slump, because the firm only has 200. Market value: half of 280 plus half of 200, which is 140 plus 100, which is 240.
+
+Equity: 500 minus 280 is 220 in the boom, zero in the slump. Market value: half of 220, which is 110.
+
+Check: 240 plus 110 is 350.
+
+Six point nine. The owner's choice after unconditional renegotiation, slide 30.
+
+The owner's payoff with renegotiation is the same with the investment, 170 minus 60, which is 110, as without the investment, 110. So the owner is indifferent, and we can assume the investment is undertaken even in an unconditional renegotiation.
+
+From the creditors' point of view, the difference matters: if the owner invests, the debt is worth 280; if not, 240. Only the first is above the 250 the debt is worth with no deal at all. That is why, in general, creditors want the forgiveness to be tied to the investment, and why this example is a knife-edge where the unconditional version still works.
+
+Remark from slide 30. The new face value of 280 is one of the possible outcomes of the renegotiation. In general, the new face value depends on the bargaining power of the parties. A face value closer to 300 gives more of the gain to the creditors; a lower one gives more to the owner, as long as the creditors still get more than the 250 they have without a deal.
+
+Six point ten. Book material: Tirole, section three point three, Debt Overhang, printed pages 125 and 126.
+
+Tirole places debt overhang inside the fixed-investment model of chapter three. Recall the ingredients from Topic 4A. The project costs I. The borrower has net worth A. If she behaves, the project succeeds with probability p H and yields R. Misbehaving gives her a private benefit B and lowers the success probability by delta p. To keep her behaving, she must keep at least B over delta p in case of success, so the pledgeable income is p H times, R minus B over delta p. And A bar, A with a bar on top, is the minimum net worth needed to obtain financing.
+
+He offers two interpretations of debt overhang.
+
+Section three point three point one, "Decrease in Net Worth", printed page 125. The entrepreneur has A in cash or collateral but owes D to initial investors, who hold a covenant against new borrowing without their consent and hold her assets as collateral. If A is above A bar, but A minus D is below A bar, the project would have been financed without the old debt, but is not financed with it. Investors as a group cannot recoup the investment I minus A plus the old obligation D. New investors would obtain at most the pledgeable income minus I minus D plus A, which equals A minus D minus A bar, and that is negative. Here renegotiation cannot help, because the project simply generates too little pledgeable income to cover both the new investment and the old claim.
+
+Section three point three point two, "Lack of Renegotiation", printed pages 125 and 126. This is the more interesting case, and the one closest to our slides. Assume five things. One: the project is profitable enough to attract funds even with zero net worth, which means A bar is negative. Two: the borrower owes D at the end, when the project's outcome is realized. Three: this old debt is senior to any new claim. Four: the borrower has no cash, A equals zero. Five: the overhang is serious, meaning A bar plus p H times D is positive. In words, the slack in pledgeable income, minus A bar, is smaller than what must be paid back to the old investors, p H times D, if the project is funded.
+
+Now ask whether new investors will fund the project. Because the old debt is senior, and because the borrower must keep B over delta p to behave, at most R minus B over delta p minus D can be pledged to new investors in case of success. They lend only if p H times, R minus B over delta p minus D, is at least I. That is equivalent to A bar plus p H times D being at most zero, which contradicts assumption five. So no new money comes in.
+
+Tirole's summary, printed page 126: "Renegotiation breakdown creates debt overhang." He notes it is often invoked for corporate bondholders, who are dispersed and have trouble renegotiating, despite mechanisms like a bond trustee or exchange offers.
+
+Now suppose the old investors can act collectively. They accept a cut in the face value from D to a lower d, chosen so that A bar plus p H times d equals zero. Then new investors receive R minus B over delta p minus d in case of success, and their break-even condition holds exactly. The old investors now get p H times d, which equals minus A bar, a positive number, instead of nothing. And the borrower undertakes the project and obtains her rent, p H times B over delta p.
+
+So debt renegotiation allows the project to go ahead and all parties share the gains from trade. How the gains are split depends on bargaining power. The arrangement just described is the one most favorable to the old investors. Varying bargaining power continuously generates any level of debt forgiveness from D minus d up to D. This is the general version of the slide 30 remark that 280 is only one possible outcome.
+
+Recap of part six.
+
+Assets worth 500 or 200 with equal probability, debt with face 300: debt is worth 250 and equity 100.
+
+A project costing 60 that adds 100 in both states has a net present value of 40, but raises equity only from 100 to 150, a gain of 50, less than the cost of 60. Debt rises from 250 to 300. The owner does not invest.
+
+Cutting the face value to 280, conditional on investing, makes debt riskless and worth 280, and equity worth 170. Since 170 minus 60, which is 110, exceeds 100, the owner invests, and both sides gain.
+
+Without the condition, the owner gets 110 whether or not she invests, so we can assume she invests. The face value of 280 is one possible bargaining outcome.
+
+Checklist for part six. You should be able to rebuild the four market-value tables: baseline, with the project, with the project and renegotiation, and with renegotiation but no project. You should be able to explain why equity gains only 50 from a project worth 100, using the boom and slump states. You should be able to show that both parties gain from the cut to 280. You should be able to explain the difference between conditional and unconditional renegotiation. And you should be able to state Tirole's two interpretations of debt overhang and the renegotiated face value condition, A bar plus p H times d equals zero.
+
+
+Part seven. Mitigating debt overhang, and the benefits of renegotiation. Slides 31 to 36.
+
+Seven point one. Mitigation, slide 31.
+
+The slide separates ex post fixes, used after the debt is in place, from ex ante fixes, built into the debt structure from the start.
+
+Ex post: issue claims that are senior to the existing debt. The new money then gets paid first out of the extra value the project creates, so new investors can be compensated without the old creditors capturing the gain. Issuing claims junior to the existing debt would not solve the problem, because the old creditors would still be paid first out of the project's return, exactly as in our example.
+
+This is sometimes not feasible, because of covenants. Existing debt contracts often forbid issuing new debt ahead of them.
+
+That is the rationale for debtor-in-possession financing, or DIP financing: lending to a firm that has filed for bankruptcy protection under Chapter 11. This type of debt is senior to existing claims, and it allows firms in distress to keep investing.
+
+Ex ante: choose a debt structure that is easier to renegotiate, such as bank debt rather than public debt, meaning bonds, and fewer creditors. A single bank can sit at the table and agree to a write-down. Thousands of dispersed bondholders cannot easily do so.
+
+Book material. Grinblatt and Titman, section sixteen point three, printed page 580, explain DIP financing with their Lily example. By declaring Chapter 11, a firm like Lily may obtain new financing senior to its existing debt; Chapter 11 in effect gives the bankrupt firm permission to violate the covenant that otherwise blocks new funds. The original lenders are actually better off, because the weakening of their seniority lets the firm make a good investment. But they warn of the downside, in their Result 16.11: DIP financing may also allow some firms to continue operating when they would be better off liquidating.
+
+They also explain, on printed page 566, why one cannot simply leave all debt unprotected: the right to issue senior debt at will gives firms an incentive to raise senior debt when they do not need it, and it increases the asset substitution problem. Chapter 11 allows senior issuance only in extreme situations.
+
+On bank debt, printed page 583, they explain the free-rider problem. In the Lily case, the original lenders as a group would gain from putting up the new money, but each individual lender would rather let the others do it. A single lender, such as a bank, takes into account how a new loan affects the value of its existing loans, and so internalizes the gain. They add that covenants are much easier to renegotiate and enforce with a bank than with a group of bondholders.
+
+Seven point two. Renegotiation is ex post efficient, slide 32.
+
+Debt renegotiation alleviates the debt overhang problem and can restore incentives after the fact.
+
+Three consequences. Investment decisions are less distorted. Both creditors and debtors are better off: a win-win. And the face value is smaller, but so is the probability of default or the loss given default, which is why the creditor can come out ahead. In our example, the face value fell from 300 to 280, and the debt became riskless.
+
+In economic jargon, we say renegotiation can be ex post efficient.
+
+Seven point three. Benefits for households, slide 33.
+
+If the borrower is risk-averse, renegotiation also provides insurance against "bad luck" shocks, such as unemployment in a recession or health shocks.
+
+By keeping the borrower with a clean credit record and a manageable debt payment plan, renegotiation might allow the borrower to retain some access to credit markets.
+
+Individuals who are less liquidity constrained have more time to search for better jobs, and negative credit information can adversely affect labor market prospects. The reference is Bos, Breza and Liberman, 2018, "The labor market effects of credit market information".
+
+Individuals might also be able to keep physical assets that are important to sustain their labor income, for example a motorcycle, or keep their enrollment in an education program.
+
+Seven point four. Aggregate benefits, slide 34.
+
+A wave of defaults and liquidations in a recession can amplify shocks to the banking sector.
+
+Defaults also have externalities. The slide's example: foreclosed houses depress the prices of non-foreclosed houses in the same neighborhood. That is Campbell, Giglio and Pathak, 2011, "Forced sales and house prices". A lender deciding whether to foreclose does not take into account the harm to the neighbors' house values. Renegotiation avoids that cost.
+
+Seven point five. Private renegotiation is common, slide 35.
+
+Out-of-court loan renegotiation is common.
+
+In the United States, even though individuals can choose to file for bankruptcy under Chapter 7 or Chapter 13, the majority of debt restructurings take place outside the bankruptcy system. The reference is Dawsey, Hynes and Ausubel, 2013.
+
+In Brazil, according to the Central Bank of Brazil, 4.6 million borrowers were over-indebted in December 2019. Over-indebted is defined there as more than 90 days overdue, with a ratio of debt service to income larger than 50 per cent. And around 252 thousand individuals per month restructure their debts. The slide's footnote gives the source as the Central Bank's "Relatório de Economia Bancária", 2018 and 2019.
+
+Private renegotiation is potentially more relevant in places with inefficient judicial systems, where it is too costly and ineffective to file a case against a borrower in default. When the court route is weak, the bargaining table is where debts get resolved.
+
+Seven point six. Private renegotiation and public policy, slide 36.
+
+Renegotiation can be influenced by policy, through two channels. First, the accounting and regulatory treatment of restructured operations: capital requirements and loan loss provisions. If a bank must hold more capital or book a larger provision when it restructures a loan, it will restructure less. Second, personal bankruptcy law and the institutional environment more broadly.
+
+Should governments promote renegotiation, or forbearance? The slide gives three examples. The Coronavirus Aid, Relief, and Economic Security Act, the CARES Act, during the COVID-19 pandemic. The Home Affordable Modification Plan, HAMP, during the Great Recession. And the ongoing debate about cancelling student-loan debt.
+
+The slide leaves the question open. The next part gives the other side of the ledger.
+
+Recap of part seven.
+
+Ex post, debt overhang is eased by new claims senior to existing debt, which covenants may block; Chapter 11 DIP financing is the legal route to such senior money. Ex ante, it is eased by debt that is easier to renegotiate: bank debt and fewer creditors.
+
+Renegotiation is ex post efficient: less distorted investment, both sides better off, lower face value but lower default risk.
+
+For households it adds insurance, preserved access to credit, better job search, as in Bos and coauthors, 2018, and the ability to keep productive assets or stay in school. In aggregate, it limits the amplification of recessions and foreclosure externalities, as in Campbell and coauthors, 2011.
+
+Private renegotiation dominates: most United States restructurings happen out of court, as in Dawsey and coauthors, 2013; in Brazil, 4.6 million borrowers were over-indebted in December 2019 and about 252 thousand people a month restructure. Policy shapes it, through regulation and bankruptcy law, with CARES, HAMP and student debt as examples.
+
+Checklist for part seven. You should be able to explain why senior new claims fix overhang and junior ones do not. You should be able to say what DIP financing is and why Chapter 11 is needed for it. You should be able to explain why bank debt and fewer creditors help. You should be able to list the individual and aggregate benefits of renegotiation with their references. And you should be able to quote the Brazilian numbers and their definition of over-indebtedness.
+
+
+Part eight. The costs of debt renegotiation. Slides 37 to 40.
+
+Eight point one. Why debt is the optimal contract, slide 37.
+
+As we saw in Topic 4A, under certain assumptions the debt contract arises as an optimal contract in the presence of moral hazard, in the sense that it is the best way to provide correct incentives.
+
+The slide draws a timeline with three dates. Say it from left to right.
+
+First date: the loan agreement.
+
+Second, the moral hazard stage. Here the borrower takes non-contractible actions that benefit the borrower but hurt the lender. The examples: hours worked, wasteful spending, and pet projects with poor financial returns.
+
+Third date: maturity, the repayment date. If default takes place, the borrower gets no financial payoff, because the assets are liquidated, and faces a "punishment": a checkered credit record and less access to credit in the future.
+
+The harshness at maturity is what disciplines behavior at the moral hazard stage. The borrower works hard and avoids wasteful spending because default is costly.
+
+Eight point two. Soft debt, slide 38.
+
+The prospect of renegotiation makes the debt contract soft.
+
+The anticipation of renegotiation in the future undermines incentives at the moral hazard stage.
+
+The slide redraws the same timeline. Loan agreement, then the moral hazard stage with the same non-contractible actions, hours worked, wasteful spending, pet projects. But now, at maturity, if default takes place, borrowers have some financial payoff and face a less harsh "punishment": a clean credit record, and a drop in access to credit that is not so severe.
+
+If the borrower knows that default will be met with a friendly renegotiation, the threat that kept her disciplined is weaker. So she exerts less effort and indulges more in the actions that hurt the lender.
+
+Eight point three. Higher default risk and strategic default, slide 39.
+
+By undermining incentives, the prospect of future renegotiation can increase the default risk of debt contracts, leading to credit rationing and higher costs of credit.
+
+The prospect of renegotiation can also trigger strategic default. Individuals can claim they do not have enough cash to repay the loan, even if they do, in order to obtain better conditions. The reference is Mayer, Morrison, Piskorski and Gupta, 2014, "Mortgage modification and strategic behavior: evidence from a legal settlement with Countrywide".
+
+Keep the two kinds of default apart. A strategic default is a choice not to pay by someone who could pay. A liquidity default is a situation in which the borrower is not able to repay, because he does not have enough cash.
+
+Eight point four. Ex ante inefficiency, slide 40.
+
+In economic jargon, we say that the prospect of renegotiation can be ex ante inefficient. Ex ante means before the debt is contracted and before the actions are taken.
+
+The moral hazard costs of renegotiation are similar to the concern that too-big-to-fail banks take too much risk because they know they will be bailed out in case of insolvency. The expected rescue changes behavior before the crisis.
+
+So public policy should take into account both the costs and the benefits.
+
+Put parts seven and eight side by side. After the debt is in place and things have gone wrong, renegotiation is efficient: it recovers lost investment and spreads the pain. Before the debt is contracted, the expectation of renegotiation is inefficient: it weakens the very incentives debt was designed to provide. Every policy that promotes forbearance trades one against the other.
+
+Recap of part eight.
+
+Debt is optimal under moral hazard because default is harsh: liquidation and a checkered credit record discipline behavior at the moral hazard stage.
+
+Anticipated renegotiation softens the debt, weakens incentives, raises default risk, and can lead to credit rationing and higher rates.
+
+It also invites strategic default, as documented by Mayer and coauthors, 2014, which is different from a liquidity default.
+
+So renegotiation is ex post efficient but can be ex ante inefficient, much like too-big-to-fail.
+
+Checklist for part eight. You should be able to describe the two timelines and say what changes between them. You should be able to define soft debt. You should be able to distinguish strategic from liquidity default. And you should be able to explain the difference between ex post efficiency and ex ante inefficiency, with the too-big-to-fail analogy.
+
+
+Part nine. Default as insurance. Slides 41 to 44.
+
+A scope note first. This part follows Indarte, 2023, "Moral hazard versus liquidity in household bankruptcy", in The Journal of Finance. This model is not in any course book. The slides and the paper are the only source.
+
+Nine point one. The setup, slide 41.
+
+In the next period, an individual has three things.
+
+A debt payment, D.
+
+Liquid assets, A, with A less than D. Lenders cannot seize these assets.
+
+And an income, Y, which lies between Y underbar and Y bar, and is distributed according to a cumulative distribution function F. Dictated: the probability that Y is less than or equal to a equals F of a.
+
+The individual is risk-averse, with utility u of C, where C is consumption. Three properties: u of zero equals zero; u prime is positive, so more consumption is better; and u double prime is negative, so utility is concave, which is what risk aversion means.
+
+Nine point two. Default and its consequences, slide 42.
+
+In case of default, courts determine that the individual retains a minimum income level E, where E is less than Y underbar, the lowest possible income.
+
+Creditors receive Y minus E, which is wage garnishment, up to the amount due D.
+
+Default also entails a non-pecuniary cost, sigma, which is positive. Think of stigma, stress, or the hassle of the process.
+
+Now two cases.
+
+If A plus Y is less than D, individuals cannot repay. This is a cash flow default.
+
+If A plus Y is greater than or equal to D, individuals can repay but can choose not to. Not repaying in this case is a strategic default.
+
+If they repay, they consume A plus Y minus D.
+
+If they default, they consume A plus E. Remember that the liquid assets A cannot be seized, and the court protects income E.
+
+Nine point three. The default threshold, slide 43.
+
+When A plus Y is at least D, or equivalently Y is at least D minus A, the individual defaults whenever u of A plus Y minus D is less than u of A plus E, minus sigma.
+
+In words: default whenever the utility of repaying is below the utility of defaulting net of the non-pecuniary cost.
+
+Now the threshold. As long as u of A plus E, minus sigma, is positive, there is a Y star, greater than D minus A, such that u of A plus Y star minus D equals u of A plus E, minus sigma.
+
+Why does Y star exist and why is it above D minus A? At income exactly D minus A, repaying leaves consumption of zero, and u of zero is zero, which is below u of A plus E minus sigma, assumed positive. So at that income, defaulting is better. As income rises, the utility of repaying rises, because u prime is positive, while the utility of defaulting stays fixed. So there is a crossing point, and it lies above D minus A. That crossing point is Y star.
+
+The individual defaults whenever Y is below Y star. That covers both cash flow defaults, below D minus A, and strategic defaults, between D minus A and Y star.
+
+The interpretation. Default acts as insurance whenever income drops below a given level. It guarantees a consumption of A plus E when income is too low. Since the individual is risk-averse, default can increase welfare by making the individual bear less income risk.
+
+Nine point four. The trade-off, slide 44.
+
+The default probability is p, equal to the probability that Y is less than or equal to Y star, which equals F of Y star.
+
+An increase in the generosity of debt relief, E, provides more insurance. But it also increases default rates, and thus interest rates in equilibrium.
+
+The slide's formula. The partial derivative of p with respect to E equals F prime of Y star, times u prime of A plus E, divided by u prime of A plus Y star minus D. And this is positive.
+
+Let us derive it. Restate the goal: we want to know how the default probability responds when the court protects more income.
+
+Step one. p equals F of Y star, and Y star depends on E. So the derivative of p with respect to E is F prime of Y star times the derivative of Y star with respect to E. F prime is the density of income.
+
+Step two. Y star is defined by u of A plus Y star minus D equals u of A plus E, minus sigma. Differentiate both sides with respect to E. On the left, by the chain rule: u prime of A plus Y star minus D, times the derivative of Y star with respect to E. On the right: u prime of A plus E. Sigma does not depend on E.
+
+Step three. Solve: the derivative of Y star with respect to E equals u prime of A plus E, divided by u prime of A plus Y star minus D.
+
+Step four. Substitute into step one. The derivative of p with respect to E equals F prime of Y star, times u prime of A plus E, over u prime of A plus Y star minus D.
+
+Step five. Sign it. The density F prime is positive, and both marginal utilities are positive. So the derivative is positive. More generous relief raises the threshold income below which people default, and so raises the default probability.
+
+That is the tension in one equation. The same E that insures the borrower against low income encourages default, which lenders will price into the interest rate. This is the formal version of parts seven and eight: the benefits and costs of making debt softer.
+
+Recap of part nine.
+
+An individual owes D, has unseizable liquid assets A below D, and a random income Y with distribution F. Default protects income E and costs a non-pecuniary sigma. Repaying gives consumption A plus Y minus D; defaulting gives A plus E.
+
+There is a threshold Y star, above D minus A, defined by u of A plus Y star minus D equals u of A plus E minus sigma; the individual defaults when income is below Y star.
+
+Default is insurance for a risk-averse borrower. But the default probability p equals F of Y star rises with E: the derivative is F prime of Y star times u prime of A plus E over u prime of A plus Y star minus D, which is positive.
+
+Checklist for part nine. You should be able to state the model's ingredients and the two consumption levels. You should be able to distinguish cash flow default from strategic default in terms of A plus Y and D. You should be able to show that Y star exists and is above D minus A. And you should be able to derive the derivative of p with respect to E by implicit differentiation and sign it.
+
+
+Part ten. Separating adverse selection from moral hazard: Karlan and Zinman, 2009. Slides 45 to 59.
+
+A scope note first. This part follows Karlan and Zinman, 2009, "Observing unobservables: identifying information asymmetries with a consumer credit field experiment", in Econometrica. Like Indarte, it is not in any course book; the slides and the paper are the only source. It sits inside two syllabus topics at once: asymmetric information and agency costs.
+
+Ten point one. The identification problem, slide 45.
+
+In general, it is difficult to disentangle adverse selection from moral hazard.
+
+Consider the following experiment. Randomly allocate individuals into different groups. Then offer the same loan contract at different prices, meaning different interest rates, to groups of otherwise identical individuals.
+
+Suppose you find a positive correlation between interest rates and default. It can arise for two reasons.
+
+Adverse selection: those with a relatively high probability of default are more likely to accept a high rate. The high rate changes who borrows.
+
+Moral hazard: a high interest rate can undermine incentives and increase the probability of default. The high rate changes how borrowers behave.
+
+A single randomized price cannot tell these apart, because it changes both who borrows and what they owe.
+
+Ten point two. The research design, slide 46.
+
+Karlan and Zinman randomize interest rates along three dimensions.
+
+One. The interest rate offered in a direct-mail solicitation: the offer rate.
+
+Two. The actual interest rate on the loan contract: the contract rate.
+
+Three. The interest rate on future loans, conditional on not defaulting: the dynamic repayment incentive.
+
+The design allows two comparisons.
+
+Borrowers who select in at different rates and then face identical repayment incentives. Any difference in their repayment must come from who they are: adverse selection.
+
+Borrowers who select in at identical rates and then face different repayment incentives. Any difference in their repayment must come from how they behave: moral hazard.
+
+Ten point three. What can and cannot be separated, slide 47.
+
+The design makes it possible to disentangle hidden information, defined as ex ante selection effects, from hidden action, defined as ex post incentive effects.
+
+Hidden information here includes two things: selection on unobserved risk, and selection on unobserved anticipated effort. A person may accept a high rate because she is a risky type, or because she already plans to put in little effort.
+
+The design cannot disentangle those two sources of hidden information from each other.
+
+Ten point four. The model's three stages, slide 48.
+
+Stage one. The individual decides whether or not to take up a loan with an exogenous interest rate, r o, the offer rate. The rate r o conveys no information about the rates of future loans: individuals believe future loans will be offered at a normal rate, r.
+
+Stage two. The lender randomly lowers the interest rate for some borrowers to r c, the contract rate, below r o. With an independent randomization, the lender lowers the rate on future loans, r f, to r c, which is below r, for some borrowers, conditional on repaying the loan. Careful: in this part, r f is the future rate, not the risk-free rate. Given r c and r f, the borrower chooses how much effort to put into generating cash flows to repay the current loan.
+
+Stage three. Cash flows are realized and the borrower decides whether or not to repay.
+
+Ten point five. The ingredients, slides 49 and 50.
+
+A penniless, risk-neutral individual has access to a project that requires an investment I equal to 1.
+
+The loan can be obtained from a single lender. There is no need to model the lender's behavior, because the lender's decisions are randomized.
+
+Individuals are indexed by a risk type, theta i, which lies between theta underbar and theta bar. They exert effort e, between e underbar and e bar, at a cost c of theta i and e, equal to e. So effort costs one for one.
+
+If the project succeeds, state g, it generates a cash flow Y of theta i, which is unverifiable. If it fails, state b, the cash flow is zero.
+
+The probability of success, pi of theta i and e, depends on both the risk type and the effort.
+
+The borrower faces a state-specific cost of default, C i of r f, for i equal to g or b. Each is decreasing in r f, and C b of r f is less than C g of r f: defaulting costs less after a failure than after a success.
+
+You can think of C i of r f as the forgone discounted profits from future loans. That explains why it is decreasing in r f: the cheaper the future loans you would lose, the more you lose by defaulting.
+
+Remark from slide 50: the model features both hidden information and hidden action. Hidden information shows up as the unobservable risk type theta i and the anticipated effort.
+
+Ten point six. The five assumptions, slide 51.
+
+Assumption A1. Y of theta i is greater than 1 plus r o, for all theta i. If the project succeeds, the loan can be repaid at the offer rate.
+
+Assumption A2. The partial derivative of pi with respect to e is positive, and the second partial derivative of pi with respect to e is negative. The probability of success is increasing and concave in effort.
+
+Assumption A3. The partial derivative of pi with respect to theta i is negative. The higher the risk type, the lower the probability of success, and so the higher the probability of a liquidity default.
+
+Assumption A4. Pi of theta i and e, times Y of theta i, equals Y bar of e, for all theta i. For a fixed effort, all risk types generate the same expected return. Projects with a higher theta i are riskier in the sense of second-order stochastic dominance: a mean-preserving spread. A riskier type succeeds less often but earns more when it does.
+
+Assumption A5. C g of r f is greater than or equal to 1 plus r o, for all relevant r f. After a success, defaulting costs more than repaying, so the borrower repays the loan when the project succeeds. There is no strategic default.
+
+Ten point seven. Solving backwards: stage three, slide 52.
+
+Given A1 and A5, the borrower repays if and only if the project succeeds. A1 says she can; A5 says she wants to.
+
+Ten point eight. Stage two: the effort choice, slide 52.
+
+The borrower with type theta i chooses effort e, between e underbar and e bar, to maximize the following expression. Dictated: pi of theta i and e, times, Y of theta i minus 1 plus r c; plus 1 minus pi of theta i and e, times minus C b of r f; minus e.
+
+In words. With probability pi, the project succeeds, she repays 1 plus r c and keeps the rest. With probability 1 minus pi, it fails, she defaults and bears the default cost C b. And effort costs e.
+
+The first-order condition. Dictated: the partial derivative of pi with respect to e, times, Y of theta i minus 1 plus r c plus C b of r f, equals 1.
+
+In words: the marginal increase in the success probability, times the gain from success relative to failure, equals the marginal cost of effort, which is one. The gain from success relative to failure is what she keeps after repaying, plus the default cost she avoids.
+
+Hidden action effect 1. Given A2, effort is decreasing in r c. A higher contract rate lowers what she keeps after success, which lowers the bracket. To restore the equality, the marginal effect of effort on pi must rise, and with pi concave in effort, that means less effort.
+
+Hidden action effect 2. Given A1, A2 and A5, effort increases as the cost of default increases. A higher C b raises the bracket, so more effort. And since C b is decreasing in r f, repayment increases when r f decreases. That is the dynamic repayment incentive: a promise of cheaper future loans, conditional on repaying, makes default costlier and raises effort today.
+
+Ten point nine. Effort and risk type, slide 53.
+
+Given A4, the partial derivative of pi with respect to e, times Y of theta i, equals Y bar prime of e. Substitute this into the first-order condition and rearrange. Dictated: 1 minus Y bar prime of e, times Y of theta i, all divided by Y bar prime of e, equals C b of r f minus 1 plus r c.
+
+Let us see where it comes from. The first-order condition reads: Y bar prime of e, plus the partial of pi with respect to e times, C b minus 1 plus r c, equals 1. Replace the partial of pi with respect to e by Y bar prime of e divided by Y of theta i. Multiply both sides by Y of theta i over Y bar prime of e, and move terms. You get the slide's equation.
+
+Given A2, Y bar prime of e is positive, and Y bar double prime of e is negative.
+
+The slide then states its conclusion: the optimal effort level, e hat, a function of r c, C b of r f, and theta i, is a decreasing function of the risk type theta i. The slide states this without the comparative-statics step; take it as the lecture's result. Riskier types put in less effort.
+
+Ten point ten. Stage one: who takes up the loan, slide 54.
+
+Individuals take up a loan at rate r o if the expected gain from the project exceeds the outside option, which yields zero by assumption.
+
+At this stage they expect the contract rate to equal the offer rate, and future loans to come at the normal rate r. So they anticipate effort e hat of r o, C b of r, and theta i.
+
+An individual accepts the offer r o if and only if the following is at least zero. Dictated: pi of theta i and e hat, times, Y of theta i minus 1 plus r o plus C b of r; minus C b of r; minus e hat.
+
+Given A4, rewrite it. Dictated: Y bar of e hat; plus pi of theta i and e hat, times, C b of r minus 1 plus r o; minus C b of r; minus e hat; all at least zero.
+
+In words: the expected return of the project at the anticipated effort, plus the probability of success times the difference between the default cost and the repayment, minus the default cost, minus effort.
+
+Ten point eleven. The threshold and the hidden information effect, slide 55.
+
+If C b of r is less than 1 plus r o, the left-hand side is increasing in theta i.
+
+Why? The only place theta enters directly is through pi, which falls with theta by A3. It multiplies C b of r minus 1 plus r o, which is negative under this condition. A smaller probability times a negative number gives a larger value. And by the envelope theorem, the effect through effort is zero at the margin. Intuitively, a riskier type succeeds less often and so is less often on the hook for the repayment, while the expected return Y bar is the same for everyone.
+
+Therefore there is a threshold, theta underbar of r o, such that risk types theta i above it take up the loan. The riskiest types borrow.
+
+How does the threshold move with the offer rate? By the implicit function theorem and the envelope theorem. Dictated: the derivative of theta underbar with respect to r o equals minus, the fraction whose numerator is minus pi of theta i and e hat, and whose denominator is the partial derivative of pi with respect to theta i, times, C b of r minus 1 plus r o. And this is positive.
+
+Derive it. Call the left-hand side G, a function of theta and r o. At the threshold, G equals zero. The implicit function theorem says the derivative of the threshold with respect to r o is minus the partial of G with respect to r o, divided by the partial of G with respect to theta.
+
+The partial of G with respect to r o: by the envelope theorem, ignore the effect through effort; the direct effect is minus pi, because a higher rate costs one more unit for each unit of success probability.
+
+The partial of G with respect to theta: by the envelope theorem again, it is the partial of pi with respect to theta times, C b of r minus 1 plus r o.
+
+Signs. Minus pi is negative. The partial of pi with respect to theta is negative, and C b minus 1 plus r o is negative, so their product is positive. Minus, negative over positive, is positive.
+
+The hidden information effect: a higher offer rate raises the threshold, which leads to a riskier pool of clients and thus a higher default rate. The safest of the previous borrowers drop out.
+
+A note from the slide. For a discrete change in r o, the envelope theorem does not hold exactly. Besides the direct effect of r o, we also have to consider the indirect effect of r o on the optimal effort choice.
+
+Ten point twelve. The experiment, slide 56.
+
+The offer rate can be low or high: r o is either r L or r H, with r L below r H.
+
+Of those who take up the high offer rate r H, some are randomly surprised with a new, lower contract rate, r c equal to r L, different from r o. The remainder continue to receive the high rate: r o equals r c equals r H.
+
+Hidden information is measured by comparing the repayment of two groups. Those offered and accepting the low rate, where r o equals r c equals r L. And those offered and accepting the high rate, r o equals r H, who ended up with the low contract rate r c equal to r L. Both groups pay the same rate, so any difference comes from who selected in.
+
+Hidden action is measured by comparing two other groups. Those who took up the high rate and were not offered a lower contract rate, r o equals r c equals r H. And those who accepted the high rate, r o equals r H, but ended up with the low contract rate r L. Both groups selected in at the same rate, so any difference comes from behavior.
+
+Ten point thirteen. The identification figure, slide 57.
+
+Slide 57 reproduces Figure 1 of the paper, titled "Some basic intuition for our identification strategy". Picture a grid. The rows are the offer rate: high offer rate on top, low offer rate below. The columns are the contract rate: high contract rate on the left, low contract rate on the right. The low contract rate column is split diagonally into two halves: low contract rate with a dynamic incentive, and low contract rate with no dynamic incentive.
+
+The cells are numbered. Cell 1: high offer rate, high contract rate. Cells 2 and 3: high offer rate, low contract rate, with and without the dynamic incentive respectively. The low offer, high contract cell is marked not applicable, since nobody's rate was raised. Cells 4 and 5: low offer rate, low contract rate, with and without the dynamic incentive respectively.
+
+Three arrows. Hidden action effect 1 runs horizontally across the top row, from the high contract rate cell toward the low contract rate cells: same offer, different contract rate. Hidden action effect 2 runs diagonally inside each low-contract cell, between cells 2 and 3 and between cells 4 and 5: same rates today, with or without the dynamic incentive. And the hidden information effect runs vertically in the right-hand column, between cells 3 and 5: same contract rate, different offer rate.
+
+Ten point fourteen. The regression, slide 58.
+
+The empirical model. Dictated: Y i equals alpha, plus beta o times r o, plus beta c times r c, plus beta b times C, plus X i, plus epsilon. Here Y i is a measure of default, r o is the offer rate, r c the contract rate, C the dynamic repayment incentive, and X i the controls.
+
+How to read the coefficients.
+
+Beta c greater than zero identifies hidden action effect 1: the effect of a higher repayment on effort, and thus on default.
+
+Beta b less than zero identifies hidden action effect 2: the effect of stronger dynamic incentives on effort. A borrower promised cheaper future loans defaults less.
+
+Beta o greater than zero identifies adverse selection, the hidden information effect: the effect of a higher offer rate on default, holding the contract rate fixed.
+
+Ten point fifteen. The results, slide 59.
+
+Slide 59 reproduces Table 1 of the paper: "Empirical tests of hidden information and hidden action: full sample". Every column is a separate ordinary least squares regression with 4348 observations, controlling for the randomization conditions: observable risk, month of the offer letter, and branch. Standard errors are clustered at the branch level. The offer and contract rates are in monthly percentage points, so 7.00 per cent a month is coded as 7.00.
+
+There are four measures of default, each used in two columns. Columns 1 and 2: the monthly average proportion past due, with a mean of 0.09. Columns 3 and 4: the proportion of months in arrears, with a mean of 0.22. Columns 5 and 6: whether the account is in collection status, with a mean of 0.12. Columns 7 and 8: a standardized index of the three, with a mean of zero.
+
+The contract rate, hidden action effect 1. Its coefficients, column by column, are 0.005, 0.002, 0.006, 0.002, 0.001, minus 0.001, 0.014 and 0.004. Only the 0.006 in column 3 carries a star, meaning significant at 10 per cent.
+
+The dynamic repayment incentive dummy, hidden action effect 2. In the odd columns, where it enters alone, its coefficients are minus 0.019, significant at 10 per cent; minus 0.028, significant at 5 per cent; minus 0.025, significant at 5 per cent; and minus 0.080, significant at 5 per cent. In the even columns, where it is paired with a measure of the incentive's size, the dummy is close to zero: minus 0.000, 0.004, minus 0.004 and minus 0.000. The size variable is minus 0.005, minus 0.009 significant at 5 per cent, minus 0.006, and minus 0.023 significant at 10 per cent. The probability that both dynamic incentive variables are zero is 0.06, 0.00, 0.06 and 0.01 across the even columns.
+
+The offer rate, the hidden information effect. Its coefficients are 0.005, 0.004, 0.002, 0.002, 0.007, 0.007, 0.015 and 0.015. None carries a star.
+
+Finally, the probability that all three or four interest rate variables are jointly zero is very small in every column, ranging from 0.0000 to 0.0016.
+
+So, reading off the table: the dynamic repayment incentive, a hidden action channel, lowers default with stars in every odd column; the contract rate and offer rate coefficients are positive in most columns but mostly not individually significant; and the interest rate variables are jointly significant.
+
+The slide footnotes also define the variables. The dynamic repayment incentive is an indicator equal to one if the contract rate is valid for one year, rather than just one loan, before reverting to the normal, higher rate. The incentive size interacts that indicator with the difference between the lender's normal rate for the borrower's risk category and the experimentally assigned contract rate. The paper's note reads: a positive coefficient on the offer rate indicates hidden information; a positive coefficient on the contract rate, or a negative coefficient on the dynamic repayment incentive variables, indicates hidden action, that is, moral hazard.
+
+The last three slides, 60 to 62, list the references cited in this lecture. They are named in the reading route below.
+
+Recap of part ten.
+
+A positive link between rates and default can come from adverse selection or from moral hazard. Karlan and Zinman separate them by randomizing three rates: the offer rate, the contract rate, and the rate on future loans conditional on repayment.
+
+In their model, effort falls with the contract rate, hidden action effect 1, and rises with the default cost, so it rises when future rates fall, hidden action effect 2. Under the condition that the default cost is below the repayment, riskier types are more willing to borrow, so there is a take-up threshold that rises with the offer rate: the hidden information effect.
+
+The regression of default on the offer rate, the contract rate and the dynamic incentive identifies beta o positive as selection, beta c positive and beta b negative as hidden action. The design cannot separate selection on risk from selection on anticipated effort.
+
+Checklist for part ten. You should be able to explain why one randomized rate is not enough. You should be able to name the three randomized rates and say which comparison identifies which effect. You should be able to write the borrower's stage two objective and first-order condition and state both hidden action effects. You should be able to derive the sign of the threshold's derivative with respect to r o using the implicit function and envelope theorems. And you should be able to read the signs of beta o, beta c and beta b and describe what Table 1 shows.
+
+
+Support part one. Pitfalls.
+
+Each pitfall is said as the error, then the correction.
+
+Pitfall one. The error is to say that equity likes negative net present value projects. The correction: equity likes whatever raises the value of its call option. In the three-project example that happened to be project two, which has a negative net present value, but in the variant on slide 11 the risky project had a positive one. What equity likes is risk that shifts losses onto creditors, not value destruction as such.
+
+Pitfall two. The error is to write debt as a bond plus a put. The correction: debt is a long risk-free bond with face K and a short put with strike K. The minimum of X and K equals K minus the maximum of zero and K minus X. The minus sign is the short position.
+
+Pitfall three. The error is to treat the face value of debt as its market value. The correction: in the overhang example, the face value is 300 but the market value is 250, because default happens with positive probability, even with a zero discount rate.
+
+Pitfall four. The error is to think that, in equilibrium, new lenders are the ones who lose from risk shifting. The correction: rational lenders anticipate the choice of project two. Either they refuse to lend, or they charge a face value of 220 that makes the debt worth exactly 100. The cost of the inefficiency falls on the shareholders.
+
+Pitfall five. The error is to think that a high enough interest rate can always restore financing. The correction: only if the preferred project has a positive net present value. If it destroys value, as the original project two does, lenders cannot recover 100 from a project worth 95 at any face value, and the market breaks down.
+
+Pitfall six. The error is to compare the owner's equity gain in the overhang example with the net present value of 40. The correction: compare the equity gain with the cost the owner pays. Equity rises by 50, from 100 to 150, and the owner pays 60. Since 50 is less than 60, the owner does not invest, even though the project creates 40 of value.
+
+Pitfall seven. The error is to say that any new financing solves debt overhang. The correction: new claims must be senior to the existing debt. Junior claims leave the old creditors first in line for the project's return, which is the overhang itself. And senior issuance may be blocked by covenants, which is why Chapter 11 DIP financing exists.
+
+Pitfall eight. The error is to call renegotiation simply good or simply bad. The correction: it is ex post efficient, restoring investment and benefiting both sides once debt is in place, and it can be ex ante inefficient, because its anticipation softens the debt and weakens incentives at the moral hazard stage.
+
+Pitfall nine. The error is to confuse strategic and liquidity default. The correction: a liquidity default, or cash flow default, happens when the borrower cannot pay, A plus Y below D in the Indarte model. A strategic default happens when the borrower could pay but chooses not to, A plus Y at least D but Y below Y star.
+
+Pitfall ten. The error is to think that more generous debt relief, a higher E, lowers default. The correction: the derivative of p with respect to E is positive. More generous relief makes default more attractive, raises Y star, and raises the default probability, even as it provides more insurance.
+
+Pitfall eleven. The error is to say Karlan and Zinman separate selection on risk from selection on effort. The correction: the design separates hidden information from hidden action, but it cannot separate the two sources of hidden information, unobserved risk and unobserved anticipated effort.
+
+Pitfall twelve. The error is to apply the envelope theorem to a large change in the offer rate. The correction: the envelope theorem holds for marginal changes. For a discrete change in r o, you must also consider the indirect effect of r o on the optimal effort choice.
+
+Pitfall thirteen. The error is to mix up the two r f's. The correction: in the asset substitution example, r f is the risk-free rate, 20 per cent. In the Karlan and Zinman model, r f is the rate on future loans.
+
+Pitfall fourteen. The error is to confuse the two agency problems of debt. The correction: asset substitution is about taking too much risk, an overinvestment in risky projects in Amaro de Matos's language. Debt overhang is about investing too little, underinvestment in Myers's language. Both come from the same source: equity controls decisions while creditors share in the consequences.
+
+
+Support part two. Spoken formula sheet.
+
+Here is how to use this part. After each formula number, pause the audio, say the formula out loud, then resume and hear the answer.
+
+Formula one. The equity payoff. Pause and say it. The answer: the maximum of X minus K and zero. A call on the firm's assets with strike K.
+
+Formula two. The debt payoff. Pause and say it. The answer: the minimum of X and K, which equals K minus the maximum of zero and K minus X. A risk-free bond minus a put.
+
+Formula three. Present value in the three-project example. Pause and say it. The answer: 0.2 times the bust payoff, plus 0.6 times the neutral payoff, plus 0.2 times the boom payoff, all divided by 1.2.
+
+Formula four. The face value lenders demand under the alternative project two. Pause and say it. The answer: 76 plus 0.2 F, divided by 1.2, equals 100, so F equals 220, an interest rate of 120 per cent.
+
+Formula five. The outside equity stake. Pause and say it. The answer: alpha equals 100 divided by 108.3.
+
+Formula six. The overhang participation condition after renegotiation. Pause and say it. The answer: new equity value minus investment, 170 minus 60, equals 110, which is greater than the previous equity value of 100.
+
+Formula seven. Tirole's renegotiated face value. Pause and say it. The answer: A bar plus p H times d equals zero, which gives the old investors p H times d, equal to minus A bar.
+
+Formula eight. Tirole's overhang condition. Pause and say it. The answer: A bar plus p H times D is greater than zero, with A bar negative.
+
+Formula nine. Indarte's default rule. Pause and say it. The answer: when Y is at least D minus A, default whenever u of A plus Y minus D is less than u of A plus E, minus sigma.
+
+Formula ten. The threshold Y star. Pause and say it. The answer: u of A plus Y star minus D equals u of A plus E, minus sigma, with Y star greater than D minus A.
+
+Formula eleven. The default probability and its response to E. Pause and say it. The answer: p equals F of Y star; the partial derivative of p with respect to E equals F prime of Y star, times u prime of A plus E, over u prime of A plus Y star minus D, which is positive.
+
+Formula twelve. The Karlan and Zinman stage two objective. Pause and say it. The answer: pi of theta i and e, times, Y of theta i minus 1 plus r c; plus 1 minus pi, times minus C b of r f; minus e.
+
+Formula thirteen. The first-order condition. Pause and say it. The answer: the partial of pi with respect to e, times, Y of theta i minus 1 plus r c plus C b of r f, equals 1.
+
+Formula fourteen. The rewritten first-order condition. Pause and say it. The answer: 1 minus Y bar prime of e, times Y of theta i, over Y bar prime of e, equals C b of r f minus 1 plus r c.
+
+Formula fifteen. The take-up condition. Pause and say it. The answer: Y bar of e hat, plus pi of theta i and e hat, times, C b of r minus 1 plus r o; minus C b of r; minus e hat; at least zero.
+
+Formula sixteen. The threshold's derivative. Pause and say it. The answer: the derivative of theta underbar with respect to r o equals minus, minus pi, over the partial of pi with respect to theta i times, C b of r minus 1 plus r o. It is positive.
+
+Formula seventeen. The regression. Pause and say it. The answer: Y i equals alpha plus beta o r o plus beta c r c plus beta b C plus X i plus epsilon. Beta o positive is selection; beta c positive and beta b negative are hidden action.
+
+
+Support part three. Reading route and exercises.
+
+The reading route, in order.
+
+First, the slides themselves, Topic 4B, all sixty-two.
+
+Second, Tirole, chapter three, section three point three, Debt Overhang, printed pages 125 and 126: three point three point one, Decrease in Net Worth, on page 125, and three point three point two, Lack of Renegotiation, on pages 125 and 126. Read it after refreshing section three point two, the fixed-investment model, from Topic 4A.
+
+Third, Amaro de Matos, chapter three, section three point one point three, Agency Costs of Debt, printed pages 71 to 75: equity as a call on pages 71 and 72, the cost of overinvestment and the cost of underinvestment on pages 73 and 74, and the costs of monitoring and bonding, with the Smith and Warner covenant classes, on pages 74 and 75. Then section three point one point four, Empirical Evidence, printed pages 75 to 77.
+
+Fourth, Grinblatt and Titman, chapter 16, Bankruptcy Costs and Debt Holder-Equity Holder Conflicts. Section sixteen point two, printed pages 561 to 573, covers the debt overhang problem with Lily and Chan Partners on pages 563 to 567, the shortsighted investment problem on pages 567 to 569, and the asset substitution problem with Unistar on pages 569 to 572. Section sixteen point three, printed page 580, covers Chapter 11 and DIP financing. Section sixteen point four, printed pages 580 to 585, covers the ways to minimize the conflicts, including bank debt on page 583, short-term debt on pages 584 and 585, and convertibles on page 585.
+
+Optional, as listed in the course's lecture map: Berk, DeMarzo and Harford, chapter 16, section sixteen point six on agency costs, printed page 482; and Higgins, chapter 6, section six point two point three on distress costs and debt overhang, printed page 208.
+
+For the papers: Myers, 1977; Jensen and Meckling, 1976; Gilje, 2016; Melzer, 2017; Dobbie and Song, 2020; Di Maggio, Kalda and Yao, 2020; Bos, Breza and Liberman, 2018; Campbell, Giglio and Pathak, 2011; Dawsey, Hynes and Ausubel, 2013; Mayer, Morrison, Piskorski and Gupta, 2014; Indarte, 2023; Karlan and Zinman, 2009; and Holmstrom and Tirole, 1997. All are listed on slides 60 to 62.
+
+The exercises. Addresses only; open the list to read the statement.
+
+From list R7, the list built from the lecture slides.
+
+List R7, exercise 2, Grinblatt and Titman chapter 16, problem 14, printed page 593. DIP financing.
+
+List R7, exercise 3, Amaro de Matos chapter 3, section three point one point five, exercise 7, printed page 77. Convertibles, warrants and call provisions. The book gives the answer.
+
+List R7, exercise 4, Grinblatt and Titman chapter 16, problem 1, printed page 591. Asset substitution.
+
+List R7, exercise 7, Berk chapter 16, problem 26, printed page 495. Leverage and strategy choice.
+
+List R7, exercise 8, Grinblatt and Titman chapter 16, problems 12 and 13, printed page 593. Debt overhang.
+
+List R7, exercise 9, Grinblatt and Titman chapter 16, problem 3, printed page 592. Liquidation, a subordinated rescue loan and project choice.
+
+List R7, exercise 10, Amaro de Matos chapter 3, section three point one point five, exercise 9, printed page 77. Myers underinvestment. The book gives the answer.
+
+List R7, exercise 14, Tirole chapter 3, exercise 6, printed page 146. Renegotiation and debt forgiveness. The book gives the answer.
+
+List R7, exercise 17, Tirole chapter 7, exercise 3, printed pages 323 and 324. Dealing with asset substitution. The book gives the answer.
+
+List R7, exercise 18, Tirole chapter 4, exercise 9, printed pages 190 and 191. A borrower-friendly bankruptcy court. The book gives the answer.
+
+From list R4, moral hazard and financing capacity.
+
+List R4, exercise 2, Grinblatt and Titman chapter 16, problem 11, printed page 593. Short-term debt and incentive problems.
+
+List R4, exercise 3, Berk chapter 16, problem 24, printed page 494. Risk-increasing investment and leverage.
+
+List R4, exercise 4, Berk chapter 16, problem 25, printed pages 494 and 495. Debt overhang.
+
+A suggested order: start with R4 exercises 3 and 4 and R7 exercise 4, which are direct versions of the slide examples. Then R7 exercises 7, 8 and 9. Then the conceptual ones, R4 exercise 2 and R7 exercises 2, 3 and 10. Finish with the Tirole exercises, R7 exercises 14, 17 and 18.
+
+
+Support part four. Self-test.
+
+Fifteen questions. After each one, pause the audio and answer out loud, then resume to hear the answer.
+
+Question 1. Why is equity a call option on the firm's assets, and what is the strike? Pause and answer.
+
+Answer: equity pays the maximum of X minus K and zero, which is the payoff of a call on X with strike K, the face value of debt.
+
+Question 2. Write the debt payoff as a combination of two simpler securities. Pause and answer.
+
+Answer: the minimum of X and K equals K minus the maximum of zero and K minus X: a risk-free bond with face K and a short put with strike K.
+
+Question 3. In the three-project example, what are the market values of equity under projects one, two and three, and which project do shareholders choose? Pause and answer.
+
+Answer: 10, 20 and 1.8. Shareholders choose project two.
+
+Question 4. What is the market-value balance sheet under project two? Pause and answer.
+
+Answer: assets 95, debt 75, equity 20.
+
+Question 5. Why does the market break down when a cashless firm tries to borrow 100 against the original projects? Pause and answer.
+
+Answer: lenders anticipate project two, which is worth only 95; since that is less than 100, no face value lets them recover their investment.
+
+Question 6. With project two paying 80, 100 and 240, what face value do lenders demand, and why? Pause and answer.
+
+Answer: 220, an interest rate of 120 per cent, because then the debt's expected payoff is 16 plus 60 plus 44, which is 120, and 120 divided by 1.2 is 100.
+
+Question 7. Why does outside equity avoid risk shifting, and what share do outsiders get? Pause and answer.
+
+Answer: inside and outside equity hold the same proportional claim, so insiders maximize firm value and choose project one; outsiders get alpha equal to 100 over 108.3.
+
+Question 8. Name four ways to mitigate asset substitution. Pause and answer.
+
+Answer: reputation from returning to the market, short-term debt, covenants, and convertible debt.
+
+Question 9. In the overhang example, by how much does equity rise if the owner invests 60, and why does she refuse? Pause and answer.
+
+Answer: from 100 to 150, a gain of 50, which is less than the 60 she pays; the other 50 of the 100 created goes to debt, which rises from 250 to 300.
+
+Question 10. After renegotiating the face value to 280 conditional on investment, what are debt and equity worth, and why do both sides agree? Pause and answer.
+
+Answer: debt 280 and equity 170. The owner gets 170 minus 60, which is 110, more than 100; the creditors get 280, more than 250.
+
+Question 11. Using the overhang example's numbers, what is the highest face value the owner would accept and still invest, and the lowest the creditors would accept? Pause and answer.
+
+Answer: this is arithmetic on the slide's numbers, not a figure printed on the slide. With the project, assets are worth 600 or 300, so any face value up to 300 is riskless and equity is worth 450 minus the face value. The owner invests if 450 minus the face value minus 60 is at least 100, which means a face value of at most 290. The creditors need at least the 250 they have without a deal. So any face value between 250 and 290 is a possible bargain, and 280 is one of them, as slide 30 says.
+
+Question 12. Why do junior new claims fail to solve debt overhang, and what is DIP financing? Pause and answer.
+
+Answer: junior claims leave old creditors first in line for the project's return. DIP financing is lending to a firm in Chapter 11 that is senior to existing claims, allowing it to keep investing.
+
+Question 13. What does it mean that renegotiation is ex post efficient but ex ante inefficient? Pause and answer.
+
+Answer: once debt is in place, renegotiating makes both sides better off and restores investment; but anticipating it softens the debt, weakens incentives at the moral hazard stage, invites strategic default and raises default risk and credit costs.
+
+Question 14. In the Indarte model, derive the effect of more generous relief E on the default probability. Pause and answer.
+
+Answer: p equals F of Y star, with Y star defined by u of A plus Y star minus D equals u of A plus E minus sigma. Implicit differentiation gives the derivative of Y star with respect to E as u prime of A plus E over u prime of A plus Y star minus D. So the derivative of p with respect to E is F prime of Y star times that ratio, which is positive.
+
+Question 15. In Karlan and Zinman, which coefficient signs indicate adverse selection and which indicate moral hazard, and what does the design fail to separate? Pause and answer.
+
+Answer: beta o positive, on the offer rate, indicates adverse selection; beta c positive, on the contract rate, and beta b negative, on the dynamic incentive, indicate moral hazard. The design cannot separate selection on unobserved risk from selection on unobserved anticipated effort.
+
+
+Support part five. Glossary.
+
+Asset substitution, or risk shifting: the tendency of a levered firm, acting for its shareholders, to choose riskier projects that transfer value from creditors to equity, even when they lower firm value.
+
+Call option: the right to buy an asset at a fixed strike price; equity is a call on the firm's assets with strike equal to the face value of debt.
+
+Put option: the right to sell an asset at a fixed strike price; risky debt is a risk-free bond minus a put on the firm's assets.
+
+Face value: the amount promised to debtholders at maturity, as opposed to the market value of the debt today.
+
+Market breakdown: a situation in which no financing is offered at any price, because lenders cannot break even given the borrower's anticipated behavior.
+
+Gambling for resurrection: risk taking by a distressed firm whose equity has little to lose, including delaying bankruptcy to keep the option value of equity alive.
+
+Covenant: a provision in a debt contract that restricts the borrower's actions, such as investment in unrelated businesses, dividends, or new senior debt.
+
+Convertible debt: debt that the holder can exchange for equity, so creditors share in the upside if the business booms.
+
+Commitment problem: the inability of managers to bind themselves, by contract, to a project choice once the debt is in place.
+
+Debt overhang: the failure to undertake profitable investments because existing creditors capture part of the return while the borrower bears the whole cost.
+
+Implicit tax on investment: the share of a new investment's return that goes to existing creditors, rising with the probability of default.
+
+Conditional renegotiation: a reduction in the face value of debt tied, by contract, to the borrower making the investment.
+
+Unconditional renegotiation: a reduction in the face value of debt that does not oblige the borrower to invest.
+
+Debtor-in-possession financing: new lending to a firm in Chapter 11 bankruptcy that is senior to existing claims.
+
+Ex post efficiency: the property of improving outcomes once a contract is in place and a situation has arisen.
+
+Ex ante inefficiency: the property of worsening incentives before the contract is signed or before actions are taken, because an outcome is anticipated.
+
+Soft debt: debt whose default consequences are expected to be mild because renegotiation is anticipated.
+
+Strategic default: not repaying when one could repay, in order to obtain better terms.
+
+Liquidity default, or cash flow default: not repaying because one does not have the cash to repay.
+
+Wage garnishment: the part of a defaulting borrower's income, above a protected minimum, that goes to creditors.
+
+Hidden information: private information the borrower has before contracting, such as her risk type; it produces adverse selection.
+
+Hidden action: an action the borrower takes after contracting that the lender cannot observe, such as effort; it produces moral hazard.
+
+Offer rate, contract rate, and dynamic repayment incentive: the three interest rates randomized by Karlan and Zinman, respectively the rate in the mailed offer, the rate actually charged, and the lower rate on future loans promised for repayment.
+
+Mean-preserving spread: a change that keeps the expected value the same but makes outcomes more dispersed; higher risk types in Karlan and Zinman are mean-preserving spreads of lower ones.
+
+
+Support part six. The whole topic in five lines.
+
+One. Equity is a call on the firm and debt is a bond minus a put, so equity, which controls decisions, likes risk and debt likes safety.
+
+Two. That makes levered firms shift into risky projects, here project two with equity worth 20 and debt worth 75, and rational lenders respond by refusing to lend or charging a face value of 220, so the shareholders bear the cost; outside equity, short-term debt, covenants, convertibles and reputation help.
+
+Three. Debt overhang is the mirror image: a project costing 60 that adds 100 raises equity only by 50, because debt captures the rest, so profitable investment is passed up.
+
+Four. Renegotiating the face value from 300 to 280 makes both sides better off, and senior new money, DIP financing and bank debt make that easier; renegotiation is ex post efficient and also insures households.
+
+Five. But anticipated renegotiation softens debt and invites strategic default, more generous relief raises the default probability, as in Indarte, and Karlan and Zinman show how randomizing three rates separates hidden information from hidden action.

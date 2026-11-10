@@ -1,0 +1,896 @@
+Finanças Two, Corporate Finance. Professor Bernardo Ricca. Topic three: asymmetric information. A listening version of the ninety-one slides.
+
+How to listen.
+
+This is the full content of the Topic three slides, rewritten to be heard rather than read. Nothing is summarized away. Every derivation the slides show is said step by step, every number is the slide's own, and every table is walked row by row. Where the slides skip a step, the step is filled in from the course books, and you will hear when that happens.
+
+There are eleven main parts, following the slide order. Part one: hidden information. Part two: the lemons model of credit, its set-up and the efficiency benchmark. Part three: symmetric against asymmetric information, with pooling, market breakdown, cross-subsidization and overinvestment. Part four: the cost borne by the good type, and the numerical example. Part five: the credit bureau and Bayes updating. Part six: the pecking order. Part seven: Stiglitz and Weiss, 1981. Part eight: signalling with costly collateral. Part nine: the empirical evidence. Part ten: self-financing as a signal, and Leland and Pyle, 1977. Part eleven: IPO underpricing, the model of Rock.
+
+Then six support parts: the common pitfalls, a spoken formula sheet, the reading route and exercises, a self-test, a glossary, and finally the whole topic in five lines.
+
+All mathematics is spoken in words, as if dictated at a board. When you hear "R u G", that is the letter R with a subscript u, for the uninformed outside investors, and a superscript G, for the good type. When you hear "R f", that is the part of the return kept by the firm, the entrepreneur. When you hear "m", that is the market's belief about the probability of success. Greek letters are said by name: alpha, chi, delta, lambda, theta, rho, sigma, mu.
+
+All book pages are printed page numbers. The main book is Jean Tirole, The Theory of Corporate Finance. In its PDF, the page number is the printed page plus thirteen. The second book is João Amaro de Matos, Theoretical Foundations of Corporate Finance. In its PDF, the page number is the printed page plus eighteen.
+
+One scope rule applies throughout. The course covers only its nine syllabus topics, and this lecture is the asymmetric-information topic. Nothing here goes beyond the slides and the course bibliography. When a book adds depth, you will hear the book named.
+
+Before we start, the thesis of the whole topic, in one sentence. When the borrower knows more than the lender, the lender prices the average borrower, and that average price taxes the good borrowers, subsidizes the bad ones, and can either shut the market down or fund projects that should never be funded; everything else in this lecture is a way to shrink that tax, by better information, by safer claims, or by costly signals.
+
+
+Part one. Hidden information. Slides 2 and 3.
+
+The claim of this part is simple: in many markets, one side has better information than the other, and that single fact produces four distinct problems.
+
+Slide 2 lists the examples. Sellers of used cars know more about the quality of their cars than potential buyers. Clients seeking insurance know more than the insurance providers about their accident risk. Workers know more than employers about their abilities. Borrowers know more than lenders about their default probability, about the value of their assets in place and of the collateral they pledge, and about the private benefit attached to different investment choices. And in an IPO, an initial public offering, some connected investors know more about the firm than others.
+
+Notice the last two. The credit example is the one we will model for most of the lecture. The IPO example closes the lecture, in Part eleven, and there the asymmetry is between two groups of investors, not between the firm and the investors.
+
+Slide 3 lists the potential implications. There are four, and you should be able to name each one.
+
+First, adverse selection. At a given interest rate, only the riskier borrowers are willing to apply for a loan. The safe borrowers find the rate too expensive for what they are; the risky ones find it cheap.
+
+Second, cross-subsidization. Low-risk borrowers have to pay higher interest rates because high-risk borrowers are present in the same pool. The good pay for the bad.
+
+Third, overinvestment. High-risk borrowers might obtain financing, and invest in negative net present value projects, because of the subsidy they receive from the good borrowers.
+
+Fourth, the extreme case: market breakdown. Credit rationing can arise. Even positive net present value projects are not financed. That is underinvestment.
+
+So the same friction can produce too much investment or too little. Which one you get depends on the numbers, and the model of the next parts tells you exactly when each occurs.
+
+Tirole frames the whole of his chapter six around these two outcomes. On printed page 241, at the start of section 6.2, "Implications of the Lemons Problem and of Market Breakdown", he says that a number of important insights can be gleaned from a barebones model in which the borrower has private information about the probability of success. That barebones model is the model of the slides.
+
+Recap of Part one. One side knows more. The consequences are adverse selection, cross-subsidization, overinvestment, and, in the extreme, market breakdown with underinvestment.
+
+Checklist. You should be able to give one example of hidden information in each of the five markets on slide 2, and you should be able to define each of the four implications on slide 3 in one sentence, saying which one is over- and which one is underinvestment.
+
+
+Part two. The lemons model of credit: set-up and efficiency. Slides 4 to 10.
+
+The claim of this part: with a two-type borrower, a risk-neutral competitive lender, and a zero interest rate, efficiency has a clean definition. A project should be financed if and only if its probability of success times its payoff covers its cost.
+
+Slide 4 gives the set-up. A penniless borrower, an entrepreneur or a firm, needs an amount I to invest in a project. The project generates R in case of success and zero in case of failure.
+
+Assumption A1: the borrower and the outside investors are risk-neutral. Therefore all future payoffs are discounted at the risk-free rate, and the risk premium is zero.
+
+Assumption A2: the risk-free interest rate is normalized to zero. r f is equal to zero.
+
+Together, A1 and A2 imply that the discount rate for any future payoff is zero. Said as on the board: r is equal to the risk premium plus r f, which is zero plus zero, which is zero.
+
+Capital markets are competitive, and outside investors have access to a risk-free bond that yields a zero net return. That bond is the investors' outside option, and it will matter when we compute the value of the economy.
+
+Slide 5 introduces private information about default probabilities. The entrepreneur can be one of two types, and only she knows which. The good type has low default risk: her probability of success is p. The bad type has high default risk: her probability of success is q. And one is greater than p, which is greater than q, which is greater than zero.
+
+The entrepreneur has private information about her type. Outside investors cannot tell bad and good borrowers apart. Outside investors assign a probability alpha, strictly between zero and one, to the borrower being a good type. We can interpret alpha as the share of good types in a large population.
+
+Slides 6 to 8 define efficiency. Slide 6: we assume that I is less than or equal to p times R. If the borrower is a good type, the project has a positive net present value. From a social surplus perspective, the good type should be able to obtain financing and undertake the project, because she transforms an investment of I into a higher value. On the board: I is less than or equal to the present value of expected future cash flows, which is p R over one plus r, which is just p R, because r is zero.
+
+Slide 7: for the bad type, we will study two cases.
+
+Case one: I less than or equal to q R. The bad type's project also has a positive net present value. From a social surplus perspective, the bad type should be able to undertake the project too.
+
+Case two: I greater than q R. The bad type's project has a negative net present value. From a social surplus perspective, the bad type should not be able to undertake it, because it destroys value. On the board: I is greater than q R over one plus r, which is q R.
+
+Slide 8 makes the second case concrete. When q R is less than I, it would be more efficient for the bank to deny credit to the bad borrower and invest at the zero risk-free rate. That is a zero net present value transaction instead of a negative one. Investing I at the risk-free rate, the present value of expected future cash flows is I over one plus r, which is I. Investing I in the bad type's project, the present value is q R over one plus r, which is q R, and q R is less than I.
+
+Hold on to this comparison. When we compute "the expected discounted value of future cash flows" in the numerical examples, money not lent to a project is counted as invested in the bond, and it returns exactly what was put in.
+
+Slide 9 brings in the market's belief. Under asymmetric information, outside investors assign a probability of success of m, which is alpha times p plus one minus alpha times q.
+
+Because m is an average of p and q, with weights alpha and one minus alpha, and alpha is strictly between zero and one, m lies strictly between them: p is greater than m, which is greater than q.
+
+Two consequences follow. When q R is at least I, then m R is at least I, for any alpha. If even the bad type's project pays for itself, so does the average.
+
+When q R is less than I, we might have m R at least I, or m R less than I, depending on alpha. Let us derive the cut-off. m R is at least I means: alpha p plus one minus alpha q, all times R, is at least I. Divide by R: alpha p plus q minus alpha q is at least I over R. Collect alpha: alpha times p minus q is at least I over R minus q. Divide by p minus q, which is positive. Result: m R is at least I if and only if alpha is at least I over R minus q, all over p minus q. And m R is less than I if and only if alpha is below that same number.
+
+Slide 10 defines contracts. The borrower is protected by limited liability: she cannot pay the lender out of her own wealth. Outside, uninformed investors receive R u, which is at most R, if the project succeeds, and zero if it fails. The entrepreneur receives R f, equal to R minus R u, in case of success, and zero otherwise.
+
+Why only a payment in success? Because the project pays zero in failure, and limited liability means nobody can pay anything out of nothing. So the whole contract is one number: R u.
+
+Tirole states the same model on printed page 241, which he calls the privately-known-prospects model. He writes the contract in terms of the borrower's reward, R b, rather than the investors' repayment. His R b is our R f. Keep that translation in mind when you read him: everything he says about R b being high is something the slides say about R u being low.
+
+Recap of Part two. Two types, p and q. A share alpha of good types. A prior m equal to alpha p plus one minus alpha q, strictly between q and p. Efficiency means funding a type if and only if its success probability times R covers I. And the pooling threshold is alpha star, equal to I over R minus q, over p minus q.
+
+Checklist. You should be able to state assumptions A1 and A2 and say why they make the discount rate zero; to write m and prove that it lies between q and p; to derive the threshold for alpha from m R equal to I; and to say why money not lent is worth exactly I.
+
+
+Part three. Symmetric and asymmetric information: pooling, breakdown, cross-subsidization and overinvestment. Slides 11 to 19.
+
+The claim of this part: under symmetric information each type gets a fair price and exactly its own net present value; under asymmetric information there can be only one price, and that single price produces either market breakdown or cross-subsidization, and in one case overinvestment.
+
+Slide 11 sets the benchmark. Symmetric information: the lender can observe the entrepreneur's type, that is, her repayment probability. Then there are two different credit markets, one for each type, with two different equilibrium contracts. A market for good-type entrepreneurs, with an equilibrium contract that sets a repayment R u G to outside investors in case of success, if the transaction takes place. And a market for bad-type entrepreneurs, with a repayment R u B in case of success, if the transaction takes place.
+
+Slide 12, the good type under symmetric information. The good-type entrepreneur obtains financing, because her project has a positive net present value. Capital markets are competitive, so the payment to outside investors in case of success satisfies the break-even condition. On the board: p times R u G is equal to I. Equivalently, R u G is equal to I over p.
+
+Her expected payoff, her utility, is p times R f G, which is p times R minus R u G, which is p R minus I. The entrepreneur receives the entire net present value.
+
+Slide 13, the bad type under symmetric information. If q R is less than I, the bad type does not obtain financing, because outside investors cannot break even. The maximum expected amount lenders can obtain, which is called the expected pledgeable income, is q R, and it is smaller than I.
+
+If q R is at least I, the bad type obtains financing, and competition implies q times R u B is equal to I, so R u B is equal to I over q. Her expected payoff is q times R f B, which is q times R minus R u B, which is q R minus I. She too receives the entire net present value.
+
+Slide 14 compares the two. Because p is greater than q, the good type repays a smaller amount in case of success. R u G, which is I over p, is less than I over q, which is R u B.
+
+If we read the contract as a debt contract, the good type pays a lower interest rate. The interest rate of the good type, i G, is R u G minus I, over I, which is one over p, minus one. The interest rate of the bad type, i B, is R u B minus I, over I, which is one over q, minus one. Since p is greater than q, one over p minus one is less than one over q minus one. So i G is less than i B.
+
+The outcome under symmetric information is efficient. It maximizes social surplus, because only value-creating projects, those with positive net present value, are financed.
+
+Slide 15 asks the key question. Now the repayment probability is private information again. Can we implement the symmetric-information outcome, with one contract for each type?
+
+No. The bad type would lie and pretend to be good, in order to repay R u G instead of R u B. And once every type chooses R u G, the outside investors' expected profit is negative. On the board: m times R u G minus I is less than p times R u G minus I, which is zero. The first term uses m, alpha p plus one minus alpha q, because that is the true average success probability of the pool that now asks for the good contract. Since m is below p, the investors lose.
+
+To feel the size, take the numbers that Part four will use: p is 0.8, q is 0.7, alpha is 0.5, I is 30, R is 50. Then R u G is 37.5 and m is 0.75. Investors would receive 0.75 times 37.5, which is 28.125, against an outlay of 30. They would lose 1.875 on every loan. That small calculation is ours, but every input is the slide's.
+
+Slide 16. Because lenders cannot distinguish good from bad borrowers, there is only one equilibrium contract for both types. It requires a repayment R u in case of success. Since R u is at most R by limited liability, R f, equal to R minus R u, is at least zero. So both types prefer this contract, and investing, to not being financed, even when their own project has a negative net present value. A bad type with a bad project loses nothing by trying: in failure she pays nothing, in success she keeps something.
+
+Outside investors' expected profit is m R u minus I, which is alpha p plus one minus alpha q, all times R u, minus I. In particular, the maximum profit outside investors can make is m R minus I, obtained by taking the whole return R in success.
+
+Tirole explains why the contract must pool, on printed page 242. Each type prefers receiving financing to not being funded, and, conditional on being funded, prefers the contract with the higher compensation for herself. So any contract of this form attracts both types.
+
+Slide 17, market breakdown and underinvestment. If m R is less than I, lenders cannot break even even if they take everything, and there is no lending. That is market breakdown.
+
+This case arises whenever q R is less than I and the probability that the borrower is good is low enough, that is, whenever alpha is below alpha star. Alpha star solves: alpha star times p plus one minus alpha star times q, all times R, is equal to I. Which gives alpha star equal to I over R minus q, all over p minus q. That is the threshold we derived on slide 9.
+
+Notice why breakdown requires q R below I. If q R were at least I, then m R would be at least I for every alpha, as slide 9 showed, so breakdown could never occur.
+
+The result is underinvestment. The good borrower does not invest even though her project has a positive net present value. The outcome is inefficient. The good borrower is hurt by the presence of bad types and by the fact that outside investors suspect she might be one of them.
+
+Tirole writes the breakdown condition in a second way, on printed page 242: alpha star times p R minus I, plus one minus alpha star times q R minus I, is equal to zero. That is the same equation, rearranged as an average of the two types' net present values. Breakdown happens when the average net present value of the pool is negative.
+
+Slide 18, cross-subsidization. If m R is at least I, there is lending. Competition implies zero expected profits: m times R u is equal to I, so R u is equal to I over m.
+
+Since q is less than m, which is less than p, the single price sits between the two fair prices: R u G is less than R u, which is less than R u B. That is cross-subsidization. The good type pays more than in the symmetric-information case, more than the fair value. There is dilution, and she receives less than her net present value. The bad type pays less than in the symmetric-information case.
+
+Said from the investors' side: outside investors make money on the good type and lose money on the bad type, and on average they break even.
+
+The good type is again hurt by the presence of bad types, though to a lesser extent than in a market breakdown. In breakdown she gets nothing; here she gets something, just less than her net present value.
+
+Slide 19, overinvestment. Two sub-cases. When m R is at least I and q R is at least I, there is cross-subsidization, but the outcome is still efficient: only positive net present value projects are undertaken. The subsidy only moves wealth from good to bad types.
+
+When m R is at least I but q R is less than I, there is overinvestment. The bad borrower invests even though her project has a negative net present value, and the outcome is inefficient. There is adverse selection in the sense that the quality of the entrepreneurs who obtain financing is worse than in the symmetric-information benchmark.
+
+Tirole credits this overinvestment result to De Meza and Webb, 1987, on printed page 243, and sums it up in one phrase: adverse selection reduces the quality of loans.
+
+Recap of Part three. Symmetric information: R u G equal to I over p, R u B equal to I over q, each type gets its net present value, and the outcome is efficient. Asymmetric information: the bad type mimics, so there is one pooling contract with m R u equal to I. If m R is below I, the market breaks down, which needs q R below I and alpha below alpha star. If m R is at least I, the single price R u equal to I over m cross-subsidizes the bad type, and if in addition q R is below I, there is overinvestment.
+
+Checklist. You should be able to derive R u G and R u B and the two interest rates from break-even; to show in one line why the symmetric contracts are not implementable; to show why limited liability makes both types accept any funding; and to classify any set of parameters into one of three outcomes: breakdown, efficient cross-subsidy, or cross-subsidy with overinvestment.
+
+
+Part four. The cost borne by the good type, and the numerical example. Slides 20 to 27.
+
+The claim of this part: the good type's loss from asymmetric information can be written as a single discount on her net present value, governed by one index of adverse selection, chi; and three numerical cases show the efficient cross-subsidy, the overinvestment, and the breakdown.
+
+Slide 20, the cost incurred by the good type. In the asymmetric-information case, when m R is greater than I, the good borrower's expected payoff is p times R f, which is p times the quantity R minus I over m. The slide rewrites this as the symmetric-information payoff, p R minus I, minus a discount due to information asymmetry. The discount is chi over one minus chi, all times I. And chi is defined as one minus alpha, the probability of the bad type, times p minus q, over p.
+
+Chi is a measure of adverse selection. The higher its value, the higher the discount due to information asymmetry.
+
+Let us do the manipulation the slide skips; Tirole calls it "some manipulation" on printed page 243. Start from m. m is alpha p plus one minus alpha q. Write it as p minus one minus alpha times p minus q. Factor out p: m is p times the quantity one minus one minus alpha times p minus q over p. That bracket is one minus chi. So m is equal to p times one minus chi.
+
+Now the payoff. p times R minus I over m is p R minus p I over m. Replace m by p times one minus chi: p I over m becomes I over one minus chi. And I over one minus chi is I plus chi over one minus chi times I. So the payoff is p R minus I, minus chi over one minus chi times I. That is the slide's formula.
+
+A word on the slide's chi, because it is easy to misread. The slide's definition, with denominator p, is correct, provided you keep the factor chi over one minus chi in front of I. There is an equivalent way to write the same discount: define the ratio with denominator m instead, one minus alpha times p minus q, over m. That ratio is exactly p over m minus one, and with it the discount is simply that ratio times I. Both routes give the same number. Do not mix them: chi with denominator p, times I alone, without dividing by one minus chi, understates the discount.
+
+Check it on the example of the next slides. Alpha is 0.5, p is 0.8, q is 0.7. Chi is 0.5 times 0.1 over 0.8, which is 0.0625. Chi over one minus chi is 0.0625 over 0.9375, which is one fifteenth. Times I, which is 30, gives a discount of 2. The good type's net present value is 10, so her payoff is 10 minus 2, which is 8. Hold that 8; slide 23 will confirm it.
+
+Tirole adds the interpretation, on printed page 243. The discount is the product of the probability of bad types, one minus alpha, times a likelihood ratio, p minus q over p. He calls it the counterpart of the agency cost under moral hazard. The good borrower's pledgeable income, p R, is discounted by the presence of bad borrowers: lending is possible if and only if one minus chi, times p R, is at least I. That is just m R at least I written in a new way.
+
+Slide 21 opens the example. R is 50, I is 30, p is 0.8, q is 0.7, alpha is 0.5. The project has a positive net present value whatever the borrower's type. Good type: net present value is minus 30 plus 0.8 times 50, which is 10. Bad type: the slide prints minus 30 plus 0.7 times 10, equal to 5. The slide prints 0.7 times 10; the value consistent with the model is 0.7 times 50, which is 35, and minus 30 plus 35 is the slide's 5.
+
+Slide 22, symmetric information. Both types invest, because both projects have positive net present value. Prices are fair, there is no cross-subsidization, and each type's expected utility equals her net present value.
+
+Good type: R u G is 30 over 0.8, which is 37.5. The interest rate i G is 25 per cent. Her utility U G is 0.8 times 50 minus 37.5, which is 0.8 times 12.5, which is 10.
+
+Bad type: R u B is 30 over 0.7, which is 42.9. The interest rate i B is 42.9 per cent. Her utility U B is 0.7 times 50 minus 42.9, which is 5.
+
+The expected discounted value of future cash flows in the economy is alpha times p times 50 plus one minus alpha times q times 50. That is 0.5 times 40 plus 0.5 times 35, which is 37.5.
+
+Slide 23, asymmetric information. Lenders assign probability of success m equal to 0.5 times 0.8 plus 0.5 times 0.7, which is 0.75. Both types invest, because m R, 37.5, is at least I, 30. Both types promise to repay R u equal to 40, that is, 30 over 0.75, and the interest rate is 33.3 per cent.
+
+Cross-subsidization. The good type has expected utility U G equal to 0.8 times 50 minus 40, which is 8. That is smaller than in the symmetric case, and it is exactly the 10 minus 2 we found from chi. The bad type has expected utility U B equal to 0.7 times 50 minus 40, which is 7. That is larger than in the symmetric case, where she had 5.
+
+Notice the transfer. The good type loses 2, the bad type gains 2. With equal shares of each, the transfers cancel on average, exactly as zero-profit lenders require.
+
+The expected discounted value of future cash flows is still alpha p 50 plus one minus alpha q 50, which is 37.5. That is the same as under symmetric information, so the outcome is still efficient. Asymmetric information here only redistributes.
+
+Slide 24 changes one parameter: now q is 0.5. The project has a negative net present value if the borrower is bad: minus 30 plus 0.5 times 50, which is minus 5.
+
+Symmetric information: only the good type invests, with the same repayment, 37.5, and the same interest rate, 25 per cent, as before. The bad type does not obtain credit, and her expected utility is zero.
+
+The expected discounted value of future cash flows: since lenders do not fund the bad type, they invest that 30 at the zero risk-free rate and obtain 30 next period with probability one. So the value is alpha times p times 50, plus one minus alpha times 30. That is 0.5 times 40 plus 0.5 times 30, which is 35.
+
+Slide 25, asymmetric information with q equal to 0.5. Lenders assign m equal to 0.5 times 0.8 plus 0.5 times 0.5, which is 0.65. Both types invest, since m R, which is 32.5, is at least 30. Both promise to repay R u equal to 46.15, that is, 30 over 0.65, and the interest rate is 53.8 per cent.
+
+Cross-subsidization. The good type has U G equal to 0.8 times 50 minus 46.15, which is 3.1, against 10 under symmetric information. The bad type has U B equal to 0.5 times 50 minus 46.15, which is 1.9, against zero under symmetric information.
+
+Check the good type's 3.1 with chi. Chi is now 0.5 times 0.3 over 0.8, which is 0.1875. Chi over one minus chi is 0.1875 over 0.8125, about 0.23. Times 30 is about 6.9. And 10 minus 6.9 is about 3.1.
+
+The expected discounted value of future cash flows is alpha p 50 plus one minus alpha q 50, which is 20 plus 12.5, which is 32.5. That is smaller than the 35 of symmetric information, so the outcome is inefficient. This is overinvestment: the bad type's negative net present value project is funded, and it destroys exactly the 2.5 difference, which is one half, the share of bad types, times the bad project's loss of 5.
+
+Slide 26: what if alpha is 0.2 and q is 0.5?
+
+Symmetric information: only the good type invests, same repayment and interest rate as before, and the bad type gets no credit and zero utility. The value of future cash flows is alpha p 50 plus one minus alpha times 30. That is 0.2 times 40 plus 0.8 times 30, which is 8 plus 24, which is 32.
+
+Asymmetric information: no credit, market breakdown. The slide computes m as 0.2 times 0.8 plus 0.8 times 0.6, equal to 0.56. The slide prints 0.8 times 0.6 for the bad-type term; the value consistent with the model is 0.8 times 0.5, because q is 0.5. With the correct term, 0.16 plus 0.40 is 0.56, so the slide's result, 0.56, is right. Then m R is 28, which is less than 30.
+
+Both types obtain zero expected utility. The expected value of discounted cash flows is 30, all money in the risk-free bond. That is smaller than 32, the symmetric-information value, so the outcome is inefficient. This is underinvestment: the good type's positive net present value project is lost.
+
+Slide 27 draws the threshold. Recall that alpha star solves alpha star times 0.8 plus one minus alpha star times 0.5, all times R, equal to I. Let us solve it aloud. Alpha star is I over R minus q, over p minus q. I over R is 30 over 50, which is 0.6. Minus q gives 0.1. p minus q is 0.3. And 0.1 over 0.3 is one third. So alpha star is one third.
+
+In general, with these parameters, there are two cases under asymmetric information. Case one: if the proportion of good types, alpha, is at least one third, m R is at least I, both types invest, and there is cross-subsidization and overinvestment. Case two: if alpha is below one third, m R is below I, neither type invests, and there is market breakdown and underinvestment.
+
+Our two examples sit on either side: alpha equal to 0.5 is above one third, overinvestment; alpha equal to 0.2 is below one third, breakdown.
+
+Tirole adds an application that the slides do not, on printed page 244: market timing. If a publicly observed shift tau raises both types' success probabilities, the financing condition becomes m plus tau, times R, greater than I, and the index chi falls. Booms make adverse selection less binding. Treat that as optional depth.
+
+Recap of Part four. The good type's payoff is p R minus I, minus chi over one minus chi times I, with chi equal to one minus alpha times p minus q over p. In the example the discount is 2 when q is 0.7, so U G falls from 10 to 8 and U B rises from 5 to 7, with the economy's value unchanged at 37.5. With q equal to 0.5 and alpha 0.5, R u is 46.15, U G is 3.1, U B is 1.9, and value falls from 35 to 32.5: overinvestment. With alpha 0.2, m is 0.56, the market breaks down and value falls from 32 to 30: underinvestment. The threshold is alpha star equal to one third.
+
+Checklist. You should be able to derive m equal to p times one minus chi and from it the discount formula; to reproduce every number on slides 21 to 26 with a calculator; to name the two slide misprints in this block, 0.7 times 10 on slide 21 and 0.8 times 0.6 on slide 26; and to compute alpha star equal to one third.
+
+
+Part five. More information: the credit bureau. Slides 28 to 37.
+
+The claim of this part: a public signal correlated with type splits one pooled market into two; Bayes' rule moves the market's belief up for good records and down for bad ones; this always reduces cross-subsidization, but it raises efficiency only when it stops funding projects with negative net present value.
+
+Slide 28. Suppose lenders can now observe a characteristic x, which is either x G, good information, or x B, bad information. An example is a credit bureau that mandates the reporting of defaults and delinquencies. x B would mean a checkered credit history; x G a clean credit history.
+
+The parameters are back to R equal to 50, I equal to 30, p equal to 0.8, q equal to 0.7. We assume the probability of x G and the probability of x B are both equal to alpha, which is 0.5.
+
+Without the public, mandatory signal x, the lenders' belief about the probability of success is m, equal to alpha p plus one minus alpha q, which is 0.5 times 0.8 plus 0.5 times 0.7, which is 0.75.
+
+Slide 29 specifies how informative the signal is. Good types, with p equal to 0.8, are more likely to have good information. The probability of observing x G, given that the borrower is a good type, is 0.9. Bad types, with q equal to 0.7, are more likely to have bad information: the probability of observing x B given a bad type is 0.9. Since probabilities add up to one, the probability of x B given a good type is 0.1, and the probability of x G given a bad type is 0.1.
+
+Check the slide's assumption that x G has probability 0.5. The probability of x G is the probability of x G given good, times alpha, plus the probability of x G given bad, times one minus alpha. That is 0.9 times 0.5 plus 0.1 times 0.5, which is 0.5. Consistent.
+
+Slide 30, updating after a good record. After observing x G, lenders update their belief that the borrower is good, using Bayes' rule. The probability of good type given x G is the probability of x G given good type, times the probability of good type, all over the probability of x G. That is 0.9 times alpha, over 0.5. With alpha equal to 0.5, that is 0.9.
+
+Therefore the probability of bad type given x G is 0.1, and the belief about the probability of success, conditional on x G, is m x G. m x G is the probability of good given x G, times p, plus the probability of bad given x G, times q. That is 0.9 times 0.8 plus 0.1 times 0.7, which is 0.72 plus 0.07, which is 0.79. And 0.79 is greater than 0.75, which was m.
+
+Slide 31, updating after a bad record. The probability of good type given x B is the probability of x B given good, times the probability of good, over the probability of x B. That is 0.1 times alpha, over 0.5, which is 0.1. So the probability of bad given x B is 0.9, and m x B is 0.1 times 0.8 plus 0.9 times 0.7, which is 0.08 plus 0.63, which is 0.71. And 0.71 is less than 0.75.
+
+Slide 32. Now we have "two" markets, one for x G and one for x B. In the x G market there is one equilibrium repayment, R x G. If R times m x G is at least I, both types that carry information x G receive credit, and R x G times m x G is equal to I. Otherwise, if R times m x G is below I, the market collapses and neither type receives credit.
+
+In the example, m x G times R is 0.79 times 50, which is 39.5, greater than 30. So R x G is 30 over 0.79, which is 37.97, and the interest rate i x G is 26.58 per cent.
+
+Slide 33, the x B market. One equilibrium repayment, R x B, conditional on observing x B. If R times m x B is at least I, both types with information x B receive credit, and R x B times m x B is equal to I. Otherwise the market collapses.
+
+In the example, m x B times R is 0.71 times 50, which is 35.5, greater than 30. So the repayment is 30 over 0.71, which is 42.25, and the interest rate i x B is 40.85 per cent. The slide labels this bad-record repayment R x G; the label consistent with the model is R x B, the repayment in the bad-information market.
+
+Slide 34 is a table of interest rates under four information structures. Compare them one at a time.
+
+First, symmetric information. Both types receive credit. The good type pays 25.0 per cent, the bad type 42.9 per cent.
+
+Second, asymmetric information with no bureau. Both types receive credit, and both pay 33.3 per cent.
+
+Third, asymmetric information with good information, x G. Both types receive credit, and both pay 26.6 per cent.
+
+Fourth, asymmetric information with bad information, x B. Both types receive credit, and both pay 40.8 per cent.
+
+Notice the pattern. With the bureau, the rate is still pooled within each record, but the pools are purer, so each pool's rate moves toward the fair rate of the type that dominates it: 26.6 toward 25.0, and 40.8 toward 42.9.
+
+Slide 35, the welfare effects. The expected utility of the good type with the bureau is the probability of x G given good, times 9.62, plus the probability of x B given good, times 6.2. That is 0.9 times 9.62 plus 0.1 times 6.2, which the slide gives as 9.27, and 9.27 is greater than 8.
+
+Where do 9.62 and 6.2 come from? From the repayments. With a clean record, the good type keeps 50 minus 37.97, which is 12.03, with probability 0.8: that is 9.62. With a bad record, she keeps 50 minus 42.25, which is 7.75, with probability 0.8: that is 6.2.
+
+The expected utility of the bad type is the probability of x G given bad, times 8.42, plus the probability of x B given bad, times 5.42. That is 0.1 times 8.42 plus 0.9 times 5.42, which is 5.72, and 5.72 is less than 7. The 8.42 is 0.7 times 12.03; the 5.42 is 0.7 times 7.75.
+
+So there is less cross-subsidization. The good type is better off than without a credit bureau, and the bad type is worse off.
+
+The ex ante expected value of future cash flows is the probability of x G times m x G times R, plus the probability of x B times m x B times R. That is 0.5 times 39.5 plus 0.5 times 35.5, which is 37.5. The same as before. No efficiency gains. Here both types were already efficiently funded, so better information can only redistribute.
+
+Slide 36 asks: can more information also improve efficiency? Take again R equal to 50, I equal to 30, p equal to 0.8, and q equal to 0.5. The slide's table of interest rates, row by row.
+
+First, symmetric information. The good type receives credit at 25.0 per cent. The bad type receives no credit.
+
+Second, asymmetric information without a bureau. Both types receive credit at 53.8 per cent.
+
+Third, asymmetric information with good information, x G. Both types receive credit at 29.9 per cent.
+
+Fourth, asymmetric information with bad information, x B. No credit for either type.
+
+Where does 29.9 come from? With q equal to 0.5, m x G is 0.9 times 0.8 plus 0.1 times 0.5, which is 0.77. The repayment is 30 over 0.77, about 38.96, and the rate is about 29.9 per cent. And m x B is 0.1 times 0.8 plus 0.9 times 0.5, which is 0.53; times 50 that is 26.5, below 30, so the bad-record market collapses. Those intermediate numbers are our own arithmetic from the slide's parameters.
+
+Slide 37, the ex ante expected value of future cash flows in each case.
+
+Symmetric information: 0.5 times p times 50, plus 0.5 times 30, which is 35.
+
+Asymmetric information with no bureau: 0.5 times p times 50, plus 0.5 times q times 50, which is 32.5.
+
+Asymmetric information with the bureau: the probability of x G times m x G times R, plus the probability of x B times 30. The slide prints 34.5. The value consistent with the slide's own numbers is 34.25: 0.5 times 0.77 times 50 is 19.25, plus 0.5 times 30, which is 15, gives 34.25. Either way, it is greater than 32.5, which is the slide's point.
+
+So the introduction of a credit bureau improves capital allocation in the economy. The mechanism is precise: the bureau removes most bad types from the funded pool. Funding still goes to the bad types with a clean record, five per cent of the population, which is why the value stays below the 35 of full information.
+
+Tirole's book returns to this in an exercise you will meet in the reading route: exercise 6.7, on Padilla and Pagano, about why banks would choose to share default data at all. He also mentions, on printed page 249, that disclosure of past repayments is one way to reduce the asymmetry.
+
+Recap of Part five. A signal with accuracy 0.9 moves the belief from 0.75 to 0.79 after a clean record and to 0.71 after a bad one. Rates become 26.6 and 40.8 per cent instead of a pooled 33.3. The good type gains, 9.27 against 8; the bad type loses, 5.72 against 7. With both types creditworthy, total value stays at 37.5. With q equal to 0.5, the bad-record market closes, and value rises from 32.5 to 34.25, which the slide prints as 34.5, still below 35.
+
+Checklist. You should be able to apply Bayes' rule to get 0.9 and 0.1; to compute m x G and m x B; to derive both repayments and rates; to rebuild 9.62, 6.2, 8.42 and 5.42; and to explain why the bureau raises efficiency only in the q equal to 0.5 case.
+
+
+Part six. The pecking order. Slides 38 to 46.
+
+The claim of this part: to minimize adverse selection costs, firms prefer internal funds, then debt, then equity, because debt is less sensitive to private information than equity; formally, the good type's loss is m minus p times the spread between what investors get in success and in failure, so she pledges all the safe cash flow first.
+
+Slide 38. To minimize adverse selection costs, firms prefer to use internal funds to finance projects. If, in the model above, entrepreneurs had wealth A smaller than I, the good type would choose to borrow only I minus A, to minimize the adverse selection discount. To avoid being detected, the bad type would follow suit.
+
+What about external funding? The pecking-order hypothesis posits that debt is preferred to equity. The reason is that debt is less information-sensitive than equity.
+
+Slide 39. An intuitive way to minimize cross-subsidization is to issue risk-free or over-collateralized debt. The slide quotes Holmström, 2015, and the quote is worth hearing in full. "Trading in debt that is sufficiently over-collateralized is a cheap way to avoid adverse selection. When both parties know that there is enough collateral, more precise private information about the collateral becomes irrelevant and will not impair liquidity. We saw this in the pawn contract. It did not matter that the pawnbroker's valuation of the watch was different from the borrower's. It sufficed that the pawnbroker felt confident that he could recover the loan by selling the watch, while the borrower was protected by the right to redeem the watch."
+
+The lesson: a claim that pays the same in every state does not care who is right about the states.
+
+Slide 40. To distinguish debt from equity, we need a project with two non-zero outcomes. Suppose the project pays R S in case of success and R F in case of failure. The other assumptions are as before. There are no assets in place, so internal funding is not possible. The good type succeeds with probability p, the bad type with probability q, investment costs I, the market believes the share of good types is alpha, and the prior probability of success is m, equal to alpha p plus one minus alpha q.
+
+We assume that p R S plus one minus p R F is greater than q R S plus one minus q R F, which is greater than I. Both projects have positive net present value.
+
+Slide 41. The payoff of each project splits into a riskless part and a risky part. For the good type: p R S plus one minus p R F is equal to R F, the riskless part, plus p times R S minus R F, the risky part. For the bad type: q R S plus one minus q R F is equal to R F plus q times R S minus R F. There is no asymmetric information about the riskless part. Both types are sure to produce at least R F.
+
+Slide 42. If R F is greater than I, both types can issue riskless debt, and asymmetric information about the probability of success is irrelevant. So let us assume R F is less than I. We will see that the contract that minimizes cross-subsidization, and is therefore the preferred choice of good types, pledges all of the riskless, information-insensitive part to investors.
+
+Slide 43. Contracts divide cash flows subject to limited liability. In case of success, the entrepreneur receives R f S and investors receive R u S, which is R S minus R f S. In case of failure, the entrepreneur receives R f F and investors receive R u F, which is R F minus R f F.
+
+Slide 44. To reap the benefits of cross-subsidization, bad types will want to pool, that is, to issue the same contract as the good type. Therefore any contract, R u S and R u F, must satisfy the investors' break-even condition at the pooled belief: m times R u S plus one minus m times R u F is equal to I.
+
+The goal of the good type is to minimize the cost of informational asymmetry, the underpricing. She promises R u S in success and R u F in failure so that break-even holds and her own utility is maximized.
+
+Slide 45 is the central derivation. Follow it line by line.
+
+The utility of the good type is p times R S minus R u S, plus one minus p times R F minus R u F.
+
+Line two. Add and subtract I, and regroup. It equals p R S plus one minus p R F minus I, which is the net present value; plus I, the amount raised from investors; minus the bracket p R u S plus one minus p R u F, which is the actual value of the investors' claim, valued at the good type's true probability.
+
+Line three. Replace I by the break-even condition. I is m R u S plus one minus m R u F. So the utility is the net present value, plus m R u S plus one minus m R u F, minus p R u S plus one minus p R u F.
+
+Line four. Rewrite each bracket as a safe part plus a risky part. m R u S plus one minus m R u F is R u F plus m times R u S minus R u F. And p R u S plus one minus p R u F is R u F plus p times R u S minus R u F.
+
+Line five. The R u F terms cancel. What remains: the utility of the good type is the net present value plus m minus p, times R u S minus R u F.
+
+Since m is less than p, m minus p is negative. That last term is the discount due to asymmetric information. It is the gap between the market's belief and the truth, times the spread of the investors' claim across states.
+
+Slide 46. So the good type wants the quantity R u S minus R u F as small as possible. The slide says it is minimized under a debt contract with face value at least R F. Here is why, a step the slide leaves implicit. Break-even says R u F plus m times the spread is equal to I. So the spread is I minus R u F, over m. The spread falls when R u F rises, and limited liability caps R u F at R F. So set R u F equal to R F.
+
+Then R u S follows from break-even. m R u S plus one minus m R F is equal to I. Solve: R u S is equal to R F plus I minus R F, over m.
+
+That is a debt contract with face value R u S: investors get everything, R F, in failure, and a fixed amount in success.
+
+Equivalently, the entrepreneur issues riskless debt with face value R F and raises the remainder, I minus R F, by an equity issue. Tirole writes exactly this on printed page 247: first safe debt with obligation D equal to R F, then equity with m R l equal to I minus D. He adds that the firm must issue more equity the lower m is or the higher I is.
+
+And since bad types do not want to separate from good types, both types end up preferring debt to equity when financing externally.
+
+The size of the remaining discount, for completeness: plug the spread, I minus R F over m, into m minus p times the spread, and the good type loses p minus m, times I minus R F, over m. It shrinks to zero as R F approaches I.
+
+Amaro de Matos gives the classic version of this argument, Myers and Majluf, 1984, in section 3.2.3, printed pages 85 to 89. There, managers act for old shareholders and know the value of assets in place, a, and the net present value of the new project, b. Issuing equity E, old shareholders keep a fraction P prime over P prime plus E of the enlarged firm. They issue only if that is worth at least a plus S, where S is financial slack. So firms whose shares are undervalued sometimes pass up positive net present value projects, and the share price falls on an issue announcement. His conclusion, printed page 89: internal funds are preferred to external funds, and among external funds, debt dominates equity, because debt is less sensitive to management's private information and hence less costly to issue.
+
+Tirole gives the qualifications, on printed page 248. The debt bias can fail when the entrepreneur wants insurance, as in Leland and Pyle; when issuers want information-intensive securities as an exit strategy; when the private information is about risk rather than about the probability of success; and when investors have market power and want to extract rents.
+
+Recap of Part six. Internal funds first. With outcomes R S and R F, the good type's utility is the net present value plus m minus p, times R u S minus R u F. She minimizes the spread by pledging all of R F, so R u F equals R F and R u S equals R F plus I minus R F over m. That is risky debt, or riskless debt R F plus equity. The bad type pools, so both issue debt.
+
+Checklist. You should be able to reproduce the five lines of slide 45 without notes; to show why setting R u F to R F minimizes the spread; to solve for R u S; and to state Holmström's pawn-shop point in your own words.
+
+
+Part seven. Stiglitz and Weiss, 1981. Slides 47 to 55.
+
+The claim of this part: when borrowers differ in risk, raising the interest rate drives out the safe borrowers first, so the lender's expected return is not monotonic in the rate; the supply of credit can bend backwards, and at the rate that maximizes the lender's return, demand can exceed supply. That is equilibrium credit rationing.
+
+Slide 47. Stiglitz and Weiss, 1981, is the seminal work on rationing under imperfect information. Its notion of risk is the mean-preserving spread. Projects have the same mean. A mean-preserving spread of a random variable X is obtained by adding a zero-mean random variable to each possible realization of X. Asymmetric information and adverse selection may cause the supply curve to be backward-bending for high interest rates.
+
+Slide 48 explains why. The pool of borrowers gets worse as interest rates rise, which depletes lenders' returns and affects supply. Think of bad-quality borrowers as having a higher probability of default. The payoff in the default state does not depend on the interest rate, because the borrower pays nothing then. So a marginal increase in the rate affects bad borrowers less than good ones: the bad borrower expects to pay the higher rate less often.
+
+As a result, supply and demand curves might not intersect. In equilibrium, demand might exceed supply at the prevailing interest rate. In other words, there is credit rationing.
+
+Slide 49 is a figure. Let me describe it. The horizontal axis is the nominal rate, R. The vertical axis is the volume of credit. The supply curve, S of rho of R, where rho of R is the lender's expected return at rate R, rises, reaches a peak at the rate R star, and then falls: it bends back. There are two demand curves, both falling in the rate. The lower one, demand L 1 D, crosses the rising part of supply at the rate R 1, and that is an ordinary market-clearing equilibrium. The higher one, demand L 2 D, lies above the peak of supply. At R star, the figure marks the gap between demand L 2 D and the peak of supply, labelled "Equilibrium excess demand". Raising the rate above R star would only reduce supply, so the lender stops at R star and rations.
+
+Slide 50, an example with two types. Low risk: the project yields R L with probability p L, and zero otherwise. High risk: the project yields R H with probability p H, and zero otherwise.
+
+The assumptions. The probability of success is higher for the low-risk type: p L is greater than p H. Equivalently, the probability of failure, default, is higher for the high-risk type: one minus p H is greater than one minus p L. And the projects have the same expected return: p L R L is equal to p H R H, which is equal to R bar. Same mean.
+
+We say that the high-risk project is a mean-preserving spread of the low-risk project.
+
+Slide 51. Borrowers and lenders are risk-neutral, and types are private information. The project requires an investment of I. If lenders require an interest rate r, the borrowers' expected payoffs are as follows.
+
+Low risk: p L times the quantity R L minus one plus r times I. That is R bar minus p L times one plus r times I.
+
+High risk: p H times the quantity R H minus one plus r times I. That is R bar minus p H times one plus r times I.
+
+The slide prints a hat on r inside the brackets; it is the same r.
+
+Because p L is greater than p H, the expected payoff is smaller for the low-risk type. She has to repay one plus r times I with a higher probability. And an increase in the interest rate affects high-risk borrowers less: the payoff falls by p times I for each unit of r, which is a smaller amount for the high-risk type.
+
+Slide 52 defines two thresholds. There exists an r max such that neither type applies when r is above r max. r max is defined by R bar minus p H times one plus r max times I equal to zero. Solve: r max is R bar over p H I, minus one.
+
+There exists an r star such that when r is between r star and r max, only high-risk borrowers apply. r star is defined by R bar minus p L times one plus r star times I equal to zero. Solve: r star is R bar over p L I, minus one. When r is below r star, both types apply.
+
+Since p L is greater than p H, r star is below r max. The safe type quits first.
+
+Slide 53, the lender's return. When r is between r star and r max, the lender's expected payoff, per unit lent, is p H times one plus r. Only high-risk borrowers are in the pool.
+
+If alpha is the proportion of low-risk types in the population, then when r is below r star, the lender's expected payoff is m times one plus r, where m is alpha p L plus one minus alpha p H.
+
+Remark: the expected return drops sharply around r star, as the good types leave the market. Expected return is not a monotonic function of interest rates.
+
+Slide 54 is a figure. The horizontal axis is the quoted interest rate r, from zero, through r star, to r max. The vertical axis is the expected return to the bank. On the first segment, from zero to r star, both types apply for a loan, and the return rises along the line m times one plus r. At r star it drops, because the low-risk types leave. On the second segment, from r star to r max, only high-risk borrowers apply, and the return rises again along the flatter line p H times one plus r. The figure draws the case where the peak just before r star is the highest point of the curve.
+
+Slide 55, the numerical example. p L is 0.9, X L is 100, p H is 0.6, X H is 150, alpha is 0.5, I is 85. The slide writes X L and X H for the success payoffs R L and R H.
+
+Check the same mean: 0.9 times 100 is 90, and 0.6 times 150 is 90. So R bar is 90.
+
+r max is R bar over p H I minus one: 90 over 0.6 times 85, which is 90 over 51, minus one. That is 76.5 per cent, as the slide says.
+
+r star is R bar over p L I minus one: 90 over 0.9 times 85, which is 90 over 76.5, minus one. That is 17.6 per cent, as the slide says.
+
+Now a step the slide does not show, our own arithmetic with its numbers. m is 0.5 times 0.9 plus 0.5 times 0.6, which is 0.75. Just below r star, the bank's gross return per unit is 0.75 times 1.176, about 0.88. Just above r star, it is 0.6 times 1.176, about 0.71. That is the drop. At r max, it is 0.6 times 1.765, about 1.06. So in these particular numbers the curve climbs back above its value at r star before r max. Rationing at r star requires the peak at r star to be the highest point, the case drawn on slide 54. The example illustrates the two thresholds and the drop; whether rationing happens is a condition you must check, not assume.
+
+Tirole connects this to his own model, printed pages 241 to 244: in his privately-known-prospects model, rationing takes the extreme form of breakdown, and the overinvestment variant is due to De Meza and Webb. The Stiglitz and Weiss numbers themselves are not in the books; they are slide-only material.
+
+Recap of Part seven. Mean-preserving spreads: p L R L equals p H R H equals R bar. Borrower payoff is R bar minus p times one plus r times I. Safe types leave above r star, equal to R bar over p L I minus one; everyone leaves above r max, equal to R bar over p H I minus one. The bank's return is m times one plus r below r star and p H times one plus r above it, so it drops at r star. Supply can bend backwards and demand can exceed supply. In the slide's numbers, r max is 76.5 per cent and r star is 17.6 per cent.
+
+Checklist. You should be able to define a mean-preserving spread; to derive both borrower payoffs and both thresholds; to compute 76.5 and 17.6 per cent; to draw slide 54 from memory; and to explain why the drop at r star is necessary, but not sufficient, for rationing.
+
+
+Part eight. Signalling with costly collateral. Slides 56 to 68.
+
+The claim of this part: a good borrower can separate herself by pledging collateral that is costly to give up, because she defaults less often, so the expected cost of collateral is lower for her than for the bad type; the best separating contract makes the bad type exactly indifferent and the lenders exactly break even, and it beats pooling when adverse selection is severe.
+
+Slide 56. In a market with adverse selection, low-risk borrowers might want to signal their type, to distinguish themselves from bad types. Can good borrowers take observable actions that signal their repayment ability, that is, convince the uninformed side of the market about their type? To be a successful separating mechanism, the cost of the signalling device must differ sufficiently across types.
+
+Slide 57, the set-up of the collateral example. As before, projects require an investment of I and generate R in success and zero otherwise. The good type succeeds with probability p, the bad type with probability q. The share of good types is alpha, and the prior probability of success of a random borrower is m, equal to alpha p plus one minus alpha q.
+
+Both types generate a positive net present value: p R greater than I, and q R greater than I. So under asymmetric information there is lending, but the good type would like to minimize cross-subsidization.
+
+Slide 58. Borrowers still have no cash on hand, but they can pledge an illiquid asset as collateral. Assets pledged as collateral are worth more in the hands of the borrowers. Equivalently, there are liquidation costs. Assets worth C in the borrower's hands are worth only delta times C in the lender's hands, where delta is strictly between zero and one. So the use of collateral is inefficient: there is a loss of one minus delta, times C, in case of default.
+
+Tirole uses beta for this same parameter, on printed page 251. The slides' delta is his beta.
+
+Slide 59. Under symmetric information there is no collateral pledging. Why? Take the good borrower and suppose she pledges an amount C greater than zero. Competition means lenders make zero profits, so the repayment R u in success satisfies p R u plus one minus p times delta C is equal to I. Solve: R u is I over p minus one minus p times delta C, over p.
+
+Slide 60. The good type's utility is then p times R minus R u, plus one minus p times minus C. Substitute R u: this equals p R minus I, minus one minus p times one minus delta times C. The first piece is the net present value. The second is the inefficiency: with probability one minus p, the amount one minus delta times C is lost.
+
+So the best choice is C equal to zero. The same argument applies to the bad type. Collateral, under symmetric information, only burns value.
+
+Slide 61. Recall that under asymmetric information, without collateral, both types repay R u equal to I over m, which is greater than I over p, which is R u G, the good type's repayment under symmetric information. Can the good type distinguish herself from the bad type by pledging collateral?
+
+A situation in which it is optimal for different types to choose different contracts is a separating equilibrium. This outcome might be possible because the marginal cost of pledging collateral is higher for the bad type. She defaults more, so she loses the collateral more often.
+
+Slide 62. In a separating equilibrium, each type chooses a different contract. Good type: R u G and C G. Bad type: R u B and C B. Unlike a pooling equilibrium, where different types choose the same contract, in a separating equilibrium lenders infer types with certainty from contract choices. When they see the bad type's contract, R u B and C B, they know the probability of success is q. When they see the good type's contract, R u G and C G, they know it is p.
+
+Slide 63. In a separating equilibrium, it is not in the bad type's interest to pretend to be good: the contract R u B, C B yields her a higher utility than R u G, C G. And if mimicking is not in her interest, her optimal choice is not to pledge collateral. C B is zero. Lenders infer that a borrower who posts no collateral succeeds with probability q, so the bad type's zero-profit repayment is R u B equal to I over q.
+
+Slide 64. Suppose the good type chooses a contract R tilde, C tilde, where R tilde is the repayment in success and C tilde the collateral pledged. The no-mimicking condition is: q times R minus R tilde, plus one minus q times minus C tilde, is at most q times R minus R u B, which is q R minus I. On the left, the bad type's utility when she pretends to be good. On the right, her utility when she does not pretend.
+
+Slide 65. What is the good type's optimal collateral choice, consistent with lenders making zero profits and bad types having no incentive to lie? It solves the following programme. Maximize, over R tilde and C tilde, the good type's utility: p times R minus R tilde, plus one minus p times minus C tilde. Subject to two constraints. First, the no-mimicking condition: q times R minus R tilde, plus one minus q times minus C tilde, at most q R minus I. Second, the lender's break-even condition: p R tilde plus one minus p times delta C tilde, at least I.
+
+Slide 66, the solution. Both constraints bind. Let us solve the two equations aloud, the step the slide leaves out.
+
+From the no-mimicking constraint at equality: q R minus q R tilde minus one minus q times C tilde equals q R minus I. Cancel q R: q R tilde plus one minus q times C tilde equals I.
+
+From break-even at equality: p R tilde plus one minus p times delta C tilde equals I.
+
+From the first, R tilde is I minus one minus q times C tilde, all over q. Put it into the second and multiply through by q: p I, minus p times one minus q times C, plus q times one minus p times delta C, equals q I. Collect C: C times the quantity p times one minus q, minus delta q times one minus p, equals p minus q, times I.
+
+So C G is p minus q, times I, over p times one minus q minus delta q times one minus p. The slide writes this in an equivalent form: C G equals I over one plus the fraction q times one minus p times one minus delta, over p minus q. Expand that denominator and you get back the same expression.
+
+Then R u G is the quantity one minus q minus delta times one minus p, over the quantity p times one minus q minus delta q times one minus p, all times I. That is the slide's formula. Tirole's equation 6.3, on printed page 252, states the borrower's reward, R minus this repayment; his equation 6.4 is the collateral.
+
+Why do both constraints bind? Tirole, printed page 252: if the mimicking constraint were slack, the good type would choose her symmetric-information contract with no collateral, which we know induces mimicking. And break-even must bind, or the good type is giving money away.
+
+One more step, ours, linking back to slide 60. With break-even binding, the good type's utility in the separating equilibrium equals p R minus I, minus one minus p times one minus delta times C G. The cost of separating is exactly the expected deadweight loss of the collateral she posts.
+
+Tirole's comparative statics, printed page 253. The good type must pledge more collateral when collateral is cheaper, that is, when delta is higher. She must pledge more when the asymmetry is stronger, when q falls with p fixed. As q approaches p, collateral goes to zero and the repayment goes to the symmetric one. He also warns that the positive link between collateral and asymmetry depends on both types being creditworthy: if q were zero, the good type would not need collateral at all. And he notes that the empirical evidence, Berger and Udell 1990 and Booth 1992, tends to show good borrowers posting less collateral, which this adverse-selection story alone does not predict.
+
+Slide 67. If the adverse selection cost is very large, for example a large proportion of bad borrowers, one minus alpha, or a large distance between p and q, the good type is better off with the possibility of signalling. Formally: p times R minus R u G, plus one minus p times minus C G, is at least p times R minus I over m. On the left, utility under asymmetric information with signalling. On the right, utility without signalling.
+
+Here is the intuition. The left side does not depend on alpha at all: the separating contract only uses p, q, delta and I. The right side rises with alpha, because m rises. So when good types are rare, pooling is very costly and signalling wins. In that case, signalling reduces the burden of asymmetric information on the good type. Tirole, printed page 254, adds that the separating outcome is the unique equilibrium only when alpha is below a threshold; with many good types, pooling can be better for the good type.
+
+Slide 68, other signalling devices. Payout policy. Short-term maturities. Underdiversification, that is, self-financing. Tirole treats each in section 6.3: short maturities from printed page 254, payout policy from printed page 257, and diversification from printed page 260. The last one is our Part ten.
+
+Recap of Part eight. Collateral worth C to the borrower is worth delta C to the lender. Under symmetric information it is never used, because it destroys one minus p times one minus delta times C. Under asymmetric information the bad type posts nothing and repays I over q. The good type solves: maximize her utility subject to no-mimicking and break-even; both bind, giving R u G and C G as on slide 66. Signalling beats pooling when bad types are many or very different.
+
+Checklist. You should be able to derive slide 60's utility; to write the separating programme; to solve the two binding constraints for C G and R u G; to show that the separating cost is the expected collateral loss; and to say why the comparison on slide 67 depends on alpha only through the pooling side.
+
+
+Part nine. Empirics. Slides 69 and 70.
+
+The claim of this part: adverse selection and signalling are measurable, and they are large; but the classic dividend-signalling story does not fit the data as first told.
+
+Slide 69 quotes the abstract of Kawai, Onishi and Uetake, 2022, "Signaling in online credit markets", in the Journal of Political Economy. In their words: "We study how signaling affects equilibrium outcomes and welfare in an online credit market, using detailed data on loan characteristics and borrower repayment. We build and estimate an equilibrium model in which a borrower may signal her default risk through the reserve interest rate. Comparing markets with and without signaling relative to the benchmark with no asymmetric information, we find that adverse selection destroys as much as 34 per cent of total surplus, up to 78 per cent of which can be restored with signaling. We also estimate backward-bending supply curves for some markets, consistent with the prediction made by Stiglitz and Weiss in 1981."
+
+Connect it to the lecture. The 34 per cent is the empirical size of the loss from pooling of Parts three and four. The 78 per cent is the recovery that a signal can achieve, as in Part eight, except that the signal is the reserve interest rate rather than collateral. And the backward-bending supply is the Stiglitz and Weiss shape of Part seven.
+
+Slide 70 quotes the abstract of Michaely, Rossi and Weber, 2021, "Signaling safety", in the Journal of Financial Economics. In their words: "Contrary to signaling models' central predictions, changes in the level of cash flows do not empirically follow changes in dividends. We use the Campbell (1991) decomposition to construct cash-flow and discount-rate news from returns and find the following: (1) both dividend changes and repurchase announcements signal changes in cash-flow volatility (in opposite directions); (2) larger cash-flow volatility changes come with larger announcement returns; and (3) neither discount-rate news, nor the level of cash-flow news, nor total stock return volatility change following dividend changes. We conclude cash-flow news—and not discount-rate news—drive payout policy, and payout policy conveys information about future cash-flow volatility."
+
+Connect it too. Payout policy was the first item on slide 68's list of other signals. This paper says payouts do signal something, but it is the volatility of cash flows, their safety, not their level.
+
+Recap of Part nine. Kawai and co-authors: adverse selection destroys up to 34 per cent of surplus, signalling restores up to 78 per cent of that, and supply bends backward in some markets. Michaely and co-authors: dividends and repurchases signal changes in cash-flow volatility, in opposite directions, not changes in the level of cash flows.
+
+Checklist. You should be able to quote both headline numbers of Kawai and co-authors and say which part of the model each one measures; and to state the Michaely, Rossi and Weber finding in one sentence, including what dividend changes do not predict.
+
+
+Part ten. Self-financing as a signal, and Leland and Pyle, 1977. Slides 71 to 82. The slides mark this block as optional.
+
+The claim of this part: a risk-averse entrepreneur would like to sell her whole project to risk-neutral investors and be fully insured; when her quality is hidden, only the worse types sell at the pooled price, so the market unravels; and the good type can separate by keeping a share of her own project, a costly signal because it leaves her exposed to risk.
+
+Slide 71. Entrepreneurs might seek external financing even though they have enough wealth to invest in their projects. The reason is risk-sharing: risk-averse entrepreneurs may want to diversify their portfolio and sell part of their shares in the firm.
+
+The set-up. There is a large number of entrepreneurs, each endowed with a risky project. All projects require an investment of 1. Investors are risk-neutral and capital markets are competitive. The project of a type-theta entrepreneur yields a random gross return, R tilde of theta, equal to one plus r tilde of theta, where r tilde of theta is normally distributed with mean theta and variance sigma squared.
+
+Slide 72. The type theta is privately known by the entrepreneur, but its distribution in the population is common knowledge. Entrepreneurs have enough initial wealth to finance their projects: W zero is greater than 1.
+
+Entrepreneurs are risk-averse, with utility u of w equal to minus e to the minus rho w, where w is final wealth and rho, which is minus u double prime over u prime, is positive. Rho is the constant coefficient of absolute risk aversion. That is the CARA utility, constant absolute risk aversion.
+
+There is no discounting, and investors' outside option has a zero net return.
+
+A reminder the slide gives, which does all the work later. If X is normal with mean mu and variance sigma squared, the random variable Y equal to e to the X is log-normal, with mean e to the power mu plus sigma squared over two.
+
+Slide 73, the symmetric-information case. Suppose theta is observable, and the type-theta entrepreneur sells a share one minus alpha of the project, so she self-finances a share alpha. Careful: alpha here is the retained share, not the share of good types.
+
+Competitive markets mean outside investors just break even. They obtain a share one minus alpha of the project by paying one minus alpha times the expected value of the project, E of one plus r tilde of theta. That is one minus alpha times one plus theta.
+
+After raising this amount, the entrepreneur invests the rest of the cost herself: 1 minus one minus alpha times one plus theta. Her final wealth is her initial wealth, minus her own investment, plus her share alpha of the gross return. On the board: w is W zero, minus the bracket 1 minus one minus alpha times one plus theta, plus alpha times one plus r tilde of theta.
+
+Simplify. Expand the bracket: minus 1, plus one minus alpha, plus one minus alpha times theta. Add alpha plus alpha r tilde. The constants cancel: minus 1 plus one minus alpha plus alpha is zero. What remains: w is W zero plus one minus alpha times theta, plus alpha times r tilde of theta.
+
+Slide 74, the two corners. If alpha is 1, full self-financing, the entrepreneur bears all the costs: w is W zero plus r tilde of theta, which is W zero minus 1, the investment, plus one plus r tilde, the gross return.
+
+If alpha is 0, no self-financing, the entrepreneur sells the entire project. In this case she "invests" minus theta: she sells the project for theta. Investors pay the whole investment cost of 1, and pay the entrepreneur theta for the project, for the idea. Her wealth is W zero plus theta, the price of the project. Notice that when alpha is zero, the entrepreneur is perfectly insured: her wealth is the same in every state.
+
+Slide 75, expected utility for a general alpha. E of u of w is E of u of W zero plus one minus alpha theta plus alpha r tilde. Write the utility out: it is the expectation of minus rho times e to the minus rho times that wealth.
+
+A small remark on the slide. It writes a minus rho in front of the exponential, while slide 72 defines u as minus e to the minus rho w, with no rho in front. A positive constant multiplying a utility function changes no choice, so the conclusions are unaffected.
+
+Now the log-normal step. The only random term is alpha r tilde, which is normal with mean alpha theta and variance alpha squared sigma squared. So minus rho alpha r tilde is normal with mean minus rho alpha theta and variance rho squared alpha squared sigma squared. Its exponential has mean e to the minus rho alpha theta plus rho squared alpha squared sigma squared over two. Factor out minus rho, and the expected utility becomes minus rho times e to the minus rho times the bracket W zero plus one minus alpha theta plus alpha theta, minus rho alpha squared sigma squared over two.
+
+Simplify the bracket: one minus alpha theta plus alpha theta is theta. So expected utility is u of the certainty equivalent, W zero plus theta minus rho alpha squared sigma squared over two. That last term is the disutility cost of risk-bearing.
+
+Since expected utility is decreasing in alpha, the risk-averse entrepreneur sells the entire project, alpha equal to zero, and is perfectly insured. Risk-neutral investors bear all the risk.
+
+Slide 76: now theta is unobservable. Suppose entrepreneurs can choose either to self-finance, alpha equal to 1, or to sell the entire project, alpha equal to 0, at a price P common to all types.
+
+When a type-theta entrepreneur self-finances, she obtains utility u of W zero plus theta minus rho sigma squared over two. When she sells at price P, she obtains u of W zero plus P.
+
+At a price P, a type-theta entrepreneur seeks external financing if and only if W zero plus P is greater than W zero plus theta minus rho sigma squared over two. That is, if and only if theta is less than theta hat, which is P plus rho sigma squared over two.
+
+That is adverse selection: only low-quality entrepreneurs, with theta below theta hat, seek financing. And the equilibrium price must be P equal to the expected theta, given that theta is below theta hat. The price reflects only the types who actually sell.
+
+Slide 77: this equilibrium can be inefficient. Example: two types, theta one less than theta two, and the probability that theta is theta two is lambda. Here lambda is the share of high types; in Part eleven lambda will mean something else.
+
+In the first best, both types should sell the entire project, because both are risk-averse and investors are risk-neutral.
+
+If both types sell when theta is unobservable, the price would be lambda theta two plus one minus lambda theta one. The high-ability entrepreneur is willing to sell the entire project if and only if lambda theta two plus one minus lambda theta one is at least theta two minus rho sigma squared over two. Rearranged: theta two minus the pooled price, lambda theta two plus one minus lambda theta one, is at most rho sigma squared over two. On the left, the price discount; on the right, the disutility cost of risk-bearing.
+
+Simplify the left side yourself: it is one minus lambda times theta two minus theta one. So the high type sells only if the share of low types, times the quality gap, is small relative to her risk cost. If this condition fails, the high type keeps her project, and the equilibrium is inefficient: she bears risk that investors could have borne for free.
+
+Slide 78: partial self-financing as a signal, Leland and Pyle, 1977. Suppose now the entrepreneur can choose any alpha between zero and one. Can partial self-financing be a signal that separates good entrepreneurs, theta two, from bad ones, theta one?
+
+The slide defines the equilibrium concept. A perfect Bayesian equilibrium, a PBE, is a set of self-financing and pricing strategies, alpha of theta and P of alpha, and a belief function mu of alpha, giving the investors' common belief that the entrepreneur is of high quality after observing alpha, such that three conditions hold. One: the entrepreneur chooses alpha optimally, given the investors' strategies. Two: mu of alpha is derived from Bayes' rule where possible. Three: the investors' pricing strategies form a Nash equilibrium of the simultaneous-move game in which the probability that theta is theta two, given alpha, is mu of alpha.
+
+A note on notation, from the slide. P changes meaning here. Before, P was the price of the project before the investment of 1 is made. Now P stands for the value of the "firm" after the 1 is invested. Therefore, when the entrepreneur sells the project, she receives P minus 1.
+
+Slide 79. For a given pair alpha and P, the expected utility of the entrepreneur is v of alpha and P given theta, which is E of u of w. Wealth is W zero, minus the bracket 1 minus one minus alpha times P, plus alpha times one plus r tilde of theta. She pays the cost 1, receives one minus alpha times P for the share she sells, and keeps alpha of the gross return.
+
+Using the log-normal result, this is u of W zero minus 1, plus one minus alpha times P, plus alpha times one plus theta, minus rho alpha squared sigma squared over two.
+
+Regroup: u of W zero minus 1 plus P, minus alpha times the bracket P minus one plus theta, minus rho alpha squared sigma squared over two. The term P minus one plus theta is the mispricing: how much the market overvalues the firm relative to its true expected value. And the last two terms together, alpha times the mispricing plus the risk term, are the cost of self-financing.
+
+Note that the marginal cost of self-financing is smaller for the high type. Take the derivative of that cost with respect to alpha: it is P minus one plus theta, plus rho alpha sigma squared. A higher theta makes the first piece smaller. Keeping a share of a good project costs less, because what you give up by not selling it at the market price is smaller. This is the single-crossing, or sorting, condition that makes separation possible.
+
+Slide 80, constructing a separating equilibrium. The price, given beliefs, is P of alpha equal to mu of alpha times one plus theta two, plus one minus mu of alpha times one plus theta one. It always lies between one plus theta one and one plus theta two.
+
+In a separating equilibrium, the price at the low type's choice is one plus theta one, and the price at the high type's choice is one plus theta two. Each type is priced correctly.
+
+In a separating equilibrium, the low type chooses alpha star of theta one equal to zero. Once she is recognized, she has nothing to signal, so she takes full insurance.
+
+Denote by alpha tilde the share of self-financing that makes bad entrepreneurs indifferent between their own allocation and the good ones' allocation. The bad type's own allocation gives W zero plus theta one. Mimicking gives her W zero, plus theta two times one minus alpha tilde, plus alpha tilde theta one, minus rho alpha tilde squared sigma squared over two. Set them equal. Cancel W zero, subtract theta one: zero equals one minus alpha tilde, times theta two minus theta one, minus rho alpha tilde squared sigma squared over two. Rearranged: alpha tilde squared over one minus alpha tilde equals two times theta two minus theta one, over rho sigma squared.
+
+Note that alpha star of theta two must be at least alpha tilde, because otherwise bad entrepreneurs would prefer the allocation of good ones.
+
+Slide 81. And good entrepreneurs prefer their allocation over the bad entrepreneur's allocation if alpha star of theta two is at most alpha prime, where W zero plus theta two minus rho alpha prime squared sigma squared over two is at least W zero plus theta one. Or: alpha prime squared equals two times theta two minus theta one, over rho sigma squared.
+
+And alpha prime is greater than alpha tilde. Why: alpha tilde squared equals alpha prime squared times one minus alpha tilde, which is less than alpha prime squared.
+
+Again, there is a continuum of equilibria, any alpha star of theta two between alpha tilde and alpha prime, and they can be Pareto ranked. The Pareto-dominating equilibrium is the one with alpha star of theta two equal to alpha tilde: the least costly signal that still deters mimicking.
+
+Slide 82. A possible set of beliefs is mu of alpha equal to one when alpha is alpha star of theta two, and mu of alpha equal to zero otherwise. Any other retained share is read as a low type.
+
+In the Pareto-dominating equilibrium, the utility of the bad entrepreneur is the same as when types are observable: u of W zero plus theta one. And the utility of the good entrepreneur is u of W zero plus theta two, minus rho alpha tilde squared sigma squared over two. That last term is the informational cost: the risk she must keep to be believed.
+
+The books. Tirole develops the same model as Application 8, "Diversification and Incomplete Insurance", printed pages 260 to 262, with a general concave utility instead of CARA. Under symmetric information each type sells out at her expected income and is fully insured. Under asymmetric information the bad type still gets full insurance, and the good type limits her diversification, choosing the point where the investors' break-even line meets the bad type's indifference curve. He notes that the good type's indifference curves are steeper, because she is less eager for insurance, and that limited diversification is good news: an entrepreneur selling her entire stake triggers a negative stock price reaction.
+
+Amaro de Matos, section 3.2.2, "When Managers Are Also Investors", printed pages 82 to 85, states the original Leland and Pyle model, where the retained fraction alpha is the signal and outsiders infer the expected return as a function of alpha. On printed page 84 he gives two propositions. Proposition 3.2.1: the inferred expected return is strictly increasing in alpha if and only if management's demand for equity is normal. Proposition 3.2.2: in the signalling equilibrium, managers hold a larger alpha than they would if they could costlessly communicate the true value. He adds that, in most cases, debt rises with the managers' retained share.
+
+Recap of Part ten. With CARA utility and normal returns, expected utility is u of W zero plus theta minus rho alpha squared sigma squared over two, so with observable types everyone sells everything. With hidden types and an all-or-nothing choice, only types below theta hat, equal to P plus rho sigma squared over two, sell: a lemons market. With a free choice of alpha, the low type keeps nothing, and the high type keeps alpha tilde, where alpha tilde squared over one minus alpha tilde equals two times theta two minus theta one over rho sigma squared, at an informational cost of rho alpha tilde squared sigma squared over two.
+
+Checklist. You should be able to derive the wealth expression of slide 73; to do the log-normal step of slide 75; to derive theta hat; to state the condition on slide 77 and simplify the price discount; to define a perfect Bayesian equilibrium in three conditions; to derive alpha tilde and alpha prime; and to say why the Pareto-dominant equilibrium sets alpha equal to alpha tilde.
+
+
+Part eleven. IPO underpricing: the model of Rock. Slides 83 to 91.
+
+The claim of this part: when some investors are informed and allocations are rationed pro rata, uninformed investors get all of the bad issues and only part of the good ones; to keep them in the market, the offer price must be below the expected market value. That is the winner's curse, and it explains average underpricing.
+
+Slide 83. The empirical evidence: IPOs tend to be underpriced. Equivalently, prices tend to rise on the offer day. There are many potential explanations; Lowry and co-authors, 2017, give a survey. Here we focus on one: asymmetric information among investors.
+
+Slide 84, the set-up. The firm issuing stock has value V, which is either V B or V G, with V B less than V G. The share of good firms in the economy is alpha, and it is public knowledge. Careful again: here alpha is the share of good firms.
+
+The current owner of the firm does not know its true value. There are two types of buyers. Uninformed investors believe the firm's value is V hat, which is alpha V G plus one minus alpha V B. Informed investors, the specialists, know the true value of the firm.
+
+Slide 85. Informed investors have capital lambda times A, and uninformed investors have capital one minus lambda times A. Here lambda is the informed investors' share of capital.
+
+The key assumption: informed investors do not have enough capital to fund the IPO by themselves. One minus lambda times A is greater than V G, which is greater than V B, which is greater than lambda A. And in case the offer is oversubscribed, investors are rationed on a pro-rata basis.
+
+Slide 86. When informed and uninformed investors are free to trade, and order flow is public information, the expected market-clearing price after the issue has to be V hat. Why? When V is V G, informed investors want to hold the stock if the price is below V G, and everyone infers that the true value is V G. When V is V B, informed investors will not hold the stock if the price is above V B, and everyone infers the value is V B. Since the firm is good with probability alpha, the expected market price after the issuance, E of P one, is V hat.
+
+Slide 87. Let P zero, strictly between V B and V G, be the offer price. Is P zero equal to E of P one, which is V hat? If P zero is less than E of P one, the IPO is underpriced on average.
+
+The informed investors' demand. If V is V G, they know the offer is underpriced, and they demand D I G equal to lambda A over P zero, all their capital. If V is V B, they know the offer is overpriced, and they demand D I B equal to zero.
+
+Slide 88, the uninformed investors' demand. It cannot depend on the true value of V, which they do not know. So either D U is zero, or D U is one minus lambda times A, over P zero. If D U is zero, the IPO fails for lack of demand.
+
+When V is V G and D U is one minus lambda times A over P zero, the issue is oversubscribed and rationed pro rata. Uninformed investors get only the fraction D U over D U plus D I G of the firm. Since total demand is A over P zero, that fraction is one minus lambda.
+
+When V is V B and D U is one minus lambda times A over P zero, the informed stay out, and the uninformed buy the whole issue. That is the winner's curse: you get everything you asked for exactly when it is bad news.
+
+Slide 89. When is D U equal to one minus lambda times A over P zero? Uninformed investors need to break even on average. On the board: alpha, times one minus lambda, the share they own if the firm is good, times V G minus P zero, their profit if the firm is good; plus one minus alpha, times 1, the share they own if the firm is bad, times V B minus P zero, their loss if the firm is bad; all equal to zero.
+
+Expand. Alpha V G minus alpha P zero, minus alpha lambda times V G minus P zero, plus one minus alpha times V B, minus one minus alpha times P zero, equals zero. Collect: alpha V G plus one minus alpha V B is V hat; minus alpha P zero minus one minus alpha P zero is minus P zero. So: V hat minus P zero minus alpha lambda times V G minus P zero equals zero.
+
+Solve for P zero. V hat minus alpha lambda V G equals P zero times one minus alpha lambda. So P zero equals V hat minus lambda alpha V G, over one minus lambda alpha. The slide rewrites this as V hat times the fraction one minus lambda alpha V G over V hat, over one minus lambda alpha. Since V hat is less than V G, the numerator fraction is smaller than the denominator, so P zero is less than V hat, which is E of P one.
+
+Despite the underpricing, uninformed investors only break even on average. The underpricing is not a gift to them; it is the compensation for the winner's curse.
+
+Slide 90, the comparative statics. Underpricing disappears under symmetric information, that is, with lambda equal to zero: then P zero equals V hat. Underpricing increases with the fraction of informed investors: the derivative of P zero with respect to lambda is negative. Differentiating, it equals alpha times V hat minus V G, divided by the square of one minus lambda alpha, which is negative because V hat is below V G; that step is ours. Underpricing can increase if the underwriter favours large, informed buyers. And, keeping V hat constant, underpricing increases when V G minus V B increases.
+
+Slide 91 is the list of references: Holmström 2015; Kawai, Onishi and Uetake 2022; Leland and Pyle 1977, in the Journal of Finance; Lowry, Michaely, Volkova and others 2017; Michaely, Rossi and Weber 2021; and Stiglitz and Weiss 1981, in the American Economic Review.
+
+The books. Amaro de Matos, section 6.2.2, "Asymmetry between Investors", printed pages 163 and 164, presents Rock with a continuous value and costly information. Watch the notation: there, alpha is the fraction of shares allocated to the informed investors, not the share of good firms. With zero profits for both groups, he obtains that the expected value minus the offer price equals the total cost of information, N c, divided by the number of shares: IPOs are underpriced on average. On printed page 165, section 6.2.3, Beatty and Ritter add that underpricing rises with the ex ante uncertainty about value, and that the offer price must fall as the informed share rises. Tirole's Application 9, from printed page 262, gives a different, signalling explanation of underpricing, which you can read for contrast.
+
+Recap of Part eleven. Informed investors buy only good issues; the uninformed, rationed pro rata, get a share one minus lambda of good issues and all of the bad ones. Their break-even gives P zero equal to V hat minus lambda alpha V G, over one minus lambda alpha, which is below V hat. Underpricing vanishes when lambda is zero, and rises with lambda and with the gap V G minus V B.
+
+Checklist. You should be able to state the capital assumption and explain why it is needed; to derive the uninformed allocation of one minus lambda; to write the break-even equation and solve it for P zero; to prove P zero is below V hat; and to sign the derivative with respect to lambda.
+
+
+Support part one. The common pitfalls.
+
+Each pitfall is said in two steps: the error, then the correction.
+
+Pitfall one. The error is to think that market breakdown can happen whenever there are bad types. The correction: breakdown needs m R below I, and that is impossible if q R is at least I. Breakdown requires a non-creditworthy bad type and alpha below alpha star.
+
+Pitfall two. The error is to call every cross-subsidy inefficient. The correction: when both types have positive net present value, cross-subsidization only redistributes, and total value is unchanged, 37.5 in the example. It is inefficient only when it funds a negative net present value bad type, which is overinvestment.
+
+Pitfall three. The error is to use the slide's chi, with denominator p, and then subtract chi times I. The correction: with denominator p, the discount is chi over one minus chi, times I. If you want a discount of the form ratio times I, the ratio has denominator m and equals p over m minus one. Both give 2 in the example.
+
+Pitfall four. The error is to forget limited liability when explaining pooling. The correction: because R f is never negative, every type, including a type with a negative net present value project, prefers being funded to not being funded. That is why the bad type always joins the pool.
+
+Pitfall five. The error is to value money not lent at zero when computing the economy's value. The correction: unlent money goes to the risk-free bond and returns exactly what was put in, which is why the symmetric-information values with q equal to 0.5 are 35 and 32, not 20 and 8.
+
+Pitfall six. The error is to believe that more information always raises efficiency. The correction: the credit bureau reduces cross-subsidization in both examples, but raises total value only when it stops funding negative net present value projects. With q equal to 0.7, value stays at 37.5.
+
+Pitfall seven. The error, in the pecking order, is to think the good type wants a large stake in success for investors because investors then share the upside. The correction: her loss is m minus p, times R u S minus R u F, and m minus p is negative, so she wants the spread as small as possible. That means investors get all of R F in failure: debt.
+
+Pitfall eight. The error is to treat the Stiglitz and Weiss drop at r star as proof of rationing. The correction: rationing needs the bank's return at r star to be its global maximum. In the slide's own numbers the return climbs back to about 1.06 at r max, above the 0.88 at r star.
+
+Pitfall nine. The error is to think collateral is useful under symmetric information. The correction: it destroys one minus p times one minus delta times C in expectation, so under symmetric information C is zero. It is used only as a signal, and then its whole cost is that same expected loss.
+
+Pitfall ten. The error is to read the separating contract as always better for the good type. The correction: it is better only when adverse selection is severe, few good types or a large gap between p and q, because the pooling payoff rises with alpha while the separating payoff does not depend on alpha.
+
+Pitfall eleven. The error is to mix up the letters. Alpha is the share of good types in the lemons model, the retained share in Leland and Pyle, the share of good firms in Rock, and the informed investors' allocation in Amaro de Matos. Lambda is the probability of the high type on slide 77 and the informed investors' share of capital in Rock. The correction: re-read the definition at the top of each block.
+
+Pitfall twelve. The error is to say Rock's underpricing makes the uninformed rich. The correction: they only break even on average; the underpricing exactly offsets the losses from receiving all of the bad issues.
+
+Pitfall thirteen. Four misprints on the slides. Slide 21 prints the bad type's net present value as minus 30 plus 0.7 times 10; it is 0.7 times 50, which gives the printed 5. Slide 26 prints 0.8 times 0.6 for the bad-type term; it is 0.8 times 0.5, which gives the printed 0.56. Slide 33 labels the bad-record repayment R x G; it is R x B. Slide 37 prints the value with the bureau as 34.5; the slide's own numbers give 34.25. None of them changes a conclusion.
+
+
+Support part two. The spoken formula sheet.
+
+For each formula, you will hear its name. Pause, say the formula aloud yourself, then listen to the answer.
+
+The market's prior. Pause and recall. m is alpha p plus one minus alpha q, and it lies strictly between q and p.
+
+The breakdown threshold. Pause and recall. Alpha star is I over R minus q, all over p minus q. Breakdown if alpha is below alpha star and q R is below I.
+
+Symmetric-information repayments. Pause and recall. R u G is I over p; R u B is I over q.
+
+Symmetric-information interest rates. Pause and recall. i G is one over p minus one; i B is one over q minus one.
+
+The pooling repayment. Pause and recall. R u is I over m, and R u G is less than R u, which is less than R u B.
+
+The good type's payoff under pooling. Pause and recall. p times R minus I over m, equal to p R minus I, minus chi over one minus chi times I, with chi equal to one minus alpha times p minus q over p.
+
+Bayes' rule for the bureau. Pause and recall. The probability of good given x G is the probability of x G given good, times alpha, over the probability of x G.
+
+The updated belief. Pause and recall. m x G is the probability of good given x G times p, plus the probability of bad given x G times q. In the example 0.79; and m x B is 0.71.
+
+The pecking-order decomposition. Pause and recall. The good type's utility is the net present value plus m minus p, times R u S minus R u F.
+
+The optimal pecking-order contract. Pause and recall. R u F equals R F, and R u S equals R F plus I minus R F, over m.
+
+Stiglitz and Weiss borrower payoff. Pause and recall. R bar minus p i times one plus r times I, for type i.
+
+Stiglitz and Weiss thresholds. Pause and recall. r star is R bar over p L I minus one; r max is R bar over p H I minus one.
+
+Bank return. Pause and recall. m times one plus r below r star; p H times one plus r between r star and r max.
+
+Collateral break-even under symmetric information. Pause and recall. p R u plus one minus p times delta C equals I.
+
+The cost of collateral. Pause and recall. Utility is p R minus I, minus one minus p times one minus delta times C.
+
+The separating programme. Pause and recall. Maximize p times R minus R tilde, minus one minus p times C tilde, subject to q times R minus R tilde, minus one minus q times C tilde, at most q R minus I, and p R tilde plus one minus p times delta C tilde, at least I.
+
+The separating collateral. Pause and recall. C G is I over one plus q times one minus p times one minus delta, over p minus q.
+
+The separating repayment. Pause and recall. R u G is one minus q minus delta times one minus p, over p times one minus q minus delta q times one minus p, all times I.
+
+CARA certainty equivalent. Pause and recall. Expected utility is u of W zero plus theta minus rho alpha squared sigma squared over two.
+
+The lemons cut-off with self-financing. Pause and recall. Theta hat is P plus rho sigma squared over two, and P is the expected theta given theta below theta hat.
+
+Leland and Pyle signal. Pause and recall. Alpha tilde squared over one minus alpha tilde equals two times theta two minus theta one, over rho sigma squared.
+
+Leland and Pyle upper bound. Pause and recall. Alpha prime squared equals two times theta two minus theta one, over rho sigma squared.
+
+Rock's break-even. Pause and recall. Alpha times one minus lambda times V G minus P zero, plus one minus alpha times V B minus P zero, equals zero.
+
+Rock's offer price. Pause and recall. P zero is V hat minus lambda alpha V G, over one minus lambda alpha, which is below V hat.
+
+
+Support part three. The reading route and the exercises.
+
+First, the reading route in the books, in the order of the lecture.
+
+Tirole, chapter 6, section 6.2, "Implications of the Lemons Problem and of Market Breakdown", starting at printed page 241. Read the privately-known-prospects model on page 241; subsection 6.2.1, market breakdown and cross-subsidization, on pages 242 and 243, including the remark on the measure of adverse selection; Application 1, market timing, on page 244; Application 2, assets in place and the negative stock price reaction, pages 244 to 246; and Application 3, the pecking-order hypothesis, pages 246 to 248.
+
+Tirole, chapter 6, section 6.3, "Dissipative Signals", starting at printed page 249. Application 4, certification, pages 249 to 251. Application 5, costly collateral pledging, pages 251 to 254. Application 6, short-term maturities, from page 254. Application 7, payout policy, from page 257. Application 8, diversification and incomplete insurance, which is Leland and Pyle, pages 260 to 262. Application 9, underpricing, from page 262.
+
+Amaro de Matos, chapter 3, section 3.2.2, "When Managers Are Also Investors", Leland and Pyle, printed pages 82 to 85, with Propositions 3.2.1 and 3.2.2 on page 84. Section 3.2.3, "Signals Conditioned by Investment Opportunities", Myers and Majluf, printed pages 85 to 89. Chapter 6, section 6.2.2, "Asymmetry between Investors", Rock, printed pages 163 and 164, then section 6.2.3 on page 165.
+
+Stiglitz and Weiss's numerical example, Holmström 2015, Kawai and co-authors 2022, and Michaely and co-authors 2021 are on the slides only.
+
+Now the exercises. These are addresses only; the statements are in the lists.
+
+From list R7, lectures 3 to 5.
+
+List R7, exercise 1, Ross, Westerfield, Jordan and Lamb, Fundamentos, chapter 15, question 3, printed page 537. It trains the winner's curse of Part eleven.
+
+List R7, exercise 5, Grinblatt and Titman, chapter 19, exercise 19.6, printed page 687. It trains the dilution from issuing undervalued equity, Part six.
+
+List R7, exercise 6, Amaro de Matos chapter 6, exercises 4 and 6, printed page 175. It trains Rock's model, Part eleven.
+
+List R7, exercise 11, Tirole chapter 6, exercise 6.2, with exercise 6.1 as part zero, printed page 274. It trains pooling, cross-subsidies and breakdown, Parts three and four.
+
+List R7, exercise 19, Tirole chapter 6, exercise 6.7, printed pages 276 to 278. It trains information sharing among lenders, Part five.
+
+List R7, exercise 20, Amaro de Matos chapter 3, section 3.2.6, exercise 2, printed page 95. It trains Leland and Pyle, Part ten.
+
+From list R5, asymmetric information.
+
+List R5, exercise 2, Grinblatt and Titman, chapter 19, exercise 19.2, printed page 687. Debt as a signal of good news.
+
+List R5, exercise 3, Grinblatt and Titman, chapter 19, exercise 19.4, printed page 687. Investment and internal cash, the pecking order.
+
+List R5, exercise 4, Berk, DeMarzo and Harford, chapter 17, exercises 17.14 to 17.18, printed pages 528 and 529. Repurchase timing under private information.
+
+List R5, exercise 6, Tirole chapter 6, exercise 6.1, printed page 273. Privately known private benefit, cross-subsidies and breakdown.
+
+List R5, exercise 7, Amaro de Matos chapter 3, section 3.2.6, exercise 4, printed page 95. The Myers and Majluf issue rule.
+
+List R5, exercise 8, Amaro de Matos chapter 3, section 3.2.6, exercise 1, printed page 95. Ross's debt signalling model.
+
+List R5, exercise 9, Tirole chapter 6, exercise 6.6, printed page 276. Buying a costly rating, certification.
+
+List R5, exercise 10, Tirole chapter 6, exercise 6.10, printed page 279. Short maturity as a signal.
+
+List R5, exercise 11, Tirole chapter 6, exercise 6.9, printed page 278. Herding in sequential financing.
+
+List R5, exercise 12, Amaro de Matos chapter 3, section 3.2.6, exercise 5, printed page 95. Myers and Majluf with issuing costs.
+
+List R5, exercise 13, Tirole chapter 6, exercise 6.5, printed page 275. A continuum of types and the negative price reaction.
+
+List R5, exercise 14, Tirole chapter 6, exercise 6.8, printed page 278. The separating programme and the pecking order with variable investment.
+
+List R5, exercise 15, Tirole chapter 6, exercise 6.3, printed page 274. Reputational capital over two periods.
+
+
+Support part four. Self-test.
+
+Fifteen questions. After each one, stop the audio and answer before you go on.
+
+Question one. Write m, and prove that it lies strictly between q and p. Pause and answer.
+
+Question two. Derive alpha star from the condition m R equal to I, and compute it for R equal to 50, I equal to 30, p equal to 0.8, q equal to 0.5. Pause and answer.
+
+Question three. Explain in two sentences why the symmetric-information contracts cannot survive asymmetric information. Pause and answer.
+
+Question four. With R equal to 50, I equal to 30, p equal to 0.8, q equal to 0.7 and alpha equal to 0.5, compute R u, the interest rate, U G and U B under pooling. Pause and answer.
+
+Question five. Show that m equals p times one minus chi, and use it to derive the good type's discount. Pause and answer.
+
+Question six. Why is the outcome efficient when q is 0.7, but inefficient when q is 0.5, with alpha equal to 0.5 in both cases? Give the two values of the economy. Pause and answer.
+
+Question seven. Using Bayes' rule, compute the probability that a borrower with a clean record is good, and the belief m x G, for the bureau example. Pause and answer.
+
+Question eight. Why does the credit bureau raise efficiency with q equal to 0.5 but not with q equal to 0.7? Pause and answer.
+
+Question nine. Reproduce the decomposition of slide 45: the good type's utility as the net present value plus one more term. Pause and answer.
+
+Question ten. Show that the good type sets R u F equal to R F, and solve for R u S. Pause and answer.
+
+Question eleven. In the Stiglitz and Weiss example, compute R bar, r star and r max. Then say what must be true of the bank's return for rationing to occur. Pause and answer.
+
+Question twelve. Show that under symmetric information no collateral is pledged. Pause and answer.
+
+Question thirteen. Write the separating programme with collateral, and say why both constraints bind. Pause and answer.
+
+Question fourteen. In the Leland and Pyle model, derive alpha tilde from the bad type's indifference, and state the good type's informational cost. Pause and answer.
+
+Question fifteen. In Rock's model, derive the offer price P zero from the uninformed investors' break-even, and explain why it falls as lambda rises. Pause and answer.
+
+
+Support part five. Glossary.
+
+Hidden information: a characteristic, such as a default probability, known to one side of a trade and not the other.
+
+Adverse selection: at a given price, the worse types are the ones most willing to trade, so the pool that trades is worse than average.
+
+Lemons problem: the name, from the used-car market, for a market in which a single pooled price drives out good quality.
+
+Prior, m: the market's belief about the probability of success, alpha p plus one minus alpha q.
+
+Limited liability: the borrower cannot pay more than the project returns, so her payoff is never negative.
+
+Pooling equilibrium: an equilibrium in which different types choose the same contract, so the market cannot tell them apart.
+
+Separating equilibrium: an equilibrium in which different types choose different contracts, so the market infers each type from its choice.
+
+Cross-subsidization: good types pay more than their fair price and bad types less, so lenders gain on the first and lose on the second.
+
+Market breakdown: no lending at all, because even the whole return of the average project does not cover the investment.
+
+Overinvestment: funding of negative net present value projects, here of bad types carried by the pool.
+
+Underinvestment: failure to fund positive net present value projects, here of good types in a breakdown.
+
+Index of adverse selection, chi: one minus alpha times p minus q over p, the product of the share of bad types and a likelihood ratio.
+
+Pledgeable income: the largest expected payment the borrower can promise to investors.
+
+Credit bureau: an institution that collects and shares borrowers' repayment histories, giving lenders a public signal of type.
+
+Bayes' rule: the rule that updates a prior belief after a signal, the probability of the signal given the type, times the prior, over the probability of the signal.
+
+Pecking order: the ranking of funding sources by information sensitivity: internal funds, then debt, then equity.
+
+Information-sensitive claim: a claim whose value depends strongly on the private information, such as equity; debt backed by safe cash flow is the least sensitive.
+
+Mean-preserving spread: a riskier version of a random payoff with the same mean, made by adding zero-mean noise.
+
+Credit rationing: excess demand for loans at the prevailing rate, which the lender does not eliminate by raising the rate.
+
+Backward-bending supply: a loan supply curve that falls at high rates because higher rates worsen the borrower pool.
+
+Signal: a costly, observable action whose cost differs across types enough to make it credible.
+
+Sorting condition, or single crossing: the property that the signal is cheaper at the margin for the good type.
+
+Collateral: an asset handed to the lender in default, worth C to the borrower but only delta C to the lender.
+
+No-mimicking constraint: the condition that the bad type prefers her own contract to the good type's.
+
+CARA utility: constant absolute risk aversion, minus e to the minus rho w, with coefficient rho.
+
+Certainty equivalent: the sure wealth that gives the same utility as a risky prospect; here W zero plus theta minus rho alpha squared sigma squared over two.
+
+Perfect Bayesian equilibrium: strategies and beliefs such that each player acts optimally given beliefs, and beliefs follow Bayes' rule wherever possible.
+
+Pareto-dominant equilibrium: the equilibrium that no other equilibrium improves on for every type.
+
+IPO underpricing: an offer price below the expected trading value, so the price tends to rise on the first day.
+
+Winner's curse: in Rock's model, the uninformed receive the whole issue precisely when it is bad and only part of it when it is good.
+
+
+Support part six. The whole topic in five lines.
+
+One. When borrowers know their type and lenders do not, the lender prices the average, m equal to alpha p plus one minus alpha q, and the bad type always pools.
+
+Two. The pooled price either breaks the market, when m R is below I, or cross-subsidizes the bad type, costing the good type chi over one minus chi times I, and funds negative net present value projects when q R is below I.
+
+Three. Better public information, such as a credit bureau, shrinks the subsidy and raises efficiency only when it stops funding bad projects.
+
+Four. Good types shrink the tax by issuing claims insensitive to their private information, internal funds, then debt, then equity, or by costly signals: collateral, retained ownership as in Leland and Pyle, short maturities, and payouts.
+
+Five. Asymmetry among investors produces the winner's curse, so IPOs must be underpriced on average, P zero below V hat, more so the more informed investors there are.

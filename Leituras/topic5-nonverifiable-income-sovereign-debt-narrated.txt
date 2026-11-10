@@ -1,0 +1,1022 @@
+Finanças Two, Corporate Finance. Topic 5: Nonverifiable income, the threat of termination, and sovereign debt. Professor Bernardo Ricca. A listening version of the thirty slides, with the course books as labelled complements.
+
+How to listen.
+
+This is the full content of the Topic 5 slides, rewritten to be heard rather than read. Nothing is summarized away. Every claim is proved step by step, every perturbation in every proof is said out loud, and every formula is the one on the slide or in the book being cited.
+
+The lecture has two halves. The first half is a corporate-finance model: a borrower whose income the lender can never verify, who repays only because the lender threatens to shut the project down. The second half is the same idea at the level of a country: a sovereign that can always refuse to pay, whose debt is priced by foreign investors who anticipate exactly when it will refuse.
+
+There are eleven main parts. Part one: nonverifiable income and strategic default. Part two: the threat-of-termination model, with one period and then two. Part three: the optimal-contract programme and Claim 1. Part four: Claim 2. Part five: Claim 3, its footnote, and the solution. Part six: comparative statics and the readings of the model. Part seven: the book complements, Amaro de Matos on one versus many creditors and on maturity, and Tirole on predation. Part eight: the sovereign-debt setup. Part nine: value functions, default sets and the recursive equilibrium. Part ten: Claims 1 and 2 of the sovereign model and what they do to bond prices. Part eleven: the independent and identically distributed case, Claims 3 and 4, the default threshold and the endogenous borrowing limit.
+
+Then six support parts: the common pitfalls, a spoken formula sheet for active recall, the reading route and exercises, a self-test, a glossary, and finally the whole topic in five lines.
+
+All mathematics is spoken in words. A few conventions. When you hear "R tilde two", that is the random income of the second period, written on the slide as R with a tilde and a subscript two. When you hear "E of R two", that is its expected value. "Gamma zero" and "gamma one" are continuation probabilities. In the sovereign half, "V o", "V d" and "V c" are value functions with a superscript o, d or c, for option, default and continuation. "B prime" is next period's asset position, and "y prime" is next period's output.
+
+Page numbers are printed page numbers. For Tirole, The Theory of Corporate Finance, the PDF page is the printed page plus thirteen. For Amaro de Matos, Theoretical Foundations of Corporate Finance, the PDF page is the printed page plus eighteen.
+
+One scope rule applies throughout. The course covers only its nine syllabus topics and its bibliography. This lecture sits in the agency block of the course, next to Topic 4. The threat-of-termination model is in both main books, so the books are used to deepen it. The sovereign-debt model, Eaton and Gersovitz from 1981 and Arellano from 2008, is not covered by any course book. For that half, the narration stays inside the slides: it explains every step, the economics of every claim and the intuition, and imports nothing from outside literature.
+
+Before we start, the thesis of the whole topic in one sentence. When a lender can never see or seize the borrower's income, the only thing that makes the borrower pay is something the borrower would lose by not paying, and the lender must commit to destroy value, by liquidating a project or excluding a country, often enough to make that loss credible.
+
+
+Part one. Nonverifiable income and strategic default. Slides 2 and 3, with Tirole section 3.8, printed page 141.
+
+One point one. What nonverifiable income means.
+
+Slide 2 opens with a stark assumption. The entrepreneur can divert income, that is, always report failure, without sanctions. Whatever the project earns, the borrower can say it earned nothing, and no court, auditor or lender can prove otherwise.
+
+The slide gives three interpretations, and each is worth hearing as a real situation.
+
+First, especially for small firms, sales might not be recorded by invoices. A small shop sells for cash, and the lender has no record of how much came in.
+
+Second, it is difficult to judge whether some expenses are necessary or perks. The income may be recorded, but it is spent on things that look like costs and are in fact consumption by the entrepreneur.
+
+Third, sovereign debt. The lender cannot seize the cash flows, nor the collateral, of the borrowing country. This third interpretation is the bridge to the second half of the lecture. Keep it in mind.
+
+One point two. Liquidity default versus strategic default.
+
+The slide then separates two kinds of default.
+
+Liquidity default is when the borrower is not able to repay because the project has not generated enough cash. The borrower would like to pay but cannot.
+
+Strategic default is when the borrower is able to repay but chooses not to do so.
+
+With verifiable income, the lender only has to worry about the first kind: the court can see that the cash was there and force payment. With nonverifiable income, the lender has to worry about the second kind as well, and in fact the second kind is the whole problem. A borrower who can always claim failure will always claim failure, unless claiming failure costs her something.
+
+One point three. The two deterrents.
+
+Slide 3 lists the means to deter strategic defaults. There are two.
+
+The first is direct bankruptcy costs, such as collateral seizure or penalties. If the borrower who does not pay loses an asset or pays a fine, then not paying is no longer free.
+
+The second applies when the lender and the borrower interact repeatedly. The lender threatens termination, or nonfinancing of future projects. If the borrower does not pay today, the relationship ends, and whatever the borrower would have earned from the future of the relationship is lost.
+
+The rest of the lecture is about the second deterrent. And, as you will hear in part six, the first deterrent turns out to be a special case of the second.
+
+One point four. How Tirole places this model. Tirole, section 3.8, "Nonverifiable Income", printed page 141.
+
+Tirole presents this model as the polar case at the end of his review of credit-rationing models. In the costly state verification model, which precedes it in his chapter 3, the lender can learn the borrower's income by paying an audit cost. Here, in his words, the borrower's income "cannot be observed even through an audit." The borrower can consume it "with complete impunity."
+
+Tirole then states the consequence that frames the whole topic: the borrower's incentive to repay "can then only result from a threat of termination or nonfinancing of future projects." He credits the formal models to Bolton and Scharfstein, 1990, and to Hart and Moore, 1989, with extensions by Bolton and Scharfstein in 1996 and by Gromb in 1994.
+
+One more remark from Tirole is worth keeping. There is no need, he says, to add an effort choice to this model. The nonverifiability of income already allows strategic nonrepayment, and therefore already creates moral hazard. The hidden action here is not shirking. It is pocketing the cash.
+
+Recap of part one. Nonverifiable income means the borrower can always report failure. That creates strategic default on top of liquidity default. Two deterrents exist: direct bankruptcy costs, such as collateral or penalties, and, in a repeated relationship, the threat of termination. The lecture builds the second.
+
+Checklist for part one. You should be able to state the difference between liquidity default and strategic default in one sentence each. You should be able to give the three interpretations of nonverifiable income on slide 2. You should be able to name the two deterrents on slide 3.
+
+
+Part two. The threat-of-termination model: one period, then two. Slides 4 to 7.
+
+Two point one. The one-period setup. Slide 4.
+
+A risk-neutral entrepreneur with wealth A has access to a project that costs I at date zero.
+
+The project generates a nonverifiable cash flow R tilde one at date one. R tilde one takes one of two values: zero, or R one.
+
+The probability of success is p. That is, the probability that R tilde one equals R one is p.
+
+There is no discounting.
+
+The project is profitable: it has positive net present value. On the slide, p times R one is greater than I.
+
+So the entrepreneur needs to borrow I minus A, and the project is worth doing.
+
+Two point two. Why the one-period project cannot be financed. Slide 5.
+
+Contracts cannot be contingent on the realization of R tilde one, since it is not verifiable. No contract can say "pay D if the project succeeded", because no one but the entrepreneur knows whether it succeeded.
+
+So, after obtaining I minus A from a lender, the borrower always reports R hat one equal to zero. R hat one is the reported income.
+
+Why always? Because at date one there is nothing after date one. Reporting zero keeps the whole R one in the borrower's pocket, and the lender has no way to punish the report.
+
+The lender anticipates this. A lender who expects to receive zero will not lend I minus A, which is positive. The slide's conclusion: the project cannot be financed.
+
+Notice what just happened. The project has positive net present value, p times R one exceeds I, and yet it is not financed. The friction is not a lack of value. It is a lack of anything the lender can hold over the borrower.
+
+Two point three. Adding a second period. Slide 6.
+
+Suppose now that, apart from the date-one income, the project generates income R tilde two at date two, if it is not terminated at date one. R tilde two takes the values zero or R two, and the probability of success is again p.
+
+Look first at date two. There is nothing the lender can do to incentivize truthful reporting at date two. Date two is the last date. The borrower will always report R hat two equal to zero and pay zero to the lender. The one-period logic applies to the last period of any horizon.
+
+But at date one things are different. At date one, the lenders can incentivize repayment by threatening to liquidate the project. If the borrower does not pay at date one, the lenders can shut the project down, and the borrower loses the second-period income.
+
+The slide fixes what liquidation means. If the project is liquidated at date one, the entrepreneur receives zero at date two, and the lenders receive a liquidation value L at date one.
+
+Tirole adds a useful simplification here, printed page 141. Because the borrower repays nothing at date two anyway, as long as zero belongs to the support of the second-period income, "we may as well treat" the second-period income "as if it were a deterministic private benefit of continuation for the entrepreneur." All that matters about date two is its expected value, which goes to the borrower if and only if the project continues. Tirole writes R two for that expected value; the slides write E of R two.
+
+Two point four. The contract. Slide 7.
+
+The contract has three elements, written as the triple D, gamma zero, gamma one.
+
+D is the repayment at date one. It must lie between zero and R one: the borrower cannot pay more than the success income.
+
+Gamma zero, between zero and one, is the probability of continuation if D is not paid.
+
+Gamma one, between zero and one, is the probability of continuation if D is paid.
+
+So the contract does not condition on income, which no one can see. It conditions on the one thing everyone can see: whether the payment D was made. And it attaches a probability of continuation to each case. Randomized continuation is a device: it lets the lender fine-tune the strength of the threat between zero and one.
+
+Two point five. The two assumptions. Slide 7.
+
+Assumption A1: liquidation is inefficient. L is less than E of R two. The project is worth more alive, in the borrower's hands at date two, than its liquidation value to the lender at date one.
+
+Assumption A2: L is at least zero and less than I minus A. The liquidation value alone cannot repay the loan. If the lender's only income were the liquidation value, the lender could not break even. This assumption is what forces the contract to rely on actual repayments, as you will see in Claim 1.
+
+Two point six. The truth-telling incentive constraint. Slide 7.
+
+Suppose the project is successful at date one. The borrower has R one in hand. She chooses between two actions.
+
+If she truthfully reports R hat one equal to R one and repays D, she keeps R one minus D now, and the project continues with probability gamma one, giving her E of R two in expectation. Her payoff is R one minus D plus gamma one times E of R two.
+
+If she reports zero and pays nothing, she keeps all of R one, and the project continues with probability gamma zero. Her payoff is R one plus gamma zero times E of R two.
+
+She repays if the first is at least the second. On the board: R one minus D plus gamma one times E of R two is greater than or equal to R one plus gamma zero times E of R two.
+
+Cancel R one on both sides and move terms. The condition is equivalent to: gamma one minus gamma zero, times E of R two, is greater than or equal to D.
+
+Read that inequality slowly, because the whole first half of the lecture turns on it. The left side is what the borrower loses by not paying: the drop in the continuation probability, times the value of continuing. The right side is what she gains by not paying: the repayment D she keeps. Repayment is incentive compatible when the expected loss of the future outweighs the money saved today.
+
+Tirole's phrasing, printed page 141: "the increase in the probability of termination due to nonrepayment must offset the loss in income D for the entrepreneur."
+
+Two remarks. First, the borrower never repays when first-period income is zero; she has nothing to pay with. So in the failure state, the project continues with probability gamma zero, whatever she would have liked to do. Second, from the lender's side a nonpayment looks the same whether it is a liquidity default or a strategic default. That is why gamma zero must apply to both. The threat that disciplines the strategic defaulter also hits the unlucky borrower, and that is the source of the inefficiency.
+
+Recap of part two. With one period, the borrower always reports zero and the project cannot be financed, despite positive net present value. With two periods, date two is still unenforceable, but date-one repayment can be enforced by the threat of liquidation. The contract is the triple D, gamma zero, gamma one. A1 says liquidation is inefficient; A2 says liquidation alone cannot repay the loan. Repayment is incentive compatible when gamma one minus gamma zero, times E of R two, is at least D.
+
+Checklist for part two. You should be able to explain why the one-period project cannot be financed. You should be able to explain why nothing can be enforced at date two. You should be able to define the three elements of the contract and the two assumptions. You should be able to derive the incentive constraint from the two payoffs, cancelling R one.
+
+
+Part three. The optimal-contract programme and Claim 1. Slide 8.
+
+Three point one. The programme.
+
+The optimal contract maximizes the borrower's expected payoff, subject to the lender breaking even, the borrower telling the truth, and limited liability. Let me dictate each piece.
+
+The objective. Maximize, over D, gamma zero and gamma one: p times the bracket R one minus D plus gamma one times E of R two, plus one minus p, times gamma zero times E of R two.
+
+The first term is the success state, with probability p: the borrower keeps R one minus D and continues with probability gamma one. The second term is the failure state, with probability one minus p: she pays nothing, keeps nothing at date one, and continues with probability gamma zero.
+
+The lender's participation constraint, labelled IR lender. p times the bracket D plus one minus gamma one times L, plus one minus p times one minus gamma zero times L, is greater than or equal to I minus A.
+
+In the success state the lender receives D, and, with probability one minus gamma one, also the liquidation value L. In the failure state the lender receives nothing in cash, but with probability one minus gamma zero liquidates and receives L. All of that must cover the loan, I minus A.
+
+The borrower's incentive constraint, labelled IC borrower. Gamma one minus gamma zero, times E of R two, is greater than or equal to D.
+
+Limited liability, labelled LL. D is between zero and R one.
+
+Tirole calls this Program V, printed page 142. He adds a simplification: assume R one is "sufficiently large" so that the constraint D at most R one is not binding. Keep that in the background: in the perturbations that follow, every time D is raised a little, we take for granted there is room to raise it.
+
+Three point two. The strategy of the proofs.
+
+All three claims on slides 8 to 10 are proved the same way. Take a contract that violates the claim. Construct a small perturbation of it that still satisfies every constraint and gives the borrower a strictly higher payoff. Then the original contract could not have been optimal.
+
+This perturbation method is worth learning as a method. Each time, listen for three checks: the lender still breaks even, the borrower still tells the truth, and the borrower is strictly better off.
+
+Three point three. Claim 1: IR lender is binding.
+
+The claim: at the optimum, the lender exactly breaks even. Her constraint holds with equality.
+
+Step one. Given A2, we must have D greater than zero.
+
+Why? Suppose D were zero. Then the lender's only income would be liquidation proceeds. In the success state she would get one minus gamma one times L, and in the failure state one minus gamma zero times L. Each of those is at most L, so the lender's expected income would be at most L. But A2 says L is less than I minus A. So the lender could not break even. Therefore D must be strictly positive.
+
+Step two. As a result, gamma one is greater than gamma zero.
+
+Why? The incentive constraint says gamma one minus gamma zero, times E of R two, is at least D. Since D is strictly positive and E of R two is positive, gamma one minus gamma zero must be strictly positive.
+
+Step three. Suppose the lender's constraint were slack: she earns strictly more than I minus A. Then it is possible to reduce D by a small amount such that all constraints are satisfied.
+
+Check each constraint. IR lender: it was slack, so a small cut in D keeps it satisfied. IC borrower: the right side, D, falls, and the left side is unchanged, so it still holds. Limited liability: D was strictly positive, so a small enough cut keeps it at or above zero.
+
+Step four. The borrower's payoff increases. D enters the objective with a minus sign, multiplied by p. A cut of D by a small amount raises the objective by p times that amount.
+
+So a contract with a slack lender constraint is not optimal. At the optimum, IR lender binds.
+
+The economics: the lender is competitive, or at least the contract is written to maximize the borrower's payoff, so any surplus left to the lender is surplus the borrower could have kept. Tirole says the same in one sentence, printed page 142: "Otherwise, the debt D could be lowered while keeping the two constraints satisfied."
+
+Recap of part three. The programme maximizes the borrower's expected payoff subject to IR lender, IC borrower and limited liability. Claim 1: IR lender binds. The proof first uses A2 to show D is positive, hence gamma one exceeds gamma zero, and then shows that a slack lender constraint would allow a small cut in D that keeps every constraint and makes the borrower better off.
+
+Checklist for part three. You should be able to write the objective and the three constraints from memory. You should be able to explain, using A2, why D must be positive. You should be able to carry out the three checks of the Claim 1 perturbation.
+
+
+Part four. Claim 2: no liquidation after repayment. Slide 9.
+
+Four point one. The claim.
+
+Claim 2 says gamma one equals one. There is no liquidation when the borrower repays D.
+
+This sounds obvious, and the economics is indeed simple, but the proof is instructive because it shows how the lender is compensated when a threat is removed.
+
+Four point two. The perturbation.
+
+Suppose, to the contrary, that one is greater than gamma one, which is greater than gamma zero, which is at least zero. Recall from Claim 1 that gamma one exceeds gamma zero.
+
+Construct a new contract in two moves.
+
+Move one. Increase gamma one by epsilon, where epsilon lies in the interval from zero, excluded, to one minus gamma one, included. That upper limit keeps the new gamma one at most one, so it is still a probability.
+
+Move two. Increase D to D plus epsilon times L, such that IR lender is satisfied.
+
+Four point three. Check one: the lender still breaks even.
+
+In the success state the lender used to get, with probability one minus gamma one, the liquidation value L. Now that probability is smaller by epsilon. So in the success state the lender loses epsilon times L from liquidation, and gains epsilon times L from the higher repayment. The two cancel exactly. Weighted by p, the lender's expected income is unchanged. IR lender holds as before.
+
+Four point four. Check two: the borrower still tells the truth.
+
+The slide writes the new incentive constraint as a chain. Gamma one plus epsilon minus gamma zero, times E of R two, is equal to gamma one minus gamma zero, times E of R two, plus epsilon times E of R two. That is greater than D plus epsilon times E of R two. Which is greater than D plus epsilon times L.
+
+The first inequality is due to the fact that the original contract is incentive compatible: gamma one minus gamma zero, times E of R two, was at least D. A fine point here: the original contract only guarantees "at least", so that first step is, strictly speaking, a weak inequality. It does not matter, because the second step is strict.
+
+The second inequality is due to the assumption that liquidation is inefficient, A1: L is less than E of R two, so epsilon times E of R two exceeds epsilon times L.
+
+So the left side of the new incentive constraint exceeds the new repayment, D plus epsilon times L. The new contract satisfies IC borrower.
+
+Tirole says it in one line, printed page 142: "the incentive constraint remains satisfied as R two is greater than L." The raise in the threat gap, epsilon times the value of continuation, is larger than the raise in the repayment, epsilon times the liquidation value.
+
+Four point five. Check three: the borrower is strictly better off.
+
+The borrower's payoff changes by minus p times epsilon times L, from the higher repayment in the success state, plus p times epsilon times E of R two, from the higher continuation probability in the success state. The total is p times epsilon times the difference E of R two minus L, which is strictly positive by A1.
+
+So a contract with gamma one below one is not optimal. Gamma one equals one.
+
+Four point six. The economics.
+
+The slide's closing sentence: liquidation in case of repayment at date one undermines incentives and increases inefficiency, as we assumed that L is less than E of R two.
+
+Two harms in one. Liquidating a borrower who has just paid is wasteful, because the project is worth more alive. And it punishes good behaviour, which narrows the gap between gamma one and gamma zero, the very gap that makes repayment worthwhile. Tirole, printed page 142: liquidating in the case of repayment "is bad both for efficiency (liquidation is always inefficient) and for incentives."
+
+Recap of part four. Claim 2: gamma one equals one. Raise gamma one by epsilon and D by epsilon times L. The lender is exactly compensated, the incentive constraint is easier because E of R two exceeds L, and the borrower gains p times epsilon times E of R two minus L.
+
+Checklist for part four. You should be able to state why the raise in D is exactly epsilon times L. You should be able to say which assumption justifies each of the two inequalities in the chain. You should be able to compute the borrower's gain.
+
+
+Part five. Claim 3, the footnote, and the solution. Slides 10 and 11.
+
+Five point one. The claim.
+
+Claim 3: IC borrower is binding. At the optimum, the threat is exactly strong enough to make repayment worthwhile, and no stronger.
+
+Five point two. A preliminary: gamma zero is less than one.
+
+Since D is greater than zero, we must have gamma zero less than one. With gamma one equal to one from Claim 2, the incentive constraint reads: one minus gamma zero, times E of R two, at least D. A positive D needs a positive one minus gamma zero. Tirole's words, printed page 142: "there would never be a repayment if there were no threat of liquidation in the case of nonrepayment."
+
+Five point three. The perturbation.
+
+Suppose IC borrower were slack. Construct a new contract in two moves.
+
+Move one. Increase gamma zero to gamma zero plus epsilon. The project is now liquidated less often after nonpayment. Because gamma zero is below one, there is room to do this.
+
+Move two. Increase D by epsilon times L times one minus p, over p, such that IR lender is satisfied.
+
+Five point four. Check one: the lender still breaks even.
+
+In the failure state, which has probability one minus p, the lender loses epsilon times L, because liquidation is less likely by epsilon. Her expected loss is one minus p, times epsilon times L.
+
+In the success state, which has probability p, she gains the extra repayment, epsilon times L times one minus p, over p. Her expected gain is p times that, which is one minus p, times epsilon times L.
+
+Gain and loss cancel. IR lender still holds. Notice the logic of the scaling: the compensation is collected in the success state, which happens with probability p, for a loss incurred in the failure state, which happens with probability one minus p. So the repayment must rise by the ratio of the two probabilities.
+
+Five point five. Check two: the borrower still tells the truth, for small epsilon.
+
+The slide says: by choosing epsilon small enough, IC borrower is also satisfied. Footnote 1 on slide 10 gives the exact bound. Here it is, step by step.
+
+The new incentive constraint, with gamma one still at its old value, is: gamma one minus gamma zero minus epsilon, times E of R two, at least D plus epsilon times L times one minus p, over p.
+
+The left side fell by epsilon times E of R two, because the threat gap narrowed. The right side rose by epsilon times L times one minus p, over p, because the repayment rose. Both move against the constraint.
+
+But the original constraint was slack: gamma one minus gamma zero, times E of R two, minus D, is a strictly positive number. Call it the slack.
+
+The footnote: if epsilon is less than the slack, divided by the sum of L times one minus p, over p, and E of R two, then gamma one minus gamma zero, times E of R two, minus epsilon times E of R two, is greater than D plus epsilon times L times one minus p, over p.
+
+Let me unpack that bound. Multiply both sides of "epsilon is less than the slack over the sum" by the sum. You get: epsilon times L times one minus p, over p, plus epsilon times E of R two, is less than the slack. Now write out the slack: gamma one minus gamma zero, times E of R two, minus D. Move D to the left and epsilon times E of R two to the right, and you have exactly the footnote's inequality.
+
+Therefore, the footnote concludes, gamma one minus gamma zero minus epsilon, times E of R two, which equals gamma one minus gamma zero, times E of R two, minus epsilon times E of R two, is greater than D plus epsilon times L times one minus p, over p. That is the new incentive constraint, satisfied strictly.
+
+In words: when the constraint has slack, a small enough perturbation uses up only part of the slack.
+
+Five point six. Check three: the borrower is strictly better off.
+
+The borrower's payoff changes in two places. In the success state she pays more: minus p times epsilon times L times one minus p, over p, which simplifies to minus one minus p, times epsilon times L. In the failure state she continues more often: plus one minus p, times epsilon times E of R two.
+
+The total is one minus p, times the difference E of R two minus L, times epsilon. By A1 it is strictly positive. Tirole writes the same computation on printed page 142.
+
+So a slack incentive constraint is not optimal. IC borrower binds.
+
+The economics: every unit of unnecessary threat is a unit of inefficient liquidation borne in the failure state, where the borrower is merely unlucky. The contract cuts the threat to the minimum that still induces repayment, and pays the lender for it with a higher D in the success state.
+
+Five point seven. The two equations of the solution.
+
+Given these results, gamma one equals one, and the optimal D and gamma zero solve two equations.
+
+The binding lender constraint, with gamma one equal to one so the success-state liquidation term disappears: p times D, plus one minus p, times one minus gamma zero, times L, is equal to I minus A. Tirole numbers this equation three point twenty.
+
+The binding incentive constraint, with gamma one equal to one: one minus gamma zero, times E of R two, is equal to D. Tirole numbers this equation three point nineteen.
+
+Five point eight. Solving for the liquidation probability. Slide 11.
+
+Substitute the second equation into the first. Replace D by one minus gamma zero times E of R two:
+
+p times one minus gamma zero times E of R two, plus one minus p times one minus gamma zero times L, is equal to I minus A.
+
+Factor out one minus gamma zero:
+
+one minus gamma zero, times the bracket p times E of R two plus one minus p times L, is equal to I minus A.
+
+Divide. The probability of liquidation after nonpayment is: one minus gamma zero is equal to I minus A, over p times E of R two plus one minus p times L. Tirole numbers this equation three point twenty-one.
+
+And the repayment follows from the incentive constraint: D is equal to E of R two times that same fraction.
+
+Read the formula as a ratio. The numerator is what the lender needs, the loan I minus A. The denominator is what one unit of liquidation probability is worth to the lender, in a precise sense: raising one minus gamma zero by one unit allows D to rise by E of R two, collected with probability p, and also yields L directly in the failure state, with probability one minus p. So the liquidation probability is the loan divided by the lender's return per unit of threat.
+
+A remark that follows from the formula itself. For one minus gamma zero to be a probability, the numerator must not exceed the denominator. If I minus A were larger than p times E of R two plus one minus p times L, even certain liquidation after nonpayment would not let the lender break even, and the project could not be financed. The slides do not dwell on this; it is simply what the formula says at its upper limit.
+
+Five point nine. The cost of the friction.
+
+One more step, using only the two equations, shows exactly what nonverifiability costs. Tirole does not write this step in section 3.8, but Amaro de Matos writes its exact analogue, as you will hear in part seven.
+
+The borrower's payoff at the optimum, net of her own wealth A, is: p times the bracket R one minus D plus E of R two, plus one minus p times gamma zero times E of R two, minus A.
+
+Use the binding lender constraint to replace p times D by I minus A, minus one minus p times one minus gamma zero times L. Then collect terms. The p times E of R two from the success state and the one minus p times gamma zero times E of R two from the failure state add up to E of R two, minus one minus p times one minus gamma zero times E of R two. So the borrower's net payoff equals p times R one, plus E of R two, minus I, minus one minus p, times one minus gamma zero, times the difference E of R two minus L.
+
+The first three terms are the value of the project if it were never liquidated. The last term is the expected deadweight loss: liquidation happens only after nonpayment, nonpayment on the equilibrium path happens only after failure, with probability one minus p, liquidation then happens with probability one minus gamma zero, and each liquidation destroys E of R two minus L. Because the lender breaks even, the borrower bears all of that loss.
+
+Recap of part five. Claim 3: the incentive constraint binds. Raise gamma zero by epsilon and D by epsilon times L times one minus p, over p; the lender is compensated, a small enough epsilon keeps the borrower truthful, as the footnote's bound shows, and the borrower gains one minus p times E of R two minus L times epsilon. The solution: gamma one equals one, and one minus gamma zero equals I minus A over p times E of R two plus one minus p times L.
+
+Checklist for part five. You should be able to explain why the D increase is scaled by one minus p over p. You should be able to derive the footnote's bound on epsilon by rearranging the slack. You should be able to solve the two binding constraints for one minus gamma zero, factoring step by step. You should be able to state the deadweight loss term.
+
+
+Part six. Comparative statics and the readings of the model. Slides 11 and 12, with Tirole section 3.8, printed pages 142 to 144.
+
+Six point one. When is liquidation less likely? Slide 11.
+
+The formula: one minus gamma zero equals I minus A, over p times E of R two plus one minus p times L. Liquidation, which is inefficient, is less likely in four cases. For each, the slide gives the economics; I add which part of the formula moves.
+
+First, when the gain of continuing, E of R two, is large. The borrower has more to lose by not honoring the payment D. In the formula, E of R two sits in the denominator, so the fraction falls. Tirole: "the borrower then has more to lose from being terminated and the probability of termination can be reduced."
+
+Second, when the liquidation value L increases. It alleviates the break-even condition of the lender. In the formula, L sits in the denominator, so the fraction falls. Tirole: the lenders "obtain more money when liquidating and therefore can liquidate less often and still recoup their investment."
+
+Third, when the probability p of first-period success increases. Lenders are repaid more often. In the formula, the denominator is p times E of R two plus one minus p times L. Raising p shifts weight from L to E of R two, and since E of R two exceeds L by A1, the denominator rises and the fraction falls. Notice that this step uses A1.
+
+Fourth, when the borrower's net worth increases. The amount borrowed, I minus A, decreases. In the formula, the numerator falls.
+
+The fourth case connects to the main lesson of Topic 4: net worth relaxes agency problems. Here, more wealth means less borrowing, a weaker threat is needed, and less value is destroyed.
+
+Six point two. The inefficiency is the price of incentives. Slide 12.
+
+Slide 12 begins: lenders have to incentivize repayment by engaging in some wasteful, inefficient activity. In this model, the inefficiency comes from the inefficient liquidation, as E of R two is greater than L.
+
+Tirole draws the parallel with the costly state verification model on printed pages 142 and 143. In both models lenders cannot be repaid "unless they undertake some wasteful action." The counterpart of the audit cost in that model is "the waste in second-period value, R two minus L," in this one. In the two-outcome case the incentive constraints of the two models are identical.
+
+Tirole also notes a difference. The cost of the wasteful activity is borne by the lenders in the verification model, and by the borrower in the nonverifiable-income model. With a cash-constrained borrower, who bears the cost matters, and that accounts for a small difference between the two break-even conditions. He adds that the verification model is notoriously hard to extend to many periods, while the nonverifiable-income model extends more easily, citing Gromb, 1994.
+
+Six point three. The collateral reading. Slide 12.
+
+The costly collateral pledging interpretation. We can interpret L as the value that the lender obtains by seizing some collateral, an asset. Inefficiency comes from the fact that this asset is worth more when it is in the borrower's hands: E of R two is greater than L.
+
+This is the promise from part one: the first deterrent, collateral seizure, is a special case of the second. Tirole, printed page 143: "The Bolton–Scharfstein model can be viewed as a special case of costly collateral pledging. The collateral is the date-2 project." The lenders' gain from "seizing the collateral" is L; the value to the borrower of keeping it is R two, and the gap is the deadweight loss of the transfer. Tirole also lists the two purposes of collateral: it incentivizes management to repay, and it boosts pledgeable income.
+
+Six point four. Renegotiation. Slide 12.
+
+Room for renegotiation. After the termination decision, but before its implementation, the borrower can offer a bribe slightly above L, and smaller than E of R two, to the lender, who would be happy to accept. This prospect ex ante undermines incentives to pay out income, and reduces welfare.
+
+Walk through the logic. The borrower has defaulted. The random draw says "liquidate". At that moment, liquidation gives the lender L and the borrower zero. If the borrower offers slightly more than L to keep the project alive, the lender gains, and the borrower keeps E of R two minus the bribe, which is positive. Both are better off ex post.
+
+But the borrower had to have money to pay the bribe. So, as Tirole points out on printed page 143, the offer "demonstrates that the borrower has strategically defaulted (otherwise, she would have no money)." The lender should still accept, because the past is past. And a borrower who anticipates that liquidation will always be bought off for slightly more than L faces no real threat. The incentive constraint collapses, strategic default spreads, and the financing the threat was supposed to support unravels. Ex post efficiency destroys ex ante incentives.
+
+Tirole distinguishes two moments of renegotiation, printed page 143.
+
+The first is renegotiation after liquidation has taken place. For that to make sense, "liquidation" must be read as the nonfinancing of a second-period investment of size L that would give the borrower R two. Lenders will not bring in money at date two, because they will not be repaid anything. So a contract that specifies liquidation is renegotiation-proof in the two-period model. Tirole adds that this is no longer true with more than two periods, as Gromb, 1994, showed: lenders might expect to be repaid at date two through the threat of noncontinuation at date three. In a footnote, Tirole reports Gromb's striking result that even a monopoly lender may make no profit when the horizon is long, because a borrower can safely default if the lender is always eager to renegotiate after termination.
+
+The second is renegotiation after the termination decision but before its implementation. That is the slide's bribe.
+
+Tirole's summary of the analogy, printed page 143: a wasteful action by the lenders "serves as an incentive device in order to induce the borrower to pay out income. Once this income has been paid, though, the wasteful action no longer serves a purpose and the parties are better off renegotiating." And "the prospect of renegotiation, however, ex ante eliminates incentives to pay out income, and reduces welfare overall."
+
+Six point five. Tirole's bridge to sovereign debt. Printed pages 143 and 144.
+
+Section 3.8 ends with a paragraph titled "Relation to the sovereign debt literature." It is in the course book, so you should know what it says, and it prepares the second half of this lecture.
+
+Repayment of debt by a sovereign responds to two incentives: international sanctions, and the future cost of being shut out of the international capital market after default. These are the two deterrents of slide 3, at the level of a country. In one strand of that literature, Tirole says, lenders "cannot appropriate any of the current return and count solely on the nonrefinancing threat to recoup their investment," which is the Bolton and Scharfstein mechanism. He then reports results from that literature on when borrowing is or is not feasible without sanctions. Those results are beyond the slides, so they are mentioned here only to place the idea; the model the course examines is the one on slides 13 to 29.
+
+Recap of part six. Liquidation is less likely with a higher E of R two, a higher L, a higher p, which uses A1, and a higher net worth. The model is a model of wasteful incentive devices, close to costly state verification. Liquidation can be read as the seizure of collateral worth more to the borrower than to the lender. Renegotiation after the termination decision, a bribe slightly above L, is ex post efficient and ex ante destructive.
+
+Checklist for part six. You should be able to sign each comparative static and say which term of the formula moves. You should be able to explain why the effect of p depends on A1. You should be able to state the collateral reading in one sentence. You should be able to explain why the bribe reveals strategic default and why the lender still accepts it.
+
+
+Part seven. The book complements: one versus many creditors, maturity, and predation. Amaro de Matos chapter 5, sections five point two point one to five point two point three, printed pages 134 to 143; Tirole section 7.1, printed pages 283 and 291 to 295.
+
+This part is not on the slides. It is the course books' own treatment of the same mechanism, and it is clearly labelled as a complement. It is also where several exercises in the reading route come from.
+
+Seven point one. Amaro de Matos, section five point two point one, "Extending the Model", printed page 134. The setup.
+
+Amaro de Matos builds on Hart and Moore and on Bolton and Scharfstein. Agents are risk neutral, the risk-free rate is zero, there are two periods. At date zero an amount K is invested; the entrepreneur has no initial wealth. At date one the cash flow is x with probability q and zero with probability one minus q. It is observable to the investor and the entrepreneur but not verifiable by any third party.
+
+The manager can divert the cash flow and declare zero. The contract states: if the declared cash flow is x, a payment R x and, with probability beta x, the creditor's right to liquidate assets worth L x. If the declared cash flow is zero, a payment R zero, a liquidation probability beta zero, and a liquidation value L zero. If the project continues, it yields y at date two.
+
+The book notes that beta x equal to zero, beta zero equal to one, and L x equal to L zero, the value of the assets at date one, reduce this to an ordinary one-period debt contract with face value R x below x.
+
+Map this onto the slides. Amaro de Matos's beta is a liquidation probability, so beta zero plays the role of one minus gamma zero, and beta x plays the role of one minus gamma one. His q is the slides' p, his K is the slides' I minus A, and his y is the slides' E of R two.
+
+Seven point two. The incentive constraint and the optimal liquidation probability. Printed pages 135 and 136.
+
+The firm's expected return is: pi f equals q times the bracket x minus R x plus one minus beta x times y, plus one minus q times the bracket minus R zero plus one minus beta zero times y. That is equation 5.3.
+
+The investor's expected return is: pi i equals q times the bracket R x plus beta x times L x, plus one minus q times the bracket R zero plus beta zero times L zero, minus K. That is equation 5.4.
+
+There is one new element. If the manager hides x and is liquidated, she may keep a payoff S, not necessarily zero, because the liquidation value L zero does not correspond to the true value of the assets in that state. The incentive constraint, equation 5.5, is: x minus R x plus one minus beta x times y is greater than or equal to x minus R zero plus beta zero times S plus one minus beta zero times y.
+
+Setting R zero and beta x equal to zero is optimal; that is the book's version of Claim 2, no liquidation after repayment. The constraint then reads: R x is at most beta zero times y minus S. The investor takes the largest such R x, so the constraint binds; that is the book's version of Claim 3.
+
+Substituting, the investor's return is: pi i equals beta zero times the bracket q times y minus S plus one minus q times L zero, minus K. That is equation 5.6.
+
+And the firm's return becomes: pi f equals q x plus y minus K, minus one minus q, times beta zero, times y minus L zero. That is equation 5.7. In the book's words, the net present value of the project in the absence of liquidation "minus a cost due to contract incompleteness." This is the exact analogue of the deadweight-loss formula derived at the end of part five.
+
+The firm's return falls with beta zero and the investor's rises with it, so the optimal beta zero is the lowest one that lets the investor break even: beta zero equals K, over q times y minus S plus one minus q times L zero. Compare it with slide 11: the loan over the lender's return per unit of threat.
+
+Seven point three. Liquidity default versus strategic default, priced. Printed page 137.
+
+Now Amaro de Matos puts values on S and L zero, using the two kinds of default from slide 2.
+
+After a zero cash flow, the entrepreneur is not able to continue managing the project. This is a liquidity default. The creditor may sell to a third party who obtains alpha times y at date two, with alpha between zero and one: the incoming manager cannot do better than the one who left. The buyer incurs an informational cost c, uniformly distributed between zero and c bar. The remaining value alpha y is divided equally between creditor and buyer, so the buyer negotiates only if c is at most alpha y over two. Assuming alpha y over two is at most c bar, the probability that c is at most alpha y over two is alpha y over two c bar.
+
+So the expected liquidation payoff after a zero cash flow is: L zero equals alpha squared y squared, over four c bar. That is the probability, alpha y over two c bar, times the creditor's half, alpha y over two.
+
+After a nonzero cash flow, a default is a strategic default. The original manager negotiates the buyback of the firm with the creditholder, sharing the second-period return y. So S equals y over two.
+
+Substituting both, equation 5.8: beta zero equals K, over q times y over two, plus one minus q times alpha squared y squared over four c bar.
+
+Two comparative statics follow, matching slide 11. Beta zero decreases as q increases, so the inefficiency, one minus q times beta zero times y minus L zero, is lower when the risk of bankruptcy is lower. And beta zero decreases as alpha increases: the closer the new manager comes to achieving y, the less damage the reorganization does.
+
+Seven point four. Amaro de Matos, section five point two point two, "The Case of Many Creditholders", printed page 137.
+
+Bolton and Scharfstein, 1996, add the number, nature and type of creditors. At date zero, K buys two assets, A and B. With two creditors, each asset is collateral for one of them. Let y A and y B be the cash flows of each asset managed separately, and define delta equal to y minus y A minus y B, assumed positive: the two assets are worth more together than apart.
+
+With two creditors, the expected liquidation value after a zero cash flow, written L zero bar, is: alpha squared y squared over four c bar, minus alpha squared delta squared over thirty-six c bar, which is less than alpha squared y squared over four c bar, the one-creditor L zero. Liquidity default yields less with two creditors.
+
+In the strategic-default state, S equals y over two minus delta over six. The manager who defaults strategically now has to buy the firm back from two creditors, and her share falls.
+
+The book then writes the denominator of the new optimal beta zero as: q times the bracket y over two minus delta over six, plus one minus q times the bracket alpha squared y squared over four c bar minus alpha squared delta squared over thirty-six c bar. That is the expression as printed. A caution, though. The general denominator is q times y minus S, plus one minus q times L zero, and y minus S, with S equal to y over two minus delta over six, is y over two plus delta over six. The book's own next sentence, that creditors "are paid more in the case of strategic default," matches the plus sign. Keep both in mind when you work exercise 15 of list R7.
+
+The conclusion, printed page 138: two creditors "prevent strategic defaults more efficiently than does one single creditor, but" imply "more costly financial distress." The inefficiency term, beta zero times y minus L zero, is affected twice: through L zero, which is always greater with one creditor, and through beta zero, which can go either way, because the effects on S and on L zero run in opposite directions.
+
+Three conclusions, printed pages 138 and 139. First, increase the number of creditors when the risk of bankruptcy is low: then the efficient lever is to reduce S, the manager's gain from strategic default. When that risk is high, the efficient lever is to raise L zero, which means fewer creditors. Second, increase the number of creditors when the complementarity of activities, delta, is reduced: the fall in S is then more significant than the fall in L zero. Third, increase the number of creditors when alpha is small: the expected liquidation value rises with alpha, and faster with one creditor.
+
+Seven point five. Amaro de Matos, section five point two point three, "The Choice of the Duration", printed page 139.
+
+This section opens with a statement that ties maturity to the slides. Long-term debt avoids liquidation in the favorable state, when firms do not have enough resources to pay short-term debt. Short-term debt avoids strategic default, the entrepreneur's incentive to go bankrupt in order to appropriate the benefits of renegotiation, through the threat of short-term liquidation. In other words, short-term debt is the threat of termination with a maturity date attached.
+
+The book then presents Diamond's model, 1991 and 1993, built on asymmetric information and credit ratings. An entrepreneur needs K equal to one for a two-period project, good or bad. A good project pays X at date two; a bad one pays X with probability pi and zero otherwise. The investor's prior probability that the project is good is f, the credit rating. At date one the rating is upgraded or downgraded on nonverifiable news. All projects give the manager a nonassignable control rent C if she keeps control at date two, and lenders who are not repaid on short-term debt can remove management and liquidate for L, less than one.
+
+The results, stated as the book states them. Lemma five point two point one, printed page 141: between two contracts that do not liquidate on a downgrade, good entrepreneurs prefer the one with the higher value after a downgrade; so without liquidation risk they prefer short-term debt, which extracts larger payments from those who are downgraded. Lemma five point two point two, printed page 142: once liquidation is possible, good entrepreneurs prefer the liquidating structure only if the control rent C is below a bound. Proposition five point two point one, printed page 142: if C is zero, good entrepreneurs prefer short-term debt whatever their rating; if C is positive, they prefer short-term debt only if their rating f is above a bound, and otherwise long-term debt. The intuition, printed page 143: long-term debt never leads to liquidation at date one, because lenders do not hold control rights at that point.
+
+The thread back to the slides: short maturity gives the lender a termination right early, which disciplines strategic default, at the price of liquidating some projects that deserved to continue. That is the same trade-off as the one between gamma zero and the deadweight loss.
+
+Seven point six. Tirole, section 7.1, which begins on printed page 283, and the Bolton and Scharfstein predation story, printed pages 291 to 295.
+
+Tirole returns to Bolton and Scharfstein, 1990, in his chapter on product markets, under the heading "Strategic security design (Bolton and Scharfstein): reducing the sensitivity of investment to cash flow."
+
+The connection is this. A contract like the one on slide 8 makes continuation depend on early performance. A rival who knows that can prey: it can depress the weak firm's date-zero earnings so that the firm is not refinanced. Tirole states the predation-deterrence constraint as: D is greater than or equal to z S minus z F, times M minus D. Here z S and z F are the probabilities of refinancing after date-zero success and after failure, M is the monopoly profit, and, careful with the notation, D is the duopoly profit, not a repayment. To deter predation, the weak firm's contract must make continuation relatively insensitive to its own date-zero profit.
+
+Tirole lists three points from that literature. A financially weak firm can reduce predation through long-term contracting with its financiers. Financial cushions that insure against predation exacerbate moral hazard inside the firm, because a contract cannot tell a loss caused by predation from one caused by low effort. And these long-term contracts are credible: renegotiation toward less continuation would destroy value, and renegotiation toward more continuation would make investors lose, since the entrepreneur no longer has wealth to compensate them.
+
+The lesson for this topic: the threat of termination has a cost beyond the deadweight loss of liquidation. Its sensitivity to performance is precisely what disciplines the borrower, and precisely what a rival can exploit.
+
+Recap of part seven. Amaro de Matos reproduces the slides' result with beta zero as the liquidation probability, and prices the two kinds of default: S equal to y over two in strategic default, and L zero equal to alpha squared y squared over four c bar in liquidity default. Two creditors make strategic default less attractive and liquidity default more costly. Short-term debt is the termination threat with a date on it. Tirole shows the same threat can invite predation.
+
+Checklist for part seven. You should be able to map Amaro de Matos's q, K, y and beta zero onto the slides' p, I minus A, E of R two and one minus gamma zero. You should be able to derive L zero from the bargaining split and the uniform cost. You should be able to say why two creditors deter strategic default better but liquidate worse. You should be able to state the maturity trade-off in one sentence.
+
+
+Part eight. Sovereign debt: the setup. Slides 13 to 18.
+
+A reminder of the scope rule before we start. No course book covers this model. Everything in parts eight to eleven comes from the slides, and the depth comes from explaining each step, not from other sources. The slides cite two papers: Eaton and Gersovitz, 1981, and Arellano, 2008.
+
+Why does this model belong in the same lecture? Because a sovereign is the extreme case of nonverifiable income. Slide 2 already said it: the lender cannot seize the cash flows, nor the collateral, of the borrowing country. There is no court that can force a country to pay. So repayment can rest only on what the country loses by not paying. In the firm model, the loss was the continuation value. In the country model, it will be access to credit markets and some output.
+
+Eight point one. The economy. Slide 13.
+
+A small open economy has endowments that generate a nonstorable and stochastic output, y tilde t, which lies in a set Y equal to the interval from y underbar to y bar. Output is random, and it cannot be stored: whatever is not consumed today is lost, unless it is lent abroad.
+
+The stochastic process y tilde t, for t equal to zero, one, two and so on, is a Markov process with a transition function f of y prime and y. That function gives the density of next period's output, y prime, given that current period's output is y. So today's output carries all the information about tomorrow's distribution. A recession today can make a recession tomorrow more likely.
+
+The country has preferences given by the expectation at date zero of the sum, from t equal to zero to infinity, of beta to the power t times u of c t. Beta is between zero and one; u prime is positive and u double prime is negative. So the country discounts the future, likes consumption, and is risk averse: it prefers a smooth path of consumption to a volatile one.
+
+Eight point two. Markets and frictions. Slide 14.
+
+The country can smooth consumption by borrowing from or lending to foreign investors. This is the reason to borrow at all: to consume more than output in bad times and less in good times.
+
+Five features fix the environment.
+
+One. External capital markets are competitive, and investors are risk neutral.
+
+Two. Debt contracts, bonds, have a maturity of one period and are not state-contingent. That is, markets are incomplete. The country cannot buy insurance that pays when output is low. It can only issue a bond that promises the same face value whatever happens.
+
+Three. Debt contracts are not enforceable. At any time the country can renege on its debt, even if it has the means to repay. This is strategic default, exactly as on slide 2.
+
+Four. Default has costs: output loss and exclusion from capital markets.
+
+Five. The country defaults whenever this option is more valuable than repaying. There is no stigma, no moral cost, nothing else. Default is a choice made by comparing two values.
+
+Notice how features two and three interact. Because the bond is not state-contingent, the country owes the same amount in a boom and in a recession. Because the bond is not enforceable, the country can choose not to pay. So default becomes a crude form of the insurance the market does not offer: a way of not paying exactly in the states where paying hurts most. Part eleven will show that this is precisely when default happens.
+
+Eight point three. Bond prices and interest rates. Slide 15.
+
+In equilibrium, endogenous prices, or equivalently interest rates, will reflect the probability of default.
+
+The slide denotes the unit price of a bond with face value B prime by q of B prime and y. It is a function of the current output y and of the bond size B prime, because these two are the determinants of the government's incentives to default. Investors look at how much the country is promising to repay and at the state of the economy, and price the bond accordingly.
+
+The price of a bond with face value B prime is then q of B prime and y, times B prime.
+
+Alternatively, the interest rate on a bond with face value B prime is given by: one plus r of B prime and y is equal to B prime over q of B prime and y times B prime, which is equal to one over q of B prime and y. The gross interest rate is the face value received tomorrow divided by the price paid today, so it is just the inverse of the unit price. A lower price is a higher interest rate.
+
+Eight point four. The sign convention. Slide 16.
+
+B prime is an asset position, so its sign matters, and the slide draws two timelines.
+
+When the country buys bonds with face value B prime greater than zero, that is, when it lends, it pays q of B prime and y times B prime in the current period and receives B prime one period later. On the timeline: minus q times B prime now, plus B prime next period.
+
+When the country buys bonds with face value B prime less than zero, that is, when it sells bonds with face value minus B prime, which is positive, or in plain words, when it borrows, it receives minus q of B prime and y times B prime in the current period, a positive amount, and pays minus B prime one period later.
+
+So a negative B is debt. Keep this convention firmly, because every inequality in the claims depends on it. "B larger" means "more assets" or "less debt". "B smaller", more negative, means more debt.
+
+Eight point five. Repayment and default. Slide 17.
+
+The country starts the period with initial assets B, which are debt if B is negative, and observes the endowment realization y.
+
+When the country chooses to repay its debts, the resource constraint is: c is equal to y plus B minus q of B prime and y times B prime. Consumption equals output, plus the assets that mature today, minus what is spent on new bonds. When B prime is negative, the last term, minus q times B prime, is positive: it is the money raised by new borrowing.
+
+When the country defaults, it loses access to foreign credit markets. It is in autarky for a stochastic number of periods. The country will regain access to international markets next period with probability theta.
+
+Default also causes a reduction in output during the periods the government is in autarky. Instead of consuming the endowment y, the country consumes y def, which equals h of y and is at most y, until it reenters financial markets.
+
+So there are two costs of default, as slide 14 announced. Exclusion, which lasts on average a number of periods governed by theta. And the output loss, the gap between y and h of y.
+
+Eight point six. Investors and the pricing equation. Slide 18.
+
+Foreign investors can invest their funds at a constant international interest rate r, greater than zero. Investors can observe y every period and know the stochastic process. There is no hidden information here: investors know everything the country knows. The only friction is enforcement.
+
+Competition and risk neutrality imply the following, given a default probability delta of B prime and y, which itself is a function of y and B prime.
+
+The zero-profit condition: q of B prime and y, times B prime, times one plus r, is equal to B prime times one minus delta of B prime and y. Read it from the investor's side when the country borrows. The investor pays the price of the bond today; investing that amount at the safe rate would give it times one plus r tomorrow. The bond instead pays the face value with probability one minus delta, and nothing with probability delta. Competition drives the two to equality.
+
+Divide by B prime and by one plus r. The bond price is: q of B prime and y is equal to one minus delta of B prime and y, over one plus r.
+
+When B prime is positive, the country is lending, and the default probability is zero. The country does not default on what others owe it. When B prime is negative, the country is borrowing, and delta of B prime and y lies between zero and one.
+
+Prices decrease, equivalently interest rates increase, when the default probability increases. With delta equal to zero the price is the risk-free price, one over one plus r. With delta equal to one the price is zero: no one pays anything for a promise that will surely be broken.
+
+Recap of part eight. A small open economy with a Markov endowment and concave utility borrows abroad with one-period, non-contingent, unenforceable bonds. Default costs exclusion, with re-entry probability theta each period, and output, h of y instead of y. Negative B is debt. Competitive risk-neutral investors price the bond at one minus delta over one plus r, so the interest rate rises with the default probability.
+
+Checklist for part eight. You should be able to list the five features of the environment on slide 14. You should be able to write the resource constraint under repayment and say what each term means. You should be able to derive the price from the zero-profit condition. You should be able to state the sign convention and say what "B smaller" means.
+
+
+Part nine. Value functions, default sets and the recursive equilibrium. Slides 19 to 22.
+
+Nine point one. The state and the policies. Slide 19.
+
+The state variables are s, equal to the pair B and y: the assets maturing today and today's output. Given the state, three policy functions determine the equilibrium: B prime of s, for government assets; q of s, equal to q of B prime of s and y, for bond prices; and c of s, for consumption.
+
+Nine point two. The three value functions. Slide 19.
+
+Define V o of B and y as the value function for the country that has the option to default. Let V d of B and y denote the value function when the country chooses to default, and let V c of B and y denote the value function when the country chooses to repay, or continue.
+
+Then: V o of B and y is equal to the maximum of V d of B and y and V c of B and y.
+
+Each period, a country in good standing compares the two and takes the better one. That single line is the whole of the default decision.
+
+Nine point three. The value of default. Slide 20.
+
+The value of default is: V d of y is equal to u of y def, plus beta times the integral over next period's output of the bracket theta times V o of zero and y prime, plus one minus theta times V d of y prime, all multiplied by f of y prime and y.
+
+Take it term by term.
+
+Today the defaulting country consumes y def, its reduced output, so it gets u of y def. It cannot borrow or lend.
+
+Tomorrow, with probability theta, it regains access to markets. It reenters with assets equal to zero: the old debt is gone. From there it again has the option to default, so its value is V o of zero and y prime.
+
+With probability one minus theta, it stays in autarky, and its value is again V d of y prime.
+
+The integral averages over next period's output, using the transition density given today's output.
+
+One detail deserves attention. On slide 19, V d was written with B as an argument; on slide 20 it is written as a function of y alone. That is not a slip. Once the country defaults, the debt disappears, so the value of default does not depend on how much was owed. This fact drives Claim 2 in the next part: the value of default is the same whatever the debt, while the value of repaying falls with the debt.
+
+Nine point four. The value of repayment. Slide 20.
+
+The value of repayment is: V c of B and y is equal to the maximum, over B prime greater than or equal to Z, of the bracket u of y plus B minus q of B prime and y times B prime, plus beta times the integral over next period's output of V o of B prime and y prime times f of y prime and y.
+
+Today the country consumes what the resource constraint allows: output, plus maturing assets, minus spending on new bonds at the equilibrium price. Tomorrow it starts with assets B prime and, again, the option to default. It chooses B prime to maximize the sum.
+
+The constraint B prime at least Z, where Z is negative, is a lower bound on debt that prevents Ponzi schemes. Without it, the country could borrow ever larger amounts to pay old debt plus interest, forever. Z rules that out.
+
+Notice that the price inside the maximization is the equilibrium price function, which depends on B prime. The country knows that borrowing more changes the price it gets. It is a large borrower in its own bond market.
+
+Nine point five. The default set. Slide 21.
+
+Default is optimal if V d of y is greater than V c of B and y.
+
+At any given period, the set of output levels y in Y for which default takes place depends on the level of the government's assets maturing at that period, B. It is given by: D of B is equal to the set of y in Y such that V d of y is greater than V c of B and y.
+
+So D of B is the list of bad states, given the debt the country carries into the period. Ties are resolved in favour of repayment, because the inequality is strict.
+
+Nine point six. The default probability. Slide 21.
+
+The probability that the country defaults next period when it contracts debt B prime is: delta of B prime and y is equal to the probability that y prime belongs to D of B prime, given y. And that equals the integral, over the default set D of B prime, of f of y prime and y, with respect to y prime.
+
+Today the country chooses B prime. Tomorrow's default set is D of B prime. The default probability is the mass of tomorrow's output distribution, given today's y, that falls in that set. This is the delta that enters the bond price on slide 18. So the price of today's bond depends on tomorrow's default decision, which depends on tomorrow's value functions, which depend on future prices. That circularity is why the equilibrium must be defined recursively.
+
+Nine point seven. The definition of equilibrium. Slide 22.
+
+The recursive equilibrium for this economy is defined by a set of policy functions, defined over the state variables s equal to the pair B and y, for: one, consumption c of s; two, the government's asset holdings B prime of s, and default sets D of B; and price functions for bonds, q of B prime and y, such that three conditions hold.
+
+Condition 1. Consumption c of s satisfies the resource constraint.
+
+Condition 2. Taking as given the bond price function q of B prime and y, the asset holdings B prime of s and the default set D of B maximize the country's utility.
+
+Condition 3. Bond prices q of B prime and y reflect the government's default probabilities and are consistent with zero profits.
+
+Three conditions, three agents of the logic. The first is accounting. The second is the country's optimization, taking prices as a schedule. The third is the investors' competitive pricing, taking the country's default behaviour as given. In equilibrium, each side's beliefs about the other are correct.
+
+Recap of part nine. The state is assets and output. The value with the option to default is the maximum of the value of default and the value of repayment. Default gives u of h of y today and re-entry with zero assets with probability theta. Repayment gives today's consumption from the resource constraint plus the continuation value, with debt bounded by Z. The default set collects the outputs where default is strictly better, and the default probability is the transition mass on that set. The equilibrium combines resource feasibility, optimization given prices, and zero-profit prices given default.
+
+Checklist for part nine. You should be able to dictate V o, V d and V c and explain each term. You should be able to explain why V d does not depend on B. You should be able to define the default set and write the default probability as an integral. You should be able to state the three conditions of the recursive equilibrium.
+
+
+Part ten. Claims 1 and 2 of the sovereign model, and what they do to bond prices. Slides 23 and 24.
+
+Ten point one. Claim 1: the value of repayment rises with assets. Slide 23.
+
+Claim 1: for a given y in Y, V c of y and B is increasing in B. A note on notation: on slides 23 to 26 the arguments of V c appear in the order y then B, while slide 20 wrote B then y. It is the same function.
+
+The proof. Suppose B two is at least B one. Let B one prime and B two prime be the optimal choices when B equals B one and B equals B two, respectively. Then a chain of four steps.
+
+Step one, an equality. V c of y and B two is equal to u of y plus B two minus q of B two prime and y times B two prime, plus beta times the conditional expectation given y of V o of y prime and B two prime. That is the definition of V c, evaluated at its own optimal choice.
+
+Step two, an inequality. That is greater than or equal to u of y plus B two minus q of B one prime and y times B one prime, plus beta times the expectation of V o of y prime and B one prime. Why? Because B one prime is also a feasible choice for a country that starts with B two: the constraint on B prime, at least Z, does not depend on B. B two prime is the best choice, so it does at least as well as B one prime.
+
+Step three, another inequality. That is greater than or equal to u of y plus B one minus q of B one prime and y times B one prime, plus beta times the same expectation. Why? Because B two is at least B one and u is increasing. Starting with more assets, and making the same choice, means more consumption today and the same future.
+
+Step four, an equality. That last expression is exactly V c of y and B one, because B one prime is the optimal choice at B one.
+
+So V c of y and B two is at least V c of y and B one. The value of repaying is higher when the country owes less. This is a revealed-preference argument: the richer country could always imitate the poorer country's choice and consume more.
+
+Ten point two. Claim 2: default sets shrink as assets rise. Slide 23.
+
+Claim 2: if B two is at least B one, then D of B two is a subset of D of B one.
+
+The slide's reason: as V c of y and B increases with B, while V d of y remains constant, default is more likely when B is smaller, that is, when the level of debt is higher.
+
+Spelled out. Take any y in D of B two. By definition, V d of y is greater than V c of B two and y. By Claim 1, V c of B two and y is at least V c of B one and y. So V d of y is greater than V c of B one and y, which means y is in D of B one. Every output at which the less indebted country defaults is also an output at which the more indebted country defaults.
+
+This is where the fact from part nine pays off. If default also wiped out a value that depended on B, the comparison could go either way. Because the value of default ignores the debt, more debt only lowers one side of the comparison.
+
+Before moving on, the economics in plain words. More debt means a bigger repayment due today. The benefit of default, not paying, grows with the debt; the cost of default, exclusion and output loss, does not. So the set of states in which default is worth it can only grow as debt grows.
+
+Ten point three. Bond prices rise with assets. Slide 24.
+
+Now put Claim 2 into the pricing formulas. Recall: delta of B prime and y equals the probability that y prime is in D of B prime given y, which is the integral over D of B prime of f of y prime and y. And q of B prime and y equals one minus delta of B prime and y, over one plus r.
+
+By Claim 2, a larger B prime, less debt, gives a smaller default set. Integrating a nonnegative density over a smaller set gives a smaller number, so delta falls. With a smaller delta, the price q rises.
+
+Conclusion, as on slide 24: the equilibrium price function q of B prime and y is increasing in B prime, and the interest rate is decreasing in B prime. The more a country borrows, the less it gets per unit of face value, and the higher the interest rate it pays. Credit spreads rise with debt, not because investors are risk averse, they are risk neutral, but because more debt makes default more likely.
+
+Ten point four. The two bounds. Slide 24.
+
+Let B underbar be the upper bound of assets for which the default set is the entire set Y, and let B bar be the lower bound of assets for which the default set is empty. Formally: B underbar is equal to the supremum of the set of B such that D of B equals Y. B bar is equal to the infimum of the set of B such that D of B is the empty set.
+
+The slide states that B underbar is at most B bar, which is at most zero, due to Claim 1.
+
+Why the ordering? Default sets shrink as B rises, which is Claim 2, built on Claim 1. So the levels of B at which the country defaults in every state lie below the levels at which it defaults in no state. Why is B bar at most zero? With no debt, there is nothing to walk away from; default would bring only exclusion and the output loss, so it cannot be strictly better than repaying. The default set is empty at zero debt, and therefore the infimum of the B with empty default sets is at most zero.
+
+So the line of asset positions splits into three regions. Below B underbar, so much debt that the country defaults whatever happens. Between B underbar and B bar, debt that is repaid in some states and not in others. Above B bar, debt that is always repaid. Part eleven uses all three.
+
+Recap of part ten. Claim 1: the value of repaying rises with assets, by revealed preference and the monotonicity of u. Claim 2: since the value of default ignores debt, default sets shrink as assets rise. Hence the default probability falls and the bond price rises with B prime. B underbar is the largest asset level with default everywhere; B bar is the smallest with default nowhere; B underbar is at most B bar, which is at most zero.
+
+Checklist for part ten. You should be able to justify each of the four steps of Claim 1's chain, naming feasibility for the first inequality and monotonicity of u for the second. You should be able to prove Claim 2 in three lines. You should be able to explain why q is increasing in B prime. You should be able to define B underbar and B bar and describe the three regions.
+
+
+Part eleven. The independent and identically distributed case: Claims 3 and 4, the threshold, the borrowing limit, and the risk-free region. Slides 25 to 29, with the references on slide 30.
+
+Eleven point one. The special case. Slide 25.
+
+The rest of the lecture specializes the model. Output is independent and identically distributed over time, theta equals zero, and h of y equals y.
+
+Read each restriction. Independent and identically distributed: today's output tells nothing about tomorrow's, so the default probability, and therefore the price, no longer depend on current y. The slides write q of B prime. Theta equal to zero: a country that defaults never returns to markets; exclusion is permanent. H of y equal to y: there is no output loss; the only cost of default is exclusion.
+
+In this case the value of default simplifies to: V d of y equals u of y plus beta times the expectation of V d of y prime. The country lives in permanent autarky and consumes its endowment.
+
+Eleven point two. Claim 3: no capital inflows when default is possible. Slide 25.
+
+Claim 3: if, for some B, the default set is non-empty, that is, D of B is not the empty set, then there are no contracts available, pairs of a price q of B prime and a choice B prime, such that the economy can experience capital inflows, meaning B minus q of B prime times B prime greater than zero.
+
+What is a capital inflow here? From the resource constraint, consumption equals y plus B minus q of B prime times B prime. If B minus q of B prime times B prime is positive, the country consumes more than its output: money flows in. With debt maturing, B negative, that happens when new borrowing, minus q times B prime, raises more than the old debt that must be repaid.
+
+The proof is by contradiction. Suppose there exists a B hat such that B minus q of B hat times B hat is greater than zero. Then take a y for which default is optimal. Such a y exists because D of B is not empty.
+
+Step one. Default is optimal at y, so V d of y is greater than V c of y and B.
+
+Step two. Write out both sides. The slide writes: this is equivalent to u of y plus beta times the expectation of V d of y prime being greater than u of y plus B minus q of B hat times B hat, plus beta times the expectation of V o of B hat and y prime. The left side is V d of y in this special case. The right side is the value of repaying and choosing B hat. Strictly, this line follows from step one because V c is the maximum over all choices, so it is at least the value of the particular choice B hat. The slide's double arrow should be read in that direction.
+
+Step three. Rearrange: u of y minus u of y plus B minus q of B hat times B hat, is greater than beta times the expectation of V o of B hat and y prime, minus beta times the expectation of V d of y prime. And the slide notes that the right side is greater than or equal to zero.
+
+Why is the right side nonnegative? Because V o is the maximum of V d and V c, so V o is at least V d in every state. The option to default is worth at least as much as defaulting.
+
+Step four. The contradiction. The left side compares u at y with u at y plus a positive number. Since u is increasing, the left side is negative. A negative number cannot be greater than a nonnegative one. Contradiction. So no such B hat exists.
+
+The slide's interpretation: if the country could roll over the debt, that is, borrow an amount large enough to repay the previous debt, it would choose to do so, given that it can still exercise the option to default in the next period.
+
+Think of it this way. Rolling over gives more consumption today than default, since default gives only y, and it keeps the option to default tomorrow, which is worth at least as much as defaulting tomorrow. Rolling over dominates default. So, whenever default does happen, it must be that rolling over was not possible: every available contract required a net repayment. Default happens when the market will not refinance.
+
+Eleven point three. Claim 4: default is more tempting in bad times. Slide 26.
+
+Claim 4: default incentives are stronger the lower the endowment. For all y one at most y two, if y two is in D of B, then y one is in D of B.
+
+The proof. Let B one prime and B two prime be the optimal asset choices in case of repayment when y equals y one and when y equals y two, respectively. Suppose y two is in D of B.
+
+Step one. Default at y two means: u of y two plus beta times the expectation of V d of y prime, is greater than u of y two plus B minus q of B one prime times B one prime, plus beta times the expectation of V o of B one prime and y prime.
+
+Why can the choice B one prime appear on the right, when the country is at y two? Because in the independent and identically distributed case the price q of B one prime does not depend on current output, and neither do the expectations of next period's values. So the choice that is optimal at y one is available at y two on the same terms. Default at y two beats every repayment plan at y two, including that one.
+
+Rearranged, this is inequality 1: u of y two minus u of y two plus B minus q of B one prime times B one prime, is greater than beta times the expectation of V o of B one prime and y prime, minus beta times the expectation of V d of y prime.
+
+Step two. Since u is concave, y one is at most y two, and, from Claim 3, B minus q of B one prime times B one prime is negative, we get inequality 2: u of y one minus u of y one plus B minus q of B one prime times B one prime, is greater than or equal to u of y two minus u of y two plus B minus q of B one prime times B one prime.
+
+Claim 3 applies because y two is in D of B, so D of B is not empty, and therefore every available contract involves a net repayment. Let me give that net repayment a name, k, equal to minus the quantity B minus q of B one prime times B one prime. The slide treats it as strictly positive; the argument only needs it not to be negative. Each side of inequality 2 is then of the form u of x minus u of x minus k: the utility lost by paying k out of an output x. Slide 27 states the property used: because u is concave, u of x minus u of x minus k increases when x decreases. Paying the same amount hurts more when you are poorer. So at the lower output, y one, the loss is at least as large.
+
+Step three. Combine 1 and 2. The utility loss at y one is at least the loss at y two, which is strictly greater than the right side of 1. So: u of y one minus u of y one plus B minus q of B one prime times B one prime, is greater than beta times the expectation of V o of B one prime and y prime, minus beta times the expectation of V d of y prime.
+
+Rearranged: u of y one plus beta times the expectation of V d of y prime, is greater than u of y one plus B minus q of B one prime times B one prime, plus beta times the expectation of V o of B one prime and y prime.
+
+The left side is V d of y one. The right side is V c of B and y one, because B one prime is optimal at y one. So default is strictly better at y one: y one is in D of B. The claim is proved.
+
+Eleven point four. What the claims say together. Slide 27.
+
+Net repayment is more costly when income is low, because u is concave.
+
+The slide's summary: the claims imply that default happens when debt levels are high, from Claims 1 and 2; when the country is in a recession, from Claim 4; and when it cannot roll over its debt, from Claim 3. Three conditions, one per claim.
+
+Eleven point five. The threshold. Slide 27.
+
+Corollary: for B between B underbar and B bar, there exists a threshold y star of B such that the default set is the interval that starts at y underbar, included, and ends at y star of B, excluded.
+
+Why an interval? Claim 4 says that if some output is in the default set, every lower output is too. A set with that property, inside the interval of possible outputs, starts at the bottom. And for B strictly between the two bounds, the set is neither empty nor everything, so the threshold lies strictly inside. Combine with Claim 2: more debt means a larger default set, so the threshold y star of B rises as the country's debt grows, that is, as B falls.
+
+Given a choice B prime, the default probability is F of y star of B prime, where F is the cumulative distribution function of y tilde t. The price function is therefore: q of B prime is equal to one minus F of y star of B prime, over one plus r.
+
+This price does not depend on current endowment y, given the independent and identically distributed assumption. Tomorrow's output does not depend on today's, so neither does the probability that it falls below the threshold.
+
+Note, however, that equilibrium prices depend on y, as the optimal choice of B prime depends on y. The price schedule is the same in every state; the point on the schedule the country picks is not. A country in a recession chooses a different B prime and so pays a different price.
+
+Eleven point six. The endogenous borrowing limit. Slide 28.
+
+The maximum increase in consumption in a given period is given by a level B star that solves: the minimum, over B prime, of q of B prime times B prime, which equals the minimum over B prime of one minus F of y star of B prime, over one plus r, times B prime.
+
+Why a minimum? With debt, B prime is negative, so q of B prime times B prime is negative, and the amount raised today is minus that. Minimizing q times B prime is maximizing the amount the country can raise. B star is the debt level that raises the most money today.
+
+Such a level exists as bond prices go to zero as debt increases. Picture the amount raised as a function of the debt issued. At small debt, the price is near the risk-free price, and issuing more raises more. As debt grows, the threshold y star rises, the default probability rises, and the price falls. Below B underbar the country defaults in every state, delta is one, and the price is zero. So the amount raised starts at zero, rises, and must eventually fall back to zero. Somewhere in between it peaks. That peak is B star.
+
+This endogenous borrowing limit implies that the country faces a limited set of feasible consumption levels. No investor ever announces a credit limit. The limit emerges from the price schedule itself.
+
+Given a bad shock, a country would like to borrow more, but such a contract is not available. This is the cruel part of the model. Smoothing calls for borrowing in recessions, and in recessions the market will not provide it beyond the limit.
+
+Eleven point seven. Never borrow beyond B star; the risk-free region. Slide 29.
+
+It is never optimal to choose B prime less than B star, that is, to borrow more than minus B star. The country can raise the same amount with a higher price, and thus a smaller repayment next period.
+
+Spell it out. Beyond the peak, the amount raised is falling as debt rises. For any face value beyond the peak, there is a smaller face value, on the other side of the peak, that raises the same amount today. Because q is increasing in B prime, that smaller debt sells at a higher price. Same money today, less to repay tomorrow, and a smaller default set. The larger debt is dominated.
+
+When B prime is greater than B bar, debt is risk-free, and q of B prime equals one over one plus r. Above B bar the default set is empty, so delta is zero and the price is the risk-free price. A country that borrows little enough borrows at the world interest rate.
+
+So the country's choices live between B star and zero for borrowing, with the risk-free region above B bar and a risky region below it, where every extra unit of debt is paid for with a lower price.
+
+Eleven point eight. References. Slide 30.
+
+Arellano, C., 2008. Default risk and income fluctuations in emerging economies. American Economic Review, volume 98, issue 3, pages 690 to 712.
+
+Eaton, J. and Gersovitz, M., 1981. Debt with potential repudiation: Theoretical and empirical analysis. The Review of Economic Studies, volume 48, issue 2, pages 289 to 309.
+
+Recap of part eleven. In the independent and identically distributed case with permanent exclusion and no output loss, Claim 3 says a country that might default cannot obtain net inflows: if it could roll over, it would. Claim 4 says default is more attractive at lower output, by concavity. Together they give a threshold: the country defaults when output is below y star of B, and the price is one minus F of y star of B prime, over one plus r. The amount the country can raise peaks at B star, an endogenous borrowing limit; borrowing beyond it is dominated; and above B bar debt is risk-free.
+
+Checklist for part eleven. You should be able to state the three restrictions of the special case and what each removes. You should be able to prove Claim 3 by contradiction, explaining why the right side is nonnegative. You should be able to prove Claim 4, explaining why the choice B one prime is available at y two and how concavity gives inequality 2. You should be able to derive the interval form of the default set and the price formula. You should be able to explain why B star exists and why borrowing beyond it is never optimal.
+
+
+Part twelve. The common pitfalls.
+
+Each pitfall is said as the error, then the correction.
+
+Pitfall one. The error is to think the one-period project fails because it has negative value. The correction: slide 4 assumes p times R one is greater than I. The project is profitable. It fails because the lender has nothing to hold over a borrower who can always report zero.
+
+Pitfall two. The error is to think gamma zero applies only to strategic defaulters. The correction: the lender cannot tell a strategic default from a liquidity default, so the same gamma zero hits the unlucky borrower whose project failed. On the equilibrium path, the only liquidations are of honest, unlucky borrowers. That is exactly where the deadweight loss comes from.
+
+Pitfall three. The error is to confuse gamma with the liquidation probability. The correction: gamma zero and gamma one are continuation probabilities. The liquidation probability after nonpayment is one minus gamma zero. In Amaro de Matos, beta zero is the liquidation probability, so beta zero corresponds to one minus gamma zero.
+
+Pitfall four. The error is to drop the one minus p over p scaling in Claim 3. The correction: the lender loses epsilon times L in the failure state, which has probability one minus p, and is compensated in the success state, which has probability p. The repayment must rise by epsilon times L times one minus p, over p.
+
+Pitfall five. The error is to say Claim 3 holds for any epsilon. The correction: both sides of the incentive constraint move against it, so epsilon must be small enough. The footnote gives the bound: epsilon below the slack, divided by L times one minus p over p plus E of R two.
+
+Pitfall six. The error is to sign the effect of p on the liquidation probability without A1. The correction: p shifts weight in the denominator from L to E of R two. The denominator rises only because E of R two exceeds L.
+
+Pitfall seven. The error is to think renegotiation always helps because it removes waste. The correction: the bribe slightly above L is efficient after the fact, but a borrower who anticipates it faces no threat, so it destroys the incentive to repay and reduces welfare ex ante.
+
+Pitfall eight. The error is to read B as debt in the sovereign model. The correction: B is assets. Negative B is debt. "B larger" means less debt. Claim 2 says default sets shrink as B rises, that is, as debt falls.
+
+Pitfall nine. The error is to think the value of default depends on the debt defaulted on. The correction: after default the debt is gone and the country reenters with zero assets, so V d is a function of y alone. That is why more debt lowers only the value of repaying, and why Claim 2 holds.
+
+Pitfall ten. The error is to think the sovereign bond is expensive because investors dislike risk. The correction: investors are risk neutral. The price is one minus delta over one plus r. Spreads reflect default probability only.
+
+Pitfall eleven. The error is to say that, in the independent and identically distributed case, equilibrium prices do not depend on y. The correction: the price schedule q of B prime does not depend on current y, but the chosen B prime does, so the equilibrium price paid does depend on y.
+
+Pitfall twelve. The error is to treat the borrowing limit as imposed by lenders. The correction: B star is endogenous. It is the debt level that maximizes the amount raised, minus q of B prime times B prime. Beyond it, more face value raises less money.
+
+Pitfall thirteen. The error is to think a country defaults in good times because that is when it can afford to stop borrowing. The correction: Claim 4. By concavity, a given net repayment costs more utility when output is low, so default happens in recessions.
+
+Pitfall fourteen. The error is to apply Claims 3 and 4 to the general model. The correction: they are proved for the independent and identically distributed case with theta equal to zero and h of y equal to y. Claims 1 and 2 hold in the general model.
+
+
+Part thirteen. The spoken formula sheet.
+
+How to use this part. Each item gives a name. Pause after the name, say the formula aloud, then listen to the answer.
+
+Formula one. The one-period profitability assumption. Pause. The success probability p, times R one, is greater than I.
+
+Formula two. The contract. Pause. The triple D, gamma zero, gamma one, with D between zero and R one, and gamma zero and gamma one between zero and one.
+
+Formula three. Assumptions A1 and A2. Pause. A1: L is less than E of R two. A2: L is at least zero and less than I minus A.
+
+Formula four. The truth-telling condition. Pause. R one minus D plus gamma one times E of R two is at least R one plus gamma zero times E of R two, which is equivalent to gamma one minus gamma zero, times E of R two, at least D.
+
+Formula five. The borrower's objective. Pause. Maximize p times the bracket R one minus D plus gamma one times E of R two, plus one minus p times gamma zero times E of R two.
+
+Formula six. The lender's participation constraint. Pause. Lowercase p times the bracket D plus one minus gamma one times L, plus one minus p times one minus gamma zero times L, is at least I minus A.
+
+Formula seven. The Claim 2 perturbation. Pause. Gamma one rises by epsilon, between zero and one minus gamma one; D rises by epsilon times L; the borrower gains p times epsilon times E of R two minus L.
+
+Formula eight. The Claim 3 perturbation. Pause. Gamma zero rises by epsilon; D rises by epsilon times L times one minus p, over p; the borrower gains one minus p, times E of R two minus L, times epsilon.
+
+Formula nine. The footnote bound. Pause. Epsilon less than gamma one minus gamma zero times E of R two minus D, all over L times one minus p over p plus E of R two.
+
+Formula ten. The two equations of the solution. Pause. Lowercase p times D plus one minus p times one minus gamma zero times L equals I minus A; and one minus gamma zero, times E of R two, equals D.
+
+Formula eleven. The liquidation probability. Pause. One minus gamma zero equals I minus A, over p times E of R two plus one minus p times L.
+
+Formula twelve. The borrower's net payoff at the optimum. Pause. Lowercase p times R one plus E of R two minus I, minus one minus p times one minus gamma zero times E of R two minus L.
+
+Formula thirteen. Amaro de Matos, equation 5.8. Pause. Beta zero equals K, over q times y over two plus one minus q times alpha squared y squared over four c bar.
+
+Formula fourteen. The sovereign resource constraint under repayment. Pause. C equals y plus B minus q of B prime and y times B prime.
+
+Formula fifteen. The interest rate. Pause. One plus r of B prime and y equals one over q of B prime and y.
+
+Formula sixteen. The bond price. Pause. Q of B prime and y equals one minus delta of B prime and y, over one plus r.
+
+Formula seventeen. The option value. Pause. V o of B and y equals the maximum of V d and V c.
+
+Formula eighteen. The value of default. Pause. V d of y equals u of y def plus beta times the integral over next period's output of theta times V o of zero and y prime plus one minus theta times V d of y prime, times f of y prime and y.
+
+Formula nineteen. The value of repayment. Pause. V c of B and y equals the maximum over B prime at least Z of u of y plus B minus q of B prime and y times B prime, plus beta times the integral over next period's output of V o of B prime and y prime times f of y prime and y.
+
+Formula twenty. The default set and the default probability. Pause. D of B is the set of y in Y with V d of y greater than V c of B and y; delta of B prime and y is the integral over D of B prime of f of y prime and y.
+
+Formula twenty-one. The bounds. Pause. B underbar is the supremum of the B with D of B equal to Y; B bar is the infimum of the B with D of B empty; B underbar at most B bar at most zero.
+
+Formula twenty-two. The threshold and the price in the independent and identically distributed case. Pause. D of B is the interval from y underbar to y star of B; q of B prime equals one minus F of y star of B prime, over one plus r.
+
+Formula twenty-three. The borrowing limit. Pause. B star solves the minimum over B prime of one minus F of y star of B prime, over one plus r, times B prime.
+
+Formula twenty-four. The risk-free region. Pause. For B prime above B bar, q of B prime equals one over one plus r.
+
+
+Part fourteen. The reading route and the exercises.
+
+Addresses only. The statements are not read here; open the lists.
+
+Reading, in this order.
+
+First, the slides, Topic 5, all thirty.
+
+Second, Tirole, chapter 3, section 3.8, "Nonverifiable Income", printed pages 141 to 144, PDF pages 154 to 157. This is the main book's version of slides 4 to 12, including the renegotiation discussion and the bridge to sovereign debt.
+
+Third, Amaro de Matos, chapter 5, section five point two point one, "Extending the Model", printed pages 134 to 137; section five point two point two, "The Case of Many Creditholders", printed pages 137 to 139; and section five point two point three, "The Choice of the Duration", printed pages 139 to 143. PDF pages are the printed pages plus eighteen.
+
+Fourth, optionally, Tirole, chapter 7, section 7.1, which begins on printed page 283, with the Bolton and Scharfstein discussion of strategic security design on printed pages 291 to 295.
+
+Exercises.
+
+From list R7, file Listas, lista r7 lectures 3 to 5.
+
+Exercise 13, "Threat of termination: continuation probability". Source: Amaro de Matos, chapter 5, exercise five point two point five number 1, printed page 148, PDF page 166. The answer is in the book, printed page 267. It trains the comparative statics of the optimal liquidation probability beta zero in equation 5.8 with respect to q.
+
+Exercise 15, "One vs. two creditors: strategic and liquidity default". Source: Amaro de Matos, chapter 5, exercise five point two point five number 2, printed page 148, PDF page 166. No answer in the book; page 268 only cites pages 10 to 13 of Bolton and Scharfstein, 1996. It trains the number-of-creditors comparison: the higher payoff y minus S in strategic default and the lower L zero bar in liquidity default.
+
+Exercise 18, "A borrower-friendly bankruptcy court". Source: Tirole, chapter 4, exercise 4.9, printed pages 190 to 191, PDF page 203. The answer is in the book, printed page 586. It trains the optimal continuation cutoff as short-term debt and why a borrower-friendly court hurts the borrower.
+
+From list R6, file Listas, lista r6 liquidity risk management.
+
+Exercise 10, "Decreasing returns to scale and debt maturity". Source: Tirole, chapter 5, exercise 5.7, printed page 232, PDF page 245. The answer is in the book, printed page 593. It trains balance-sheet strength and debt maturity, with free cash flow.
+
+Exercise 11, "The priority game: uncoordinated lending and short-term bias". Source: Tirole, chapter 5, exercise 5.9, printed page 233, PDF page 246. The answer is in the book, printed page 594. It trains uncoordinated lending and the short-term bias in maturity.
+
+One statement to hear clearly: no course book has an exercise on the sovereign model. Slides 13 to 29 are practised only through the self-test below and by re-deriving the claims yourself.
+
+
+Part fifteen. Self-test.
+
+Fifteen questions. After each, pause the audio and answer aloud before moving on.
+
+Question 1. Why can the one-period project not be financed, even though p times R one exceeds I? Pause and answer.
+
+Question 2. Define strategic default and liquidity default, and say why the contract on slide 7 cannot treat them differently. Pause and answer.
+
+Question 3. Derive the truth-telling condition from the two payoffs of a successful borrower. Pause and answer.
+
+Question 4. Using A2, prove that D must be strictly positive at any feasible contract. Pause and answer.
+
+Question 5. In Claim 2, why must D rise by exactly epsilon times L, and which assumption guarantees that the incentive constraint survives? Pause and answer.
+
+Question 6. In Claim 3, why does D rise by epsilon times L times one minus p, over p, and why must epsilon be small? Pause and answer.
+
+Question 7. Solve the two binding constraints for the liquidation probability, one step at a time. Pause and answer.
+
+Question 8. Sign the effect on the liquidation probability of a higher p, and explain why the answer depends on A1. Pause and answer.
+
+Question 9. Show that the borrower's net payoff equals the no-liquidation value minus one minus p times one minus gamma zero times E of R two minus L. Pause and answer.
+
+Question 10. Explain the bribe on slide 12: why the lender accepts it, and why its prospect reduces welfare. Pause and answer.
+
+Question 11. In Amaro de Matos's model, derive L zero equal to alpha squared y squared over four c bar, and say why two creditors lower it. Pause and answer.
+
+Question 12. In the sovereign model, derive the bond price from the investors' zero-profit condition, and say what the price is when delta is zero and when delta is one. Pause and answer.
+
+Question 13. Prove Claim 1 of the sovereign model, naming the reason for each inequality, and then deduce Claim 2. Pause and answer.
+
+Question 14. Prove Claim 3: if the default set is not empty, no contract gives a capital inflow. Why is beta times the expectation of V o minus beta times the expectation of V d nonnegative? Pause and answer.
+
+Question 15. Explain why a borrowing limit B star exists, and why choosing B prime below B star is never optimal. Pause and answer.
+
+
+Part sixteen. Glossary.
+
+Nonverifiable income: income the borrower observes but no outsider can confirm, so no contract can be conditioned on it.
+
+Strategic default: not repaying although able to repay.
+
+Liquidity default: not repaying because the project did not generate enough cash.
+
+Threat of termination: the lender's commitment to liquidate the project, or refuse future financing, after nonpayment.
+
+Continuation probability: gamma zero after nonpayment, gamma one after repayment; one minus gamma zero is the liquidation probability.
+
+Liquidation value: L, what the lender receives at date one if the project is terminated.
+
+Assumption A1: liquidation is inefficient, L less than E of R two.
+
+Assumption A2: L is at least zero and less than I minus A, so liquidation alone cannot repay the loan.
+
+Incentive constraint: gamma one minus gamma zero, times E of R two, at least D; the loss from nonpayment must outweigh the repayment saved.
+
+Perturbation argument: proving a property of an optimum by showing that any contract without it can be slightly changed to make the borrower better off while respecting every constraint.
+
+Deadweight loss of termination: one minus p, times one minus gamma zero, times E of R two minus L; the expected value destroyed by liquidating unlucky borrowers.
+
+Costly collateral: an asset pledged to the lender that is worth more to the borrower; liquidation is the seizure of the date-two project.
+
+Renegotiation: revising the contract after the fact; here, a bribe slightly above L that saves the project ex post and destroys the threat ex ante.
+
+Beta zero, in Amaro de Matos: the probability of liquidation after a declared zero cash flow.
+
+Sovereign default: a country's refusal to pay its debt; no seizure is possible, only exclusion and output loss.
+
+Autarky: exclusion from international credit markets after default.
+
+Theta: the probability, each period, that a defaulted country regains market access.
+
+H of y: output in autarky, at most y; the output cost of default.
+
+Bond price q of B prime and y: the price today per unit of face value B prime.
+
+Default probability delta of B prime and y: the probability, given today's output, that tomorrow's output falls in the default set D of B prime.
+
+Default set D of B: the outputs at which default is strictly better than repayment, given assets B.
+
+No-Ponzi bound Z: a negative lower bound on assets that prevents borrowing ever more to pay old debt.
+
+Recursive equilibrium: policy functions for consumption, assets and default, and a price function, such that resources balance, the country optimizes given prices, and prices give zero expected profit given default.
+
+B underbar and B bar: the largest asset level at which the country defaults in every state, and the smallest at which it defaults in none.
+
+Threshold y star of B: in the independent and identically distributed case, the output below which the country defaults.
+
+Endogenous borrowing limit B star: the debt level that maximizes the amount a country can raise today.
+
+Risk-free region: asset levels above B bar, where the price is one over one plus r.
+
+
+Part seventeen. The whole topic in five lines.
+
+One. When income is nonverifiable, the borrower can always claim failure, so a one-period project with positive value cannot be financed.
+
+Two. With a second period, the lender enforces repayment by threatening liquidation: no liquidation after repayment, and after nonpayment a liquidation probability equal to I minus A over p times E of R two plus one minus p times L.
+
+Three. That threat destroys value, one minus p times one minus gamma zero times E of R two minus L, borne by unlucky borrowers; it can be read as costly collateral, and renegotiation by bribe undoes it ex ante.
+
+Four. A sovereign is the extreme case: no seizure, only exclusion and output loss; investors price its bonds at one minus the default probability over one plus r, and more debt means larger default sets and lower prices.
+
+Five. In the independent and identically distributed case, a country defaults when debt is high, output is low and rollover is impossible, below a threshold y star of B, and the price schedule itself caps borrowing at B star.

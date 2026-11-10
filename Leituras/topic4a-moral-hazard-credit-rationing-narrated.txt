@@ -1,0 +1,1227 @@
+Finanças Two, Corporate Finance. Topic four A: moral hazard, credit rationing, and debt versus equity. A listening version of Professor Bernardo Ricca's lecture, sixty-nine slides, built on the Holmström and Tirole model of nineteen ninety-seven.
+
+How to listen.
+
+This is the full content of the Topic four A slides, rewritten to be heard rather than read. Nothing is summarized away. Every derivation is said step by step, every number is the one on the slides, and every table and diagram is walked through in words.
+
+The slides are the spine. Where the slides skip a step, the step is filled in from the main course book, Jean Tirole, The Theory of Corporate Finance, Princeton University Press. Whenever you hear material that comes from the book and not from the slides, it is announced as book material, with its section and its printed page.
+
+All page numbers are printed page numbers. In the PDF of Tirole's book, the PDF page is the printed page plus thirteen.
+
+There are ten main parts, in slide order. Part one: credit rationing, what it is and how it is defined, slides two to seven. Part two: the fixed-investment model, its players, its project and its timing, slides eight to sixteen. Part three: contracts, the conflict of interest, and the assumptions that force the contract to induce good behaviour, slides seventeen to twenty-four. Part four: the incentive constraint, pledgeable income, the participation constraint, and the wealth threshold A bar, slides twenty-five to thirty. Part five: equilibrium, credit rationing, its determinants, efficiency, and wealth as collateral, slides thirty-one to thirty-seven. Part six: the sensitivity of investment to cash flow, slides thirty-eight and thirty-nine, with the book's variable-investment model as a bridge. Part seven: debt versus equity in the basic model, slides forty to forty-six. Part eight: a project with two positive outcomes, first best and moral hazard, slides forty-seven to fifty-seven. Part nine: all-equity versus debt financing, and why debt dominates, slides fifty-eight to sixty-five. Part ten: the limitations of debt optimality and the reference list, slides sixty-six to sixty-nine.
+
+Then come the support parts: the common pitfalls, a spoken formula sheet for active recall, the reading route and exercises, a self-test, a glossary, and finally the whole topic in five lines.
+
+All mathematics is spoken in words. A few conventions, said once so you can picture the board.
+
+When you hear "p H", that is the letter p with a subscript H: the probability of success when the entrepreneur behaves. "p L" is the probability of success when she misbehaves. "Delta p" is the difference p H minus p L.
+
+When you hear "R u", that is R with a subscript u, for the uninformed outside investors: what investors receive if the project succeeds. "R f" is R with a subscript f, for the firm, meaning the entrepreneur: what she keeps if the project succeeds. Tirole's book writes the same two objects as R l, for lenders, and R b, for borrower. Same thing, different letters.
+
+When you hear "A bar", that is the minimum wealth an entrepreneur needs in order to obtain a loan. Most slides print it as the letter A with a line under it; slide thirty-nine prints it with a bar over it. It is the same number throughout, and this script always calls it A bar.
+
+In the second half of the lecture, the project has two outcomes, success and failure, both with positive income. Then you will hear "R S" and "R F" for the income in success and in failure, "R u S" for what investors get in success, "R u F" for what investors get in failure, and "R f S" and "R f F" for what the entrepreneur gets in success and in failure. The letter after R u or R f is always the state: S for success, F for failure.
+
+One scope rule applies throughout. This course covers only the nine syllabus topics: corporate governance, valuation, the Modigliani and Miller benchmark, agency costs, liquidity, asymmetric information, activism, mergers and acquisitions, and macroeconomic implications, and only the course bibliography. Topic four A sits inside agency costs. Whenever the lecture touches something that belongs to another topic, such as asset substitution and debt overhang in Topic four B, or adverse selection in Topic three, you will hear it said out loud, and the material will not be developed here.
+
+Before we start, the thesis of the whole lecture, in one sentence. When outside investors cannot see what the entrepreneur does with their money, the entrepreneur must keep enough of the project's income to want to behave, so only part of the income can be promised to investors; a poor entrepreneur, who needs to borrow a lot, cannot promise enough, and is refused credit even for a project with positive net present value; and when the project pays something even in failure, debt is the security that promises the most to investors without destroying incentives.
+
+Keep that sentence in mind. Every part of the lecture fills in one piece of it.
+
+
+Part one. Credit rationing: why credit markets are different. Slides two to seven.
+
+One point one. Departure from Modigliani and Miller: the hidden action framework. Slide two.
+
+Until now, the course has studied the Modigliani and Miller benchmark, in which the way a firm is financed does not change its value. This lecture departs from that benchmark.
+
+The departure is asymmetric information about actions. The model is Holmström and Tirole, nineteen ninety-seven. The framework is called the hidden action framework, or, equivalently, the moral hazard framework.
+
+The slide states the key message in one line: capital structure matters because it affects the assets side of the firm. Pause on that. In the Modigliani and Miller world, the asset side, meaning the projects and their cash flows, is fixed, and financing only slices the pie. Here, the way the pie is sliced changes what the entrepreneur does, and therefore changes the size of the pie and even whether there is a pie at all, because it decides whether the project is financed.
+
+One point two. Markets that clear through prices. Slide three.
+
+The model will let us study specific features of credit markets. Start from the textbook benchmark.
+
+In competitive markets with symmetric information, price is the variable that clears the market: it makes supply equal to demand at the equilibrium quantity. If there is excess demand, the price rises until supply equals demand. In particular, in that benchmark there is no rationing. Nobody who is willing to pay the going price is turned away.
+
+One point three. Credit markets clear through quantities as well. Slide four.
+
+In credit markets, the demand for credit may exceed supply at the equilibrium interest rate. The slide asks two questions, and the whole model is built to answer them.
+
+First question: why do credit markets clear through quantities, meaning credit limits, as well as through prices, meaning interest rates?
+
+Second question: why does demand exceed supply even though lenders are free to raise the price, which here is the interest rate?
+
+Hold those two questions. By part five you will be able to answer both in one breath.
+
+One point four. The Bester and Hellwig definition. Slide five.
+
+Bester and Hellwig, nineteen eighty-seven, define rationing as follows. Quote: "A would-be borrower is said to be rationed if he cannot obtain the loan that he wants even though he is willing to pay the interest that the lenders are asking, perhaps even a higher interest rate. In practice such credit rationing seems to be common place. Some borrowers are constrained by fixed lines of credit which they must not exceed in any circumstances, others are refused loans altogether." End of quote.
+
+Two forms are named there. A borrower can be capped, through a fixed credit line, or refused altogether. The defining feature is willingness to pay: the borrower would accept the lender's rate, or even a higher one, and still does not get the loan.
+
+One point five. The Baltensperger definition, and what does not count. Slide six.
+
+Baltensperger, nineteen seventy-eight, says that credit rationing occurs when, quote, "some borrower's demand for credit is turned down, even if this borrower is willing to pay all the price and nonprice elements of the loan contract." End of quote.
+
+The slide explains the two kinds of element. The priced element is the interest rate. A nonpriced element is, for example, a collateral requirement.
+
+Two consequences of this definition, both on the slide, and both easy to get wrong in an exam.
+
+First: a situation in which a borrower is turned down because he or she does not have enough collateral is not classified as credit rationing. The borrower is not willing, or not able, to meet a nonprice element of the contract, so the definition does not apply.
+
+Second: similarly, the exclusion of some categories of borrowers from credit markets, which the slide calls red-lining, because they lack future cash flows or collateral, is not credit rationing either.
+
+So rationing, in the strict sense, means being turned down while accepting every term, price and nonprice, that the lender asks for.
+
+One point six. Evidence: De Mel, McKenzie and Woodruff, two thousand eight. Slide seven.
+
+The slide quotes the abstract of De Mel and co-authors, two thousand eight. They use randomized grants to generate shocks to the capital stock of a set of Sri Lankan microenterprises. They find that the average real return to capital in these enterprises is 4.6 to 5.3 per cent per month, substantially higher than market interest rates.
+
+They then examine the heterogeneity of treatment effects. Returns vary with entrepreneurial ability and with household wealth, but not with measures of risk aversion or uncertainty. Treatment impacts are also significantly larger for enterprises owned by males; indeed, the authors find no positive return in enterprises owned by females.
+
+Why is this on a slide about credit rationing? Because a return to capital of 4.6 to 5.3 per cent per month, far above the market interest rate, means these firms would gladly borrow at the market rate and invest. If they do not, something stops the loan. That something is what the model is about. And the fact that the grant is randomized solves the empirical problem we will meet again in part six: it gives an exogenous increase in cash, not one that comes from the firm's own good fortune.
+
+Recap of part one. Capital structure matters in this lecture because it changes behaviour, and through behaviour, the assets. Credit markets can clear through quantities as well as prices. Rationing means being refused a loan while willing to pay the lender's price and nonprice terms; refusal for lack of collateral, and red-lining for lack of cash flows or collateral, are not rationing. Microenterprises in Sri Lanka earn 4.6 to 5.3 per cent per month on capital, far above market rates.
+
+Checklist for part one. You should be able to state the two questions of slide four. You should be able to quote the core of the Bester and Hellwig definition and of the Baltensperger definition. You should be able to say why a refusal for lack of collateral is not rationing. And you should be able to state the De Mel result with its numbers and explain why it suggests constrained firms.
+
+
+Part two. The fixed-investment model: players, project and timing. Slides eight to sixteen.
+
+This part sets up the model piece by piece. In Tirole's book, this is section three point two point one, The Fixed-Investment Model, printed page one hundred and fifteen.
+
+Two point one. Entrepreneurs, or firms. Slide eight.
+
+An entrepreneur has a project that requires a fixed initial investment of I, greater than zero, at date t equals zero.
+
+She is risk neutral: she only cares about expected returns.
+
+She has initial wealth A, and A is less than I.
+
+Therefore she needs to borrow I minus A to implement the project. That gap, I minus A, is the whole subject of the lecture.
+
+Book material, Tirole printed page one hundred and fifteen: Tirole calls A "cash on hand" or "net worth", and for now interprets it as cash or liquid securities that can be put toward the investment. He also notes that the entrepreneur could in principle consume part of her cash and borrow more than I minus A, and shows later that she never wants to. We return to that remark in part five.
+
+Two point two. Outside investors. Slide nine.
+
+Outside investors have enough wealth to finance the entrepreneur. They are risk neutral, so they only care about expected returns. They are competitive. And they can invest in an alternative option with a zero net return.
+
+Therefore they are willing to lend as long as the net expected return from the operation is greater than or equal to zero. Competition will push that net expected return all the way down to zero.
+
+Two point three. Discounting. Slide ten.
+
+The risk-free interest rate is normalized to zero: r f equals zero. Both outside investors and entrepreneurs discount any future payoff at r equals zero.
+
+The slide writes it as: r is equal to a risk premium plus r f, which equals zero, because the risk premium is zero under risk neutrality and r f is zero by normalization. So no discounting anywhere. A dollar at date one is worth a dollar at date zero, and an expected dollar is worth a dollar.
+
+Two point four. The project's financial returns, and moral hazard. Slide eleven.
+
+The project yields a random, verifiable income at t equals one, called R tilde. R tilde equals R, a positive number, if the project is successful, and zero if the project fails.
+
+Verifiable means a court can see the outcome. So contracts can be written on it.
+
+Now the moral hazard. The probability of success depends on an unobservable action that the entrepreneur chooses between t equals zero and t equals one. Only the entrepreneur knows the action; it is private information. But all parties know the outcome of the project, success or failure.
+
+Keep the asymmetry clear: the action is hidden, the outcome is public.
+
+Two point five. The timeline. Slide twelve.
+
+The slide draws a time line from t equals zero to t equals one.
+
+At t equals zero, the financing contract is signed and the investment I is made.
+
+Between the two dates, the entrepreneur chooses an action which outside investors cannot observe. That is the "hidden action". This action influences the probability of success of the project.
+
+At t equals one, the return R tilde, which is either zero or R, is realized. This is also the repayment date.
+
+Two point six. The two actions. Slide thirteen.
+
+There are only two possible actions, a L and a H.
+
+Under a H, the probability that the project succeeds is p H. Under a L, it is p L. And p H is greater than p L: the probability of success is higher when the entrepreneur works hard.
+
+Consequently, the net present value of the project is higher when the entrepreneur works hard. The slide writes both net present values in full.
+
+When a equals a H, the NPV is p H times R, plus one minus p H times zero, minus I, which simplifies to p H R minus I.
+
+When a equals a L, the NPV is p L times R, plus one minus p L times zero, minus I, which simplifies to p L R minus I.
+
+Since p H is bigger than p L, p H R minus I is bigger than p L R minus I.
+
+Two point seven. Private benefits, and two ways to read them. Slide fourteen.
+
+The bad action, a L, entails a non-pecuniary private benefit to the entrepreneur, equivalent to B dollars, with B greater than zero.
+
+The slide offers two equivalent interpretations of B.
+
+The effort interpretation. Effort is costly in terms of utility: working less and having more time for leisure is preferred to working hard. So B can be read as the disutility of effort that is saved by shirking. Under this reading the slide writes a H as e H, high effort, and a L as e L, low effort, or shirking.
+
+The project choice interpretation. The entrepreneur chooses between a project with a high probability of success and one with a smaller probability that she likes more: because it is easier to implement, more prestigious, delivers perks, is more fun, or makes it easier to commit fraud and embezzlement, for example buying inputs at an inflated price from a friend or family.
+
+Book material, Tirole printed page one hundred and fifteen: the book adds "has greater spinoffs in the future for the entrepreneur" and "benefits a friend" to that list, and says B is "measured in units of account", which is why the slides can say B is "equivalent to B dollars".
+
+Two point eight. Jensen and Meckling. Slide fifteen.
+
+The slide quotes Jensen and Meckling, nineteen seventy-six. Quote: "If a wholly owned firm is managed by the owner, he will make operating decisions which maximize his utility. These decisions will involve not only the benefits he derives from pecuniary returns but also the utility generated by various non-pecuniary aspects of his entrepreneurial activities such as the physical appointments of the office," and then, after a cut, "the level of employee discipline, the kind and amount of charitable contributions, personal relations, love, respect, et cetera, with employees, a larger than optimal computer to play with, purchase of production inputs from friends, et cetera." End of quote.
+
+The slide draws the lesson: financial returns can be shared with outside investors, but non-pecuniary aspects, the private benefits, accrue to the entrepreneur only.
+
+That is the seed of the whole conflict. Whatever money the project makes can be split by contract. The private benefit cannot be split. It goes entirely to the person who takes the bad action.
+
+Two point nine. The timeline again, in words. Slide sixteen.
+
+Implicitly there are two dates.
+
+At t equals zero, the parties agree on a loan contract, outside investors transfer I minus A to the entrepreneur, and the investment occurs.
+
+At t equals one, the project yields income R in case of success and zero otherwise, and the entrepreneur repays investors.
+
+During the execution of the project, between t equals zero and t equals one, which is called the moral hazard stage or the interim stage, the entrepreneur can behave and choose a H, or misbehave and choose a L.
+
+Because outside investors cannot observe the action, the slides call them uninformed investors. That is where the subscript u in R u comes from.
+
+Recap of part two. The entrepreneur has wealth A below the fixed investment I and must borrow I minus A. Investors are competitive, risk neutral and earn zero on their alternative; the interest rate is zero. The project pays R or zero. Behaving gives success probability p H; misbehaving gives p L, lower, plus a private benefit B to the entrepreneur alone. The action is hidden; the outcome is verifiable.
+
+Checklist for part two. You should be able to list the entrepreneur's three features and the investors' four features. You should be able to write the two NPVs, p H R minus I and p L R minus I. You should be able to give both interpretations of B, effort and project choice. You should be able to explain, using Jensen and Meckling, why private benefits cannot be shared with investors. And you should be able to draw the timeline: contract and investment at zero, hidden action in between, outcome and repayment at one.
+
+
+Part three. Contracts, the conflict of interest, and the assumptions. Slides seventeen to twenty-four.
+
+Three point one. Limited liability. Slide seventeen.
+
+A contract between the entrepreneur and the outside, uninformed investors is described by a repayment conditional on the project outcome, success or failure.
+
+Entrepreneurs are protected by limited liability: they cannot pay outside investors out of their own pocket.
+
+Limited liability implies that the payment to investors cannot be positive in case of failure, because the firm then has no cash. Therefore the payment to investors if the project fails is zero, in any contract.
+
+Book material, Tirole printed page one hundred and sixteen: the book adds the other half of the argument. Could the contract pay the entrepreneur something in failure, a transfer from the lenders to the borrower? There is no point: such a transfer can only weaken incentives, and it has no insurance benefit, because everyone is risk neutral. So both sides get zero in failure. We will prove this formally in part eight, with the two-outcome model.
+
+Three point two. The contract as one number. Slide eighteen.
+
+The contract can then be described by a single payment, R u, to outside investors if the project succeeds.
+
+The entrepreneur's compensation in case of success is then R f, equal to R minus R u.
+
+The slide shows this as a small table. Walk it column by column.
+
+In failure: total cash flow is zero, outside investors get zero, the entrepreneur gets zero.
+
+In success: total cash flow is R, outside investors get R u, and the entrepreneur gets R f, equal to R minus R u.
+
+Three point three. Contracts cannot name the action. Slide nineteen.
+
+Because outside investors cannot observe the action chosen by the entrepreneur, contracts cannot specify it. A clause saying "the entrepreneur shall choose a H" could never be enforced, since no court could check it.
+
+So if outside investors want the entrepreneur to choose a H, they must provide incentives. The only tool available is the split of R between R u and R f.
+
+Three point four. The contract read as a loan. Slide twenty.
+
+One possible interpretation: the contract is a debt contract, a loan. The entrepreneur borrows I minus A at t equals zero and promises to repay R u, the "face value", at t equals one.
+
+If the project succeeds, the borrower can meet the obligation. If the project fails, the borrower defaults on the loan.
+
+The interest rate i on the loan is defined by: one plus i is equal to R u over I minus A. Equivalently, i is equal to R u over I minus A, minus one.
+
+For a fixed borrowed quantity I minus A, the higher R u, the higher the interest rate. So "raising the interest rate" and "asking for a larger R u" are the same move in this model. Remember that equivalence: it is what makes the rationing argument in part five work.
+
+Three point five. The conflict of interest. Slide twenty-one.
+
+The entrepreneur chooses her action considering two things: the security benefits, or financial returns, which are shared with outside investors; and the private benefits, which accrue to her alone. That combination creates a conflict of interest.
+
+Given a contract R u, outside investors always want the entrepreneur to choose a H, because it maximizes the expected value of their investment: p H R u is greater than p L R u.
+
+Choosing a H also maximizes the entrepreneur's expected financial return, because p H R f is greater than p L R f. But choosing a L gives her the private benefit B, which benefits only her.
+
+So it is possible that both of the following hold at once. p H R u is greater than p L R u: outside investors prefer a H. And p H R f is less than p L R f plus B: the entrepreneur prefers a L.
+
+That pair of inequalities is the conflict of interest in its simplest form.
+
+Three point six. Assumptions A one and A two. Slide twenty-two.
+
+Assumption A one: if the entrepreneur chooses a H, the project has a positive NPV. p H R minus I is greater than zero.
+
+Assumption A two: if the entrepreneur chooses a L, the project has a negative NPV, even counting the private benefit. p L R minus I plus B is less than zero.
+
+These are equations three point one and three point two in Tirole, printed page one hundred and sixteen. Tirole says the project "is viable only in the absence of moral hazard".
+
+Three point seven. First implication: shirking is inefficient. Slide twenty-three.
+
+Restate the claim: total surplus is higher when the entrepreneur chooses a H.
+
+Derivation. Take A one, p H R minus I greater than zero. Take A two, p L R minus I plus B less than zero. The first quantity is positive, the second is negative, so the first minus the second is positive. Subtract: p H R minus I, minus p L R, plus I, minus B. The I terms cancel. What remains is p H minus p L, times R, minus B, greater than zero.
+
+The slide labels the two terms. p H minus p L, times R, is the gain from choosing a H over a L: the extra expected income. B is the cost of choosing a H over a L: the private benefit given up. The gain exceeds the cost, so a L is inefficient.
+
+In compact form: delta p times R is greater than B.
+
+Three point eight. Second implication: a contract that induces a L is not viable. Slide twenty-four.
+
+Restate the claim: no contract that leads the entrepreneur to misbehave will ever be signed.
+
+Derivation, step by step, as on the slide.
+
+Start from A two: p L R minus I plus B is less than zero.
+
+Step one: replace R by R u plus R f, since the income is split between the two parties. And add A minus A, which is zero. That gives p L times R u plus R f, minus I, plus B, plus A, minus A, less than zero.
+
+Step two: regroup into two brackets. The first bracket is p L R u minus, open bracket, I minus A. The second bracket is p L R f plus B minus A. Their sum is less than zero.
+
+Now read the brackets. The first is the outside investors' NPV under misbehaviour: their expected receipt, p L R u, minus their outlay, I minus A. The second is the borrower's NPV under misbehaviour: her expected financial return p L R f, plus the private benefit B, minus the wealth A that she puts in and could otherwise have consumed.
+
+Two numbers that sum to less than zero cannot both be non-negative. So either the entrepreneur, or the outside investors, or both, end up worse off than if they had not signed the contract. The party that is worse off prefers not to sign.
+
+Bottom line, in the slide's words: the loan contract should provide incentives for the choice a H.
+
+Recap of part three. Limited liability means investors get zero in failure, so a contract is one number, R u, with R f equal to R minus R u. Contracts cannot name the action, so they must give incentives. Read as a loan, one plus i equals R u over I minus A. Investors always prefer a H; the entrepreneur may prefer a L because B is hers alone. A one says behaving has positive NPV; A two says shirking has negative NPV even with B. Together they imply delta p times R greater than B, and they imply that any contract inducing a L is refused by at least one party.
+
+Checklist for part three. You should be able to draw the payoff table of slide eighteen. You should be able to write the loan interest rate from R u. You should be able to write the two inequalities that define the conflict of interest. You should be able to derive delta p R greater than B from A one and A two. And you should be able to split A two into the investors' NPV and the borrower's NPV and conclude that the contract must induce a H.
+
+
+Part four. The incentive constraint, pledgeable income, the participation constraint, and the threshold A bar. Slides twenty-five to thirty.
+
+This is the analytical heart of the lecture. In Tirole's book it is section three point two point two, The Lenders' Credit Analysis, printed pages one hundred and sixteen and one hundred and seventeen.
+
+The plan has four steps. First, write down what it takes for the entrepreneur to behave. Second, turn that into a ceiling on what investors can be paid. Third, write down what it takes for investors to lend. Fourth, put the two together and read off who gets credit.
+
+Four point one. The incentive constraint. Slide twenty-five.
+
+The loan contract induces the choice a H if the incentive constraint, abbreviated I C, is satisfied.
+
+Say it in words first. The entrepreneur's utility from behaving must be at least her utility from misbehaving.
+
+Her utility from behaving is p H times R f: she gets R f with probability p H, and zero otherwise.
+
+Her utility from misbehaving is p L times R f, plus B: a lower chance of R f, plus the private benefit.
+
+So the incentive constraint is: p H R f is greater than or equal to p L R f plus B.
+
+Now let delta p be p H minus p L. Move p L R f to the left. The constraint becomes: delta p times R f is greater than or equal to B.
+
+The slide labels both sides. The left side, delta p times R f, is the entrepreneur's expected financial gain from choosing a H over a L. The right side, B, is the entrepreneur's private-benefit loss from choosing a H over a L. Behaving must pay at least as much money, in expectation, as it costs in private benefit.
+
+Four point two. Skin in the game. Slide twenty-six.
+
+Rearranging, divide both sides by delta p. The incentive constraint becomes: R f is greater than or equal to B over delta p.
+
+The left side is the entrepreneur's compensation in case of success. The right side, B over delta p, is the minimum compensation consistent with a H.
+
+The slide's phrase: the entrepreneur must receive a sufficiently large share of the returns, enough "skin in the game", to forgo private benefits.
+
+Now the key step. Since B over delta p is the minimum the entrepreneur must keep in case of success for a H to be optimal, the maximum that outside investors can receive in case of success is R minus B over delta p.
+
+This quantity, R minus B over delta p, is called the pledgeable income.
+
+Tirole's words, printed page one hundred and sixteen: it is "the highest income in the case of success that can be pledged to the lenders without jeopardizing the borrower's incentives".
+
+Four point three. Pledgeable income does not depend on A. Slide twenty-seven.
+
+Look at the expression again: R minus B over delta p. There is no A in it. So pledgeable income does not depend on A, and therefore does not depend on the amount borrowed, I minus A.
+
+The maximum that investors can receive in case of success is the same whether A is large, so the amount borrowed is small, a low-leverage firm; or A is small, so the amount borrowed is large, a high-leverage firm.
+
+But lenders must break even. A fixed ceiling on repayment, combined with a loan whose size grows as A shrinks, means it will be easier to finance "rich" individuals with a large A.
+
+Four point four. The participation constraint. Slide twenty-eight.
+
+The project is financed only if outside investors break even. Otherwise they prefer the zero they can get from the outside option.
+
+So a necessary condition for a loan to be granted is: p H R u is greater than or equal to I minus A.
+
+The left side is the expected payment to the lender, assuming the entrepreneur behaves. The right side is the lender's outlay.
+
+This condition is called the individual rationality constraint, abbreviated I R, or the participation constraint, abbreviated P C. Tirole also calls it the breakeven constraint.
+
+Four point five. Combining I R and I C. Slide twenty-nine.
+
+Restate the logic: investors can receive at most the pledgeable income in success, so the most they can expect is p H times the pledgeable income. Financing works only if that maximum covers their outlay.
+
+The maximum that investors can receive in case of success is R minus B over delta p. So the maximum expected payment, known as the expected pledgeable income, is p H times, open bracket, R minus B over delta p, close bracket.
+
+Tirole calls this script P, printed page one hundred and sixteen: P is equal to p H times R minus B over delta p.
+
+Financing takes place if and only if p H times, R minus B over delta p, is greater than or equal to I minus A.
+
+Four point six. The threshold A bar. Slide thirty.
+
+Restate the claim: financing takes place if and only if the entrepreneur has enough initial wealth.
+
+Derivation. Start from p H times R minus B over delta p, greater than or equal to I minus A.
+
+Step one: expand the left side. p H R minus p H B over delta p is greater than or equal to I minus A.
+
+Step two: move A to the left and everything else to the right. A is greater than or equal to I minus p H R plus p H B over delta p.
+
+Step three: regroup. I minus p H R is minus the NPV. So A is greater than or equal to p H times B over delta p, minus, open bracket, p H R minus I, close bracket.
+
+Call the right side A bar. A bar is equal to p H times B over delta p, minus the NPV, p H R minus I.
+
+This is equation three point three in Tirole, printed page one hundred and seventeen.
+
+If A bar is positive, a borrower with wealth A below A bar is not granted a loan.
+
+Assumption A three. The slides add an assumption to guarantee that some borrowers do not obtain a loan: A bar, equal to p H B over delta p minus, p H R minus I, is greater than zero.
+
+Tirole's reading of the same assumption, his condition three point four, printed page one hundred and seventeen: A bar positive is equivalent to p H R minus I being less than p H B over delta p. In words: the NPV is smaller than the minimum expected rent that must be left to the borrower to give her an incentive to behave. Otherwise even a borrower with no wealth at all could get credit.
+
+Book material, printed page one hundred and seventeen: Tirole gives the two pieces of A bar names. The term p H B over delta p is the agency rent: the minimum expected monetary payoff that must be left to the borrower to preserve incentives. The borrower's own contribution, A, must be large enough to bring the agency rent, net of that down payment, down to at most the project's monetary profit, p H R minus I. That is exactly the inequality A greater than or equal to agency rent minus NPV.
+
+Here is a useful way to hear the threshold. The project creates p H R minus I of value. The entrepreneur must be left p H B over delta p in expectation to behave. If the value created is enough to pay that rent, no own money is needed. If not, the shortfall, rent minus NPV, has to be covered from the entrepreneur's own pocket, up front. That shortfall is A bar.
+
+Recap of part four. The incentive constraint is delta p R f at least B, so R f at least B over delta p. Pledgeable income is R minus B over delta p, and it does not depend on A. The participation constraint is p H R u at least I minus A. Combining: financing if and only if p H times, R minus B over delta p, is at least I minus A, which is the same as A at least A bar, where A bar is p H B over delta p minus the NPV. Assumption A three says A bar is positive.
+
+Checklist for part four. You should be able to write the incentive constraint in its two forms and name each side. You should be able to define pledgeable income and say why it does not depend on A. You should be able to write the participation constraint. You should be able to derive A bar in three steps from the combined condition. And you should be able to name the agency rent and say what assumption A three means in words.
+
+
+Part five. Equilibrium, credit rationing, its determinants, efficiency, and wealth as collateral. Slides thirty-one to thirty-seven.
+
+Five point one. The equilibrium contract. Slide thirty-one.
+
+Suppose financing takes place, that is, A is at least A bar. Perfect competition among lenders implies zero profits. So the participation constraint holds with equality: p H R u minus, I minus A, equals zero. Solve for R u: R u is equal to I minus A, over p H.
+
+Read R u as the amount due on a loan of size I minus A. The interest rate is then: i is equal to R u over I minus A, minus one. Substitute R u: i is equal to, I minus A over p H, divided by I minus A, minus one. The I minus A cancels. So i is equal to one over p H, minus one.
+
+Notice what that says. The equilibrium interest rate does not depend on the size of the loan. It depends only on the probability of success. Tirole, printed page one hundred and sixteen, writes it as one plus iota equals one over p H, and adds: unless p H equals one, the nominal rate reflects a default premium and exceeds the expected rate of return, which is zero, demanded by investors.
+
+Read the rate as a default premium: the lender is repaid only with probability p H, so the promised repayment must be scaled up by one over p H for the lender to earn zero on average.
+
+Now the entrepreneur's payoff, for wealth A at least A bar. Restate: she gets p H times her success payoff, minus the wealth she put in.
+
+Derivation. Her payoff is p H times, R minus R u, minus A. Substitute R u: p H times, R minus, I minus A over p H, minus A. Distribute p H: p H R, minus, I minus A, minus A. The A terms cancel. What remains is p H R minus I.
+
+That is, the entrepreneur receives the entire NPV, the whole surplus. The investors break even; she gets everything else.
+
+Book material, printed page one hundred and seventeen, equation three point six: Tirole writes the borrower's net utility as zero if A is below A bar, and p H R minus I if A is at least A bar. So the borrower's utility jumps up at A equals A bar. Tirole notes that the jump is an artefact of the fixed investment size, but the fact that one unit of assets may be worth more than one unit to the borrower is quite general. Hold that thought for part six.
+
+Five point two. Why low-wealth borrowers are refused. Slide thirty-two.
+
+A borrower with wealth A below A bar does not obtain credit. Follow the chain on the slide.
+
+First link: a smaller A means a larger amount borrowed, I minus A.
+
+Second link: lenders must break even, so lending a larger amount means a larger fraction of the return R must be pledged to them.
+
+Third link: but lenders anticipate that if the fraction they require rises so far that the borrower keeps less than B over delta p, the borrower will choose a L, and the lenders' expected payoff will be negative.
+
+Conclusion: lenders simply turn down entrepreneurs with low A. And here is the answer to the second question of slide four. An increase in the interest rate only makes the moral hazard problem worse: a higher rate means a smaller payoff for the entrepreneur in case of success, and so more incentive to choose a L.
+
+So raising the price does not clear the market. It destroys the incentive that makes the loan worth making. That is why credit markets clear through quantities.
+
+Five point three. The borrower would pay more, and cannot commit. Slide thirty-three.
+
+The rationed borrower is willing to pay the equilibrium interest rate, one over p H minus one, or even a higher one. That is what makes this rationing in the Bester and Hellwig sense.
+
+Entrepreneurs with low A face a commitment problem. They would be better off choosing a H. But once the contract is signed, they have the incentive to choose a L. They cannot promise credibly, at date zero, to behave after the money is in.
+
+So entrepreneurs with low A do not obtain credit, and they bear the moral hazard costs themselves. The lost NPV is their loss.
+
+Book material, printed page one hundred and seventeen: Tirole says it compactly. If A is below A bar, the project has positive NPV and yet is not funded. With insufficient assets, the entrepreneur must borrow a lot, pledge a large fraction of the return, keep a small fraction, and is demotivated. The two parties cannot find a loan agreement that both induces effort and lets the lenders recoup their investment. There is credit rationing. As the conventional wisdom goes, "one only lends to the rich".
+
+Five point four. The rationing argument, in symbols. Slide thirty-four.
+
+Restate the claim: if a borrower with A below A bar were offered the equilibrium terms, she would misbehave, and the lender would lose money.
+
+Consider a borrower with A below A bar who promises to repay I minus A, times one over p H: the amount borrowed plus equilibrium interest.
+
+Her compensation in case of success is R minus, I minus A over p H.
+
+Step one: because A is below A bar, I minus A is larger than I minus A bar, so R minus, I minus A over p H, is smaller than R minus, I minus A bar over p H.
+
+Step two: substitute A bar. I minus A bar is I minus p H B over delta p, plus p H R minus I. The two I terms cancel, leaving p H R minus p H B over delta p.
+
+Step three: divide by p H. You get R minus B over delta p.
+
+Step four: so R minus, I minus A bar over p H, equals R minus, R minus B over delta p, which is B over delta p.
+
+Putting it together: her compensation in success is strictly less than B over delta p.
+
+Because that is below the minimum needed to induce a H, she chooses a L, and the lender ends up with negative profit.
+
+Book material: this is equation three point five in Tirole, printed page one hundred and seventeen, read in the other direction. For A at least A bar, the same computation shows the borrower's stake is at least B over delta p, so she behaves.
+
+Five point five. Determinants of credit rationing. Slide thirty-five.
+
+Two comparative statics, read straight off A bar equals p H B over delta p minus, p H R minus I.
+
+First, A bar is increasing in B. A bigger private benefit means a bigger stake must be left to the entrepreneur, so less can be pledged, so more own wealth is needed.
+
+Second, A bar decreases in delta p over p H. To see this, write p H B over delta p as B divided by, delta p over p H. A larger delta p over p H shrinks that term.
+
+The slide explains what delta p over p H means. It is a measure of the marginal gain from choosing a H over a L. And the higher this ratio, the more informative the outcome is about the action choice.
+
+Book material, printed pages one hundred and seventeen and one hundred and eighteen. Tirole calls delta p over p H the likelihood ratio. It measures the proportional reduction in the probability of success when the entrepreneur misbehaves, so it is also a measure of the marginal productivity of effort. The higher the likelihood ratio, the better the performance measurement, and the easier the access to outside financing. Tirole names two factors that make a firm credit constrained: a low amount of cash on hand, low A; and a high agency cost, measured, for a given expected income p H R, by the private benefit B and the likelihood ratio delta p over p H. He adds that pledgeable income can never exceed p H R minus B, since the entrepreneur can always take her private benefit, but can be much smaller when performance measurement is poor.
+
+Two more book remarks from section three point two, both short.
+
+Book material, printed page one hundred and eighteen, a footnote on the interest rate. If the market interest rate r were not zero, the financing condition would read: p H times, R minus B over delta p, is at least one plus r, times I minus A. So, keeping I fixed, a rise in the rate of interest is equivalent to a fall in cash on hand. This is a bridge to the macroeconomic implications topic later in the course; it is not developed here.
+
+Book material, section three point two point five, printed page one hundred and twenty-one, reputational capital. Suppose the borrower's private benefit falls from B to a smaller b, because the project is within her core competence, or because fraud is harder. Then the threshold falls, and the drop, A bar at B minus A bar at b, is equal to p H over delta p, times B minus b, which is positive. A "more reliable borrower" is more likely to obtain a loan. That is the first determinant, seen as a change rather than a level.
+
+Five point six. Efficiency. Slide thirty-six.
+
+The equilibrium allocation is inefficient. Three steps on the slide.
+
+Recall that choosing a H is efficient: it increases total surplus.
+
+With no asymmetric information about the action, there would be no need for an incentive constraint: a H could simply be specified in the contract.
+
+In that competitive equilibrium, the first best, all entrepreneurs obtain financing and choose a H. In particular, there is no credit rationing.
+
+So the rationing of borrowers below A bar is a pure loss caused by the hidden action. Their projects have positive NPV, and they are not undertaken.
+
+Book material, printed page one hundred and eighteen, two remarks that complete the picture.
+
+Remark one, full investment of entrepreneurial wealth. Would the borrower rather consume some amount c out of A and invest only A minus c? If the project is still funded, she still gets the whole surplus, p H R minus I, so she gains nothing. But funding becomes harder: her initial assets would now have to exceed A bar plus c. So she cannot gain by not investing all her wealth.
+
+Remark two, the high-powered incentive scheme. Suppose the entrepreneur were paid something in failure as well. Then the incentive constraint becomes delta p times the difference between her success pay and her failure pay, at least B. Paying her in failure shifts her whole pay schedule up and reduces what can be pledged to investors, exactly like consuming c up front. Her utility, if funded, is still p H R minus I. So rewarding her in failure cannot raise her utility, but can compromise financing. This remark is the seed of the debt result in parts eight and nine.
+
+Five point seven. Wealth as collateral. Slide thirty-seven.
+
+An alternative interpretation of A. We can read A as collateral instead of initial wealth, when liquidation costs are zero.
+
+In this reading, the entrepreneur posts A as collateral and borrows the full I.
+
+The payoff of outside investors is p H R u plus one minus p H, times A: R u in success, the collateral A in failure.
+
+The incentive constraint becomes: p H times, R minus R u, plus one minus p H times minus A, is greater than or equal to p L times, R minus R u, plus one minus p L times minus A, plus B. In words: in failure the entrepreneur loses her collateral, which counts as minus A.
+
+The slide states that the cutoff A bar would be the same. Let us fill in the steps, since the slide does not.
+
+Step one, simplify the incentive constraint. Collect the R minus R u terms: delta p times, R minus R u. Collect the collateral terms: minus one minus p H, times A, plus one minus p L, times A, which is p H minus p L, times A, that is delta p times A. So the constraint is delta p times, R minus R u plus A, at least B. Divide by delta p: R minus R u plus A is at least B over delta p.
+
+Step two, the largest R u consistent with incentives is R plus A minus B over delta p.
+
+Step three, investors break even if p H R u plus one minus p H, times A, is at least I. Substitute the largest R u: p H times, R plus A minus B over delta p, plus one minus p H, times A, at least I. The A terms add up to p H A plus A minus p H A, which is A. So the condition is p H R minus p H B over delta p plus A, at least I.
+
+Step four, rearrange: A is at least p H B over delta p, minus, p H R minus I. That is exactly A bar. Same cutoff.
+
+The intuition: when seizing collateral costs nothing, handing over A in failure is just as good for incentives and for the lender as putting A in at the start.
+
+Book material, Tirole chapter four, section four point three, Boosting the Ability to Borrow: The Costs and Benefits of Collateralization, printed page one hundred and sixty-four. The book makes the same point first: accounts receivable, or equipment with a riskless resale value A, are "quasi-cash" that can be pledged to lenders, and everything is as if the entrepreneur had cash A today.
+
+Section four point three point one, Redeployability, printed pages one hundred and sixty-four and one hundred and sixty-five. Suppose that with probability x the project is viable as before, and with probability one minus x the parties learn it will produce nothing, and the asset is resold at a price P, at most I. A high P means a redeployable asset; specialized equipment fetches a low P. Pledging the resale value to lenders first has no adverse incentive effect, so it is optimal; in distress the lenders seize the asset. The financing condition, equation four point seven, becomes: x times p H times, R minus B over delta p, plus one minus x, times P, is at least I minus A. The threshold falls as the asset becomes more redeployable. Tirole's example: a Silicon Valley firm has a hard time borrowing long term, while a gas pipeline company borrows easily and at low spreads.
+
+Section four point three point three, printed pages one hundred and sixty-six to one hundred and sixty-eight, explains why slide thirty-seven needs the words "when liquidation costs are zero". In practice collateral is worth less to lenders than to the borrower. Tirole lists seven reasons: transaction and judicial costs of seizing and selling; benefits of ownership a third party would not enjoy, such as sentimental value or specific skills; assets that are hard to sell, such as know-how; the borrower's higher shadow value of wealth if she may be rationed later; the borrower's risk aversion; poor maintenance of an asset that is likely to be seized; and the managerial rent a new operator would require.
+
+Section four point three point five, Pledging Existing Wealth, printed pages one hundred and seventy and one hundred and seventy-one, gives the general version of slide thirty-seven. Let the borrower pledge collateral C, conditional on failure, which investors value at beta times C, with beta less than one. Then her net utility is the NPV minus the expected deadweight loss: p H R minus I, minus one minus p H, times one minus beta, times C. So she pledges nothing unless she needs to; only firms with A below A bar pledge.
+
+With collateral, the incentive constraint is delta p times, R b plus C, at least B, because in failure she loses both her reward and the collateral. Investors break even if p H times, R minus B over delta p, plus p H C, plus one minus p H, times beta C, is at least I minus A.
+
+Collateral raises pledgeable income twice: directly, through the term one minus p H, times beta C; and indirectly, through the term p H C, because a borrower who stands to lose C needs less reward in success.
+
+The minimum collateral is C of A, equal to, I minus A, minus p H times R minus B over delta p, all over, p H plus one minus p H times beta. It decreases in A: the weakest balance sheets pledge the most. And pledges conditional on failure dominate unconditional ones, because cash is cheaper to transfer than assets.
+
+Set beta equal to one, the zero-liquidation-cost case of the slide, with no cash and C equal to A, and you recover exactly A bar.
+
+One scope note. Tirole contrasts this prediction, that weak borrowers pledge more collateral, with the adverse-selection model, in which only strong borrowers pledge collateral. That contrast belongs to Topic three, asymmetric information, and is not developed here.
+
+Recap of part five. In equilibrium, R u equals I minus A over p H, the interest rate is one over p H minus one, and the entrepreneur gets the whole NPV, p H R minus I. Borrowers below A bar are refused even though they would pay a higher rate, because a higher rate kills incentives; they cannot commit to behave. If they were lent to at the equilibrium rate, their success pay would fall below B over delta p. A bar rises with B and falls with the likelihood ratio delta p over p H. The first best has no rationing, so the equilibrium is inefficient. Wealth posted as costless collateral gives the same cutoff.
+
+Checklist for part five. You should be able to derive R u, the interest rate, and the entrepreneur's payoff in equilibrium. You should be able to explain, with the chain of slide thirty-two, why a higher interest rate does not help. You should be able to reproduce the four-step inequality of slide thirty-four. You should be able to sign the effect of B and of delta p over p H on A bar, and say what the likelihood ratio measures. You should be able to say why the equilibrium is inefficient. And you should be able to derive the same A bar in the collateral reading of slide thirty-seven.
+
+
+Part six. Investment and cash flow. Slides thirty-eight and thirty-nine, with the book's variable-investment model as a bridge.
+
+Six point one. The empirical fact. Slide thirty-eight.
+
+The slide is titled "Sensibility of investment to cash flows"; it means sensitivity.
+
+Credit rationing is a potential explanation for the fact that investment is sensitive to cash flow.
+
+Fazzari and Petersen, nineteen eighty-eight, document two things. First, a robust relationship between cash flows and investment. Second, that this relationship is larger for more "constrained" firms.
+
+The empirical challenge is finding an exogenous increase in cash flows or cash balances. A firm whose cash flow rises may also have better investment opportunities, so the correlation alone does not show that cash causes investment. The slide's example of a clean design is De Mel and co-authors, two thousand eight, from part one: randomized grants are an exogenous cash increase.
+
+Six point two. What the model predicts. Slide thirty-nine.
+
+In our model, a small increase in cash flow increases investment only for marginal firms: those whose initial cash balance is just below A bar. A small addition pushes them over the threshold, and their project gets funded.
+
+There is no effect for "very small" or "very large" firms. Very small firms stay below A bar after a small increase. Very large firms were already above A bar and already investing.
+
+Credit rationing makes the marginal value of an increase in cash flow larger than one. An additional unit of cash increases the entrepreneur's utility by more than one if that unit lets her access credit markets. At the threshold, one more unit of cash brings the whole NPV, p H R minus I, with it.
+
+Six point three. The book's look at the debate. Book material, Tirole section three point two point seven, Sensitivity of Investment to Cash Flow: A First Look, printed page one hundred and twenty-four.
+
+Tirole cites Fazzari and co-authors, nineteen eighty-eight, and the opposing view of Kaplan and Zingales, nineteen ninety-seven, who argue that there is no theoretical basis for a higher sensitivity among constrained firms and present different evidence.
+
+The book's argument uses the fixed-investment model. Let rho zero denote pledgeable income, p H times, R minus B over delta p. A firm is funded if rho zero is at least I minus A, that is, if A is at least I minus rho zero. So the marginal firms are those with A just below I minus rho zero. Fazzari and co-authors are right in this sense: the firms whose investment rises with a small cash increase are the marginal ones.
+
+Now let firms differ in both cash A and pledgeable income rho zero, with the same I, and let cash have a cumulative distribution G with density g. Among firms with pledgeable income rho zero, aggregate investment is one minus G of, I minus rho zero, all times I. Give every firm a small extra amount of cash, delta A. Investment among firms with rho zero rises by g of, I minus rho zero, times I, times delta A.
+
+How does that response vary with rho zero? Its derivative with respect to rho zero is minus g prime of, I minus rho zero, times I, times delta A. If the density of cash is decreasing, the response is larger for firms with low agency cost, high rho zero, as Kaplan and Zingales find. If the density is increasing, the response is larger for firms with high agency cost, as Fazzari and co-authors find. So, without knowing how firms are distributed, the theory cannot predict how the sensitivity varies with an a priori measure of financial constraints.
+
+Six point four. The bridge: variable investment and the equity multiplier. Book material, Tirole section three point four, Borrowing Capacity: The Equity Multiplier, printed pages one hundred and twenty-seven and one hundred and twenty-eight.
+
+The fixed-investment model is one extreme: returns drop sharply beyond one investment size. Section three point four looks at the other extreme, constant returns to scale. This model is used in list R four, so it is worth hearing in full.
+
+An investment of any size I yields R times I in success and zero in failure. The private benefit from misbehaving is B times I, also proportional. Behaving gives success probability p H; misbehaving gives p L.
+
+Three assumptions. Equation three point seven: p H R is greater than one, positive NPV per unit when the borrower behaves. Equation three point eight: one is greater than p L R plus B, negative NPV per unit when she misbehaves. Equation three point nine: p H R is less than one plus p H B over delta p, so the expected net revenue per unit, p H R minus one, is less than the per-unit agency cost, p H B over delta p. This last one keeps investment finite.
+
+The incentive constraint is delta p times R b at least B times I, where R b is the borrower's pay in success. The breakeven constraint is p H times, R I minus R b, at least I minus A.
+
+The borrower's net utility equals the social surplus: p H R minus one, times I. Since that is positive per unit, she wants to invest as much as possible. The limit comes from the two constraints.
+
+Substitute the incentive constraint at equality, R b equal to B I over delta p, into the breakeven constraint: p H times, R minus B over delta p, times I, at least I minus A. Rearranging: I is at most k times A, where k is one over, one minus p H times, R minus B over delta p.
+
+Define rho one as p H R, the expected payoff per unit, and rho zero as p H times, R minus B over delta p, the expected pledgeable income per unit. The assumptions say rho one is greater than one, which is greater than rho zero. Then the equity multiplier is k equals one over, one minus rho zero, which is greater than one. The borrower can lever her wealth.
+
+Borrowing is I minus A, which is k minus one, times A. So debt capacity per unit of net worth is d equals rho zero over, one minus rho zero.
+
+The multiplier is smaller the higher the private benefit B and the lower the likelihood ratio, the two measures of agency cost.
+
+Now the shadow value of wealth. The borrower's gross utility is A plus her net utility, and it equals v times A, where v is p H B over delta p, divided by, one minus rho zero. Equivalently, v is rho one minus rho zero, over one minus rho zero. And v is greater than one. This is the general version of slide thirty-nine's claim: under credit rationing, a unit of cash is worth more than one unit to the entrepreneur. In the fixed-investment model that value shows up as a jump at A bar; in the variable-investment model it is a constant above one at every level of wealth.
+
+And the book's remark on investment and cash flow in this model, printed page one hundred and twenty-eight: the derivative of I with respect to A is k, and the derivative of k with respect to rho zero is one over, one minus rho zero, squared, which is positive. So firms with low agency cost, which are less constrained, show a higher sensitivity of investment to cash, because their multiplier is larger. Again, theory alone does not deliver the Fazzari and Petersen sign.
+
+Recap of part six. Investment responds to cash flow, more so for constrained firms, according to Fazzari and Petersen; the empirical problem is finding exogenous cash. In the fixed-investment model only firms just below A bar respond, and a unit of cash can be worth more than one. In the book's variable-investment model, investment is k times A, with equity multiplier k equal to one over, one minus rho zero, and the shadow value of wealth is above one; but whether constrained firms are more sensitive depends on how firms are distributed, and the book shows cases going either way.
+
+Checklist for part six. You should be able to state the Fazzari and Petersen finding and the identification problem. You should be able to say which firms respond to a small cash increase in the fixed-investment model, and why the marginal value of cash exceeds one. You should be able to derive the equity multiplier, one over, one minus rho zero, from the two constraints. And you should be able to explain why the theory does not, on its own, sign the relation between financial constraints and investment-cash-flow sensitivity.
+
+
+Part seven. Debt versus equity in the basic model. Slides forty to forty-six.
+
+The lecture now turns from whether a project is financed to how. The question is: which security, debt or equity, is better at getting money to an entrepreneur under moral hazard?
+
+Seven point one. Two kinds of promise. Slide forty.
+
+To finance fixed assets and inputs, such as raw materials and wages, that let them sell products and services, firms can issue two kinds of claim.
+
+Liabilities, which are promises to non-owners, the creditors. They are specific and senior. Examples: bonds, bank loans, payables.
+
+Equity, which is a promise to owners, the shareholders. It is non-specific and junior. Example: stocks.
+
+Owners are residual claimants: their claim is junior to liabilities, so they receive whatever future cash flows are not promised away to creditors.
+
+Said the other way round: creditors have priority, their claim is senior to equity, and shareholders get paid only after the promises to creditors are fulfilled.
+
+Seven point two. The standard debt contract. Slide forty-one.
+
+A standard debt contract is one of the most common forms of liability. The slide asks: does it have good properties for getting access to funding in the presence of moral hazard?
+
+Its key characteristics, as listed on the slide.
+
+One: the contract specifies fixed payments to the lender at fixed times.
+
+Two: if the borrower misses a payment, that is, defaults, the lender can seize the firm's assets, leaving equityholders empty-handed.
+
+Three: under limited liability, only the firm's assets can be seized.
+
+Four: in some cases, after a default, banks can also report negative information about the borrower to a credit bureau.
+
+Seven point three. Payoffs of debt and equity. Slide forty-two.
+
+Consider a firm that finances itself with equity and a one-period debt contract that specifies a fixed repayment D to creditors at maturity.
+
+A warning on notation before the payoffs. On slides forty-two and forty-three, the letter A stands for the firm's assets at maturity, not the entrepreneur's initial wealth. Same letter, different object, only on these two slides.
+
+If the firm has assets A at maturity, there are two outcomes.
+
+If A is less than D, the firm defaults. Creditors are senior and seize all the assets, receiving A. Equityholders get nothing.
+
+If A is at least D, the firm fulfils its promise and repays D. Equity is worth the residual, A minus D.
+
+The slide summarizes this in a table. Walk it row by row. Debt: in default, when A is less than D, debt gets A; under full repayment, when A is at least D, debt gets D. Equity: in default, equity gets zero; under full repayment, equity gets A minus D.
+
+In compact form: debt gets the minimum of A and D; equity gets the maximum of A minus D and zero.
+
+Seven point four. The payoff diagram. Slide forty-three.
+
+The slide draws payoffs at maturity for a debt contract with no coupon and face value D, against the firm's assets at maturity on the horizontal axis.
+
+The debtholder's line starts at the origin and rises along the forty-five degree line until assets reach D, then turns flat at height D. The debtholder never gets more than D.
+
+The equityholder's line is flat at zero until assets reach D, then rises along a forty-five degree line from the point D. Every extra unit of assets above D goes to equity.
+
+Add the two lines and you get the forty-five degree line: together, debt and equity own the whole firm.
+
+Seven point five. Direct financing in the basic model, read as debt. Slide forty-four.
+
+Back to the model. The payment to outside investors is R u, equal to I minus A over p H, if the project succeeds, and zero if it fails.
+
+This contract can be read as a debt contract: in exchange for I minus A, the entrepreneur promises to repay a fixed amount, a face value, D equal to R u.
+
+The slide's table, walked column by column. In failure, which is default: total cash flow is zero, debt held by outside investors gets zero, and equity held by the entrepreneur gets zero. In success, which is repayment: total cash flow is R, debt gets R u, and the entrepreneur's equity gets R minus R u.
+
+Seven point six. It is also equity. Slide forty-five.
+
+The same contract can also be read as equity: in exchange for I minus A, the entrepreneur sells a share alpha, equal to R u over R, of the firm to outside investors.
+
+The slide's table, column by column. In failure: total cash flow zero; outside investors' equity gets alpha times zero, which is zero; the entrepreneur's equity gets one minus alpha, times zero, which is zero. In success: total cash flow R; outside investors get alpha R, which is R u; the entrepreneur gets one minus alpha, times R, which is R minus R u.
+
+Exactly the same payoffs as debt.
+
+The slide explains why. This multiplicity arises because there are only two states, the assets take only two values, and in one of them the project returns zero.
+
+In general, the payoffs of debt and equity are different. So in general they can differ in how they provide incentives and in how well they mitigate the moral hazard problem.
+
+Seven point seven. The two diagrams. Slide forty-six.
+
+Two panels, each with project payoff on the horizontal axis and investor payoff on the vertical axis.
+
+Debt panel: the lender's line rises along the forty-five degree line from the origin until it reaches the height R u, then runs flat at R u. The project can only end at zero or at R. At zero the lender gets zero; at R the lender gets R u.
+
+Equity panel: the lender's line is a straight ray from the origin, with slope alpha, passing through the point where the project pays R and the lender gets R u.
+
+Both lines pass through the same two points: the origin, and the point R, R u. Since the project only ever lands on those two points, the two contracts are indistinguishable.
+
+Book material, Tirole section three point two point three, Do Investors Hold Debt or Equity?, printed page one hundred and nineteen. Tirole says that with two profit levels, zero and R, there is no difference between risky debt and equity. Under the debt reading, the borrower reimburses R l or goes bankrupt, and keeps R minus R l. Under the equity reading, the entrepreneur and the investors hold fractions R b over R and R l over R; Tirole calls these "inside equity" and "outside equity". He calls this indeterminacy both a weakness and a strength: a weakness because the model cannot explain the variety of securities as it stands; a strength because many ideas in corporate finance do not depend on whether the outside claim is debt or equity, so the model can study them without that distraction.
+
+Recap of part seven. Liabilities are senior and specific; equity is junior and residual. A standard debt contract pays fixed amounts, and in default the lender seizes the firm's assets. Debt pays the minimum of assets and face value; equity pays the maximum of assets minus face value and zero. In the basic model, with outcomes zero and R, the contract is debt with face value R u or equity with share R u over R, and the two are identical. To tell them apart, failure must pay something.
+
+Checklist for part seven. You should be able to define seniority and residual claimancy. You should be able to list the features of a standard debt contract. You should be able to state and draw the payoffs of debt and equity as functions of assets at maturity. And you should be able to explain why, with outcomes zero and R, debt and equity coincide.
+
+
+Part eight. A project with two positive outcomes: first best and moral hazard. Slides forty-seven to fifty-seven.
+
+Eight point one. New payoffs. Slide forty-seven.
+
+To learn something about security design and the difference between debt and equity, assume the project pays something in both states.
+
+R tilde equals R S if the project succeeds, and R F if it fails, where R S is greater than R F, which is greater than zero.
+
+The initial investment is still I, with R F less than I less than R S. So the failure income alone does not cover the investment, and the success income does.
+
+Eight point two. Contracts. Slide forty-eight.
+
+Limited liability is still assumed.
+
+A contract says that outside investors receive R u S, somewhere between zero and R S, in case of success, and R u F, somewhere between zero and R F, in case of failure.
+
+The entrepreneur receives R f S in case of success and R f F in case of failure.
+
+The two pieces always add up: R S is equal to R u S plus R f S, and R F is equal to R u F plus R f F.
+
+The slide shows a table with rows for total cash flow, outside investors and entrepreneur. A note on that table: the slide prints the column headings as "Failure", then "Success", but the entries under "Failure" are the success values, R S, R u S and R f S, and the entries under "Success" are the failure values. The headings are swapped; the reading consistent with the model is that the first column is success and the second is failure. So, in success: total R S, investors R u S, entrepreneur R f S. In failure: total R F, investors R u F, entrepreneur R f F.
+
+Eight point three. Assumptions. Slide forty-nine.
+
+Assumption A one, positive NPV if the entrepreneur behaves: p H R S plus one minus p H, times R F, minus I, is greater than zero.
+
+Assumption A two, negative NPV if the entrepreneur shirks, even counting B: p L R S plus one minus p L, times R F, plus B, minus I, is less than zero.
+
+A small slip on the slide: it says "if the worker behaves" and "if the worker shirks". The model has no worker; it means the entrepreneur.
+
+As before, given A two, the contract must give incentives for a H. Otherwise one of the parties is better off not participating. The argument is the same split into two brackets as in part three.
+
+One implication that the slides do not spell out but that we will need: subtract A two from A one, exactly as on slide twenty-three. The I terms cancel and you get delta p times, R S minus R F, minus B, greater than zero. So delta p times, R S minus R F, is greater than B. The extra income that success brings, weighted by delta p, exceeds the private benefit.
+
+Eight point four. First best. Slide fifty.
+
+First suppose there is no asymmetric information: the action is observable and verifiable.
+
+Then there is no need to give incentives, no incentive constraint: the contract can simply specify a H.
+
+This is the Modigliani and Miller result: financing choices are irrelevant in the absence of moral hazard. The entrepreneur can raise I minus A by issuing debt. She can raise it by issuing equity, selling part of the firm. Or by any combination; the slide's example is raising half of I minus A with debt and the other half with equity.
+
+Eight point five. First best with debt. Slide fifty-one.
+
+Assume I minus A is greater than R F. Otherwise the entrepreneur could issue riskless debt: a promise of I minus A that can be paid even in failure.
+
+So consider risky debt with face value D greater than R F. Investors receive D if the project succeeds, which is full repayment, and R F if it fails, which is default: they take everything there is.
+
+D is set so that investors break even. Restate: expected repayment equals the amount lent.
+
+p H D plus one minus p H, times R F, equals I minus A.
+
+Solve. p H D equals I minus A minus R F plus p H R F. Divide by p H: D equals R F plus, I minus A minus R F, over p H.
+
+Read it: the face value is the failure income R F, which is paid for sure, plus the rest of the loan, I minus A minus R F, scaled up by one over p H because it is only paid in success.
+
+Eight point six. First best with equity. Slide fifty-two.
+
+To raise I minus A with equity, the entrepreneur sells a share alpha of the project. Investors receive alpha R S in success and alpha R F in failure.
+
+Alpha is set so investors break even: alpha times, p H R S plus one minus p H, times R F, equals I minus A. So alpha equals I minus A, over, p H R S plus one minus p H, times R F.
+
+In words: the share sold is the amount raised divided by the expected value of the project.
+
+The slide's conclusion: whatever the financing method, including arbitrary combinations of debt and equity, the project is always financed and the entrepreneur gets the entire NPV. That is Modigliani and Miller inside this model.
+
+Eight point seven. Back to hidden action. Slide fifty-three.
+
+Now the action is not observable. The financing condition has the same structure as before: financing takes place if and only if expected pledgeable income is at least I minus A, the amount lent or invested.
+
+Expected pledgeable income is the maximum expected amount lenders can receive while the entrepreneur still has the incentive to choose a H.
+
+The higher the pledgeable income, the more outside investors can lend or invest, and the smaller the credit rationing problem: more entrepreneurs, with smaller initial wealth A, can obtain credit.
+
+So the slide asks the question that drives the rest of the lecture: which contract, debt or equity, maximizes pledgeable income?
+
+Eight point eight. The incentive constraint with two outcomes. Slide fifty-four.
+
+The entrepreneur chooses a H only if it gives her more utility than shirking.
+
+Under a H, she gets R f S with probability p H and R f F with probability one minus p H. Under a L, she gets R f S with probability p L, R f F with probability one minus p L, plus B.
+
+So the incentive constraint is: p H R f S plus one minus p H, times R f F, is at least p L R f S plus one minus p L, times R f F, plus B.
+
+A note on the slide: it prints the first form of the constraint with a strict "greater than", and the second form with "greater than or equal". The standard convention, used throughout the rest of the lecture and in the book, is that the entrepreneur behaves when indifferent, so read both as "greater than or equal".
+
+Simplify. Move the a L side to the left. The R f S terms give p H minus p L, times R f S, which is delta p R f S. The R f F terms give one minus p H minus one plus p L, times R f F, which is minus delta p R f F. So delta p times, R f S minus R f F, is at least B. Divide by delta p:
+
+R f S minus R f F is at least B over delta p.
+
+This is the key line. What matters for incentives is not the level of the entrepreneur's pay, but the gap between her pay in success and her pay in failure.
+
+The slide then notes the cost of rewarding the entrepreneur in failure. A higher reward in failure reduces the marginal benefit of a H, since it narrows the gap. To keep the same marginal benefit of a H, the reward in success must rise too. That lowers what lenders can get, that is, it lowers pledgeable income.
+
+Eight point nine. The answer, announced. Slide fifty-five.
+
+We will see that the solution that maximizes pledgeable income, and so minimizes rationing, has R f F equal to zero. Setting R f F to zero minimizes the cost of providing incentives, and so maximizes what lenders can receive.
+
+Eight point ten. The derivation. Slide fifty-six.
+
+Restate the claim: given the incentive constraint, investors' maximum expected payoff falls one for one with the entrepreneur's failure pay, so failure pay should be zero.
+
+Start from investors' expected payoff: p H R u S plus one minus p H, times R u F.
+
+Step one: replace investor payoffs by total minus entrepreneur. That gives p H times, R S minus R f S, plus one minus p H, times, R F minus R f F.
+
+Step two: expand and regroup. p H R S plus R F minus p H R F, which is p H times, R S minus R F, plus R F. And the entrepreneur terms: minus p H R f S, minus R f F, plus p H R f F, which is minus p H times, R f S minus R f F, minus R f F. So investors get: p H times, R S minus R F, plus R F, minus p H times, R f S minus R f F, minus R f F.
+
+Step three: use the incentive constraint. The gap R f S minus R f F must be at least B over delta p. To give investors the most, set the gap equal to its minimum, B over delta p. The slide labels this term "max. B over delta p", meaning: this is the substitution that gives the maximum pledgeable income. So the expected pledgeable income becomes:
+
+p H times, R S minus R F, plus R F, minus p H B over delta p, minus R f F.
+
+Step four: read the last term. Everything else is a parameter. The only choice variable left is R f F, the entrepreneur's pay in failure, and it enters with a minus sign, one for one.
+
+Conclusion: setting R f F equal to zero, leaving the entrepreneur empty-handed in failure, maximizes outside investors' expected payoff.
+
+Eight point eleven. How to get R f F equal to zero. Slide fifty-seven.
+
+The financing must contain debt with face value D at least R F. With such debt, in failure the whole income R F goes to creditors, and the entrepreneur gets nothing. Otherwise she would have a positive payoff in failure.
+
+Leaving the entrepreneur empty-handed in failure can be read as a "punishment". And this punishment is more likely to happen when she chooses a L, because failure is more likely under a L.
+
+Book material, Tirole section three point two point two, printed page one hundred and eighteen, the remark on high-powered incentive schemes, gives the same algebra in the basic model: with pay R b S in success and R b F in failure, investors' income is at most p H times, R minus B over delta p, minus R b F; paying the entrepreneur in failure shifts her whole pay schedule up, lowers pledgeable income, and does not raise her utility.
+
+Recap of part eight. With outcomes R S and R F, both positive, and no moral hazard, Modigliani and Miller hold: debt with face value R F plus, I minus A minus R F, over p H, or an equity share I minus A over the project's expected value, both work, and the entrepreneur gets the NPV. Under moral hazard, incentives depend on the gap, R f S minus R f F, which must be at least B over delta p. Expected pledgeable income is p H times, R S minus R F, plus R F, minus p H B over delta p, minus R f F. So the entrepreneur should get nothing in failure, which requires debt with face value at least R F.
+
+Checklist for part eight. You should be able to write the two-outcome contract and its adding-up identities. You should be able to derive the first-best face value D and the first-best share alpha. You should be able to derive the incentive constraint, R f S minus R f F at least B over delta p. You should be able to derive the four steps of slide fifty-six. And you should be able to explain why R f F equal to zero requires debt with face value at least R F.
+
+
+Part nine. All-equity versus debt financing, and why debt dominates. Slides fifty-eight to sixty-five.
+
+Nine point one. All-equity financing: the incentive constraint. Slide fifty-eight.
+
+All-equity financing is sub-optimal because the borrower gets a positive payoff in failure. That is a positive reward for a L.
+
+Let alpha be the share sold to outside investors, so the entrepreneur keeps one minus alpha.
+
+The incentive constraint: one minus alpha, times, p H R S plus one minus p H, times R F, which is firm value under a H, must be at least one minus alpha, times, p L R S plus one minus p L, times R F, which is firm value under a L, plus B.
+
+Same note as before: the slide prints a strict "greater than" here; read it as "greater than or equal".
+
+Simplify. The difference in firm value between a H and a L is delta p times, R S minus R F. So one minus alpha, times delta p, times, R S minus R F, is at least B. Divide:
+
+One minus alpha is at least B over, delta p times, R S minus R F.
+
+The entrepreneur's retained share must be at least the private benefit divided by delta p times the extra income that success brings.
+
+Notice that this lower bound is less than one, because, as we derived in part eight from A one and A two, delta p times, R S minus R F, exceeds B. So some share can be sold.
+
+Nine point two. The entrepreneur's payoff in failure under equity. Slide fifty-nine.
+
+In failure, an equity-holding entrepreneur gets one minus alpha, times R F. With one minus alpha at least B over, delta p times, R S minus R F, she gets at least B over, delta p times, R S minus R F, times R F.
+
+That is strictly positive. Compare it with the zero she would get under debt with D greater than R F. The slide labels the comparison exactly that way: a positive amount under equity, against zero, the payoff under debt with D greater than R F.
+
+The maximum share that outside investors can hold is one minus B over, delta p times, R S minus R F.
+
+Nine point three. All-equity financing: the threshold. Slide sixty.
+
+Financing takes place if expected pledgeable income is at least I minus A, that is, if outside investors can break even.
+
+Under all equity, investors get at most the maximum share, times firm value. So the condition is: one minus B over, delta p times, R S minus R F, all times, p H R S plus one minus p H, times R F, is at least I minus A.
+
+Rearranging gives the minimum wealth required for all-equity financing. Let us do the rearrangement step by step, since the slide jumps to the answer.
+
+Step one: write firm value, p H R S plus one minus p H, times R F, as p H times, R S minus R F, plus R F.
+
+Step two: multiply out. The first piece is firm value, p H times, R S minus R F, plus R F. The second piece is minus B over, delta p times, R S minus R F, times firm value. Split that firm value into its two parts. B over, delta p times, R S minus R F, times p H times, R S minus R F, simplifies to p H B over delta p. And B over, delta p times, R S minus R F, times R F, stays as B R F over, delta p times, R S minus R F.
+
+So expected pledgeable income under all equity is: p H times, R S minus R F, plus R F, minus p H B over delta p, minus B R F over, delta p times, R S minus R F.
+
+Step three: require that to be at least I minus A, and solve for A.
+
+A all-equity is equal to B R F over, delta p times, R S minus R F, plus p H B over delta p, minus, open bracket, p H times, R S minus R F, plus R F minus I, close bracket.
+
+Nine point four. All-debt financing. Slide sixty-one.
+
+Now consider a debt contract with face value D, equal to R u S, greater than R F.
+
+In failure, which is default, the payoffs are R f F equal to zero and R u F equal to R F. Creditors take everything.
+
+In success, the entrepreneur's minimum compensation R f S is B over delta p, because the gap R f S minus R f F must be at least B over delta p and R f F is zero. So the maximum compensation to outside investors in success, the pledgeable income in success, is R S minus B over delta p.
+
+Therefore expected pledgeable income under debt is: p H times, R S minus B over delta p, plus one minus p H, times R F.
+
+Check it against slide fifty-six: multiply out, and you get p H times, R S minus R F, plus R F, minus p H B over delta p. That is slide fifty-six's formula with R f F set to zero. Debt reaches the maximum.
+
+Nine point five. The debt threshold. Slide sixty-two.
+
+Financing takes place if outside investors can break even: p H times, R S minus B over delta p, plus one minus p H, times R F, is at least I minus A.
+
+Rearranging, the minimum wealth required for debt financing is:
+
+A debt is equal to p H B over delta p, minus, open bracket, p H times, R S minus R F, plus R F minus I, close bracket.
+
+Look at the bracket: p H times, R S minus R F, plus R F, minus I, is the same as p H R S plus one minus p H, times R F, minus I. That is the NPV of the project under good behaviour. So A debt has exactly the shape of A bar from part four: the agency rent, p H B over delta p, minus the NPV.
+
+Nine point six. The two thresholds on one line. Slide sixty-three.
+
+The slide draws a horizontal axis for initial wealth A, starting at zero, and marks two points on it.
+
+The first point, further left, is A debt, equal to p H B over delta p minus, p H times, R S minus R F, plus R F minus I.
+
+The second point, further right, is A all-equity, equal to B R F over, delta p times, R S minus R F, plus p H B over delta p, minus, p H times, R S minus R F, plus R F minus I. On the slide, the first term of A all-equity is highlighted in colour, because it is the only difference.
+
+Three regions, from left to right. From zero up to A debt: credit rationed. From A debt onward: debt financing works. From A all-equity onward: all-equity financing also works.
+
+Subtract the two thresholds. A all-equity minus A debt is B R F over, delta p times, R S minus R F. Since B, R F and R S minus R F are all positive, this is positive. A all-equity is strictly above A debt.
+
+The slide's conclusion: entrepreneurs with initial wealth A at least A debt and below A all-equity can be financed with debt with face value D at least R F, but cannot be financed with equity only. Debt dominates equity.
+
+And notice the gap is exactly the entrepreneur's minimum failure payoff under equity, from slide fifty-nine. The equity-financed entrepreneur must be paid at least B R F over, delta p times, R S minus R F, in failure, and every unit of that is a unit that cannot go to investors. That is why the equity threshold is higher by exactly that amount.
+
+Nine point seven. Debt versus equity: the general lesson. Slide sixty-four.
+
+Four statements on the slide.
+
+First: setting R f F equal to zero maximizes investors' payoff, and so makes the lender's participation constraint the least severe.
+
+Second: every project that can be financed with equity can also be financed with debt, but not the other way around.
+
+Third, the intuition: the debt contract maximizes the part of the return from choosing a H that accrues to the entrepreneur. Under debt, every extra unit of income from success above the face value is hers; nothing is wasted rewarding her for failure.
+
+Fourth: the solution is not unique. The financial structure can be debt only, with face value D greater than R F, or a combination of riskless debt with face value D equal to R F and some equity. In any case, the entrepreneur must receive zero when the project fails.
+
+Why the combination works: riskless debt of R F takes all the failure income. Outside equity then takes a share of what is left in success, R S minus R F. In failure the entrepreneur gets zero; in success she keeps her share of R S minus R F. That is the same pattern as risky debt.
+
+Nine point eight. The diagrams. Slide sixty-five.
+
+Two panels, project payoff on the horizontal axis, investor payoff on the vertical, with the two possible outcomes R F and R S marked.
+
+Debt panel: the investor's line rises along the forty-five degree line, then turns flat. At project payoff R F the investor gets R u F equal to R F, still on the forty-five degree line, so the entrepreneur gets nothing. At R S the investor gets R u S, on the flat part. The caption reads: R u F equals R F, which implies R f F equals zero.
+
+Equity panel: a dashed forty-five degree line with slope one, labelled "slope equals one", and below it the investor's line, a ray from the origin with slope less than one, labelled "slope less than one", which is the share alpha. At project payoff R S the investor gets R u S. At R F the investor gets R u F, which lies below R F. The caption reads: R u F less than R F, which implies R f F greater than zero.
+
+The picture says it all: under equity, investors leave something on the table in failure, and that something is a reward for failure.
+
+Nine point nine. Book material: the maximal incentives principle. Tirole section three point four point three, Collateral Values: Outside Debt and the Maximal Incentives Principle, printed pages one hundred and twenty-eight to one hundred and thirty.
+
+The book proves the same result in the variable-investment model, with a perturbation argument that is worth hearing because it is the cleanest proof.
+
+Setup: success income R S times I, failure income R F times I, with R F I read as the salvage value of the assets, and R I defined as R S minus R F, times I, the extra profit from success. Private benefit B I. A contract sets I and the entrepreneur's pay in success and failure, both non-negative by limited liability.
+
+Two constraints. The incentive constraint: delta p times the difference between her pay in success and in failure is at least B I. The breakeven constraint: p H times investors' share in success, plus one minus p H times investors' share in failure, at least I minus A.
+
+Step one: the breakeven constraint binds. If it did not, raise the entrepreneur's pay in both states by the same small amount; the gap is unchanged, so incentives are intact, and she is better off. So investors get no surplus, and her utility equals the NPV, p H R plus R F minus one, times I.
+
+Step two: the incentive constraint binds; otherwise investment could be expanded without limit.
+
+Step three, the key one. Suppose her pay in failure were positive at the optimum. Raise her pay in success by a small amount and lower her pay in failure, so that investors' expected receipts stay the same: p H times the rise plus one minus p H times the fall equals zero. Her expected pay is unchanged too. But the gap between success and failure pay has widened, so the incentive constraint is now slack, which contradicts step two. So at the optimum, her pay in failure is zero.
+
+Tirole's conclusion: an all-equity firm cannot be optimal, because an equity-holding entrepreneur would get R F I times her share in failure; investors holding debt of at least R F I is an optimal structure. Borrowing capacity becomes I equal to A over, one minus, open bracket, p H times, R minus B over delta p, plus R F, close bracket, equation three point sixteen.
+
+Two predictions from the book. Safe debt plus some equity maximizes the entrepreneur's stake and incentives. And credit rationing bites harder for firms with less tangible assets: lowering the salvage value R F while keeping the NPV and the agency problem fixed lowers investment. Tangible assets facilitate financing.
+
+Nine point ten. Book material: why debt, more generally. Tirole sections three point five and three point six, printed pages one hundred and thirty to one hundred and thirty-four.
+
+Section three point five, Related Models of Credit Rationing: Inside Equity and Outside Debt, printed page one hundred and thirty, explains that three classic families of models, which differ in what can be verified about income, all end up with the same shape: inside equity for the entrepreneur and outside debt for investors. The three are: verifiable income, as in this lecture; costly state verification, where income can only be checked with a costly audit; and non-verifiable income. The non-verifiable case, where repayment must be enforced by other means such as the threat of not financing future projects, belongs to Topic five and is not developed here.
+
+Section three point six, Verifiable Income, printed page one hundred and thirty-two, is the version closest to the lecture. It rests on "maximal insider incentives": a standard debt contract makes the borrower residual claimant for income above the repayment. Tirole presents Innes, nineteen ninety, with a continuum of outcomes and effort levels. Without further restrictions, the optimal reward gives the borrower nothing below some threshold income and everything above it, a "live or die" contract. Adding the assumption that investors' repayment must not fall as income rises, which Innes motivates by the borrower's ability to secretly add cash to the firm's accounts, turns the solution into a standard debt contract. The book's caveats: debt is less appropriate when the borrower can choose risk, which is the asset-substitution problem of Topic four B; and debt may be suboptimal if the borrower learns information before choosing effort.
+
+Recap of part nine. Under all equity, the incentive constraint is one minus alpha at least B over, delta p times, R S minus R F; the entrepreneur then gets a positive amount in failure, at least B R F over, delta p times, R S minus R F. Under debt with face value above R F, she gets zero in failure, and expected pledgeable income is p H times, R S minus B over delta p, plus one minus p H, times R F. The debt threshold is A debt, agency rent minus NPV; the equity threshold is higher by exactly B R F over, delta p times, R S minus R F. Entrepreneurs between the two can only be financed with debt. Any structure that gives the entrepreneur zero in failure works: risky debt, or riskless debt of R F plus equity.
+
+Checklist for part nine. You should be able to derive the all-equity incentive constraint and the entrepreneur's minimum failure payoff. You should be able to derive A all-equity and A debt, and show that their difference is B R F over, delta p times, R S minus R F. You should be able to draw the threshold line of slide sixty-three with its three regions. You should be able to state the four points of slide sixty-four, including the non-uniqueness. And you should be able to give the perturbation argument for why failure pay is zero at the optimum.
+
+
+Part ten. The limitations of debt optimality, and the references. Slides sixty-six to sixty-nine.
+
+Ten point one. Debt is not a panacea. Slide sixty-six.
+
+The slide makes four points.
+
+First: debt is not a panacea.
+
+Second: remember Modigliani and Miller: without frictions, the financing method is irrelevant. Debt is optimal here only because of the moral hazard friction.
+
+Third: the optimality arises in this specific moral hazard setting with the assumption of risk neutrality. High-powered incentives are optimal because there is no need for risk sharing, or for consumption smoothing.
+
+Fourth: if the entrepreneur is risk averse, she bears too much risk with a debt contract. Debt concentrates all the project's risk, above the face value, on her, and gives her nothing in the bad state.
+
+Book material, Tirole section three point six, printed pages one hundred and thirty-four and one hundred and thirty-five. With a risk-averse entrepreneur, the optimal contract must aim at two targets, effort and insurance, which in general conflict: insuring her against variations in profit makes her unaccountable and lowers effort. The book reviews a special case, due to Hermalin and Katz, nineteen ninety-one, in which investors observe effort before profit is realized and the contract is renegotiated; then debt plus renegotiation separates the two problems. This is advanced material beyond the slides; renegotiation itself is studied in Topic four B.
+
+Ten point two. Distress costs. Slide sixty-seven.
+
+Leverage also increases the risk of bankruptcy or financial distress. Financial distress and bankruptcy have costs that drain resources from the firm and distort managerial decisions.
+
+Direct bankruptcy costs, as listed on the slide: legal and administrative costs; the time and resources managers and creditors spend dealing with bankruptcy; and fire sales of assets, because of asset specificity and illiquid assets.
+
+Indirect bankruptcy costs: loss of customers, of key employees, and of access to credit markets; and conflicts of interest between equityholders and creditors that may lead to poor investment decisions, namely debt overhang and asset substitution.
+
+Scope note: debt overhang and asset substitution are the subject of Topic four B, the next lecture. They are named here and not developed.
+
+Ten point three. The references. Slides sixty-eight and sixty-nine.
+
+The lecture cites seven works. Baltensperger, nineteen seventy-eight, "Credit rationing: issues and questions", Journal of Money, Credit and Banking. Bester and Hellwig, nineteen eighty-seven, "Moral hazard and equilibrium credit rationing: an overview of the issues", in a Springer volume on agency theory, information and incentives. Dasgupta, two thousand fifteen, Financial Economics, lecture notes at the London School of Economics. De Mel, McKenzie and Woodruff, two thousand eight, "Returns to capital in microenterprises: evidence from a field experiment", Quarterly Journal of Economics. Fazzari and Petersen, nineteen eighty-eight, "Financing constraints and corporate investment", Brookings Papers on Economic Activity. Holmström and Tirole, nineteen ninety-seven, "Financial intermediation, loanable funds, and the real sector", Quarterly Journal of Economics. And Jensen and Meckling, nineteen seventy-six, "Theory of the firm: managerial behavior, agency costs and ownership structure", Journal of Financial Economics.
+
+Recap of part ten. Debt's optimality depends on moral hazard and on risk neutrality; with a risk-averse entrepreneur, debt loads her with too much risk. Leverage also brings distress costs, direct ones such as legal costs and fire sales, and indirect ones such as lost customers and employees, debt overhang and asset substitution, which are Topic four B.
+
+Checklist for part ten. You should be able to name the two assumptions on which debt's optimality rests, and say what goes wrong under risk aversion. And you should be able to list the direct and indirect costs of distress from slide sixty-seven.
+
+
+Support part one. Common pitfalls.
+
+Each pitfall is said as the error, then the correction.
+
+Pitfall one. The error is to call any refusal of credit "rationing". The correction: under the Baltensperger definition, a borrower turned down for lack of collateral is not rationed, and neither is a category excluded for lack of cash flows or collateral. Rationing means being refused while willing to pay every price and nonprice term the lender asks.
+
+Pitfall two. The error is to think a rationed borrower could get the loan by offering a higher interest rate. The correction: a higher rate means a larger R u and a smaller R f; once R f falls below B over delta p, the borrower shirks and the lender loses money. Raising the price worsens the moral hazard problem, which is why the market clears through quantities.
+
+Pitfall three. The error is to think pledgeable income depends on how much is borrowed. The correction: pledgeable income in success, R minus B over delta p, contains no A. What depends on A is the amount the lender must recover, I minus A. Rationing comes from comparing a fixed ceiling with a variable requirement.
+
+Pitfall four. The error is to write the threshold with the wrong sign or the wrong pieces. The correction: A bar is the agency rent minus the NPV, that is, p H times B over delta p, minus, p H R minus I. A larger NPV lowers the threshold; a larger agency rent raises it.
+
+Pitfall five. The error is to say A bar decreases in delta p alone, or in p H alone. The correction: holding the NPV fixed, the slide's statement is about the ratio delta p over p H, the likelihood ratio. A higher ratio means the outcome says more about the action, and the threshold falls.
+
+Pitfall six. The error is to say lenders earn a positive return because the interest rate is positive. The correction: the rate one over p H minus one is a default premium; lenders earn zero in expectation, and the entrepreneur gets the whole NPV.
+
+Pitfall seven. The error is to confuse the two meanings of the letter A. The correction: in the model, A is the entrepreneur's initial wealth; on slides forty-two and forty-three, A is the firm's assets at maturity in the generic debt-versus-equity payoff table.
+
+Pitfall eight. The error is to claim debt beats equity in the basic model with outcomes zero and R. The correction: with only those two outcomes, debt with face value R u and an equity share R u over R give identical payoffs. Debt and equity can only be told apart when failure pays something, R F greater than zero.
+
+Pitfall nine. The error is to think that what matters for incentives is the level of the entrepreneur's pay. The correction: what matters is the gap, R f S minus R f F, which must be at least B over delta p. Any pay in failure has to be matched by extra pay in success, and that comes out of pledgeable income one for one.
+
+Pitfall ten. The error is to say debt is optimal "because of Modigliani and Miller" or in general. The correction: under Modigliani and Miller, with no moral hazard, financing is irrelevant. Debt is optimal here only because of hidden action combined with risk neutrality; with a risk-averse entrepreneur, debt makes her bear too much risk, and leverage brings distress costs.
+
+Pitfall eleven. The error is to think the optimal structure must be pure risky debt. The correction: the solution is not unique; riskless debt with face value R F plus outside equity works equally well. The only requirement is that the entrepreneur gets zero in failure.
+
+Pitfall twelve. The error is to read the gap between the two thresholds as an arbitrary constant. The correction: A all-equity minus A debt equals B R F over, delta p times, R S minus R F, which is exactly the minimum the equity-financed entrepreneur must be paid in failure. That payment is pledgeable income lost.
+
+Pitfall thirteen. The error is to read slide thirty-seven's collateral result as saying collateral is always as good as cash. The correction: the slide says "when liquidation costs are zero". In Tirole chapter four, section four point three, collateral is worth less to lenders than to the borrower, so pledging it destroys value, and only borrowers who need it pledge it.
+
+
+Support part two. Spoken formula sheet.
+
+How to use this part: after each number, pause, say the formula aloud yourself, then listen to the answer.
+
+Formula one. The net present values with good and bad behaviour. Pause. The NPV under a H is p H R minus I; under a L it is p L R minus I.
+
+Formula two. The interest rate on a loan with repayment R u. Pause. One plus i equals R u over I minus A; so i equals R u over I minus A, minus one.
+
+Formula three. Assumptions A one and A two. Pause. A one: p H R minus I is greater than zero. A two: p L R minus I plus B is less than zero.
+
+Formula four. Shirking is inefficient. Pause. Delta p times R, minus B, is greater than zero, where delta p is p H minus p L.
+
+Formula five. The incentive constraint. Pause. p H R f is at least p L R f plus B; equivalently, delta p R f is at least B; equivalently, R f is at least B over delta p.
+
+Formula six. Pledgeable income in success, and expected pledgeable income. Pause. Pledgeable income is R minus B over delta p; expected pledgeable income is p H times, R minus B over delta p.
+
+Formula seven. The participation constraint. Pause. p H R u is at least I minus A.
+
+Formula eight. The financing condition and the threshold. Pause. Financing if and only if p H times, R minus B over delta p, is at least I minus A; equivalently, A is at least A bar, where A bar equals p H B over delta p, minus, p H R minus I.
+
+Formula nine. The equilibrium contract. Pause. R u equals I minus A, over p H; the interest rate is one over p H, minus one; the entrepreneur's payoff is p H R minus I.
+
+Formula ten. The collateral reading. Pause. Investors get p H R u plus one minus p H, times A; the incentive constraint is p H times, R minus R u, plus one minus p H, times minus A, at least p L times, R minus R u, plus one minus p L, times minus A, plus B; the cutoff is the same A bar.
+
+Formula eleven. Book material, the equity multiplier. Pause. With rho zero equal to p H times, R minus B over delta p, investment is at most k times A, with k equal to one over, one minus rho zero; debt capacity per unit of wealth is rho zero over, one minus rho zero; the shadow value of wealth is rho one minus rho zero, over one minus rho zero, with rho one equal to p H R.
+
+Formula twelve. Debt and equity payoffs for face value D and assets at maturity A. Pause. Debt gets the minimum of A and D; equity gets the maximum of A minus D and zero.
+
+Formula thirteen. First-best debt and equity with two positive outcomes. Pause. D equals R F plus, I minus A minus R F, over p H. Alpha equals I minus A, over, p H R S plus one minus p H, times R F.
+
+Formula fourteen. The two-outcome incentive constraint. Pause. R f S minus R f F is at least B over delta p.
+
+Formula fifteen. Expected pledgeable income with two outcomes. Pause. p H times, R S minus R F, plus R F, minus p H B over delta p, minus R f F. Set R f F to zero.
+
+Formula sixteen. The all-equity incentive constraint. Pause. One minus alpha is at least B over, delta p times, R S minus R F.
+
+Formula seventeen. The all-equity threshold. Pause. A all-equity equals B R F over, delta p times, R S minus R F, plus p H B over delta p, minus, p H times, R S minus R F, plus R F minus I.
+
+Formula eighteen. The debt pledgeable income and threshold. Pause. Expected pledgeable income under debt is p H times, R S minus B over delta p, plus one minus p H, times R F. A debt equals p H B over delta p, minus, p H times, R S minus R F, plus R F minus I.
+
+Formula nineteen. The gap between the thresholds. Pause. A all-equity minus A debt equals B R F over, delta p times, R S minus R F, which is positive.
+
+
+Support part three. Reading route and exercises.
+
+Addresses only. The statements are in the lists and in the book.
+
+The reading route in Tirole, The Theory of Corporate Finance, all printed pages.
+
+Chapter three, section three point two, The Role of Net Worth: A Simple Model of Credit Rationing, starting on printed page one hundred and fifteen. Within it: section three point two point one, the fixed-investment model, page one hundred and fifteen; section three point two point two, the lenders' credit analysis, pages one hundred and sixteen to one hundred and eighteen, with the threshold on page one hundred and seventeen and the remarks on full investment and high-powered incentives on page one hundred and eighteen; section three point two point three, debt or equity, page one hundred and nineteen; section three point two point five, reputational capital, page one hundred and twenty-one; and section three point two point seven, sensitivity of investment to cash flow, page one hundred and twenty-four.
+
+Chapter three, section three point four, Borrowing Capacity: The Equity Multiplier, printed page one hundred and twenty-seven, including section three point four point three, the maximal incentives principle, page one hundred and twenty-eight.
+
+Chapter three, section three point five, Related Models of Credit Rationing: Inside Equity and Outside Debt, printed page one hundred and thirty.
+
+Chapter three, section three point six, Verifiable Income, printed page one hundred and thirty-two.
+
+Chapter four, section four point three, Boosting the Ability to Borrow: The Costs and Benefits of Collateralization, printed page one hundred and sixty-four, with pledging existing wealth in section four point three point five, page one hundred and seventy.
+
+The lecture map also lists Amaro de Matos, Theoretical Foundations of Corporate Finance, chapter three, sections three point one point one and three point one point two, printed pages sixty-four to sixty-six, for Jensen and Meckling and the principal-agent setup.
+
+The exercises, in the course lists.
+
+List R7, exercise 12, Tirole chapter 3, exercise 3.3, printed pages 144 to 145. The book gives the answer, on printed page 571. It trains the variable-investment model with a random private benefit.
+
+List R7, exercise 16, Tirole chapter 4, exercise 4.17, printed page 195. The book gives the answer, on printed page 591. It trains loan size and failure-contingent collateral.
+
+List R4, exercise 5, Tirole chapter 3, exercise 3.1, printed page 144. Answer in the book, printed page 571. Easy tier: the fixed-investment model, the breakeven condition, and random financing below A bar.
+
+List R4, exercise 6, Tirole chapter 3, exercise 3.15, printed page 150. Answer in the book, printed page 578. Exam tier: pledgeable income and riskiness.
+
+List R4, exercise 7, Tirole chapter 3, exercise 3.8, printed page 147. Answer in the book, printed page 574. Exam tier: the equity multiplier and active monitoring.
+
+List R4, exercise 8, Tirole chapter 3, exercise 3.13, printed page 149. Answer in the book, printed page 576. Exam tier: lender market power.
+
+List R4, exercise 9, Tirole chapter 3, exercise 3.2, printed page 144. Answer in the book, printed page 571. Exam tier: minimum equity under entrepreneurial risk aversion.
+
+List R4, exercise 10, Tirole chapter 3, exercise 3.18, printed page 151. Answer in the book, printed page 579. Exam tier: the maximal incentives principle and the optimality of debt, which is parts eight and nine of this lecture.
+
+List R4, exercise 11, Tirole chapter 3, exercise 3.11, printed page 148. Answer in the book, printed page 575. Exam tier: the shadow value of retained earnings, which is part six.
+
+List R4, exercise 12, Tirole chapter 3, exercise 3.5, printed page 146. Answer in the book, printed page 573. Really hard tier: continuous investment with decreasing returns.
+
+List R4, exercise 13, Tirole chapter 4, exercise 4.10, printed page 191. Answer in the book, printed page 587. Really hard tier: project finance versus cross-pledging.
+
+List R4, exercise 14, Tirole chapter 3, exercise 3.20, printed page 152. Answer in the book, printed page 580. Really hard tier: continuous effort.
+
+List R4, exercise 15, Tirole chapter 3, exercise 3.21, printed page 152. Answer in the book, printed page 581. Really hard tier: hedging versus gambling on net worth.
+
+A suggested order: R4 exercise 5 first, then R4 exercises 10 and 7, then R4 exercise 11 and R7 exercise 12, then R7 exercise 16, and the really hard tier last.
+
+
+Support part four. Self-test.
+
+Fifteen questions. After each one, stop the audio and answer out loud before you hear the short answer.
+
+Question one. Under the Baltensperger definition, is a borrower who is refused a loan because she lacks collateral rationed? Pause and answer.
+
+Answer: no. Rationing requires that the borrower be willing to meet all the price and nonprice terms, and collateral is a nonprice term she cannot meet.
+
+Question two. What return to capital did De Mel and co-authors find, and why does it matter for this lecture? Pause and answer.
+
+Answer: 4.6 to 5.3 per cent per month, far above market interest rates, which suggests that these firms cannot borrow as much as they would like.
+
+Question three. State assumptions A one and A two, and derive what they imply about delta p times R. Pause and answer.
+
+Answer: p H R minus I is positive; p L R minus I plus B is negative; subtracting, delta p times R is greater than B.
+
+Question four. Why can no contract that induces a L be signed? Pause and answer.
+
+Answer: A two splits into the investors' NPV, p L R u minus, I minus A, plus the borrower's NPV, p L R f plus B minus A; their sum is negative, so at least one party is better off not signing.
+
+Question five. Write the incentive constraint and the pledgeable income. Pause and answer.
+
+Answer: R f at least B over delta p; pledgeable income R minus B over delta p.
+
+Question six. Derive the wealth threshold A bar. Pause and answer.
+
+Answer: from p H times, R minus B over delta p, at least I minus A, you get A at least p H B over delta p, minus, p H R minus I.
+
+Question seven. In equilibrium, what are R u, the interest rate, and the entrepreneur's payoff? Pause and answer.
+
+Answer: R u equals I minus A over p H; the rate is one over p H minus one; the entrepreneur gets p H R minus I, the whole NPV.
+
+Question eight. Why does raising the interest rate not help a borrower with A below A bar? Pause and answer.
+
+Answer: a higher rate lowers her pay in success below B over delta p, she chooses a L, and the lender's expected payoff becomes negative.
+
+Question nine. How does A bar move with B and with the likelihood ratio? Pause and answer.
+
+Answer: A bar rises with B and falls with delta p over p H.
+
+Question ten. Which firms' investment responds to a small increase in cash flow in the fixed-investment model, and what is the marginal value of cash for them? Pause and answer.
+
+Answer: only firms just below A bar; for them one more unit of cash unlocks the project, so its value exceeds one.
+
+Question eleven. Book material. Derive the equity multiplier in the variable-investment model. Pause and answer.
+
+Answer: from p H times, R minus B over delta p, times I, at least I minus A, investment is at most A over, one minus rho zero, so k equals one over, one minus rho zero.
+
+Question twelve. Why are debt and equity indistinguishable in the basic model? Pause and answer.
+
+Answer: there are only two outcomes and one of them is zero, so debt with face value R u and an equity share R u over R pay the same in both states.
+
+Question thirteen. With two positive outcomes, write expected pledgeable income as a function of R f F, and say what it implies. Pause and answer.
+
+Answer: p H times, R S minus R F, plus R F, minus p H B over delta p, minus R f F; so R f F should be zero, which requires debt with face value at least R F.
+
+Question fourteen. What is the difference between the all-equity threshold and the debt threshold, and what does it represent? Pause and answer.
+
+Answer: B R F over, delta p times, R S minus R F; it is the minimum failure payoff the equity-financed entrepreneur must receive, which is pledgeable income lost.
+
+Question fifteen. Name two reasons why debt is not always optimal. Pause and answer.
+
+Answer: if the entrepreneur is risk averse, debt loads her with too much risk; and leverage raises the risk of financial distress, with direct costs such as legal costs and fire sales, and indirect costs such as lost customers, debt overhang and asset substitution.
+
+
+Support part five. Glossary.
+
+Moral hazard, or hidden action: a situation where one party takes an action after the contract is signed that the other party cannot observe.
+
+Credit rationing: refusal of a loan, or a cap on it, to a borrower who is willing to pay all the price and nonprice terms the lender asks.
+
+Red-lining: exclusion of whole categories of borrowers from credit for lack of cash flows or collateral; not rationing in Baltensperger's sense.
+
+Private benefit, B: a non-monetary gain the entrepreneur gets from misbehaving, which cannot be shared with investors.
+
+Limited liability: the entrepreneur cannot pay investors out of her own pocket, so her payoff is never negative and investors get zero when the firm has nothing.
+
+Uninformed investors: outside investors who cannot observe the entrepreneur's action.
+
+Incentive constraint: the condition that behaving gives the entrepreneur at least as much utility as misbehaving; here, R f at least B over delta p.
+
+Skin in the game: the minimum stake, B over delta p in success, the entrepreneur must keep to prefer behaving.
+
+Pledgeable income: the most that can be promised to investors without destroying incentives; R minus B over delta p in success.
+
+Participation constraint, or individual rationality, or breakeven constraint: the condition that investors expect to get back at least what they put in.
+
+Agency rent: book term for p H B over delta p, the minimum expected payoff left to the borrower to preserve incentives.
+
+A bar: the minimum wealth needed to obtain financing, equal to the agency rent minus the NPV.
+
+Likelihood ratio: delta p over p H, the proportional fall in the probability of success when the entrepreneur misbehaves; a measure of how informative the outcome is about the action.
+
+First best: the allocation with an observable action; every positive-NPV project is financed and there is no rationing.
+
+Commitment problem: the entrepreneur would like to promise to behave, but once financed she prefers to misbehave, and the promise is not credible.
+
+Collateral: an asset handed to the lender in failure; with zero liquidation costs it works exactly like wealth invested up front.
+
+Equity multiplier: book term, k equal to one over, one minus rho zero, the ratio of the largest investment to the entrepreneur's wealth.
+
+Shadow value of wealth: the value to the entrepreneur of one more unit of cash; above one under credit rationing.
+
+Seniority: the priority of a claim in being paid; creditors are senior to shareholders.
+
+Residual claimant: the party who receives whatever is left after fixed promises are paid; the shareholders.
+
+Standard debt contract: a promise of fixed payments at fixed times, with the right to seize the firm's assets on default.
+
+Maximal incentives principle: book term for the result that the entrepreneur should be paid nothing in failure, so that every unit of reward goes to rewarding success.
+
+Riskless debt: debt with face value no greater than the failure income, R F, so it is always repaid in full.
+
+Financial distress costs: direct costs, such as legal fees and fire sales, and indirect costs, such as lost customers and employees, debt overhang and asset substitution.
+
+
+Support part six. The whole topic in five lines.
+
+One. When investors cannot see the entrepreneur's action, she must keep at least B over delta p in success, so only R minus B over delta p can be pledged to them, whatever the size of the loan.
+
+Two. Financing happens if and only if p H times, R minus B over delta p, covers I minus A, that is, if her wealth is at least A bar, the agency rent p H B over delta p minus the NPV.
+
+Three. Below A bar she is rationed even though she would pay more, because a higher rate kills her incentive; the lost positive-NPV projects make the equilibrium inefficient, and cash is worth more than one to the marginal firm.
+
+Four. When failure pays R F greater than zero, incentives depend on the gap between success and failure pay, so the entrepreneur should get nothing in failure, which requires debt with face value at least R F; all-equity needs B R F over, delta p times, R S minus R F, more wealth.
+
+Five. Debt dominates equity here only because of hidden action with risk neutrality; with risk aversion and distress costs, debt is no panacea.

@@ -49,7 +49,7 @@ def main(files):
         blocks = re.split(r"\n(?=\*\*Source:\*\*)", Path(f).read_text(encoding="utf-8"))
         for b in blocks[1:]:
             head, _, body = b.partition("\n")
-            body = re.split(r"\n(?:#{2,3} |---)", body)[0]
+            body = re.split(r"\n(?:#{2,4} |---)", body)[0]  # #### = Context sub-block, not statement
             key = next((k for k in BOOKS if k in head), None)
             pdf = re.search(r"PDF (\d+)", head)
             if not key or not pdf:
@@ -63,7 +63,8 @@ def main(files):
             hay = letters("".join(cache[key].get(q, "") for q in range(p - 1, p + 3)), latex=False)
             probe = letters(body)[:60]
             n += 1
-            if len(probe) < 30 or probe not in hay:
+            # floor 10, not 30: some statements are one line ("Prove equation (5.11).")
+            if len(probe) < 10 or probe not in hay:
                 print(f"FAIL {f}: not found near PDF {p}: {head[:90]}")
                 fails += 1
     print(f"{n} exercises checked, {fails} failures")

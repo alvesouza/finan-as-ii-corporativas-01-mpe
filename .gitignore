@@ -10,3 +10,4 @@ Videos/*/scenes.py
 graphify-out/
 __pycache__/
 .venv/
+Livros/*.pdf

@@ -52,5 +52,19 @@ exercises). < 5,000 chars each, no language line, sources by `NotebookLM/sources
 Copy slides to `sources/Aula_Topic3…5 - <title>.pdf`, lists R4, R5, R7 to `sources/Lista_R*.md`.
 Update `NotebookLM/README.md` table.
 
+## Round 2 (2026-11-10): TTS scripts + one list per topic
+- Audio prompts: kept as they are (user's choice).
+- TTS: `Leituras/topic3-…`, `topic4a-…`, `topic4b-…`, `topic5-…-narrated.txt`, each ≥ 10,000 words
+  (> 1 h at 150 wpm), /speechify rules and gate; 4 background agents.
+- Lists, one per lecture topic, blocks reused verbatim from R4/R5/R6/R7 (already gated) plus new
+  transcriptions for Topic 5:
+  - `Listas/lista-topic3-asymmetric-information.md` (15): R7 1, R5 3, R5 5, R7 5, R5 1 | R5 6, R7 6,
+    R7 11, R5 9, R5 10, R5 7 | R5 14, R7 19, R7 20, R5 13.
+  - `Listas/lista-topic4-moral-hazard-overhang.md` (15): R7 2, R7 4, R4 4, R4 2, R4 5 | R7 7, R7 8,
+    R4 6, R4 9, R4 10, R4 11 | R7 14, R7 16, R7 17, R7 18.
+  - `Listas/lista-topic5-nonverifiable-income-termination.md` (13): new G&T 16.10, Amaro 5.1.6 #3,
+    5.2.5 #3–#6, Tirole 7.7, 3.14 + R7 13, R7 15, R7 18, R6 10, R6 11. No sovereign-debt exercise exists.
+- Gate: check_lists on each file → 0 failures.
+
 ## Verify
 check_lists gate; `wc -m` per prompt (< 5,000); grep prompts for "language"; git status.

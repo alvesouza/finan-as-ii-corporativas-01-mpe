@@ -33,7 +33,11 @@ from [[Map/books-index|books-index]], printed pages).
 > **Topic 4A/4B = item 4** (moral hazard, Tirole Ch. 3), and **Topic 5** = nonverifiable income and
 > sovereign debt (Tirole §3.8; not a syllabus item of its own). Lists: R4 and R5 were built from the
 > syllabus before these slides existed; **R7** ([[Listas/lista-r7-lectures-3-5|lista-r7]]) is built from
-> the slides and repeats none of R1–R6.
+> the slides and repeats none of R1–R6. **Per-lecture lists (2026-11-10):**
+> [[Listas/lista-topic3-asymmetric-information|Topic 3]] (15),
+> [[Listas/lista-topic4-moral-hazard-overhang|Topic 4A+4B]] (15),
+> [[Listas/lista-topic5-nonverifiable-income-termination|Topic 5]] (13; no book exercise on sovereign debt).
+> **Narrations (TTS, > 2 h each):** `Leituras/topic3-…`, `topic4a-…`, `topic4b-…`, `topic5-…-narrated.txt`.
 
 ---
 
@@ -110,8 +114,8 @@ from [[Map/books-index|books-index]], printed pages).
 |---|---|---|---|
 | 3.1 Hidden information | 2–3 | Used cars, insurance, labour, credit, IPOs; adverse selection, cross-subsidisation, overinvestment, market breakdown, credit rationing (underinvestment) | — |
 | 3.2 Lemons model of credit | 4–19 | Penniless borrower, cost $I$, pays $R$ or 0; risk neutrality, $r_f = 0$; good type $p$, bad type $q$, share $\alpha$ of good types, prior $m = \alpha p + (1-\alpha)q$; limited liability, $R_u + R_f = R$. **Symmetric info**: $R_u^G = I/p < I/q = R_u^B$, each type gets its NPV, efficient. **Asymmetric info**: pooling contract $mR_u = I$; **breakdown** if $mR < I$, i.e. $\alpha < \alpha^* = (I/R - q)/(p - q)$; **cross-subsidy** $R_u^G < R_u < R_u^B$; **overinvestment** when $mR \ge I > qR$ | — |
-| 3.3 Cost to the good type | 20–27 | $pR_f = p(R - I/m) = (pR - I) - \chi I$ with $\chi = p/m - 1 = (1-\alpha)(p-q)/m$ (discount due to asymmetry; the slide prints the denominator as $p$, but its own example needs $m$: $10 - 30\chi = 8$) | $R = 50$, $I = 30$, $p = 0.8$, $q = 0.7$, $\alpha = 0.5$: $m = 0.75$, $R_u = 40$, $U_G = 8 < 10$, $U_B = 7 > 5$; $q = 0.5$: $R_u = 46.15$, overinvestment, value 32.5 < 35; $\alpha = 0.2$: breakdown; threshold $\alpha^* = 1/3$ |
-| 3.4 Credit bureau | 28–37 | Public signal $x_G/x_B$ with $P(x_G\mid G) = P(x_B\mid B) = 0.9$; Bayes: $m_{x_G} = 0.79$, $m_{x_B} = 0.71$; rates 26.6% / 40.8% vs. 33.3%; less cross-subsidy ($U_G$ 9.27 > 8); efficiency gain only when the signal stops funding negative-NPV types (34.5 > 32.5 with $q = 0.5$) | Interest-rate tables (slides 34, 36) |
+| 3.3 Cost to the good type | 20–27 | $pR_f = p(R - I/m) = (pR - I) - \frac{\chi}{1-\chi} I$ with $\chi = (1-\alpha)(p-q)/p$, so $m = p(1-\chi)$ (discount due to asymmetry, as in Tirole p. 243; equivalently $I(p/m - 1)$; example: $10 - 2 = 8$) | $R = 50$, $I = 30$, $p = 0.8$, $q = 0.7$, $\alpha = 0.5$: $m = 0.75$, $R_u = 40$, $U_G = 8 < 10$, $U_B = 7 > 5$; $q = 0.5$: $R_u = 46.15$, overinvestment, value 32.5 < 35; $\alpha = 0.2$: breakdown; threshold $\alpha^* = 1/3$ |
+| 3.4 Credit bureau | 28–37 | Public signal $x_G/x_B$ with $P(x_G\mid G) = P(x_B\mid B) = 0.9$; Bayes: $m_{x_G} = 0.79$, $m_{x_B} = 0.71$; rates 26.6% / 40.8% vs. 33.3%; less cross-subsidy ($U_G$ 9.27 > 8); efficiency gain only when the signal stops funding negative-NPV types (slide 37 prints 34.5 > 32.5 with $q = 0.5$; its own numbers give $0.5 \times 0.77 \times 50 + 0.5 \times 30 = 34.25$, same conclusion) | Interest-rate tables (slides 34, 36) |
 | 3.5 Pecking order | 38–46 | Internal funds first; debt before equity because debt is less information-sensitive (Holmström 2015, pawn example); $R_S$/$R_F$ project: good type's utility $= \text{NPV} + (m - p)(R_u^S - R_u^F)$, minimised spread ⇒ pledge all of $R_F$ (riskless debt $R_F$ + rest), $R_u^S = R_F + (I - R_F)/m$ | — |
 | 3.6 Stiglitz–Weiss (1981) | 47–55 | Mean-preserving spreads, $p_L R_L = p_H R_H = \bar R$; borrower payoff $\bar R - p_i(1+r)I$; $\hat r = \bar R/(p_L I) - 1$ (safe types leave), $r_{max} = \bar R/(p_H I) - 1$; bank return non-monotonic in $r$ ⇒ backward-bending supply, equilibrium rationing | $p_L = 0.9$, $X_L = 100$, $p_H = 0.6$, $X_H = 150$, $\alpha = 0.5$, $I = 85$: $r_{max} = 76.5\%$, $\hat r = 17.6\%$ |
 | 3.7 Signalling with costly collateral | 56–68 | Collateral worth $C$ to borrower, $\beta C$ to lender; symmetric info ⇒ $C = 0$; separating equilibrium: bad type $C_B = 0$, $R_u^B = I/q$; good type maximises $p(R - \tilde R) - (1-p)\tilde C$ s.t. no-mimicking and break-even (both bind); signalling pays when adverse selection is severe; other signals: payout, short maturity, underdiversification | — |
