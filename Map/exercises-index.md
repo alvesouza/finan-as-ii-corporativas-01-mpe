@@ -26,8 +26,11 @@ Cap. 20; Ross Cap. 18–19 and Higgins Ch. 2–3 working-capital rows were retag
 | R5b Trade credit and working capital | Working capital & trade credit | Berk Ch. 19–20; Ross Cap. 18–20; Higgins Ch. 2–3 |
 | R6 Liquidity and risk management | Liquidity | Tirole Ch. 5 (and 12, 15); G&T Ch. 21–23; Berk Ch. 20; Ross Cap. 19 (cash buffer rows); Higgins Ch. 5–6 |
 | R7 Lectures 3–5 (slides, 2026-11-08): adverse selection, moral hazard, overhang, strategic default | Asymmetric information; Agency & capital structure | Tirole 3.3, 3.6, 4.9, 4.17, 6.2, 6.7, 7.3; Amaro de Matos 3.1.5 #7, #9, 3.2.6 #2, 5.2.5 #1–2, 6.2.7 #4, #6; G&T 16.1, 16.3, 16.12–13, 16.14, 19.6; Berk 16.26; Ross Cap. 15 #3 — none repeated from R1–R6 |
+| R8 Governance, control rights, activism (ementário topics 1, 7; 2026-11-12) | Activism; Agency & capital structure | Ross Cap. 1 CQ 1.14–1.15; G&T 18.2, 18.4, 18.5; Amaro de Matos 8.1.5 #5, 8.2.6 #10; Tirole 9.1, 10.2, 10.3, 10.5–10.9 — [[Listas/lista-r8-governance-activism\|list]] |
+| R9 Mergers and acquisitions (ementário topic 8; 2026-11-12) | M&A | Higgins 9.1, 9.3, 9.9, 5.10; G&T 20.5, 20.8; Amaro de Matos 7.2.4 #3, 8.1.5 #1, #8, 8.2.6 #1, #3, #4, #8; Tirole 11.1, 14.2, 14.3 — [[Listas/lista-r9-mergers-acquisitions\|list]] |
+| R10 Macroeconomic implications (ementário topic 9; 2026-11-12) | Macro implications | Tirole 13.1–13.3, 14.1, 14.4, 15.1–15.4, 16.1–16.4, Review Problems 5–6 — [[Listas/lista-r10-macro-implications\|list]] |
 
-`Activism`, `M&A` and `Macro implications` rows are outside the Ricca syllabus.
+`Activism`, `M&A` and `Macro implications` rows are outside the Ricca syllabus; they are covered by lists R8–R10 (ementário scope). Every list R1–R10 and Topic 3–5 has a worked-solutions PDF (`Listas/<list>-solutions.pdf`, deeper format of `.agent/notes/solutions-and-roadmap-spec.md` §C); R4–R7 reuse the Topic 3–5 sections via `tools/splice_solutions.py`.
 
 ## Tirole, *The Theory of Corporate Finance* (Princeton, 2005 printing)
 

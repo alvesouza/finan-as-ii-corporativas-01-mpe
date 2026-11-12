@@ -1,0 +1,1200 @@
+% Worked solutions for Listas/lista-r6-liquidity-risk-management.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r6-liquidity-risk-management-solutions_check.py.
+% Exercises 10 and 11 are spliced in from lista-topic5-nonverifiable-income-termination-solutions.tex
+% (its exercises 8 and 9); the preamble defines every macro that file uses.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R6 --- Liquidity and risk management --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries List R6 --- Liquidity and risk management}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r6-liquidity-risk-management.md}; each exercise is cited by number and printed page and is not restated. Exercises 10 and 11 (Tirole 5.7 and 5.9) are the deepened solutions of the Topic~5 list (its exercises 8 and 9), included here from that file. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman (G\&T), \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013). Throughout the Tirole exercises, $\rho_1\equiv p_HR$ is the expected income per continuation and $\rho_0\equiv p_H(R-B/\Delta p)$ the expected pledgeable income per continuation.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Can a firm hold too much cash? --- Ross CQ 19.1, p.~690}
+
+\asked Two questions. First, whether a firm can hold \emph{too much} cash, i.e.\ whether there is a level of cash beyond which more cash lowers the value of the firm. Second, why shareholders should care if the firm piles up large cash balances.
+
+\approach Use the cost--benefit view of cash in Ross \S 19.1: cash has benefits (transaction, precautionary and speculative motives; compensating balances) and a cost (the opportunity cost of funds earning little or nothing). Add the agency view of Ross \S 1.4 (managers like to control resources) and Tirole's liquidity view (cash has value only up to the liquidity needs the firm cannot cover by returning to the market). The optimal cash level balances the two; beyond it cash destroys value.
+
+\notation
+\begin{itemize}
+  \item $C$: cash held above the amount needed for transactions (excess cash), \$.
+  \item $k$: shareholders' required return on the firm's assets; $r_c$: pre-tax yield on cash or money-market assets, $r_c<k$; $T$: corporate tax rate on interest income.
+\end{itemize}
+
+\step{1}{Benefits of cash} Ross lists three motives (p.~662): \emph{transaction} (pay bills when inflows and outflows are not synchronised), \emph{precautionary} (a safety reserve), \emph{speculative} (exploit bargains or attractive rates); plus compensating balances required by banks. Ross stresses that the precautionary and speculative motives call for \emph{liquidity}, not necessarily cash: unused borrowing capacity and money-market securities serve them as well (pp.~662--663). In Tirole's model (Ch.~5) liquidity is valuable to a firm whose optimal cutoff $\rho^*$ exceeds what it can raise by diluting, $\rho_0$: it must hoard $\rho^*-\rho_0$ (or hold a credit line) to survive shocks in $(\rho_0,\rho^*]$.
+
+\step{2}{The cost of excess cash} Each dollar beyond those needs earns $r_c$, taxed at $T$ at the corporate level, while shareholders require $k$. The annual cost of carrying $C$ is
+\begin{align}
+  \text{cost} &= \big[k - r_c(1-T)\big]\,C. \label{r6e1-cost}
+\end{align}
+Illustration (own numbers): $C=100$ (\$ millions), $k=10\%$, $r_c=4\%$, $T=34\%$. The after-tax yield is $r_c(1-T)=0.04(1-0.34)=0.0264$, so
+\begin{align}
+  \text{cost} &= (0.10-0.0264)(100) = 7.36 \text{ (\$ millions per year)}. \nonumber
+\end{align}
+Shareholders could hold the same money-market assets themselves without the corporate tax on the interest, so the tax wedge alone is a loss to them.
+
+\step{3}{Agency cost} Ross \S 1.4 (pp.~12--13): managers, left alone, tend to maximise the resources under their control, which leads to overemphasis on size and growth, perks (the ``jatinho luxuoso''), and overpaying for acquisitions. Large cash balances are exactly the resources that let managers do this without the scrutiny of the capital market.
+
+\answer{(a)} Yes. Beyond the amount needed for transactions, precaution and the firm's liquidity needs, extra cash lowers firm value.
+\answer{(b)} Shareholders care because excess cash (i) earns less than their required return, after a corporate tax on the interest (\$7.36M a year in the illustration), and (ii) invites agency costs: managers may waste it on perks, empire building or overpriced acquisitions.
+
+\intuition Cash is insurance against having to raise funds at a bad moment. Like any insurance it is worth buying only up to the risk it covers; the premium is the opportunity cost of idle funds plus the room it gives managers to spend money that is not theirs.
+
+\pitfalls
+\begin{itemize}
+  \item Saying ``more cash is always safer, so it is always better'': the question is about the \emph{marginal} dollar, whose benefit falls to zero once liquidity needs are covered.
+  \item Confusing cash with liquidity: a credit line or Treasury bills meet the precautionary motive without idle cash (Ross pp.~662--663; Tirole \S 5.2.3).
+  \item Ignoring taxes: interest on corporate cash is taxed before shareholders get it.
+\end{itemize}
+
+\refbib Ross \S 19.1 ``Motivos para manter saldos de caixa'' and ``Custos de manter caixa'', pp.~662--663; \S 1.4 ``O problema de ag\^encia e o controle da empresa'', pp.~12--13; Tirole \S 5.2.3, pp.~205--206.
+
+% =============================================================================
+\exsec{2. Excess cash and agency problems --- Ross CQ 19.10, p.~690}
+
+\asked Evaluate the claim that excess cash retained by a firm worsens agency problems between managers and shareholders and weakens the incentive to maximise shareholder value: when is it right, why, and what can be done about it.
+
+\approach The agency view of Ross \S 1.4 and Jensen's free-cash-flow argument, formalised in Tirole \S 5.6.1: when the firm's internal cash exceeds what efficient reinvestment needs (the \emph{free-cash-flow assumption} $r>\rho^*$), an entrepreneur left with the cash reinvests too much, and the optimal contract must ``pump out'' the excess through payouts or short-term debt. The opposing force is Tirole's liquidity-hoarding result: cash-poor firms need liquidity, and taking it away from them is costly.
+
+\notation
+\begin{itemize}
+  \item Tirole \S 5.6.1 model (continuous investment $I$): $rI$ short-term (date-1) income; $\rho I$ reinvestment need, $\rho\sim F$; $\rho^*$ optimal continuation cutoff; $P_1$ date-1 payout to investors.
+\end{itemize}
+
+\step{1}{Why excess cash aggravates agency problems} Managers with discretionary cash need not justify spending to outside investors; they can (i) take negative-NPV projects that enlarge the firm (Ross p.~13: spending ``muito superiores ao valor de mercado na compra de outra empresa, apenas para aumentar o tamanho''), (ii) consume perks, (iii) shirk on cost control because a cash cushion hides poor performance. Berk makes the same point about conservative financing: excess cash ``increases the possibility that managers of the firm will use this excess cash nonproductively'' (p.~599).
+
+\step{2}{Tirole's formal version} Under the free-cash-flow assumption $r>\rho^*$, an entrepreneur who keeps the date-1 income reinvests whenever $\rho\le r$, i.e.\ also for $\rho\in(\rho^*,r]$, where continuation destroys investors' value. The optimum requires pumping out
+\begin{align}
+  P_1 &= (r-\rho^*)\,I \label{r6e2-P1}
+\end{align}
+at date 1 and denying the entrepreneur the right to dilute initial investors (Tirole p.~226). Illustration (own numbers): $r=0.6$, $\rho^*=0.4$, $I=100$ give $P_1=(0.6-0.4)(100)=20$ that must leave the firm, e.g.\ as short-term debt repayment.
+
+\step{3}{Remedies} (i) Pay out excess cash (dividends, repurchases); (ii) commit to payouts with debt, whose repayment is not discretionary (short-term debt in Tirole \S 5.6.1); (iii) align compensation with value (stock-based pay, Ross \S 1.4); (iv) monitoring by the board, large shareholders, and the takeover market.
+
+\step{4}{The other side} The claim does not mean cash is bad: a firm whose pledgeable income is below its efficient reinvestment needs ($\rho_0<\rho^*$) must hoard liquidity or hold a credit line (Tirole \S 5.2.3). The agency cost bites only on \emph{excess} cash, beyond those needs. The analysis must therefore distinguish cash-rich firms with few investment opportunities (Jensen's case) from cash-poor growth firms (Tirole's liquidity case).
+
+\answer{\unskip} The claim is correct for cash in excess of the firm's liquidity needs: it gives managers resources free of capital-market discipline, leading to overinvestment and perks. The cure is to commit to pay it out (payouts, debt), to align pay with value and to monitor; for firms whose liquidity needs are high, cash is valuable and the claim does not apply.
+
+\intuition Cash is a substitute for going back to investors. Not having to go back is valuable when going back is hard (liquidity), but harmful when going back is exactly the discipline managers need (agency). Debt maturity in Tirole \S 5.6 is the tool that trades the two off.
+
+\pitfalls
+\begin{itemize}
+  \item Treating all retained cash as excess: liquidity hoarding by constrained firms is value-creating.
+  \item Thinking dividends solve it once and for all: a one-off payout leaves future discretion intact; debt commits.
+  \item Forgetting that the agency cost is borne by shareholders even if no money is ``stolen'': negative-NPV investment is the main channel.
+\end{itemize}
+
+\refbib Ross \S 1.4, pp.~12--13; \S 19.1, pp.~662--663; Berk \S 20.2 ``Conservative Financing Policy'', p.~599; Tirole \S 5.6.1 ``Optimal Claim Maturity'', p.~226.
+
+% =============================================================================
+\exsec{3. Small firms hedge less --- Grinblatt \& Titman 21.1, p.~771}
+
+\asked (a) Why do small firms currently hedge less than large firms? (b) Should we expect small firms to hedge more in the future, and why?
+
+\approach G\&T \S 21.9 confronts the theory of why firms hedge (Results 21.3--21.6: taxes, financial distress, financing of investment, management evaluation) with the evidence. The theory says small firms have \emph{more} to gain; the evidence that they hedge less is explained by the \emph{costs} of hedging, which have a large fixed component. A fixed cost against a benefit proportional to size gives a size threshold.
+
+\notation
+\begin{itemize}
+  \item $S$: size of the firm's hedgeable exposure (\$); $b$: value gain from hedging per \$ of exposure (lower expected distress costs, taxes, underinvestment); $K$: fixed cost of setting up a hedging operation (staff, systems, expertise, legal).
+\end{itemize}
+
+\step{1}{Benefits are larger for small firms} Small firms face higher bankruptcy costs relative to their size and harder access to external finance, so the distress and financing motives (Results 21.4 and 21.5, pp.~747--748) are stronger for them. Theory alone would predict \emph{more} hedging by small firms (G\&T p.~768).
+
+\step{2}{Costs have a fixed component} G\&T explain the evidence by ``the fixed costs of setting up a hedging operation and their lower level of sophistication'' (p.~768), and note the economies of scale in consolidating trades and in risk-management expertise (p.~755). With a fixed cost $K$ and a benefit $bS$, the firm hedges iff
+\begin{align}
+  bS &\ge K \quad\Longleftrightarrow\quad S \ge \frac{K}{b}. \label{r6e3-thr}
+\end{align}
+Illustration (own numbers): $K=0.5$ (\$ millions) and $b=0.2\%$ give a threshold $S=0.5/0.002=250$ (\$ millions): firms with smaller exposures do not hedge even though $b$ may be larger for them.
+
+\step{3}{Consistent evidence} Among firms that \emph{do} hedge, smaller firms hedge more completely (Dolde, 1993, cited p.~768): once the fixed cost is paid, the larger marginal benefit of small firms shows up. ``Size is a barrier to setting up a hedging operation.''
+
+\step{4}{The future} As derivatives markets become more liquid and risk-management expertise spreads (G\&T p.~755: ``As risk management expertise becomes more widespread and the futures, forward, and swap markets become more liquid\ldots''), $K$ falls and the threshold $K/b$ falls with it. Banks also package hedges for small clients (e.g.\ swaps bundled with loans), which spreads the fixed cost.
+
+\answer{(a)} Because hedging has fixed set-up costs and requires expertise, which small firms find relatively more expensive; this outweighs their larger benefit from hedging.
+\answer{(b)} Yes: falling transaction costs and wider expertise lower the fixed cost, so smaller firms, which gain more from hedging, should hedge more.
+
+\intuition Hedging is like any technology with a fixed cost: it is adopted first by those who can spread the cost over a large base, and diffuses down as it gets cheaper, even though the late adopters may benefit most.
+
+\pitfalls
+\begin{itemize}
+  \item Arguing that small firms hedge less because they face less risk: they usually face \emph{more} distress risk.
+  \item Ignoring the cost side: the benefit argument alone predicts the opposite of the evidence.
+  \item Forgetting the intensive margin: small hedgers hedge \emph{more completely}.
+\end{itemize}
+
+\refbib G\&T \S 21.4 Results 21.4--21.5, pp.~745--748; \S 21.5 on where hedging is organised, p.~755; \S 21.9 ``Which Firms Hedge? The Empirical Evidence'', pp.~767--769.
+
+% =============================================================================
+\exsec{4. Partial hedging by oil firms --- Grinblatt \& Titman 21.7, p.~771}
+
+\asked Explain why it can be optimal for an oil firm to hedge only part of its exposure to oil prices instead of all of it.
+
+\approach G\&T's ``Desirability of Partial Hedging'' (p.~748) and Example 21.3 (p.~749), and Tirole's incomplete-hedging result with positively correlated investment needs (\S 5.4.2): when the firm's investment opportunities and its access to external finance rise with the hedged risk factor, the firm wants cash to be high exactly when the factor is high. Full hedging removes that covariance. The firm hedges just enough to avoid distress in bad states.
+
+\notation
+\begin{itemize}
+  \item G\&T Example 21.3 (all in \$ millions, 1 million barrels a year): spot price $S$ at extraction, forward price $24$/bbl, extraction cost $6$/bbl, fixed obligations $3+8=11$ a year; $h\in[0,1]$: fraction of output sold forward.
+\end{itemize}
+
+\step{1}{Why not hedge fully} Oil firms want to explore more when oil prices are high, and they can raise external capital on better terms after high earnings. Full hedging gives them the same cash whether prices are high or low, so they lack internal funds exactly when the best investments appear (G\&T p.~748; Tirole \S 5.4.2: ``attractive-reinvestment-opportunities effect''). Also, historically the forward price was often below spot, so hedging had a positive expected cost (G\&T p.~749).
+
+\step{2}{Why hedge at all} In low-price states, distress costs bite: the firm must still cover overhead and interest. The firm hedges to guarantee those fixed obligations. Annual operating cash with fraction $h$ sold forward:
+\begin{align}
+  CF(S) &= 24h + (1-h)S - 6. \label{r6e4-cf}
+\end{align}
+Guaranteeing $11$ even if $S\to 0$ requires
+\begin{align}
+  24h - 6 &= 11 \nonumber\\
+  h &= \frac{17}{24} = 0.708333. \label{r6e4-h}
+\end{align}
+
+\step{3}{Cash in each state} Substituting \eqref{r6e4-h} in \eqref{r6e4-cf}, $CF(S)=17+\tfrac{7}{24}S-6=11+\tfrac{7}{24}S$:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Policy & $S=0$ & $S=24$ & $S=30$ \\
+\midrule
+No hedge, $S-6$ & $-6$ & $18$ & $24$ \\
+Full hedge, $24-6$ & $18$ & $18$ & $18$ \\
+Partial, $11+\tfrac{7}{24}S$ & $11$ & $18$ & $19.75$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+At $S=30$ the unhedged $7/24$ of output adds $\tfrac{7}{24}(30)=8.75$. The partial hedge keeps the floor of $11$ (no distress) and keeps exposure to the high-price states, where National would restart exploration (\$35M investment if $S>30$).
+
+\answer{\unskip} Partial hedging is optimal because the firm's investment needs and its ability to raise outside funds rise with oil prices; it hedges just enough to cover fixed obligations in low-price states (in Example 21.3, $h=17/24$ of output) and keeps the upside to fund investment when prices are high. Options achieve the same floor-plus-upside shape.
+
+\intuition The aim of hedging is not to minimise variance but to have cash when it is most valuable. For an oil firm, cash is most valuable both in a price collapse (to avoid distress) and in a boom (to invest); a partial hedge, or a put option, serves both.
+
+\pitfalls
+\begin{itemize}
+  \item Equating optimal hedging with minimum variance: here the variance-minimising full hedge is suboptimal.
+  \item Forgetting that the guaranteed floor must cover \emph{fixed} costs (overhead plus interest), not total costs.
+  \item Ignoring the expected cost of hedging when forwards trade below spot (backwardation).
+\end{itemize}
+
+\refbib G\&T \S 21.4 ``The Desirability of Partial Hedging'', p.~748, Example 21.3, p.~749; \S 21.9 (oil and gas evidence), p.~769; Tirole \S 5.4.2, pp.~216--219.
+
+% =============================================================================
+\exsec{5. Entering the year with a cash buffer --- Berk 20.6, p.~613}
+
+\asked Given the quarterly working-capital forecast, find the largest short-term loan the firm will need during the year if it starts the year holding \$400 (thousand) of cash in total.
+
+\approach Berk's matching principle (\S 20.2): permanent working capital (the minimum level over the year) is financed long term; temporary working capital (the seasonal excess) is financed short term. Cash held above the required minimum is excess cash that funds temporary needs before any borrowing.
+
+\notation
+\begin{itemize}
+  \item Quarter $t=1,\dots,4$; all amounts in \$000. $NWC_t=\text{Cash}_t+AR_t+\text{Inv}_t-AP_t$, where the table's cash row is the required (minimum) cash balance, as in Berk's Table 20.6.
+  \item $P=\min_t NWC_t$: permanent working capital; $\tau_t=NWC_t-P$: temporary working capital.
+  \item $E_0$: excess cash at the start of the year; $STB_t$: short-term borrowing in quarter $t$.
+\end{itemize}
+
+\assume \$400 ``total in cash'' includes the \$100 minimum balance of the table, so excess cash is $E_0=400-100$. The firm follows the matching principle: permanent working capital and the excess cash are financed long term.
+
+\step{1}{Net working capital each quarter}
+\begin{align}
+  NWC_1 &= 100+200+200-100 = 400, \nonumber\\
+  NWC_2 &= 100+100+500-100 = 600, \nonumber\\
+  NWC_3 &= 100+100+900-100 = 1000, \nonumber\\
+  NWC_4 &= 100+600+50-100 = 650. \label{r6e5-nwc}
+\end{align}
+
+\step{2}{Permanent and temporary needs} The minimum is $P=\min(400,600,1000,650)=400$. Temporary needs are
+\begin{align}
+  \tau_t &= NWC_t-400 = (0,\ 200,\ 600,\ 250). \label{r6e5-tau}
+\end{align}
+
+\step{3}{Excess cash and short-term borrowing} Excess cash is $E_0=400-100=300$. It is drawn down first, so
+\begin{align}
+  STB_t &= \max(\tau_t-E_0,\,0) \nonumber\\
+        &= \big(\max(0-300,0),\ \max(200-300,0),\ \max(600-300,0),\ \max(250-300,0)\big) \nonumber\\
+        &= (0,\ 0,\ 300,\ 0). \label{r6e5-stb}
+\end{align}
+The cash balance is $100+\max(E_0-\tau_t,0)=(400,\ 200,\ 100,\ 150)$: excess cash of $300,100,0,50$. Long-term financing covers $P+E_0=400+300=700$.
+
+\answer{\unskip} Maximum short-term borrowing is \$300 thousand, in quarter 3 (versus \$600 thousand in Problem 5, when the firm holds only the \$100 minimum).
+
+\intuition Every dollar of excess cash carried into the year replaces a dollar of peak short-term borrowing. That is Berk's conservative policy: lower funding risk and transaction costs, paid for with idle cash at a below-market return in quarters 1, 2 and 4, and the agency risk of Exercise~2.
+
+\pitfalls
+\begin{itemize}
+  \item Treating all \$400 as excess cash (borrowing $600-400=200$): \$100 is the required operating balance.
+  \item Financing the permanent \$400 short term, then reading the peak need as 1000.
+  \item Forgetting to subtract accounts payable when computing working capital.
+\end{itemize}
+
+\refbib Berk \S 20.2 ``The Matching Principle'', pp.~597--600 (Table 20.6, p.~598; conservative policy, p.~599).
+
+% =============================================================================
+\exsec{6. Long-term contract and loan commitment --- Tirole Exercise 5.1, p.~229}
+
+\asked (i) With two sequential fixed-size projects and no equity, show that if a condition on pledgeable income holds the optimal long-term contract funds the second project at least after a first success, and that with strict inequality it funds it for sure after success and with probability $\xi\in(0,1)$ after failure. (ii) How $\xi$ changes with the parameters. (iii) Whether the contract is renegotiation-proof after the first outcome. (iv) Whether the outcome can be obtained with a sequence of short-term contracts in which the borrower receives $\bar A$ after success (and with probability $\xi$ after failure).
+
+\approach Tirole's sequential-projects model (\S 4.7.2) with the fixed-investment technology of \S 3.2. Continuation of the second project is an incentive device: the threat of not refinancing after failure disciplines first-period effort (the ``loan commitment'' is a promise to refinance). Write the borrower's rents as continuation values, find the cheapest way to satisfy both incentive constraints, then maximise NPV subject to investors' breakeven. For (iv) use the date-2 credit market of \S 3.2: a borrower is funded iff her cash is at least $\bar A$.
+
+\notation
+\begin{itemize}
+  \item Each project costs $I$, returns $R$ (success) or 0; success probability $p_H$ (behave) or $p_L$ (misbehave, private benefit $B$), $\Delta p=p_H-p_L$. $A=0$; discount factor 1; investors competitive.
+  \item $N\equiv p_HR-I>0$: NPV of one project. $M\equiv p_HB/\Delta p$: minimum expected rent of a funded project. Assumption (3.4) with $A=0$: $N<M$ (a single project cannot be financed).
+  \item $\bar A\equiv I-p_H(R-B/\Delta p)=M-N>0$: cash needed to finance one project.
+  \item $x_k\in[0,1]$: probability of funding project 2 after first-period outcome $k\in\{S,F\}$.
+  \item $R_b^1$: payment to the borrower after a first success; $w_k$: payment after a second success following outcome $k$; failures pay 0.
+  \item $V_k\equiv x_kp_Hw_k$: borrower's date-2 continuation value after outcome $k$.
+\end{itemize}
+
+\step{1}{Date-2 incentive constraint} If project 2 is funded after outcome $k$, the borrower behaves iff $p_Hw_k\ge p_Lw_k+B$, i.e.
+\begin{align}
+  (\Delta p)\,w_k &\ge B \quad\Longrightarrow\quad V_k \ge x_k\,p_H\frac{B}{\Delta p}=x_kM. \label{r6e6-ic2}
+\end{align}
+
+\step{2}{Date-1 incentive constraint} Behaving at date 1 gives $p_H(R_b^1+V_S)+(1-p_H)V_F$; misbehaving gives $p_L(R_b^1+V_S)+(1-p_L)V_F+B$. Subtracting,
+\begin{align}
+  p_H(R_b^1+V_S)+(1-p_H)V_F - p_L(R_b^1+V_S)-(1-p_L)V_F &\ge B \nonumber\\
+  (\Delta p)\,(R_b^1+V_S-V_F) &\ge B. \label{r6e6-ic1}
+\end{align}
+
+\step{3}{Objective and breakeven} Investors break even, so the borrower's utility is the NPV:
+\begin{align}
+  U_b &= N\,\big[1+p_Hx_S+(1-p_H)x_F\big]. \label{r6e6-npv}
+\end{align}
+The borrower's expected rent is $\mathcal R=p_H(R_b^1+V_S)+(1-p_H)V_F$. Investors receive the NPV minus the rent, so breakeven (with $A=0$) is
+\begin{align}
+  \mathcal P \equiv N\,\big[1+p_Hx_S+(1-p_H)x_F\big] - \mathcal R &\ge 0. \label{r6e6-be}
+\end{align}
+
+\step{4}{Minimum rent for given $(x_S,x_F)$} Rewrite the rent as
+\begin{align}
+  \mathcal R &= V_F + p_H\,(R_b^1+V_S-V_F). \nonumber
+\end{align}
+The first term is at least $x_FM$ by \eqref{r6e6-ic2}; the bracket is at least $B/\Delta p$ by \eqref{r6e6-ic1}. Both bounds are attained with $w_F=B/\Delta p$ and \eqref{r6e6-ic1} binding, so
+\begin{align}
+  \mathcal R_{\min} &= x_FM + p_H\frac{B}{\Delta p} \nonumber\\
+                    &= M\,(1+x_F). \label{r6e6-rent}
+\end{align}
+The minimum rent does not depend on $x_S$: refinancing after success is a free carrot. How the bracket is split between $R_b^1$ and $V_S$ does not matter for the rent; take $R_b^1=0$ (reward only after two successes). With $x_S=1$ and $R_b^1=0$, binding \eqref{r6e6-ic1} means $p_Hw_S=B/\Delta p+x_FM$, i.e.
+\begin{align}
+  w_S &= \frac{B}{\Delta p}\,\frac{1+x_Fp_H}{p_H}\ \ge\ \frac{B}{\Delta p}, \label{r6e6-wS}
+\end{align}
+so \eqref{r6e6-ic2} holds after success too.
+
+\step{5}{(i) $x_S=1$} Substituting \eqref{r6e6-rent} into \eqref{r6e6-be},
+\begin{align}
+  \mathcal P(x_S,x_F) &= N\,\big[1+p_Hx_S+(1-p_H)x_F\big] - M(1+x_F). \label{r6e6-P}
+\end{align}
+$\partial\mathcal P/\partial x_S=p_HN>0$ and $\partial U_b/\partial x_S=p_HN>0$: raising $x_S$ raises both NPV and pledgeable income, so $x_S=1$. Then
+\begin{align}
+  \mathcal P(1,x_F) &= N(1+p_H) - M + x_F\big[(1-p_H)N-M\big]. \label{r6e6-P1}
+\end{align}
+The coefficient of $x_F$ is negative because $N<M$: refinancing after failure raises NPV but costs pledgeable income.
+
+\step{6}{(i) The two claims} With $x_F=0$, \eqref{r6e6-P1} is nonnegative iff
+\begin{align}
+  (1+p_H)N - M &\ge 0 \quad\Longleftrightarrow\quad p_H(p_HR-I)+\Big(p_HR-I-\frac{p_HB}{\Delta p}\Big)\ge 0, \label{r6e6-cond}
+\end{align}
+which is the condition of the statement: the contract ``fund project 2 after success, pay $w_S=B/(p_H\Delta p)$ after two successes'' is then feasible. If \eqref{r6e6-cond} is strict, breakeven is slack at $x_F=0$, and since $U_b$ rises with $x_F$ at rate $(1-p_H)N>0$, the optimum raises $x_F$ until \eqref{r6e6-P1} binds:
+\begin{align}
+  N(1+p_H) - M + \xi\big[(1-p_H)N-M\big] &= 0 \nonumber\\
+  \xi\big[M-(1-p_H)N\big] &= (1+p_H)N - M \nonumber\\
+  \xi &= \frac{(1+p_H)N-M}{M-(1-p_H)N}. \label{r6e6-xi}
+\end{align}
+$\xi>0$ by the strict \eqref{r6e6-cond}. $\xi<1$ iff $(1+p_H)N-M<M-(1-p_H)N$, i.e.\ $2N<2M$, which is (3.4).
+
+\emph{Numerical example} (own numbers): $p_H=0.8$, $p_L=0.3$, $B=1$, $R=5$, $I=2.8$. Then $\Delta p=0.5$, $N=0.8(5)-2.8=1.2$, $M=0.8(1)/0.5=1.6$, $\bar A=1.6-1.2=0.4$, and (3.2) holds: $p_LR-I+B=1.5-2.8+1=-0.3<0$. Condition \eqref{r6e6-cond}: $1.8(1.2)-1.6=0.56>0$. By \eqref{r6e6-xi},
+\begin{align}
+  \xi &= \frac{0.56}{1.6-0.2(1.2)} = \frac{0.56}{1.36} = \frac{7}{17} = 0.411765. \nonumber
+\end{align}
+By \eqref{r6e6-wS}, $w_S=2\,(1+0.411765\times0.8)/0.8=3.323529$, so $V_S=0.8\,w_S=2.658824$ and $V_F=\xi M=0.658824$; check of \eqref{r6e6-ic1}: $0.5\,(2.658824-0.658824)=1=B$. Investors: $N+p_H(N-V_S)+(1-p_H)\xi(N-M)=1.2-1.167059-0.032941=0$. NPV $=1.2\,(1+0.8+0.2\times0.411765)=2.258824$, equal to the borrower's utility $0.8(2.658824)+0.2(0.658824)$.
+
+\answer{(i)} If $p_H(p_HR-I)+(p_HR-I-p_HB/\Delta p)\ge0$, the optimal contract commits to fund project 2 after a first success ($x_S=1$, reward $B/(p_H\Delta p)$ after two successes). If the inequality is strict, $x_S=1$ and $x_F=\xi=\dfrac{(1+p_H)N-M}{M-(1-p_H)N}\in(0,1)$ (0.4118 in the example).
+
+\step{7}{(ii) Comparative statics} Write $D\equiv M-(1-p_H)N>0$. Differentiating \eqref{r6e6-xi} (quotient rule) holding the other arguments fixed:
+\begin{align}
+  \frac{\partial\xi}{\partial N} &= \frac{(1+p_H)D+(1-p_H)\big[(1+p_H)N-M\big]}{D^2}
+     = \frac{(1+p_H)M-(1-p_H)M}{D^2} = \frac{2p_HM}{D^2}>0, \label{r6e6-dN}\\
+  \frac{\partial\xi}{\partial M} &= \frac{-D-\big[(1+p_H)N-M\big]}{D^2}
+     = \frac{-M+(1-p_H)N-(1+p_H)N+M}{D^2} = -\frac{2p_HN}{D^2}<0, \label{r6e6-dM}\\
+  \frac{\partial\xi}{\partial p_H}\Big|_{N,M} &= \frac{N\,D-\big[(1+p_H)N-M\big]N}{D^2} = \frac{2N(M-N)}{D^2}>0. \label{r6e6-dp}
+\end{align}
+Chain rule: $R$ enters through $N$ ($\partial N/\partial R=p_H$), so $\xi$ rises with $R$; $I$ lowers $N$, so $\xi$ falls with $I$; $B$ raises $M$ ($\partial M/\partial B=p_H/\Delta p$), so $\xi$ falls with $B$; $p_L$ raises $M$ ($\partial M/\partial p_L=p_HB/\Delta p^2$), so $\xi$ falls with $p_L$; $p_H$ raises $N$, lowers $M$ ($\partial M/\partial p_H=-p_LB/\Delta p^2$) and has the direct effect \eqref{r6e6-dp}, all positive, so $\xi$ rises with $p_H$. In the example, $\partial\xi/\partial N=2(0.8)(1.6)/1.36^2=1.384083$.
+
+\answer{(ii)} $\xi$ increases with $R$ and $p_H$, and decreases with $I$, $B$ and $p_L$ (it reaches 1 when $N\ge M$, and 0 when \eqref{r6e6-cond} binds).
+
+\step{8}{(iii) Renegotiation after the first outcome} \emph{After success:} the contract funds project 2, which is efficient ($N>0$); any change is a pure transfer, so no change benefits both parties. \emph{After failure, lottery says ``stop''}: funding project 2 would give investors at most $N-M<0$ (they must leave the borrower $B/\Delta p$ in case of success), and the borrower has no cash to compensate them (she received nothing). No deal. \emph{After failure, lottery says ``continue''}: stopping saves investors $M-N$ but costs the borrower her rent $M$; since $M-N<M$, investors cannot compensate her. No deal.
+
+\answer{(iii)} Yes, the contract is renegotiation-proof (given that the lottery after failure is public and enforceable).
+
+\step{9}{(iv) The proposed short-term sequence} At date 2, a borrower with cash $A_2$ is funded iff $A_2\ge\bar A$ and then gets $A_2+N$ (competitive investors, \S 3.2); with $A_2=\bar A$ this is $\bar A+N=M$. The proposed date-1 contract gives $\bar A$ after success and $\bar A$ with probability $\xi$ after failure, so $V_S=M$, $V_F=\xi M$, and the date-1 incentive constraint \eqref{r6e6-ic1} (with $R_b^1$ absorbed in $V_S$) reads
+\begin{align}
+  (\Delta p)\,(M-\xi M) &= (1-\xi)\,p_HB \ \ge\ B\ ? \nonumber
+\end{align}
+Since $(1-\xi)p_H<1$, it fails: the borrower would shirk in period 1 (example: $0.5\times(1-0.411765)\times1.6=0.470588<1$). The long-term contract needs $V_S-V_F=B/\Delta p$, and $\bar A$ after success delivers only $(1-\xi)M<B/\Delta p$.
+
+\step{10}{(iv) A sequence that works} Pay instead, after success, the cash $A^S$ that gives the long-term continuation value $V_S=p_Hw_S$:
+\begin{align}
+  A^S+N &= \frac{B}{\Delta p}(1+\xi p_H) \nonumber\\
+  A^S &= \frac{B}{\Delta p}(1+\xi p_H)-N = \bar A+\frac{B}{\Delta p}\big(1-p_H+\xi p_H\big). \label{r6e6-AS}
+\end{align}
+(The last step uses $\bar A=M-N=p_HB/\Delta p-N$.) After failure keep $\bar A$ with probability $\xi$. Then $V_S$ and $V_F$ equal the long-term values, \eqref{r6e6-ic1} binds, date-2 investments coincide, and date-1 investors get $p_HR-I-p_HA^S-(1-p_H)\xi\bar A$, which equals \eqref{r6e6-P1} at $x_F=\xi$, i.e.\ zero. In the example $A^S=2.658824-1.2=1.458824$ instead of $\bar A=0.4$.
+
+\answer{(iv)} Not with $\bar A$ after success: that leaves too little stake, $(1-\xi)p_HB<B$, and the borrower shirks at date 1. A sequence of short-term contracts does implement the long-term outcome if the date-1 contract leaves her $A^S=\bar A+\frac{B}{\Delta p}(1-p_H+\xi p_H)$ after success (and $\bar A$ with probability $\xi$ after failure): with risk neutrality the loan commitment can be replaced by retained earnings.
+
+\intuition Refinancing after success is the cheapest carrot: it adds NPV and costs no extra rent, because the reward for two successes does double duty for both periods' incentives. Refinancing after failure is insurance; it is bought only as far as pledgeable income allows, because each unit of it raises the borrower's rent by $M$ while adding only $(1-p_H)N$ of value.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting that the date-1 incentive constraint is in \emph{continuation values}: $V_S-V_F\ge B/\Delta p$, not $w_S\ge B/\Delta p$.
+  \item Setting $x_F=1$ ``to insure the borrower'': it violates breakeven when $N<M$.
+  \item Using the date-2 financing threshold $\bar A$ as if it were enough to motivate date-1 effort.
+\end{itemize}
+
+\bookans (i) Matches the book's answer (p.~591), including the reward $B/(p_H\Delta p)$ after two successes. (ii) Same signs (the book adds ``as long as $p_L$ is not too large''; in the interior we find $\xi$ decreasing in $p_L$ without restriction). The book's equation for $\xi$ has $(1-\xi)(\Delta p)p_HB/\Delta p$ where the rent computation gives $(1-\xi)p_H\,p_HB/\Delta p$; as printed it does not reduce to the condition of (i) at $\xi=0$ (it differs from \eqref{r6e6-P1} by $(1-\xi)p_LM$, 0.48 at $\xi=0$ in the example), so we read it as a typo; \eqref{r6e6-xi} is the corrected solution. (iii) Matches. (iv) The book calls the sequence ``behaviorally equivalent''; Step 9 shows that with exactly $\bar A$ after success the period-1 incentive constraint fails, and Step 10 gives the payout that makes the equivalence hold.
+
+\refbib Tirole \S 3.2.1--3.2.2, pp.~115--117; \S 4.7.2 ``Long-Term Finance and the Build-up of Net Worth'', pp.~184--186; Exercise 5.1, p.~229; answer p.~591.
+
+% =============================================================================
+\exsec{7. Credit rationing, predation, and liquidity shocks --- Tirole Exercise 5.2, pp.~229--230}
+
+\asked (i) The minimum cash $A$ for the date-1 project to be financed. (ii) With a predatory competitor at date 0: what happens if the entrepreneur waits until date 1 to raise funds, how a credit line can avoid it, and whether that credit line would be renegotiated. (iii) With date-0 moral hazard: interpret the stated condition, find the optimal refinancing probability $x^*$ after a low profit, and check robustness to renegotiation when $\rho_0^1>I_1$. (iv) Show that funding fails if renegotiation cannot be prevented, under the stated condition.
+
+\approach (i) is the fixed-investment credit analysis of \S 3.2. (ii) uses the logic of credit lines (\S 5.2.3): a commitment signed before the shock removes the competitor's incentive to prey, and it is credible because continuation is ex post efficient. (iii)--(iv) use termination as an incentive device (as in Exercise 6) and show that renegotiation destroys it when refinancing is ex post profitable for investors, so incentives must be given with costlier money rewards.
+
+\notation
+\begin{itemize}
+  \item Date-1 project: cost $I_1$, return $R_1$ or 0, success $p_H$ / $p_L$, private benefit $B_1$, $\Delta p=p_H-p_L$; $p_HR_1>I_1$. $\rho_0^1\equiv p_H(R_1-B_1/\Delta p)$: date-1 pledgeable income.
+  \item Date-0 profit $A$ (high) or $a$ (low); $I_0$: date-0 cost; $q_H$/$q_L$: probability of $A$ if the entrepreneur works/shirks at date 0, $\Delta q=q_H-q_L$; $B_0$: date-0 private benefit.
+  \item $x$: probability of funding the date-1 project after profit $a$; $\mathcal R_b$: date-1 stake after profit $A$ in (iv).
+\end{itemize}
+
+\step{1}{(i) Credit analysis} The borrower behaves iff $p_HR_b\ge p_LR_b+B_1$, i.e.\ $(\Delta p)R_b\ge B_1$. Investors get $R_1-R_b$ in case of success and must recover $I_1-A$:
+\begin{align}
+  p_H(R_1-R_b) &\ge I_1-A. \nonumber
+\end{align}
+The left side is largest at the smallest incentive-compatible stake $R_b=B_1/\Delta p$:
+\begin{align}
+  p_H\Big(R_1-\frac{B_1}{\Delta p}\Big) = \rho_0^1 &\ge I_1-A \quad\Longleftrightarrow\quad A\ \ge\ I_1-\rho_0^1. \label{r6e7-thr}
+\end{align}
+\answer{(i)} The project is financed iff $A\ge I_1-\rho_0^1$.
+
+\step{2}{(ii) Waiting until date 1} If the entrepreneur waits, the competitor compares its date-0 cost of preying with its date-1 gain from the entrepreneur's project not being funded; the gain is larger by assumption. If it preys, date-0 profit is $a<I_1-\rho_0^1$, so by \eqref{r6e7-thr} the date-1 project is not funded, which is what made preying profitable. So the competitor preys and the entrepreneur loses the NPV $p_HR_1-I_1$. Illustration (own numbers): $p_H=0.9$, $p_L=0.1$, $R_1=10$, $B_1=2$, so $\Delta p=0.8$, $B_1/\Delta p=2.5$ and $\rho_0^1=0.9(10-2.5)=6.75$; with $I_1=8$ the threshold is $8-6.75=1.25$, and $a=0.5<1.25<A=2$ (shirking has negative NPV: $p_LR_1+B_1=3<I_1$).
+
+\step{3}{(ii) Credit line} At date 0, before the competitor moves, the entrepreneur secures a commitment to fund the date-1 project whatever her date-0 profit: a credit line covering the shortfall in the low state,
+\begin{align}
+  L &= I_1-\rho_0^1-a \quad (=8-6.75-0.5=0.75 \text{ in the illustration}), \label{r6e7-L}
+\end{align}
+on top of the $\rho_0^1$ she can raise against the project. Funding is then guaranteed, predation has no date-1 payoff, so the competitor does not prey; the line is not drawn on the equilibrium path.
+
+\step{4}{(ii) Credibility} Suppose profit is $a$ and the bank would like to cancel. Cancelling saves the lenders $I_1-a-\rho_0^1$ (their loss on the funded project) and costs the entrepreneur her rent net of her cash, $p_HB_1/\Delta p-a$. The difference
+\begin{align}
+  \Big(\frac{p_HB_1}{\Delta p}-a\Big)-\big(I_1-a-\rho_0^1\big) &= \frac{p_HB_1}{\Delta p}+p_H\Big(R_1-\frac{B_1}{\Delta p}\Big)-I_1 = p_HR_1-I_1>0 \nonumber
+\end{align}
+is the NPV that cancelling destroys: the lenders cannot compensate the entrepreneur (illustration: $2.25-0.5=1.75$ versus $0.75$; the gap is $p_HR_1-I_1=1$). Renegotiation never benefits both sides.
+
+\answer{(ii)} Waiting invites predation and the project is not funded. A date-0 credit line of $I_1-\rho_0^1-a$ (or a guarantee of date-1 funding) deters predation; it is credible because funding is ex post efficient ($p_HR_1>I_1$), so it is not renegotiated.
+
+\step{5}{(iii) Interpreting the condition} $I_1+I_0-(q_LA+(1-q_L)a)>\rho_0^1$ says: if the entrepreneur shirks at date 0 and the date-1 project is funded unconditionally, investors' outlay $I_0+I_1$ exceeds what they can recover, expected date-0 profit under shirking plus date-1 pledgeable income. So the contract must induce date-0 effort.
+
+\step{6}{(iii) Optimal $x^*$} Under the contract class (stake $B_1/\Delta p$ only on date-1 success), the entrepreneur's expected utility is the probability of funding times $p_HB_1/\Delta p$. Working beats shirking iff
+\begin{align}
+  \big[q_H+(1-q_H)x\big]\frac{p_HB_1}{\Delta p} &\ge \big[q_L+(1-q_L)x\big]\frac{p_HB_1}{\Delta p}+B_0 \nonumber\\
+  (\Delta q)(1-x)\frac{p_HB_1}{\Delta p} &\ge B_0. \label{r6e7-ic0}
+\end{align}
+NPV rises with $x$ (each funding adds $p_HR_1-I_1>0$), so $x$ is set as high as \eqref{r6e7-ic0} allows:
+\begin{align}
+  1-x^* &= \frac{(\Delta p)B_0}{(\Delta q)p_HB_1} \nonumber\\
+  x^* &= 1-\frac{(\Delta p)B_0}{(\Delta q)p_HB_1}\ \in[0,1), \label{r6e7-x}
+\end{align}
+nonnegative by the assumption $(\Delta q)p_HB_1\ge(\Delta p)B_0$. Investors must break even,
+$q_HA+(1-q_H)a+[q_H+(1-q_H)x^*](\rho_0^1-I_1)\ge I_0$; when $\rho_0^1<I_1$ this may instead cap $x$ below \eqref{r6e7-x}.
+Illustration (own numbers, now $I_1=5<\rho_0^1=6.75$): $q_H=0.75$, $q_L=0.25$, $B_0=0.45$, $A=4$, $a=0$, $I_0=4.2$. The assumption holds ($0.5\times0.9\times2=0.9\ge0.8\times0.45=0.36$); $x^*=1-0.36/0.9=0.6$; the condition of (iii) holds ($5+4.2-1=8.2>6.75$); breakeven: $3+(0.75+0.25\times0.6)(6.75-5)=3+0.9\times1.75=4.575\ge4.2$.
+
+\step{7}{(iii) Renegotiation when $\rho_0^1>I_1$} In the state ``profit $a$, project not funded'' (probability $(1-q_H)(1-x^*)$), investors can fund the project and earn $\rho_0^1-I_1>0$, while the entrepreneur earns $p_HB_1/\Delta p>0$: both gain. The threat of non-refinancing is not credible.
+
+\answer{(iii)} The condition means that unconditional funding with date-0 shirking cannot repay investors. $x^*=1-(\Delta p)B_0/[(\Delta q)p_HB_1]$ (date-0 incentive constraint binding). If $\rho_0^1>I_1$, the contract is not renegotiation-proof: after a low profit both sides gain from funding anyway.
+
+\step{8}{(iv) Incentives without the termination threat} If renegotiation cannot be prevented and $\rho_0^1>I_1$, the date-1 project is always funded. Date-0 effort must be rewarded with money: stake $\mathcal R_b$ after profit $A$ and $R_b=B_1/\Delta p$ after $a$. Working pays iff
+\begin{align}
+  q_Hp_H\mathcal R_b+(1-q_H)p_HR_b &\ge q_Lp_H\mathcal R_b+(1-q_L)p_HR_b+B_0 \nonumber\\
+  (\Delta q)\,p_H(\mathcal R_b-R_b) &\ge B_0. \label{r6e7-ic0b}
+\end{align}
+The extra stake is paid with probability $q_H$, so at the minimum ($p_H(\mathcal R_b-R_b)=B_0/\Delta q$) expected date-1 pledgeable income falls to
+\begin{align}
+  \rho_0^1-q_Hp_H(\mathcal R_b-R_b) &= \rho_0^1-\frac{q_HB_0}{\Delta q}. \label{r6e7-pl}
+\end{align}
+Funding with effort requires $q_HA+(1-q_H)a+\rho_0^1-q_HB_0/\Delta q\ge I_0+I_1$, which the stated condition violates; funding with shirking is ruled out by the condition of (iii). A date-0 cash bonus instead of $\mathcal R_b$ costs the same, $q_HB_0/\Delta q$. Illustration: with the numbers of Step~6, $q_HB_0/\Delta q=0.75\times0.45/0.5=0.675$ and $\rho_0^1-0.675=6.075$; the condition of (iv) holds ($4.2+5-3=6.2>6.075$), and investors get $3+6.075=9.075<9.2=I_0+I_1$ (with shirking, $1+6.75=7.75$), although the committed contract of Step~6 was fundable.
+
+\answer{(iv)} With renegotiation, incentives must come from a higher stake after a good date-0 profit, which cuts pledgeable income by $q_HB_0/\Delta q$; under the stated condition investors cannot break even, so no funds are raised at date 0.
+
+\intuition The threat to cut credit is the cheapest incentive device, but it is only as good as the lender's commitment to carry it out. When refinancing is ex post profitable for lenders, they will not carry it out, and the firm must pay with money, which uses up pledgeable income. The same commitment, in (ii), is valuable for the opposite reason: a credit line is credible because carrying it out is ex post efficient.
+
+\pitfalls
+\begin{itemize}
+  \item In (ii), saying the credit line is costly because it is drawn: in equilibrium the competitor does not prey and the line is not used.
+  \item In (iii), writing the date-0 incentive constraint without the factor $p_HB_1/\Delta p$: what the entrepreneur loses when not refinanced is her rent, not the project's NPV.
+  \item In (iv), forgetting that the money reward is paid with probability $q_H$, not 1.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~591--592): threshold $\rho_0^1\ge I_1-A$; credit line $I_1-\rho_0^1-a$ not renegotiated because $p_HR_1>I_1$; $x^*$ from $(\Delta q)(1-x^*)(p_HB_1/\Delta p)\ge B_0$; renegotiation gains $\rho_0^1-I_1$ and $p_HB_1/\Delta p$; pledgeable income $\rho_0^1-q_HB_0/\Delta q$ in (iv).
+
+\refbib Tirole \S 3.2, pp.~115--117; \S 5.2.3 ``Credit Lines for Cash-Poor Firms'', pp.~205--206; Exercise 5.2, pp.~229--230; answer pp.~591--592.
+
+% =============================================================================
+\exsec{8. Liquidity needs and pricing of liquid assets --- Tirole Exercise 5.5, p.~231}
+
+\asked (i) Show that a firm hoards enough Treasury bonds to withstand the high liquidity shock if conditions (2) and (3) hold. (ii) In an economy of identical firms with perfectly correlated shocks and a scarce supply $T$ of bonds, show that for small $\lambda$ the liquidity premium $q-1$ is proportional to $\lambda$. (iii) Price a new security that pays 1 only in the good state.
+
+\approach Tirole's fixed-investment liquidity model (\S 5.2) with two shocks. A shock below $\rho_0$ can be met by diluting investors at date 1; a shock above $\rho_0$ needs liquidity hoarded at date 0, $\rho_H-\rho_0$. Bonds bought at $q>1$ cost a liquidity premium. The firm's choice compares NPV gain and pledgeable-income cost; the market price adjusts until firms are indifferent. Assets are valued for liquidity only if they pay in the state where liquidity is needed.
+
+\notation
+\begin{itemize}
+  \item $\rho_L<\rho_0<\rho_H<\rho_1$: low/high shock, probabilities $1-\lambda$ and $\lambda$; $I-A$: investors' date-0 outlay; (1): $\rho_0-\rho_L>I-A$.
+  \item $q\ge1$: date-0 price of a bond paying 1 at date 1; $x_L,x_H\in\{0,1\}$: continuation in each state.
+  \item $T<\rho_H-\rho_0$: bond supply; $\theta$: fraction of firms that hoard; $q'$: price of the good-state security.
+\end{itemize}
+
+\step{1}{NPV and pledgeable income} In state $L$ the firm raises $\rho_L<\rho_0$ by issuing claims, so it needs no liquidity. In state $H$ it can raise at most $\rho_0$, so continuing requires $\rho_H-\rho_0$ bonds bought at date 0 for $q(\rho_H-\rho_0)$; they return $\rho_H-\rho_0$ at date 1 in both states, so their net cost is $(q-1)(\rho_H-\rho_0)$. Hence the NPV (the borrower's utility)
+\begin{align}
+  U_b &= (1-\lambda)(\rho_1-\rho_L)x_L+\lambda(\rho_1-\rho_H)x_H-I-(q-1)(\rho_H-\rho_0)x_H, \label{r6e8-U}
+\end{align}
+and investors' breakeven
+\begin{align}
+  (1-\lambda)(\rho_0-\rho_L)x_L+\lambda(\rho_0-\rho_H)x_H-(q-1)(\rho_H-\rho_0)x_H &\ge I-A. \label{r6e8-BE}
+\end{align}
+$x_L=1$: it raises both \eqref{r6e8-U} (as $\rho_L<\rho_1$) and the left side of \eqref{r6e8-BE} (as $\rho_L<\rho_0$).
+
+\step{2}{(i) Hoard or not} Going from $x_H=0$ to $x_H=1$ changes the NPV by
+\begin{align}
+  \Delta U_b &= \lambda(\rho_1-\rho_H)-(q-1)(\rho_H-\rho_0)\ \ge 0 \quad\Longleftrightarrow\quad (q-1)(\rho_H-\rho_0)\le\lambda(\rho_1-\rho_H), \nonumber
+\end{align}
+which is (3). Hoarding is feasible iff \eqref{r6e8-BE} holds with $x_L=x_H=1$:
+\begin{align}
+  (1-\lambda)(\rho_0-\rho_L)-\lambda(\rho_H-\rho_0)-(q-1)(\rho_H-\rho_0) &\ge I-A \nonumber\\
+  (q-1)(\rho_H-\rho_0) &\le (1-\lambda)(\rho_0-\rho_L)-\lambda(\rho_H-\rho_0)-I+A, \nonumber
+\end{align}
+which is (2).
+\answer{(i)} Under (2) hoarding is fundable and under (3) it raises the NPV, so the firm hoards $\rho_H-\rho_0$ bonds.
+
+\step{3}{(ii) Market clearing} If every firm hoards, demand is $\rho_H-\rho_0>T$: excess demand. If no firm hoards, demand $0<T$, the price falls; at $q=1$ condition (3) holds strictly ($\lambda(\rho_1-\rho_H)>0$) and (2) holds for small $\lambda$ by (1), so firms would hoard. Hence in equilibrium firms are indifferent, a fraction $\theta$ hoards, and
+\begin{align}
+  \theta(\rho_H-\rho_0) &= T \quad\Longrightarrow\quad \theta=\frac{T}{\rho_H-\rho_0}\in(0,1). \nonumber
+\end{align}
+Indifference means that the tighter of (2), (3) binds. Their right sides differ by
+\begin{align}
+  \text{RHS}(2)-\text{RHS}(3) &= (1-\lambda)(\rho_0-\rho_L)-\lambda(\rho_H-\rho_0)-(I-A)-\lambda(\rho_1-\rho_H) \nonumber\\
+  &= (\rho_0-\rho_L)-(I-A)-\lambda\big[(\rho_0-\rho_L)+(\rho_H-\rho_0)+(\rho_1-\rho_H)\big] \nonumber\\
+  &= (\rho_0-\rho_L)-(I-A)-\lambda(\rho_1-\rho_L), \nonumber
+\end{align}
+positive iff $\lambda<\bar\lambda\equiv[(\rho_0-\rho_L)-(I-A)]/(\rho_1-\rho_L)$, and $\bar\lambda>0$ by (1). So for small $\lambda$, (3) binds:
+\begin{align}
+  (q-1)(\rho_H-\rho_0) &= \lambda(\rho_1-\rho_H) \nonumber\\
+  q-1 &= \lambda\,\frac{\rho_1-\rho_H}{\rho_H-\rho_0}. \label{r6e8-q}
+\end{align}
+Non-hoarding firms are still funded, since slack (2) implies $(1-\lambda)(\rho_0-\rho_L)>I-A$.
+Illustration (own numbers): $\rho_L=0.2$, $\rho_0=1$, $\rho_H=1.5$, $\rho_1=2$, $I-A=0.5$, $\lambda=0.1$, $T=0.3$. Then $\bar\lambda=0.3/1.8=0.166667>0.1$; $q-1=0.1\times0.5/0.5=0.1$; (2): $0.05\le0.72-0.05-0.5=0.17$; $\theta=0.3/0.5=0.6$.
+\answer{(ii)} $q-1=\lambda(\rho_1-\rho_H)/(\rho_H-\rho_0)$, proportional to the probability $\lambda$ of the high shock.
+
+\step{4}{(iii) The good-state security} It pays 1 when firms face $\rho_L$, which they meet by dilution, and 0 when they face $\rho_H$, the only state where liquidity has value. Firms therefore value it at its expected payoff, like consumers with zero time preference:
+\begin{align}
+  q' &= (1-\lambda)\cdot1+\lambda\cdot0 = 1-\lambda. \label{r6e8-qp}
+\end{align}
+\answer{(iii)} $q'=1-\lambda$ (0.9 in the illustration): no liquidity premium.
+
+\intuition A Treasury bond is a good-state claim plus a bad-state claim. The whole premium sits on the bad-state part: its implied price is $q-q'=\lambda+(q-1)=\lambda(\rho_1-\rho_0)/(\rho_H-\rho_0)$ (here $1.1-0.9=0.2$), above its expected payoff $\lambda$, because it delivers cash when every firm needs it at once. With correlated shocks, firms cannot insure each other, and the scarcity of assets that pay in the bad state is priced.
+
+\pitfalls
+\begin{itemize}
+  \item Counting the full price $q(\rho_H-\rho_0)$ as the cost of hoarding: the bonds return $\rho_H-\rho_0$, so only the premium $(q-1)(\rho_H-\rho_0)$ is a cost.
+  \item Hoarding $\rho_H$ instead of $\rho_H-\rho_0$: the firm can still dilute investors up to $\rho_0$.
+  \item In (iii), giving the asset a premium because it is ``safe government paper'': what matters is \emph{when} it pays.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~592--593): $x_L=1$; hoarding iff (2) and (3); for small $\lambda$, (3) binds and $q-1=\lambda(\rho_1-\rho_H)/(\rho_H-\rho_0)$; $q'=1-\lambda$. The book's $U_b$ subtracts $(I-A)$, i.e.\ it is gross of $A$; \eqref{r6e8-U} is net. Our $\bar\lambda$ makes ``$\lambda$ small'' explicit.
+
+\refbib Tirole \S 5.2.1, pp.~201--204; \S 5.2.3, pp.~205--206; \S 5.3.1 ``The Two-Shock Case'', p.~207; Exercise 5.5, p.~231; answer pp.~592--593.
+
+% =============================================================================
+\exsec{9. Should debt contracts be indexed to output prices? --- Tirole Exercise 5.11, pp.~234--235}
+
+\asked (i) Find the optimal reinvestment cutoff as a function of the output price $P$ realised at date 1. (ii) Show that, when the firm can issue new securities at date 1, the optimal date-1 debt is fully indexed: $d(P)=Pr-\ell_0$ with a positive constant $\ell_0$.
+
+\approach Follow \S 5.4.2: maximise NPV subject to investors' breakeven with a state-contingent cutoff $\rho^*(P)$, using a Lagrange multiplier; then implement the cutoff as retained cash plus refinancing capacity. The two forces of \S 5.4.2 are the attractive-reinvestment effect (higher $P$ raises the cutoff) and the easier-refinancing effect (higher $P$ raises what can be raised at date 1). Here the entrepreneur's rent does not move with $P$, so the two effects cancel and retained earnings are constant.
+
+\notation
+\begin{itemize}
+  \item $P$: output price realised at date 1, mean $\bar P$, independent of $\rho$; date-1 income $Pr$; date-2 income $PR$ on success.
+  \item $\rho\sim F$ (density $f$) on $[0,\infty)$: reinvestment need; $\rho^*(P)$: cutoff; $B$: private benefit (not scaled by $P$); $\Delta p$, $p_H$ as usual.
+  \item $\mu>0$: multiplier of investors' breakeven; $d(P)$: date-1 debt repayment; $\ell_0$: retained earnings.
+\end{itemize}
+
+\step{1}{Program} The incentive constraint after continuation is $(\Delta p)R_b\ge B$, so investors can get $PR-B/\Delta p$ on success. The NPV is
+\begin{align}
+  U_b &= \bar Pr+E\big[F(\rho^*(P))\,p_HPR\big]-I-E\Big[\int_0^{\rho^*(P)}\rho f(\rho)\,d\rho\Big], \label{r6e9-U}
+\end{align}
+and investors' breakeven is
+\begin{align}
+  \bar Pr+E\Big[F(\rho^*(P))\,p_H\Big(PR-\frac{B}{\Delta p}\Big)\Big] &\ge I-A+E\Big[\int_0^{\rho^*(P)}\rho f(\rho)\,d\rho\Big]. \label{r6e9-BE}
+\end{align}
+Form $\mathcal L=U_b+\mu\,[\text{LHS}-\text{RHS of }\eqref{r6e9-BE}]$.
+
+\step{2}{(i) First-order condition} $\mathcal L$ is an expectation over $P$, so it is maximised state by state. Using $\frac{d}{d\rho^*}F(\rho^*)=f(\rho^*)$ and $\frac{d}{d\rho^*}\int_0^{\rho^*}\rho f\,d\rho=\rho^*f(\rho^*)$, the derivative with respect to $\rho^*(P)$ is
+\begin{align}
+  0 &= f(\rho^*)\big[p_HPR-\rho^*\big]+\mu f(\rho^*)\Big[p_H\Big(PR-\frac{B}{\Delta p}\Big)-\rho^*\Big]. \nonumber
+\end{align}
+Dividing by $f(\rho^*)>0$ and collecting $\rho^*$:
+\begin{align}
+  (1+\mu)\rho^* &= (1+\mu)p_HPR-\mu\frac{p_HB}{\Delta p} \nonumber\\
+  \rho^*(P) &= p_HPR-\frac{\mu}{1+\mu}\,\frac{p_HB}{\Delta p}. \label{r6e9-rho}
+\end{align}
+\answer{(i)} $\rho^*(P)=p_HPR-\frac{\mu}{1+\mu}\frac{p_HB}{\Delta p}$: between the pledgeable value $p_H(PR-B/\Delta p)$ and the total value $p_HPR$ of continuation, rising one-for-one with $p_HPR$.
+
+\step{3}{(ii) Implementation} With date-1 debt $d(P)$, the firm keeps $Pr-d(P)$ and can raise, by issuing new claims, up to the date-1 pledgeable income $p_H(PR-B/\Delta p)$. It continues iff $\rho$ is covered, so the implemented cutoff is
+\begin{align}
+  \rho^*(P) &= \big[Pr-d(P)\big]+p_H\Big(PR-\frac{B}{\Delta p}\Big). \label{r6e9-impl}
+\end{align}
+Solving \eqref{r6e9-impl} for $d(P)$ and substituting \eqref{r6e9-rho}:
+\begin{align}
+  d(P) &= Pr+p_HPR-\frac{p_HB}{\Delta p}-\rho^*(P) \nonumber\\
+       &= Pr+p_HPR-\frac{p_HB}{\Delta p}-\Big(p_HPR-\frac{\mu}{1+\mu}\frac{p_HB}{\Delta p}\Big) \nonumber\\
+       &= Pr-\Big(1-\frac{\mu}{1+\mu}\Big)\frac{p_HB}{\Delta p} \nonumber\\
+       &= Pr-\ell_0,\qquad \ell_0\equiv\frac{1}{1+\mu}\,\frac{p_HB}{\Delta p}>0. \label{r6e9-d}
+\end{align}
+Check (own numbers): $p_H=0.6$, $B=0.5$, $\Delta p=0.25$, $\mu=0.5$ give $\ell_0=0.6(2)/1.5=0.8$; for $R=3$, $r=1$ and $P\in\{0.8,1,1.2\}$, cash $\ell_0$ plus $p_H(PR-2)$ equals \eqref{r6e9-rho} in each state.
+\answer{(ii)} $d(P)=Pr-\ell_0$ with $\ell_0=\frac{1}{1+\mu}\frac{p_HB}{\Delta p}>0$: the firm retains the same cash $\ell_0$ whatever $P$, i.e.\ the debt is fully indexed to the output price.
+
+\intuition A higher price makes continuation more valuable ($\rho^*$ rises by $p_HR$ per unit of $P$) and also makes it easier to raise money at date 1 (pledgeable income rises by the same $p_HR$), because the manager's rent $p_HB/\Delta p$ does not depend on $P$. The market finances all of the extra reinvestment, so the firm need not keep any of the price windfall: full indexation (full hedging) is optimal. In \S 5.4.2 the rent $[p_H+\tau(r)]B/\Delta p$ rises with good news, refinancing capacity rises less than the cutoff, and the firm keeps part of its cash flow.
+
+\pitfalls
+\begin{itemize}
+  \item Scaling the private benefit by $P$: the rent would then move with $P$ and indexation would be partial.
+  \item Ignoring seasoned offerings: without date-1 issues the firm would need to keep $\rho^*(P)$ in cash, which rises with $P$.
+  \item Reading ``fully indexed'' as ``no retained earnings'': the firm keeps the positive constant $\ell_0$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~595): $\rho^*(P)=p_HPR-\frac{\mu}{1+\mu}\frac{p_HB}{\Delta p}$ and $d(P)=Pr-\ell_0$ with $\ell_0=\frac{1}{1+\mu}\big(p_H\frac{B}{\Delta p}\big)$.
+
+\refbib Tirole \S 5.2.1, pp.~201--204; \S 5.4.1--5.4.2, pp.~214--219; Exercise 5.11, pp.~234--235; answer p.~595.
+
+% =============================================================================
+%% BEGIN-FROM lista-topic5-nonverifiable-income-termination-solutions.tex EX 8 AS 10
+\exsec{10. Decreasing returns to scale and debt maturity --- Tirole Exercise 5.7, p.~232}
+
+\asked (i) In the liquidity model with short-term income $rI$ and a continuum of reinvestment shocks
+$\rho I$, but with a concave success payoff $R(I)$, derive the first-order conditions that pin down the
+scale $I$ and the continuation cutoff $\rho^*$. (ii) Under free cash flow ($r>\rho^*$), find how a
+stronger balance sheet (higher $A$) changes debt maturity, i.e.\ the short-term debt the firm must pay at
+date~1 per unit of investment.
+
+\approach Holmstr\"om--Tirole liquidity model (Tirole \S5.3.2 and \S5.6.1): the borrower maximises the
+NPV subject to the lenders' break-even, a Lagrangian problem in $(I,\rho^*)$. Continuing after a shock
+$\rho$ costs $\rho I$ and is worth $\rho_1$ in value but only $\rho_0$ in pledgeable income, so the
+optimal cutoff lies between them. Under free cash flow the cutoff is implemented by short-term debt that
+pumps $(r-\rho^*)I$ out of the firm --- the termination threat of the lecture, here a liquidity sweep ---
+so maturity moves with $\rho^*$, and comparative statics in $A$ answer (ii).
+
+\notation
+\begin{itemize}
+  \item $I>0$: investment (endogenous); $A\ge 0$: the entrepreneur's cash; lenders are competitive, rate of return 0.
+  \item $R(I)$: date-2 income in case of continuation and success, $R(0)=0$, $R'>0$, $R''<0$.
+  \item $rI$: short-term (date-1) income, verifiable and fully pledgeable, $r>0$.
+  \item $\rho\ge 0$: per-unit liquidity shock (reinvestment need $\rho I$), c.d.f.\ $F$, density $f$ on $[0,\infty)$; $\rho^*$: continuation cutoff (continue iff $\rho\le\rho^*$).
+  \item $p_H>p_L$: success probabilities when behaving / misbehaving, $\Delta p=p_H-p_L$; $BI$: private benefit from misbehaving; $R_b$: entrepreneur's stake in success.
+  \item $\rho_1(I)\equiv p_H R(I)/I$ and $\rho_0(I)\equiv p_H[R(I)/I-B/\Delta p]$: per-unit expected income and per-unit pledgeable income at scale $I$; $\rho_1-\rho_0=p_HB/\Delta p$.
+  \item $\mu\ge 0$: Lagrange multiplier of the lenders' breakeven constraint.
+\end{itemize}
+
+\step{1}{The program} We set up the borrower's problem. As in Section 5.6.1, the incentive constraint
+$(\Delta p)R_b\ge BI$ binds (any larger stake only lowers pledgeable income), so the income pledgeable in
+case of success is $R(I)-BI/\Delta p$. With competitive lenders the entrepreneur gets the NPV: short-term
+income, plus expected date-2 income when continuing (probability $F(\rho^*)$), minus the investment and the
+expected reinvestment,
+\begin{align}
+  U_b &= rI + F(\rho^*)\,p_H R(I) - \Big[1+\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big] I, \label{t5e8-Ub}
+\end{align}
+subject to the lenders' breakeven constraint
+\begin{align}
+  rI + F(\rho^*)\,p_H\Big[R(I)-\frac{BI}{\Delta p}\Big] &\ge I - A + \Big[\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big] I. \label{t5e8-IR}
+\end{align}
+The Lagrangian is $\mathcal L = U_b + \mu\,[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]$.
+
+\step{2}{(i) First-order conditions} We differentiate $\mathcal L$ with respect to each choice variable.
+By the fundamental theorem of calculus, $\frac{d}{d\rho^*}\int_0^{\rho^*}\rho f\,d\rho=\rho^* f(\rho^*)$, and
+$\frac{d}{d\rho^*}F(\rho^*)=f(\rho^*)$. Term by term,
+\begin{align}
+  \frac{\partial U_b}{\partial\rho^*} &= f(\rho^*)\,p_HR(I)-\rho^*f(\rho^*)\,I, \nonumber\\
+  \frac{\partial[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]}{\partial\rho^*} &= f(\rho^*)\,p_H\Big[R(I)-\frac{BI}{\Delta p}\Big]-\rho^*f(\rho^*)\,I, \nonumber
+\end{align}
+so $\partial\mathcal L/\partial\rho^*=0$ reads
+\begin{align}
+  0 &= f(\rho^*)\big[p_HR(I)-\rho^*I\big] + \mu f(\rho^*)\Big[p_HR(I)-\frac{p_HBI}{\Delta p}-\rho^*I\Big]. \nonumber
+\end{align}
+Dividing by $f(\rho^*)I>0$ and using $\rho_1(I)=p_HR(I)/I$ and $\rho_0(I)=p_H[R(I)/I-B/\Delta p]$,
+\begin{align}
+  0 &= \big[\rho_1(I)-\rho^*\big] + \mu\big[\rho_0(I)-\rho^*\big]. \label{t5e8-focrho}
+\end{align}
+Collecting the $\rho^*$ terms, $(1+\mu)\rho^*=\rho_1(I)+\mu\rho_0(I)$, so
+$\rho^*=\frac{\rho_1(I)+\mu\rho_0(I)}{1+\mu}$, a weighted average that lies between $\rho_0(I)$ and $\rho_1(I)$,
+the analogue of (5.8). With respect to $I$, the derivatives are
+\begin{align}
+  \frac{\partial U_b}{\partial I} &= r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho, \nonumber\\
+  \frac{\partial[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]}{\partial I} &= r+F(\rho^*)p_H\Big(R'(I)-\frac{B}{\Delta p}\Big)-1-\int_0^{\rho^*}\!\rho f\,d\rho, \nonumber
+\end{align}
+so $\partial\mathcal L/\partial I=0$ is
+\begin{align}
+  0 &= \Big[r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big]
+       + \mu\Big[r+F(\rho^*)p_H\Big(R'(I)-\frac{B}{\Delta p}\Big)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big]. \label{t5e8-focI}
+\end{align}
+These two conditions, together with \eqref{t5e8-IR} holding with equality, determine $(I,\rho^*,\mu)$.
+
+\step{3}{(i) Eliminating $\mu$} The multiplier is not observable, so we combine the two conditions into
+one that involves only $(I,\rho^*)$. Write the second bracket of \eqref{t5e8-focI} as the first minus
+$F(\rho^*)p_HB/\Delta p$ and collect:
+\begin{align}
+  (1+\mu)\Big[r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big] &= \mu F(\rho^*)\frac{p_HB}{\Delta p}. \label{t5e8-focI2}
+\end{align}
+From \eqref{t5e8-focrho}, $\mu(\rho^*-\rho_0)=\rho_1-\rho^*$, so
+$\mu=\frac{\rho_1-\rho^*}{\rho^*-\rho_0}$ and $1+\mu=\frac{\rho^*-\rho_0+\rho_1-\rho^*}{\rho^*-\rho_0}=\frac{\rho_1-\rho_0}{\rho^*-\rho_0}$,
+hence $\frac{\mu}{1+\mu}=\frac{\rho_1-\rho^*}{\rho_1-\rho_0}$. Since
+$\rho_1-\rho_0=p_H\frac{R(I)}{I}-p_H\Big(\frac{R(I)}{I}-\frac{B}{\Delta p}\Big)=\frac{p_HB}{\Delta p}$,
+\begin{align}
+  \frac{\mu}{1+\mu}\,\frac{p_HB}{\Delta p} &= \frac{\rho_1(I)-\rho^*}{\rho_1(I)-\rho_0(I)}\,\bigl(\rho_1(I)-\rho_0(I)\bigr) = \rho_1(I)-\rho^*. \label{t5e8-mu}
+\end{align}
+Dividing \eqref{t5e8-focI2} by $1+\mu$ and substituting \eqref{t5e8-mu}:
+\begin{align}
+  r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho &= F(\rho^*)\Big(\frac{p_HR(I)}{I}-\rho^*\Big). \nonumber
+\end{align}
+Move the $R$ terms to the left and the rest to the right:
+\begin{align}
+  F(\rho^*)\,p_H\Big[R'(I)-\frac{R(I)}{I}\Big] &= 1-r+\int_0^{\rho^*}\!\rho f\,d\rho-\rho^*F(\rho^*) \nonumber\\
+  &= 1-r-\Big[\rho^*F(\rho^*)-\int_0^{\rho^*}\!\rho f\,d\rho\Big]. \nonumber
+\end{align}
+The bracket is $\int_0^{\rho^*}(\rho^*-\rho)f(\rho)\,d\rho$; integrating by parts with $F(0)=0$,
+$\int_0^{\rho^*}(\rho^*-\rho)f\,d\rho=\big[(\rho^*-\rho)F(\rho)\big]_0^{\rho^*}+\int_0^{\rho^*}F(\rho)\,d\rho=\int_0^{\rho^*}F(\rho)\,d\rho$.
+Dividing by $F(\rho^*)>0$,
+\begin{align}
+  p_H\Big[R'(I)-\frac{R(I)}{I}\Big] &= \frac{1-r-\int_0^{\rho^*}F(\rho)\,d\rho}{F(\rho^*)}. \label{t5e8-key}
+\end{align}
+The binding \eqref{t5e8-IR}, solved for $A$ and with $p_H[R(I)-BI/\Delta p]=I\rho_0(I)$, reads
+\begin{align}
+  A &= I-rI+\Big[\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big]I-F(\rho^*)\,I\rho_0(I) \nonumber\\
+    &= I\Big[1-r+\int_0^{\rho^*}\rho f(\rho)\,d\rho - F(\rho^*)\rho_0(I)\Big]. \label{t5e8-IRb}
+\end{align}
+Check: with constant returns, $R(I)=RI$, the left side of \eqref{t5e8-key} is 0 and \eqref{t5e8-key} becomes
+$\int_0^{\rho^*}F=1-r$, which is (5.6$''$). With strict concavity and $R(0)=0$, $R(I)/I>R'(I)$, so the left
+side is negative and $\int_0^{\rho^*}F>1-r$: the marginal unit of scale is worth less than the average one,
+so at the margin the firm spends more on continuation and less on scale than (5.6$''$) would say.
+
+\answer{(i)} The FOCs are \eqref{t5e8-focrho}, $\rho_1(I)-\rho^*+\mu[\rho_0(I)-\rho^*]=0$, and
+\eqref{t5e8-focI}; eliminating $\mu$, the optimum $(I,\rho^*)$ solves
+$p_H[R'(I)-R(I)/I]=\bigl[1-r-\int_0^{\rho^*}F(\rho)\,d\rho\bigr]/F(\rho^*)$ together with the binding
+break-even \eqref{t5e8-IRb}, with $\rho_0(I)<\rho^*<\rho_1(I)$.
+
+\step{4}{(ii) $I$ and $\rho^*$ move together} Condition \eqref{t5e8-key} links the two choices; we find
+the sign of that link. Write $\varphi(I)\equiv p_H[R(I)/I-R'(I)]>0$, increasing by assumption, and
+$h(\rho^*)$ for the right side of \eqref{t5e8-key}, so \eqref{t5e8-key} is $-\varphi(I)=h(\rho^*)$. The
+numerator of $h$ is $N(\rho^*)=1-r-\int_0^{\rho^*}F$, with $N'(\rho^*)=-F(\rho^*)$; by the quotient rule,
+\begin{align}
+  h'(\rho^*) &= \frac{N'(\rho^*)F(\rho^*)-N(\rho^*)f(\rho^*)}{F(\rho^*)^2} \nonumber\\
+             &= \frac{-F(\rho^*)^2 - f(\rho^*)\big[1-r-\int_0^{\rho^*}F\big]}{F(\rho^*)^2} \nonumber\\
+             &= -1 - \frac{f(\rho^*)}{F(\rho^*)}\,h(\rho^*). \label{t5e8-hprime}
+\end{align}
+\assume Tirole's answer takes $h$ decreasing. Since $h<0$ at the optimum, \eqref{t5e8-hprime} is negative iff
+$f(\rho^*)\big[\int_0^{\rho^*}F-(1-r)\big]<F(\rho^*)^2$. This holds, e.g., for $F$ uniform on $[0,\bar\rho]$
+($f=1/\bar\rho$, $F(\rho^*)=\rho^*/\bar\rho$, $\int_0^{\rho^*}F=\rho^{*2}/(2\bar\rho)$): multiplying by $\bar\rho^2$, the
+condition reads $\rho^{*2}/2-\bar\rho(1-r)<\rho^{*2}$, always true for $r\le1$. We assume it.
+
+Then along \eqref{t5e8-key} an increase in $I$ lowers $-\varphi(I)$, which requires a lower $h$, i.e.\ a higher
+$\rho^*$. Totally differentiating $-\varphi(I)=h(\rho^*)$ gives $-\varphi'(I)\,dI=h'(\rho^*)\,d\rho^*$, so
+\eqref{t5e8-key} defines $\rho^*=g(I)$ with
+\begin{align}
+  g'(I) &= \frac{-\varphi'(I)}{h'(\rho^*)} > 0. \label{t5e8-g}
+\end{align}
+
+\step{5}{(ii) Effect of $A$} The binding break-even \eqref{t5e8-IRb} tells how much net worth a given
+$(I,\rho^*)$ requires; we differentiate its right side. With respect to $\rho^*$,
+\begin{align}
+  \frac{\partial A}{\partial\rho^*} &= I\big[\rho^*f(\rho^*)-f(\rho^*)\rho_0(I)\big] \nonumber\\
+  &= I f(\rho^*)\big[\rho^*-\rho_0(I)\big] > 0, \label{t5e8-dArho}
+\end{align}
+positive because $\rho^*>\rho_0(I)$ by \eqref{t5e8-focrho}. With respect to $I$ (using $\frac{d}{dI}[I\rho_0(I)]=p_H[R'(I)-B/\Delta p]$),
+\begin{align}
+  \frac{\partial A}{\partial I} &= 1-r+\int_0^{\rho^*}\!\rho f\,d\rho - F(\rho^*)p_H\Big[R'(I)-\frac{B}{\Delta p}\Big]. \nonumber
+\end{align}
+The second bracket of \eqref{t5e8-focI} is $-\partial A/\partial I$ and the first is $-\partial A/\partial I+F(\rho^*)p_HB/\Delta p$,
+so \eqref{t5e8-focI} reads $-(1+\mu)\,\partial A/\partial I + F(\rho^*)p_HB/\Delta p=0$, i.e.
+\begin{align}
+  \frac{\partial A}{\partial I} &= \frac{F(\rho^*)\,p_HB}{(1+\mu)\Delta p} > 0. \label{t5e8-dAI}
+\end{align}
+Along the optimum, $\rho^*=g(I)$, so by \eqref{t5e8-g}, \eqref{t5e8-dArho} and \eqref{t5e8-dAI}
+\begin{align}
+  \frac{dA}{dI} &= \frac{\partial A}{\partial I}+\frac{\partial A}{\partial\rho^*}\,g'(I) > 0, \label{t5e8-dAdI}
+\end{align}
+hence $dI/dA=1/(dA/dI)>0$ and $d\rho^*/dA=g'(I)\,dI/dA>0$: a weaker balance sheet lowers both the scale
+and the cutoff.
+
+\step{6}{(ii) Debt maturity} Under the free-cash-flow assumption $r>\rho^*$ the optimum is implemented as in
+Section 5.6.1(a): the firm keeps $\rho^*I$ to meet shocks $\rho\le\rho^*$, must pay out
+$P_1=(r-\rho^*)I$ at date 1 (short-term debt), is barred from diluting the initial investors, and the investors' long-term
+claim is $R(I)-BI/\Delta p$ in case of success. Per unit of investment the short-term debt is $r-\rho^*$, and by Step 5
+\begin{align}
+  \frac{d(r-\rho^*)}{dA} &= -\frac{d\rho^*}{dA} < 0. \label{t5e8-mat}
+\end{align}
+A firm with a weaker balance sheet (lower $A$) issues more short-term debt per unit of investment: its debt
+maturity is shorter. (The level $(r-\rho^*)I$ can move either way, because $I$ falls too.)
+
+\answer{(ii)} $dI/dA>0$ and $d\rho^*/dA>0$, so the short-term debt per unit of investment, $r-\rho^*$,
+falls with $A$: weaker balance sheets carry shorter maturity (more of the date-1 cash flow is paid out),
+provided $h'(\rho^*)<0$ (true, e.g., for uniform shocks).
+
+\intuition A weak balance sheet makes pledgeable income scarce. The firm raises it by continuing less often,
+i.e.\ by keeping less liquidity in the firm, which means sweeping more of the date-1 cash flow out to creditors
+through short-term debt. Decreasing returns add one more channel: a lower scale raises $R(I)/I$ and hence per-unit
+pledgeable income, and the two margins (scale and continuation) are cut together.
+
+\pitfalls
+\begin{itemize}
+  \item Carrying over the constant-returns result $\int_0^{\rho^*}F=1-r$, under which $\rho^*$ does not
+        depend on $A$: with $R''<0$ the left side of \eqref{t5e8-key} is negative and moves with $I$, which
+        is what makes $\rho^*$ depend on $A$.
+  \item Stating the FOCs without the multiplier on the break-even: the cutoff is a weighted average of
+        $\rho_1$ (value) and $\rho_0$ (pledgeable income), not $\rho_1$ alone.
+  \item Reading ``shorter maturity'' off the level $(r-\rho^*)I$: since $I$ also falls with $A$, the
+        unambiguous statement is per unit of investment.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~593): same condition \eqref{t5e8-key} (the book writes its numerator as
+$1-r-\int_0^{\rho^*}(\rho^*-\rho)f(\rho)d\rho$, equal to ours by integration by parts) and the same conclusion
+(lower $A$ $\Rightarrow$ lower $I$ and $\rho^*$ $\Rightarrow$ more short-term debt). The book states without proof that the
+right side of \eqref{t5e8-key} is decreasing in $\rho^*$; \eqref{t5e8-hprime} shows this needs a condition on $F$
+(true for the uniform).
+
+\refbib Tirole \S5.3.2 ``Continuum of Liquidity Shocks'', pp.~209--210; \S5.6.1 ``Optimal Claim Maturity'', p.~226;
+Exercise 5.7, p.~232; answer p.~593.
+%% END-FROM
+
+% =============================================================================
+%% BEGIN-FROM lista-topic5-nonverifiable-income-termination-solutions.tex EX 9 AS 11
+\exsec{11. The priority game: uncoordinated lending and short-term bias --- Tirole Exercise 5.9, p.~233}
+
+\asked (i) Find the first-best date-1 deepening investment $I_1^*$ and show that a mix of short- and
+long-term debt implements it, with some indeterminacy in how the claims (and the entrepreneur's pay)
+are split. (ii) With an opaque balance sheet and many lenders, show that the entrepreneur gains by
+secretly swapping long-term claim for short-term claim with one lender, and say whether this pins down
+the split left open in (i).
+
+\approach Without moral hazard the borrower captures the NPV, so (i) is a plain optimisation plus
+counting equations against unknowns. In (ii) the date-1 payout to one lender is paid out of the
+reinvestment fund, lowering the success probability of \emph{every} long-term claim: an externality
+that neither party to the side deal internalises (a common-agency, ``priority'' problem). Only
+collusion-proof structures survive, which is the lecture's point that maturity is chosen to discipline
+what the insider can do with unverifiable cash.
+
+\notation
+\begin{itemize}
+  \item $I$: fixed date-0 investment; $A=0$; no moral hazard (private benefit 0); risk-free rate 0.
+  \item $r>0$: known date-1 return; $R$ or 0: date-2 return, success probability $p+\tau(I_1)$.
+  \item $I_1\ge 0$: date-1 deepening investment; $\tau$ increasing, concave, $\tau'(0)=\infty$, $\tau'(r)R<1$.
+  \item $r_l,r_b\ge 0$: date-1 payments to lenders (short-term debt) and to the entrepreneur;
+        $R_l,R_b\ge0$: success-contingent date-2 payments, $R_l+R_b=R$.
+  \item $I_1^*$: first-best deepening investment; $\delta r_l,\delta R_l>0$: sizes of a secret deal.
+\end{itemize}
+
+\step{1}{(i) First best} The first best maximises total surplus over $I_1$. The NPV is date-1 cash not
+reinvested plus expected date-2 income minus the initial investment:
+\begin{align}
+  \text{NPV}(I_1) &= r - I_1 + [p+\tau(I_1)]R - I. \label{t5e9-npv}
+\end{align}
+Its derivatives are $\text{NPV}'(I_1)=-1+\tau'(I_1)R$ and $\text{NPV}''(I_1)=\tau''(I_1)R\le0$, so it is
+concave and the first-order condition $\text{NPV}'(I_1^*)=0$ is sufficient:
+\begin{align}
+  -1+\tau'(I_1^*)\,R &= 0 \quad\Longleftrightarrow\quad \tau'(I_1^*)\,R = 1. \label{t5e9-fb}
+\end{align}
+$\tau'(0)=\infty$ gives $I_1^*>0$; $\tau'(r)R<1=\tau'(I_1^*)R$ and $\tau'$ decreasing give $I_1^*<r$, so
+$r-I_1^*>0$ can be paid out at date 1.
+
+\step{2}{(i) Implementation and indeterminacy} With transparent books the contract fixes the date-1
+payouts, and hence $I_1=r-r_l-r_b$. The first best requires
+\begin{align}
+  r_b+r_l+I_1^* &= r, \label{t5e9-c1}\\
+  R_b+R_l &= R, \label{t5e9-c2}\\
+  I &= r_l+[p+\tau(I_1^*)]R_l, \label{t5e9-c3}
+\end{align}
+the last being the lenders' breakeven condition. Four unknowns $(r_b,r_l,R_b,R_l)$ and three equations: one
+degree of freedom. For instance (when $r-I_1^*<I$), maximal short-term debt $r_b=0$, $r_l=r-I_1^*$ with
+$R_l=\frac{I-(r-I_1^*)}{p+\tau(I_1^*)}$; or pure long-term debt $r_l=0$, $R_l=\frac{I}{p+\tau(I_1^*)}$ (if this is $\le R$),
+with the entrepreneur taking $r_b=r-I_1^*$. Without moral hazard the entrepreneur gets the first-best NPV in all
+cases, so the split of her pay between $r_b$ and $R_b$, and of the lenders' claims between short and long
+term, is undetermined.
+
+\answer{(i)} $I_1^*$ solves $\tau'(I_1^*)R=1$, with $0<I_1^*<r$; any $(r_b,r_l,R_b,R_l)\ge0$ with
+$r_b+r_l=r-I_1^*$, $R_b+R_l=R$ and $r_l+[p+\tau(I_1^*)]R_l=I$ implements it --- one degree of freedom
+in the short-/long-term split.
+
+\step{3}{(ii) The secret deal} With $r-I_1^*<I$, \eqref{t5e9-c3} and $r_l\le r-I_1^*$ force $R_l>0$, hence $R_b<R$
+by \eqref{t5e9-c2}. Starting from any first-best structure, the entrepreneur offers one lender $+\delta r_l$ in short-term
+claim against the transfer to herself of $\delta R_l$ of his long-term claim. The lender is atomistic, takes $I_1$ as given,
+and accepts iff
+\begin{align}
+  \delta r_l &\ge [p+\tau(I_1)]\,\delta R_l. \label{t5e9-acc}
+\end{align}
+Date-1 cash is fixed and the other claims cannot be defrauded, so the extra payout comes out of deepening investment:
+\begin{align}
+  \delta I_1 &= -\delta r_l. \label{t5e9-dI1}
+\end{align}
+The entrepreneur's utility is $U_b=r_b+[p+\tau(I_1)]R_b$; in the deal $r_b$ is unchanged and she
+receives the long-term claim the lender gives up, $\delta R_b=\delta R_l$. To first order (product rule),
+\begin{align}
+  \delta U_b &= \tau'(I_1)\,(\delta I_1)\,R_b + [p+\tau(I_1)]\,(\delta R_l). \nonumber
+\end{align}
+Substituting \eqref{t5e9-dI1} and \eqref{t5e9-acc} at equality ($\delta R_l=\delta r_l/[p+\tau(I_1)]$),
+\begin{align}
+  \delta U_b &= \tau'(I_1)\,(-\delta r_l)\,R_b + [p+\tau(I_1)]\Big(\frac{\delta r_l}{p+\tau(I_1)}\Big) \nonumber\\
+             &= \big[1-\tau'(I_1)R_b\big]\,\delta r_l. \label{t5e9-dU}
+\end{align}
+At $I_1=I_1^*$, \eqref{t5e9-fb} gives $\tau'(I_1^*)=1/R$, so $\tau'(I_1^*)R_b=R_b/R<1$ and
+$\delta U_b=(1-R_b/R)\,\delta r_l=\frac{R-R_b}{R}\,\delta r_l=(R_l/R)\,\delta r_l>0$: the deal pays. The gain is
+exactly the loss $\tau'(I_1^*)R_l\,\delta r_l=(R_l/R)\delta r_l$ of the other long-term claimholders, whose success probability
+falls; total value is unchanged to first order because $I_1^*$ maximises \eqref{t5e9-npv}.
+
+\step{4}{(ii) The indeterminacy is resolved} Lenders anticipate such deals, so only collusion-proof structures are
+equilibria. By \eqref{t5e9-dU} no deal pays iff
+\begin{align}
+  \tau'(I_1)\,R_b &\ge 1. \label{t5e9-cp}
+\end{align}
+The entrepreneur bears the NPV loss ex ante, and \eqref{t5e9-npv} rises with $I_1$ below $I_1^*$; since $\tau'$ falls with $I_1$,
+she sets $I_1$ as high as \eqref{t5e9-cp} allows, so \eqref{t5e9-cp} binds: $\tau'(I_1)R_b=1$. Because $R_b<R$,
+$\tau'(I_1)>\tau'(I_1^*)$ and $I_1<I_1^*$. A larger $R_b$ permits a larger $I_1$, so $R_b$ must be the largest compatible with
+breakeven, which requires paying her nothing at date 1, $r_b=0$, and all date-1 free cash to lenders, $r_l=r-I_1$:
+\begin{align}
+  I &= r-I_1+[p+\tau(I_1)](R-R_b), \label{t5e9-be}\\
+  \tau'(I_1)\,R_b &= 1. \label{t5e9-cpb}
+\end{align}
+These two equations pin down $(I_1,R_b)$, hence $r_l=r-I_1$ and $R_l=R-R_b$. So yes, opacity resolves the
+indeterminacy: the entrepreneur is paid only long-term ($r_b=0$), lenders hold more short-term debt
+($r-I_1>r-I_1^*$), and deepening investment is below the first best.
+
+\answer{(ii)} At the first best a secret swap gives $\delta U_b=[1-\tau'(I_1^*)R_b]\delta r_l=(R_l/R)\delta r_l>0$.
+Yes, the indeterminacy is resolved: $r_b=0$, $r_l=r-I_1$, and $(I_1,R_b)$ solve $\tau'(I_1)R_b=1$ and
+$I=r-I_1+[p+\tau(I_1)](R-R_b)$, with $I_1<I_1^*$ (a short-term bias).
+
+\intuition A lender who cashes out early is paid out of the firm's reinvestment fund, and the cost (a lower success
+probability) falls on every long-term claimant. Neither the colluding lender nor the entrepreneur internalises the
+loss of the other lenders, so with opaque books maturity is biased toward the short term. The entrepreneur can only
+commit not to strip the firm by holding a large long-term stake herself, and $\tau'(I_1)R_b=1$ shows how large.
+
+\pitfalls
+\begin{itemize}
+  \item Letting the colluding lender internalise the fall in $I_1$: he is atomistic, takes $I_1$ as given
+        and accepts any deal with $\delta r_l\ge[p+\tau(I_1)]\delta R_l$.
+  \item Counting the deal as value-creating: at $I_1^*$ total value is unchanged to first order; the
+        entrepreneur's gain is the other long-term holders' loss.
+  \item Concluding that ``more long-term debt'' fixes the bias: what deters stripping is the
+        entrepreneur's own long-term stake $R_b$, which is why $r_b=0$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~594): $\tau'(I_1^*)R=1$; one degree of freedom; $\delta U_b=[1-\tau'(I_1)R_b]\delta r_l>0$;
+resolution with $r_b=0$, $I=r-I_1+[p+\tau(I_1)](R-R_b)$ and $\tau'(I_1)R_b=1$, $I_1<I_1^*$.
+
+\refbib Tirole \S5.6.1 ``Optimal Claim Maturity'', p.~226; Exercise 5.9, p.~233; answer p.~594.
+%% END-FROM
+
+% =============================================================================
+\exsec{12. Two-factor hedge with no cash outlay --- Grinblatt \& Titman 22.12, p.~816}
+
+\asked Choose positions in the three instruments (30-year bonds, 2-year swap, foreign index fund) so that the combined position cancels the firm's exposures to the interest-rate factor (beta 2) and the exchange-rate factor (beta 5), with no net cash invested.
+
+\approach G\&T Result 22.7 and Example 22.16: factor betas add up, so a hedge is a portfolio of instruments whose betas are the negatives of the cash flow's betas. Two exposures plus a zero-cost condition give three linear equations in three unknowns.
+
+\notation
+\begin{itemize}
+  \item $x_1,x_2,x_3$: \$ millions invested in bonds, swap and foreign fund (negative = short); each instrument's factor equation is per \$1 million invested, as the statement says (also for the swap).
+  \item Betas per \$1 million: bonds $(-4,0)$, swap $(-2,6)$, fund $(-3,-2)$ on $(\tilde F_{\text{int}},\tilde F_{\text{ex}})$; firm's cash flow betas $(2,5)$.
+\end{itemize}
+
+\step{1}{Equations} Zero cost, then each factor beta of the hedge equal to minus the firm's:
+\begin{align}
+  x_1+x_2+x_3 &= 0, \label{r6e12-cost}\\
+  -4x_1-2x_2-3x_3 &= -2, \label{r6e12-int}\\
+  0x_1+6x_2-2x_3 &= -5. \label{r6e12-ex}
+\end{align}
+
+\step{2}{Eliminate $x_1$} From \eqref{r6e12-cost}, $x_1=-x_2-x_3$. Substituting in \eqref{r6e12-int}:
+\begin{align}
+  -4(-x_2-x_3)-2x_2-3x_3 &= -2 \nonumber\\
+  4x_2+4x_3-2x_2-3x_3 &= -2 \nonumber\\
+  2x_2+x_3 &= -2 \quad\Longrightarrow\quad x_3=-2-2x_2. \label{r6e12-a}
+\end{align}
+
+\step{3}{Solve} Substituting \eqref{r6e12-a} in \eqref{r6e12-ex}:
+\begin{align}
+  6x_2-2(-2-2x_2) &= -5 \nonumber\\
+  6x_2+4+4x_2 &= -5 \nonumber\\
+  10x_2 &= -9 \quad\Longrightarrow\quad x_2=-0.9. \nonumber
+\end{align}
+Then $x_3=-2-2(-0.9)=-0.2$ and $x_1=-(-0.9)-(-0.2)=1.1$.
+
+\step{4}{Check} Cost: $1.1-0.9-0.2=0$. Interest beta: $-4(1.1)-2(-0.9)-3(-0.2)=-4.4+1.8+0.6=-2$. Exchange beta: $6(-0.9)-2(-0.2)=-5.4+0.4=-5$. The hedge's constant term is $4(1.1)+6(-0.9)+3(-0.2)=4.4-5.4-0.6=-1.6$ (\$ millions): the hedged cash flow is riskless with respect to both factors, and its level falls by 1.6.
+
+\answer{\unskip} Buy \$1.1 million of 30-year government bonds, take a short (pay-side) position of \$0.9 million in the 2-year swap, and short \$0.2 million of the foreign index fund. Net cost zero; interest-rate beta $-2$ and exchange-rate beta $-5$ offset the firm's $+2$ and $+5$.
+
+\intuition The bonds are the only instrument with no currency exposure, so they carry the interest-rate hedge; the swap and the fund carry opposite currency betas, so a short swap with a small short in the fund removes the currency exposure; the bond purchase is financed by the two short positions, which is what makes the hedge self-financing.
+
+\pitfalls
+\begin{itemize}
+  \item Matching the betas with the same sign (doubling the exposure instead of cancelling it).
+  \item Treating the swap as costless, as in Example 22.16: here its equation is per \$1 million invested, so it enters the budget. (If it were costless, the budget would be $x_1+x_3=0$ and the solution $x_1=11$, $x_2=-4.5$, $x_3=-11$: a very different hedge.)
+  \item Dropping the zero-cash condition: with two equations and three unknowns the hedge is not unique.
+\end{itemize}
+
+\refbib G\&T \S 22.8, Result 22.7 and Example 22.16 ``Eliminating Factor Loadings with Portfolios of Financial Instruments'', pp.~805--807.
+
+% =============================================================================
+\exsec{13. Continuous entrepreneurial effort and liquidity needs --- Tirole Exercise 5.6, pp.~231--232}
+
+\asked (i) With effort cost $\tfrac12p^2$ and $R=2\sqrt{I-A}$, find the entrepreneur's optimal reward $R_b$ in case of success and show $R_b=\tfrac12R$. (ii) Adding a liquidity shock (effort chosen after continuation, stake independent of $\rho$), write investors' breakeven condition and the program that determines $(R_b,\rho^*)$.
+
+\approach Continuous-effort moral hazard (Tirole \S 3.5 style): the entrepreneur chooses $p$ to maximise $pR_b-\tfrac12p^2$, so effort rises with her stake; pledgeable income $p(R-R_b)$ is then a hump in $R_b$. For (ii), combine it with the cutoff structure of \S 5.2: continuation with probability $F(\rho^*)$ and expected reinvestment $\int_0^{\rho^*}\rho f$.
+
+\notation
+\begin{itemize}
+  \item $p\in[0,1]$: success probability chosen by the entrepreneur; $g(p)=\tfrac12p^2$: effort cost; $R_b$: her reward on success; $A$, $I$: cash and investment.
+  \item $\rho\sim F$ (density $f$) on $[0,\infty)$: reinvestment need; $\rho^*$: cutoff; $\mu$, $\nu$: multipliers of breakeven (in two equivalent programs).
+\end{itemize}
+
+\step{1}{(i) Effort choice} Given $R_b$, the entrepreneur solves $\max_p\{pR_b-\tfrac12p^2\}$; the first-order condition is
+\begin{align}
+  R_b-p &= 0 \quad\Longrightarrow\quad p=R_b \label{r6e13-p}
+\end{align}
+(interior because $R_b\le R<1$).
+
+\step{2}{(i) Breakeven} Investors receive $R-R_b$ with probability $p=R_b$:
+\begin{align}
+  R_b(R-R_b) &= I-A. \label{r6e13-be}
+\end{align}
+The left side is maximal at $R_b=R/2$, where it equals $R^2/4$. With $R=2\sqrt{I-A}$, $R^2/4=I-A$: the maximal pledgeable income exactly covers the outlay. Formally, \eqref{r6e13-be} is the quadratic $R_b^2-RR_b+(I-A)=0$ with discriminant $R^2-4(I-A)=0$, so its unique root is
+\begin{align}
+  R_b &= \frac{R}{2}. \label{r6e13-Rb}
+\end{align}
+Example: $I-A=0.09$ gives $R=2(0.3)=0.6$, $R_b=p=0.3$, and investors get $0.3(0.6-0.3)=0.09$.
+\answer{(i)} $p=R_b$ and breakeven $R_b(R-R_b)=I-A$; with $R=2\sqrt{I-A}$ its only solution is $R_b=\tfrac12R$.
+
+\step{3}{(ii) Breakeven with liquidity shocks} After continuation, effort is again $p=R_b$ by \eqref{r6e13-p}, since $R_b$ does not depend on $\rho$. Investors receive $R_b(R-R_b)$ in expectation per continuation, with probability $F(\rho^*)$, and pay $I-A$ plus the expected reinvestment:
+\begin{align}
+  F(\rho^*)\,R_b(R-R_b) &\ge I-A+\int_0^{\rho^*}\rho f(\rho)\,d\rho. \label{r6e13-be2}
+\end{align}
+
+\step{4}{(ii) Program} The entrepreneur's expected utility is $F(\rho^*)[pR_b-\tfrac12p^2]=F(\rho^*)\tfrac12R_b^2$, so
+\begin{align}
+  \max_{R_b,\ \rho^*}\ F(\rho^*)\,\frac{R_b^2}{2}\qquad\text{s.t. \eqref{r6e13-be2}.} \label{r6e13-prog}
+\end{align}
+\answer{(ii)} Breakeven \eqref{r6e13-be2}; program \eqref{r6e13-prog}.
+
+\step{5}{(ii) Going further: first-order conditions} With multiplier $\mu$ on \eqref{r6e13-be2}, $\mathcal L=F\tfrac12R_b^2+\mu\big[FR_b(R-R_b)-(I-A)-\int_0^{\rho^*}\rho f\big]$. The derivatives are
+\begin{align}
+  \frac{\partial\mathcal L}{\partial\rho^*} &= f(\rho^*)\Big[\frac{R_b^2}{2}+\mu\big(R_b(R-R_b)-\rho^*\big)\Big]=0
+  \ \Longrightarrow\ \rho^*=R_b(R-R_b)+\frac{R_b^2}{2\mu}, \label{r6e13-focrho}\\
+  \frac{\partial\mathcal L}{\partial R_b} &= F(\rho^*)\big[R_b+\mu(R-2R_b)\big]=0
+  \ \Longrightarrow\ R_b(2\mu-1)=\mu R\ \Longrightarrow\ R_b=\frac{\mu R}{2\mu-1}. \label{r6e13-focRb}
+\end{align}
+From \eqref{r6e13-focRb}, $\mu=R_b/(2R_b-R)$, so $\frac{R_b^2}{2\mu}=\frac{R_b(2R_b-R)}{2}$; substituting in \eqref{r6e13-focrho},
+\begin{align}
+  \rho^* &= R_bR-R_b^2+R_b^2-\frac{R_bR}{2} = \frac{R\,R_b}{2}. \label{r6e13-rhoRb}
+\end{align}
+Since the entrepreneur's utility plus the slack of \eqref{r6e13-be2} is the NPV, maximising NPV with multiplier $\nu$ gives the same optimum with $\mu=1+\nu\ge1$, and \eqref{r6e13-focrho} becomes $\rho^*=\frac{\rho_1+\nu\rho_0}{1+\nu}$ with $\rho_0\equiv R_b(R-R_b)$ (pledgeable per continuation) and $\rho_1\equiv R_bR-\tfrac12R_b^2$ (net value per continuation): the cutoff lies between them, as in (5.8). $R_b=\frac{(1+\nu)R}{1+2\nu}\in(\tfrac12R,R]$.
+\emph{Example} (own numbers): $F$ uniform on $[0,1]$, $R=0.8$, $I-A=0.01$. Using \eqref{r6e13-rhoRb}, \eqref{r6e13-be2} binding is $0.4R_b\cdot R_b(0.8-R_b)-\tfrac12(0.4R_b)^2=0.24R_b^2-0.4R_b^3=0.01$, whose larger root is $R_b=0.5$ ($0.06-0.05=0.01$). Then $\rho^*=0.8(0.5)/2=0.2$, $\mu=0.5/0.2=2.5$ ($\nu=1.5$), and \eqref{r6e13-focrho}: $0.5(0.3)+0.25/5=0.15+0.05=0.2$; $\rho_0=0.15<\rho^*<\rho_1=0.275$; utility $0.2\times0.25/2=0.025$ (a grid search over $(R_b,\rho^*)$ confirms the optimum).
+
+\intuition A larger stake buys effort and the entrepreneur's own surplus but eats into what investors receive per continuation; continuing more often adds value but costs investors the reinvestment. The optimum trades off the two margins, and both end up between the ``pledgeable'' and the ``total value'' benchmarks familiar from the binary-effort model.
+
+\pitfalls
+\begin{itemize}
+  \item Taking $p$ as fixed when choosing $R_b$: effort responds to the stake, $p=R_b$.
+  \item Writing the entrepreneur's utility as $pR_b$ without the effort cost; with the cost it is $\tfrac12R_b^2$.
+  \item In (ii), letting effort depend on $\rho$: it is chosen after continuation, but with $R_b$ independent of $\rho$ it does not vary with $\rho$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~593): $p=R_b$, $R_b(R-R_b)=I-A$ satisfied by $R_b=R/2$; breakeven $I-A+\int_0^{\rho^*}\rho f=F(\rho^*)R_b(R-R_b)$ and objective $F(\rho^*)R_b^2$ (ours has the factor $\tfrac12$, which does not change the solution). Step 5 goes beyond the book.
+
+\refbib Tirole \S 5.2.1, pp.~201--204; Exercise 5.6, pp.~231--232; answer p.~593.
+
+% =============================================================================
+\exsec{14. Liquidity and deepening investment --- Tirole Exercise 5.10, p.~234}
+
+\asked (i) The condition for the fixed-size project to be financed. (ii) With an optional date-1 deepening investment of random cost $\rho$ that raises the success probability by $\tau$: write the incentive constraint and investors' breakeven for a given cutoff $\rho^*$. (iii) Find the optimal cutoff (three cases). (iv) Say whether the firm can rely on returning to the market at date 1 to pay for the deepening investment.
+
+\approach The growth-prospects reinterpretation of the liquidity model (\S 5.2.4): failing to meet the shock does not kill the firm but forgoes a profitable expansion. NPV is maximised at the first-best cutoff $\tau R$, pledgeable income at $\tau(R-B/\Delta p)$; the balance sheet decides which is reachable. The separable form $p+\tau$ keeps the incentive constraint unchanged.
+
+\notation
+\begin{itemize}
+  \item $\rho_1=p_HR$, $\rho_0=p_H(R-B/\Delta p)$, $\rho_1>I>\rho_0$; $\mu\equiv\tau/p_H$, $\hat\rho_1\equiv\mu\rho_1=\tau R$, $\hat\rho_0\equiv\mu\rho_0=\tau(R-B/\Delta p)$.
+  \item $\rho\sim F$ (density $f$) on $[0,\infty)$: cost of deepening; $\rho^*$: cutoff (deepen iff $\rho\le\rho^*$).
+\end{itemize}
+
+\step{1}{(i) Financing condition} With $(\Delta p)R_b\ge B$ and $R_b=B/\Delta p$, investors' breakeven is
+\begin{align}
+  p_H\Big(R-\frac{B}{\Delta p}\Big) &\ge I-A \quad\Longleftrightarrow\quad A\ge I-\rho_0. \label{r6e14-i}
+\end{align}
+\answer{(i)} $\rho_0\ge I-A$, i.e.\ $A\ge I-\rho_0>0$.
+
+\step{2}{(ii) Incentive constraint} If the firm has deepened, behaving gives $(p_H+\tau)R_b$, misbehaving $(p_L+\tau)R_b+B$:
+\begin{align}
+  (p_H+\tau)R_b &\ge (p_L+\tau)R_b+B \quad\Longleftrightarrow\quad (\Delta p)R_b\ge B, \label{r6e14-ic}
+\end{align}
+the same as without deepening.
+
+\step{3}{(ii) Breakeven} The success probability is $p_H+\tau$ with probability $F(\rho^*)$ and $p_H$ otherwise; investors also pay the expected deepening cost:
+\begin{align}
+  \big[F(\rho^*)(p_H+\tau)+(1-F(\rho^*))p_H\big](R-R_b) &\ge I-A+\int_0^{\rho^*}\rho f(\rho)\,d\rho. \label{r6e14-be}
+\end{align}
+At $R_b=B/\Delta p$ the left side is $[p_H+F(\rho^*)\tau](R-B/\Delta p)=\rho_0+F(\rho^*)\tau(R-B/\Delta p)=\rho_0[1+\mu F(\rho^*)]$, using $\tau(R-B/\Delta p)=\frac{\tau}{p_H}\rho_0=\mu\rho_0$.
+\answer{(ii)} $(\Delta p)R_b\ge B$ and \eqref{r6e14-be}; with the minimal stake, $\rho_0[1+\mu F(\rho^*)]\ge I-A+\int_0^{\rho^*}\rho f$.
+
+\step{4}{(iii) The two benchmarks} The NPV is $U_b(\rho^*)=[p_H+F(\rho^*)\tau]R-I-\int_0^{\rho^*}\rho f$, so
+\begin{align}
+  U_b'(\rho^*) &= f(\rho^*)\big[\tau R-\rho^*\big], \label{r6e14-dU}
+\end{align}
+positive below and negative above $\hat\rho_1=\tau R$: the first best is $\rho^*=\hat\rho_1$. The pledgeable surplus $\mathcal P(\rho^*)\equiv\rho_0[1+\mu F(\rho^*)]-\int_0^{\rho^*}\rho f-(I-A)$ has
+\begin{align}
+  \mathcal P'(\rho^*) &= f(\rho^*)\big[\mu\rho_0-\rho^*\big], \label{r6e14-dP}
+\end{align}
+so it rises up to $\hat\rho_0$ and falls after; $\hat\rho_0<\hat\rho_1$.
+
+\step{5}{(iii) Three cases} The optimum is the largest cutoff up to $\hat\rho_1$ with $\mathcal P\ge0$.
+\emph{Case 1} (first best): $\rho_0[1+\mu F(\hat\rho_1)]\ge I-A+\int_0^{\hat\rho_1}\rho f$; then $\rho^*=\hat\rho_1$.
+\emph{Case 2} (no funding): $\rho_0[1+\mu F(\hat\rho_0)]<I-A+\int_0^{\hat\rho_0}\rho f$; even the pledgeable-income-maximising cutoff does not repay investors.
+\emph{Case 3} (in between): $\rho^*\in[\hat\rho_0,\hat\rho_1)$ solves
+\begin{align}
+  \rho_0\big[1+\mu F(\rho^*)\big] &= I-A+\int_0^{\rho^*}\rho f(\rho)\,d\rho, \label{r6e14-case3}
+\end{align}
+the root on the decreasing branch of $\mathcal P$.
+\emph{Example} (own numbers): $p_H=0.5$, $p_L=0.2$, $R=4$, $B=0.6$, $I=1.5$, $\tau=0.25$; $F$ uniform on $[0,2]$, so $F(\rho)=\rho/2$ and $\int_0^x\rho f=x^2/4$. Then $\Delta p=0.3$, $B/\Delta p=2$, $p_LR+B=1.4<I$, $\rho_1=2$, $\rho_0=0.5(4-2)=1$, $\mu=0.5$, $\hat\rho_1=1$, $\hat\rho_0=0.5$. Case 1 requires $1\times(1+0.5\times0.5)=1.25\ge1.5-A+0.25$, i.e.\ $A\ge0.5$. Case 2 is $1\times(1+0.5\times0.25)=1.125<1.5-A+0.0625$, i.e.\ $A<0.4375$. For $A=0.46$, \eqref{r6e14-case3} reads $1+0.25\rho^*=1.04+\rho^{*2}/4$, i.e.\ $\rho^{*2}-\rho^*+0.16=0$, with roots $(1\pm\sqrt{1-0.64})/2=(1\pm0.6)/2$, i.e.\ $0.8$ and $0.2$; the optimum is $\rho^*=0.8\in[0.5,1)$. Note that without the deepening option the firm needs $A\ge I-\rho_0=0.5$; the option lowers the funding threshold to $0.5-\int_0^{0.5}F(\rho)d\rho=0.5-0.0625=0.4375$, because cheap deepening ($\rho<\hat\rho_0$) raises pledgeable income.
+\answer{(iii)} $\rho^*=\hat\rho_1=\tau R$ in Case 1; no funding in Case 2; otherwise $\rho^*\in[\hat\rho_0,\hat\rho_1)$ given by \eqref{r6e14-case3}.
+
+\step{6}{(iv) Returning to the market} At date 1, without deepening, the initial investors' claim is worth $\rho_0$ anyway, so they will not accept dilution beyond what deepening adds to the outside claims. Deepening raises the value of outside claims by $\tau(R-B/\Delta p)=\hat\rho_0$, the most new investors can be promised. The market therefore finances deepening only for $\rho\le\hat\rho_0$, while the optimal cutoff is $\rho^*\ge\hat\rho_0$, strictly above in Case 1 and generically in Case 3. The firm must hoard liquidity, or obtain a credit line, of $\rho^*-\hat\rho_0$ (0.3 in the example) with the right to dilute for the rest.
+\answer{(iv)} No (unless $\rho^*=\hat\rho_0$): the market can pay at most $\hat\rho_0=\mu\rho_0$, less than the value $\hat\rho_1=\mu\rho_1$ of the reinvestment and less than $\rho^*$; the firm must secure liquidity in advance.
+
+\intuition The deepening investment is a growth option. Its value to the firm is $\tau R$ but to outsiders only $\tau(R-B/\Delta p)$, because part of the extra income must stay with the manager to keep her working. Growth options that the market alone will not finance must be funded by hoarded cash or committed lines, exactly as liquidity shocks are in the basic model.
+
+\pitfalls
+\begin{itemize}
+  \item Writing breakeven with success probability $p_H+\tau$ in all states: deepening happens only with probability $F(\rho^*)$.
+  \item In Case 3, picking the smaller root of \eqref{r6e14-case3} (0.2 in the example): it lies on the increasing branch of $\mathcal P$ and gives lower NPV.
+  \item In (iv), allowing date-1 investors $\rho_0+\hat\rho_0$: the initial investors keep $\rho_0$ without deepening and will not give it up.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~595): $(\Delta p)R_b\ge B$; breakeven \eqref{r6e14-be}; first best $\rho^*=\tau R=\hat\rho_1$; the three cases with the same inequalities; in (iv) liquidity must be hoarded whenever $\rho^*>\hat\rho_0$, since investors' maximal return $\mu\rho_0$ is below the value $\mu\rho_1$.
+
+\refbib Tirole \S 5.2.1, pp.~201--204; \S 5.2.3, pp.~205--206; \S 5.2.4 ``A Reinterpretation: Growth Prospects'', pp.~206--207; Exercise 5.10, p.~234; answer p.~595.
+
+% =============================================================================
+\exsec{15. Multistage investment with interim news about prospects --- Tirole Exercise 5.8, pp.~232--233}
+
+\asked (i) For news about the success probability (variant a) and news about the payoff (variant b): show there are two wealth thresholds $A_0<A_1$, with the first best above $A_1$ and financing iff $A\ge A_0$; show the continuation rules are cutoffs, and find $\tau_0^*,\tau_1^*,R_0^*,R_1^*$. (ii) At $A=A_0$, show that the entrepreneur's continuation rent, as a function of expected income $y$, has slope in $(0,1)$ in variant (a) and is constant in variant (b).
+
+\approach Same structure as the liquidity model, with the news playing the role of the shock: continuation is worth it when the news is good. NPV is maximised by continuing whenever the expected income covers $I_1$; pledgeable income by continuing whenever the \emph{pledgeable} expected income covers $I_1$. A weaker balance sheet forces a stricter cutoff. The rent at $A_0$ is the minimal incentive rent, which scales with the success probability but not with the payoff.
+
+\notation
+\begin{itemize}
+  \item $I_0$: date-0 sunk investment; $I_1$: date-1 reinvestment (only on continuation); $A$: entrepreneur's wealth; $B<(\Delta p)R$.
+  \item (a) $\tau\sim F$ (density $f$) on $[\underline\tau,\bar\tau]=[-p_L,1-p_H]$; cutoff $\tau^*$ (continue iff $\tau\ge\tau^*$).
+  \item (b) $R\sim G$ (density $g$) on $(0,\infty)$, $\tau=0$; cutoff $R^*$ (continue iff $R\ge R^*$).
+  \item $\mathcal P(\cdot)$: expected pledgeable income net of $I_1$; $y=(p_H+\tau)R$: expected income; $\mathcal R(y)$: rent on continuation.
+\end{itemize}
+
+\step{1}{(a) Cutoff form, NPV and pledgeable income} After the news, continuing has value $(p_H+\tau)R-I_1$, increasing in $\tau$, so the optimal rule continues for high $\tau$: a cutoff $\tau^*$. With stake $R_b=B/\Delta p$ (incentive constraint $(\Delta p)R_b\ge B$, unchanged by $\tau$),
+\begin{align}
+  U_b(\tau^*) &= \int_{\tau^*}^{\bar\tau}\big[(p_H+\tau)R-I_1\big]f(\tau)\,d\tau-I_0, \label{r6e15-Ua}\\
+  \mathcal P(\tau^*) &= \int_{\tau^*}^{\bar\tau}\Big[(p_H+\tau)\Big(R-\frac{B}{\Delta p}\Big)-I_1\Big]f(\tau)\,d\tau, \label{r6e15-Pa}
+\end{align}
+and financing requires $\mathcal P(\tau^*)\ge I_0-A$.
+
+\step{2}{(a) The two cutoffs} Differentiating with respect to the lower limit,
+\begin{align}
+  U_b'(\tau^*) &= -\big[(p_H+\tau^*)R-I_1\big]f(\tau^*), \qquad
+  \mathcal P'(\tau^*) = -\Big[(p_H+\tau^*)\Big(R-\frac{B}{\Delta p}\Big)-I_1\Big]f(\tau^*). \nonumber
+\end{align}
+Setting each bracket to zero:
+\begin{align}
+  (p_H+\tau_1^*)R &= I_1 \quad\Longrightarrow\quad \tau_1^*=\frac{I_1}{R}-p_H, \label{r6e15-t1}\\
+  (p_H+\tau_0^*)\Big(R-\frac{B}{\Delta p}\Big) &= I_1 \quad\Longrightarrow\quad \tau_0^*=\frac{I_1}{R-B/\Delta p}-p_H. \label{r6e15-t0}
+\end{align}
+$B<(\Delta p)R$ makes $R-B/\Delta p\in(0,R)$, so $\tau_0^*>\tau_1^*$: investors want to stop more often than the entrepreneur.
+
+\step{3}{(a) Thresholds} Let $A_1\equiv I_0-\mathcal P(\tau_1^*)$ and $A_0\equiv I_0-\mathcal P(\tau_0^*)$. For $A\ge A_1$ the first-best cutoff $\tau_1^*$ is fundable. $\mathcal P$ is maximal at $\tau_0^*$, so $\mathcal P(\tau_0^*)>\mathcal P(\tau_1^*)$ and $A_0<A_1$; for $A<A_0$ no cutoff repays investors. For $A\in[A_0,A_1)$ the cutoff solves $\mathcal P(\tau^*)=I_0-A$ on $(\tau_1^*,\tau_0^*]$, where $\mathcal P'>0$; as $A$ rises, $I_0-A$ falls, so $\tau^*$ falls from $\tau_0^*$ to $\tau_1^*$ (Figure 5.13a).
+
+\step{4}{(b) Same steps} Continuing has value $p_HR-I_1$, increasing in $R$: cutoff $R^*$. Then
+\begin{align}
+  U_b(R^*) &= \int_{R^*}^{\infty}\big[p_HR-I_1\big]g(R)\,dR-I_0,\qquad
+  \mathcal P(R^*) = \int_{R^*}^{\infty}\Big[p_H\Big(R-\frac{B}{\Delta p}\Big)-I_1\Big]g(R)\,dR, \label{r6e15-b}
+\end{align}
+and setting the integrands to zero at the lower limit,
+\begin{align}
+  p_HR_1^* &= I_1 \ \Longrightarrow\ R_1^*=\frac{I_1}{p_H}, \qquad
+  p_H\Big(R_0^*-\frac{B}{\Delta p}\Big) = I_1 \ \Longrightarrow\ R_0^*=\frac{I_1}{p_H}+\frac{B}{\Delta p}. \label{r6e15-R}
+\end{align}
+$A_1\equiv I_0-\mathcal P(R_1^*)>A_0\equiv I_0-\mathcal P(R_0^*)$, and $R^*$ falls from $R_0^*$ to $R_1^*$ as $A$ rises (Figure 5.13b).
+
+\step{5}{Examples (own numbers)} \emph{Variant (a):} $p_H=0.5$, $p_L=0.3$ ($\Delta p=0.2$), $R=10$, $B=1$ ($B/\Delta p=5<R$), $I_1=4$, $I_0=1$, $\tau$ uniform on $[-0.3,0.5]$ ($f=1.25$). Then $\tau_1^*=0.4-0.5=-0.1$ and $\tau_0^*=4/5-0.5=0.3$. The integrand of \eqref{r6e15-Pa} is $1.25(5\tau-1.5)$, with antiderivative $1.25(2.5\tau^2-1.5\tau)$, so
+\begin{align}
+  \mathcal P(\tau^*) &= 1.25\big[(2.5(0.25)-0.75)-(2.5\tau^{*2}-1.5\tau^*)\big]. \nonumber
+\end{align}
+$\mathcal P(0.3)=1.25(-0.125-0.225+0.45)=0.125$ and $\mathcal P(-0.1)=1.25(-0.125-0.025-0.15)=-0.375$, so $A_0=1-0.125=0.875$ and $A_1=1+0.375=1.375$. At $A=1$, $\mathcal P(\tau^*)=0$ gives $2.5\tau^{*2}-1.5\tau^*+0.125=0$, roots $0.5$ and $0.1$; the relevant one in $(-0.1,0.3]$ is $\tau^*=0.1$.
+\emph{Variant (b):} $p_H=0.5$, $B/\Delta p=5$, $I_1=4$, $I_0=1$, $R$ uniform on $(0,20]$ ($g=0.05$, an illustration of $G$). Then $R_1^*=8$ and $R_0^*=8+5=13$; $\mathcal P(R^*)=0.05[(0.25(400)-6.5(20))-(0.25R^{*2}-6.5R^*)]$ gives $\mathcal P(13)=0.6125$ and $\mathcal P(8)=0.3$, so $A_0=0.3875$ and $A_1=0.7$. At $A=0.5$: $R^{*2}-26R^*+160=0$, roots $(26\pm6)/2$, i.e.\ 16 and 10; the relevant one in $(8,13]$ is $R^*=10$.
+\answer{(i)} Cutoff rules; $\tau_1^*=I_1/R-p_H$, $\tau_0^*=I_1/(R-B/\Delta p)-p_H$, $R_1^*=I_1/p_H$, $R_0^*=I_1/p_H+B/\Delta p$; $A_k=I_0-\mathcal P(\text{cutoff}_k)$ with $A_0<A_1$; first best for $A\ge A_1$, funding iff $A\ge A_0$, cutoff decreasing in $A$ in between.
+
+\step{6}{(ii) Rent at $A=A_0$} At $A_0$ all pledgeable income goes to investors, so the stake is the minimum $R_b=B/\Delta p$, and the expected rent on continuation is (success probability)$\times B/\Delta p$. \emph{Variant (a):} with $y=(p_H+\tau)R$, i.e.\ $p_H+\tau=y/R$,
+\begin{align}
+  \mathcal R(y) &= (p_H+\tau)\frac{B}{\Delta p} = \frac{B}{(\Delta p)R}\,y, \qquad \mathcal R'(y)=\frac{B}{(\Delta p)R}\in(0,1) \label{r6e15-Ra}
+\end{align}
+by $0<B<(\Delta p)R$. \emph{Variant (b):} $y=p_HR$ and $\mathcal R=p_HB/\Delta p$, independent of $y$. Both hold on the continuation region $y\ge y^*$ ($y^*=(p_H+\tau_0^*)R$, resp.\ $p_HR_0^*$). In the examples: $\mathcal R'(y)=1/(0.2\times10)=0.5$ above $y^*=8$; $\mathcal R=0.5\times5=2.5$ above $y^*=6.5$.
+\answer{(ii)} (a) $\mathcal R(y)=\frac{B}{(\Delta p)R}y$, so $0<\mathcal R'<1$; (b) $\mathcal R=p_HB/\Delta p$, constant.
+
+\intuition Good news makes continuation worth more to everyone, but investors stop earlier because they get only the pledgeable part. The manager's rent rises with good news about the \emph{probability} of success (the reward $B/\Delta p$ is paid more often), but not with news about the \emph{size} of the payoff, which investors capture entirely. Which kind of uncertainty resolves matters for how managerial pay should covary with performance.
+
+\pitfalls
+\begin{itemize}
+  \item Making the cutoff an upper bound (as for cost shocks): with news about prospects the firm continues for \emph{high} realisations.
+  \item Including $I_0$ in the continuation decision: it is sunk at date 1.
+  \item In (ii), scaling the rent with $R$ in variant (b): the incentive stake $B/\Delta p$ does not depend on $R$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~593--594): the same $U_b$, $\mathcal P$, cutoffs $(p_H+\tau_1^*)R=I_1$, $(p_H+\tau_0^*)(R-B/\Delta p)=I_1$, $p_HR_1^*=I_1$, $p_H(R_0^*-B/\Delta p)=I_1$, and rents $\mathcal R=\frac{B}{(\Delta p)R}y$ and $p_HB/\Delta p$. (The book's $\mathcal P(R^*)$ in variant (b) also subtracts $I_0$, unlike its variant (a); with that convention financing reads $\mathcal P\ge-A$. We use the variant-(a) convention in both.)
+
+\refbib Tirole \S 5.2.1, pp.~201--204; \S 5.2.4, pp.~206--207; Exercise 5.8, pp.~232--233; answer pp.~593--594.
+
+\end{document}

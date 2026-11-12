@@ -1,0 +1,1692 @@
+% Worked solutions for Listas/lista-topic3-asymmetric-information.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-topic3-asymmetric-information-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize Topic 3 list --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list --- Topic 3: Asymmetric information}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-topic3-asymmetric-information.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-topic3-asymmetric-information-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
+
+\tableofcontents
+
+% =============================================================================
+% Topic 3 list (asymmetric information), exercises 1--8. Body fragment only.
+% =============================================================================
+\exsec{1. Winner's curse in IPO allocations --- Ross Cap.~15, Quest\~ao 3, p.~537}
+
+\asked (a) Your profit if both orders of 1{,}000 shares were filled in full. (b) The profit you should actually expect, given that only the underpriced issue is rationed (you get half of it) and you cannot tell the two issues apart. (c) The name of the principle the gap between (a) and (b) illustrates.
+
+\approach This is the uninformed investor's problem in Rock's IPO model (lecture block 3.10). The allocation you receive is correlated with the quality of the issue: good issues are oversubscribed and rationed, bad ones are filled in full. So the expected gain must weight each issue by the fraction you are actually allocated, not by the fraction you ordered. Setting that expected gain to zero gives the underpricing the issuer must offer to keep you in the market.
+
+\notation
+\begin{itemize}
+  \item $P_0=40$: offer price per share of both IPOs (\$).
+  \item $u=7$: underpricing of the undervalued issue (true value $P_0+u=47$); $o=5$: overpricing of the overvalued one (true value $P_0-o=35$).
+  \item $Q=1{,}000$: shares ordered in each issue; $\pi$: fraction of the order filled in the underpriced issue ($\pi=1/2$); $\pi'$: fraction filled in the overpriced issue ($\pi'=1$).
+  \item $G^{\text{full}}$: gain with both orders filled; $E[G]$: gain you actually expect.
+\end{itemize}
+
+\step{1}{Gain if both orders were filled} You make $u$ per share on one issue and lose $o$ per share on the other:
+\begin{align}
+  G^{\text{full}} &= Q\,u - Q\,o \label{t3e1-full}\\
+                  &= (1{,}000)(7)-(1{,}000)(5) \nonumber\\
+                  &= 7{,}000-5{,}000 \nonumber\\
+                  &= 2{,}000. \nonumber
+\end{align}
+
+\answer{(a)} A gain of \$2{,}000 (\$7{,}000 on the underpriced issue minus \$5{,}000 on the overpriced one).
+
+\step{2}{Gain you actually expect} Whichever issue is the underpriced one is oversubscribed (informed buyers also want it) and fills only $\pi Q$; the overpriced one fills $\pi' Q$. Since you cannot tell which is which, this holds whatever the labels are. The shares you receive in each issue are
+\begin{align}
+  \pi Q &= (0.5)(1{,}000) = 500 \text{ shares of the underpriced issue}, \nonumber\\
+  \pi' Q &= (1)(1{,}000) = 1{,}000 \text{ shares of the overpriced issue}, \nonumber
+\end{align}
+so the gain is
+\begin{align}
+  E[G] &= \pi Q\,u - \pi' Q\,o \label{t3e1-exp}\\
+       &= (0.5)(1{,}000)(7)-(1)(1{,}000)(5) \nonumber\\
+       &= 3{,}500-5{,}000 \nonumber\\
+       &= -1{,}500. \nonumber
+\end{align}
+The full-allocation gain of \$2{,}000 becomes an expected loss of \$1{,}500. (The outcome is in fact certain here: whatever the labels, you get 500 shares of the good issue and 1{,}000 of the bad one.)
+
+\answer{(b)} An expected (and certain) loss of \$1{,}500.
+
+\step{3}{Principle, and the underpricing that would make you participate} This is the \emph{winner's curse} (\pt{``maldi\c{c}\~ao do vencedor''}): an uninformed buyer receives a full allocation exactly when informed buyers stay away, that is, when the issue is overpriced. To break even, \eqref{t3e1-exp} must be zero, which requires an underpricing $u^{*}$ with
+\begin{align}
+  \pi Q\,u^{*} - \pi' Q\,o &= 0 \nonumber\\
+  \pi Q\,u^{*} &= \pi' Q\,o \nonumber\\
+  u^{*} &= \frac{\pi'}{\pi}\,o \label{t3e1-ustar}\\
+        &= \frac{(1)}{(0.5)}\,(5) \nonumber\\
+        &= 10. \nonumber
+\end{align}
+The average initial return per share across the two issues would then be
+\begin{align}
+  \frac{u^{*}+(-o)}{2} = \frac{(10)-(5)}{2} = \frac{5}{2} = 2.5, \nonumber
+\end{align}
+positive on average, yet zero for the uninformed buyer.
+
+\answer{(c)} The winner's curse: an uninformed investor is allocated more of the bad (overpriced) issues than of the good ones, so average underpricing is needed just for her to break even.
+
+\intuition Informed investors skim the underpriced issues, so what an uninformed investor actually receives is tilted towards the bad issues. Issuers must underprice on average just to keep uninformed investors in the market (Rock's model, Amaro de Matos \S6.2.2; lecture block 3.10: $P_0<E[P_1]$ even though the uninformed only break even).
+
+\pitfalls
+\begin{itemize}
+  \item Computing the expected gain with the ordered quantities ($1{,}000\times7-1{,}000\times5$), i.e.\ ignoring that the allocation depends on the quality of the issue.
+  \item Using a 50\% probability that \emph{each} issue is rationed: only the underpriced issue is rationed, and that is the whole point.
+  \item Concluding that IPOs are ``overpriced on average'': the average issue is underpriced (+2.5 per share in Step~3); it is the uninformed investor's \emph{allocation-weighted} return that is zero.
+\end{itemize}
+\refbib{Ross Cap.~15, \S15.5 ``IPOs e subprecifica\c{c}\~ao'', subsection ``Por que existe subprecifica\c{c}\~ao?'', pp.~507--508; lecture Topic~3, ``IPO underpricing''.}
+
+% =============================================================================
+\exsec{2. Investment and available cash --- Grinblatt \& Titman 19.4, p.~687}
+
+\asked (a) The NPV rule says a firm should take every positive-NPV project whatever its cash, yet in the data investment moves with cash flow. Explain why: name the friction that makes internal cash cheaper than outside money, and show how it can make investment depend on cash.
+
+\approach The friction is adverse selection in the issue of new securities (the lemons/pooling model of lecture block 3.2 and the Myers--Majluf pecking order of block 3.5). Outside investors cannot tell a good firm from a bad one, so they price any new claim at the pooled value; a good firm therefore sells its claims at a discount. That discount is proportional to the amount raised outside, so the more of the investment the firm pays for with its own cash, the cheaper its funding. A short model with the lecture's numbers makes the point quantitative; other frictions (moral hazard, issue costs) give the same prediction and are listed at the end.
+
+\notation
+\begin{itemize}
+  \item Lecture model (Topic~3): project costs $I$, pays $R$ on success and 0 on failure; good type succeeds with probability $p$, bad type with $q<p$; $\alpha\in(0,1)$: share of good types; $m\equiv\alpha p+(1-\alpha)q$: investors' prior success probability.
+  \item $A\in[0,I)$: internal cash (retained earnings) of the firm, the same for both types (the bad type copies the good type); $R_u$: repayment to outside investors on success.
+  \item $U_G(A)$: good type's net payoff (gross payoff minus the $A$ it puts in).
+\end{itemize}
+
+\assume Both types hold the same cash $A$ and pool on the same external claim (as in the lecture's pecking-order slide, the bad type ``follows suit''); outside investors break even.
+
+\step{1}{Why ``invest in every positive-NPV project'' fails} The classical rule assumes external funds are priced fairly. When managers know more than investors, new securities sell at the price of the average firm, so a good firm sells its claims too cheaply (Myers--Majluf, GT Result~19.10). Internal cash carries no such discount, so the cost of funds depends on how much of the investment the firm can pay for itself.
+
+\step{2}{Good type's payoff with internal cash $A$} The firm borrows $I-A$ and promises $R_u$ on success. Because both types issue the same claim, investors cannot tell them apart and expect success with the pooled probability $m$; they break even when
+\begin{align}
+  m R_u &= I-A \label{t3e2-be}\\
+  R_u &= \frac{I-A}{m}. \nonumber
+\end{align}
+The good type keeps $R-R_u$ on success (probability $p$) and has put in $A$. Her net payoff, substituting \eqref{t3e2-be} and then adding and subtracting $I$:
+\begin{align}
+  U_G(A) &= p(R-R_u) - A \nonumber\\
+         &= pR - p\left(\frac{I-A}{m}\right) - A \nonumber\\
+         &= pR - I + (I-A) - \frac{p}{m}(I-A) \nonumber\\
+         &= (pR-I) - (I-A)\left(\frac{p}{m}-1\right). \label{t3e2-UG}
+\end{align}
+The first term is the NPV; the second, the adverse-selection discount, is proportional to the amount raised outside, $I-A$, and vanishes at $A=I$. It is positive because $m<p$: the good type pays for the bad type's higher failure rate.
+
+\step{3}{Numbers from the lecture example} Take $R=50$, $I=30$, $p=0.8$, $q=0.7$, $\alpha=0.5$. The pooled probability and the NPV are
+\begin{align}
+  m &= (0.5)(0.8)+(0.5)(0.7) = 0.40+0.35 = 0.75, \nonumber\\
+  pR-I &= (0.8)(50)-(30) = 40-30 = 10, \nonumber\\
+  \frac{p}{m}-1 &= \frac{(0.8)}{(0.75)}-1 = 1.066667-1 = 0.066667. \nonumber
+\end{align}
+Substituting into \eqref{t3e2-UG}:
+\begin{align}
+  U_G(0) &= (10)-(30)(0.066667) = 10-2 = 8, \nonumber\\
+  U_G(15) &= (10)-(15)(0.066667) = 10-1 = 9. \nonumber
+\end{align}
+Half the investment paid internally halves the discount.
+
+\step{4}{Investment that depends on cash} Take the lecture's breakdown case $q=0.5$, $\alpha=0.2$:
+\begin{align}
+  m &= (0.2)(0.8)+(0.8)(0.5) = 0.16+0.40 = 0.56, \nonumber\\
+  mR &= (0.56)(50) = 28 < 30 = I. \nonumber
+\end{align}
+With $A=0$ even handing investors the whole income ($R_u=R$) returns only 28 for a loan of 30, so nobody lends. Limited liability caps the repayment at $R_u\le R$, so by \eqref{t3e2-be} lending requires
+\begin{align}
+  \frac{I-A}{m} &\le R \nonumber\\
+  I-A &\le mR \nonumber\\
+  A &\ge I-mR = (30)-(28) = 2. \label{t3e2-Amin}
+\end{align}
+Two firms with the same positive-NPV project ($pR-I=10$) behave differently: one with $A\ge 2$ invests, one with $A<2$ cannot. Investment is a function of cash.
+
+\step{5}{Other frictions with the same prediction} (i) Moral hazard: pledgeable income is limited, so borrowing capacity is a multiple of net worth (Tirole \S3.4, $I\le kA$). (ii) Issue (flotation) costs make external money dearer than internal money. (iii) Agency in the other direction: managers with free cash flow overinvest. All three make investment rise with internal cash; GT emphasise the information channel.
+
+\answer{(a)} Because outside finance is dearer than internal cash. Under asymmetric information new claims are priced at the pooled value, so a good firm pays a discount $(I-A)(p/m-1)$ that grows with the amount raised outside (Step~2: 2 with no cash, 1 with half the investment in cash); in bad pools it cannot raise funds at all unless $A\ge I-mR$ (Step~4: $A\ge2$). Moral hazard and issue costs reinforce the same link.
+
+\intuition External finance is costly because outsiders cannot tell good firms from bad ones and price every new claim at the pooled value. Internal cash avoids the discount, so firms invest out of cash first (the pecking order), and investment tracks cash flow even when the NPV rule says it should not.
+
+\pitfalls
+\begin{itemize}
+  \item Answering ``because cash is cheaper'' without saying \emph{why}: in a perfect market (MM) a dollar of cash and a dollar raised outside cost the same.
+  \item Claiming the good firm rejects a positive-NPV project because the project is bad: the project's NPV is unchanged; what changes is the transfer to new investors.
+  \item Pricing the claim at the good type's probability $p$: investors only know the pool, so the break-even uses $m$.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~19, \S19.5 ``The Information Content of the Debt-Equity Choice'', pp.~671--678 (Example~19.8 and Result~19.10, pp.~676--677); Tirole \S6.2.2 pp.~244--249 and \S3.4 pp.~127--129; lecture Topic~3, ``Pecking-order hypothesis''.}
+
+% =============================================================================
+\exsec{3. Leverage, agency costs and information (IST) --- Berk 16.29, p.~496}
+
+\asked (a) Taking the equity issue price as fixed at \$13.50, compare the long-run share price (once the truth is out) under an equity issue and under a \$500 million loan, for a manager who knows the shares are worth \$12.50 (i) and \$14.50 (ii), and say which she picks. (b) What investors should infer from an equity issue and where the price goes. (c) The same for a debt issue. (d) Redo the reasoning when debt brings only tax benefits and no distress costs.
+
+\approach This is the lemons problem in an equity issue (Berk \S16.6, lecture blocks 3.2 and 3.5). Equity is the claim whose value depends most on what the manager knows, so selling it at a pooled price is a gain for an overvalued firm and a loss for an undervalued one. Debt avoids that transfer but here costs \$20 million of net distress costs. Part (a) compares the two payoffs type by type; parts (b)--(c) use the fact that rational investors read the choice of security as a signal (a separating outcome); part (d) removes the cost that made the separation possible.
+
+\notation
+\begin{itemize}
+  \item $N_0=100$ million shares; $v\in\{12.50,\,14.50\}$: true price per share before the financing (equally likely); $P_m=13.50$: market price.
+  \item $K=500$ million: amount to raise; $C=20$ million: PV of distress costs net of tax benefits if IST borrows $K$.
+  \item $n$: new shares issued at $P_m$; $P^E(v)$, $P^D(v)$: long-run share price (after the truth is known) under equity and debt financing; $X>0$: net tax benefit of debt in part (d).
+\end{itemize}
+
+\assume The true prices $v$ already include the facility's NPV, so the \$500 million raised is invested in assets worth what is paid for them. Under debt, the \$500 million debt claim offsets the \$500 million of cash raised, and equity loses $C$.
+
+\step{1}{(a) Price of each policy once the truth is known} Equity: IST sells $n$ shares at $P_m$; once the truth is known the firm's equity is worth the old value $N_0v$ plus the cash raised $K$ (invested at zero NPV beyond what $v$ already includes), spread over $N_0+n$ shares:
+\begin{align}
+  n &= \frac{K}{P_m} = \frac{(500)}{(13.50)} = 37.037 \text{ million}, \label{t3e3-n}\\
+  P^E(v) &= \frac{N_0 v + K}{N_0+n}. \label{t3e3-PE}
+\end{align}
+Debt: the \$500 million of assets bought is offset by the \$500 million debt claim, so equity keeps all the old shares and bears only the net distress cost $C$:
+\begin{align}
+  P^D(v) &= \frac{N_0 v + K - K - C}{N_0} = \frac{N_0 v - C}{N_0}. \label{t3e3-PD}
+\end{align}
+
+\textit{(i) $v=12.50$.} Substituting into \eqref{t3e3-PE} and \eqref{t3e3-PD}:
+\begin{align}
+  P^E(12.50) &= \frac{(100)(12.50)+(500)}{(100)+(37.037)} = \frac{1{,}750}{137.037} = 12.77, \nonumber\\
+  P^D(12.50) &= \frac{(100)(12.50)-(20)}{(100)} = 12.30. \nonumber
+\end{align}
+Since $12.77>12.30$, managers \textbf{issue equity}: selling overvalued shares transfers $N_0[P^E(12.50)-12.50]=(100)(12.7703-12.50)=27.03$ million from new to old shareholders, while debt would cost them $C=20$ million.
+
+\textit{(ii) $v=14.50$.}
+\begin{align}
+  P^E(14.50) &= \frac{(100)(14.50)+(500)}{(100)+(37.037)} = \frac{1{,}950}{137.037} = 14.23, \nonumber\\
+  P^D(14.50) &= \frac{(100)(14.50)-(20)}{(100)} = \frac{1{,}430}{100} = 14.30. \nonumber
+\end{align}
+Since $14.30>14.23$, managers \textbf{borrow}: the net distress cost, $C/N_0=20/100=0.20$ per share, is smaller than the loss from selling undervalued shares, $14.50-14.23=0.27$ per share.
+
+\answer{(a)} (i) Value \$12.50: issue equity (\$12.77 against \$12.30 with debt). (ii) Value \$14.50: borrow (\$14.30 against \$14.23 with equity).
+
+\step{2}{(b) An equity issue} By Step~1 only the low-value firm issues equity, so investors who know the managers' incentives infer $v=12.50$ and the price falls from 13.50 to \textbf{12.50}. Check that this price is consistent: at 12.50 IST would sell
+\begin{align}
+  \frac{K}{12.50} = \frac{(500)}{(12.50)} = 40 \text{ million shares}, \qquad
+  \frac{N_0(12.50)+K}{N_0+40} = \frac{(1{,}250)+(500)}{(100)+(40)} = \frac{1{,}750}{140} = 12.50, \nonumber
+\end{align}
+so the new shareholders pay exactly what their shares are worth.
+
+\answer{(b)} An equity issue reveals that the shares are worth \$12.50; the price falls from \$13.50 to \$12.50.
+
+\step{3}{(c) A debt issue} Only the high-value firm borrows, so investors infer $v=14.50$ and price in the distress cost: the price rises to $P^D(14.50)=$ \textbf{14.30}.
+
+\answer{(c)} A debt issue reveals that the shares are worth \$14.50; net of the \$0.20 of distress costs per share the price rises to \$14.30.
+
+\step{4}{(d) Tax benefits only} Now debt adds a net tax benefit $X>0$ instead of costing $C$, so \eqref{t3e3-PD} becomes
+\begin{align}
+  P^D(v) = \frac{N_0v+X}{N_0} = v+\frac{X}{N_0} = v+\frac{X}{100}. \nonumber
+\end{align}
+\textit{Part (a) redone.} The high-value firm borrows, since $14.50+X/100>14.50>14.23=P^E(14.50)$. With the issue price fixed at 13.50, the low-value firm issues equity only if
+\begin{align}
+  P^E(12.50) &> 12.50 + \frac{X}{100} \nonumber\\
+  12.7703 - 12.50 &> \frac{X}{100} \nonumber\\
+  X &< 100\,(0.2703) = 27.03 \text{ million}. \label{t3e3-X}
+\end{align}
+\textit{Parts (b)--(c) redone.} By the logic of (b), an equity issue would reveal the low type and be priced at 12.50, which leaves the low type with $12.50<12.50+X/100$ (the value under debt). So in equilibrium \textbf{both types borrow}: no equity is issued, a debt issue carries no information, and the price moves only by the tax benefit, to
+\begin{align}
+  \tfrac12(12.50)+\tfrac12(14.50)+\frac{X}{100} = 13.50+\frac{X}{100}. \nonumber
+\end{align}
+The answers to (b)--(c) change: equity would be read as bad news but is never chosen, and debt is no longer a signal of a high value.
+
+\answer{(d)} Debt now dominates for both types. (Against a fixed \$13.50 equity price the low type would still issue equity if $X<\$27.03$ million, but investors price any equity issue at \$12.50, so it borrows too.) Both types issue debt, the issue reveals nothing, and the price rises only by the tax benefit, to $13.50+X/100$ per share: the pecking order.
+
+\intuition Equity is the security whose value is most sensitive to what managers know, so issuing it says ``our shares are overpriced''. With distress costs, only the overvalued firm accepts that stigma, and the choice of security separates the types. Without distress costs, debt dominates for both, and the market learns nothing from the choice: this is the pecking order.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting the cash raised in the equity case: the post-issue value is $N_0v+K$, not $N_0v$, divided by $N_0+n$ shares.
+  \item Subtracting the \$500 million debt from equity but not adding the \$500 million of new assets (or vice versa) in the debt case; the two cancel and only $C$ is left.
+  \item In (b)--(c), keeping the price at \$13.50: once the security choice reveals the type, the price must move to the revealed value.
+\end{itemize}
+\refbib{Berk Ch.~16, \S16.6 ``Additional Consequences of Leverage: Agency Costs and Information'', subsection ``Debt and Information'', pp.~485--487; Ch.~14 lemons principle, p.~431.}
+
+% =============================================================================
+\exsec{4. Issuing undervalued equity --- Grinblatt \& Titman 19.6, p.~687}
+
+\asked (a) How many new shares ABC must sell to raise the \$100 the project costs, given that outsiders value the firm at \$600. (b) The share price once the true value is known if ABC issues and invests. (c) The share price once the true value is known if ABC passes up the project.
+
+\approach This is the Myers--Majluf underinvestment problem (lecture block 3.5; GT \S19.5). New shares are sold at the outsiders' (too low) valuation, so the new shareholders buy a claim on the undervalued assets in place as well as on the project. Comparing the post-revelation price per old share with and without the project shows whether the transfer to new shareholders exceeds the project's NPV; if it does, managers acting for old shareholders pass up a positive-NPV project.
+
+\notation
+\begin{itemize}
+  \item $N_0=100$ shares; $V_{\text{in}}=1{,}000$: management's value of the firm without the project; $V_{\text{out}}=600$: outside investors' value without the project.
+  \item $K=100$: cost of the project (raised with new equity); $V_P=120$: PV the project adds to the firm, so $\text{NPV}=V_P-K=20$.
+  \item $P_{\text{issue}}$: issue price; $n$: new shares; $P_{\text{take}}$, $P_{\text{pass}}$: share price once the truth is known, with and without the project.
+\end{itemize}
+
+\assume The shares are sold at the outsiders' current value per share, $P_{\text{issue}}=V_{\text{out}}/N_0$, as in GT's own illustration (p.~676), where new shares are sold at the current market price. (The alternative is in Step~5.)
+
+\step{1}{New shares} The issue price and the number of shares needed to raise $K$:
+\begin{align}
+  P_{\text{issue}} &= \frac{V_{\text{out}}}{N_0} = \frac{(600)}{(100)} = 6.00, \label{t3e4-Pi}\\
+  n &= \frac{K}{P_{\text{issue}}} = \frac{(100)}{(6.00)} = 16.67. \label{t3e4-n}
+\end{align}
+
+\answer{(a)} 16.67 new shares at \$6.00 each.
+
+\step{2}{Price if the project is taken} Once the truth is known the firm is worth $V_{\text{in}}+V_P$, split over $N_0+n$ shares (GT's ``share value taking the project''):
+\begin{align}
+  P_{\text{take}} &= \frac{V_{\text{in}}+V_P}{N_0+n} \label{t3e4-take}\\
+                  &= \frac{(1{,}000)+(120)}{(100)+(16.67)} \nonumber\\
+                  &= \frac{1{,}120}{116.67} = 9.60. \nonumber
+\end{align}
+
+\answer{(b)} \$9.60 per share if ABC issues and invests.
+
+\step{3}{Price if the project is passed up} No shares are issued and the firm is worth $V_{\text{in}}$ once the truth is known:
+\begin{align}
+  P_{\text{pass}} &= \frac{V_{\text{in}}}{N_0} = \frac{(1{,}000)}{(100)} = 10.00. \label{t3e4-pass}
+\end{align}
+Since $9.60<10.00$, old shareholders are better off if the firm \textbf{passes up} the positive-NPV project.
+
+\answer{(c)} \$10.00 per share if ABC passes up the project, so the old shareholders prefer to pass it up.
+
+\step{4}{Where the \$0.40 goes} New shareholders pay 100 for a fraction of the firm
+\begin{align}
+  \frac{n}{N_0+n} = \frac{(16.67)}{(116.67)} = 0.142857 \quad(=1/7), \nonumber
+\end{align}
+of a firm worth 1{,}120, that is, for a stake worth $(0.142857)(1{,}120)=160$. The transfer to them is $160-100=60$, larger than the NPV of $120-100=20$, so old shareholders lose $60-20=40$ in total, or $40/100=0.40$ per share ($=10.00-9.60$). The firm takes the project only if \eqref{t3e4-take} with $n=K/P_{\text{issue}}$ is at least \eqref{t3e4-pass}. Cross-multiplying (both denominators are positive) and cancelling $N_0V_{\text{in}}$:
+\begin{align}
+  \frac{V_{\text{in}}+V_P}{N_0+K/P_{\text{issue}}} &\ge \frac{V_{\text{in}}}{N_0} \nonumber\\
+  N_0(V_{\text{in}}+V_P) &\ge V_{\text{in}}\Bigl(N_0+\frac{K}{P_{\text{issue}}}\Bigr) \nonumber\\
+  N_0V_{\text{in}}+N_0 V_P &\ge N_0V_{\text{in}}+\frac{V_{\text{in}}K}{P_{\text{issue}}} \nonumber\\
+  N_0 V_P &\ge \frac{V_{\text{in}}K}{P_{\text{issue}}} \nonumber\\
+  P_{\text{issue}} &\ge \frac{V_{\text{in}}K}{N_0 V_P}= \frac{(1{,}000)(100)}{(100)(120)} = \frac{100{,}000}{12{,}000} = 8.33, \label{t3e4-thr}
+\end{align}
+so the market's undervaluation (6 against 10) is far beyond what the project can absorb: the project is taken only if outsiders' price is at least \$8.33.
+
+\step{5}{If the market prices the project in} If outsiders value the firm with the project at $V_{\text{out}}+V_P=600+120=720$ after the issue, the issue price must satisfy $N_0P_{\text{issue}}+K=720$:
+\begin{align}
+  P_{\text{issue}} &= \frac{720-K}{N_0} = \frac{(720)-(100)}{(100)} = 6.20, \nonumber\\
+  n &= \frac{(100)}{(6.20)} = 16.13, \nonumber\\
+  P_{\text{take}} &= \frac{(1{,}120)}{(100)+(16.13)} = \frac{1{,}120}{116.13} = 9.64 < 10. \nonumber
+\end{align}
+The conclusion does not change.
+
+\intuition Equity is a claim on the assets in place too. When outsiders undervalue those assets, selling equity hands part of their hidden value to the new shareholders; if that transfer exceeds the project's NPV, the managers acting for the old shareholders forgo the project (Myers--Majluf underinvestment). Internal cash or safe debt would avoid the transfer.
+
+\pitfalls
+\begin{itemize}
+  \item Using management's value (\$10 per share) as the issue price: the shares are sold at what outsiders will pay, \$6.
+  \item Forgetting to add the project's \$120 (or adding only its NPV of \$20 while also counting the \$100 of cash, which is spent on the project) when computing the firm's value after investing.
+  \item Concluding that the project should be rejected on its merits: its NPV is $+20$; it is rejected only because of the \$60 transfer to new shareholders.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~19, \S19.5, ``Adverse Selection and the Pecking Order'' discussion and Example~19.8, pp.~676--677, Result~19.10, p.~677; Amaro de Matos \S3.2.3 pp.~86--88 (rule (3.20)).}
+
+% =============================================================================
+\exsec{5. Dividend suspension and the stock price --- Ross CQ 17.6, p.~614}
+
+\asked (a) The utility suspended its dividend, citing lower cash flows from a nuclear plant over budget, and its share price fell from \$28.50 to \$25. Interpret the fall: what caused it?
+
+\approach Two benchmarks frame the answer. MM dividend irrelevance says the payout alone cannot change value in a perfect market, so the price drop must come from something else. The information content of dividends (dividends as a costly signal, lecture block 3.7) supplies it: managers smooth dividends and cut them only when they expect lower cash flows, so a suspension is bad news about future cash flows. Size the reaction first, then explain it.
+
+\notation
+\begin{itemize}
+  \item $P_b=28.50$, $P_a=25$: share price before and after the announcement (\$); $r_{\text{ann}}$: announcement return.
+\end{itemize}
+
+\step{1}{Size of the reaction} The change in price and the announcement return:
+\begin{align}
+  P_a-P_b &= (25)-(28.50) = -3.50, \nonumber\\
+  r_{\text{ann}} &= \frac{P_a-P_b}{P_b} = \frac{(-3.50)}{(28.50)} = -12.28\%. \label{t3e5-r}
+\end{align}
+
+\step{2}{What caused it} In a perfect market (MM dividend irrelevance and the homemade-dividend argument) changing the payout alone does not change value: the cash stays in the firm. The drop therefore reflects \emph{information}. Firms smooth dividends and cut them only with great reluctance, so a suspension tells the market that management no longer expects the current dividend to be sustainable. Here the firm says why: cost overruns on the nuclear plant have reduced cash flows (\pt{``diminui\c{c}\~ao dos fluxos de caixa''}). Investors revise expected future cash flows, and so expected future dividends, downward, and the price falls with their present value. The price fell because future dividends are expected to be lower, not because the payout ratio changed.
+
+\step{3}{Secondary effects} (i) Clientele: investors who held the stock for current income may sell, adding temporary pressure. (ii) Keeping the cash avoids a costly external issue to finish the plant (pecking order), which by itself would support the price; the net fall of 12.28\% shows the bad news dominated.
+
+\answer{(a)} The \$3.50 (12.28\%) fall is the market's reaction to the information in the suspension: lower expected future cash flows (hence lower future dividends) from the cost overruns, not the change in payout itself.
+
+\intuition Dividends work as a signal because they are costly to maintain when cash flows are weak: only a firm that expects strong cash flows can keep paying. Cutting the dividend reveals the opposite, so the stock reprices on the news about cash flows, not on the dividend itself (lecture: payout policy as a signalling device).
+
+\pitfalls
+\begin{itemize}
+  \item Saying the price fell ``because shareholders lost the dividend'': under MM the retained cash is still theirs; the payout change alone does not destroy value.
+  \item Computing the return on the after-price, $3.50/25=14\%$, instead of on the before-price, $3.50/28.50=12.28\%$.
+  \item Ignoring that the cut was partly anticipated (the overruns were known): the price reacts only to the \emph{new} information in the announcement.
+\end{itemize}
+\refbib{Ross Cap.~17, \S17.5, ``Conte\'udo informacional dos dividendos'', pp.~593--594; lecture Topic~3, ``Other signaling devices: payout policy''.}
+
+% =============================================================================
+\exsec{6. Privately known private benefit and market breakdown --- Tirole 6.1, p.~273}
+
+\asked (i) Explain why lenders cannot fund only the good (low-$B$) borrower, and work out what happens to lenders' profit for a success reward $R_b$ below $B_L/\Delta p$, above $B_H/\Delta p$, and in between. (ii) Show that there is a cutoff $\alpha^*\in(0,1)$ for the share of good borrowers: no funding below it, funding is an equilibrium at or above it. (iii) Describe who subsidises whom when funding occurs.
+
+\approach This is the lemons/pooling model of lecture block 3.2, with the type defined by the private benefit (moral hazard parameter) instead of the success probability. The borrower's incentive constraint (IC$_b$), $(\Delta p)R_b\ge B$, decides which types work at each $R_b$; investors' break-even then depends on the pool's success probability. Because the bad type can always copy the good one, any funded contract pools both types, so the analysis reduces to one function, lenders' pooled profit, and its sign as $\alpha$ varies (a market-breakdown threshold, as in Tirole \S6.2.1).
+
+\notation
+\begin{itemize}
+  \item $I$: investment; $A=0$; $R>0$: income on success (0 on failure); $p_H>p_L$: success probability when working/shirking; $\Delta p\equiv p_H-p_L$.
+  \item $B\in\{B_L,B_H\}$, $0<B_L<B_H$: private benefit from shirking (good/bad borrower); $\alpha\in(0,1)$: prior that $B=B_L$.
+  \item $R_b\in[0,R]$: borrower's reward on success (0 on failure); $R-R_b$: lenders' claim.
+  \item $m\equiv\alpha p_H+(1-\alpha)p_L$: success probability of the pool when the good type works and the bad type shirks.
+  \item $\alpha^*$: the funding threshold; $R_b^*$: reward under competitive pooled lending.
+\end{itemize}
+
+\step{1}{Benchmark and why only good types cannot be financed} With reward $R_b$ in success and 0 in failure, type $B$ gets $p_HR_b$ by working and $p_LR_b+B$ by shirking, so she works iff
+\begin{align}
+  p_HR_b \ge p_LR_b+B \iff (p_H-p_L)R_b\ge B \iff (\Delta p)R_b\ge B. \tag{IC$_b$}
+\end{align}
+Under symmetric information lenders can be repaid at most $R-B/\Delta p$ in success without breaking (IC$_b$), so type $B$ is funded iff its pledgeable income covers $I$, $p_H(R-B/\Delta p)\ge I$; by (1) the good type is and the bad type is not. Under asymmetric information a bad borrower can offer any contract the good one offers. If she offered a different contract she would reveal her type and, by (1), not be funded; any funded contract gives her at least the good type's payoff (same if she works, more if she shirks, since $\max\{p_HR_b,p_LR_b+B_H\}\ge\max\{p_HR_b,p_LR_b+B_L\}$). So any contract that funds the good type also attracts the bad type: lenders cannot fund good types alone.
+
+\step{2}{(i) The three ranges of $R_b$} For each range, (IC$_b$) tells us which types work; lenders' profit follows.
+
+\textit{(a) $R_b<B_L/\Delta p$.} Then $(\Delta p)R_b<B_L<B_H$, so both types shirk and succeed with $p_L$. Since $R_b\ge0$, and by (2),
+\begin{align}
+  p_L(R-R_b)-I \le p_L R - I < 0. \label{t3e6-a}
+\end{align}
+\textit{(b) $R_b\ge B_H/\Delta p$.} Then $(\Delta p)R_b\ge B_H>B_L$, so both types work and succeed with $p_H$: the claim is information-insensitive. Since $R-R_b\le R-B_H/\Delta p$, and by the left inequality of (1),
+\begin{align}
+  p_H(R-R_b)-I \le p_H\left(R-\frac{B_H}{\Delta p}\right)-I < 0. \label{t3e6-b}
+\end{align}
+\textit{(c) $B_L/\Delta p\le R_b<B_H/\Delta p$.} Then $(\Delta p)R_b\ge B_L$ but $<B_H$: the good type works and the bad type shirks. The pool succeeds with probability $\alpha p_H+(1-\alpha)p_L=m$, so lenders' expected profit is
+\begin{align}
+  \Pi(R_b,\alpha) = \alpha p_H(R-R_b)+(1-\alpha)p_L(R-R_b) - I = m(R-R_b) - I. \label{t3e6-c}
+\end{align}
+By \eqref{t3e6-a}--\eqref{t3e6-b} only range (c) can attract funds, and by Step~1 any equilibrium is \emph{pooling}: both types or neither are funded, and when funded the good type works and the bad type shirks.
+
+\answer{(i)} Lenders cannot separate the types (the bad type copies any funded contract). Rewards below $B_L/\Delta p$ make both types shirk and rewards from $B_H/\Delta p$ up make both work, and in both ranges lenders lose money, by (2) and (1) respectively. Only $R_b\in[B_L/\Delta p,\,B_H/\Delta p)$, where the good type works and the bad type shirks, can break even, with pooled profit $m(R-R_b)-I$.
+
+\step{3}{(ii) The threshold $\alpha^*$} In range (c), \eqref{t3e6-c} falls with $R_b$, so it is highest at the lowest reward in the range, $R_b=B_L/\Delta p$. Define
+\begin{align}
+  \Pi(\alpha) \equiv [\alpha p_H+(1-\alpha)p_L]\left(R-\frac{B_L}{\Delta p}\right) - I
+   = [p_L+\alpha\,\Delta p]\left(R-\frac{B_L}{\Delta p}\right) - I. \label{t3e6-Pi}
+\end{align}
+Differentiating the second form, $\Pi'(\alpha)=\Delta p\,(R-B_L/\Delta p)$, which is positive because $p_H(R-B_L/\Delta p)>I>0$ by (1). At the end points,
+\begin{align}
+  \Pi(0) &= p_L\left(R-\frac{B_L}{\Delta p}\right)-I < p_LR-I < 0 \quad\text{by (2)}, \nonumber\\
+  \Pi(1) &= p_H\left(R-\frac{B_L}{\Delta p}\right)-I > 0 \quad\text{by (1)}. \nonumber
+\end{align}
+A continuous, strictly increasing function that is negative at 0 and positive at 1 has a unique root $\alpha^*\in(0,1)$. Setting \eqref{t3e6-Pi} to zero and solving for $\alpha$:
+\begin{align}
+  [p_L+\alpha^*\Delta p]\left(R-\frac{B_L}{\Delta p}\right) &= I \nonumber\\
+  p_L+\alpha^*\Delta p &= \frac{I}{R-B_L/\Delta p} \nonumber\\
+  \alpha^* &= \frac{1}{\Delta p}\left[\frac{I}{R-B_L/\Delta p}-p_L\right]. \label{t3e6-astar}
+\end{align}
+\textit{No financing if $\alpha<\alpha^*$:} then $\Pi(\alpha)<0$, and every $R_b$ loses money (ranges (a), (b) by \eqref{t3e6-a}--\eqref{t3e6-b}, range (c) because $\Pi(R_b,\alpha)\le\Pi(\alpha)$). The market breaks down.
+
+\textit{Financing if $\alpha\ge\alpha^*$:} competitive lenders break even at
+\begin{align}
+  m(R-R_b^*) &= I \nonumber\\
+  R_b^* &= R-\frac{I}{m}. \label{t3e6-Rbstar}
+\end{align}
+It lies in range (c). Lower end: $R_b^*\ge B_L/\Delta p$ iff $R-I/m\ge B_L/\Delta p$ iff $m(R-B_L/\Delta p)\ge I$, i.e.\ iff $\Pi(\alpha)\ge0$, i.e.\ iff $\alpha\ge\alpha^*$. Upper end: since $m<p_H$, $I/m>I/p_H$, so $R_b^*=R-I/m<R-I/p_H$; and the left inequality of (1), $p_H(R-B_H/\Delta p)<I$, divided by $p_H$ and rearranged, reads $R-I/p_H<B_H/\Delta p$. Together, $R_b^*<B_H/\Delta p$. So the good type works, lenders break even on average, and both types offering $\{R_b^*,0\}$ is an equilibrium.
+
+\answer{(ii)} $\alpha^*=\dfrac{1}{\Delta p}\Bigl[\dfrac{I}{R-B_L/\Delta p}-p_L\Bigr]\in(0,1)$. For $\alpha<\alpha^*$ every contract loses money and the market breaks down; for $\alpha\ge\alpha^*$ the pooling contract $R_b^*=R-I/[\alpha p_H+(1-\alpha)p_L]$ (good type works, bad type shirks) breaks even and is an equilibrium.
+
+\step{4}{(iii) Cross-subsidies} Substituting $R-R_b^*=I/m$ from \eqref{t3e6-Rbstar}, the lenders' profit on each type is
+\begin{align}
+  \text{good: } p_H\left(\frac{I}{m}\right)-I &= \frac{p_HI-mI}{m} = \frac{I(p_H-m)}{m} > 0, \label{t3e6-good}\\
+  \text{bad: } p_L\left(\frac{I}{m}\right)-I &= \frac{p_LI-mI}{m} = -\frac{I(m-p_L)}{m} < 0, \label{t3e6-bad}
+\end{align}
+and $\alpha\cdot\eqref{t3e6-good}+(1-\alpha)\cdot\eqref{t3e6-bad}=I[\alpha p_H+(1-\alpha)p_L-m]/m=0$. Lenders make money on the good type and lose on the bad type. The good type's symmetric-information reward is $R-I/p_H$ (lenders break even on her alone), so she now pays
+\begin{align}
+  p_H\Bigl[\Bigl(R-\frac{I}{p_H}\Bigr)-R_b^*\Bigr] = p_H\Bigl[\frac{I}{m}-\frac{I}{p_H}\Bigr] = \frac{I(p_H-m)}{m} \nonumber
+\end{align}
+more in expectation, exactly the lenders' profit on her. The bad type, who would not be funded at all under symmetric information, gets $p_LR_b^*+B_H>0$. There is \emph{more} lending than under symmetric information (the bad project is funded) and the quality of lending falls: NPV conditional on funding is $mR-I$ instead of $p_HR-I$.
+
+\answer{(iii)} Good borrowers cross-subsidise bad ones: lenders earn $I(p_H-m)/m>0$ on each good borrower and lose $I(m-p_L)/m$ on each bad one, netting to zero. The bad (negative-NPV) project gets funded and the good borrower's reward falls below its symmetric-information level.
+
+\step{5}{Numerical illustration} Take $p_H=0.8$, $p_L=0.2$ ($\Delta p=0.6$), $R=100$, $I=50$, $B_L=9$, $B_H=27$. Then
+\begin{align}
+  \frac{B_L}{\Delta p} = \frac{(9)}{(0.6)} = 15, \qquad \frac{B_H}{\Delta p} = \frac{(27)}{(0.6)} = 45; \nonumber
+\end{align}
+(1) reads $0.8(100-45)=44<50<0.8(100-15)=68$ and (2) reads $p_LR=(0.2)(100)=20<50$. From \eqref{t3e6-astar},
+\begin{align}
+  \alpha^* = \frac{1}{(0.6)}\left[\frac{(50)}{(100)-(15)}-(0.2)\right] = \frac{1}{0.6}\Bigl[\frac{10}{17}-\frac{1}{5}\Bigr] = \frac{1}{0.6}\cdot\frac{33}{85} = \frac{11}{17} = 0.6471. \nonumber
+\end{align}
+At $\alpha=0.8$:
+\begin{align}
+  m &= (0.8)(0.8)+(0.2)(0.2) = 0.64+0.04 = 0.68, \nonumber\\
+  R_b^* &= (100)-\frac{(50)}{(0.68)} = 100-73.53 = 26.47\in[15,45), \nonumber\\
+  \text{good: } & (0.8)(73.53)-50 = 58.82-50 = 8.82, \nonumber\\
+  \text{bad: } & (0.2)(73.53)-50 = 14.71-50 = -35.29, \nonumber
+\end{align}
+which average to zero ($0.8\times8.82=0.2\times35.29=7.06$). The good type gets $0.8\times26.47=21.18$ instead of $p_HR-I=30$ under symmetric information; the bad type gets $0.2\times26.47+27=32.29$ instead of $0$.
+
+\intuition The lender's claim is information-sensitive only in the range where it can be profitable, and there the bad type always pools. Contracts cannot screen, so the pool's quality $m$ decides everything: with few good borrowers the market breaks down (underinvestment); with many, everyone is funded at a rate that taxes good borrowers to subsidise bad ones (overinvestment). This is the lecture's $m$, $\alpha^*$, cross-subsidy logic, with types defined by the private benefit instead of the success probability.
+
+\pitfalls
+\begin{itemize}
+  \item Pricing the pooled loan with $p_H$ for both types: at $R_b\in[B_L/\Delta p,B_H/\Delta p)$ the bad type \emph{shirks}, so the pool succeeds with $\alpha p_H+(1-\alpha)p_L$.
+  \item Trying to screen with a menu: whatever reward funds the good type is weakly preferred by the bad type, so there is no separating contract.
+  \item Deriving $\alpha^*$ at an arbitrary $R_b$: the threshold uses the most favourable contract for lenders in range (c), $R_b=B_L/\Delta p$.
+\end{itemize}
+\bookans Matches the book's answer (pp.~595--596): the same three cases, the same $\alpha^*$ defined by $[\alpha^*p_H+(1-\alpha^*)p_L](R-B_L/\Delta p)=I$, the pooling contract $R_b^*=R-I/[\alpha p_H+(1-\alpha)p_L]$, and the cross-subsidy and fall in lending quality.
+\refbib{Tirole \S3.2.1--3.2.2 pp.~115--117 (fixed-investment model); \S6.2.1 ``Market Breakdown and Cross-Subsidization'', pp.~241--244; answer pp.~595--596.}
+
+% =============================================================================
+\exsec{7. Rock's winner's curse model --- Amaro de Matos 6.2.7 \#4 and \#6, p.~175}
+
+\asked (\#4) Prove that an uninformed investor's order is filled with a probability $\pi$ on an underpriced issue that is no larger than the probability $\pi'$ on an overpriced one. (\#6) Explain why, in equilibrium, the offer price $p_0$ must fall when the fraction $\alpha$ of the shares that goes to informed investors rises.
+
+\approach Both parts are Rock's (1986) IPO model as set out in Amaro de Matos \S6.2.2 (lecture block 3.10). For \#4, write the fill probability under pro-rata rationing as a function of total demand and note that informed investors add demand only to underpriced issues. For \#6, the equilibrium condition is the uninformed investors' break-even (6.7); treat it as an implicit equation $G(p_0,\alpha)=0$ and sign $dp_0/d\alpha$ with the implicit function theorem.
+
+\notation
+\begin{itemize}
+  \item $n$: shares offered; $v\ge0$: true value per share, density $f$, c.d.f.\ $F$; $p_0$ ($=p^\circ$ in \S6.2.2): offer price.
+  \item $D_U$, $D_I$: uninformed and informed demand (shares); informed demand only underpriced issues ($v>p_0$).
+  \item $\pi$, $\pi'$: probability that an uninformed order is filled in an underpriced / overpriced issue.
+  \item $\alpha\in[0,1)$: fraction of the shares of an underpriced issue that goes to informed investors; $N$, $c$: number of informed investors and cost of information each.
+\end{itemize}
+
+\assume Rationing as in Rock (Amaro's answer to \#5): when an issue is oversubscribed every order has the same chance of being filled, so the fill probability of an order is $\min\{1,\,n/D\}$, where $D$ is total demand.
+
+\step{1}{(\#4) $\pi\le\pi'$} An overpriced issue attracts only uninformed demand; an underpriced one attracts both:
+\begin{align}
+  \pi' &= \min\left\{1,\frac{n}{D_U}\right\}, \label{t3e7-pip}\\
+  \pi  &= \min\left\{1,\frac{n}{D_U+D_I}\right\}. \label{t3e7-pi}
+\end{align}
+The map $D\mapsto\min\{1,n/D\}$ is non-increasing and $D_U+D_I\ge D_U$, so
+\begin{align}
+  \pi \le \pi', \label{t3e7-ineq}
+\end{align}
+with equality only when even the underpriced issue is not oversubscribed ($D_U+D_I\le n$), and strict inequality whenever informed demand causes rationing. $\blacksquare$
+
+\answer{(\#4)} Under pro-rata rationing the fill probability is $\min\{1,n/D\}$, non-increasing in total demand $D$; underpriced issues carry the extra informed demand, so $\pi=\min\{1,n/(D_U+D_I)\}\le\min\{1,n/D_U\}=\pi'$.
+
+\step{2}{Link to (6.7)} The uninformed hold the whole overpriced issue but only a fraction $1-\alpha$ of an underpriced one. With uninformed orders of exactly $D_U=n$, \eqref{t3e7-pip} gives $\pi'=\min\{1,n/n\}=1$, and the uninformed get $\pi n=(1-\alpha)n$ shares of an underpriced issue, so $\pi=1-\alpha$: the weight $1-\alpha$ on the right of (6.7) is $\pi/\pi'$. In the Ross IPO question (Cap.~15, Quest\~ao~3), $\pi=1/2$ and $\pi'=1$.
+
+\step{3}{(\#6) The uninformed break-even condition} Let $L(p_0)\equiv\int_0^{p_0}(p_0-v)f(v)\,dv$ (expected loss per share on overpriced issues) and $U(p_0)\equiv\int_{p_0}^{\infty}(v-p_0)f(v)\,dv$ (expected gain on underpriced issues). Dividing both sides of (6.7) by $n$ gives $L(p_0)=(1-\alpha)U(p_0)$, so equilibrium requires
+\begin{align}
+  G(p_0,\alpha) \equiv (1-\alpha)U(p_0) - L(p_0) = 0. \label{t3e7-G}
+\end{align}
+By Leibniz's rule (the integrand vanishes at the moving limit $v=p_0$, so only the derivative inside the integral is left),
+\begin{align}
+  U'(p_0) &= -(p_0-p_0)f(p_0)+\int_{p_0}^{\infty}(-1)f(v)\,dv = -[1-F(p_0)], \nonumber\\
+  L'(p_0) &= (p_0-p_0)f(p_0)+\int_0^{p_0}(1)f(v)\,dv = F(p_0). \nonumber
+\end{align}
+Differentiating \eqref{t3e7-G}:
+\begin{align}
+  \frac{\partial G}{\partial\alpha} &= -U(p_0) < 0, \label{t3e7-Ga}\\
+  \frac{\partial G}{\partial p_0} &= -(1-\alpha)[1-F(p_0)] - F(p_0) < 0. \label{t3e7-Gp}
+\end{align}
+
+\step{4}{Comparative statics} By the implicit function theorem applied to \eqref{t3e7-G}, using \eqref{t3e7-Ga} and \eqref{t3e7-Gp},
+\begin{align}
+  \frac{dp_0}{d\alpha} &= -\frac{\partial G/\partial\alpha}{\partial G/\partial p_0} \nonumber\\
+   &= -\frac{(-U(p_0))}{(-(1-\alpha)[1-F(p_0)]-F(p_0))} \nonumber\\
+   &= -\frac{U(p_0)}{F(p_0)+(1-\alpha)[1-F(p_0)]} < 0. \label{t3e7-dp}
+\end{align}
+Equivalently $\partial\alpha/\partial p_0<0$, the form of the book's answer. A higher $\alpha$ shrinks the uninformed share of the good issues, so at the old price \eqref{t3e7-G} is negative (they lose on average); only a lower $p_0$, which raises $U$ and lowers $L$, restores zero expected profit.
+
+\step{5}{Numerical illustration} Let $v$ be uniform on $[0,2]$ ($f=1/2$, $E(v)=1$). Then
+\begin{align}
+  L(p_0) &= \int_0^{p_0}(p_0-v)\tfrac12\,dv = \tfrac12\Bigl[p_0v-\tfrac{v^2}{2}\Bigr]_0^{p_0} = \tfrac12\cdot\frac{p_0^2}{2} = \frac{p_0^2}{4}, \nonumber\\
+  U(p_0) &= \int_{p_0}^{2}(v-p_0)\tfrac12\,dv = \tfrac12\cdot\frac{(2-p_0)^2}{2} = \frac{(2-p_0)^2}{4}. \nonumber
+\end{align}
+Substituting into \eqref{t3e7-G}, multiplying by 4 and taking positive square roots (both sides are nonnegative for $p_0\in[0,2]$):
+\begin{align}
+  (1-\alpha)(2-p_0)^2 &= p_0^2 \nonumber\\
+  \sqrt{1-\alpha}\,(2-p_0) &= p_0 \nonumber\\
+  2\sqrt{1-\alpha} &= p_0\bigl(1+\sqrt{1-\alpha}\bigr) \nonumber\\
+  p_0 &= \frac{2\sqrt{1-\alpha}}{1+\sqrt{1-\alpha}}. \nonumber
+\end{align}
+$\alpha=0$: $p_0=2/2=1=E(v)$; $\alpha=0.36$: $\sqrt{0.64}=0.8$, $p_0=1.6/1.8=0.8889$; $\alpha=0.64$: $\sqrt{0.36}=0.6$, $p_0=1.2/1.6=0.75$. At $\alpha=0.36$: $U=(2-0.8889)^2/4=0.308642$, $F(p_0)=p_0/2=0.444444$ and $1-F=0.555556$, so \eqref{t3e7-dp} gives
+\begin{align}
+  \frac{dp_0}{d\alpha} = -\frac{0.308642}{0.444444+(0.64)(0.555556)} = -\frac{0.308642}{0.8} = -0.3858, \nonumber
+\end{align}
+and the underpricing $E(v)-p_0=1-0.8889=0.1111$ equals $\alpha U(p_0)=(0.36)(0.308642)=0.1111$, which by (6.8) is $Nc/n$, as (6.9) requires.
+
+\answer{(\#6)} The uninformed get only $1-\alpha$ of each good issue but all of each bad one; a higher $\alpha$ makes their break-even (6.7) negative at the old price, and only a lower $p_0$ restores it: $dp_0/d\alpha=-U(p_0)/\{F(p_0)+(1-\alpha)[1-F(p_0)]\}<0$.
+
+\intuition The informed crowd the uninformed out of exactly the issues worth having, so the more of them there are, the worse the uninformed's average allocation (the winner's curse). The uninformed are needed to absorb the issue, and they stay only if they break even, which needs a lower offer price. In the lecture's version, $P_0=(\hat V-\lambda\alpha V_G)/(1-\lambda\alpha)$ falls as the informed capital share $\lambda$ rises.
+
+\pitfalls
+\begin{itemize}
+  \item Claiming $\pi<\pi'$ always: equality holds when even the underpriced issue is not oversubscribed.
+  \item Arguing that a higher $\alpha$ lowers $p_0$ ``because informed investors want cheap shares'': informed investors take the price as given; the price falls to keep the \emph{uninformed} willing to participate.
+  \item Forgetting that $p_0$ moves both integrals: a lower price raises the gain on good issues \emph{and} cuts the loss on bad ones.
+\end{itemize}
+\bookans \#6 matches the book's answer (p.~269), which argues verbally from (6.7) that $\partial\alpha/\partial p_0<0$; \eqref{t3e7-dp} makes the sign explicit. For \#4 the book only refers to Rock (1986), p.~192, and gives no derivation.
+\refbib{Amaro de Matos Ch.~6, \S6.2.2 ``Asymmetry between Investors'', pp.~163--164, eqs.~(6.7)--(6.9); \S6.2.3, p.~166; Appendix C.6.2, p.~269; lecture Topic~3, ``IPO underpricing''.}
+
+% =============================================================================
+\exsec{8. Pooling in credit markets with a continuum of types --- Tirole 6.2, p.~274}
+
+\asked (0) Derive the lender's expected profit $U_l$ for a loan that pays the borrower $R_b$ in success. Then show: (1) the share of borrowers who behave is endogenous and rises with $R_b$; (2) adverse selection lowers the quality of lending; (3) high-$B$ types impose an externality, forcing a strictly positive profit on low-$B$ types; (4) with $p_L=0$ and $B$ uniform on $[0,\bar B]$, if $p_H^2R^2/(4\bar B)<I$ no loan lets the lender break even, although some borrowers are creditworthy.
+
+\approach The model is Tirole's fixed-investment model (\S3.2) with the private benefit privately known (Part~0, Tirole Exercise~6.1), now drawn from a continuous distribution $H$, and a monopoly lender. A single contract $R_b$ applies to all types; (IC$_b$), $(\Delta p)R_b\ge B$, sorts them into behaving (low $B$) and shirking (high $B$). Everything follows from writing the lender's profit as a mixture of the two groups. The breakdown result is a bound: maximise expected repayment over $R_b$ and compare it with $I$ (lecture block 3.2, market breakdown).
+
+\notation
+\begin{itemize}
+  \item $I$, $A=0$, $R$, $p_H>p_L$, $\Delta p$: as in Part~0 (Tirole Exercise~6.1): investment, borrower's cash, income in success, success probabilities when working/shirking, $\Delta p=p_H-p_L$.
+  \item $B\in[0,\bar B]$: borrower's private benefit, c.d.f.\ $H$ ($H(0)=0$, $H(\bar B)=1$), density $h$ where it exists.
+  \item $R_b\in[0,R]$: borrower's reward on success; the lender is a monopolist and receives $R-R_b$ on success.
+  \item $U_l(R_b)$: lender's expected profit; $\mu(R_b)\equiv p_L+\Delta p\,H((\Delta p)R_b)$: success probability of the funded pool.
+\end{itemize}
+
+\assume As in Part~0, $p_LR<I$ (condition (2) of Exercise~6.1) and $p_HR>I$ (implied by its condition (1)): low-$B$ types are creditworthy. Ties ($B=(\Delta p)R_b$) behave; with a continuous $H$ they have zero mass.
+
+\step{1}{The lender's profit} With $A=0$ every type accepts any $R_b\ge0$ (she gets $\max\{p_HR_b,\;p_LR_b+B\}\ge0$, her outside option). Type $B$ works iff $p_HR_b\ge p_LR_b+B$, i.e.\ by (IC$_b$) iff $B\le(\Delta p)R_b$. Those types form the mass $\Pr[B\le(\Delta p)R_b]=H((\Delta p)R_b)$, and their projects succeed with probability $p_H$; the rest, mass $1-H((\Delta p)R_b)$, shirk and succeed with $p_L$. The lender collects $R-R_b$ on success and lends $I$:
+\begin{align}
+  U_l = H((\Delta p)R_b)\,p_H(R-R_b) + [1-H((\Delta p)R_b)]\,p_L(R-R_b) - I. \label{t3e8-Ul}
+\end{align}
+
+\answer{(0)} $U_l=H((\Delta p)R_b)\,p_H(R-R_b)+[1-H((\Delta p)R_b)]\,p_L(R-R_b)-I$, as stated.
+
+\step{2}{Endogenous quality rises with $R_b$} The share of borrowers who behave, $H((\Delta p)R_b)$, is a c.d.f.\ evaluated at an increasing function of $R_b$, so it is non-decreasing in $R_b$; where the density exists, by the chain rule
+\begin{align}
+  \frac{d}{dR_b}H((\Delta p)R_b) = (\Delta p)\,h((\Delta p)R_b) \ge 0, \nonumber
+\end{align}
+strictly where $h>0$. Note that every type is funded whatever $R_b$: the reward changes \emph{behaviour}, not who applies (Tirole's footnote 78).
+
+\answer{(1)} The behaving share is $H((\Delta p)R_b)$, chosen implicitly through $R_b$ and increasing in it (slope $(\Delta p)h\ge0$).
+
+\step{3}{Adverse selection lowers the quality of lending} The success probability of funded loans is $\mu(R_b)=p_L+\Delta p\,H((\Delta p)R_b)\le p_H$, strictly below $p_H$ unless $R_b\ge\bar B/\Delta p$. Under symmetric information the lender would offer each type $R_b=B/\Delta p$, fund only types with $p_H(R-B/\Delta p)\ge I$, and every funded borrower would behave, so funded loans succeed with $p_H$ and no loan is made to a shirker, whose loan loses money by (2). Under asymmetric information a single $R_b$ applies to all, and any $R_b<\bar B/\Delta p$ funds a mass $1-H>0$ of shirkers; avoiding them requires $R_b\ge\bar B/\Delta p$, whose profit $p_H(R-\bar B/\Delta p)-I$ is negative when $\bar B$ is large.
+
+\answer{(2)} Funded loans succeed with $\mu(R_b)=p_L+\Delta p\,H((\Delta p)R_b)<p_H$ whenever some types shirk, against $p_H$ for every funded loan under symmetric information: shirkers (whose loans lose money) are financed alongside behaving types.
+
+\step{4}{Externality across types} Splitting \eqref{t3e8-Ul} by type (write $I=HI+(1-H)I$):
+\begin{align}
+  U_l = H\,[p_H(R-R_b)-I] + (1-H)\,[p_L(R-R_b)-I]. \label{t3e8-split}
+\end{align}
+If the lender lends, $U_l\ge0$; moving the second term to the right of the inequality,
+\begin{align}
+  H\,[p_H(R-R_b)-I] \ge (1-H)\,[I-p_L(R-R_b)] > 0 \quad\text{when } H<1, \label{t3e8-ext}
+\end{align}
+because $p_L(R-R_b)\le p_LR<I$ by (2). So the lender earns a strictly positive profit on each high-quality (behaving) borrower. Equivalently, $U_l\ge0$ means $\mu(R_b)(R-R_b)\ge I$, so the repayment $R-R_b\ge I/\mu(R_b)>I/p_H$ exceeds the one that would break even on that borrower alone. The losses on the high-$B$ types are recovered from the low-$B$ types: this is the externality.
+
+\answer{(3)} Whenever the lender lends and some types shirk, $H\,[p_H(R-R_b)-I]\ge(1-H)\,[I-p_L(R-R_b)]>0$: the low-$B$ types pay a repayment above their own break-even level ($R-R_b>I/p_H$) to cover the losses on high-$B$ types.
+
+\step{5}{Market breakdown with $p_L=0$ and uniform $H$} Now $\Delta p=p_H-0=p_H$ and, for the uniform distribution, $H((\Delta p)R_b)=\min\{p_HR_b/\bar B,\,1\}\le p_HR_b/\bar B$. With $p_L=0$ the second term of \eqref{t3e8-Ul} vanishes. Substituting, for every $R_b\in[0,R]$:
+\begin{align}
+  U_l + I &= H(p_HR_b)\,p_H(R-R_b) \nonumber\\
+          &\le \left(\frac{p_HR_b}{\bar B}\right)p_H(R-R_b) \nonumber\\
+          &= \frac{p_H^2}{\bar B}\,R_b(R-R_b) \nonumber\\
+          &\le \frac{p_H^2}{\bar B}\,\frac{R^2}{4}, \label{t3e8-bound}
+\end{align}
+the last line because $g(R_b)\equiv R_b(R-R_b)=RR_b-R_b^2$ has $g'(R_b)=R-2R_b=0$ at $R_b=R/2$ and $g''=-2<0$, so its maximum is $g(R/2)=(R/2)(R/2)=R^2/4$. Hence if $\dfrac{p_H^2}{\bar B}\dfrac{R^2}{4}<I$, then $U_l<0$ for every $R_b$: no loan agreement lets the lender recoup $I$ on average. The left side falls with $\bar B$, so the condition holds for $\bar B>p_H^2R^2/(4I)$. Yet the types with $B\le p_HR-I$ have pledgeable income $p_H(R-B/p_H)=p_HR-B\ge I$ and would be funded under symmetric information; they are a mass $(p_HR-I)/\bar B>0$. When $R/2\le\bar B/p_H$ the bound in \eqref{t3e8-bound} is attained at $R_b=R/2$, the book's optimum.
+
+\answer{(4)} With $p_L=0$ and uniform $H$, expected repayment is at most $p_H^2R^2/(4\bar B)$ (at $R_b=R/2$), so if this is below $I$ every loan loses money and credit is not extended, even though the types $B\le p_HR-I$ (a positive mass) would be funded under symmetric information.
+
+\step{6}{Numerical illustration} $p_H=0.8$, $p_L=0$, $R=100$, $I=50$, $\bar B=50$: the maximum expected repayment is
+\begin{align}
+  \frac{p_H^2}{\bar B}\,\frac{R^2}{4} = \frac{(0.64)(10{,}000)}{(4)(50)} = \frac{6{,}400}{200} = 32 < 50, \nonumber
+\end{align}
+reached at $R_b=R/2=50\le\bar B/p_H=50/0.8=62.5$. Breakdown occurs for any $\bar B>p_H^2R^2/(4I)=6{,}400/200=32$, although the types $B\le p_HR-I=0.8(100)-50=30$, a mass $30/50=0.6$ of borrowers, are creditworthy. At $R_b=50$, $H=\min\{0.8\cdot50/50,1\}=0.8$ and the split \eqref{t3e8-split} gives $U_l=(0.8)[(0.8)(50)-50]+(0.2)[(0)(50)-50]=(0.8)(-10)+(0.2)(-50)=-8-10=-18$, that is, $32-50$.
+
+\intuition A single price for all types cannot keep everyone honest without giving away most of the income: raising $R_b$ makes more types behave but leaves less for the lender. With many high-$B$ types, the best trade-off still does not cover $I$, and the market shuts even for borrowers who would be good risks under symmetric information, the lecture's market breakdown with a continuum of types. When it does lend, the honest types pay for the shirkers.
+
+\pitfalls
+\begin{itemize}
+  \item Thinking a higher $R_b$ attracts better applicants: here every type always applies; $R_b$ only changes who \emph{behaves} (footnote 78).
+  \item Maximising $p_H(R-R_b)H$ without the cap $H\le1$: for $R_b>\bar B/p_H$ the share of behaving types stops rising, so the interior first-order condition $R_b=R/2$ is valid only when $R/2\le\bar B/p_H$.
+  \item Reading ``breakdown'' as ``no creditworthy borrower'': the types with $B\le p_HR-I$ are creditworthy; they are shut out by the pool.
+\end{itemize}
+\bookans Matches the book's answer (pp.~596--597): the proportion $H(R_b\Delta p)$ is endogenous and rising in $R_b$, the externality, and, with $p_L=0$ and uniform $H$, $R_b=R/2$ and maximal pledgeable income $p_H^2R^2/(4\bar B)$, below $I$ for $\bar B$ large. Two small differences: the book's displayed $U_l$ omits the ``$-I$'' (it is the expected repayment), and its first-order condition covers only the interior case $R/2\le\bar B/p_H$; the bound \eqref{t3e8-bound} covers every $R_b$. The book gives no argument for the ``quality of lending'' bullet; Step~3 supplies one.
+\refbib{Tirole \S3.2.2 p.~116 (IC$_b$); \S6.2.1 pp.~241--244; Exercise~6.1; answer pp.~596--597.}
+
+% =============================================================================
+% Topic 3 list, exercises 9--15 (detailed). Label prefix t3e<n>-.
+% =============================================================================
+\exsec{9. Adverse selection and ratings --- Tirole 6.6, p.~276}
+
+\asked (i) Say what conditions (1) and (2) mean economically, and prove that without ratings nobody lends. (ii) With a rating of quality $x$ (cost $rx$, reveals the type with probability $x$), look for a separating equilibrium and show: (ii-1) the bad type buys no rating; (ii-2) the good type borrows on the same terms whether or not the rating reveals her; (ii-3) her rating quality $\hat x\in(0,1)$ solves the displayed no-mimicking equation; (ii-4) such an equilibrium exists only if $r$ is not too large.
+
+\approach Part (i) is the pooling/market-breakdown logic of lecture block 3.2 with types defined by the private benefit: (IC$_b$) sorts types into workers and shirkers at each $R_b$, the bad type can copy any funded contract, and condition (2) makes the pool unprofitable. Part (ii) is costly signalling through certification (Tirole \S6.3, Application 4; lecture block 3.7). In a separating equilibrium the good type buys the cheapest rating quality at which the bad type prefers her sure outside option to gambling that the rating reveals nothing; that no-mimicking constraint binds and pins down $\hat x$. Existence then requires checking that the good type is still funded, still works, can pay the fee and does not prefer to deviate (with pessimistic off-path beliefs).
+
+\notation
+\begin{itemize}
+  \item $A>0$: borrower's cash; $I>A$: fixed investment; $R>0$: income in success, $0$ in failure; market rate $0$.
+  \item $p_H>p_L\ge0$: success probabilities when working / shirking; $\Delta p\equiv p_H-p_L>0$.
+  \item $b<B$: private benefits from shirking of the good type (probability $\alpha\in(0,1)$) and of the bad type (probability $1-\alpha$).
+  \item $R_b\in[0,R]$: borrower's reward in success (0 in failure); $R-R_b$: investors' claim.
+  \item $x\in[0,1]$: signal quality, cost $rx$ paid out of $A$, $r>0$; $\hat x$: the good type's equilibrium choice.
+  \item $R_b^G(x)$: the good type's reward when recognised as good with net cash $A-rx$; $U_G$: her payoff.
+  \item $c(x)$: bad type's payoff when treated as good with signal quality $x$; $c_0\equiv c(0)$.
+  \item $\kappa\equiv p_L/p_H\in[0,1)$; $y\equiv r\hat x$: total signalling cost.
+\end{itemize}
+
+\assume (a) The good borrower's project has positive NPV when she works, $p_HR>I$ (otherwise there is
+nothing to signal). (b) Following footnote 79, a revealing signal fixes the investors' belief; at a
+signal quality not chosen by anyone in equilibrium, and with no revelation, investors believe they face
+type $B$ (pessimistic off-path beliefs). (c) In part (i), contracts also pay $0$ in failure, as in part (ii);
+a payment in failure would only weaken incentives and reduce what investors can be paid.
+
+\step{1}{Interpreting (1) and (2)} A borrower with private benefit $\beta\in\{b,B\}$ works if and only if
+$(\Delta p)R_b\ge\beta$, so the most she can promise investors while working is the pledgeable income
+\begin{align}
+  \mathcal{P}(\beta) = p_H\Bigl(R-\frac{\beta}{\Delta p}\Bigr)
+     = p_HR - p_H\frac{\beta}{\Delta p}. \label{t3e9-pledge}
+\end{align}
+Condition (1) of the statement reads $\mathcal{P}(B)<I-A<\mathcal{P}(b)$: under symmetric information the
+good type could raise $I-A$ and the bad type could not. Condition (2) of the statement says that a
+contract that gives the minimum incentive stake of the good type, $R_b=b/\Delta p$, and is taken by both
+types (the good one works, the bad one shirks) returns to investors, at the prior, less than $I-A$.
+The assumption $p_LR+B<I$ says shirking destroys value even counting the private benefit.
+
+\step{2}{The bad type always wants what the good type wants} Under a contract $R_b$, type $\beta$
+chooses the better of working and shirking:
+\begin{align}
+  u_\beta(R_b) = \max\{p_HR_b,\; p_LR_b+\beta\}. \label{t3e9-u}
+\end{align}
+Since $B>b$, \eqref{t3e9-u} gives $u_B(R_b)\ge u_b(R_b)$ for every $R_b$, and both types' outside option is
+to keep $A$. Hence any contract the good type accepts is also accepted by the bad type.
+
+\step{3}{No lending in equilibrium (part (i))} Take any $R_b$ and split by range.
+
+\emph{(a) $R_b\ge B/\Delta p$: both types work.} Investors receive
+\begin{align}
+  p_H(R-R_b) \le p_H\Bigl(R-\frac{B}{\Delta p}\Bigr)=\mathcal{P}(B) < I-A, \nonumber
+\end{align}
+by \eqref{t3e9-pledge} and condition (1): a loss whatever the investors' beliefs.
+
+\emph{(b) $R_b<b/\Delta p$: both types shirk.} Investors receive $p_L(R-R_b)$ from either type. If they
+break even, $p_L(R-R_b)\ge I-A$, then type $\beta$ obtains
+\begin{align}
+  p_LR_b+\beta &\le p_LR-(I-A)+\beta \nonumber\\
+  &\le (p_LR+B-I)+A \nonumber\\
+  &< A && \text{(using } p_LR+B<I), \nonumber
+\end{align}
+so neither type accepts: there is no lending in this range.
+
+\emph{(c) $b/\Delta p\le R_b<B/\Delta p$: the good type works, the bad type shirks.} Because
+$(\Delta p)R_b<B$, \eqref{t3e9-u} gives $u_B(R_b)=p_LR_b+B>p_HR_b=u_b(R_b)$. If the good type is funded at
+$R_b$ she needs $p_HR_b\ge A$, so the bad type gets $u_B(R_b)>A$ there. By (a) and (b) (and the same
+computation as (b) for a recognised bad type in this range) she cannot get more than $A$ from any contract
+on which she is recognised. So she offers $R_b$ too, the investors' posterior on $R_b$ equals the prior,
+and their revenue is
+\begin{align}
+  [\alpha p_H+(1-\alpha)p_L](R-R_b)
+  \le [\alpha p_H+(1-\alpha)p_L]\Bigl(R-\frac{b}{\Delta p}\Bigr) < I-A, \nonumber
+\end{align}
+by condition (2). Every range yields a loss or a refusal: no lending occurs in equilibrium.
+$\blacksquare$
+
+\answer{(i)} (1): with symmetric information the good type could raise $I-A$ and the bad type could not. (2): the cheapest contract that makes the good type work, taken by both types at the prior (the bad type then shirks), does not repay $I-A$. Since the bad type copies any contract the good type is funded on, every contract either loses money or is refused: no lending.
+
+\step{4}{The bad type buys no signal (part (ii), first bullet)} In a separating equilibrium the bad type's
+quality $x_B\ne\hat x$ identifies her whatever the signal shows. With net cash $A-rx_B$ she needs
+$I-A+rx_B\ge I-A$, so cases (a) and (b) of Step~3 apply \emph{a fortiori}: she is not funded on terms she
+accepts and keeps $A-rx_B$. This is maximised at $x_B=0$:
+\begin{align}
+  U_B = A. \label{t3e9-UB}
+\end{align}
+
+\answer{(ii-1)} In a separating equilibrium the bad type is identified by her choice of $x$, is not funded on terms she accepts, and so any fee is wasted: she picks $x_B=0$ and gets $A$.
+
+\step{5}{The good type borrows on the same terms in both events (second bullet)} At $\hat x$ the
+investors infer type $b$ from the choice of $x$ alone; a revealing signal shows $b$, which is the same
+belief. With the same belief the competitive market accepts the same contract. The good type has net
+cash $A-r\hat x$, borrows $I-A+r\hat x$, and offers the smallest stake that investors accept:
+\begin{align}
+  p_H(R-R_b^G) &= I-A+rx, \label{t3e9-be}\\
+  R-R_b^G &= \frac{I-A+rx}{p_H}, \nonumber\\
+  R_b^G(x) &= R-\frac{I-A+rx}{p_H}. \label{t3e9-RbG}
+\end{align}
+She works if $(\Delta p)R_b^G\ge b$; substituting \eqref{t3e9-RbG}, dividing by $\Delta p$ and multiplying by $p_H$,
+\begin{align}
+  (\Delta p)\Bigl(R-\frac{I-A+rx}{p_H}\Bigr) \ge b
+  \iff R-\frac{b}{\Delta p}\ge\frac{I-A+rx}{p_H}
+  \iff I-A+rx \le p_H\Bigl(R-\frac{b}{\Delta p}\Bigr). \label{t3e9-icG}
+\end{align}
+Her payoff, substituting \eqref{t3e9-RbG}, is
+\begin{align}
+  U_G(x) = p_H\Bigl(R-\frac{I-A+rx}{p_H}\Bigr) = p_HR-(I-A+rx) = p_HR-I+A-rx, \label{t3e9-UG}
+\end{align}
+decreasing in $x$: she wants the cheapest signal that separates.
+
+\answer{(ii-2)} At $\hat x$ the investors already infer type $b$ from the choice of $x$, and a revealing signal shows the same type, so in both events she borrows on $R_b^G=R-(I-A+r\hat x)/p_H$.
+
+\step{6}{The mimicking constraint pins down $\hat x\in(0,1)$ (third bullet)} If the bad type chooses
+$x$, the signal reveals her with probability $x$ (no funding, she keeps $A-rx$); with probability $1-x$
+nothing is revealed and she is treated as good, receiving \eqref{t3e9-RbG}. She then shirks, because
+\begin{align}
+  (\Delta p)R_b^G < B \iff p_H\Bigl(R-\frac{B}{\Delta p}\Bigr) < I-A+rx, \nonumber
+\end{align}
+which holds by condition (1) and $rx\ge0$. Her payoff in that event is
+\begin{align}
+  c(x) = p_LR_b^G(x)+B = p_L\Bigl(R-\frac{I-A+rx}{p_H}\Bigr)+B
+       = \underbrace{p_L\Bigl(R-\frac{I-A}{p_H}\Bigr)+B}_{c_0}-\frac{p_L}{p_H}\,rx = c_0-\kappa rx. \label{t3e9-c}
+\end{align} Her mimicking payoff is $x(A-rx)+(1-x)c(x)$ (if $c(x)<A-rx$ she would
+decline the loan and get $A-rx<A$, so the condition below covers that case too). She does not mimic iff
+\begin{align}
+  A \ge x(A-rx)+(1-x)\Bigl[p_L\Bigl(R-\frac{I-A+rx}{p_H}\Bigr)+B\Bigr]. \label{t3e9-nm}
+\end{align}
+Let $\Phi(x)$ be the right side of \eqref{t3e9-nm} minus $A$. Substituting \eqref{t3e9-c} and expanding,
+\begin{align}
+  \Phi(x) &= xA-rx^2+(1-x)(c_0-\kappa rx)-A \nonumber\\
+          &= xA-rx^2+c_0-\kappa rx-xc_0+\kappa rx^2-A \nonumber\\
+          &= -r(1-\kappa)x^2+(A-c_0-\kappa r)x+(c_0-A), \label{t3e9-Phi}
+\end{align}
+a strictly concave quadratic ($\kappa<1$). At $x=0$, the bad type shirks under $R_b^G(0)$, so
+\begin{align}
+  c_0 = p_LR_b^G(0)+B > p_HR_b^G(0) = p_HR-I+A > A, \nonumber
+\end{align}
+using \eqref{t3e9-UG} at $x=0$ and assumption (a): $\Phi(0)=c_0-A>0$. At $x=1$, \eqref{t3e9-Phi} gives
+$\Phi(1)=-r(1-\kappa)+A-c_0-\kappa r+c_0-A=-r<0$. A concave function positive at 0 and negative at 1 has a
+single root $\hat x\in(0,1)$, with $\Phi>0$ on $[0,\hat x)$ and $\Phi<0$ on $(\hat x,1]$. By
+\eqref{t3e9-UG} the good type picks the smallest admissible $x$, i.e.\ $\hat x$, where \eqref{t3e9-nm} binds:
+\begin{align}
+  A = \hat x(A-r\hat x)+(1-\hat x)\Bigl[p_L\Bigl(R-\frac{I-A+r\hat x}{p_H}\Bigr)+B\Bigr]. \qquad\blacksquare \label{t3e9-xhat}
+\end{align}
+
+\answer{(ii-3)} $\hat x\in(0,1)$ is the unique root in $(0,1)$ of the bad type's indifference condition \eqref{t3e9-xhat}, the equation in the statement: the cheapest quality at which mimicking no longer pays.
+
+\step{7}{The separating equilibrium exists only if $r$ is not too large (fourth bullet)} Write $y=r\hat x$
+in \eqref{t3e9-xhat}. Using \eqref{t3e9-c},
+\begin{align}
+  A &= \hat xA-\hat xy+(1-\hat x)(c_0-\kappa y) \nonumber\\
+  A-\hat xA &= -\hat xy+(1-\hat x)c_0-(1-\hat x)\kappa y \nonumber\\
+  (1-\hat x)A-(1-\hat x)c_0 &= -y\,[\hat x+(1-\hat x)\kappa] \nonumber\\
+  (1-\hat x)(c_0-A) &= y\,[\hat x+(1-\hat x)\kappa] \nonumber\\
+  y &= \frac{(1-\hat x)(c_0-A)}{\hat x+(1-\hat x)\kappa}, \label{t3e9-y}\\
+  r = \frac{y}{\hat x} &= \frac{(1-\hat x)(c_0-A)}{\hat x\,[\hat x+(1-\hat x)\kappa]}. \label{t3e9-r}
+\end{align}
+The right side of \eqref{t3e9-r} falls strictly from $+\infty$ to $0$ as $\hat x$ goes from $0$ to $1$, so
+$\hat x$ is a strictly decreasing function of $r$ ($\hat x\to1$ as $r\to0$). The right side of
+\eqref{t3e9-y} is strictly decreasing in $\hat x$, so the signalling cost $y(r)$ is strictly increasing in
+$r$, from $0$ (as $r\to0$) to $(c_0-A)/\kappa$ (as $r\to\infty$, if $p_L>0$).
+
+The candidate is an equilibrium only if three inequalities hold, each an upper bound on $y$:
+\begin{itemize}
+  \item[(E1)] the good type is funded and works, \eqref{t3e9-icG} at $\hat x$: $y\le p_H(R-b/\Delta p)-(I-A)$, positive by (1);
+  \item[(E2)] the good type does not deviate. A deviation to $x'\ne\hat x$ is treated as bad unless the signal
+     reveals $b$, so it yields at most $A-rx'+x'(p_HR-I)$. Subtracting this from \eqref{t3e9-UG} at $\hat x$,
+     \begin{align}
+       D(x') = (1-x')(p_HR-I)-r(\hat x-x'), \nonumber
+     \end{align}
+     which is positive for $x'\ge\hat x$ and linear on $[0,\hat x]$ with $D(\hat x)=(1-\hat x)(p_HR-I)>0$; so
+     the binding deviation is $x'=0$: $y\le p_HR-I$;
+  \item[(E3)] the fee is paid from cash: $y\le A$.
+\end{itemize}
+The bad type's deviations give her at most $A-rx'\le A$, so \eqref{t3e9-UB} is optimal. Let
+$\bar y\equiv\min\{p_H(R-b/\Delta p)-(I-A),\,p_HR-I,\,A\}>0$. Since $y(r)$ rises from $0$, the
+separating equilibrium exists if and only if $y(r)\le\bar y$, i.e.\ $r\le\bar r$, where $\bar r$ solves
+$y(\bar r)=\bar y$ ($\bar r=+\infty$ if $(c_0-A)/\kappa\le\bar y$). Inverting \eqref{t3e9-y} at $y=\bar y$ (multiply out and collect the terms in $\bar x$):
+\begin{align}
+  \bar y\,[\bar x+(1-\bar x)\kappa] &= (1-\bar x)(c_0-A) \nonumber\\
+  \bar y\kappa+\bar x\,\bar y(1-\kappa) &= (c_0-A)-\bar x(c_0-A) \nonumber\\
+  \bar x\,[(c_0-A)+(1-\kappa)\bar y] &= c_0-A-\kappa\bar y \nonumber\\
+  \bar x = \frac{c_0-A-\kappa\bar y}{c_0-A+(1-\kappa)\bar y}, &\qquad \bar r = \frac{\bar y}{\bar x}. \label{t3e9-rbar}
+\end{align}
+
+\answer{(ii-4)} The signalling cost $y=r\hat x$ rises with $r$, and the equilibrium needs $y\le\bar y=\min\{p_H(R-b/\Delta p)-(I-A),\;p_HR-I,\;A\}$ (good type works, does not prefer to deviate to $x=0$, can pay the fee). Hence it exists iff $r\le\bar r=\bar y/\bar x$ in \eqref{t3e9-rbar}.
+
+\step{8}{Numerical illustration} Take $R=10$, $I=6$, $A=1$, $p_H=0.8$, $p_L=0.4$ ($\Delta p=0.4$), $b=0.4$,
+$B=1.8$, $\alpha=0.3$, so $b/\Delta p=1$, $B/\Delta p=4.5$ and $I-A=5$. Condition (1): $0.8(10-4.5)=4.4<5<0.8(10-1)=7.2$. Condition (2):
+$[0.3(0.8)+0.7(0.4)](10-1)=(0.24+0.28)(9)=(0.52)(9)=4.68<5$; and $p_LR+B=4+1.8=5.8<6$. Then
+\begin{align}
+  c_0 &= (0.4)\Bigl(10-\frac{5}{0.8}\Bigr)+1.8 = (0.4)(3.75)+1.8 = 1.5+1.8 = 3.3, \qquad \kappa=\frac{0.4}{0.8}=0.5. \nonumber
+\end{align}
+With $r=1$, \eqref{t3e9-Phi} has coefficients $-r(1-\kappa)=-0.5$, $A-c_0-\kappa r=1-3.3-0.5=-2.8$ and $c_0-A=2.3$:
+\begin{align}
+  -0.5x^2-2.8x+2.3 &= 0 \iff x^2+5.6x-4.6=0, \nonumber\\
+  \hat x &= \frac{-5.6+\sqrt{5.6^2+4(4.6)}}{2} = \frac{-5.6+\sqrt{49.76}}{2} = -2.8+\sqrt{12.44} = 0.727038. \nonumber
+\end{align}
+Then $y=r\hat x=0.727038$, $U_G=p_HR-I+A-y=8-6+1-0.727038=2.272962$
+and $R_b^G=10-(5+0.727038)/0.8=10-7.158798=2.841202\ge b/\Delta p=1$. Here
+\begin{align}
+  \bar y=\min\{7.2-5,\;8-6,\;1\}=\min\{2.2,\,2,\,1\}=1, \nonumber
+\end{align}
+so \eqref{t3e9-rbar} gives $\bar x=(2.3-0.5)/(2.3+0.5)=1.8/2.8=0.642857$ and $\bar r=1/0.642857=1.555556$: the rating equilibrium exists for
+$r\le1.555556$.
+
+\intuition Lending collapses because whatever contract attracts the good borrower attracts the bad
+one, and condition (2) says the pool is unprofitable. A rating of quality $x$ lets the good type escape the
+pool, but only partly: the bad type can buy the same rating and hope that it reveals nothing. The good type
+therefore buys just enough quality that the gamble ``with probability $1-x$ I pass as good'' is not worth
+the bad type's sure $A$. The cost $rx$ is pure dissipation, and when it eats the good type's surplus (or
+cash, or incentive margin) separation fails.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting that the fee $rx$ is paid out of $A$, so the good type must borrow $I-A+rx$, not $I-A$; this enters both her terms and the bad type's mimicking payoff.
+  \item Writing the mimicking payoff as if the bad type worked under $R_b^G$: since $R_b^G<B/\Delta p$ she shirks, and her payoff is $p_LR_b^G+B$.
+  \item Choosing $x=1$ (``buy the best rating''): the good type wants the \emph{cheapest} separating quality, so the no-mimicking constraint binds at $\hat x<1$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~598--599): the bad type chooses $x=0$ and is not funded, the
+good type's terms solve $p_H(R-R_b^G)=I-A+rx$, and the no-mimicking condition is the displayed equation,
+binding at the equilibrium. The book does not spell out the ``$r$ not too large'' conditions; (E1)--(E3)
+and \eqref{t3e9-rbar} are derived here.
+
+\refbib{Tirole Ch.~6, \S6.3 Application 4 ``Certification'', pp.~249--251; Exercise 6.6, p.~276;
+answer pp.~598--599. Lecture Topic~3, signalling block.}
+
+% =============================================================================
+\exsec{10. Maturity structure --- Tirole 6.10, p.~279}
+
+\asked (a) Two types of entrepreneur differ only in their date-2 success probabilities; the market learns the type at date 1, before a deterministic liquidity shock $\rho$ must be paid. Only the good type can refinance the shock in the market ($\rho_0^G>\rho>\rho_0^B$) and only she is creditworthy. Show that she can separate herself from the bad type at no cost, i.e.\ while obtaining her symmetric-information payoff.
+
+\approach This is signalling through the maturity of debt (Tirole \S6.3, Application 6, built on the liquidity model of Ch.~5; lecture block 3.7). A signal separates if it is cheap for the good type and expensive for the bad one. Short-term debt that takes all the date-1 income ($d=r$) leaves no hoarded liquidity, so the firm must go back to the market at date 1, after its type is known. The good type can refinance there; the bad type cannot and is liquidated. So the good type offers that contract, checks that it gives her the symmetric-information payoff (incentive and break-even constraints), and checks that the bad type does not want to copy it (no-mimicking, including renegotiation), with pessimistic off-path beliefs.
+
+\notation
+\begin{itemize}
+  \item $A$: cash at date 0; $I$: fixed investment, $I-A>0$ borrowed; $r>0$: deterministic date-1 income.
+  \item $\rho$: deterministic date-1 liquidity shock; liquidation value $0$.
+  \item $p_H,p_L$ (good) and $q_H,q_L$ (bad): date-2 success probabilities when behaving / misbehaving; $p_H-p_L=q_H-q_L=\Delta p$.
+  \item $B$: private benefit from misbehaving; $R$: date-2 income in success, 0 in failure; $R_b$: borrower's reward in success.
+  \item $\rho_0^G=p_H(R-B/\Delta p)$, $\rho_0^B=q_H(R-B/\Delta p)$: date-1 pledgeable incomes, $\rho_0^G>\rho>\rho_0^B$.
+  \item $d\in[0,r]$: short-term debt repaid at date 1 (retention $r-d$); $L$: date-0 investors' long-term claim on date-2 income (expected value).
+  \item $R_n$, $R_l$: shares of $R$ promised to date-1 (new) and date-0 (old) investors.
+\end{itemize}
+
+\assume (a) As in Tirole's Application 6, a contract specifies $d$, a long-term claim and $R_b$; new claims
+issued at date 1 may dilute the old long-term claim. (b) A continuation in which the borrower misbehaves
+cannot be financed ($p_LR<\rho$ and $q_LR<\rho$), so date-1 investors fund only continuations with
+$(\Delta p)R_b\ge B$. (c) Off-path beliefs: any date-0 offer other than the good type's equilibrium
+contract is attributed to the bad type.
+
+\step{1}{Symmetric-information benchmark} With the type known, the good borrower can always be continued
+(the shock is deterministic and $\rho_0^G>\rho$, so the date-1 market covers it). Investors break even, so
+her gross payoff is the project's value net of all outlays:
+\begin{align}
+  U_G^{SI} = A + r + p_HR - \rho - I. \label{t3e10-USI}
+\end{align}
+Funding is feasible because total pledgeable income covers the loan: investors can receive the date-1 income $r$ and, at date 2, the pledgeable income $\rho_0^G$ minus the $\rho$ that must be paid to whoever finances the shock, so they break even iff
+\begin{align}
+  r+(\rho_0^G-\rho)\ge I-A, \nonumber
+\end{align}
+which holds by the right inequality of the statement. The bad type is not creditworthy (statement), so her
+symmetric-information payoff is to keep her cash:
+\begin{align}
+  U_B^{SI} = A. \label{t3e10-UBSI}
+\end{align}
+
+\step{2}{The signalling contract: short-term debt $d=r$} The good type offers: short-term debt $d=r$ (no
+retention, no hoarded liquidity), a dilutable long-term claim worth
+\begin{align}
+  L = I-A-r > 0 \qquad (\text{by } r<I-A), \label{t3e10-L}
+\end{align}
+and a reward $R_b$ in success. Date-0 investors receive $d+L=r+(I-A-r)=I-A$: they break even. At date 1
+the market learns she is good and she must raise $\rho$ by issuing a new claim $R_n$ with
+$p_HR_n=\rho$. The old claim is $p_HR_l=L$. The borrower keeps the rest, so
+\begin{align}
+  p_HR_b &= p_HR-p_HR_n-p_HR_l \nonumber\\
+         &= p_HR-\rho-L \nonumber\\
+         &= p_HR-\rho-(I-A-r) && \text{(substituting \eqref{t3e10-L})} \nonumber\\
+         &= A+r+p_HR-\rho-I = U_G^{SI} && \text{(by \eqref{t3e10-USI})}. \label{t3e10-UG}
+\end{align}
+She behaves if $(\Delta p)R_b\ge B$, i.e.\ (multiplying by $p_H/\Delta p$) $p_HR_b\ge p_HB/\Delta p$; by the second line of
+\eqref{t3e10-UG} this is
+\begin{align}
+  p_HR-\rho-L &\ge p_H\frac{B}{\Delta p} \nonumber\\
+  p_H\Bigl(R-\frac{B}{\Delta p}\Bigr) &\ge \rho+L \iff \rho_0^G\ge\rho+(I-A-r) \nonumber\\
+  I-A &\le r+(\rho_0^G-\rho), \label{t3e10-ic}
+\end{align}
+which is the right inequality assumed in the statement. So the contract is feasible and gives the good
+type exactly her symmetric-information payoff: signalling is costless.
+
+\step{3}{The bad type does not mimic} Suppose the bad type offers the same contract. At date 1 all her
+income $r$ goes to repay $d=r$. The market learns she is bad; even with the old claim fully diluted, the
+most new investors can be promised while she behaves is $\rho_0^B<\rho$, and by assumption (b) a misbehaving
+continuation cannot be funded either. The project is liquidated and yields $0$, so
+\begin{align}
+  U_B^{\text{mimic}} = 0 \le A = U_B^{SI}. \label{t3e10-mimic}
+\end{align}
+Could the old investors waive $d$ to let her continue? Then the firm would keep $r$ and would need
+$\rho-r$ from the market; out of the bad type's date-2 pledgeable income $\rho_0^B$, the new money takes $\rho-r$, so the old investors could get at most
+\begin{align}
+  \rho_0^B-(\rho-r)=r-(\rho-\rho_0^B)<r, \nonumber
+\end{align}
+less than collecting $d=r$ (because $\rho>\rho_0^B$). So they do not renegotiate, and \eqref{t3e10-mimic} stands.
+
+\step{4}{The separating equilibrium} The good type offers the Step~2 contract and the bad type stays out.
+Investors believe the Step~2 contract comes from the good type (correct, by Step~3) and fund it; any other
+offer is attributed to the bad type and, since she is not creditworthy, is not funded. The good type
+cannot gain by deviating: she already gets $U_G^{SI}$ in \eqref{t3e10-UG}, and other offers are not funded.
+The bad type gets $A$, by \eqref{t3e10-mimic} at least as much as by mimicking. Hence the good borrower
+signals her type at zero cost. $\blacksquare$
+
+Signalling works because liquidity and refinancing are worth different amounts to the two types. A
+contract that hoarded enough liquidity, $r-d\ge\rho-\rho_0^B$, would let a mimicking bad type meet the
+shock with retentions plus new money, so she would get a rent instead of 0. The good type gives up
+nothing by not hoarding, because the date-1 market will see that she is good and lend to her.
+
+\answer{(a)} The good type offers short-term debt $d=r$ (no hoarded liquidity) plus a dilutable long-term claim worth $L=I-A-r$. Date-0 investors break even, she refinances $\rho$ at date 1 once revealed good and obtains $p_HR_b=A+r+p_HR-\rho-I=U_G^{SI}$, so the signal costs her nothing. A mimicking bad type would be liquidated at date 1 (payoff $0<A$), so she stays out: a costless separating equilibrium.
+
+\step{5}{Numerical illustration} Take $p_H=0.8$, $q_H=0.5$, $\Delta p=0.4$, $B=1.2$ ($B/\Delta p=1.2/0.4=3$),
+$R=10$, $\rho=4.5$, $r=1$, $I-A=1.6$. Then $\rho_0^G=0.8(10-3)=0.8(7)=5.6$ and $\rho_0^B=0.5(7)=3.5$, so
+$\rho_0^G>\rho>\rho_0^B$; $r=1<I-A=1.6<r+\rho_0^G-\rho=1+5.6-4.5=2.1$; and the bad type fails even with full hoarding,
+$r+\rho_0^B-\rho=1+3.5-4.5=0<1.6$. By \eqref{t3e10-L}, $L=1.6-1=0.6$. Then
+\begin{align}
+  R_n &= \frac{\rho}{p_H} = \frac{(4.5)}{(0.8)} = 5.625, \qquad R_l = \frac{L}{p_H} = \frac{(0.6)}{(0.8)} = 0.75, \nonumber\\
+  p_HR_b &= r+p_HR-\rho-(I-A) = 1+8-4.5-1.6 = 2.9, \qquad R_b = \frac{2.9}{0.8} = 3.625\ge\frac{B}{\Delta p}=3, \nonumber
+\end{align}
+and $R_b+R_n+R_l=3.625+5.625+0.75=10=R$.
+
+\intuition Short-term debt drains the firm's cash at date 1 and forces it back to the capital market just
+after the market has learned the firm's type. The good type is not afraid of that meeting; the bad type is,
+because the market will refuse to fund her shock. Short maturity is an action whose cost falls only on
+the type that has something to hide, which is why it separates. Here it costs the good type nothing only
+because the shock is certain and small enough to refinance. With a random shock that may exceed
+$\rho_0^G$, she would want to hoard liquidity even under symmetric information, and the signal would cost
+her some continuation (Application 6).
+
+\pitfalls
+\begin{itemize}
+  \item Thinking the good type should hoard liquidity, as in Ch.~5: with a certain shock and a market that will know she is good, hoarding is unnecessary, and it would let the bad type survive by mimicking.
+  \item Forgetting the date-1 claim structure: the old long-term claim is diluted by the new money raised for $\rho$, and the incentive constraint must hold \emph{after} both claims are paid ($\rho+L\le\rho_0^G$).
+  \item Ignoring renegotiation: one must check that old investors would not waive $d$ to keep a revealed bad type alive.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~600): separation by not hoarding liquidity, $d=r$, the good type
+refinancing at date 1 and diluting existing claims, the bad type liquidated. The long-term claim
+$L=I-A-r$, the renegotiation check and assumption (b) are added here; the book leaves them implicit.
+
+\refbib{Tirole Ch.~6, \S6.3 Application 6 ``Short-Term Maturities'', pp.~254--257; Ch.~5, \S5.2
+(liquidity hoarding and short-term debt); Exercise 6.10, p.~279; answer p.~600.}
+
+% =============================================================================
+\exsec{11. Myers--Majluf: whose interest does management serve? --- Amaro de Matos 3.2.6 \#4, p.~95}
+
+\asked (a) In the Myers--Majluf model, replace ``management serves old shareholders'' (Assumption 3.2.6) with ``management serves all shareholders'' (old and new together): how does the issue-and-invest decision change? (b) If management serves the new shareholders, what is the optimal issue rule?
+
+\approach This is the Myers--Majluf model of Amaro de Matos \S3.2.3 (lecture block 3.5). The issue price $P'$ moves wealth between old and new shareholders, while the project's NPV $b$ adds to the total. Which side of that transfer management cares about decides the rule: write each group's wealth with and without the issue, and compare. The book's rule (3.20) is the old-shareholder comparison; the all-shareholder and new-shareholder rules come from the same algebra. A last step closes the model with the book's pricing equation to see what a rational market does with the new-shareholder rule.
+
+\notation
+\begin{itemize}
+  \item $I$: required investment; $S<I$: slack (cash, riskless debt capacity); $E=I-S>0$: equity to issue.
+  \item $a\ge0$, $b\ge0$: realisations (known to managers at time 1) of the value of assets in place $\widetilde A$ and of the project's NPV $\widetilde B$.
+  \item $P'$: market value of the old shares if equity is issued; $P$: their value if not; the new shareholders hold the fraction $E/(P'+E)$.
+  \item $M'$ / $M$: regions of $(a,b)$ with / without issue; $Z\equiv\widetilde A+\widetilde B$.
+\end{itemize}
+
+\step{1}{What each group gets} If the firm does not issue, the old shareholders own $a+S$ and the potential
+new shareholders keep their cash $E$. If it issues $E$ and invests, the firm is worth $E+S+a+b$, split
+in proportions $P'/(P'+E)$ and $E/(P'+E)$. So
+\begin{align}
+  \text{old:}&\quad a+S \;\;\text{vs.}\;\; \frac{P'}{P'+E}(E+S+a+b), \label{t3e11-old}\\
+  \text{new:}&\quad E \;\;\text{vs.}\;\; \frac{E}{P'+E}(E+S+a+b), \label{t3e11-new}\\
+  \text{all:}&\quad a+S+E \;\;\text{vs.}\;\; E+S+a+b. \label{t3e11-all}
+\end{align}
+Assumption 3.2.6 uses \eqref{t3e11-old}; multiplying it by $(P'+E)/P'$ and rearranging gives rule (3.20):
+\begin{align}
+  \frac{P'}{P'+E}(E+S+a+b) &\ge a+S \nonumber\\
+  E+S+a+b &\ge \frac{P'+E}{P'}(a+S) = (a+S)+\frac{E}{P'}(S+a) \nonumber\\
+  b &\ge -E+\frac{E}{P'}(S+a). \tag{3.20}
+\end{align}
+
+\step{2}{Management serves all shareholders} By \eqref{t3e11-all}, issue and invest iff
+\begin{align}
+  E+S+a+b &\ge E+S+a \nonumber\\
+  b &\ge 0. \label{t3e11-allrule}
+\end{align}
+The issue price only moves wealth between old and new shareholders, and that transfer nets out in their
+joint wealth. So management takes every positive-NPV project, the first best. By Assumption 3.2.5
+($b\ge0$) every firm with $S<I$ issues: $M'$ is the whole domain, $M$ is empty, the issue carries no
+information, and the book's pricing equation gives the pooled price
+\begin{align}
+  P' = S+E(\widetilde A+\widetilde B). \label{t3e11-Pall}
+\end{align}
+There is no underinvestment and no price reaction to the issue.
+
+\answer{(a)} Management then issues and invests iff $b\ge0$: every positive-NPV project is taken (first best), every firm with $S<I$ issues, and the issue carries no information.
+
+\step{3}{Management serves the new shareholders: the issue rule} By \eqref{t3e11-new}, issue iff the new shareholders' stake is worth at least the $E$ they pay; dividing by $E/(P'+E)>0$ and subtracting $E$ from both sides,
+\begin{align}
+  \frac{E}{P'+E}(E+S+a+b) &\ge E \nonumber\\
+  E+S+a+b &\ge P'+E \nonumber\\
+  b &\ge P'-(S+a). \label{t3e11-newrule}
+\end{align}
+The firm issues when its post-issue value, net of the new money, is at least the price $P'$, i.e.\ when
+new shares are \emph{not overpriced}.
+
+\answer{(b)} Issue (and invest) iff $b\ge P'-(S+a)$, equivalently $a+b\ge P'-S$: only when the new shares are not overpriced.
+
+\step{4}{Comparison with the Myers--Majluf rule} Write $a_0\equiv P'-S$. At $a=a_0$ both thresholds are
+zero: \eqref{t3e11-newrule} gives $b\ge0$, and (3.20) gives $b\ge-E+\frac{E}{P'}P'=0$. The new-shareholder
+threshold $P'-S-a$ falls with $a$ (slope $-1$); the old-shareholder threshold
+$-E+\frac{E}{P'}(S+a)$ rises with $a$ (slope $E/P'$). Hence, for a given $P'$:
+\begin{itemize}
+  \item $a>a_0$ (assets in place undervalued): the new-shareholder threshold is negative, so every such firm
+        issues; the Myers--Majluf rule requires $b>0$ and passes up projects. Here the new rule is \emph{less} restrictive.
+  \item $a<a_0$ (assets in place overvalued): the Myers--Majluf threshold is negative, so every such firm
+        issues; the new-shareholder rule requires $b\ge a_0-a>0$. Here it is \emph{more} restrictive.
+\end{itemize}
+For example, with $P'=10$, $S=2$, $E=5$ ($a_0=10-2=8$): at $a=4$ the thresholds are $10-2-4=4$ (new) and $-5+\frac{5}{10}(2+4)=-2$ (old); at
+$a=12$ they are $10-2-12=-4$ (new) and $-5+\frac{5}{10}(2+12)=2$ (old).
+
+\step{5}{Equilibrium price under the new-shareholder rule} Close the model with the book's pricing
+equation for the issue state, $P'=S+E(\widetilde A+\widetilde B\mid M')$, and
+$M'=\{a+b\ge P'-S\}$ from \eqref{t3e11-newrule}. With $c\equiv P'-S$,
+\begin{align}
+  P'-S &= E(\widetilde A+\widetilde B\mid \widetilde A+\widetilde B\ge P'-S) \nonumber\\
+  c &= E(Z\mid Z\ge c) \nonumber\\
+  0 &= E(Z-c\mid Z\ge c). \label{t3e11-fix}
+\end{align}
+On the event $Z\ge c$ the integrand $Z-c$ is nonnegative, so \eqref{t3e11-fix} forces $Z=c$ almost surely
+on that event: only firms at the top of the support of $Z$ can issue. With a continuous distribution the
+issue region has probability zero: new investors would only be offered shares that are cheap for them,
+so the price rises until nothing is cheap, and the market for new equity breaks down. Every firm with
+$S<I$ then passes up its project. This is worse than under Myers--Majluf, where only the projects in $M$
+are lost.
+
+\intuition Who management works for decides which way the information problem cuts. Working for old
+shareholders, it sells overpriced equity and refuses to sell underpriced equity (Myers--Majluf
+underinvestment). Working for all shareholders, the issue price is a transfer inside the group and only
+the NPV counts. Working for the new shareholders, it sells only underpriced equity, so the rule
+favours undervalued firms. But a rational market prices that in and leaves no underpriced issues.
+
+\pitfalls
+\begin{itemize}
+  \item Keeping the old-shareholder rule (3.20) in part (a): for all shareholders together the issue price is an internal transfer and drops out, leaving $b\ge0$.
+  \item Sign errors when isolating $b$: the old shareholders' threshold rises with $a$, the new shareholders' falls with $a$.
+  \item Calling the new-shareholder rule simply ``less restrictive'': it is less restrictive only for $a>P'-S$ and more restrictive for $a<P'-S$ (Step~4).
+\end{itemize}
+
+\bookans Both rules match the book's answer (p.~260): $b\ge0$ for all shareholders and
+$b\ge P'-(S+a)$ for new shareholders. The book calls the second rule ``less restrictive'' than Myers and
+Majluf's. Step~4 shows this holds only for $a>P'-S$; for $a<P'-S$ it is more restrictive. The
+equilibrium in Step~5 goes beyond the book.
+
+\refbib{Amaro de Matos Ch.~3, \S3.2.3 ``Signals Conditioned by Investment Opportunities'', pp.~86--88
+(rule (3.20), prices (3.21)); Appendix C.3.2, p.~260.}
+
+% =============================================================================
+\exsec{12. Pecking order with variable investment --- Tirole 6.8, p.~278}
+
+\asked (i) Write the separating program: maximise the good borrower's utility over her contract, subject to investors breaking even on her, to the bad borrower not preferring the good borrower's terms to her own symmetric-information terms, and to the good borrower working. (ii) Show that the good borrower takes no reward in failure, $R_b^F=0$. (iii) Using the supplementary section, show that the separating outcome is the unique perfect Bayesian equilibrium of the issuance game iff the prior $\alpha$ is at most some $\alpha^*$.
+
+\approach This is the pecking-order application of the privately-known-prospects model (Tirole \S6.2.2, Application 3; lecture block 3.5) with the continuous-investment technology of \S3.4. The separating program is a constrained maximisation; part (ii) is a perturbation argument: shift the reward from failure to success keeping the good type's expected reward fixed, and check that every constraint is relaxed, which, by the information-sensitivity of claims, makes investors hold the safe (debt-like) part of the cash flow. Part (iii) applies the general results on contract design by an informed party (\S6.4: Lemmas 6.2--6.3 and Proposition 6.1) after checking their key assumption, weak monotonic profit.
+
+\notation
+\begin{itemize}
+  \item $I\ge0$: investment; $R^SI$ / $R^FI$: income in success / failure, $R^S>R^F\ge0$.
+  \item $p_H,p_L$ (good) and $q_H,q_L$ (bad): success probabilities working / shirking, $p_H-p_L=q_H-q_L=\Delta p>0$, $q_H<p_H$.
+  \item $BI$: private benefit from shirking; $A$: entrepreneur's cash; investors demand a 0 return.
+  \item $R_b^S,R_b^F\ge0$: good borrower's rewards in success / failure; $\tilde U_b^{SI}$: bad borrower's symmetric-information gross utility.
+  \item $\alpha$: prior probability of the good type; $\alpha^*$: threshold of part (iii).
+\end{itemize}
+
+\assume (a) Investment has positive NPV for the good type when she works,
+$N\equiv p_HR^S+(1-p_H)R^F-1>0$, and finite scale, $p_H(R^S-B/\Delta p)+(1-p_H)R^F<1$ (analogues of
+(3.7) and (3.9)). (b) At the optimum, investors hold a positive claim in success, $R_b^S<R^SI$. (c) Footnote 80's
+formula is for $R^F=0$ ($R=R^S$); with $R^F>0$, $\tilde U_b^{SI}$ is computed the same way with the
+bad type's expected income per unit.
+
+\step{1}{Payoffs, and why the bad type works when she mimics} The good type's gross utility is
+$p_HR_b^S+(1-p_H)R_b^F$. A bad type taking the same terms works, because her gain from working is
+\begin{align}
+  [q_HR_b^S+(1-q_H)R_b^F]-[q_LR_b^S+(1-q_L)R_b^F+BI]
+  = (\Delta p)(R_b^S-R_b^F)-BI, \nonumber
+\end{align}
+which is the good type's incentive constraint: the two types share the same (IC$_b$). Her utility from
+mimicking is therefore $q_HR_b^S+(1-q_H)R_b^F$.
+
+\step{2}{The separating program (part (i))}
+\begin{align}
+  \max_{\{I,R_b^S,R_b^F\}}\;& p_HR_b^S+(1-p_H)R_b^F \label{t3e12-obj}\\
+  \text{s.t.}\;& p_H(R^SI-R_b^S)+(1-p_H)(R^FI-R_b^F)\ge I-A, \tag{IR$_l$}\\
+  & q_HR_b^S+(1-q_H)R_b^F\le\tilde U_b^{SI}, \tag{M}\\
+  & (\Delta p)(R_b^S-R_b^F)\ge BI, \tag{IC$_b$}\\
+  & 0\le R_b^S\le R^SI,\quad 0\le R_b^F\le R^FI. \nonumber
+\end{align}
+The book's answer lists only the rewards as choice variables, but $I$ is chosen too. With $R^F=0$,
+footnote 80's value comes from the bad type's symmetric-information problem in \S3.4.2. Her net utility is the NPV $(q_HR-1)I$, increasing in $I$ when $q_HR\ge1$, so she borrows as much as the constraints allow: (IC$_b$) binds, $R_b=BI/\Delta p$, and substituting it into the break-even constraint with equality,
+\begin{align}
+  q_H\Bigl(RI-\frac{BI}{\Delta p}\Bigr) &= I-A \nonumber\\
+  A &= I\Bigl[1-q_H\Bigl(R-\frac{B}{\Delta p}\Bigr)\Bigr] \nonumber\\
+  I &= \frac{A}{1-q_H(R-B/\Delta p)}. \nonumber
+\end{align}
+Her gross utility is the cash plus the NPV,
+\begin{align}
+  \tilde U_b^{SI} &= A+(q_HR-1)\frac{A}{1-q_H(R-B/\Delta p)} \nonumber\\
+  &= \Bigl[1+\frac{q_HR-1}{1-q_H(R-B/\Delta p)}\Bigr]A \qquad (q_HR\ge1). \label{t3e12-USI}
+\end{align}
+
+\answer{(i)} Program \eqref{t3e12-obj}: maximise $p_HR_b^S+(1-p_H)R_b^F$ over $\{I,R_b^S,R_b^F\}$ subject to (IR$_l$), (M) with $\tilde U_b^{SI}$ from footnote 80 (or $A$ if $q_HR<1$), (IC$_b$) and limited liability.
+
+\step{3}{A reward in failure can be moved to success at no cost (part (ii))} Suppose an optimum has
+$R_b^F>0$. Change the rewards by $\delta R^S>0$ and $\delta R^F<0$ with
+\begin{align}
+  p_H\,\delta R^S+(1-p_H)\,\delta R^F = 0
+  \iff \delta R^F = -\frac{p_H}{1-p_H}\,\delta R^S. \label{t3e12-pert}
+\end{align}
+The objective \eqref{t3e12-obj} is unchanged by \eqref{t3e12-pert}. So is (IR$_l$): investors receive
+expected income minus the borrower's expected reward, and both are unchanged. (IC$_b$) is relaxed:
+its left side changes by $(\Delta p)(\delta R^S-\delta R^F)>0$. (M) is relaxed too; substituting
+\eqref{t3e12-pert},
+\begin{align}
+  q_H\,\delta R^S+(1-q_H)\,\delta R^F
+  &= q_H\,\delta R^S-(1-q_H)\frac{p_H}{1-p_H}\,\delta R^S \nonumber\\
+  &= \frac{q_H(1-p_H)-p_H(1-q_H)}{1-p_H}\,\delta R^S \nonumber\\
+  &= -\frac{p_H-q_H}{1-p_H}\,\delta R^S < 0. \label{t3e12-dM}
+\end{align}
+By assumption (b), a small $\delta R^S$ keeps $R_b^S\le R^SI$.
+
+\step{4}{Slack constraints allow a strict improvement, so $R_b^F=0$} After the change, (M) and (IC$_b$)
+are slack. Now raise $I$ by $\varepsilon>0$ and $R_b^S$ by $\eta=N\varepsilon/p_H>0$. Each constraint changes as follows:
+(IR$_l$), left side minus right side, changes by
+\begin{align}
+  p_H(R^S\varepsilon-\eta)+(1-p_H)R^F\varepsilon-\varepsilon
+     &= [p_HR^S+(1-p_H)R^F-1]\varepsilon-p_H\eta \nonumber\
+     &= N\varepsilon-N\varepsilon = 0; \nonumber
+\end{align}
+(IC$_b$), left minus right, changes by $(\Delta p)\eta-B\varepsilon$; the left side of (M) by $+q_H\eta$; and the limited-liability margin $R^SI-R_b^S$ by $R^S\varepsilon-\eta=(R^S-N/p_H)\varepsilon$.
+For $\varepsilon$ small enough the slack in (IC$_b$), (M) and $R_b^S<R^SI$ absorbs the last three changes, whatever their sign,
+and the objective rises by $p_H\eta=N\varepsilon>0$. That contradicts optimality, so
+\begin{align}
+  R_b^F = 0. \qquad\blacksquare \label{t3e12-RF0}
+\end{align}
+The same point in one line: per unit of the bad type's mimicking utility, a reward in success buys
+$p_H/q_H>1$ units of the good type's utility and a reward in failure buys $(1-p_H)/(1-q_H)<1$. Investors
+receive the whole failure income $R^FI$: they hold the safe, information-insensitive part of the cash
+flow, i.e.\ debt. That is the pecking order.
+
+\answer{(ii)} $R_b^F=0$: moving reward from failure to success at constant expected cost leaves (IR$_l$) and the objective unchanged, relaxes (IC$_b$), and relaxes (M) by $(p_H-q_H)\delta R^S/(1-p_H)$; the slack then allows a larger, more profitable investment. Investors hold all of $R^FI$, a debt-like claim.
+
+\step{5}{Uniqueness of the separating outcome iff $\alpha\le\alpha^*$ (part (iii))} First check
+Assumption 6.4 (weak monotonic profit). If the bad type is not creditworthy, $\tilde c^{SI}$ is no funding
+and $U_l(\tilde c^{SI})=0$. Otherwise her symmetric-information terms are $\tilde I$,
+$\tilde R_b^S=B\tilde I/\Delta p$, $\tilde R_b^F=0$, with
+$q_H(R^S\tilde I-\tilde R_b^S)+(1-q_H)R^F\tilde I=\tilde I-A$. A good type on those terms works (Step~1),
+and the investors' profit is
+\begin{align}
+  U_l(\tilde c^{SI}) &= p_H(R^S\tilde I-\tilde R_b^S)+(1-p_H)R^F\tilde I-(\tilde I-A) \nonumber\\
+  &= p_H(R^S\tilde I-\tilde R_b^S)+(1-p_H)R^F\tilde I-\bigl[q_H(R^S\tilde I-\tilde R_b^S)+(1-q_H)R^F\tilde I\bigr] \nonumber\\
+  &= (p_H-q_H)\Bigl[\Bigl(R^S-\frac{B}{\Delta p}\Bigr)-R^F\Bigr]\tilde I \;\ge\; 0
+     \quad\text{iff } R^S-\frac{B}{\Delta p}\ge R^F, \label{t3e12-wmp}
+\end{align}
+which always holds when $R^F=0$ (footnote 80's case). Under Assumption 6.4:
+\begin{itemize}
+  \item Lemma 6.2: the separating allocation (Step~2 for the good type, $\tilde c^{SI}$ for the bad) is the low-information-intensity optimum;
+  \item Lemma 6.3: there is $\alpha^*$ such that this optimum is interim efficient iff $\alpha\le\alpha^*$;
+  \item if $\alpha\le\alpha^*$, Proposition 6.1(a) says the issuance game has a unique PBE, and the borrower gets the low-information-intensity optimum, i.e.\ the separating outcome;
+  \item if $\alpha>\alpha^*$, the optimum is not interim efficient: some incentive-compatible allocation that is profitable in expectation Pareto-dominates it, strictly for at least one type. By Proposition 6.1(b) that allocation's payoffs are equilibrium payoffs, so the separating outcome is not the only PBE.
+\end{itemize}
+Hence the separating outcome is the unique PBE iff $\alpha\le\alpha^*$. $\blacksquare$ When good types are
+common, a pooling contract with a small cross-subsidy to the rare bad types costs the good type less than
+the distortion she needs to separate, so both types can be made better off.
+
+\answer{(iii)} Weak monotonic profit holds (always if $R^F=0$; in general iff $R^S-B/\Delta p\ge R^F$), so the separating allocation is the low-information-intensity optimum (Lemma 6.2). It is interim efficient iff $\alpha\le\alpha^*$ (Lemma 6.3), and then it is the unique PBE outcome (Proposition 6.1(a)); for $\alpha>\alpha^*$ other, Pareto-better equilibria exist (Proposition 6.1(b)).
+
+\step{6}{Numerical check of \eqref{t3e12-USI} and \eqref{t3e12-dM}} With $q_H=0.6$, $R=3$,
+$B/\Delta p=2$, $A=1$: $q_H(R-B/\Delta p)=0.6(3-2)=0.6$, so $\tilde I=1/(1-0.6)=1/0.4=2.5$ and, with $q_HR=1.8$,
+$\tilde U_b^{SI}=1+(1.8-1)(2.5)=1+2=3=[1+0.8/0.4](1)$. With $p_H=0.8$ and $\delta R^S=0.01$, \eqref{t3e12-pert} gives
+$\delta R^F=-(0.8/0.2)(0.01)=-0.04$, and the change in (M) is $(0.6)(0.01)+(0.4)(-0.04)=0.006-0.016=-0.01=-(0.2/0.2)(0.01)$, as \eqref{t3e12-dM} predicts.
+
+\intuition Under asymmetric information the good type's problem is to give investors a claim whose value
+depends as little as possible on her type. Income in failure is worth relatively more to the bad type (she
+fails more often), so promising herself anything there invites mimicry. The good type takes her reward
+only in success and gives investors all the safe salvage value $R^FI$. Investors thus hold debt-like
+claims first, and that is the pecking order.
+
+\pitfalls
+\begin{itemize}
+  \item Writing the mimicking constraint with the bad type shirking: because $p_H-p_L=q_H-q_L$, she faces the same (IC$_b$) and works under the good type's terms, so her mimicking utility uses $q_H$.
+  \item Treating $I$ as fixed: with variable investment $I$ is a choice variable, and it is the slack created by the perturbation that lets $I$ (and the good type's utility) rise.
+  \item Using the good type's symmetric-information utility in (M): the bad type compares the good type's terms with \emph{her own} symmetric-information utility $\tilde U_b^{SI}$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~599--600): the same program (with $I$ made explicit here), the
+same perturbation argument for $R_b^F=0$, and uniqueness iff $\alpha\le\alpha^*$. The book invokes
+``Proposition 6.2''; with the excerpt copied in the list, the argument is Lemmas 6.2--6.3 and Proposition
+6.1. The book asserts that weak monotonic profit holds; \eqref{t3e12-wmp} shows it needs
+$R^S-B/\Delta p\ge R^F$, automatic in footnote 80's case $R^F=0$.
+
+\refbib{Tirole Ch.~6, \S6.2.2 Application 3 ``Pecking-Order Hypothesis'', pp.~246--249; \S3.4.1--3.4.2,
+pp.~127--128; supplementary \S6.4, pp.~264--268; Exercise 6.8, p.~278; answer pp.~599--600. Lecture
+Topic~3, pecking-order slides.}
+
+% =============================================================================
+\exsec{13. Information sharing among lenders --- Tirole 6.7, pp.~276--278}
+
+\asked (i) With the probability of talent $\alpha$ fixed, compare banks' profits with and without sharing repayment data, and show that banks prefer not to share. (ii) When the borrower chooses $\alpha$ at a convex cost, show that banks prefer to share.
+
+\approach This is the Padilla--Pagano credit-bureau model (Tirole \S6.3; lecture block 3.4). Solve the two-period game backwards, case by case. At date 2 the incumbent bank knows the date-1 outcome; without sharing, foreign banks do not, so the incumbent holds the borrower up (an informational rent); with sharing, a success is public and Bertrand competition hands the surplus to the borrower. At date 1, the stated inequalities keep foreign banks out. Then compare banks' profits; in (ii) add the borrower's choice of $\alpha$, which depends on what she keeps at date 2.
+
+\notation
+\begin{itemize}
+  \item $t=1,2$: periods; $\delta\in(0,1]$: discount factor; $I$: investment per period; $R$ / $0$: income in success / failure; market rate 0.
+  \item $p$ / $q$: success probability of a talented / untalented borrower, $pR>I>qR$ (so $R>I$); $\alpha$: probability of talent; $m\equiv\alpha p+(1-\alpha)q$.
+  \item Projects of the two dates succeed or fail together. $R_b^t$: borrower's reward in success at date $t$.
+  \item $\pi^{ns}$, $\pi^s$: a bank's expected profit without / with information sharing; $U_b^{ns}$, $U_b^s$: borrower's utility.
+  \item $C(\alpha)$: borrower's cost of reaching talent probability $\alpha$; $C'>0$, $C''>0$, $C(0)=C'(0)=0$, $C'(1)=\infty$.
+\end{itemize}
+
+\step{1}{Foreign banks do not lend at date 1 (part (i))} A foreign bank knows only $\alpha$. Its best case
+is to win the borrower at date 1 and keep her at date 2 with no competition, setting $R_b=0$ both times
+and relending only after a success (which guarantees a date-2 success). From a borrower of
+type $\theta\in\{p,q\}$ it would earn
+\begin{align}
+  g(\theta) = \theta R-I+\delta\,\theta(R-I). \label{t3e13-g}
+\end{align}
+By the statement's assumptions, $g(q)=qR-I+\delta q(R-I)<0$ and, averaging \eqref{t3e13-g} over the prior,
+\begin{align}
+  \alpha g(p)+(1-\alpha)g(q) &= [\alpha p+(1-\alpha)q]R-I+\delta[\alpha p+(1-\alpha)q](R-I) \nonumber\\
+  &= mR-I+\delta m(R-I)<0. \nonumber
+\end{align}
+It wins
+every bad type (the local bank does not lend to them, Step~2) and at most a fraction $\theta\in[0,1]$
+of the good types, so its profit is at most
+\begin{align}
+  \theta\alpha g(p)+(1-\alpha)g(q) \le \alpha g(p)+(1-\alpha)g(q) < 0. \nonumber
+\end{align}
+So foreign banks make no date-1 offers.
+
+\step{2}{The local bank lends only to the good type, at $R_b^1=0$} The local bank knows the type. Even as a
+two-period monopolist it would earn $g(q)<0$ on a bad type, so it does not lend to her. With no foreign
+competition at date 1 it makes a take-it-or-leave-it offer to the good type: $R_b^1=0$, date-1 profit $pR-I$.
+
+\step{3}{Date 2 without information sharing} Foreign banks see only that the borrower was financed at
+date 1, which reveals a good type; they assign probability $p$ to success but do not know the date-1
+outcome. The incumbent knows it, hence knows the date-2 outcome. If a foreign bank offers $R_b<R-I$, the
+incumbent, moving last, outbids it ($R_b+\varepsilon$) after a success and stays out after a failure. The
+foreign bank wins only failing borrowers and loses $I$, so it does not bid. The incumbent then offers
+$R_b^2=0$ after a success and does not lend after a failure. Each bank's profit (banks earn nothing in
+other towns) and the borrower's utility are
+\begin{align}
+  \pi^{ns} &= \alpha[pR-I+\delta p(R-I)], \label{t3e13-pins}\\
+  U_b^{ns} &= 0. \label{t3e13-Uns}
+\end{align}
+
+\step{4}{Date 2 with information sharing} All banks now see the date-1 repayment, so after a success
+everyone knows the date-2 project succeeds. With $n\ge2$ banks this is Bertrand competition: the reward
+is bid up to $R_b^2=R-I$ and date-2 profit is $0$. After a failure nobody lends. At date 1 the foreign banks
+still do not lend: with no date-2 rent their best case is $mR-I$, and since $R>I$ makes $\delta m(R-I)>0$,
+\begin{align}
+  mR-I < mR-I+\delta m(R-I) < 0 \nonumber
+\end{align}
+by the first assumption. The local bank still lends
+to the good type only, at $R_b^1=0$. Hence
+\begin{align}
+  \pi^{s} &= \alpha(pR-I), \label{t3e13-pis}\\
+  U_b^{s} &= \delta\alpha p(R-I). \label{t3e13-Us}
+\end{align}
+
+\step{5}{Banks prefer not to share} Subtracting \eqref{t3e13-pis} from \eqref{t3e13-pins},
+\begin{align}
+  \pi^{ns}-\pi^{s} = \alpha\,\delta p(R-I) > 0. \qquad\blacksquare \label{t3e13-diff}
+\end{align}
+With $\alpha$ fixed, sharing only hands the incumbent's date-2 informational rent to the borrower.
+
+\answer{(i)} Without sharing $\pi^{ns}=\alpha[pR-I+\delta p(R-I)]$ and $U_b^{ns}=0$; with sharing $\pi^s=\alpha(pR-I)$ and $U_b^s=\delta\alpha p(R-I)$. Banks lose $\alpha\delta p(R-I)>0$ by sharing, so they do not share.
+
+\step{6}{Endogenous $\alpha$: banks share (part (ii))} The banks' decision is public and is made before
+the borrower chooses $\alpha$; her net utility is the gross utility of Steps~3--4 minus $C(\alpha)$.
+Without sharing, \eqref{t3e13-Uns} gives net utility $-C(\alpha)$, maximised at
+\begin{align}
+  \alpha^{ns} = 0 \quad\Rightarrow\quad \pi^{ns} = 0\cdot[pR-I+\delta p(R-I)] = 0. \label{t3e13-ans}
+\end{align}
+With sharing, by \eqref{t3e13-Us} she solves $\max_\alpha\{\delta\alpha p(R-I)-C(\alpha)\}$. The derivative of the objective is $\delta p(R-I)-C'(\alpha)$, which is strictly decreasing ($C''>0$), positive at $\alpha=0$ (since $C'(0)=0<\delta p(R-I)$) and negative near $\alpha=1$ (since $C'(1)=\infty$). So the objective is strictly concave and its maximum is the unique interior zero of the derivative:
+\begin{align}
+  C'(\alpha^s) = \delta p(R-I), \qquad \alpha^s\in(0,1). \label{t3e13-foc}
+\end{align}
+Assuming, as the statement allows, that the conditions of (i) hold at $\alpha^s$, \eqref{t3e13-pis} gives
+\begin{align}
+  \pi^s = \alpha^s(pR-I) > 0 = \pi^{ns}, \label{t3e13-share}
+\end{align}
+so the banks choose to share information. $\blacksquare$ The borrower gains too:
+$U_b^s=\delta\alpha^sp(R-I)-C(\alpha^s)>0$, because $C'(0)=0$ makes small $\alpha$ strictly profitable.
+
+\answer{(ii)} Without sharing the borrower expects no rent, invests nothing ($\alpha^{ns}=0$) and banks earn $0$; with sharing she invests $\alpha^s$ with $C'(\alpha^s)=\delta p(R-I)$, and banks earn $\alpha^s(pR-I)>0$. Banks choose to share.
+
+\step{7}{Numerical illustration} Take $p=0.8$, $q=0.2$, $R=10$, $I=6$, $\delta=0.9$, so
+\begin{align}
+  g(p) &= (0.8)(10)-6+(0.9)(0.8)(10-6) = 2+2.88 = 4.88, \nonumber\\
+  g(q) &= (0.2)(10)-6+(0.9)(0.2)(4) = 2-6+0.72 = -3.28<0. \nonumber
+\end{align}
+The first assumption reads $m[R+\delta(R-I)]<I$, i.e.\ $m(10+3.6)<6$, so $m<6/13.6=0.441176$; with $m=0.2+0.6\alpha$ this is $\alpha<(0.441176-0.2)/0.6=0.402$. With
+$\alpha=0.3$: $\pi^{ns}=0.3(4.88)=1.464$, $\pi^s=0.3(8-6)=0.6$, $U_b^s=0.9(0.3)(0.8)(4)=0.864$. For (ii) take
+$C(\alpha)=6[-\alpha-\ln(1-\alpha)]$, which satisfies the conditions ($C(0)=0$), with
+\begin{align}
+  C'(\alpha)=6\Bigl[-1+\frac{1}{1-\alpha}\Bigr]=\frac{6\alpha}{1-\alpha}, \qquad C''(\alpha)=\frac{6}{(1-\alpha)^2}>0, \nonumber
+\end{align}
+so $C'(0)=0$ and $C'(\alpha)\to\infty$ as $\alpha\to1$.
+Then \eqref{t3e13-foc} gives
+\begin{align}
+  \frac{6\alpha}{1-\alpha}&=\delta p(R-I)=(0.9)(0.8)(4)=2.88 \nonumber\
+  6\alpha&=2.88-2.88\alpha \nonumber\
+  \alpha^s&=\frac{2.88}{8.88}=0.324324<0.402, \nonumber
+\end{align}
+$\pi^s=0.324324(2)=0.648649>0$ and $U_b^s=2.88(0.324324)-6[-0.324324-\ln(0.675676)]=0.934054-0.406307=0.527747$.
+
+\intuition Sharing default data is a trade-off between the size of the banks' markup and the size of the
+market. With talent given, it only erodes the incumbent's hold-up rent (the markup falls, the base is
+fixed), so banks keep data private. When talent is an investment, a borrower who expects to be held up
+does not invest, and the base collapses to zero. Sharing commits banks to compete after a success,
+protects the borrower's return on investing, and creates borrowers worth lending to.
+
+\pitfalls
+\begin{itemize}
+  \item Letting a foreign bank compete at date 2 without sharing: it cannot tell successful from failed borrowers and, with the incumbent moving last, it wins only the failures (adverse selection against the outsider).
+  \item Forgetting the correlation of the two projects: after a date-1 success the date-2 project succeeds for sure, which is why the date-2 rent is $\delta p(R-I)$ per good borrower.
+  \item Comparing banks' profits in (ii) at the same $\alpha$: the point of (ii) is that $\alpha$ itself responds to the sharing decision ($\alpha^{ns}=0<\alpha^s$).
+\end{itemize}
+
+\bookans Matches the book's answer (p.~599): $\pi^{ns}=\alpha[pR-I+\delta p(R-I)]$, $U_b^{ns}=0$,
+$\pi^s=\alpha(pR-I)$, $U_b^s=\delta\alpha p(R-I)$; with endogenous $\alpha$, $\alpha^{ns}=0$ and
+$C'(\alpha^*)=\delta p(R-I)$, so sharing is chosen.
+
+\refbib{Tirole Ch.~6, \S6.3 Application 4 (disclosure of past repayments, Padilla--Pagano), pp.~249--250;
+Exercise 6.7, pp.~276--278; answer p.~599. Lecture Topic~3, credit-bureau slides.}
+
+% =============================================================================
+\exsec{14. Leland--Pyle with mean-variance preferences --- Amaro de Matos 3.2.6 \#2, p.~95}
+
+\asked (a) In Leland and Pyle's model, with mean-variance utility $G[E(W_1)-\frac b2\sigma^2_{W_1}]$ and the CAPM risk adjustment $\lambda$ given in the statement, find the conditions under which the firm's debt $B$ rises with the fraction $\alpha$ of equity the managers retain.
+
+\approach This is Leland--Pyle signalling by retained ownership (Amaro de Matos \S3.2.2; lecture block 3.9). Retaining a stake is costly for a risk-averse manager because she cannot diversify, so the stake is a credible signal of $\overline X$. With mean-variance utility the two first-order conditions (3.18)--(3.19) can be solved explicitly: the CAPM term $\lambda$ cancels and only idiosyncratic risk is costly, giving a closed-form signalling schedule $X(\alpha)$. Debt does not enter the managers' wealth, so it moves with $\alpha$ only through the budget constraint with the managers' own investment held fixed (the book's ``all other factors being fixed''); differentiating $B(\alpha)$ gives the condition.
+
+\notation
+\begin{itemize}
+  \item $X=\overline X+\varepsilon$: project payoff at time 1, $E(\varepsilon)=0$, $\sigma_\varepsilon^2=\operatorname{var}(\varepsilon)$; $K$: capital required.
+  \item $\alpha\in[0,1)$: fraction retained by managers; $X(\alpha)$: payoff inferred by the market; $V(\alpha)=[X(\alpha)-\lambda]/(1+r)$: perceived value (3.15).
+  \item $B$: riskless debt (face $(1+r)B$); $r$: riskless rate; $\widetilde M$, $V_M$, $\sigma_M^2$: market payoff, value, variance; $\beta$: fraction of the market held.
+  \item $W_0$: initial wealth; $Y$: riskless holding; $\widetilde W_1$: time-1 wealth; $b>0$: risk-aversion coefficient.
+  \item $\lambda=\frac{E[M]-(1+r)V_M}{\sigma_M^2}\operatorname{cov}(\varepsilon,M)$: CAPM risk adjustment (statement).
+  \item $\sigma_u^2\equiv\sigma_\varepsilon^2-\operatorname{cov}(\varepsilon,M)^2/\sigma_M^2\ge0$: idiosyncratic variance of the project.
+  \item $E_m\equiv K-B-(1-\alpha)[V(\alpha)-B]$: managers' own money put into the firm's equity.
+\end{itemize}
+
+\assume The book gives no worked answer (it cites Leland and Pyle 1977, p.~377), so everything below is
+derived here from the \S3.2.2 excerpt. (a) $\sigma_u^2>0$ and interior $\alpha\in(0,1)$. (b) Debt is riskless,
+$(1+r)B\le X$ in every state. (c) ``All other factors being fixed, including the amount invested by the
+management in equity'' (\S3.2.2) is read from the budget constraint
+$W_0+B+(1-\alpha)[V(\alpha)-B]=K+Y+\beta V_M$: the managers' own money in the project,
+$E_m=W_0-Y-\beta V_M$, is held fixed across firms. A Remark covers the other reading.
+
+\step{1}{Debt drops out of the managers' wealth} The book's expression for $\widetilde W_1$, obtained by
+substituting (3.16), is
+\begin{align}
+  \widetilde W_1 = \alpha[\overline X+\varepsilon-X(\alpha)+\lambda]+\beta[\widetilde M-(1+r)V_M]+(W_0-K)(1+r)+X(\alpha)-\lambda, \label{t3e14-W1}
+\end{align}
+and $B$ does not appear: the $-\alpha(1+r)B$ on the firm's equity, the $(1+r)B$ of proceeds and the
+$-(1-\alpha)(1+r)B$ on the shares sold cancel. Debt is irrelevant to the managers (MM), so it is pinned
+down only by holding $E_m$ fixed (Step~6).
+
+\step{2}{Mean and variance of wealth} From \eqref{t3e14-W1}, the only random terms are $\alpha\varepsilon$ and $\beta\widetilde M$; taking expectations ($E\varepsilon=0$) and using $\operatorname{var}(\alpha\varepsilon+\beta\widetilde M)=\alpha^2\sigma_\varepsilon^2+\beta^2\sigma_M^2+2\alpha\beta\operatorname{cov}(\varepsilon,M)$,
+\begin{align}
+  E(\widetilde W_1) &= \alpha[\overline X-X(\alpha)+\lambda]+\beta[E(M)-(1+r)V_M]+(W_0-K)(1+r)+X(\alpha)-\lambda, \label{t3e14-EW}\\
+  \sigma^2_{W_1} &= \alpha^2\sigma_\varepsilon^2+\beta^2\sigma_M^2+2\alpha\beta\operatorname{cov}(\varepsilon,M). \label{t3e14-VW}
+\end{align}
+Since $G$ is increasing, the managers maximise $J\equiv E(\widetilde W_1)-\frac b2\sigma^2_{W_1}$.
+
+\step{3}{First-order condition in $\beta$ (the analogue of (3.19))} Differentiating \eqref{t3e14-EW}--\eqref{t3e14-VW} in $\beta$: $\partial E(\widetilde W_1)/\partial\beta=E(M)-(1+r)V_M$ and $\partial\sigma^2_{W_1}/\partial\beta=2\beta\sigma_M^2+2\alpha\operatorname{cov}(\varepsilon,M)$, so $\partial J/\partial\beta=0$ reads
+\begin{align}
+  E(M)-(1+r)V_M-b[\beta\sigma_M^2+\alpha\operatorname{cov}(\varepsilon,M)] &= 0, \nonumber\\
+  b\beta\operatorname{cov}(\varepsilon,M) &= \frac{E(M)-(1+r)V_M}{\sigma_M^2}\operatorname{cov}(\varepsilon,M)-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2} \nonumber\\
+  &= \lambda-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}, \label{t3e14-beta}
+\end{align}
+where the second line multiplies the first by $\operatorname{cov}(\varepsilon,M)/\sigma_M^2$ and rearranges, and the
+last uses the statement's $\lambda$.
+
+\step{4}{First-order condition in $\alpha$ (the analogue of (3.18))} Differentiating \eqref{t3e14-EW} in $\alpha$ (product rule on $\alpha[\cdot]$, plus the last term $X(\alpha)$),
+\begin{align}
+  \frac{\partial E(\widetilde W_1)}{\partial\alpha} = [\overline X-X(\alpha)+\lambda]-\alpha X'(\alpha)+X'(\alpha) = \overline X-X(\alpha)+\lambda+(1-\alpha)X'(\alpha), \nonumber
+\end{align}
+and $\partial\sigma^2_{W_1}/\partial\alpha=2\alpha\sigma_\varepsilon^2+2\beta\operatorname{cov}(\varepsilon,M)$, so $\partial J/\partial\alpha=0$ reads
+\begin{align}
+  \overline X-X(\alpha)+\lambda+(1-\alpha)X'(\alpha)-b[\alpha\sigma_\varepsilon^2+\beta\operatorname{cov}(\varepsilon,M)] = 0. \nonumber
+\end{align}
+Substituting \eqref{t3e14-beta} for $b\beta\operatorname{cov}(\varepsilon,M)$ and imposing the equilibrium condition $X(\alpha^*)=\overline X$ (so the first two terms cancel):
+\begin{align}
+  \lambda+(1-\alpha)X'(\alpha)-b\alpha\sigma_\varepsilon^2-\Bigl[\lambda-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}\Bigr] &= 0 \nonumber\\
+  (1-\alpha)X'(\alpha) &= b\alpha\Bigl[\sigma_\varepsilon^2-\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}\Bigr] \nonumber\\
+  (1-\alpha)X'(\alpha) &= b\alpha\sigma_u^2. \label{t3e14-ode}
+\end{align}
+The CAPM $\lambda$ prices the systematic risk fairly, so it cancels; only idiosyncratic risk is costly to
+retain.
+
+\step{5}{The signalling schedule} Dividing \eqref{t3e14-ode} by $1-\alpha>0$ gives $X'$. To integrate it, note
+\begin{align}
+  \frac{d}{d\alpha}[\alpha+\ln(1-\alpha)] = 1-\frac{1}{1-\alpha} = \frac{(1-\alpha)-1}{1-\alpha} = -\frac{\alpha}{1-\alpha}, \nonumber
+\end{align}
+so integrating from 0 to $\alpha$ (where $\alpha+\ln(1-\alpha)=0$ at $\alpha=0$), and using (3.15) for $V'$:
+\begin{align}
+  X'(\alpha) &= b\sigma_u^2\frac{\alpha}{1-\alpha} > 0, \label{t3e14-Xp}\\
+  X(\alpha) &= X(0)-b\sigma_u^2[\alpha+\ln(1-\alpha)], \label{t3e14-X}\\
+  V'(\alpha) &= \frac{X'(\alpha)}{1+r} = \frac{b\sigma_u^2}{1+r}\,\frac{\alpha}{1-\alpha}. \label{t3e14-Vp}
+\end{align}
+Normal demand holds: without signalling (price $V$ given, so the term $(1-\alpha)X'$ is absent and the market's $X(\alpha)-\lambda$ is replaced by $(1+r)V$), the same steps give
+$\overline X-\lambda-(1+r)V=b\alpha\sigma_u^2$, so $\alpha=[\overline X-\lambda-(1+r)V]/(b\sigma_u^2)$ falls
+with the price. Proposition 3.2.1 then agrees with \eqref{t3e14-Xp}. With costless communication
+($X'\equiv0$), \eqref{t3e14-ode} gives $\alpha=0$, so every $\alpha>0$ is over-retention (Proposition 3.2.2).
+The integration constant is set by the lowest type, which does not signal: $X(0)=\overline X_{\min}$.
+
+\step{6}{Debt as a function of $\alpha$} Holding $E_m$ fixed in its definition and solving for $B$:
+\begin{align}
+  E_m &= K-B-(1-\alpha)[V(\alpha)-B] \nonumber\\
+      &= K-B-(1-\alpha)V(\alpha)+(1-\alpha)B = K-\alpha B-(1-\alpha)V(\alpha), \nonumber\\
+  \alpha B &= K-E_m-(1-\alpha)V(\alpha), \nonumber\\
+  B(\alpha) &= \frac{K-E_m-(1-\alpha)V(\alpha)}{\alpha}. \label{t3e14-B}
+\end{align}
+
+\step{7}{When does debt increase with $\alpha$?} Differentiating \eqref{t3e14-B} with the quotient rule (the numerator's derivative is $V(\alpha)-(1-\alpha)V'(\alpha)$, the denominator's is 1),
+\begin{align}
+  B'(\alpha) &= \frac{[V(\alpha)-(1-\alpha)V'(\alpha)]\alpha-[K-E_m-(1-\alpha)V(\alpha)]}{\alpha^2} \nonumber\\
+  &= \frac{\alpha V(\alpha)+(1-\alpha)V(\alpha)-(K-E_m)-\alpha(1-\alpha)V'(\alpha)}{\alpha^2} \nonumber\\
+  &= \frac{V(\alpha)-(K-E_m)-\alpha(1-\alpha)V'(\alpha)}{\alpha^2} \nonumber\\
+  &= \frac{1}{\alpha^2}\Bigl[V(\alpha)-K+E_m-\alpha(1-\alpha)\Bigl(\frac{b\sigma_u^2}{1+r}\frac{\alpha}{1-\alpha}\Bigr)\Bigr] && \text{(substituting \eqref{t3e14-Vp})} \nonumber\\
+  &= \frac{1}{\alpha^2}\Bigl[V(\alpha)-K+E_m-\frac{b\sigma_u^2\alpha^2}{1+r}\Bigr]. \label{t3e14-Bp}
+\end{align}
+So debt rises with managerial ownership iff
+\begin{align}
+  V(\alpha)-K+E_m > \frac{b\,\sigma_u^2\,\alpha^2}{1+r}
+  \iff V(\alpha)-B(\alpha) > (1-\alpha)V'(\alpha) = \frac{b\,\sigma_u^2\,\alpha}{1+r}, \label{t3e14-cond}
+\end{align}
+where the equivalence uses $V-B=(V-K+E_m)/\alpha$ from \eqref{t3e14-B} and \eqref{t3e14-Vp}. In words: the
+NPV $V-K$ plus the managers' own equity contribution must exceed $b\sigma_u^2\alpha^2/(1+r)$, the risk
+term from the idiosyncratic risk they keep. Equivalently, the market value of equity must exceed the
+marginal cost to the managers of retaining one more unit of the firm, $b\sigma_u^2\alpha/(1+r)$. This holds
+``in most cases'' (risk aversion, idiosyncratic risk or $\alpha$ small relative to the project's value). It
+fails when managers keep a large, very risky stake in a firm with little equity value. When
+\eqref{t3e14-cond} holds, $X(\alpha)$ and $V(\alpha)$ rise with $B$ along the schedule, as the book says.
+
+\answer{(a)} With the managers' own equity contribution $E_m$ fixed, $B'(\alpha)>0$ iff $V(\alpha)-K+E_m>b\sigma_u^2\alpha^2/(1+r)$, equivalently iff the market value of equity exceeds $b\sigma_u^2\alpha/(1+r)$, where $\sigma_u^2=\sigma_\varepsilon^2-\operatorname{cov}(\varepsilon,M)^2/\sigma_M^2$ and the schedule is $X(\alpha)=X(0)-b\sigma_u^2[\alpha+\ln(1-\alpha)]$. This holds unless managers keep a large, very risky (idiosyncratically) stake in a firm with little equity value. (If instead the value of the managers' stake is held fixed, debt always rises with $\alpha$.)
+
+\emph{Remark (other reading).} If what is held fixed is the market value of the managers' stake,
+$\alpha[V(\alpha)-B]=e>0$, then $B=V(\alpha)-e/\alpha$ and $B'(\alpha)=V'(\alpha)+e/\alpha^2>0$ for every
+$\alpha$ by \eqref{t3e14-Vp}: debt always rises with $\alpha$, and the only condition is
+normal demand, which holds under mean-variance preferences.
+
+\step{8}{Numerical check} Take $b=2$, $\sigma_\varepsilon^2=0.5$, $\sigma_M^2=0.04$,
+$\operatorname{cov}(\varepsilon,M)=0.06$, $E(M)-(1+r)V_M=0.1$, $r=0.05$, $X(0)=10$, $K=8$, $E_m=1$. Then
+$\lambda=(0.1/0.04)(0.06)=0.15$ and $\sigma_u^2=0.5-0.06^2/0.04=0.5-0.09=0.41$, so $b\sigma_u^2=0.82$. At $\alpha=0.5$: \eqref{t3e14-X} gives
+$X=10-0.82(0.5+\ln0.5)=10-0.82(0.5-0.693147)=10+0.158381=10.158381$ and $V=(10.158381-0.15)/1.05=10.008381/1.05=9.531791$; \eqref{t3e14-B} gives
+$B=(8-1-0.5\times9.531791)/0.5=(7-4.765896)/0.5=4.468209$; and \eqref{t3e14-Bp}, with $b\sigma_u^2\alpha^2/(1+r)=0.82(0.25)/1.05=0.195238$, gives
+$B'=(9.531791-7-0.195238)/0.25=(2.531791-0.195238)/0.25=9.346212>0$. A type with $\overline X=X(0.5)$ that faces the schedule
+\eqref{t3e14-X} has $\partial J/\partial\alpha=0$ at $\alpha=0.5$ (the check script verifies this by finite
+differences).
+
+\intuition Retaining shares is a credible signal because it is costly in risk, and more costly for a
+manager whose firm is worth less. Mean-variance utility with CAPM pricing makes the cost explicit:
+only idiosyncratic variance matters, and the signalling slope is $b\sigma_u^2\alpha/(1-\alpha)$. Debt does
+not create value here (it drops out of wealth). It moves with $\alpha$ only because, with the managers'
+own contribution fixed, a larger retained fraction has to be financed with less outside equity and more
+debt. This is ``in most cases'', not always, because a higher-$\alpha$ firm is also worth more, and the
+extra value lowers the debt needed.
+
+\pitfalls
+\begin{itemize}
+  \item Keeping total variance $\sigma_\varepsilon^2$ in the schedule: the CAPM adjustment $\lambda$ prices systematic risk fairly and cancels, so only the idiosyncratic part $\sigma_u^2$ is a signalling cost.
+  \item Treating debt as a value-creating signal here: $B$ drops out of the managers' wealth \eqref{t3e14-W1}; the link between $B$ and $\alpha$ comes only from what is held fixed in the budget constraint.
+  \item Forgetting the equilibrium condition $X(\alpha^*)=\overline X$ when simplifying the first-order condition in $\alpha$; without it the terms $\overline X-X(\alpha)$ do not cancel and no differential equation results.
+\end{itemize}
+
+\bookans No worked answer in the book: Appendix C.3.2 (p.~260) only refers to p.~377 of Leland and Pyle
+(1977). The schedule \eqref{t3e14-X} and the condition \eqref{t3e14-cond} are derived here and rest on reading
+(c) of what is held fixed; the Remark gives the result under the other reading.
+
+\refbib{Amaro de Matos Ch.~3, \S3.2.2 ``When Managers Are Also Investors'', pp.~82--85 (equations
+(3.15)--(3.19), Propositions 3.2.1--3.2.2); Appendix C.3.2, p.~260. Lecture Topic~3, Leland--Pyle slides.}
+
+% =============================================================================
+\exsec{15. Assets in place and the negative stock-price reaction with a continuum of types --- Tirole 6.5, p.~275}
+
+\asked (i) Show that in any equilibrium the firms that issue equity to fund the deepening investment are exactly the types below some cutoff $p^*$. (ii) Show that $p^*>\underline p$; that an interior cutoff satisfies $\tau R/I=(p^*+\tau)/(m^-(p^*)+\tau)$; that $p^*<\bar p$ when the gains from investing are not too large; and that the equilibrium with the highest cutoff is best for every type. (iii) Say whether an issue announcement lowers the stock price. (iv) At an interior Pareto-dominant equilibrium, show that the volume of equity issues rises with $\tau$.
+
+\approach This is Tirole's Application 2 (assets in place and the negative stock-price reaction, \S6.2.2; Myers--Majluf in lecture block 3.5) with a continuum of types. An issuer pools with all other issuers at a single stake $R_l$, so issuing dilutes her assets in place at the pooled price; the dilution costs more the better her assets ($p$), which yields a cutoff rule. Investors' break-even over the issuing interval $[\underline p,p^*]$ gives $R_l$; indifference of the cutoff type gives the equilibrium condition. The price reaction compares total share value before and after the market learns $p\le p^*$; the comparative statics in $\tau$ use the implicit function theorem.
+
+\notation
+\begin{itemize}
+  \item $p\in[\underline p,\bar p]$: privately known success probability of assets in place, c.d.f.\ $F$, density $f>0$; $E[p]$: prior mean.
+  \item $R$: profit in success, 0 in failure; $I$: cost of the deepening investment, which raises $p$ to $p+\tau$, $\tau R>I$, $\bar p+\tau\le1$.
+  \item $R_l$: investors' stake in success (they get 0 in failure); $p^*$: issue cutoff.
+  \item $m^-(p)=E[\tilde p\mid\tilde p\le p]$, $m^+(p)=E[\tilde p\mid\tilde p\ge p]$; $0<(m^\pm)'\le1$.
+  \item $V_0$, $V_1$: total value of shares before / after the issue announcement; $H(p^*,\tau)$: equilibrium function of (iv).
+\end{itemize}
+
+\step{1}{Issuers form a lower interval (part (i))} Not issuing gives the entrepreneur $pR$. Issuing for a
+stake $R_l$ gives $(p+\tau)(R-R_l)$, so type $p$ issues iff
+\begin{align}
+  (p+\tau)(R-R_l) &\ge pR \nonumber\\
+  pR+\tau R-(p+\tau)R_l &\ge pR \nonumber\\
+  \tau R &\ge (p+\tau)R_l. \label{t3e15-issue}
+\end{align}
+In any equilibrium all issuers use the same stake: every type's payoff falls with $R_l$, so if two stakes
+were accepted every issuer would pick the smaller. The left side of \eqref{t3e15-issue} does not depend on $p$ and the right side rises with $p$ (slope $R_l>0$),
+so if type $p$ issues, every type below $p$ issues too: the issuers are the types $p\le p^*$ for some cutoff $p^*\in[\underline p,\bar p]$. $\blacksquare$
+
+\answer{(i)} Type $p$ issues iff $\tau R\ge(p+\tau)R_l$; the cost of dilution $(p+\tau)R_l$ rises with $p$, so issuers are the types $p\le p^*$.
+
+\step{2}{Break-even stake and the interior cutoff (part (ii))} Investors break even on the issuers, whose average success probability after investing is $E(\tilde p+\tau\mid\tilde p\le p^*)=m^-(p^*)+\tau$:
+\begin{align}
+  \bigl[E(\tilde p\mid\tilde p\le p^*)+\tau\bigr]R_l &= I \nonumber\\
+  R_l &= \frac{I}{m^-(p^*)+\tau}. \label{t3e15-Rl}
+\end{align}
+If $p^*<\bar p$, the cutoff type is indifferent in \eqref{t3e15-issue} (types just below issue, types just above do not, and payoffs are continuous in $p$). Substituting \eqref{t3e15-Rl} and dividing by $I$,
+\begin{align}
+  \tau R &= (p^*+\tau)\frac{I}{m^-(p^*)+\tau} \nonumber\\
+  \frac{\tau R}{I} &= \frac{p^*+\tau}{m^-(p^*)+\tau}. \label{t3e15-cut}
+\end{align}
+
+\step{3}{$p^*>\underline p$} Whatever the investors believe, they put mass only on $[\underline p,\bar p]$,
+so the stake they require is at most $I/(\underline p+\tau)$. Under that stake, \eqref{t3e15-issue} holds
+for type $\underline p$ with strict inequality:
+\begin{align}
+  (\underline p+\tau)\frac{I}{\underline p+\tau} = I < \tau R. \nonumber
+\end{align}
+By continuity it also holds strictly for a positive-measure set of types above $\underline p$. So the
+cutoff cannot be $\underline p$ (equivalently, $m^-(\underline p)=\underline p$ makes the right side of
+\eqref{t3e15-cut} equal 1, below $\tau R/I$).
+
+\step{4}{$p^*<\bar p$ when benefits are not too large} If $p^*=\bar p$ (everyone issues), then
+$m^-(\bar p)=E[p]$ and \eqref{t3e15-Rl} gives $R_l=I/(E[p]+\tau)$. Type $\bar p$ would then issue only if
+\begin{align}
+  \tau R \ge (\bar p+\tau)\frac{I}{E[p]+\tau}
+  \iff \frac{\tau R}{I} \ge \frac{\bar p+\tau}{E[p]+\tau}, \nonumber
+\end{align}
+which the assumed condition $\tau R/I<(\bar p+\tau)/(E[p]+\tau)$ rules out. Types near $\bar p$ therefore
+strictly prefer not to issue, a contradiction, so $p^*<\bar p$. An interior solution exists:
+$\varphi(p)\equiv(p+\tau)/(m^-(p)+\tau)$ is continuous, $\varphi(\underline p)=1<\tau R/I$ and
+$\varphi(\bar p)>\tau R/I$, so by the intermediate value theorem \eqref{t3e15-cut} has a root in
+$(\underline p,\bar p)$.
+
+\step{5}{The highest cutoff Pareto-dominates} Take equilibria with cutoffs $p_1^*<p_2^*$. Since
+$(m^-)'>0$, \eqref{t3e15-Rl} gives $R_{l2}<R_{l1}$. Types $p\le p_1^*$ issue in both and pay less in the
+second. Types $p\in(p_1^*,p_2^*]$ get $pR$ in the first and choose to issue in the second, so by
+\eqref{t3e15-issue} they get $(p+\tau)(R-R_{l2})\ge pR$. Types above $p_2^*$ get $pR$ in both. Investors
+break even in both. Hence the highest-cutoff equilibrium is weakly better for every type. $\blacksquare$
+(The condition $(m^-)'\le1$ does not by itself make the root unique; for a uniform $F$, $(m^-)'=\frac12$
+and the root is unique.)
+
+\answer{(ii)} $p^*>\underline p$ (the lowest type always gains from issuing); an interior cutoff solves $\tau R/I=(p^*+\tau)/(m^-(p^*)+\tau)$ with $R_l=I/(m^-(p^*)+\tau)$; $\tau R/I<(\bar p+\tau)/(E[p]+\tau)$ rules out $p^*=\bar p$; and a higher cutoff means a lower $R_l$, so the highest-cutoff equilibrium Pareto-dominates.
+
+\step{6}{Negative stock-price reaction (part (iii))} The opportunity is anticipated. Before the
+announcement, total share value is expected value net of the funds investors will contribute (they break
+even): an issuer ($p\le p^*$, probability $F(p^*)$) is worth $(p+\tau)R-I$, a non-issuer $pR$. Averaging, and using $E[p]=F(p^*)m^-(p^*)+[1-F(p^*)]m^+(p^*)$,
+\begin{align}
+  V_0 &= F(p^*)\bigl[(m^-(p^*)+\tau)R-I\bigr]+[1-F(p^*)]m^+(p^*)R \label{t3e15-V0}\\
+      &= \bigl\{F(p^*)m^-(p^*)+[1-F(p^*)]m^+(p^*)\bigr\}R+F(p^*)(\tau R-I) \nonumber\\
+      &= E[p]R+F(p^*)(\tau R-I). \nonumber
+\end{align}
+After the announcement the market knows $p\le p^*$:
+\begin{align}
+  V_1 = [m^-(p^*)+\tau]R-I. \label{t3e15-V1}
+\end{align}
+Subtracting \eqref{t3e15-V1} from \eqref{t3e15-V0},
+\begin{align}
+  V_0-V_1 = [1-F(p^*)]\Bigl\{m^+(p^*)R-\bigl[(m^-(p^*)+\tau)R-I\bigr]\Bigr\}. \label{t3e15-dV}
+\end{align}
+At an interior equilibrium, \eqref{t3e15-cut} gives $I=\tau R(m^-+\tau)/(p^*+\tau)$, so
+\begin{align}
+  (m^-+\tau)R-I &= (m^-+\tau)R\Bigl[1-\frac{\tau}{p^*+\tau}\Bigr] = (m^-+\tau)R\,\frac{p^*}{p^*+\tau}, \nonumber\\
+  V_0-V_1 &= [1-F(p^*)]R\Bigl[m^+(p^*)-p^*\,\frac{m^-(p^*)+\tau}{p^*+\tau}\Bigr]. \label{t3e15-dV2}
+\end{align}
+Since $m^+(p^*)>p^*$ and $(m^-(p^*)+\tau)/(p^*+\tau)<1$, the bracket is positive and $1-F(p^*)>0$: the
+announcement of an equity issue lowers the stock price. If everyone issues ($p^*=\bar p$, pooling), the
+factor $1-F(p^*)=0$ and there is no reaction.
+
+\answer{(iii)} Yes, at an interior equilibrium: $V_0-V_1=[1-F(p^*)]R\,[m^+(p^*)-p^*(m^-(p^*)+\tau)/(p^*+\tau)]>0$, because the announcement tells the market that $p\le p^*$. With full pooling there is no reaction.
+
+\step{7}{Comparative statics in $\tau$ (part (iv))} Define
+\begin{align}
+  H(p^*,\tau) \equiv \frac{\tau R}{I}\bigl[m^-(p^*)+\tau\bigr]-(p^*+\tau), \label{t3e15-H}
+\end{align}
+so that \eqref{t3e15-cut}, multiplied by $m^-(p^*)+\tau$ and rearranged, is $H=0$. Then $H(\underline p,\tau)=(\tau R/I)(\underline p+\tau)-(\underline p+\tau)=(\tau R/I-1)(\underline p+\tau)>0$ (using $m^-(\underline p)=\underline p$) and
+$H(\bar p,\tau)<0$ under the condition of (ii). At the highest root (the Pareto-dominant one) $H$ crosses
+from positive to negative, so $H_{p^*}=(\tau R/I)(m^-)'-1<0$ (taking the crossing to be transversal).
+From $H=0$, $(\tau R/I)(m^-+\tau)=p^*+\tau$, so
+\begin{align}
+  \frac{\tau R}{I}-1 = \frac{p^*+\tau}{m^-+\tau}-1 = \frac{p^*-m^-}{m^-+\tau}. \nonumber
+\end{align}
+Differentiating \eqref{t3e15-H} in $\tau$ (product rule on $(\tau R/I)(m^-+\tau)$) and substituting this,
+\begin{align}
+  H_\tau &= \frac RI(m^-+\tau)+\frac{\tau R}{I}-1 \nonumber\\
+         &= \frac RI(m^-+\tau)+\frac{p^*-m^-(p^*)}{m^-(p^*)+\tau} > 0. \label{t3e15-Ht}
+\end{align}
+By the implicit function theorem,
+\begin{align}
+  \frac{dp^*}{d\tau} = -\frac{H_\tau}{H_{p^*}} > 0, \label{t3e15-dp}
+\end{align}
+and the volume of equity issues, $F(p^*)I$ (the issuers are the types below $p^*$), rises with $\tau$, since
+$d[F(p^*)I]/d\tau=If(p^*)\,dp^*/d\tau>0$. $\blacksquare$ (The sign of $H_\tau$: $m^-+\tau>0$ and $p^*>m^-(p^*)$, since a truncated mean lies below the truncation point.)
+
+\answer{(iv)} $dp^*/d\tau=-H_\tau/H_{p^*}>0$, so the issue volume $F(p^*)I$ rises with $\tau$ at rate $If(p^*)\,dp^*/d\tau>0$.
+
+\step{8}{Numerical illustration (uniform $F$)} Take $p\sim U[0.1,0.5]$, $\tau=0.3$, $R=10$, $I=2.5$:
+$\tau R=3>I$, $E[p]=0.3$, and $\tau R/I=1.2<(0.8)/(0.6)=1.333333$. With $m^-(p)=(p+0.1)/2$,
+\eqref{t3e15-cut} reads $1.2[(p^*+0.1)/2+0.3]=p^*+0.3$, so $0.6p^*+0.06+0.36=p^*+0.3$, i.e.\ $0.42-0.3=0.4p^*$ and $p^*=0.12/0.4=0.3$. Then
+$R_l=2.5/(0.2+0.3)=5$, and the cutoff type is indifferent: $(0.6)(5)=3=(0.3)(10)$. Also $F(p^*)=0.5$,
+$m^+(p^*)=0.4$, $V_0=3+0.5(0.5)=3.25$, $V_1=(0.5)(10)-2.5=2.5$, and $V_0-V_1=0.75$, which matches
+\eqref{t3e15-dV2}: $(0.5)(10)[0.4-0.3(0.5)/0.6]=0.75$. For (iv), $H_{p^*}=1.2(0.5)-1=-0.4$ and
+$H_\tau=4(0.5)+0.1/0.5=2.2$, so $dp^*/d\tau=5.5$ and the issue volume $F(p^*)I=1.25$ rises at rate
+$2.5\times2.5\times5.5=34.375$.
+
+\intuition Issuing equity dilutes the entrepreneur's assets in place at the pooled price. Types whose
+assets are worth more (high $p$) lose more from that, so only types below a cutoff issue, and an issue
+announcement tells the market the firm is in the lower part of the distribution: the price drops.
+Equilibria with higher cutoffs carry less stigma (a lower $R_l$) and are better for everyone. A more
+valuable investment ($\tau$ up) makes higher types willing to accept the dilution, so the cutoff and
+the volume of issues rise.
+
+\pitfalls
+\begin{itemize}
+  \item Pricing the issue at the prior mean $E[p]$: investors know that only types $p\le p^*$ issue, so the stake uses $m^-(p^*)$.
+  \item Measuring the price reaction on the entrepreneur's stake only: as in Tirole, the reaction is the change in the \emph{total} value of shares, net of the funds investors contribute.
+  \item Writing the issue volume as $[1-F(p^*)]I$ (the book's typo): the issuers are the types \emph{below} the cutoff, so the volume is $F(p^*)I$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~597--598): cutoff rule, $R_l=I/(m^-(p^*)+\tau)$, the interior
+condition, $p^*>\underline p$, the Pareto ranking, $V_0-V_1>0$ and $dp^*/d\tau>0$. Two typos in the
+book: its stock-price item is labelled ``(ii)'' instead of (iii), and it gives the volume of issues as
+``$[1-F(p^*)]I$'', whereas the issuers are the types $p\le p^*$, so the volume is $F(p^*)I$. The conclusion
+(volume rises with $\tau$) is unaffected.
+
+\refbib{Tirole Ch.~6, \S6.2.2 Application 2 ``Assets in Place, the Negative Stock Price Reaction, and the
+Going-Public Decision'', pp.~244--245; Exercise 6.5, p.~275; answer pp.~597--598. Lecture Topic~3,
+pecking-order block.}
+
+\end{document}

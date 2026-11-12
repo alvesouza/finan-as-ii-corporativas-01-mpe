@@ -1,0 +1,756 @@
+% Worked solutions for Listas/lista-r8-governance-activism.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r8-governance-activism-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tikz}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R8 --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\dpp}{\Delta p}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R8 --- Corporate governance, control rights and investor activism}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r8-governance-activism.md}; each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-r8-governance-activism-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013). Throughout the Tirole exercises everyone is risk neutral, the rate of interest is $0$ and the entrepreneur is protected by limited liability; $\dpp\equiv p_H-p_L$.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Management opposes a hostile offer --- Ross CQ 1.14, p.~23}
+
+\asked Shares trade at \$25; a bidder offers \$35 for all shares and management immediately fights the offer. Is management acting in the shareholders' best interest, and why (or why not)?
+
+\approach This is the manager--shareholder agency problem (Ross Cap.~1, ``problemas de ag\^encia'') seen through the market for corporate control. The test is whether resisting can raise what shareholders get; anything else serves the managers' private benefits of control (jobs, perks, independence).
+
+\notation
+\begin{itemize}
+  \item $P_0=25$: pre-bid price per share; $P_b=35$: bid per share.
+  \item $V^*$: value per share management claims the firm is worth on its own (unobserved by shareholders).
+\end{itemize}
+
+\step{1}{Size of the offer} The premium over the market price is
+\begin{align}
+  \frac{P_b}{P_0}-1 &= \frac{(35)}{(25)}-1 \label{r8e1-prem}\\
+                    &= 0.40, \nonumber
+\end{align}
+a gain of $35-25=10$ per share that shareholders lose if the bid is defeated and the price returns to \$25.
+
+\step{2}{When resisting is in the shareholders' interest} Resisting helps shareholders only if it leads to a better deal: (a) management credibly expects the stand-alone value to exceed the bid, $V^*>35$, i.e.\ more than $25\times1.40=35$ per share, information the market price does not yet reflect; or (b) resistance is a bargaining tactic to make this bidder raise the price or to attract competing bidders.
+
+\step{3}{When it is not} An \emph{immediate} rejection, before any counter-offer is sought or any evidence on $V^*$ is presented, fits the agency explanation better: managers of a target usually lose their jobs and control benefits after a takeover, and those losses are not shared with shareholders. Their opposition then protects private benefits at a cost of \$10 per share to the owners.
+
+\answer{} Not necessarily. Unless management can show the firm is worth more than \$35 per share or is using resistance to extract a higher bid, opposing a 40\% premium (\$10 per share) serves the managers' interest in keeping their jobs and control, not the shareholders' --- a classic agency problem.
+
+\intuition The takeover market is a governance mechanism: a bid at a premium is the outsiders' estimate of what better management (or synergies) is worth. Managers who block it impose the cost of keeping control on the owners.
+
+\pitfalls
+\begin{itemize}
+  \item Saying ``management must accept any premium'': resistance that triggers an auction can raise the price.
+  \item Forgetting the counterfactual: if the bid fails, the price falls back to about \$25, not \$35.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Ross Cap.~1, \S1.4 ``O problema de ag\^encia e o controle da empresa'' (agency relationship, managerial goals, control by shareholders, takeovers), pp.~12--16.}
+
+% =============================================================================
+\exsec{2. Ownership structure and institutional investors --- Ross CQ 1.15, p.~23}
+
+\asked (a) With banks and other firms owning most shares in Germany and Japan, are agency problems more or less serious there than in the US, where individuals historically held most shares? (b) What does the rise of active institutional owners (mutual and pension funds) imply for agency problems and corporate control?
+
+\approach The severity of the manager--shareholder conflict depends on who has the incentive and the power to monitor. Dispersed owners free-ride on each other's monitoring; a large owner internalizes a large share of the gains (Grinblatt--Titman Result~18.2; Tirole \S9.2.1, ``concentrated ownership by a monitor with a sufficient stake improves the control of management'').
+
+\step{1}{Free riding with dispersed owners} An owner of a fraction $\alpha$ of the shares who spends $c$ to discipline management gains only $\alpha\,\Delta V$. With $\alpha$ tiny, $\alpha\,\Delta V<c$ even when $\Delta V\gg c$: nobody monitors and managers have wide discretion (US model).
+
+\step{2}{(a) Bank and cross-ownership} Banks and allied firms hold large blocks, often also lend to the firm and sit on its board. Their $\alpha$ is large, they have inside information, so the classical manager--shareholder agency problem is \emph{less} serious. But two other conflicts become \emph{more} serious: (i) controlling vs.\ minority shareholders (the controlling owner may extract private benefits; Ross Cap.~1 lists this conflict explicitly); (ii) the bank's interests as creditor (low risk, continued lending) differ from those of shareholders, and cross-holdings can entrench managers who protect each other.
+
+\step{3}{(b) Institutional activism} Large funds hold blocks big enough to make monitoring pay and can coordinate votes (proxy fights, board pressure, CEO removals such as American Express in 1993 in Grinblatt--Titman). Implications: weaker manager--shareholder agency problems, more effective shareholder control, more pressure on boards and pay. Limits: fund managers are themselves agents of their clients, may be short-term oriented, and still capture only part of the gains they create.
+
+\answer{(a)} Less serious for the manager--shareholder conflict (large owners monitor), but more serious for the conflict between controlling and minority shareholders and for creditor-oriented decisions.
+\answer{(b)} Active institutions reduce the free-rider problem and strengthen shareholder control over management, at the cost of a new layer of agency (the funds' own managers).
+
+\intuition Concentration trades one agency problem for another: it solves ``who watches the managers'' and creates ``who watches the watcher''.
+
+\pitfalls
+\begin{itemize}
+  \item Answering ``less serious'' without naming the new conflict (majority vs.\ minority, bank as creditor).
+  \item Treating institutions as owners with no agency problem of their own.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Ross Cap.~1, \S1.4, pp.~12--16, and the chapter summary (conflicts between controlling and non-controlling shareholders), p.~22; Grinblatt--Titman Ch.~18, \S18.1 ``Can Financial Institutions Mitigate the Free-Rider Problem?'' and ``Changes in Corporate Governance'', pp.~632--633; Tirole \S9.2.1, p.~359.}
+
+% =============================================================================
+\exsec{3. Determinants of ownership concentration --- Grinblatt \& Titman 18.2, p.~653}
+
+\asked List and explain the forces that make a firm more or less likely to have a large shareholder.
+
+\approach Ownership concentration is chosen by trading off the benefits of a large stake (better monitoring, control benefits, incentives of founders) against its private costs (undiversified risk, wealth needed), within the legal and regulatory environment (Results~18.2, 18.3, 18.5).
+
+\step{1}{Benefits of a large stake} (i) \emph{Monitoring gains}: a large holder captures enough of the value created by disciplining management (Result~18.2); these gains are larger where management is hard to monitor and agency problems severe (Demsetz--Lehn: media firms) and in uncertain environments where discretion must be granted and watched (Result~18.5). (ii) \emph{Private benefits of control}: larger for firms with intangible assets (``more fun to own a controlling interest in a baseball team or a movie studio \ldots\ than a copper mine'', p.~636). (iii) \emph{Founders' incentives}: retaining shares commits the entrepreneur to effort and fetches a better IPO price (Result~18.3); selling may signal bad news, and capital-gains taxes discourage selling.
+
+\step{2}{Costs of a large stake} The large holder bears firm-specific risk alone while sharing the gains with everyone. In Example~18.1 a \$60m investment buys 20\% of a firm worth $60/0.20=300$; adding \$60m of value is $60/300=20\%$ over five years,
+\begin{align}
+  (1.20)^{1/5}-1 &= 0.0371, \label{r8e3-ann}
+\end{align}
+under 4\% a year --- too little to compensate for holding a stock twice as volatile as the market. Larger and riskier firms therefore tend to have less concentrated ownership (a given stake costs more wealth and more risk).
+
+\step{3}{Institutions} Weak legal protection of outside shareholders forces concentration (only a controlling owner is safe from expropriation); regulation that caps institutional stakes (Glass--Steagall, the 5\% limit on funds) keeps ownership dispersed in the US, while German and Japanese banks hold large blocks.
+
+\answer{} Concentration is higher when monitoring gains and private control benefits are large (hard-to-monitor, uncertain, intangible-asset firms; founder-led firms), when the firm is small and less risky (cheaper to hold an undiversified block), and when legal protection of minorities is weak or institutions are allowed to hold blocks; it is lower when diversification costs dominate.
+
+\intuition Every shareholder benefits from good management, but only the large holder pays for it in lost diversification; ownership is less concentrated than efficiency alone would dictate.
+
+\pitfalls
+\begin{itemize}
+  \item Listing only benefits (monitoring) and forgetting the diversification cost that is borne privately.
+  \item Ignoring the legal environment, which the chapter stresses across countries.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Grinblatt--Titman Ch.~18, \S18.1 (Example~18.1, Result~18.2), pp.~631--634; \S18.2 (Result~18.3), pp.~634--636; Result~18.5, p.~639.}
+
+% =============================================================================
+\exsec{4. A law against blockholders' private benefits --- Grinblatt \& Titman 18.5, p.~653}
+
+\asked How would a law that makes it harder for large outside shareholders to extract private benefits from partial control change their incentive to monitor management?
+
+\approach The large shareholder bears the full cost of monitoring but receives only its pro-rata share of the value created (free-rider problem, Result~18.2). Private benefits of control are part of what makes monitoring worthwhile for him. Removing them lowers the return to monitoring.
+
+\notation
+\begin{itemize}
+  \item $\alpha$: blockholder's fraction of shares; $\Delta V$: increase in firm value from monitoring; $c$: private cost of monitoring; $b_p$: private benefit he can extract.
+\end{itemize}
+
+\step{1}{Monitoring condition} The blockholder monitors iff
+\begin{align}
+  \alpha\,\Delta V + b_p &\ge c. \label{r8e4-ic}
+\end{align}
+Illustration: $\alpha=0.10$, $\Delta V=50$, $c=8$. Without private benefits, $\alpha\Delta V=(0.10)(50)=5<8$: no monitoring, although the other shareholders would gain $(0.90)(50)=45$. With $b_p=4$, $5+4=9\ge 8$: he monitors, and the others gain $45-4=41$ net of what he extracts. The smallest private benefit that sustains monitoring is $c-\alpha\Delta V=8-5=3$.
+
+\step{2}{Effect of the law} The law lowers $b_p$. By \eqref{r8e4-ic}, monitoring falls (and fewer investors find it worth building a block). Minority shareholders gain because less is diverted per unit of monitoring, but lose the value monitoring created.
+
+\step{3}{Net effect} The net effect is ambiguous: if private benefits are mostly ``compensation'' for monitoring (as in the example), the law reduces firm value; if they are mostly diversion with little monitoring behind them (Barclay--Holderness--Pontiff: closed-end funds with large holders trade at larger discounts), the law raises value. Private benefits also bias the blockholder's recommendations (compare Tirole's blockholder benefit $\xi$ in Exercise~12).
+
+\answer{} It weakens outside blockholders' incentive to monitor: their pro-rata gain $\alpha\Delta V$ alone often falls short of the monitoring cost, and private benefits fill the gap. Minorities face less diversion but also less monitoring; the effect on firm value is ambiguous.
+
+\intuition Private benefits are a ``wage'' for the public good of monitoring. Taxing the wage reduces the supply of the public good.
+
+\pitfalls
+\begin{itemize}
+  \item Concluding the law is unambiguously good for minorities.
+  \item Forgetting that the blockholder bears all of $c$ but gets only $\alpha$ of $\Delta V$.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Grinblatt--Titman Ch.~18, \S18.1 (free-rider problem, Result~18.2), pp.~631--632; closed-end fund evidence, p.~636.}
+
+% =============================================================================
+\exsec{5. Board control and debt ratios --- Grinblatt \& Titman 18.4, p.~653}
+
+\asked Rank the likely debt ratios of three otherwise similar firms: (1) board controls investment, operations and financing; (2) board controls only financing; (3) board controls almost nothing.
+
+\approach Managers prefer less debt than shareholders because debt raises the risk of bankruptcy (job loss) and limits discretion; shareholders value debt as a disciplining device (Results~18.6--18.7, Jensen's free cash flow). Who sets financing, and whether other tools of control exist, determines leverage.
+
+\step{1}{Firm 3 (management in control)} Management chooses financing in its own interest: low debt. Lowest debt ratio.
+
+\step{2}{Firm 2 (board controls financing only)} The board cannot watch investments directly, so it uses leverage as the substitute: fixed payments drain free cash and the threat of bankruptcy deters value-destroying projects. Example~18.3 shows the mechanics: after a \$100m start, a second \$100m project is worth $250$, $175$ or $125$ (vs.\ $50$ without it). It is positive-NPV in the good and medium states ($175-50-100=25>0$) and negative in the bad state ($125-50-100=-25$). Senior debt $F$ with new money junior raises funds iff $V_{\text{with}}-F\ge 100$:
+\begin{align}
+  175-F \ge 100 &\iff F\le 75, \label{r8e5-up}\\
+  125-F < 100 &\iff F> 25, \label{r8e5-lo}
+\end{align}
+so any $F\in(25,75]$ lets the firm invest only when it should. All-senior debt ($F=100$) leaves $175-100=75<100$ in the medium state and blocks a good project. Highest debt ratio.
+
+\step{3}{Firm 1 (board controls everything)} The board can veto bad projects directly, so debt need not discipline; leverage is set by the usual trade-off (taxes vs.\ distress costs). Intermediate debt ratio, above firm 3's (managers' aversion to debt is overridden) and below firm 2's (no disciplining premium).
+
+\answer{} Debt ratio: firm 2 $>$ firm 1 $>$ firm 3. Mehran's evidence (leverage rises with outside-shareholder influence and managerial ownership) supports Result~18.6.
+
+\intuition Debt is a control right ``in disguise'': when the board cannot control investment, it controls the cash that would finance it.
+
+\pitfalls
+\begin{itemize}
+  \item Ranking firm 1 highest because ``the board has most control'': with direct control, debt has less disciplining work to do.
+  \item Pushing leverage too high: too much senior debt creates debt overhang and kills positive-NPV projects.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Grinblatt--Titman Ch.~18, \S18.4 ``Capital Structure and Managerial Control'' (Results~18.6--18.8, Example~18.3), pp.~639--642.}
+
+% =============================================================================
+\exsec{6. Proxy contests: contenders vote for themselves --- Amaro de Matos 8.2.6 \#10, p.~223}
+
+\asked Show that in the Harris--Raviv model both the incumbent and the rival vote their own shares for themselves whatever their private information about who is the more able manager.
+
+\approach In a control contest a contender's shares pay $\alpha_j E_i(D)$, with $i$ the ability of whoever controls; control also yields private benefits $K$. If the worst payoff in control beats the best payoff out of control, self-voting is (weakly) dominant whatever the beliefs. Harris and Raviv assume exactly what is needed (stated in the book's answer, p.~278): $E_2(D)+K_2(D)\ge E_1(D)$.
+
+\notation
+\begin{itemize}
+  \item $j\in\{I,R\}$: incumbent, rival; $\alpha_j\in(0,1)$: fraction of the equity held by $j$ ($\alpha_I(D)$, $\alpha_R(D)$ in the model).
+  \item $E_i(D)$: value of equity under a management of ability $i\in\{1,2\}$, $E_1>E_2$; $K_i(D)\ge 0$: control benefits of a manager of ability $i$, with $K_2$ the smaller one (worst case).
+\end{itemize}
+
+\step{1}{Payoffs} If $j$ wins control and has ability $i$, he gets $\alpha_jE_i(D)+K_i(D)$; if he loses, the other contender's ability $i'$ applies and he gets $\alpha_jE_{i'}(D)$. His private signal only changes his beliefs about $i$ and $i'$.
+
+\step{2}{Worst case in control vs.\ best case out of control} The lowest in-control payoff is $\alpha_jE_2+K_2$; the highest out-of-control payoff is $\alpha_jE_1$. Their difference is
+\begin{align}
+  (\alpha_jE_2+K_2)-\alpha_jE_1 &= K_2-\alpha_j(E_1-E_2) \label{r8e6-diff}\\
+  &\ge (E_1-E_2)-\alpha_j(E_1-E_2) \qquad\text{(using } K_2\ge E_1-E_2\text{)} \nonumber\\
+  &= (1-\alpha_j)(E_1-E_2) > 0. \nonumber
+\end{align}
+
+\step{3}{Voting} A vote matters only when it is pivotal. In every pivotal event, \eqref{r8e6-diff} says winning beats losing for any realization of abilities, hence for any beliefs: voting for oneself is a dominant strategy for $I$ and for $R$. Numbers: $E_1=100$, $E_2=80$, $K_2=25$ ($80+25\ge100$), $\alpha=0.3$: worst in control $0.3(80)+25=49$ $>$ best out of control $0.3(100)=30$. If instead $K_2=5$, then $0.3(80)+5=29<30$: an incumbent who believed the rival more able would vote for the rival.
+
+\answer{} Under $E_2+K_2\ge E_1$, $\alpha_jE_2+K_2-\alpha_jE_1\ge(1-\alpha_j)(E_1-E_2)>0$, so each contender prefers control in every state and votes for himself regardless of his signal.
+
+\intuition Private benefits of control swamp the cash-flow stake: owning $\alpha_j<1$ of the equity, a contender internalizes only part of the value lost by an inferior management, but all of the control benefits. That is why the model treats the contenders' votes as fixed and lets the passive shareholders ($q_1$, $q_2$) decide.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing payoffs for the same ability in and out of control: the right comparison is worst-in vs.\ best-out, because the signal is private.
+  \item Forgetting the factor $\alpha_j$: the needed condition is $K_2\ge\alpha_j(E_1-E_2)$, implied by the assumption since $\alpha_j\le1$.
+\end{itemize}
+\bookans Matches the book's answer (p.~278), which uses the same assumption and comparison.
+\refbib{Amaro de Matos \S8.2.4 ``The Choice of Takeover Methods'', pp.~214--218; App.~C, p.~278.}
+
+% =============================================================================
+\exsec{7. The large shareholder: premium, cutoff and firm value --- Amaro de Matos 8.1.5 \#5, p.~205}
+
+\asked (a)--(c) As the large shareholder's stake $\alpha$ rises, what happens to the premium $\pi^*(\alpha)$, the cutoff improvement $Z^c(\alpha)$ above which he bids, and firm value $V(\alpha,q)$? Then, with bid cost $c=0$ and $Z\sim U[0,1]$, solve for $\pi^*$ and $Z^c$ and verify.
+
+\approach Shleifer--Vishny: the small shareholders tender only if the premium covers the expected improvement conditional on a bid; the blockholder free-rides less the more he owns, since he needs to buy only $\tfrac12-\alpha$ shares. Monotone comparative statics follow from (8.2)--(8.3); the uniform case gives closed forms.
+
+\notation
+\begin{itemize}
+  \item $\alpha\in[0,\tfrac12)$: $L$'s stake; $Z\in(0,Z_{\max}]$: improvement, cdf $F$; $\pi$: premium over $q$; $c\ge0$: cost of the bid.
+  \item $I$: research intensity (probability of drawing a $Z$), cost $c(I)$ with $c'>0$, $c''>0$.
+  \item $h(\pi,\alpha)\equiv E[Z\mid Z\ge(1-2\alpha)\pi+2c]$: expected improvement given that $L$ bids.
+\end{itemize}
+
+\step{1}{(a) The premium} By (8.3) shareholders tender iff $\pi\ge h(\pi,\alpha)$, and $L$ picks the smallest such $\pi$:
+\begin{align}
+  \pi^*(\alpha) &= \min\{\pi:\ \pi\ge h(\pi,\alpha)\}. \label{r8e7-pistar}
+\end{align}
+For fixed $\pi$, the threshold $(1-2\alpha)\pi+2c$ falls as $\alpha$ rises, and the conditional mean of a positive variable above a lower threshold is lower: $h$ is decreasing in $\alpha$. So the set $\{\pi:\pi\ge h(\pi,\alpha)\}$ expands as $\alpha$ rises and its minimum cannot rise: $\pi^*$ is decreasing in $\alpha$.
+
+\step{2}{(b) The cutoff} $L$ bids iff (8.2) holds at $\pi^*$, i.e.\ $Z\ge Z^c$ with
+\begin{align}
+  Z^c(\alpha) &= (1-2\alpha)\pi^*(\alpha)+2c. \label{r8e7-zc}
+\end{align}
+Both factors $(1-2\alpha)$ and $\pi^*(\alpha)$ fall with $\alpha$, so $Z^c$ falls: a larger blockholder bids for smaller improvements.
+
+\step{3}{(c) Firm value} $V=q+I^*\int_{Z^c}^{Z_{\max}}Z\,dF(Z)$, since $\{1-F(Z^c)\}E[Z\mid Z\ge Z^c]=\int_{Z^c}Z\,dF$. A lower $Z^c$ adds positive improvements to the integral. Research: $L$'s expected gain per unit of $I$ is
+\begin{align}
+  G(\alpha) &= \int_{Z^c}^{Z_{\max}}\big[\tfrac12Z-(\tfrac12-\alpha)\pi^*-c\big]dF(Z) \nonumber\\
+  &= \int_{Z^c}^{Z_{\max}}\tfrac12\,(Z-Z^c)\,dF(Z) \qquad\text{(by \eqref{r8e7-zc}, } (\tfrac12-\alpha)\pi^*+c=\tfrac12Z^c\text{)}, \label{r8e7-G}
+\end{align}
+with $dG/dZ^c=-\tfrac12[1-F(Z^c)]<0$. Since $Z^c$ falls with $\alpha$, $G$ rises; the first-order condition $c'(I^*)=G(\alpha)$ with $c''>0$ gives $I^*$ increasing. Both factors raise $V$: Proposition~8.1.1.
+
+\step{4}{Uniform case, $c=0$} With $Z\sim U[0,1]$, $E[Z\mid Z\ge z]=(1+z)/2$. At the minimum in \eqref{r8e7-pistar} the condition binds, so $\pi^*=(1+Z^c)/2$, and \eqref{r8e7-zc} with $c=0$ gives $Z^c=(1-2\alpha)\pi^*$. Substituting the first into the second:
+\begin{align}
+  Z^c &= (1-2\alpha)\frac{1+Z^c}{2} \nonumber\\
+  2Z^c &= (1-2\alpha)+(1-2\alpha)Z^c \nonumber\\
+  Z^c\big[2-(1-2\alpha)\big] &= 1-2\alpha \nonumber\\
+  Z^c(\alpha) &= \frac{1-2\alpha}{1+2\alpha}=\frac{0.5-\alpha}{0.5+\alpha}, \label{r8e7-zcu}\\
+  \pi^*(\alpha) &= \frac12\Big(1+\frac{1-2\alpha}{1+2\alpha}\Big)=\frac12\cdot\frac{2}{1+2\alpha}=\frac{1}{1+2\alpha}. \label{r8e7-piu}
+\end{align}
+Check that it is the minimum: $h(\pi)=\tfrac12[1+(1-2\alpha)\pi]$, and $\pi\ge h(\pi)\iff\pi(1+2\alpha)/2\ge\tfrac12\iff\pi\ge1/(1+2\alpha)$.
+
+\step{5}{Verify the comparative statics} Differentiating \eqref{r8e7-piu} and \eqref{r8e7-zcu}:
+\begin{align}
+  \frac{d\pi^*}{d\alpha} &= -\frac{2}{(1+2\alpha)^2}<0, \label{r8e7-dpi}\\
+  \frac{dZ^c}{d\alpha} &= \frac{-2(1+2\alpha)-2(1-2\alpha)}{(1+2\alpha)^2}=-\frac{4}{(1+2\alpha)^2}=-\frac{1}{(0.5+\alpha)^2}<0. \label{r8e7-dzc}
+\end{align}
+Value: $\{1-F(Z^c)\}E[Z\mid Z\ge Z^c]=(1-Z^c)\frac{1+Z^c}{2}=\frac{1-(Z^c)^2}{2}$, increasing as $Z^c$ falls; and \eqref{r8e7-G} gives $G=\tfrac12\int_{Z^c}^1(Z-Z^c)dZ=\tfrac14(1-Z^c)^2$, also increasing. Numbers:
+\begin{center}
+\begin{tabular}{ccccc}
+\toprule
+$\alpha$ & $Z^c$ & $\pi^*$ & $(1-Z^{c2})/2$ & $G=\tfrac14(1-Z^c)^2$\\
+\midrule
+$0$ & $1$ & $1$ & $0$ & $0$\\
+$0.1$ & $0.8/1.2=2/3$ & $1/1.2=0.8333$ & $5/18=0.2778$ & $1/36=0.0278$\\
+$0.2$ & $0.6/1.4=3/7$ & $1/1.4=0.7143$ & $20/49=0.4082$ & $4/49=0.0816$\\
+\bottomrule
+\end{tabular}
+\end{center}
+With $c(I)=0.1\,I^2/2$, $I^*=G/0.1$: $I^*=0.2778$ and $0.8163$, so $V-q=I^*(1-Z^{c2})/2=0.0772$ at $\alpha=0.1$ and $0.3332$ at $\alpha=0.2$. At $\alpha=0$, $Z^c=1=Z_{\max}$: no takeover ever happens (Grossman--Hart).
+
+\answer{(a)} $\pi^*(\alpha)$ decreases in $\alpha$; uniform case $\pi^*=1/(1+2\alpha)$, $d\pi^*/d\alpha=-2/(1+2\alpha)^2$.
+\answer{(b)} $Z^c(\alpha)$ decreases; uniform case $Z^c=(0.5-\alpha)/(0.5+\alpha)$, $dZ^c/d\alpha=-1/(0.5+\alpha)^2$.
+\answer{(c)} $V(\alpha,q)$ increases (more takeovers, larger expected improvement, more research $I^*$); uniform case $V=q+I^*(\alpha)\,[1-Z^c(\alpha)^2]/2$ with $I^*$ increasing.
+
+\intuition The blockholder already owns the gains on $\alpha$ of the shares, so he needs to buy fewer shares at a premium and can afford to bid for smaller improvements. The small holders still demand the full expected improvement ($\pi^*=E[Z\mid\text{bid}]$), but that expectation falls as bids become more frequent.
+
+\pitfalls
+\begin{itemize}
+  \item Treating $\pi$ as fixed: it is the conditional expectation of $Z$ given that a bid happens, and that conditioning set moves with $\alpha$.
+  \item Mixing the bid cost $c$ in (8.2) with the research cost $c(I)$: ``$c=0$'' refers to the bid cost.
+\end{itemize}
+\bookans Matches the book's answer (pp.~271--272): $Z^c=(0.5-\alpha)/(0.5+\alpha)$, $\pi^*=1/(1+2\alpha)$, $\partial\pi^*/\partial\alpha=-2/(1+2\alpha)^2$, $\partial Z^c/\partial\alpha=-1/(0.5+\alpha)^2$. (The book's condition (C.7) prints ``$Z-(1-2\alpha)-2c$'', dropping the factor $\pi$; the solution uses $(1-2\alpha)\pi$ as in (8.3).) Parts (a)--(c) are referred to Shleifer--Vishny (1986); Steps 1--3 supply the argument.
+\refbib{Amaro de Matos \S8.1.2 ``The Role of a Large Shareholder'', pp.~196--199; App.~C, pp.~271--272.}
+
+% =============================================================================
+\exsec{8. When investor control makes financing harder --- Tirole 10.5, p.~420}
+
+\asked (i) The financing condition in the basic fixed-investment model. (ii) With a ``damage control'' action under entrepreneur control: write the two incentive constraints and show that pledgeable income is unchanged if $\nu B/\dpp\le\gamma$ and lower otherwise. (iii) Under investor control, derive the financing condition $p_H[R-B/(\dpp-\nu)]\ge I-A$ and conclude.
+
+\approach Pledgeable income is the expected return that can go to investors while keeping (IC$_b$). Control matters through the incentive constraint: here the action helps only after misbehavior, so whoever holds it changes the \emph{deviation} payoff, not the equilibrium payoff. Investor control, usually a way to raise pledgeable income (Aghion--Bolton), now insures the entrepreneur against her own shirking.
+
+\notation
+\begin{itemize}
+  \item $R_b$: entrepreneur's reward in case of success; $\mathcal P$: pledgeable income; $\nu>0$: rise in success probability when damage control follows misbehavior; $\gamma>0$: its private cost to the entrepreneur.
+  \item Assume $\nu<\dpp$ (otherwise no reward can deter shirking under investor control).
+\end{itemize}
+
+\step{1}{(i) Basic model} (IC$_b$): $p_HR_b\ge p_LR_b+B$, i.e.\ $R_b\ge B/\dpp$. Investors receive $p_H(R-R_b)$, maximal at $R_b=B/\dpp$:
+\begin{align}
+  \mathcal P_1 &= p_H\Big(R-\frac{B}{\dpp}\Big) \ge I-A. \label{r8e8-P1}
+\end{align}
+
+\step{2}{(ii) Entrepreneur control: the two constraints} If she behaves she never takes the action (it leaves $p_H$ unchanged and costs $\gamma$). If she misbehaves she may add it. Behaving must beat both deviations:
+\begin{align}
+  p_HR_b &\ge p_LR_b+B, \label{r8e8-ic1}\\
+  p_HR_b &\ge (p_L+\nu)R_b+B-\gamma. \label{r8e8-ic2}
+\end{align}
+Rearranging \eqref{r8e8-ic2}: $(\dpp-\nu)R_b\ge B-\gamma$.
+
+\step{3}{(ii) Does \eqref{r8e8-ic2} bind?} At the minimum reward of \eqref{r8e8-ic1}, $R_b=B/\dpp$, the left side of \eqref{r8e8-ic2} minus its right side is
+\begin{align}
+  p_H\frac{B}{\dpp}-(p_L+\nu)\frac{B}{\dpp}-B+\gamma &= \dpp\frac{B}{\dpp}-\nu\frac{B}{\dpp}-B+\gamma \nonumber\\
+  &= \gamma-\nu\frac{B}{\dpp}. \label{r8e8-slack}
+\end{align}
+If $\nu B/\dpp\le\gamma$, \eqref{r8e8-ic2} holds at $R_b=B/\dpp$ and $\mathcal P=\mathcal P_1$. If $\nu B/\dpp>\gamma$, the reward must rise to $R_b=(B-\gamma)/(\dpp-\nu)$, which exceeds $B/\dpp$ because
+\begin{align}
+  \frac{B-\gamma}{\dpp-\nu}>\frac{B}{\dpp} \iff \dpp(B-\gamma)>B(\dpp-\nu) \iff \nu B>\gamma\dpp, \nonumber
+\end{align}
+so $\mathcal P=p_H[R-(B-\gamma)/(\dpp-\nu)]<\mathcal P_1$.
+
+\step{4}{(iii) Investor control} Investors take damage control in every case (weakly dominant: it never lowers their income). The entrepreneur then bears $\gamma$ whether she behaves or not:
+\begin{align}
+  p_HR_b-\gamma &\ge (p_L+\nu)R_b+B-\gamma \label{r8e8-ic3}\\
+  (\dpp-\nu)R_b &\ge B, \nonumber\\
+  \mathcal P_2 &= p_H\Big(R-\frac{B}{\dpp-\nu}\Big)\ge I-A. \label{r8e8-P2}
+\end{align}
+Since $B/(\dpp-\nu)>B/\dpp$, $\mathcal P_2<\mathcal P_1$; and the NPV falls by $\gamma$ (the action is taken on the equilibrium path, where it does nothing).
+
+\step{5}{Numbers} $p_H=0.8$, $p_L=0.5$ ($\dpp=0.3$), $B=0.6$, $R=5$, $\nu=0.1$, $I-A=2$. $B/\dpp=2$, $\mathcal P_1=0.8(5-2)=2.4$; $\nu B/\dpp=0.2$. With $\gamma=0.25\ge0.2$: $\mathcal P=2.4$. With $\gamma=0.15<0.2$: $R_b=(0.6-0.15)/(0.3-0.1)=2.25$, $\mathcal P=0.8(5-2.25)=2.2$. Investor control: $B/(\dpp-\nu)=0.6/0.2=3$, $\mathcal P_2=0.8(5-3)=1.6<2\le2.2$: financed under entrepreneur control, not under investor control.
+
+\answer{(i)} $p_H(R-B/\dpp)\ge I-A$.
+\answer{(ii)} Constraints \eqref{r8e8-ic1}--\eqref{r8e8-ic2}; $\mathcal P=\mathcal P_1$ if $\nu B/\dpp\le\gamma$, $\mathcal P=p_H[R-(B-\gamma)/(\dpp-\nu)]<\mathcal P_1$ otherwise.
+\answer{(iii)} $p_H[R-B/(\dpp-\nu)]\ge I-A$; investor control lowers both NPV (by $\gamma$) and pledgeable income, so it can make financing impossible.
+
+\intuition Damage control is insurance against shirking. When investors hold it they cannot commit not to use it, so misbehavior becomes less costly to the entrepreneur and she must be paid more to behave. Control rights help investors only when the action they will take does not soften the manager's punishment.
+
+\pitfalls
+\begin{itemize}
+  \item Writing only one IC under entrepreneur control: the relevant deviation is shirking \emph{plus} damage control.
+  \item Forgetting $\gamma$ on both sides of \eqref{r8e8-ic3}: under investor control it is borne regardless of effort and cancels.
+\end{itemize}
+\bookans Matches the book's answer (p.~613): $\mathcal P_1$; (2) $p_HR_b\ge(p_L+\nu)R_b+B-\gamma$; $\mathcal P_2=p_H[R-B/(\dpp-\nu)]$.
+\refbib{Tirole \S10.2.1, pp.~389--391 (pledgeable income and control); Answers, p.~613.}
+
+% =============================================================================
+\exsec{9. Limited versus extended investor control --- Tirole 10.7, p.~421}
+
+\asked Investors always get control, either limited (action $\tau_A,\gamma_A$) or extended ($\tau_B>\tau_A$, $\gamma_B>\gamma_A$), with $\tau_AR-\gamma_A>\tau_BR-\gamma_B$. When is each chosen? And when is entrepreneur control ruled out?
+
+\approach Aghion--Bolton logic (\S10.2.1): the entrepreneur maximizes NPV (her utility, since investors break even) subject to the investors' breakeven. Control is a currency: more investor control raises pledgeable income but costs NPV. She hands over the least control that gets the project financed.
+
+\notation
+\begin{itemize}
+  \item $j\in\{A,B\}$; $\mathcal P_j=(p_H+\tau_j)(R-B/\dpp)$: pledgeable income; $U_j=(p_H+\tau_j)R-I-\gamma_j$: NPV; $A_j\equiv I-\mathcal P_j$: minimum net worth.
+\end{itemize}
+
+\step{1}{Incentives are unaffected} The action raises success probability uniformly, so (IC$_b$) stays $\dpp R_b\ge B$ and investors get at most $(p_H+\tau_j)(R-B/\dpp)$. Investors in control always take the action (they share the gain, bear no cost).
+
+\step{2}{Ranking} NPV: $U_A-U_B=(\tau_AR-\gamma_A)-(\tau_BR-\gamma_B)>0$. Pledgeable income: $\mathcal P_B-\mathcal P_A=(\tau_B-\tau_A)(R-B/\dpp)>0$, hence $A_B<A_A$.
+
+\step{3}{Choice} The entrepreneur takes limited control whenever it is financeable; extended only when it is the sole route:
+\begin{align}
+  \text{limited:}&\quad (p_H+\tau_A)\Big(R-\frac{B}{\dpp}\Big)\ge I-A \iff A\ge A_A, \label{r8e9-lim}\\
+  \text{extended:}&\quad (p_H+\tau_B)\Big(R-\frac{B}{\dpp}\Big)\ge I-A>(p_H+\tau_A)\Big(R-\frac{B}{\dpp}\Big) \iff A_B\le A<A_A, \label{r8e9-ext}
+\end{align}
+no financing if $A<A_B$; in each case the chosen NPV must be $\ge0$. (As in footnote~10 of \S10.2.1, randomizing between the two degrees could leave investors exactly at breakeven.)
+
+\step{4}{Ruling out entrepreneur control} Entrepreneur control gives NPV $p_HR-I$ and income $p_H(R-B/\dpp)$. If $\tau_AR-\gamma_A\ge0$, limited investor control has (weakly) higher NPV \emph{and} strictly higher pledgeable income, so it dominates: a sufficient condition. (Entrepreneur control may lose even if $\tau_AR<\gamma_A$, because it may not attract funding.)
+
+\step{5}{Numbers} $p_H=0.6$, $p_L=0.35$, $B=1$ ($B/\dpp=4$), $R=12$, $I=7$, $\tau_A=0.1$, $\gamma_A=0.5$, $\tau_B=0.2$, $\gamma_B=1.8$ ($\tau_AR-\gamma_A=0.7>0.6=\tau_BR-\gamma_B$). $\mathcal P_A=0.7(8)=5.6$, $\mathcal P_B=0.8(8)=6.4$, so $A_A=7-5.6=1.4$, $A_B=7-6.4=0.6$; $U_A=8.4-7-0.5=0.9$, $U_B=9.6-7-1.8=0.8$. Limited control for $A\ge1.4$, extended for $0.6\le A<1.4$, none below $0.6$. Entrepreneur control ($\mathcal P_E=4.8$, needs $A\ge2.2$, NPV $0.2$) is dominated since $\tau_AR-\gamma_A=0.7\ge0$.
+
+\answer{} Limited investor control iff $(p_H+\tau_A)(R-B/\dpp)\ge I-A$; extended iff that fails but $(p_H+\tau_B)(R-B/\dpp)\ge I-A$; otherwise no financing. Sufficient for ruling out entrepreneur control: $\tau_AR\ge\gamma_A$.
+
+\intuition Strong balance sheets buy autonomy: firms with more net worth give up fewer control rights (bond covenants), weaker ones give up more (bank loans, venture capital).
+
+\pitfalls
+\begin{itemize}
+  \item Choosing the regime with higher pledgeable income whenever feasible: the entrepreneur maximizes NPV, and income only needs to cover $I-A$.
+  \item Letting $\tau$ enter the incentive constraint: it raises $p_H$ and $p_L$ equally.
+\end{itemize}
+\bookans Matches the book's answer (pp.~613--614), including the sufficient condition $\tau_AR-\gamma_A\ge0$.
+\refbib{Tirole \S10.2.1 ``The Aghion--Bolton Model'', pp.~389--391; Answers, pp.~613--614.}
+
+% =============================================================================
+\exsec{10. Control and incentives: complements or substitutes --- Tirole 10.6, pp.~420--421}
+
+\asked (i) Financing condition of the basic model. (ii) With a profit-enhancing action that raises success to $p_H+\tau_H$ (effort) or $p_L+\tau_L$ (shirking) at disutility $\gamma>\max(\tau_L,\tau_H)R$: pledgeable income under entrepreneur and investor control, and when investor control raises it.
+
+\approach As in Exercise~8 (Tirole 10.5, Part~0 of the block), control affects pledgeable income through the incentive constraint. Here the action is not orthogonal to effort: its effect differs across effort levels by $\Delta\tau$, which adds to or subtracts from the incentive wedge $\dpp$.
+
+\notation
+\begin{itemize}
+  \item $\Delta\tau\equiv\tau_H-\tau_L$; assume $\dpp+\Delta\tau>0$; $\mathcal P_{EC}$, $\mathcal P_{IC}$: pledgeable income under entrepreneur and investor control.
+\end{itemize}
+
+\step{1}{(i)} As in \eqref{r8e8-P1}: $p_H(R-B/\dpp)\ge I-A$.
+
+\step{2}{(ii) Entrepreneur control} With $R_b\le R$, $\tau_HR_b\le\tau_HR<\gamma$, so with effort she does not take the action: $(p_H+\tau_H)R_b-\gamma<p_HR_b$. Shirking with the action is also worse than shirking without it: $(p_L+\tau_L)R_b+B-\gamma<p_LR_b+B$ because $\tau_LR_b<\gamma$. Only $\dpp R_b\ge B$ matters:
+\begin{align}
+  \mathcal P_{EC} &= p_H\Big(R-\frac{B}{\dpp}\Big). \label{r8e10-PEC}
+\end{align}
+
+\step{3}{(ii) Investor control} Investors always take the action (it raises success under either effort). Then
+\begin{align}
+  (p_H+\tau_H)R_b-\gamma &\ge (p_L+\tau_L)R_b+B-\gamma \nonumber\\
+  (\dpp+\Delta\tau)R_b &\ge B, \nonumber\\
+  \mathcal P_{IC} &= (p_H+\tau_H)\Big(R-\frac{B}{\dpp+\Delta\tau}\Big). \label{r8e10-PIC}
+\end{align}
+
+\step{4}{When does investor control help?} If $\Delta\tau\ge0$: $B/(\dpp+\Delta\tau)\le B/\dpp$ and $p_H+\tau_H>p_H$, so $\mathcal P_{IC}>\mathcal P_{EC}$ (given $R>B/\dpp$). If $\Delta\tau<0$, solve $\mathcal P_{IC}>\mathcal P_{EC}$ for $\Delta\tau$:
+\begin{align}
+  R-\frac{B}{\dpp+\Delta\tau} &> \frac{p_H}{p_H+\tau_H}\Big(R-\frac{B}{\dpp}\Big) \nonumber\\
+  \frac{B}{\dpp+\Delta\tau} &< \frac{(p_H+\tau_H)R-p_HR+p_HB/\dpp}{p_H+\tau_H}=\frac{\tau_HR+p_HB/\dpp}{p_H+\tau_H} \nonumber\\
+  \dpp+\Delta\tau &> \frac{B(p_H+\tau_H)}{\tau_HR+p_HB/\dpp}. \label{r8e10-thr}
+\end{align}
+The right side is below $\dpp$ iff $Bp_H+B\tau_H<\dpp\tau_HR+p_HB$, i.e.\ iff $B<\dpp R$ (true whenever financing is possible at all): investor control helps unless substitutability is strong enough, $\Delta\tau<\Delta\tau^*<0$.
+
+\step{5}{Numbers} $p_H=0.6$, $p_L=0.35$, $B=1$, $R=10$, $\tau_H=0.05$, $\gamma=1.5$. $\mathcal P_{EC}=0.6(10-4)=3.6$. Threshold \eqref{r8e10-thr}: $\dpp+\Delta\tau>0.65/(0.5+2.4)=0.2241$, i.e.\ $\Delta\tau^*=-0.0259$. With $\Delta\tau=-0.05$ ($\tau_L=0.10$): $\mathcal P_{IC}=0.65(10-1/0.2)=3.25<3.6$. With $\Delta\tau=0$: $0.65(6)=3.9$; with $\Delta\tau=0.02$: $0.65(10-1/0.27)=4.0926$.
+
+\answer{(i)} $p_H(R-B/\dpp)\ge I-A$.
+\answer{(ii)} $\mathcal P_{EC}=p_H(R-B/\dpp)$, $\mathcal P_{IC}=(p_H+\tau_H)[R-B/(\dpp+\Delta\tau)]$. Investor control raises pledgeable income always if $\Delta\tau\ge0$ (complements or separability), and if $\Delta\tau<0$ only when $\dpp+\Delta\tau>B(p_H+\tau_H)/(\tau_HR+p_HB/\dpp)$.
+
+\intuition An action that pays off mostly when the manager shirks ($\Delta\tau<0$) cushions shirking; investor control then weakens incentives (Exercise~8 is the extreme case $\tau_H=0$, $\tau_L=\nu$). When the action pays off mostly with effort, it sharpens incentives and investor control is doubly useful.
+
+\pitfalls
+\begin{itemize}
+  \item Using $(p_H+\tau_H)-(p_L+\tau_L)=\dpp$: that is the separable case only.
+  \item Forgetting that $\gamma$ cancels in the investor-control IC.
+\end{itemize}
+\bookans Matches the book's answer (p.~613); the explicit threshold \eqref{r8e10-thr} is derived here (the book only says the condition ``may fail if $\Delta\tau$ is sufficiently negative'').
+\refbib{Tirole \S10.2.1, pp.~389--391; Answers, p.~613.}
+
+% =============================================================================
+\exsec{11. Public debt, bank debt and junk bonds --- Tirole 9.1, p.~379}
+
+\asked Show that, under the stated inequalities, there are thresholds $A_1<A_2<A_3$ such that the firm issues high-quality public debt ($A\ge A_3$), borrows from a monitor ($A_2\le A<A_3$), issues junk bonds ($A_1\le A<A_2$), or does not invest ($A<A_1$).
+
+\approach Active monitoring (\S9.2.1): a monitor at cost $c$ cuts the private benefit from $B$ to $b$, lowering the agency rent and raising pledgeable income. New here: the project is positive-NPV even with shirking, so ``junk'' finance that lets her shirk is a third option. Each option has a feasibility threshold in $A$ and a utility (= NPV, since all investors break even); she picks the best feasible one.
+
+\notation
+\begin{itemize}
+  \item $U^3_b,U^2_b,U^1_b$: entrepreneur's utility with high-quality debt, monitoring, junk; $R_m$, $I_m$: monitor's stake and contribution.
+\end{itemize}
+
+\step{1}{High-quality public debt} She must behave unmonitored: $\dpp R_b\ge B$ and $p_H(R-R_b)\ge I-A$. With $R_b=B/\dpp$, feasible iff
+\begin{align}
+  A\ge A_3 &\equiv I-p_H\Big(R-\frac{B}{\dpp}\Big), \qquad U^3_b=p_HR-I. \label{r8e11-A3}
+\end{align}
+
+\step{2}{Monitored finance} With abundant monitoring capital, $R_m=c/\dpp$ (from (9.5)) and $I_m=p_HR_m-c$ (9.6). Uninformed investors' condition (9.7) with $R_b=b/\dpp$:
+\begin{align}
+  p_H\Big(R-\frac{b}{\dpp}-\frac{c}{\dpp}\Big) &\ge I-A-\Big(p_H\frac{c}{\dpp}-c\Big) \nonumber\\
+  p_H\Big(R-\frac{b}{\dpp}\Big) &\ge I-A+c \nonumber\\
+  A\ge A_2 &\equiv I+c-p_H\Big(R-\frac{b}{\dpp}\Big), \qquad U^2_b=p_HR-I-c. \label{r8e11-A2}
+\end{align}
+
+\step{3}{Junk bonds} She shirks ($\dpp R_b<B$), success probability $p_L$, and investors break even at $p_L(R-R_b)=I-A$. Her utility is $p_LR_b+B-A=p_LR_b+B-(I-p_L(R-R_b))$, i.e.
+\begin{align}
+  U^1_b &= p_LR+B-I. \nonumber
+\end{align}
+The largest repayment is $p_LR$ (at $R_b=0$; she can keep any extra cash), so
+\begin{align}
+  A\ge A_1 &\equiv I-p_LR. \label{r8e11-A1}
+\end{align}
+
+\step{4}{Ordering of thresholds} Subtracting,
+\begin{align}
+  A_3-A_2 &= p_H\frac{B}{\dpp}-p_H\frac{b}{\dpp}-c = p_H\frac{B-b}{\dpp}-c>0, \label{r8e11-32}\\
+  A_2-A_1 &= c-p_HR+p_H\frac{b}{\dpp}+p_LR = c-\Big[\dpp R-p_H\frac{b}{\dpp}\Big]>0, \label{r8e11-21}
+\end{align}
+both by the first assumption.
+
+\step{5}{Ordering of utilities} $U^3_b-U^2_b=c>0$, $U^2_b-U^1_b=\dpp R-c-B>0$ by the second assumption, and $U^1_b>0$ by $p_LR+B>I$. Since a cheaper form of finance is preferred whenever feasible, and feasibility sets are nested ($A_1<A_2<A_3$), the pattern in the statement follows; for $A<A_1$ nothing is feasible.
+
+\step{6}{Numbers} $p_H=0.8$, $p_L=0.5$, $R=7$, $B=0.9$, $b=0.6$, $c=0.6$, $I=4$ (checks: $5.6>4.4>4$; $0.8>0.6>0.5$; $2.1>1.5$). $A_3=4-0.8(7-3)=0.8$, $A_2=4.6-0.8(7-2)=0.6$, $A_1=4-3.5=0.5$; $U^3_b=1.6$, $U^2_b=1.0$, $U^1_b=0.4$; $R_m=2$, $I_m=1.0=p_Lc/\dpp$.
+
+\answer{} $A_1=I-p_LR<A_2=I+c-p_H(R-b/\dpp)<A_3=I-p_H(R-B/\dpp)$, with utilities $p_HR-I>p_HR-I-c>p_LR+B-I>0$; the firm uses the cheapest feasible source.
+
+\intuition Strong balance sheets borrow on the market; intermediate ones pay for monitoring (bank debt); weak ones can only borrow by letting the manager take private benefits, which the market prices as low-quality (junk) debt.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting $I_m$: the monitor co-invests $p_HR_m-c$, which is why the condition reads $I-A+c$.
+  \item Writing junk utility as $p_LR-I$: the private benefit $B$ is part of her payoff.
+\end{itemize}
+\bookans Matches the book's answer (pp.~606--607): same $A_1,A_2,A_3$ and $U^3_b>U^2_b>U^1_b>0$.
+\refbib{Tirole \S9.2.1 ``Benefit of Activism'', pp.~356--359; Answers, pp.~606--607.}
+
+% =============================================================================
+\exsec{12. A large minority blockholder --- Tirole 10.3, pp.~419--420}
+
+\asked (i) Predict which modification is adopted in each of the three states, given the entrepreneur's proposal, the blockholder's seconding or counterproposal, and the uninformed majority's vote. (ii) Add a state where both prefer the value-decreasing action, and predict.
+
+\approach A cheap-talk/voting game: the uninformed majority (control: $s_3>\tfrac12$) infers the state from agreement or disagreement between two informed parties with biases ($\gamma$ for the entrepreneur, $\xi$ for the blockholder), then picks the proposal with the higher expected value. The blockholder's stake $s_2$ aligns him with investors only if $\xi$ is small. Monitoring by a large shareholder is valuable as long as its private benefit does not bias it.
+
+\notation
+\begin{itemize}
+  \item Friendly modification ($+\tau$), hostile ($-\mu$); payoffs relative to status quo. Entrepreneur: $s_1R\tau$ (friendly), $-s_1R\mu\mp\gamma$ (hostile). Blockholder: $s_2R\tau$; $-s_2R\mu$ (+$\xi$ in state 3). Majority: $s_3R\tau$, $-s_3R\mu$.
+  \item State probabilities: $\beta$, $(1-\beta)\kappa$, $(1-\beta)(1-\kappa)$; $V_E$, $V_L$: majority's expected value (per unit $s_3R$) of following the entrepreneur's or the blockholder's proposal after a disagreement.
+\end{itemize}
+
+\step{1}{Preferences} Entrepreneur: in state 1 hostile beats friendly iff $\gamma-s_1R\mu>s_1R\tau$, i.e.\ $\gamma>(\tau+\mu)s_1R$ (assumed); so she ranks hostile $>$ friendly $>$ status quo. In states 2--3 hostile costs her $\gamma$: friendly $>$ status quo $>$ hostile. Blockholder: friendly in states 1--2; in state 3 hostile iff $\xi>(\tau+\mu)s_2R$.
+
+\step{2}{Aligned blockholder, $\xi\le(\tau+\mu)s_2R$} He always backs the friendly action: he seconds in states 2--3 and counters in state 1. Disagreement reveals state 1 and the majority follows him. Outcome: friendly ($+\tau$) in all states.
+
+\step{3}{Biased blockholder, $\xi>(\tau+\mu)s_2R$: truthful play} Entrepreneur proposes her favourite; agreement occurs in state 2 only, disagreement in states 1 and 3, where the entrepreneur's proposal is hostile in state 1 and friendly in state 3, the blockholder's the reverse. Hence
+\begin{align}
+  V_E &= -\beta\mu+(1-\beta)(1-\kappa)\tau, \label{r8e12-VE}\\
+  V_L &= \beta\tau-(1-\beta)(1-\kappa)\mu, \label{r8e12-VL}
+\end{align}
+and the majority takes $\max\{V_E,V_L,0\}$ (dividing by the disagreement probability does not change the ranking).
+
+\step{4}{Which equilibrium} (a) If $V_L$ is the max: outcome friendly in states 1--2, hostile in state 3. The entrepreneur is indifferent in state 1 (her proposal is overruled either way), so truthful play is an equilibrium. (b) If $V_E$ is the max: hostile in state 1, friendly in states 2--3. (c) If $0$ is the max, truthful play breaks down: after disagreement the status quo is chosen, so in state 1 the entrepreneur prefers to propose friendly ($s_1R\tau>0$), which the blockholder seconds, and in state 3 the blockholder prefers to second friendly ($s_2R\tau>0$). The outcome is friendly in \emph{all} states; disagreement is off the path, and the status quo there is optimal for any belief $q$ on state 1 with $\tau/(\tau+\mu)\le q\le\mu/(\tau+\mu)$, an interval that contains the prior posterior $\beta/[\beta+(1-\beta)(1-\kappa)]$ exactly when $V_E\le0$ and $V_L\le0$.
+
+\step{5}{Numbers} $\tau=0.1$, $\mu=0.2$, $\kappa=0.5$. $\beta=0.6$: $V_E=-0.12+0.02=-0.10$, $V_L=0.06-0.04=0.02$: case (a). $\beta=0.3$: $V_E=-0.06+0.035=-0.025$, $V_L=0.03-0.07=-0.04$: case (c), friendly everywhere (posterior $0.3/0.65=0.46\in[1/3,2/3]$).
+
+\step{6}{(ii) Collusive state 4} In state 4 the entrepreneur gets $\gamma$ and the blockholder $\xi$ from the hostile action, so both rank it first: she proposes it, he seconds. Agreement now pools state 2 (friendly) with state 4 (hostile). With probabilities $\pi_2,\pi_4$, the majority rubber-stamps an agreed proposal iff
+\begin{align}
+  \pi_2\tau-\pi_4\mu &\ge 0. \label{r8e12-agree}
+\end{align}
+If it holds, the hostile action passes in state 4 (collusion against the minority); if not, the majority rejects joint recommendations and loses $\tau$ in state 2 too. With $\pi_2=0.2$: $\pi_4=0.05$ gives $0.02-0.01=0.01>0$ (adopt), $\pi_4=0.15$ gives $-0.01<0$ (reject).
+
+\answer{(i)} Aligned blockholder: friendly in all states. Biased blockholder: agreement (state 2) $\Rightarrow$ friendly; disagreement $\Rightarrow$ the majority follows whichever of $V_E$, $V_L$ in \eqref{r8e12-VE}--\eqref{r8e12-VL} is larger and positive; if both are negative, both informed parties prefer to agree on the friendly action and it is adopted in every state.
+\answer{(ii)} Management and blockholder jointly push the value-decreasing action in state 4; agreement stops certifying good proposals, and the minority either accepts it (when $\pi_2\tau\ge\pi_4\mu$) or rejects all joint proposals.
+
+\intuition A blockholder is valuable as a second, independent opinion. Private benefits ($\xi$) make his opinion biased, and collusion with management destroys its information value: the minority can no longer tell a good joint proposal from a self-dealing one.
+
+\pitfalls
+\begin{itemize}
+  \item Reading $-\gamma$ in state 1 as a cost: it is a private \emph{benefit} for the entrepreneur.
+  \item Forgetting that the majority conditions on agreement or disagreement, not on the state.
+\end{itemize}
+\bookans The book (p.~612) gives the truthful equilibrium and the majority's choice $\max\{-\beta\mu+\tau(1-\kappa),\ \beta\tau-\mu(1-\beta)(1-\kappa),\ 0\}$. Its first term omits the factor $(1-\beta)$ on $\tau$ (the probability of state 3 is $(1-\beta)(1-\kappa)$), compare \eqref{r8e12-VE}; and when the maximum is $0$ the truthful profile is not an equilibrium (Step 4c). Part (ii) is not answered in the book.
+\refbib{Tirole \S9.2.1, pp.~356--359 (active monitoring); \S10.2 (control rights), pp.~389--393; Answers, p.~612.}
+
+% =============================================================================
+\exsec{13. Uncertain managerial horizon and control rights --- Tirole 10.8, pp.~421--422}
+
+\asked Interpret $(p_H+\tau)B/\dpp\ge\gamma$. (i) Write the entrepreneur's utility (and why it differs from social value), the pledgeable income and the breakeven condition. (ii) Show $y=1$ and find when the project is undertaken (financed and wanted by the entrepreneur).
+
+\approach Aghion--Bolton with two possible managers. Investor control takes the action ($+\tau$, cost $\gamma$ to the manager in place). The entrepreneur's utility is the NPV \emph{minus} the rent of the replacement manager, who is not party to the initial contract; so control over the replacement is cheap for her.
+
+\notation
+\begin{itemize}
+  \item $\lambda$: probability she quits; $x$, $y$: probabilities of investor control with the entrepreneur and with the new manager; $\rho_1=p_HR$, $\rho_0=p_H(R-B/\dpp)$, $\rho_0^+=(p_H+\tau)(R-B/\dpp)$.
+\end{itemize}
+
+\step{1}{The assumption} Any manager must get $R_b\ge B/\dpp$. Under investor control the new manager's payoff is $(p_H+\tau)R_b-\gamma\ge(p_H+\tau)B/\dpp-\gamma$; the assumption says it is $\ge0$: the cashless replacement accepts the job even though investors will impose $\gamma$ on him.
+
+\step{2}{(i) Pledgeable income and breakeven} With $R_b=B/\dpp$ for whichever manager runs the firm,
+\begin{align}
+  \mathcal P(x,y) &= (1-\lambda)(p_H+\tau x)\Big(R-\frac{B}{\dpp}\Big)+\lambda(p_H+\tau y)\Big(R-\frac{B}{\dpp}\Big)\ge I-A. \label{r8e13-P}
+\end{align}
+
+\step{3}{(i) Entrepreneur's utility} She is paid only if she stays: her gross payoff is $(1-\lambda)[(p_H+\tau x)R_b-\gamma x]$. Investors break even, $\mathcal P=I-A$ with her $R_b$ chosen accordingly, so subtracting her outlay $A$:
+\begin{align}
+  U_b &= (1-\lambda)\big[(p_H+\tau x)R-\gamma x\big]+\lambda(p_H+\tau y)\Big(R-\frac{B}{\dpp}\Big)-I. \label{r8e13-Ub}
+\end{align}
+Social value adds the new manager's rent:
+\begin{align}
+  S &= (1-\lambda)\big[(p_H+\tau x)R-\gamma x\big]+\lambda\big[(p_H+\tau y)R-\gamma y\big]-I, \nonumber\\
+  S-U_b &= \lambda\Big[(p_H+\tau y)\frac{B}{\dpp}-\gamma y\Big]\ge0. \label{r8e13-gap}
+\end{align}
+
+\step{4}{(ii) $y=1$} From \eqref{r8e13-Ub} and \eqref{r8e13-P},
+\begin{align}
+  \frac{\partial U_b}{\partial y} &= \lambda\tau\Big(R-\frac{B}{\dpp}\Big)>0,\qquad \frac{\partial\mathcal P}{\partial y}=\lambda\tau\Big(R-\frac{B}{\dpp}\Big)>0: \nonumber
+\end{align}
+investor control over the replacement raises both her utility (the cost $\gamma$ falls on the new manager's rent) and pledgeable income. So $y=1$.
+
+\step{5}{(ii) Choice of $x$} $\partial U_b/\partial x=(1-\lambda)(\tau R-\gamma)<0$ while $\partial\mathcal P/\partial x=(1-\lambda)\tau(R-B/\dpp)>0$: set $x$ as low as financing allows. With $y=1$, $\mathcal P(0,1)=(1-\lambda)\rho_0+\lambda\rho_0^+$.
+\begin{itemize}
+  \item If $(1-\lambda)\rho_0+\lambda\rho_0^+\ge I-A$: $x=0$, and she invests iff $U_b\ge0$, i.e.\ $(1-\lambda)\rho_1+\lambda\rho_0^+\ge I$.
+  \item Otherwise $x$ solves
+  \begin{align}
+    (1-\lambda)\rho_0+\lambda\rho_0^++(1-\lambda)\tau x\Big(R-\frac{B}{\dpp}\Big) &= I-A, \label{r8e13-x}
+  \end{align}
+  feasible iff $x\le1$, i.e.\ $\rho_0^+\ge I-A$; and she invests iff $U_b\ge0$ at that $x$.
+\end{itemize}
+Since $\rho_0^+<I$, $U_b\ge0$ with $x=0$ requires $\lambda\le(\rho_1-I)/(\rho_1-\rho_0^+)$: a long expected horizon.
+
+\step{6}{Numbers} $p_H=0.6$, $\dpp=0.25$, $B=0.5$ ($B/\dpp=2$), $R=10$, $\tau=0.1$, $\gamma=1.2$, $I=5.8$, $\lambda=0.2$. Assumptions: $\gamma=1.2>\tau R=1$; $(0.7)(2)=1.4\ge1.2$; $\rho_1=6>5.8>\rho_0^+=5.6$; $\rho_0=4.8$. $\mathcal P(0,1)=0.8(4.8)+0.2(5.6)=4.96$. With $A=1.5$ ($I-A=4.3$): $x=0$, $U_b=0.8(6)+1.12-5.8=0.12\ge0$; social value $0.16$, the gap $0.2(1.4-1.2)=0.04$ is the new manager's rent. With $A=0.5$ ($I-A=5.3$): $0.64x=5.3-4.96$, $x=0.53125$, $U_b=0.8(6-0.2\times0.53125)+1.12-5.8=0.035\ge0$: undertaken. Here $x=0$ works for $A\ge5.8-4.96=0.84$, and $\lambda\le(6-5.8)/(6-5.6)=0.5$.
+
+\answer{(i)} $U_b$ in \eqref{r8e13-Ub}; it is social value minus the replacement manager's rent \eqref{r8e13-gap}. Pledgeable income and breakeven: \eqref{r8e13-P}.
+\answer{(ii)} $y=1$. If $(1-\lambda)\rho_0+\lambda\rho_0^+\ge I-A$: $x=0$ and the project goes ahead iff $(1-\lambda)\rho_1+\lambda\rho_0^+\ge I$. Otherwise $x\in(0,1]$ from \eqref{r8e13-x}, which requires $\rho_0^+\ge I-A$, and the project goes ahead iff $U_b\ge0$ at that $x$.
+
+\intuition The entrepreneur keeps control for herself (she bears $\gamma$) but happily gives investors control over her successor, whose disutility she does not bear and who gets a rent anyway. This fits founders who keep control while in office but leave strong board rights for the succession.
+
+\pitfalls
+\begin{itemize}
+  \item Equating $U_b$ with NPV: the replacement manager's rent is a leakage from her point of view.
+  \item Forgetting the second condition: financing feasible does not mean $U_b\ge0$.
+\end{itemize}
+\bookans Matches the book's answer (p.~614). The book's equation for $x$ prints $(1-\lambda)\rho_0+\lambda\rho_0^++\tau x(R-B/\dpp)=I-A$, dropping the factor $(1-\lambda)$ on the $x$ term; from \eqref{r8e13-P} the factor belongs there, as in \eqref{r8e13-x}.
+\refbib{Tirole \S10.2.1, pp.~389--391 (and footnote 10 on random control); Answers, p.~614.}
+
+% =============================================================================
+\exsec{14. A continuum of control rights --- Tirole 10.9, p.~422}
+
+\asked (i) Optimal rule $x(t,g)$ with binding breakeven. (ii) Show $\tau$ and $\gamma$ rise as $A$ falls. (iii) How to implement $x$ by allocating rights. (iv) With common $g>0$, show $d^2\gamma/d\tau^2>0$.
+
+\approach Section~10.2.2's program with a continuum of rights: maximize NPV subject to breakeven and (IC$_b$). The Lagrangian is linear in each $x(t,g)$, so the solution is bang-bang with a cutoff line through the origin whose slope rises with the shadow price of funds.
+
+\notation
+\begin{itemize}
+  \item $\mu\ge0$: multiplier on the breakeven constraint; $k(\mu)\equiv R+\mu(R-B/\dpp)$; $H$, $h$: cdf and density of $t$ in (iv).
+\end{itemize}
+
+\step{1}{(i) $R_b=B/\dpp$} $R_b$ does not enter the NPV and lowering it relaxes the breakeven; with a binding breakeven, (IC$_b$) binds.
+
+\step{2}{(i) Lagrangian} With $R_b=B/\dpp$,
+\begin{align}
+  \mathcal L &= \big[p_H+E_F(tx)\big]R-I-E_F(gx)+\mu\Big\{\big[p_H+E_F(tx)\big]\Big(R-\frac{B}{\dpp}\Big)-(I-A)\Big\}. \nonumber
+\end{align}
+The derivative with respect to $x(t,g)$ at each point is
+\begin{align}
+  \frac{\partial\mathcal L}{\partial x(t,g)} &= tR-g+\mu t\Big(R-\frac{B}{\dpp}\Big) = t\,k(\mu)-g, \nonumber
+\end{align}
+so
+\begin{align}
+  x(t,g)=1 &\iff g\le k(\mu)\,t. \label{r8e14-rule}
+\end{align}
+In the $(t,g)$ plane: take every modification below the line $g=k(\mu)t$ through the origin, slope $k(\mu)\ge R$; $\mu$ is pinned down by $[p_H+\tau(\mu)](R-B/\dpp)=I-A$. First best is $\mu=0$, slope $R$.
+
+\step{3}{(ii) Comparative statics} Raising $\mu$ steepens the line. For $t>0$ the accepted set $\{g\le kt\}$ grows: added points have $t>0$ (raise $\tau$) and $g\in(k_{\text{old}}t,k_{\text{new}}t]$, $g>0$ (raise $\gamma$). For $t<0$ it shrinks: removed points have $t<0$ (removing them raises $\tau$) and $g\le kt<0$ (removing negative costs raises $\gamma$). So $\tau(\mu)$, $\gamma(\mu)$ increase. Lower $A$ requires higher pledgeable income $[p_H+\tau](R-B/\dpp)$, hence higher $\tau$, hence higher $\mu$: $\tau$ and $\gamma$ rise as $A$ falls.
+
+\step{4}{(iii) Implementation} $x=1$, $t>0$: give the right to investors (they gain, bear no cost). $x=1$, $t<0$ (so $g\le kt<0$, a private benefit): give it to the entrepreneur, who takes it since $|g|\ge k|t|>|t|R\ge|t|R_b$. $x=0$, $t>0$ ($g>kt>tR_b$): entrepreneur, who declines. $x=0$, $t<0$: investors, who decline. No renegotiation: where the rule departs from first best ($x=1$, $t>0$, $tR<g\le kt$; or $x=0$, $t<0$, $kt<g\le tR$) the decision sits with investors and the entrepreneur, having invested all her cash, cannot compensate them (footnote~17, \S10.2.2).
+
+\step{5}{(iv) Common $g>0$} The rule \eqref{r8e14-rule} becomes $t\ge t^*\equiv g/k(\mu)>0$, so
+\begin{align}
+  \gamma &= g\,[1-H(t^*)], \qquad \tau=\int_{t^*}^{\infty}t\,dH(t). \nonumber
+\end{align}
+Differentiating in $t^*$: $d\gamma/dt^*=-g\,h(t^*)$ and $d\tau/dt^*=-t^*h(t^*)$. Hence
+\begin{align}
+  \frac{d\gamma}{d\tau} &= \frac{-g\,h(t^*)}{-t^*h(t^*)}=\frac{g}{t^*}, \label{r8e14-d1}\\
+  \frac{d^2\gamma}{d\tau^2} &= \frac{d}{dt^*}\Big(\frac{g}{t^*}\Big)\cdot\frac{dt^*}{d\tau} = \Big(-\frac{g}{t^{*2}}\Big)\Big(-\frac{1}{t^*h(t^*)}\Big)=\frac{g}{t^{*3}h(t^*)}>0. \label{r8e14-d2}
+\end{align}
+
+\step{6}{Numbers} $g=1$, $t\sim U[-0.1,0.3]$ ($h=2.5$), $R=10$, $B/\dpp=4$, $\mu=0.5$: $k=10+0.5(6)=13$, $t^*=1/13=0.0769$, $\gamma=2.5(0.3-1/13)=0.5577$, $\tau=1.25(0.09-1/169)=0.1051$; $d\gamma/d\tau=13$, $d^2\gamma/d\tau^2=1/(t^{*3}\cdot2.5)=878.8$ (finite differences agree). At $\mu=1$, $k=16$: $\tau$ and $\gamma$ both higher.
+
+\answer{(i)} $x(t,g)=1$ iff $tR-g+\mu t(R-B/\dpp)\ge0$, i.e.\ below the line $g=[R+\mu(R-B/\dpp)]t$; $R_b=B/\dpp$.
+\answer{(ii)} Lower $A$ $\Rightarrow$ higher $\mu$ $\Rightarrow$ steeper line $\Rightarrow$ $\tau$ and $\gamma$ both increase.
+\answer{(iii)} $t>0$ rights to investors if $x=1$, to the entrepreneur if $x=0$; $t<0$ rights to the entrepreneur if $x=1$, to investors if $x=0$; not renegotiated.
+\answer{(iv)} $d\gamma/d\tau=g/t^*$ and $d^2\gamma/d\tau^2=g/[t^{*3}h(t^*)]>0$.
+
+\intuition Control rights are sold to investors in order of ``value to investors per unit of pain to the entrepreneur''. The cheapest ones go first, so each extra unit of pledgeable probability costs the entrepreneur more private cost: a convex cost of raising funds through control.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting the $t<0$ half-plane: the financing need also makes her give up some value-reducing perks she would otherwise take.
+  \item Treating $x$ as continuous in $\mu$ without noting that the line passes through the origin (no intercept).
+\end{itemize}
+\bookans Matches the book's answer (pp.~614--615): same cutoff line, rotation as $A$ falls, implementation, and $d\gamma/d\tau=g/t^*$ with $d^2\gamma/d\tau^2>0$.
+\refbib{Tirole \S10.2.2 ``Multiple Control Rights'', pp.~392--393 (footnotes 15, 17); Answers, pp.~614--615.}
+
+% =============================================================================
+\exsec{15. Allocation of control over liquidation --- Tirole 10.2, pp.~418--419}
+
+\asked (i) The optimal state-contingent contract when $\omega=(L,U_b^0)$ is verifiable. (ii) Compare the first-best and second-best continuation sets; how $\Omega^{SB}$ moves with $A$. (iii) Entrepreneur control with renegotiation: show $\Omega^{EN}=\Omega^{FB}$ and that the project is not financed. (iv) Investor control without golden parachute: show $\Omega^{IN}\subset\Omega^{SB}$; is it financed? (v) Why a positive golden parachute is optimal under investor control.
+
+\approach A complete-contract benchmark first (an LP in $x(\omega)$ with a shadow price on funds), then the incomplete-contract question of Aghion--Bolton: which allocation of a single control right, plus ex post renegotiation, comes closest. The key asymmetry: investors can pay the entrepreneur (they have cash); the entrepreneur, having invested everything, cannot pay investors --- unless a golden parachute gives her something to give up.
+
+\notation
+\begin{itemize}
+  \item $x(\omega)\in[0,1]$: continuation probability; $\rho_1=p_HR$: continuation value; $\rho_0=p_H(R-B/\dpp)$: pledgeable continuation value; $\rho_1-\rho_0=p_HB/\dpp$: entrepreneur's rent.
+  \item $\nu\ge0$: multiplier on breakeven, $\mu\equiv1+\nu\ge1$; $r_b$: golden parachute.
+\end{itemize}
+
+\step{1}{(i) Contract terms} Pay the entrepreneur $0$ on failure and give investors all of $L$: both raise pledgeable income without affecting incentives. Set $R_b=B/\dpp$ when financing binds. Then the entrepreneur gets $\rho_1-\rho_0$ on continuation and $U_b^0$ on liquidation; investors get $\rho_0$ or $L$.
+
+\step{2}{(i) Program} Investors break even, so $U_b$ equals total value minus $I$:
+\begin{align}
+  \max_{x(\cdot)}\ & E_\omega\big[x\rho_1+(1-x)(L+U_b^0)\big]-I \quad\text{s.t.}\quad E_\omega\big[x\rho_0+(1-x)L\big]\ge I-A. \nonumber
+\end{align}
+Pointwise derivative of the Lagrangian with respect to $x(\omega)$:
+\begin{align}
+  \rho_1-L-U_b^0+\nu(\rho_0-L). \nonumber
+\end{align}
+Continue iff it is $\ge0$; rearranging with $\mu=1+\nu$:
+\begin{align}
+  x^{SB}(\omega)=1 &\iff \rho_1-U_b^0\ge\mu L-(\mu-1)\rho_0. \label{r8e15-sb}
+\end{align}
+
+\step{3}{(ii) First best vs.\ second best} First best is $\mu=1$: continue iff $L+U_b^0\le\rho_1$. In the $(L,U_b^0)$ plane the two boundaries are $U_b^0=\rho_1-L$ and $U_b^0=\rho_1+(\mu-1)\rho_0-\mu L$; both pass through $(\rho_0,\rho_1-\rho_0)$ and differ by $(\mu-1)(\rho_0-L)$. For $L\le\rho_0$, under assumption (ii), both say continue: $\mu L-(\mu-1)\rho_0=\rho_0+\mu(L-\rho_0)\le\rho_0\le\rho_1-U_b^0$. For $L>\rho_0$ the SB boundary is lower. Hence $\Omega^{SB}\subseteq\Omega^{FB}$, the difference being states with $L>\rho_0$ and $L\le\rho_1-U_b^0<\mu L-(\mu-1)\rho_0$ (Figure). As $A$ falls the required investor income rises; income $E[\rho_0+(L-\rho_0)\mathbf 1\{\text{liquidate}\}]$ grows only by liquidating more $L>\rho_0$ states, i.e.\ by raising $\mu$: the SB line rotates clockwise around the pivot and $\Omega^{SB}$ shrinks.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.15]
+  \draw[->] (0,0) -- (4.4,0) node[right] {$L$};
+  \draw[->] (0,0) -- (0,2.4) node[above] {$U_b^0$};
+  \draw[dashed] (0,1.6) -- (4.2,1.6) node[right] {\footnotesize $\rho_1-\rho_0$};
+  \draw[thick] (1.6,2.4) node[above] {\footnotesize FB: $L+U_b^0=\rho_1$} -- (4,0);
+  \draw[thick,blue!60!black] (2.0,2.2) node[right] {\footnotesize SB (slope $-\mu$)} -- (3.47,0);
+  \fill (2.4,1.6) circle (1.2pt) node[above right] {\footnotesize $(\rho_0,\rho_1-\rho_0)$};
+  \draw[dotted] (2.4,0) node[below] {\footnotesize $\rho_0$} -- (2.4,1.6);
+  \node at (1.0,0.7) {\footnotesize continue};
+  \node at (3.4,1.35) {\footnotesize liquidate};
+  \node[blue!60!black,right] at (4.1,0.9) {\footnotesize $\Omega^{FB}\setminus\Omega^{SB}$};
+  \draw[->,blue!60!black] (4.15,0.85) -- (3.35,0.4);
+\end{tikzpicture}
+\end{center}
+
+\step{4}{(ii) Example} $\rho_1=4$, $\rho_0=2.4$ ($p_H=0.8$, $\dpp=0.3$, $B=0.6$, $R=5$), $U_b^0=1$, $L\sim U[0,4]$, $I=4$. First best: continue iff $L\le3$. Investor income with cutoff $\ell\ge\rho_0$: $P(\ell)=\tfrac{\ell}{4}(2.4)+\int_\ell^4\tfrac{L}{4}dL=0.6\ell+(16-\ell^2)/8$; $P(3)=2.675$. With $A=1.3$ ($I-A=2.7$): $0.6\ell+(16-\ell^2)/8=2.7\iff\ell^2-4.8\ell+5.6=0\iff\ell=2.8$ (the root $\ell\ge\rho_0$). From \eqref{r8e15-sb} at the cutoff, $3=2.8\mu-2.4(\mu-1)$, so $\mu=1.5$. With $I-A=2.71$: $\ell=2.6828$, $\mu=2.1213$ --- $\Omega^{SB}$ shrinks.
+
+\step{5}{(iii) Entrepreneur control} Without a parachute she always wants to continue (she gets $\rho_1-\rho_0\ge U_b^0$). Renegotiation is efficient ex post because investors have cash: where $L+U_b^0>\rho_1$, investors pay her at least $\rho_1-\rho_0-U_b^0$ to liquidate, gaining $L-\rho_0$, and $L-\rho_0>\rho_1-\rho_0-U_b^0$; where continuation is efficient there are no gains from trade. So $\Omega^{EN}=\Omega^{FB}$. Investors then get at most $\rho_0$ on $\Omega^{FB}$ and at most $L-(\rho_1-\rho_0-U_b^0)\le L$ outside. Compared with the SB contract, whose income is exactly $I-A$, they lose at least $E[(L-\rho_0)\mathbf 1\{\Omega^{FB}\setminus\Omega^{SB}\}]>0$: not financed. Example: $0.75(2.4)+\tfrac14\int_3^4(L-0.6)dL=1.8+0.725=2.525<2.7$.
+
+\step{6}{(iv) Investor control, no parachute} Investors get $p_H(R-R_b)\le\rho_0$ from continuing and $L$ from liquidating; the entrepreneur has no cash to bribe them, and can at most cut $R_b$ to $B/\dpp$. So they continue iff $L\le\rho_0$: $\Omega^{IN}=\{L\le\rho_0\}$. By Step 3 every such state is in $\Omega^{SB}$, and $\Omega^{SB}$ also contains states with $L$ slightly above $\rho_0$: $\Omega^{IN}\subset\Omega^{SB}$. Investors get the SB income plus $L-\rho_0>0$ on $\Omega^{SB}\setminus\Omega^{IN}$: financed, but with excessive liquidation. Example: $P(2.4)=2.72\ge2.7$; NPV $0.08$ vs.\ $0.12$ (SB) and $0.125$ (FB).
+
+\step{7}{(v) Golden parachute} With $r_b>0$ paid out of $L$ on liquidation, investors liquidate iff $L-r_b>\rho_0$. If continuation is efficient but $L-\rho_0>r_b$, she can offer at most $r_b$: inefficient liquidation remains. If $L-\rho_0<r_b$ but liquidation is efficient, $(\rho_1-\rho_0)-U_b^0\le L-\rho_0$, she gives up part of $r_b$ and the parties renegotiate to liquidation. A small $r_b$ thus moves states with $L\in(\rho_0,\rho_0+r_b]$, all efficient continuations, from liquidation to continuation: NPV rises. Investor income falls continuously in $r_b$, and in (iv) it had slack, so a small $r_b>0$ keeps financing. Example: $r_b=0.05$, cutoff $2.45$, income $P(2.45)-0.05\cdot\tfrac{4-2.45}{4}=2.7197-0.0194=2.7003\ge2.7$, NPV $0.0872>0.08$; $r_b=0.10$ would give $2.6813<2.7$.
+
+\answer{(i)} $R_b=B/\dpp$, $0$ on failure, all of $L$ to investors; continue iff $\rho_1-U_b^0\ge\mu L-(\mu-1)\rho_0$, $\mu\ge1$.
+\answer{(ii)} $\Omega^{SB}\subseteq\Omega^{FB}$ (equal for $L\le\rho_0$, smaller for $L>\rho_0$); $\Omega^{SB}$ shrinks as $A$ falls ($\mu$ rises).
+\answer{(iii)} $\Omega^{EN}=\Omega^{FB}$; investors get less than $I-A$: no financing.
+\answer{(iv)} $\Omega^{IN}=\{L\le\rho_0\}\subset\Omega^{SB}$; financed, with too much liquidation.
+\answer{(v)} A small $r_b>0$ restores efficient continuation for $L$ just above $\rho_0$ while keeping investors at breakeven: optimal.
+
+\intuition Whoever holds control, the other side bribes efficiently only if it has a currency. Investors always do, so entrepreneur control reproduces the first best --- which promises too little to investors. The entrepreneur has no currency, so investor control liquidates whenever $L>\rho_0$ --- too often. A golden parachute is the currency that lets her ``buy'' continuation, a reason for parachutes beyond managerial entrenchment.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing $L$ with $\rho_1$ for investors: they only see $\rho_0$, the pledgeable part.
+  \item Forgetting renegotiation under entrepreneur control: it delivers $\Omega^{FB}$, not ``always continue''.
+\end{itemize}
+\bookans Matches the book's answer (pp.~611--612): rule $\rho_1-U_b^0\ge-(\mu-1)\rho_0+\mu L$; $\Omega^{SB}\subset\Omega^{FB}$, shrinking with $A$; $\Omega^{EN}=\Omega^{FB}$ and no financing; $x^{IN}=1$ iff $\rho_0\ge L$, financed; renegotiation conditions for $r_b$. The numerical example is added here.
+\refbib{Tirole \S10.2.1, pp.~389--391; \S3.2, pp.~115--117; Answers, pp.~611--612.}
+
+\end{document}

@@ -55,3 +55,28 @@ Files: `Listas/<list slug>-solutions.tex` → `.pdf`, plus `Listas/<list slug>-s
   tolerance stated, prints `PASS <n> checks`). Displayed arithmetic must reproduce the printed
   result (carry enough decimals).
 - Currency: `\$` in LaTeX. English throughout.
+
+## C. Deeper solutions (2026-11-12) — applies to every `-solutions.tex` from now on
+Keeps everything in §B and adds, per exercise, in this order:
+1. `\asked` **What is asked.** One short paragraph per part (a), (b)…: what the part asks, in plain
+   words (not a copy of the statement), so the solution reads on its own.
+2. `\approach` **Approach.** Which model, result or formula answers it and *why* that tool fits
+   (2–4 sentences); name the lecture concept (e.g. "pledgeable income", "debt overhang").
+3. Notation (as §B).
+4. Steps: each step opens with one sentence saying what it does and why, then the math. **No
+   skipped algebra**: every substitution, rearrangement, derivative, division by a multiplier,
+   or "it follows that" gets its intermediate line. A first-order condition is derived, not
+   stated. A number is never written without the expression that produced it.
+5. `\answer{(a)}` **Answer (a).** One line per part with the final result (number with units,
+   or the condition/sign), right after the steps of that part.
+6. Intuition (as §B), linking the result back to the economic mechanism.
+7. `\pitfalls` **Common mistakes.** 2–3 bullets: the errors a student makes on this exercise
+   (wrong timing, gross vs net, forgetting limited liability, using book instead of market…).
+8. Book answer / Ref (as §B).
+Macros (add to the preamble):
+`\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}`
+`\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}`
+`\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}`
+`\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}`
+Existing results stay unless they are wrong (then fix and say so in the report). Every new
+number goes into the `_check.py` as an `assert`.

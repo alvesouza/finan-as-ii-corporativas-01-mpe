@@ -1,0 +1,2227 @@
+% Worked solutions for Listas/lista-r4-moral-hazard-financing-capacity.md (15 exercises).
+% Exercises 1, 3, 7, 8, 12, 13, 14, 15 are written here (label prefix r4e<n>-). Positions
+% 2, 4, 5, 6, 9, 10, 11 are pasted from lista-topic4-moral-hazard-overhang-solutions.tex at the
+% marker lines below (that file's labels keep their t4e<n>- prefix).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r4-moral-hazard-financing-capacity-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tikz}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R4 --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries List R4 --- Moral hazard, financing capacity, debt vs.\ equity}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r4-moral-hazard-financing-capacity.md}; each exercise is cited by number and printed page and is not restated. Exercises 2, 4, 5, 6, 9, 10 and 11 are the same book exercises as Topic~4 list exercises 4, 3, 5, 8, 9, 10 and 11; their solutions are taken from \url{lista-topic4-moral-hazard-overhang-solutions.tex}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013). Unless stated otherwise, everybody is risk neutral and the riskless rate is $0$, as in Tirole.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Agency relationship in the corporation --- Ross Cap.~1, Quest\~ao 7, p.~22}
+
+\asked Four linked questions. (a) Who owns a corporation. (b) Through which process the owners
+control the people who run it. (c) The main reason why the corporate form creates an agency
+relationship. (d) Which problems can arise from that relationship.
+
+\approach The answer comes from Ross's description of the corporation (\S1.2) and of the agency
+problem (\S1.4): a principal (the shareholders) delegates decisions to an agent (management)
+whose goals differ and whose actions the principal cannot fully observe. The same structure is
+the entrepreneur--investor model of this list (Tirole \S3.2): the insider can take a private
+benefit $B$ at the outsiders' expense, and the cure is to give her a stake, which limits what
+can be promised to outsiders. Linking the two shows why the qualitative answer matters for
+financing capacity.
+
+\notation
+\begin{itemize}
+  \item Principal: the shareholders (owners); agent: the managers (executive officers) hired to run the firm.
+  \item Agency problem: conflict of interest between principal and agent; agency costs: the costs of that conflict.
+  \item For the formal link (Step 5): $p_H>p_L$, success probabilities when the manager behaves / misbehaves; $\Delta p=p_H-p_L$; $B$: private benefit from misbehaving; $R$: income on success; $R_b$: manager's reward on success.
+\end{itemize}
+
+\step{1}{(a) Who owns the corporation} We start from the legal structure, because ownership
+determines who is the principal. The owners are the shareholders: they hold the residual claim
+(what is left after all other claimants are paid) and the votes. Ross: \pt{``Em uma grande
+empresa, acionistas e administradores formam grupos separados. Os acionistas elegem o conselho
+de administra\c{c}\~ao, que ent\~ao seleciona os diretores executivos, encarregados da
+administra\c{c}\~ao da empresa''} (p.~7).
+
+\answer{(a)} The shareholders own the corporation.
+
+\step{2}{(b) How the owners control management} We list the channels in the order Ross gives
+them, from the formal chain of command to the market mechanisms that back it up.
+\begin{enumerate}
+  \item \emph{Board of directors.} Shareholders elect the board; the board hires, fires and
+        sets the pay of the executives (\pt{``os acionistas controlam a empresa porque eles
+        elegem os conselheiros''}, p.~7).
+  \item \emph{Compensation.} Pay linked to performance and to the share price (stock options),
+        so managers gain when the share price rises (pp.~13--14).
+  \item \emph{Managerial labour market.} Managers who deliver value are promoted and paid more
+        (p.~14).
+  \item \emph{Proxy fights and takeovers.} Dissatisfied shareholders can replace the board
+        (\pt{``disputa por procura\c{c}\~oes de voto''}), or another firm can buy the company
+        and replace management (pp.~14--15). Ross notes that in Brazil, where control blocks are
+        common, proxy fights are rarely effective.
+\end{enumerate}
+
+\answer{(b)} Shareholders elect the board, which appoints and pays the managers; this is
+reinforced by performance-linked pay, the managerial labour market, and the threat of proxy
+fights and takeovers.
+
+\step{3}{(c) Why the corporate form creates an agency relationship} The reason is the
+separation of ownership and control. Ownership is spread over many shareholders, none of whom
+runs the firm, so management controls day-to-day decisions: \pt{``Essa dispers\~ao de
+propriedade, sem d\'uvida, significa que quem realmente controla a empresa \'e a sua
+administra\c{c}\~ao''} (p.~12). Ross defines the result: \pt{``O relacionamento entre
+acionistas e administradores \'e chamado de relacionamento de ag\^encia''} (p.~12).
+
+\answer{(c)} The separation between ownership (dispersed shareholders) and control
+(professional managers) is the main reason.
+
+\step{4}{(d) Which problems can arise} The agent may pursue her own goals when the principal
+cannot observe or contract on what she does. Ross's examples, grouped:
+\begin{enumerate}
+  \item \emph{Different objectives}: rejecting a risky but value-increasing project to protect
+        one's job; empire building (overpaying for acquisitions to run a bigger firm);
+        emphasis on organisational survival and independence (pp.~12--13).
+  \item \emph{Direct agency costs}: spending that benefits managers at shareholders' expense
+        (Ross's example: an unnecessary corporate jet) and the cost of monitoring managers
+        (external auditors) (p.~13).
+  \item \emph{Indirect agency costs}: lost opportunities, such as the forgone project in item 1
+        (p.~13).
+  \item \emph{Brazilian context}: with controlling shareholders, the main conflict is between
+        controllers and minority shareholders (private benefits of control, related-party
+        transactions) (p.~13).
+\end{enumerate}
+
+\answer{(d)} Conflicts of interest (agency problems): perquisites, empire building,
+excessive caution, entrenchment; they generate direct costs (perks, monitoring) and indirect
+costs (forgone value). With concentrated ownership the conflict is controller versus minority.
+
+\step{5}{Link to financing capacity} We now show, in the model used in the rest of this list,
+why the agency problem limits what outsiders can be promised. If the manager behaves, success
+has probability $p_H$; if she misbehaves, $p_L$ and she gets $B$. She behaves only if
+\begin{align}
+  p_H R_b &\ge p_L R_b+B \nonumber\\
+  (p_H-p_L)R_b &\ge B \nonumber\\
+  R_b &\ge \frac{B}{\Delta p}. \label{r4e1-IC}
+\end{align}
+With Tirole's illustration used in Exercise~5 ($R=150$, $B=30$, $\Delta p=0.4$),
+\begin{align}
+  \frac{B}{\Delta p} &= \frac{(30)}{(0.4)} = 75, \nonumber\\
+  \frac{75}{R} &= \frac{75}{(150)} = 0.50, \nonumber
+\end{align}
+so half of the success income must stay with the insider and cannot be pledged to outside
+owners or lenders. This is the ``pledgeable income'' $p_H(R-B/\Delta p)$ that drives
+Exercises~5--15.
+
+\intuition The agency problem is not about dishonest managers; it follows from three features
+together: owners delegate, the agent's goals differ, and the agent's actions are hard to
+observe. The control devices (board, pay, takeovers) align incentives only partly and at a
+cost. In the financing models of this list, the same logic says the insider must keep a stake
+of at least $B/\Delta p$ in success, so outsiders can be promised only what is left; that is
+why net worth and monitoring matter for how much a firm can raise.
+\pitfalls
+\begin{itemize}
+  \item Saying the managers or the board own the firm. The board represents the owners; the
+        owners are the shareholders.
+  \item Explaining the agency problem only by managerial bad faith. The cause is the
+        separation of ownership and control combined with unobservable actions and different goals.
+  \item Forgetting that monitoring costs (auditing, boards) are themselves agency costs, and
+        that in Brazil the dominant conflict is controller versus minority shareholder.
+\end{itemize}
+\bookans The book gives no answer to this question.
+\refbib{Ross Cap.~1, \S1.2 ``Formas de organiza\c{c}\~ao de neg\'ocios'' (sociedade por a\c{c}\~oes), pp.~7--8; \S1.4 ``O problema de ag\^encia e o controle da empresa'', pp.~12--17. Tirole Ch.~3, \S3.2.2, pp.~116--117.}
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 4 AS 2
+\exsec{2. Short-term debt and incentive problems --- Grinblatt \& Titman 16.11, p.~593}
+
+\asked A single conceptual question: why the conflicts between shareholders and creditors
+(asset substitution, debt overhang, under-maintenance) do less damage when the firm finances itself
+with debt that matures soon and must be rolled over, rather than with long-term debt.
+
+\approach The conflicts exist because equity chooses the firm's strategy \emph{after} the terms of
+the debt are fixed, so it can change the value of the creditors' claim (the lecture's asset
+substitution and debt overhang). We write equity as firm value minus debt value and ask what
+happens to the debt term when the debt is repriced after the choice is made: if new lenders price
+the debt knowing the strategy, the debt term no longer depends on the strategy and equity
+internalizes the full value consequences.
+
+\notation
+\begin{itemize}
+  \item $j$: investment strategy (project choice, risk level, maintenance), chosen by the equity holders after the debt is in place; $X_j\ge 0$: resulting terminal firm value, $V_j=\mathbb{E}[X_j]$ (risk neutrality, $r_f=0$).
+  \item $F$: face value of the debt; $L$: amount the firm owes when its short-term debt is rolled over; $D_j$, $E_j$: values of debt and equity under $j$.
+\end{itemize}
+
+\step{1}{Where the conflict comes from} We locate the conflict in the debt term of equity's value.
+With long-term debt, $F$ is fixed before $j$ is chosen, and since $\max\{X-F,0\}=X-\min\{X,F\}$ in
+every state,
+\begin{align}
+  E_j &= \mathbb{E}[\max\{X_j-F,0\}] \label{t4e4-E}\\
+      &= V_j-D_j, \qquad D_j=\mathbb{E}[\min\{X_j,F\}]. \nonumber
+\end{align}
+Equity can gain by picking a $j$ that lowers $D_j$ (more risk, less investment, payouts) even
+when $V_j$ falls: comparing two strategies, $E_j-E_k=(V_j-V_k)-(D_j-D_k)$, and the second term
+is a transfer from creditors whenever $D_j<D_k$.
+
+\step{2}{Debt that is repriced when the choice is made} We now let the debt be repriced after the
+choice and show the transfer term disappears. If the debt matures before or at the
+decision and must be rolled over, the new lenders see $j$ and set the new face $F_j$ so that
+their claim is worth what they lend, $\mathbb{E}[\min\{X_j,F_j\}]=L$. Substituting into
+\eqref{t4e4-E},
+\begin{align}
+  E_j &= V_j-(L), \label{t4e4-Est}
+\end{align}
+and $L$ does not depend on $j$: equity bears the full consequences of its choice and picks
+the value-maximizing strategy. Short-term debt is worth close to its face whatever the firm
+does, so there is little value to expropriate.
+
+\step{3}{Illustration (Grinblatt \& Titman 16.1)} Take the firm of G\&T Exercise~16.1: \$100 of
+debt, projects A (pays $120$ or $60$) and B (pays $101$ in both states), each state with
+probability $0.5$, $r_f=0$. With long-term debt, equity is worth $0.5(20)+0.5(0)=10$ under A and
+$0.5(1)+0.5(1)=1$ under B, so it picks the value-destroying A. Suppose instead the \$100 had to be
+refinanced after the project is chosen. Firm values are
+$V_A=0.5(120)+0.5(60)=90$ and $V_B=0.5(101)+0.5(101)=101$; by \eqref{t4e4-Est} with $L=100$,
+\begin{align}
+  E_A &= (90)-(100) = -10, & E_B &= (101)-(100) = 1. \nonumber
+\end{align}
+Under A the firm cannot raise \$100 (no claim on payoffs worth $90$ is worth $100$), so the
+equity holders choose B, the positive-NPV project, instead of A.
+
+\step{4}{Debt overhang} Myers (1977): if the existing debt matures before the firm must raise
+money for a new project, the debt is repriced together with the project decision. The
+project's benefit to creditors (a safer firm) then shows up as a lower borrowing rate that
+accrues to equity, and positive-NPV projects are taken. In Unitron's case, the riskless
+12\% project would lower the firm's 13\% borrowing rate and become attractive.
+
+\step{5}{Asset substitution} The lending rate is renegotiated after the risk choice is made and
+seen, so a risky choice raises the firm's own cost of funds instead of transferring wealth
+from existing lenders. The threat of not being rolled over also disciplines the choice (lecture
+Topic~4B, slide~16).
+
+\step{6}{The cost} Rolling over exposes the firm to refinancing and interest-rate risk: an
+unexpected rise in rates can push a highly levered firm into distress (hence the advice to
+pair short-term debt with interest-rate hedges).
+
+\answer{(16.11)} Short-term debt is repriced (rolled over) after the shareholders' investment and
+risk choices are made and observed, so its terms reflect those choices: equity bears the full value
+consequences, $E_j=V_j-L$, and cannot shift wealth from creditors through risk-taking or
+under-investment. Short-term debt is also close to riskless, so there is little value to
+expropriate. The price is rollover and interest-rate risk.
+
+\intuition The conflicts exist because equity can change the value of a claim whose terms are
+already fixed. The shorter the maturity, the sooner those terms are reset at prices that
+reflect what equity has done, and the less wealth equity can take from creditors. The
+incentive problem shrinks, and the firm takes on rollover risk in exchange.
+\pitfalls
+\begin{itemize}
+  \item Saying short-term debt helps ``because it is safer''. The point is timing: the debt is priced
+        after the decision, so the decision's effect on the creditors comes back to equity through the
+        new rate.
+  \item Confusing maturity with seniority. Seniority decides who is paid first in default; maturity
+        decides when the terms are reset.
+  \item Omitting the cost. Short maturities expose the firm to refinancing and interest-rate risk, so
+        they are not a free cure.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~16, \S~16.4 ``The Use of Short-Term versus Long-Term Debt'', pp.~584--585 (Result~16.12). Lecture Topic~4B, slide~16.}
+%% END-FROM
+
+% =============================================================================
+\exsec{3. Risk-increasing investment and leverage --- Berk 16.24, p.~494}
+
+\asked Dynron (assets worth \$150 million) can sell \$50 million of pipeline and invest it in
+a fibre-optic network that raises expected profits but makes the firm much riskier. Is this
+switch more or less attractive to the shareholders if Dynron has debt than if it has none?
+
+\approach This is the lecture's \emph{asset substitution} (Berk: ``excessive risk-taking'')
+problem. Write equity as firm value minus debt, $E=V-D$; the change in equity from any decision
+is then the project's NPV minus the change in the value of the debt. Levered equity is a call
+option on the firm's assets and risky debt is riskless debt minus a put, so a riskier asset mix
+raises the equity's value and lowers the debt's, holding the expected payoff fixed. Because the
+statement gives no payoff distribution, the general argument is followed by an illustrative
+two-state example (assumption flagged).
+
+\notation
+\begin{itemize}
+  \item $X$: firm's total payoff next period (random); $V=\mathbb{E}[X]$: firm value (risk-neutral pricing, $r_f=0$ in the illustration).
+  \item $F$: face value of the debt; $D=\mathbb{E}[\min\{X,F\}]$, $E=\mathbb{E}[\max\{X-F,0\}]$: values of debt and equity.
+  \item $\mathit{NPV}$: change in $V$ caused by the switch; $\Delta E$, $\Delta D$: changes in $E$ and $D$.
+\end{itemize}
+
+\step{1}{Split the shareholders' gain} We write the shareholders' gain in a form that separates
+value creation from transfers. Since $X=\min\{X,F\}+\max\{X-F,0\}$ in every state, $V=D+E$,
+and therefore
+\begin{align}
+  \Delta E &= \Delta V-\Delta D \nonumber\\
+           &= \mathit{NPV}-\Delta D. \label{r4e3-split}
+\end{align}
+
+\step{2}{No debt} With $F=0$, $D=0$ before and after, so $\Delta D=0$ and, by \eqref{r4e3-split},
+$\Delta E=\mathit{NPV}$. An all-equity firm takes the switch only if it creates value.
+
+\step{3}{Debt and risk} With risky debt, the payoff $\min\{X,F\}$ is a concave function of $X$
+(it is $X$ below $F$ and flat at $F$ above). By Jensen's inequality, spreading out $X$ while
+keeping its mean lowers $\mathbb{E}[\min\{X,F\}]$: the debt loses value, $\Delta D<0$, and from
+\eqref{r4e3-split}
+\begin{align}
+  \Delta E &= \mathit{NPV}-\Delta D > \mathit{NPV}. \nonumber
+\end{align}
+Equivalently, $D=F-\mathbb{E}[\max\{F-X,0\}]$ (riskless debt minus a put), and the put gains
+value with risk. If the debt stays riskless in every state ($X\ge F$ always), $\Delta D=0$ and
+leverage changes nothing.
+
+\assume Illustration (not in the statement): $r_f=0$, risk neutrality; the remaining pipeline
+pays $100$ for sure; the fibre network pays $110$ or $0$ with probability $0.5$ each; before the
+switch the firm pays $150$ for sure; debt face $F=120$. Amounts in \$ million.
+
+\step{4}{Illustration: value created and value transferred} We compute the NPV, then each
+claim before and after. The fibre network's expected payoff and NPV are
+\begin{align}
+  \mathbb{E}[\text{fibre}] &= (0.5)(110)+(0.5)(0) = 55, \nonumber\\
+  \mathit{NPV} &= (55)-(50) = 5. \nonumber
+\end{align}
+After the switch the firm pays $100+110=210$ or $100+0=100$, so $V=(0.5)(210)+(0.5)(100)=155$.
+Before the switch, $D=\min\{150,120\}=120$ and $E=150-120=30$. After it,
+\begin{align}
+  D &= (0.5)\min\{210,120\}+(0.5)\min\{100,120\} \nonumber\\
+    &= (0.5)(120)+(0.5)(100) = 110, \nonumber\\
+  E &= (0.5)\max\{210-120,0\}+(0.5)\max\{100-120,0\} \nonumber\\
+    &= (0.5)(90)+(0.5)(0) = 45. \nonumber
+\end{align}
+So $\Delta E=45-30=15$ and $\Delta D=110-120=-10$; check with \eqref{r4e3-split}:
+$15=(5)-(-10)$. Without debt the shareholders would gain only $155-150=5$.
+
+\step{5}{Illustration: a value-destroying switch} Let the fibre network pay $90$ or $0$ instead.
+Then $\mathbb{E}[\text{fibre}]=(0.5)(90)=45$ and $\mathit{NPV}=45-50=-5$; an unlevered firm
+rejects it ($V$ falls from $150$ to $(0.5)(190)+(0.5)(100)=145$). With $F=120$,
+\begin{align}
+  D &= (0.5)\min\{190,120\}+(0.5)\min\{100,120\} = (0.5)(120)+(0.5)(100) = 110, \nonumber\\
+  E &= (0.5)\max\{190-120,0\}+(0.5)(0) = (0.5)(70) = 35 > 30, \nonumber
+\end{align}
+so the levered shareholders accept it: $\Delta E=35-30=5=(-5)-(-10)$.
+
+\step{6}{Boundary: riskless debt} With $F=80$, the debt is paid in full in both states after
+the switch ($100\ge 80$): $D=(0.5)(80)+(0.5)(80)=80$, $\Delta D=0$, and
+$\Delta E=(0.5)(130)+(0.5)(20)-(150-80)=75-70=5=\mathit{NPV}$, exactly as without debt.
+
+\answer{} More attractive. With risky debt, the shareholders gain the NPV plus the value
+transferred from the debt holders ($\Delta E=\mathit{NPV}-\Delta D$ with $\Delta D<0$); in the
+illustration $15$ instead of $5$, and even a $-5$ NPV switch raises equity by $5$.
+
+\intuition Limited liability caps the shareholders' downside at zero, so when the firm is
+levered they keep the upside of a risky bet while the creditors absorb part of the downside.
+That is why a levered firm likes risk more than an unlevered one, possibly to the point of
+taking negative-NPV gambles. Creditors anticipate it and charge for it up front, so the
+shareholders bear the agency cost ex ante, which is one reason for covenants and for the
+financing limits studied in the Tirole exercises of this list.
+\pitfalls
+\begin{itemize}
+  \item Answering ``less attractive, because the riskier firm has a higher cost of equity''.
+        The cost of capital adjusts to risk; the effect that matters is the transfer from
+        debt to equity.
+  \item Ignoring that the result needs \emph{risky} debt: if the debt is paid in full in every
+        state, leverage leaves the decision unchanged (Step~6).
+  \item Treating the higher equity value as value creation. Firm value rises only by the NPV;
+        the rest comes from the creditors.
+\end{itemize}
+\bookans The book gives no answer to this problem.
+\refbib{Berk Ch.~16, \S16.6 ``Agency Costs and Information'', ``Equity-Debt Holder Conflicts'' and ``excessive risk-taking'', pp.~483--484. Lecture Topic~4B, slides 2--8.}
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 3 AS 4
+\exsec{4. Debt overhang on vacant land --- Berk 16.25, pp.~494--495}
+
+\asked (a) Today's values of equity and debt if the land stays vacant. (b) The NPV of developing
+the land, for the firm as a whole. (c) Today's values of equity and debt if the shareholders put in
+\$20 million and the land is developed. (d) Whether the shareholders gain from putting in that
+money, given (c).
+
+\approach All cash flows are riskless, so every claim is its payoff in one year discounted at
+$r_f=10\%$; debt gets $\min\{\text{land value},15\}$ and equity the rest. This is the lecture's
+\emph{debt overhang} (under-investment) problem: the debt is under water, so part of the value a
+new project creates goes to the creditors, who pay none of its cost. Comparing the NPV (b) with the
+shareholders' gain (d) shows the wedge.
+
+\notation
+\begin{itemize}
+  \item $F=15$: face value of the debt, due in one year; $r_f=0.10$; all cash flows riskless; no taxes.
+  \item $L_0=10$: value of the vacant land in one year; $L_1=35$: value of the developed land in one year; $K=20$: development cost paid today.
+  \item $E$, $D$: values today of equity and debt.
+\end{itemize}
+
+\step{1}{(a) Land left vacant} We split the land's value in one year between the claims and
+discount. In one year the firm is worth $10<15$: the creditors take $10$ and the shareholders get
+$0$. Discounting at $r_f$,
+\begin{align}
+  D &= \frac{\min\{L_0,F\}}{1+r_f} \label{t4e3-Da}\\
+    &= \frac{\min\{10,15\}}{1+0.10} \nonumber\\
+    &= \frac{(10)}{(1.10)} \nonumber\\
+    &= 9.0909, \nonumber\\
+  E &= \frac{\max\{L_0-F,0\}}{1+r_f} = \frac{\max\{10-15,0\}}{1.10} = \frac{(0)}{(1.10)} = 0. \nonumber
+\end{align}
+
+\answer{(a)} Equity is worth \$0; debt is worth \$9.09 million.
+
+\step{2}{(b) NPV of developing} The NPV counts only the cash flows that change with the decision.
+Developing replaces land worth $10$ by land worth $35$, so the incremental cash flow in one year is
+$35-10=25$, against $20$ paid today:
+\begin{align}
+  \mathit{NPV} &= -K+\frac{L_1-L_0}{1+r_f} \label{t4e3-NPV}\\
+      &= -(20)+\frac{(35)-(10)}{(1.10)} \nonumber\\
+      &= -20+\frac{25}{1.10} \nonumber\\
+      &= -20+22.7273 \nonumber\\
+      &= 2.7273. \nonumber
+\end{align}
+(Ignoring the vacant-land value forgone would give $-20+35/1.10=11.8182$, the NPV measured
+against a firm with no land at all; the decision-relevant figure is \eqref{t4e3-NPV}.)
+
+\answer{(b)} $\mathit{NPV}=\$2.73$ million $>0$: developing creates value.
+
+\step{3}{(c) Values if developed with \$20 of new equity} We repeat Step 1 with the developed land.
+The \$20 is spent on development, so it is not an asset in one year. In one year the firm is worth
+$35\ge 15$: the debt is paid in full, $\min\{35,15\}=15$, and equity keeps $\max\{35-15,0\}=20$. Hence
+\begin{align}
+  D &= \frac{(15)}{(1.10)} \label{t4e3-Dc}\\
+    &= 13.6364, \nonumber\\
+  E &= \frac{(35)-(15)}{(1.10)} \label{t4e3-Ec}\\
+    &= \frac{20}{1.10} \nonumber\\
+    &= 18.1818. \nonumber
+\end{align}
+
+\answer{(c)} Equity is worth \$18.18 million and debt \$13.64 million today.
+
+\step{4}{(d) Will the shareholders put up \$20?} The shareholders compare what they hold after
+contributing with what they hold if they do nothing. Their gain is the equity value
+\eqref{t4e3-Ec}, minus the equity value without development (Step 1), minus the contribution:
+\begin{align}
+  \Delta E &= E_{\text{dev}}-E_{\text{vacant}}-K \nonumber\\
+           &= (18.1818)-(0)-(20) \nonumber\\
+           &= -1.8182 < 0, \nonumber\\
+  \Delta D &= D_{\text{dev}}-D_{\text{vacant}} \nonumber\\
+           &= (13.6364)-(9.0909) \nonumber\\
+           &= 4.5455. \nonumber
+\end{align}
+No: they would lose \$1.82 million. The sum $-1.8182+4.5455=2.7273$ is the NPV
+\eqref{t4e3-NPV}; the creditors capture more than all of it.
+
+\answer{(d)} No. The shareholders would pay \$20 million for an equity stake worth \$18.18 million
+(a loss of \$1.82 million), while the debt gains \$4.55 million; the positive-NPV project is passed up.
+
+\intuition The debt is under water ($10<15$), so the first \$5 million of any value the
+project creates goes to the creditors, who pay none of its cost. The shareholders bear the
+\$20 million and receive only the value above the \$15 million face. This is Myers' debt
+overhang: leverage acts as a tax on new investment, and a positive-NPV project is passed up.
+Writing the debt down (renegotiation, as in the lecture) or senior new financing would fix it.
+\pitfalls
+\begin{itemize}
+  \item Computing the NPV as $-20+35/1.10=11.82$: the vacant land worth \$10 million in one year is
+        given up, so it is part of the project's cost.
+  \item Answering (d) with $E_{\text{dev}}=18.18>0$, ``so yes''. The shareholders must compare the
+        stake with the \$20 million they put in.
+  \item Valuing the debt in (a) at the face value $15/1.10$; the creditors can get at most what the
+        land is worth, $\min\{10,15\}$.
+\end{itemize}
+\refbib{Berk Ch.~16, \S~16.6 ``Agency Costs and Information'', ``Equity-Debt Holder Conflicts'' (under-investment), pp.~483--484. Lecture Topic~4B, slides 19--30.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 5 AS 5
+\exsec{5. Random financing --- Tirole 3.1, p.~144}
+
+\asked (i) Write the condition under which investors are willing to sign a contract in which the
+borrower contributes $\hat A$ of her cash, the project then goes ahead only with probability $x$,
+and she gets $R_b$ on success. (ii) Show that a borrower with too little cash for certain financing
+($A<\bar A$) should put \emph{all} her cash in, and describe how the financing probability depends
+on $A$.
+
+\approach This is the Holmstr\"om--Tirole fixed-investment model of the lecture (Topic~4A). The two
+constraints are the borrower's incentive constraint (IC$_b$), which caps the \emph{pledgeable income}
+at $\mathcal P=p_H(R-B/\Delta p)$, and the investors' breakeven constraint (IR$_l$). Below $\bar A$
+the project cannot be financed for sure; a lottery over financing scales the investors' outlay and
+the pledgeable income by $x$ but not the borrower's contribution, which convexifies the
+indivisible project. We write (IR$_l$) for the lottery, show (IC$_b$) must hold, and maximise the
+borrower's utility over $(x,\hat A)$.
+
+\notation
+\begin{itemize}
+  \item $I>0$: fixed investment; $A\in(0,\bar A)$: borrower's cash; $\hat A\in[0,A]$: the part she contributes; $x\in[0,1]$: probability that the project is financed.
+  \item $R>0$: income on success (0 on failure); $R_b\ge 0$: borrower's reward on success; $R_l=R-R_b$: investors' claim on success.
+  \item $p_H>p_L$: success probabilities when she behaves / misbehaves; $\Delta p=p_H-p_L$; $B>0$: private benefit from misbehaving.
+  \item $\mathcal P=p_H(R-B/\Delta p)$: pledgeable income; $\bar A=I-\mathcal P$: minimum cash for financing with probability~1 (the statement's definition); $U_b$: borrower's net utility. Rate of interest 0, everybody risk neutral.
+\end{itemize}
+
+\assume The borrower hands over $\hat A$ when the contract is signed, whether or not the
+lottery then selects the project (this is the reading in Tirole's answer). If $\hat A$ were
+paid only when the project goes ahead, the expected outlay would be $x(I-\hat A)$ and the
+breakeven condition $x(I-\hat A)\le x\mathcal P$ would require $\hat A\ge\bar A>A$: randomizing
+would achieve nothing.
+
+\step{1}{(i) Investors' breakeven condition} Investors receive $\hat A$ for sure, pay $I$ with
+probability $x$, and, if the borrower behaves, collect $R_l$ with probability $p_H$ when the
+project runs:
+\begin{align}
+  \underbrace{\hat A}_{\text{received}}+\underbrace{x\,p_H(R-R_b)}_{\text{expected repayment}}
+     &\ge \underbrace{x I}_{\text{expected outlay}} \nonumber\\
+  x\,p_H(R-R_b) &\ge x I-\hat A. \label{t4e5-IR}
+\end{align}
+
+\answer{(i)} $x\,p_H(R-R_b)\ge xI-\hat A$ (with $R_b\ge B/\Delta p$ so that she behaves).
+
+\step{2}{The contract must induce good behaviour} We check that a contract under which she shirks
+is never worth signing, so (IC$_b$) can be imposed. Suppose $(\Delta p)R_b<B$, so she shirks.
+Investors break even only if $x p_L(R-R_b)\ge xI-\hat A$, i.e.\ $-\hat A\le x p_L(R-R_b)-xI$.
+Her net utility is then
+\begin{align}
+  x(p_L R_b+B)-\hat A &\le x(p_L R_b+B)+\big(x p_L(R-R_b)-xI\big) \nonumber\\
+                      &= x p_L R_b+xB+x p_L R-x p_L R_b-xI \nonumber\\
+                      &= x(p_L R+B-I) < 0 \label{t4e5-shirk}
+\end{align}
+by (3.2), worse than not signing. So the contract satisfies (IC$_b$), $(\Delta p)R_b\ge B$, i.e.\
+$R_b\ge B/\Delta p$.
+
+\step{3}{Breakeven in terms of $\bar A$} We combine the two constraints into one feasibility
+condition on $(x,\hat A)$. (IC$_b$) gives $R-R_b\le R-B/\Delta p$, so the
+left side of \eqref{t4e5-IR} is at most $x\,p_H(R-B/\Delta p)=x\mathcal P$. A contract exists for $(x,\hat A)$ only if
+\begin{align}
+  x I-\hat A &\le x\,p_H\left(R-\frac{B}{\Delta p}\right) \nonumber\\
+  x I-\hat A &\le x(\mathcal P) \nonumber\\
+  x(I-\mathcal P) &\le \hat A \nonumber\\
+  x(\bar A) &\le \hat A \nonumber\\
+  x &\le \frac{\hat A}{\bar A}, \label{t4e5-x}
+\end{align}
+substituting $I-\mathcal P=\bar A$ from the statement's definition (third to fourth line) and
+dividing by $\bar A>0$ (last line). Conversely, if \eqref{t4e5-x} holds, $R_b=B/\Delta p$ satisfies
+both constraints, so \eqref{t4e5-x} is necessary and sufficient.
+
+\step{4}{(ii) The borrower's objective} We write her utility and use the binding breakeven
+constraint to express it in terms of $x$ only. She keeps $A-\hat A$ and, with probability $x$, earns
+$R_b$ with probability $p_H$; net of the $A$ she would consume anyway,
+\begin{align}
+  U_b &= x\,p_H R_b+(A-\hat A)-A \nonumber\\
+      &= x\,p_H R_b-\hat A. \label{t4e5-Ub}
+\end{align}
+Competitive investors make \eqref{t4e5-IR} bind; expanding and solving for $x p_H R_b$,
+\begin{align}
+  x p_H R-x p_H R_b &= xI-\hat A \nonumber\\
+  x p_H R_b &= x p_H R-xI+\hat A. \nonumber
+\end{align}
+Substituting into \eqref{t4e5-Ub},
+\begin{align}
+  U_b &= (x p_H R-xI+\hat A)-\hat A \nonumber\\
+      &= x\,(p_H R-I). \label{t4e5-Ubx}
+\end{align}
+
+\step{5}{(ii) Optimal $\hat A$ and $x$} We maximise \eqref{t4e5-Ubx} over the feasible set
+\eqref{t4e5-x}. Differentiating,
+\begin{align}
+  \frac{\partial U_b}{\partial x} = p_H R-I>0, \qquad \frac{\partial U_b}{\partial \hat A}=0, \nonumber
+\end{align}
+so $U_b$ rises with $x$ and $\hat A$ matters only through feasibility. By \eqref{t4e5-x}, the
+largest feasible $x$ is $\hat A/\bar A$ (below 1 because $\hat A\le A<\bar A$), which increases with
+$\hat A$: substituting it, $U_b=(\hat A/\bar A)(p_HR-I)$, increasing in $\hat A$ on $[0,A]$. So
+she contributes everything:
+\begin{align}
+  \hat A^* &= A, \nonumber\\
+  x^* &= \frac{A}{\bar A}, \label{t4e5-xstar}\\
+  U_b^* &= \frac{A}{\bar A}\,(p_H R-I). \label{t4e5-Ubstar}
+\end{align}
+At $x^*$ the binding \eqref{t4e5-IR}, divided by $x^*=A/\bar A$, gives
+$p_H(R-R_b)=I-A/x^*=I-\bar A=\mathcal P$, so $R-R_b=R-B/\Delta p$ and $R_b=B/\Delta p$: (IC$_b$) binds.
+
+\step{6}{(ii) How $x^*$ varies with $A$} $x^*=A/\bar A$ rises linearly from 0 at $A=0$ to 1 at
+$A=\bar A$, and stays at 1 above $\bar A$. Utility \eqref{t4e5-Ubstar} therefore rises smoothly
+to the full NPV instead of jumping at $\bar A$ as in (3.6).
+
+\emph{Numerical illustration.} $I=100$, $R=150$, $p_H=0.8$, $p_L=0.4$, $B=30$, $A=10$: (3.2)
+holds ($0.4(150)-100+30=-10<0$); $B/\Delta p=75$; $\mathcal P=0.8(150-75)=60$; $\bar A=100-60=40$;
+NPV $=0.8(150)-100=20$. Then $x^*=10/40=0.25$ and $U_b^*=0.25(20)=5$; investors pay
+$0.25(100)-10=15$ in expectation and receive $0.25(60)=15$.
+
+\answer{(ii)} $\hat A^*=A$; the financing probability is $x^*=A/\bar A$, rising linearly from $0$
+at $A=0$ to $1$ at $A=\bar A$ (and $x^*=1$ for $A\ge\bar A$); her utility is $x^*(p_HR-I)$.
+
+\intuition The obstacle is not the size of the NPV but the pledgeable income per unit of
+investment. A poor borrower can still buy a \emph{fraction} of the deal: each unit of her
+cash covers the investors' shortfall on $1/\bar A$ units of probability of financing. Since
+she captures the whole NPV whenever the project runs, she wants as high a probability as her
+cash can buy and puts all of it in. Lotteries convexify the indivisible project.
+\pitfalls
+\begin{itemize}
+  \item Writing the breakeven as $x p_H(R-R_b)\ge x(I-\hat A)$, i.e.\ taking her contribution only when
+        the project goes ahead. Then $x$ cancels and randomisation achieves nothing.
+  \item Using $R$ instead of $R-B/\Delta p$ as the investors' maximal claim: without (IC$_b$) she
+        shirks, and by (3.2) no one breaks even.
+  \item Claiming she keeps some cash ``for safety''. Cash kept aside earns nothing extra, while each unit
+        put in raises $x$ by $1/\bar A$ and her utility by $(p_HR-I)/\bar A>0$.
+\end{itemize}
+\bookans Matches the book's answer (p.~571): breakeven $xI-A\le x p_H(R-R_b)$, equivalently
+$x\bar A\le A$; $U_b=x(p_H R-I)$, so $x^*=A/\bar A$, rising from 0 to 1 as $A$ goes from 0
+to $\bar A$.
+\refbib{Tirole Ch.~3, \S~3.2.1--3.2.2 ``The Fixed-Investment Model'', ``The Lenders' Credit Analysis'', pp.~115--117 (footnote~9, p.~116). Lecture Topic~4A, slides 26--34.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 8 AS 6
+\exsec{6. Project riskiness and credit rationing --- Tirole 3.15, p.~150}
+
+\asked Two versions of the fixed-investment project have the same cost, the same expected income
+under good behaviour and the same effect of shirking on the success probability, but B succeeds less
+often with a larger payoff. Decide which version can be financed for a wider range of the
+entrepreneur's cash $A$, i.e.\ is less prone to credit rationing.
+
+\approach In the Holmstr\"om--Tirole fixed-investment model (lecture Topic~4A) a project is
+financed iff $A\ge\bar A=I-\mathcal P$, where $\mathcal P=p_H(R-B/\Delta p)$ is the
+\emph{pledgeable income}. So the variant with the lower threshold $\bar A$, i.e.\ the higher
+pledgeable income, is less rationed. We write $\bar A$ as non-pledgeable rent minus NPV, use equal
+NPVs, and compare the rents.
+
+\notation
+\begin{itemize}
+  \item $j\in\{A,B\}$: project variant; $p_H^j>p_L^j$: success probabilities with good / bad behaviour; $R^j>0$: income on success (0 on failure).
+  \item $\Delta p=p_H^A-p_L^A=p_H^B-p_L^B>0$: common; $B>0$: private benefit (common); $I$: common investment; $A$: borrower's cash.
+  \item Maintained: $p_H^A R^A=p_H^B R^B$ (equal NPV) and $p_H^A>p_H^B$ (B riskier); (3.1), (3.2) hold for both variants.
+  \item $\mathcal P^j=p_H^j(R^j-B/\Delta p)$: pledgeable income; $\bar A^j$: minimum cash for financing variant $j$ (3.3).
+\end{itemize}
+
+\step{1}{The minimum stake is the same} We first derive the borrower's minimum reward in each
+variant. Variant $j$'s incentive constraint is $p_H^jR_b^j\ge p_L^jR_b^j+B$, i.e.\
+$(p_H^j-p_L^j)R_b^j\ge B$, i.e.\ $R_b^j\ge B/\Delta p$: the same for both variants, because $B$ and
+$\Delta p$ are common.
+
+\step{2}{Financing thresholds} We compute each variant's threshold from (IR$_l$),
+$\mathcal P^j\ge I-A$. From (3.3),
+\begin{align}
+  \bar A^j &= I-\mathcal P^j \nonumber\\
+           &= I-p_H^j\left(R^j-\frac{B}{\Delta p}\right) \nonumber\\
+           &= I-p_H^jR^j+p_H^j\frac{B}{\Delta p} \nonumber\\
+           &= p_H^j\frac{B}{\Delta p}-(p_H^j R^j-I). \label{t4e8-Abar}
+\end{align}
+The first term is the non-pledgeable income: the expected rent the borrower must be left.
+
+\step{3}{Compare} Subtracting \eqref{t4e8-Abar} for B from that for A, and substituting
+$p_H^B R^B=p_H^A R^A$,
+\begin{align}
+  \bar A^A-\bar A^B &= \left[p_H^A\frac{B}{\Delta p}-(p_H^A R^A-I)\right]-\left[p_H^B\frac{B}{\Delta p}-((p_H^A R^A)-I)\right] \nonumber\\
+                    &= p_H^A\frac{B}{\Delta p}-p_H^AR^A+I-p_H^B\frac{B}{\Delta p}+p_H^AR^A-I \nonumber\\
+                    &= (p_H^A-p_H^B)\frac{B}{\Delta p} > 0, \label{t4e8-diff}
+\end{align}
+positive because $p_H^A>p_H^B$, $B>0$, $\Delta p>0$. The riskier variant B is financed for every
+$A\ge\bar A^B$, including $A\in[\bar A^B,\bar A^A)$ where A is not: \textbf{variant B is less prone
+to credit rationing}.
+
+\answer{(3.15)} Variant B, the riskier one: $\bar A^B=\bar A^A-(p_H^A-p_H^B)B/\Delta p<\bar A^A$, so
+every entrepreneur financed under A is financed under B, and those with
+$A\in[\bar A^B,\bar A^A)$ only under B (given that both variants need good behaviour, (3.2)).
+
+\step{4}{Numerical illustration} $I=100$, $\Delta p=0.2$, $B=9$; A: $p_H^A=0.8$, $p_L^A=0.6$,
+$R^A=150$; B: $p_H^B=0.6$, $p_L^B=0.4$, $R^B=200$. Both NPVs are $120-100=20$; (3.2) holds
+($0.6(150)-100+9=-1<0$ and $0.4(200)-100+9=-11<0$); $B/\Delta p=45$. Then
+$\mathcal P^A=0.8(105)=84$, $\bar A^A=16$; $\mathcal P^B=0.6(155)=93$, $\bar A^B=7$; and
+$\bar A^A-\bar A^B=(0.2)(45)=9$, as \eqref{t4e8-diff} says.
+
+\step{5}{Beyond the maintained assumption (the book's extension)} If (3.2) fails for the safe
+variant, a contract that leaves all income to investors ($R_b=0$, the borrower misbehaves)
+may finance it: investors then receive $p_L^AR^A$, and the borrower, who gets the NPV with
+shirking, $p_L^AR^A+B-I$, when investors break even, wants it if that NPV is positive. The safe
+variant can then be financed and the risky one not when (in order) B cannot be financed with good
+behaviour, B cannot be financed with shirking, A can be financed with shirking, and A's NPV with
+shirking is positive:
+\begin{align}
+  I-A &> p_H^B\left(R^B-\frac{B}{\Delta p}\right), \quad I-A>p_L^B R^B, \quad I-A\le p_L^A R^A, \quad I<p_L^A R^A+B. \label{t4e8-ext}
+\end{align}
+These conditions are compatible. With $A=0$, $I=120$, $\Delta p=0.3$, $B=45$, $p_H^A=0.9$,
+$R^A=200$, $p_H^B=0.5$, $R^B=360$ (both $p_H R=180$): $p_H^B(R^B-B/\Delta p)=0.5(210)=105<120$;
+$p_L^B R^B=0.2(360)=72<120$; $p_L^A R^A=0.6(200)=120\ge 120$; $p_L^A R^A+B=165>120$. Here the
+risky variant is rationed and the safe one is funded. Good behaviour adds more pledgeable
+income when the success payoff is large, which favours the risky variant only when good
+behaviour is needed for funding.
+
+\intuition The borrower's rent $B/\Delta p$ is paid only on success. A safer project succeeds
+more often, so it pays out the rent more often and leaves less expected income to pledge: the
+non-pledgeable rent $p_H B/\Delta p$ is higher for the same NPV. Riskier projects with the same mean concentrate
+income in success, where it is pledged anyway.
+\pitfalls
+\begin{itemize}
+  \item Importing the Stiglitz--Weiss intuition that riskier borrowers are rationed first. Here
+        riskiness lowers the rent $p_HB/\Delta p$ and so \emph{raises} pledgeable income.
+  \item Computing the threshold as $I-p_HR$ (all income pledged), which is the same for both variants
+        by $p_H^AR^A=p_H^BR^B$ and hides the difference.
+  \item Forgetting that the comparison holds only while good behaviour is required for funding: if
+        (3.2) fails for one variant, the book's extension (Step 5) can reverse the ranking.
+\end{itemize}
+\bookans Matches the book's answer (p.~578): with the same minimum reward $B/\Delta p$, the
+safe project A is financed for a smaller range of $A$, i.e.\ it is more prone to credit
+rationing; the book then shows, with conditions \eqref{t4e8-ext}, that the risky project may be
+the more rationed one if high-powered incentives are not necessarily called for. One slip in
+the book's prose: it says the third condition means that ``the risky project'' generates
+enough pledgeable income when investors get all the cash flow, but that condition,
+$I-A\le p_L^A R^A$, is about the safe variant A.
+\refbib{Tirole Ch.~3, \S~3.2.1--3.2.2 ``The Fixed-Investment Model'', ``The Lenders' Credit Analysis'', pp.~115--117. Lecture Topic~4A, slides 26--35 (determinants of credit rationing).}
+%% END-FROM
+
+% =============================================================================
+\exsec{7. Equity multiplier and active monitoring --- Tirole Exercise 3.8, p.~147}
+
+\asked (i) In the variable-investment model, derive how much the borrower can invest per unit
+of her own cash (the equity multiplier) and show it equals $1/(1-\rho_0)$. (ii) A monitor can be
+hired who, at cost $cI$, cuts the borrower's private benefit to $b(c)I$. (ii-a) Write the
+incentive constraints of the monitor and of the borrower. (ii-b) Derive the new multiplier.
+(ii-c) Show which objective the borrower maximizes when choosing $c$.
+
+\approach Holmstr\"om--Tirole with variable investment (Tirole \S3.4): the borrower's
+incentive constraint fixes the minimum stake $BI/\Delta p$, so only $\rho_0=p_H(R-B/\Delta p)$
+per unit of investment can be pledged; competitive investors break even, so the borrower gets
+the whole NPV and invests as much as the pledgeable income allows. Monitoring (Tirole \S9.2.1)
+lowers the stake the borrower needs, which raises pledgeable income, but the monitor must also be
+paid a stake; with ``no shortage of monitoring capital'' the monitor pays for his stake up front,
+so his cost is the only thing the borrower loses.
+
+\notation
+\begin{itemize}
+  \item $I\ge 0$: investment; $A>0$: borrower's cash; income $RI$ on success, $0$ on failure.
+  \item $p_H$, $p_L=p_H-\Delta p$: success probabilities if the borrower behaves / misbehaves; $BI$: private benefit from misbehaving.
+  \item $\rho_1=p_HR>1$: expected income per unit; $\rho_0=p_H(R-B/\Delta p)<1$: pledgeable income per unit; $k$: equity multiplier, $I=kA$.
+  \item $R_b$, $R_m$, $R_l$: rewards on success of the borrower, the monitor and the uninformed investors ($R_b+R_m+R_l=RI$); $0$ on failure (limited liability).
+  \item $c\ge 0$: monitoring intensity, private cost $cI$ to the monitor; $b(c)$: private benefit per unit under monitoring, $b(0)=B$, $b'<0$; $I_m$: monitor's cash contribution.
+  \item $U_b$: borrower's net utility (expected payoff minus the cash $A$ she could consume).
+\end{itemize}
+
+\step{1}{(i) The borrower's program} The borrower offers the contract; she maximizes her net
+utility subject to her own incentive constraint and the investors' breakeven constraint:
+\begin{align}
+  \max_{I,\,R_b}\ & p_HR_b-A \label{r4e7-obj}\\
+  \text{s.t. }\ & (\Delta p)R_b\ge BI, \tag{IC$_b$}\\
+                & p_H(RI-R_b)\ge I-A. \tag{IR$_l$}
+\end{align}
+
+\step{2}{(i) The investors break even and the borrower gets the NPV} If (IR$_l$) were slack,
+raising $R_b$ a little would keep it satisfied, relax (IC$_b$), and raise \eqref{r4e7-obj}; so
+(IR$_l$) binds:
+\begin{align}
+  p_HRI-p_HR_b &= I-A \nonumber\\
+  p_HR_b &= p_HRI-I+A. \label{r4e7-bind}
+\end{align}
+Substituting \eqref{r4e7-bind} into \eqref{r4e7-obj},
+\begin{align}
+  U_b &= (p_HRI-I+A)-A \nonumber\\
+      &= (\rho_1-1)\,I, \label{r4e7-Ub}
+\end{align}
+which increases with $I$ because $\rho_1>1$: she invests as much as the constraints allow.
+
+\step{3}{(i) The largest investment} Multiplying (IC$_b$) by $p_H/\Delta p>0$ gives
+$p_HR_b\ge p_HBI/\Delta p$. Substituting $p_HR_b$ from \eqref{r4e7-bind},
+\begin{align}
+  \rho_1I-I+A &\ge \frac{p_HB}{\Delta p}I \nonumber\\
+  A &\ge I\Big(1-\rho_1+\frac{p_HB}{\Delta p}\Big) \nonumber\\
+  A &\ge I(1-\rho_0) \qquad\Big(\text{since }\rho_0=\rho_1-\frac{p_HB}{\Delta p}\Big) \nonumber\\
+  I &\le \frac{A}{1-\rho_0} \qquad(\text{dividing by }1-\rho_0>0). \label{r4e7-k}
+\end{align}
+The bound is reached (both constraints bind), so $k=1/(1-\rho_0)$ and, by \eqref{r4e7-Ub},
+$U_b=(\rho_1-1)A/(1-\rho_0)$.
+
+\answer{(i)} $I=kA$ with $k=\dfrac{1}{1-\rho_0}=\dfrac{1}{1-p_H(R-B/\Delta p)}>1$.
+
+\emph{Numerical illustration.} $p_H=0.8$, $p_L=0.4$ ($\Delta p=0.4$), $R=1.5$, $B=0.3$,
+$A=10$. Then $\rho_1=(0.8)(1.5)=1.2$; $B/\Delta p=0.3/0.4=0.75$; $\rho_0=(0.8)(1.5-0.75)=0.6$;
+the assumption $1>p_LR+B=(0.4)(1.5)+0.3=0.9$ holds. Hence $k=1/(1-0.6)=2.5$, $I=(2.5)(10)=25$,
+$U_b=(1.2-1)(25)=5$.
+
+\step{4}{(ii-a) The two incentive constraints} To induce monitoring $c$, the borrower's stake is
+set so that she behaves when monitored, and the monitor's stake so that he monitors. Under
+monitoring the borrower's private benefit is $b(c)I$, so
+\begin{align}
+  (\Delta p)R_b \ge b(c)I. \label{r4e7-ICb}
+\end{align}
+If the monitor skips monitoring he saves $cI$, but the borrower's private benefit is back to
+$BI>b(c)I$; with $R_b$ set at the level \eqref{r4e7-ICb} she then misbehaves and success falls
+to $p_L$. The monitor monitors if $p_HR_m-cI\ge p_LR_m$, that is,
+\begin{align}
+  (\Delta p)R_m \ge cI. \label{r4e7-ICm}
+\end{align}
+
+\answer{(ii-a)} $(\Delta p)R_m\ge cI$ (monitor) and $(\Delta p)R_b\ge b(c)I$ (borrower).
+
+\step{5}{(ii-b) The monitor's contribution} With plentiful monitoring capital, the monitor
+accepts any deal in which he breaks even, so the borrower makes him pay for his stake: his cash
+contribution equals his expected income net of his cost. At the cheapest stake,
+$R_m=cI/\Delta p$ from \eqref{r4e7-ICm}, and
+\begin{align}
+  I_m &= p_HR_m-cI \nonumber\\
+      &= p_H\frac{cI}{\Delta p}-cI \nonumber\\
+      &= \Big(\frac{p_H}{\Delta p}-1\Big)cI = \frac{p_L}{\Delta p}\,cI. \label{r4e7-Im}
+\end{align}
+
+\step{6}{(ii-b) The multiplier} The uninformed investors put up $I-A-I_m$ and receive $R_l$ on
+success; by the argument of Step~2 their constraint binds, and by the argument of Step~3
+(utility increasing in $I$) both incentive constraints bind:
+$R_b=b(c)I/\Delta p$, $R_m=cI/\Delta p$. Their breakeven condition is
+\begin{align}
+  p_H(RI-R_b-R_m) &= I-A-I_m. \label{r4e7-IRl}
+\end{align}
+Substituting $R_b$, $R_m$ and \eqref{r4e7-Im},
+\begin{align}
+  p_H\Big(R-\frac{b(c)}{\Delta p}-\frac{c}{\Delta p}\Big)I &= I-A-p_H\frac{c}{\Delta p}I+cI \nonumber\\
+  p_H\Big(R-\frac{b(c)}{\Delta p}\Big)I-p_H\frac{c}{\Delta p}I &= I-A-p_H\frac{c}{\Delta p}I+cI \nonumber\\
+  p_H\Big(R-\frac{b(c)}{\Delta p}\Big)I &= I-A+cI \qquad(\text{the }p_Hc I/\Delta p\text{ terms cancel}) \nonumber\\
+  A &= I\Big[1+c-p_H\Big(R-\frac{b(c)}{\Delta p}\Big)\Big]. \nonumber
+\end{align}
+Hence $I=k(c)A$ with
+\begin{align}
+  k(c) &= \frac{1}{1+c-p_H\big(R-b(c)/\Delta p\big)}. \label{r4e7-kc}
+\end{align}
+To write it with $\rho_0$, use $p_H(R-b/\Delta p)=p_H(R-B/\Delta p)+(p_H/\Delta p)(B-b)=\rho_0-(p_H/\Delta p)(b-B)$:
+\begin{align}
+  k(c) &= \frac{1}{1+c-\rho_0+\frac{p_H}{\Delta p}\big(b(c)-B\big)}
+        = \frac{1}{1-\rho_0+c+\frac{p_H}{\Delta p}\big[b(c)-B\big]}. \label{r4e7-kc2}
+\end{align}
+At $c=0$, $b(0)=B$ and \eqref{r4e7-kc2} reduces to $1/(1-\rho_0)$. Monitoring raises the
+multiplier if and only if $c+(p_H/\Delta p)[b(c)-B]<0$: the pledgeable income it frees,
+$(p_H/\Delta p)[B-b(c)]$ per unit, exceeds its cost $c$.
+
+\answer{(ii-b)} $k(c)=\dfrac{1}{1-\rho_0+c+(p_H/\Delta p)[b(c)-B]}$ (positive denominator assumed).
+
+\step{7}{(ii-c) The borrower's objective} Neither the monitor nor the uninformed investors earn
+a surplus, so the borrower should receive the NPV net of the monitoring cost. To confirm it,
+solve \eqref{r4e7-IRl} for $p_HR_b$, using $I_m=p_HR_m-cI$:
+\begin{align}
+  p_HR_b &= p_HRI-p_HR_m-I+A+I_m \nonumber\\
+         &= p_HRI-p_HR_m-I+A+p_HR_m-cI \nonumber\\
+         &= (\rho_1-1-c)I+A, \nonumber\\
+  U_b &= p_HR_b-A = (\rho_1-1-c)\,I = (\rho_1-1-c)\,k(c)\,A. \label{r4e7-Ubc}
+\end{align}
+Since $A$ is given, she chooses $c$ to
+\begin{align}
+  \max_c\ \frac{\rho_1-1-c}{1-\rho_0+c+(p_H/\Delta p)[b(c)-B]}. \label{r4e7-max}
+\end{align}
+
+\answer{(ii-c)} The borrower maximizes $(\rho_1-1-c)\,k(c)$, i.e.\ \eqref{r4e7-max}: the NPV
+per unit of investment (net of monitoring cost) times the multiplier.
+
+\step{8}{About the expression printed in the statement} The statement prints the denominator
+$1-\rho_0+(p_H/\Delta p)[b(c)+c-B]$, which exceeds ours by $(p_H/\Delta p-1)c=(p_L/\Delta p)c=I_m/I$.
+That is the multiplier when the monitor brings \emph{no} cash ($I_m=0$): then
+$p_H(R-b/\Delta p-c/\Delta p)I=I-A$, i.e.\ $A=I[1-\rho_0+(p_H/\Delta p)(b+c-B)]$. But then the
+monitor keeps a rent $p_HR_m-cI=(p_L/\Delta p)cI$ and the borrower's utility is
+$(\rho_1-1-(p_H/\Delta p)c)I$, so the numerator would change too. Under the statement's own
+assumption (the monitor breaks even), the consistent objective is \eqref{r4e7-max}, which is
+also the book's answer (p.~574).
+
+\step{9}{Choosing $c$: first-order condition and an example} Let $N(c)=\rho_1-1-c$ and
+$D(c)=1-\rho_0+c+(p_H/\Delta p)[b(c)-B]$, with $N'=-1$ and $D'=1+(p_H/\Delta p)b'(c)$. By the
+quotient rule,
+\begin{align}
+  \frac{d}{dc}\frac{N}{D} &= \frac{N'D-ND'}{D^2} = \frac{-D-N\big[1+(p_H/\Delta p)b'(c)\big]}{D^2}. \nonumber
+\end{align}
+Setting the numerator to zero,
+\begin{align}
+  -D-N-N\frac{p_H}{\Delta p}b'(c) &= 0 \nonumber\\
+  -\frac{p_H}{\Delta p}b'(c) &= \frac{D+N}{N} = 1+\frac{D}{N}: \label{r4e7-foc}
+\end{align}
+the marginal gain in pledgeable income per unit, $-(p_H/\Delta p)b'(c)$, equals the marginal
+cost, which hits both the NPV and the multiplier.
+
+\emph{Example} (parameters of the illustration in (i), and $b(c)=B/(1+20c)$). Let $u=1+20c$, so
+$c=(u-1)/20$, $b=0.3/u$, $b'(c)=-20B/u^2=-6/u^2$ and $p_H/\Delta p=2$. Then
+\begin{align}
+  N &= 0.2-\frac{u-1}{20} = \frac{5-u}{20}, \nonumber\\
+  D &= 0.4+\frac{u-1}{20}+2\Big(\frac{0.3}{u}-0.3\Big) = \frac{u-5}{20}+\frac{0.6}{u}. \nonumber
+\end{align}
+The first-order condition \eqref{r4e7-foc} is $D+N\big(1+2b'\big)=0$, i.e.\ $D+N-12N/u^2=0$:
+\begin{align}
+  \Big[\frac{u-5}{20}+\frac{0.6}{u}\Big]+\frac{5-u}{20}-\frac{12}{u^2}\cdot\frac{5-u}{20} &= 0 \nonumber\\
+  \frac{0.6}{u}-\frac{12(5-u)}{20u^2} &= 0 \nonumber\\
+  12u-12(5-u) &= 0 \qquad(\text{multiplying by }20u^2) \nonumber\\
+  24u &= 60 \;\Rightarrow\; u=2.5,\quad c^*=\frac{2.5-1}{20}=0.075. \nonumber
+\end{align}
+At $c^*$: $b=0.3/2.5=0.12$; $D=0.4+0.075+2(0.12-0.3)=0.475-0.36=0.115$; $N=0.2-0.075=0.125$;
+$k(c^*)=1/0.115=8.6957$; $(\rho_1-1-c^*)k(c^*)=0.125/0.115=1.0870$, against $0.5$ at $c=0$
+(a grid search confirms $c^*$ is the global maximum). With $A=10$: $I=86.96$ and $U_b=10.87$
+(instead of $25$ and $5$). Checks: $R_b=0.12/0.4=0.3$ and $R_m=0.075/0.4=0.1875$ per unit of $I$;
+$I_m=(p_L/\Delta p)c^*I=(1)(0.075)(86.96)=6.52$; the uninformed investors pay
+$86.96-10-6.52=70.43$ and expect $(0.8)(1.5-0.3-0.1875)(86.96)=70.43$.
+
+\intuition Each unit of investment needs a stake $BI/\Delta p$ for the insider, so only $\rho_0$
+per unit can be promised to outsiders; the borrower's cash fills the gap $1-\rho_0$ per unit,
+hence the multiplier $1/(1-\rho_0)$. A monitor shrinks the insider's temptation, so her required
+stake falls and pledgeable income rises; he must be given a stake too, but if he pays for it up
+front, the borrower's only loss is the monitoring cost $c$ per unit. The best $c$ balances
+cheaper incentives against that cost.
+\pitfalls
+\begin{itemize}
+  \item Forgetting the monitor's cash contribution $I_m$: the multiplier then comes out as the
+        statement's printed expression, which assumes the monitor keeps a rent.
+  \item Keeping the borrower's stake at $BI/\Delta p$ after monitoring; under monitoring her
+        incentive constraint uses $b(c)I$.
+  \item Maximizing the multiplier $k(c)$ instead of $(\rho_1-1-c)k(c)$: the NPV per unit
+        falls with $c$.
+\end{itemize}
+\bookans Matches the book's answer (p.~574): $(\Delta p)R_m\ge cI$, $(\Delta p)R_b\ge b(c)I$,
+$I_m=p_HR_m-cI$, $k(c)=1/\{1-\rho_0+c+(p_H/\Delta p)[b(c)-B]\}$, and the borrower maximizes
+$(\rho_1-1-c)k(c)$. The objective printed in the statement (p.~147) differs from this answer
+by the monitor's contribution; see Step~8.
+\refbib{Tirole Ch.~3, \S3.4.1--3.4.2 ``The Continuous-Investment Model'', ``The Lenders' Credit Analysis'', pp.~127--128; Ch.~9, \S9.2.1 ``Benefit of Activism'' (monitoring capital not scarce), pp.~356--358.}
+
+% =============================================================================
+\exsec{8. Lender market power --- Tirole Exercise 3.13, p.~149}
+
+\asked (i) Fixed investment, a single lender who makes a take-it-or-leave-it offer: (i-a) the
+contract the lender chooses; (i-b) whether the project is financed for the same values of $A$ as
+with competitive lenders; (i-c) the borrower's net utility as a function of $A$ over four
+regions, and why it is not monotonic. (ii) Variable investment: the lender's contract and its
+effect on the scale of investment; show that investment falls.
+
+\approach Same Holmstr\"om--Tirole moral hazard, but the roles are reversed: the lender
+maximizes his profit, subject to the borrower's incentive constraint (IC$_b$) and her
+participation constraint (IR$_b$: net utility $\ge 0$, since she can consume $A$). With
+competitive lenders the investors' constraint binds and the borrower gets the NPV; here the
+lender tries to take the NPV and is stopped only by the incentive rent he must leave her.
+
+\notation
+\begin{itemize}
+  \item $I$: investment ($I>A$ in (i)); $A$: borrower's cash; $R$: income on success; $p_H$, $p_L$, $\Delta p$, $B$ as in Exercise~7.
+  \item $V=p_HR-I>0$: NPV; $\bar A$: $p_H(R-B/\Delta p)=I-\bar A$; $\hat A=p_HB/\Delta p$ (both from the statement), $\bar A>0$.
+  \item $R_b$: borrower's reward on success; $U_b=p_HR_b-A$: her net utility; $U_l=p_H(R-R_b)-(I-A)$: lender's profit.
+  \item (ii): income $RI$, private benefit $BI$, $\rho_1=p_HR>1>\rho_0=p_H(R-B/\Delta p)$.
+\end{itemize}
+
+\step{1}{(i) The lender's program} If $A\ge I$ the borrower does not need the lender and gets
+$U_b=V$. For $A<I$, the lender chooses $R_b$:
+\begin{align}
+  \max_{R_b}\ & U_l=p_H(R-R_b)-(I-A) \nonumber\\
+  \text{s.t. }\ & (\Delta p)R_b\ge B, \tag{IC$_b$}\\
+                & p_HR_b-A\ge 0. \tag{IR$_b$}
+\end{align}
+
+\step{2}{(i-a) The optimal reward} $U_l$ falls with $R_b$, so the lender picks the smallest
+$R_b$ meeting both constraints: (IC$_b$) requires $R_b\ge B/\Delta p$ and (IR$_b$) requires
+$R_b\ge A/p_H$. Hence
+\begin{align}
+  R_b^* &= \max\Big\{\frac{B}{\Delta p},\,\frac{A}{p_H}\Big\}, \label{r4e8-Rb}
+\end{align}
+and $A/p_H\ge B/\Delta p$ if and only if $A\ge p_HB/\Delta p=\hat A$.
+
+\step{3}{(i-a) The lender's profit} For $A<\hat A$, $R_b^*=B/\Delta p$ and, using the definition
+of $\bar A$,
+\begin{align}
+  U_l &= p_H\Big(R-\frac{B}{\Delta p}\Big)-I+A \nonumber\\
+      &= (I-\bar A)-I+A = A-\bar A. \label{r4e8-Ul1}
+\end{align}
+For $A\ge\hat A$, $R_b^*=A/p_H$ and
+\begin{align}
+  U_l &= p_HR-p_H\frac{A}{p_H}-I+A \nonumber\\
+      &= p_HR-I = V. \label{r4e8-Ul2}
+\end{align}
+
+\answer{(i-a)} The lender offers $R_b=\max\{B/\Delta p,\,A/p_H\}$ on success and $0$ on failure
+(and lends only if \eqref{r4e8-Ul1} is nonnegative).
+
+\step{4}{(i-b) The financing decision} The lender lends if $U_l\ge 0$. By \eqref{r4e8-Ul1}, for
+$A<\hat A$ this holds if and only if $A\ge\bar A$; by \eqref{r4e8-Ul2}, for $A\ge\hat A$ it
+always holds. The two regions fit together because
+\begin{align}
+  \hat A-\bar A &= \frac{p_HB}{\Delta p}-\Big[I-p_H\Big(R-\frac{B}{\Delta p}\Big)\Big]
+                 = p_HR-I = V > 0. \nonumber
+\end{align}
+So the project is financed if and only if $A\ge\bar A$, exactly the competitive threshold (3.3).
+
+\answer{(i-b)} No: the project is funded if and only if $A\ge\bar A$, as with competitive
+lenders. Market power changes only who gets the NPV.
+
+\step{5}{(i-c) The borrower's net utility} Substituting \eqref{r4e8-Rb} into $U_b=p_HR_b-A$
+region by region (assuming $\hat A<I$, i.e.\ $p_HB/\Delta p<I$, so that the four regions exist):
+\begin{align}
+  U_b(A) &= \begin{cases}
+     0 & A<\bar A \quad(\text{no loan}),\\[2pt]
+     p_H\dfrac{B}{\Delta p}-A=\hat A-A & \bar A\le A<\hat A,\\[6pt]
+     p_H\dfrac{A}{p_H}-A=0 & \hat A\le A<I,\\[2pt]
+     V & A\ge I \quad(\text{self-financing}).
+  \end{cases} \label{r4e8-Ub}
+\end{align}
+At $A=\bar A$, $U_b=\hat A-\bar A=V$: utility jumps from $0$ to the full NPV, then falls one for
+one with $A$ to $0$ at $\hat A$, stays at $0$, and jumps back to $V$ at $A=I$
+(Figure~\ref{r4e8-fig}).
+
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[x=0.075cm,y=0.12cm,>=stealth]
+  \draw[->] (0,0) -- (125,0) node[right] {$A$};
+  \draw[->] (0,0) -- (0,30) node[above] {$U_b$};
+  \draw[very thick,blue!60!black] (0,0) -- (40,0);
+  \draw[very thick,blue!60!black] (40,20) -- (60,0) -- (100,0);
+  \draw[very thick,blue!60!black] (100,20) -- (122,20);
+  \draw[dashed,gray] (40,0) -- (40,20) (100,0) -- (100,20);
+  \draw[dotted,red!70!black,thick] (40,20) -- (122,20);
+  \fill[blue!60!black] (40,20) circle (0.8pt) (100,20) circle (0.8pt);
+  \draw[blue!60!black] (40,0) circle (0.8pt) (100,0) circle (0.8pt);
+  \node[below] at (40,0) {$\bar A=40$};
+  \node[below] at (60,0) {$\hat A=60$};
+  \node[below] at (100,0) {$I=100$};
+  \node[left] at (0,20) {$V=20$};
+  \node[red!70!black,above] at (78,20) {\footnotesize competitive lenders};
+\end{tikzpicture}
+\caption{Borrower's net utility with a monopoly lender (solid) and with competitive lenders
+(dotted), Exercise~8 illustration: $I=100$, $R=150$, $p_H=0.8$, $p_L=0.4$, $B=30$.}
+\label{r4e8-fig}
+\end{figure}
+
+\answer{(i-c)} $U_b=0$ on $(-\infty,\bar A)$; $\hat A-A$ (decreasing from $V$ to $0$) on
+$[\bar A,\hat A)$; $0$ on $[\hat A,I)$; $V$ on $[I,\infty)$. It is nonmonotonic because the
+lender extracts everything above the incentive rent $p_HB/\Delta p$, and a richer borrower
+(who must contribute her cash) has less of that rent left; only when she needs no loan does she
+escape the lender.
+
+\emph{Numerical illustration.} $I=100$, $R=150$, $p_H=0.8$, $p_L=0.4$, $B=30$ (assumption (3.2):
+$0.4(150)+30-100=-10<0$). Then $V=0.8(150)-100=20$; $B/\Delta p=75$; $p_H(R-B/\Delta p)=0.8(75)=60$;
+$\bar A=100-60=40$; $\hat A=0.8(75)=60$. At $A=50$: $R_b^*=\max\{75,\,50/0.8=62.5\}=75$,
+$U_b=0.8(75)-50=10$, $U_l=0.8(150-75)-50=10$, total $20=V$ (with competitive lenders $U_b=20$).
+At $A=70$: $R_b^*=\max\{75,87.5\}=87.5$, $U_b=0.8(87.5)-70=0$, $U_l=0.8(62.5)-30=50-30=20=V$.
+
+\step{6}{(ii) The lender's program with variable investment} The lender now chooses the scale
+$I$ and the reward $R_b$:
+\begin{align}
+  \max_{I,\,R_b}\ & U_l=p_H(RI-R_b)-(I-A) \nonumber\\
+  \text{s.t. }\ & (\Delta p)R_b\ge BI, \tag{IC$_b$}\\
+                & p_HR_b\ge A. \tag{IR$_b$}
+\end{align}
+
+\step{7}{(ii) Both constraints bind} The program is linear, so the Kuhn--Tucker conditions are
+sufficient. The Lagrangian, with multipliers $\lambda,\mu\ge 0$, is
+\begin{align}
+  \mathcal L &= p_H(RI-R_b)-I+A+\lambda\big[(\Delta p)R_b-BI\big]+\mu\big[p_HR_b-A\big]. \nonumber
+\end{align}
+Setting the derivatives to zero,
+\begin{align}
+  \frac{\partial\mathcal L}{\partial I} &= p_HR-1-\lambda B=0
+     \;\Rightarrow\; \lambda=\frac{\rho_1-1}{B}>0, \nonumber\\
+  \frac{\partial\mathcal L}{\partial R_b} &= -p_H+\lambda\Delta p+\mu p_H=0
+     \;\Rightarrow\; \mu=1-\frac{\lambda\Delta p}{p_H}=1-\frac{(\rho_1-1)\Delta p}{p_HB}. \nonumber
+\end{align}
+$\lambda>0$ because $\rho_1>1$, and
+\begin{align}
+  \mu>0 \iff \frac{(\rho_1-1)\Delta p}{p_HB}<1 \iff \rho_1-1<\frac{p_HB}{\Delta p}
+        \iff \rho_1-\frac{p_HB}{\Delta p}<1 \iff \rho_0<1, \nonumber
+\end{align}
+which holds. Both multipliers are positive, so both constraints bind. (The book's verbal version:
+if (IC$_b$) were slack, (IR$_b$) would bind and $U_l=(\rho_1-1)I$ would push $I$ to infinity,
+violating (IC$_b$); if (IR$_b$) were slack, (IC$_b$) would bind and $U_l=(\rho_0-1)I+A$ would
+push $I$ to $0$, violating (IR$_b$).)
+
+\step{8}{(ii) Scale and profit} From the binding (IR$_b$), $R_b=A/p_H$; substituting into the
+binding (IC$_b$),
+\begin{align}
+  (\Delta p)\frac{A}{p_H} &= BI \nonumber\\
+  I^m &= \frac{\Delta p}{p_HB}A = \frac{A}{p_HB/\Delta p}. \label{r4e8-Im}
+\end{align}
+The lender's profit is $U_l=p_HRI^m-p_H(A/p_H)-I^m+A=(\rho_1-1)I^m$, and $U_b=p_HR_b-A=0$.
+
+\step{9}{(ii) Comparison with competitive lenders} From Exercise~7(i), $I^*=A/(1-\rho_0)$. Then
+\begin{align}
+  I^m<I^* &\iff \frac{p_HB}{\Delta p}>1-\rho_0 = 1-\rho_1+\frac{p_HB}{\Delta p} \iff \rho_1>1, \nonumber
+\end{align}
+which holds. With the illustration of Exercise~7 ($p_H=0.8$, $\Delta p=0.4$, $R=1.5$, $B=0.3$,
+$A=10$): $p_HB/\Delta p=0.8(0.3)/0.4=0.6$, so $I^m=10/0.6=16.667<I^*=25$; the multipliers are
+$\lambda=0.2/0.3=0.6667$ and $\mu=1-0.2(0.4)/(0.8\cdot0.3)=0.6667$; $U_l=0.2(16.667)=3.3333$,
+$U_b=0$. (The formula presumes $p_HB/\Delta p<1$, so that $I^m>A$; otherwise the borrower could
+do better by investing her cash on her own, an outside option the program's (IR$_b$) ignores.)
+
+\answer{(ii)} The lender sets $R_b=A/p_H=BI/\Delta p$ and $I^m=A\,\Delta p/(p_HB)$, keeping the
+whole NPV $(\rho_1-1)I^m$. Since $I^m<A/(1-\rho_0)$, lender market power reduces the scale of
+investment.
+
+\intuition In both versions the lender would like to take everything, but he must leave the
+borrower the stake $B/\Delta p$ (or $BI/\Delta p$) that keeps her honest. With a fixed project
+that rent does not depend on any choice, so the financing decision is unchanged and only the
+split moves; a richer borrower brings more cash, and the lender simply takes it. With a variable
+project the rent grows with scale: each extra unit of investment forces the lender to leave
+$p_HB/\Delta p$ more to the borrower. Like a monopolist restricting output, the lender stops
+where the borrower's rent is exactly what she put in, below the competitive scale.
+\pitfalls
+\begin{itemize}
+  \item Imposing the investors' breakeven constraint (competitive case) instead of the
+        borrower's participation constraint: the lender's profit is not zero here.
+  \item Concluding that market power must raise the financing threshold in the fixed model; it
+        does not, because the lender gains from any loan with $A\ge\bar A$.
+  \item Forgetting the region $A\ge I$, where the borrower self-finances and gets $V$.
+\end{itemize}
+\bookans Matches the book's answer (pp.~576--577): $R_b=A/p_H$ when this satisfies (IC$_b$),
+i.e.\ $A\ge\hat A$, otherwise $R_b=B/\Delta p$ with $U_b=p_HB/\Delta p-A$; financing if and only if
+$A\ge\bar A$; the four-region figure; in (ii) both constraints bind and
+$I=A/(p_HB/\Delta p)<I^*=A/[1-p_H(R-B/\Delta p)]$.
+\refbib{Tirole Ch.~3, \S3.2.1--3.2.2, pp.~115--117; \S3.4.1--3.4.2, pp.~127--128. Lecture Topic~4A.}
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 9 AS 9
+\exsec{9. Entrepreneurial risk aversion --- Tirole Exercise 3.2, p.~144}
+
+\asked (i) The entrepreneur is risk neutral above a subsistence level $c_0$ and infinitely averse
+to falling below it. Find the smallest cash $\bar A$ with which risk-neutral investors finance the
+project, and explain why the answer differs between a project that succeeds for sure under effort
+($p_H=1$) and one that can fail even under effort ($p_H<1$). (ii) Redo the analysis for a general
+strictly concave utility, once with limited liability (her payments cannot be negative) and once
+without.
+
+\approach This is the fixed-investment model of the lecture (Topic~4A) with a risk-averse
+borrower. The contract pays her $c^S$ on success and $c^F$ on failure; she chooses it to maximise
+expected utility subject to the investors' breakeven constraint (IR$_l$) and her incentive
+constraint (IC$_b$), now written in utility. Pledgeable income is total expected income minus the
+cheapest expected payment that satisfies (IC$_b$) and the lower bound on $c^F$; a floor on
+consumption (subsistence in (i), limited liability in (ii)) raises that payment and so the minimum
+equity. In (ii) we write the Lagrangian and derive the first-order conditions, which give the
+Holmstr\"om--Shavell insurance-versus-incentives trade-off.
+
+\notation
+\begin{itemize}
+  \item $A$: entrepreneur's cash ($A\ge c_0$ in (i)); $I>A$: fixed investment; $R>0$: income in
+        the case of success, $0$ in the case of failure.
+  \item $p_H$, $p_L=p_H-\Delta p$: success probabilities when she works / shirks ($0<p_L<p_H\le 1$);
+        $B>0$: private benefit from shirking.
+  \item $\mathit{NPV}\equiv p_HR-I>0$; $\bar A_{rn}\equiv I-p_H(R-B/\Delta p)>0$: the
+        risk-neutral threshold (3.3), positive by the assumption $I>p_H(R-B/\Delta p)$.
+  \item $c^S$, $c^F$: the entrepreneur's consumption in the case of success / failure (her total
+        payoff from the contract); $u(\cdot)$: utility of consumption; $c_0$: subsistence level in (i).
+  \item $\mathcal{P}$: expected pledgeable income; $\bar A$: minimum cash for financing.
+  \item $h(c)\equiv u^{-1}\!\big(u(c)+B/\Delta p\big)$: consumption in success that gives exactly the
+        utility premium $B/\Delta p$ over consumption $c$ in failure (part (ii)).
+\end{itemize}
+\assume The entrepreneur puts all of $A$ into the project and the contract pays her $c^S$ or $c^F$
+(keeping cash aside is the same as adding it to both payments). In (ii) the private benefit enters
+utility additively, $p\,u(c^S)+(1-p)\,u(c^F)+B$ when she shirks, as in the book's answer.
+
+\step{1}{(i), $p_H<1$: the programme} The entrepreneur offers the contract that maximises her
+expected utility subject to the investors' breakeven and her incentive constraint:
+\begin{align}
+  \max_{c^S,c^F}\; & p_H\,u(c^S)+(1-p_H)\,u(c^F) \label{t4e9-obj}\\
+  \text{s.t. }\; & p_H(R-c^S)+(1-p_H)(0-c^F)\ \ge\ I-A, \label{t4e9-irl}\\
+  & p_H\,u(c^S)+(1-p_H)\,u(c^F)\ \ge\ p_L\,u(c^S)+(1-p_L)\,u(c^F)+B. \label{t4e9-ic}
+\end{align}
+Failure has probability $1-p_H>0$ even under work, so $c^F<c_0$ would make \eqref{t4e9-obj} equal to
+$-\infty$: the optimum has $c^F\ge c_0$, and then $c^S\ge c_0$ too. On $[c_0,\infty)$ utility is
+linear, $u(c)=c$, so \eqref{t4e9-ic} reads
+\begin{align}
+  p_Hc^S+(1-p_H)c^F &\ge p_Lc^S+(1-p_L)c^F+B \nonumber\\
+  (p_H-p_L)c^S-\big[(1-p_L)-(1-p_H)\big]c^F &\ge B \nonumber\\
+  (p_H-p_L)c^S-(p_H-p_L)c^F &\ge B \nonumber\\
+  (\Delta p)(c^S-c^F) &\ge B. \label{t4e9-iclin}
+\end{align}
+
+\step{2}{(i), $p_H<1$: which constraints bind, and $\bar A$} With linear utility the objective
+\eqref{t4e9-obj} is the expected payment $p_Hc^S+(1-p_H)c^F$. If \eqref{t4e9-irl} were slack, raising
+$c^S$ would raise the objective and relax \eqref{t4e9-iclin}; so \eqref{t4e9-irl} binds and the
+entrepreneur gets $A+\mathit{NPV}$. Financing is possible if and only if the cheapest contract that
+satisfies \eqref{t4e9-iclin} and $c^F\ge c_0$ leaves the investors enough. Using
+$c^S\ge c^F+B/\Delta p$ from \eqref{t4e9-iclin} and then $c^F\ge c_0$, any feasible contract costs
+\begin{align}
+  p_Hc^S+(1-p_H)c^F &\ge p_H\Big(c^F+\frac{B}{\Delta p}\Big)+(1-p_H)c^F \nonumber\\
+                    &= c^F+p_H\frac{B}{\Delta p} \ \ge\ c_0+p_H\frac{B}{\Delta p}, \nonumber
+\end{align}
+with equality iff both inequalities bind, so the cheapest contract is
+\begin{align}
+  c^F &= c_0, \label{t4e9-cf}\\
+  c^S &= c_0+\frac{B}{\Delta p}. \label{t4e9-cs}
+\end{align}
+The pledgeable income is total expected income minus this minimum expected payment; substituting
+\eqref{t4e9-cf}--\eqref{t4e9-cs},
+\begin{align}
+  \mathcal{P} &= p_HR-\Big[p_H\Big(c_0+\frac{B}{\Delta p}\Big)+(1-p_H)(c_0)\Big] \nonumber\\
+              &= p_H\Big(R-\frac{B}{\Delta p}\Big)-c_0. \label{t4e9-P}
+\end{align}
+(the middle step: $p_Hc_0+(1-p_H)c_0=c_0$). Financing requires $\mathcal{P}\ge I-A$; using
+\eqref{t4e9-P} and moving terms,
+\begin{align}
+  p_H\Big(R-\frac{B}{\Delta p}\Big)-c_0 &\ge I-A \nonumber\\
+  A \ \ge\ \bar A &= I+c_0-p_H\Big(R-\frac{B}{\Delta p}\Big) \label{t4e9-Abar}\\
+                  &= \Big[I-p_H\Big(R-\frac{B}{\Delta p}\Big)\Big]+c_0=\bar A_{rn}+c_0. \nonumber
+\end{align}
+Because $\bar A_{rn}>0$, $\bar A>c_0$: entrepreneurs with $A\in[c_0,\bar A)$ are rationed. The
+participation constraint holds, since she gets $A+\mathit{NPV}>A$. Illustration: with
+$p_H=0.8$, $p_L=0.4$, $B=1$, $R=10$, $I=6.5$, $c_0=1$, \eqref{t4e9-Abar} gives
+$\bar A=(6.5)+(1)-(0.8)(10-1/0.4)=1.5$, against $\bar A_{rn}=0.5$.
+
+\step{3}{(i), $p_H=1$} Now failure never happens on the equilibrium path; it happens only if she
+shirks, with probability $1-p_L>0$. Set $c^F<c_0$ (for example $c^F=0$, feasible under limited
+liability when $c_0>0$). Shirking then yields $p_L\,u(c^S)+(1-p_L)(-\infty)+B=-\infty$, so
+\eqref{t4e9-ic} holds for every $c^S\ge c_0$ and the incentive problem costs nothing. The cheapest
+contract is $c^S=c_0$, and
+\begin{align}
+  \mathcal{P} &= R-c_0, \label{t4e9-P1}\\
+  \bar A &= I+c_0-R\ <\ c_0, \label{t4e9-Abar1}
+\end{align}
+where the inequality uses $R-I=\mathit{NPV}>0$. Every entrepreneur with $A\ge c_0$ is financed: no
+rationing (with the numbers above, $\bar A=6.5+1-10=-2.5$). The threshold is discontinuous at
+$p_H=1$: by \eqref{t4e9-Abar}, $\bar A\to I+c_0-R+B/\Delta p$ as $p_H\to1$, a jump of $B/\Delta p$.
+If $c_0\le0$, limited liability rules out a punishment below $c_0$ and the risk-neutral analysis applies.
+
+\answer{(i)} For $p_H<1$: $\bar A=I+c_0-p_H(R-B/\Delta p)=\bar A_{rn}+c_0$, so entrepreneurs with
+$A\in[c_0,\bar A)$ are rationed. For $p_H=1$: failure reveals shirking and can be punished with
+$c^F<c_0$ at no cost on the equilibrium path, so $\bar A=I+c_0-R<c_0$ and every entrepreneur with
+$A\ge c_0$ is financed (no rationing).
+
+\step{4}{(ii) The general programme} With $u'>0$, $u''<0$, the contract solves
+\begin{align}
+  \max_{c^S,c^F}\; & p_H\,u(c^S)+(1-p_H)\,u(c^F) \label{t4e9-gobj}\\
+  \text{s.t. }\; & p_H(R-c^S)-(1-p_H)c^F\ \ge\ I-A, \tag{IR$_l$}\label{t4e9-girl}\\
+  & (\Delta p)\big[u(c^S)-u(c^F)\big]\ \ge\ B, \tag{IC$_b$}\label{t4e9-gic}\\
+  & c^F\ge 0,\ c^S\ge0 \quad\text{(only under limited liability)}, \tag{LL}\label{t4e9-ll}\\
+  & p_H\,u(c^S)+(1-p_H)\,u(c^F)\ \ge\ u(A). \tag{PC}\label{t4e9-pc}
+\end{align}
+\eqref{t4e9-gic} is the risk-averse version of (IC$_b$): subtract $p_Lu(c^S)+(1-p_L)u(c^F)+B$
+from \eqref{t4e9-gobj}. \eqref{t4e9-pc} says she prefers the project to consuming $A$. In utility
+units $v^S=u(c^S)$, $v^F=u(c^F)$ the objective and \eqref{t4e9-gic} are linear and the cost
+$p_Hu^{-1}(v^S)+(1-p_H)u^{-1}(v^F)$ is convex, so the problem is convex and the first-order
+conditions are sufficient.
+
+\step{5}{(ii) Which constraints bind} We show both (IR$_l$) and (IC$_b$) bind, the second by
+deriving the first-order conditions. (a) \eqref{t4e9-girl} binds: otherwise raise $c^S$, which raises
+\eqref{t4e9-gobj} and relaxes \eqref{t4e9-gic}. (b) With multipliers
+$\lambda\ge0$ on \eqref{t4e9-girl} and $\mu\ge0$ on \eqref{t4e9-gic} (and \eqref{t4e9-ll} slack), the
+Lagrangian is
+\begin{align}
+  \mathcal L &= p_H\,u(c^S)+(1-p_H)\,u(c^F)+\lambda\big[p_H(R-c^S)-(1-p_H)c^F-I+A\big] \nonumber\\
+             &\quad+\mu\big[(\Delta p)\big(u(c^S)-u(c^F)\big)-B\big]. \nonumber
+\end{align}
+Differentiating with respect to $c^S$ and $c^F$ and setting the derivatives to zero,
+\begin{align}
+  \frac{\partial\mathcal L}{\partial c^S} &= p_Hu'(c^S)-\lambda p_H+\mu(\Delta p)u'(c^S)=0, \nonumber\\
+  &\Longrightarrow\quad u'(c^S)\big(p_H+\mu\Delta p\big)=\lambda p_H, \nonumber\\
+  \frac{\partial\mathcal L}{\partial c^F} &= (1-p_H)u'(c^F)-\lambda(1-p_H)-\mu(\Delta p)u'(c^F)=0, \nonumber\\
+  &\Longrightarrow\quad u'(c^F)\big(1-p_H-\mu\Delta p\big)=\lambda(1-p_H). \nonumber
+\end{align}
+Here $\lambda>0$, because $\lambda=0$ would make the first condition read $u'(c^S)(p_H+\mu\Delta p)=0$,
+impossible with $u'>0$. Dividing the first by $\lambda p_H\,u'(c^S)$ and the second by
+$\lambda(1-p_H)\,u'(c^F)$,
+\begin{align}
+  \frac{1}{u'(c^S)} &= \frac{1}{\lambda}\Big(1+\mu\frac{\Delta p}{p_H}\Big), \label{t4e9-focs}\\
+  \frac{1}{u'(c^F)} &= \frac{1}{\lambda}\Big(1-\mu\frac{\Delta p}{1-p_H}\Big). \label{t4e9-focf}
+\end{align}
+If $\mu=0$, \eqref{t4e9-focs}--\eqref{t4e9-focf} give $u'(c^S)=u'(c^F)$, i.e.\ full insurance
+$c^S=c^F$, which violates \eqref{t4e9-gic} because $B>0$. So $\mu>0$ and, by \eqref{t4e9-focs}--\eqref{t4e9-focf},
+$c^S>c^F$: the entrepreneur bears risk, but only as much as incentives require
+(Holmstr\"om--Shavell inverse-marginal-utility rule).
+
+\step{6}{(ii) The solution} We reduce the two binding constraints to one equation in $c^F$. The
+binding \eqref{t4e9-gic} is $u(c^S)=u(c^F)+B/\Delta p$, i.e.\ $c^S=h(c^F)$. The binding
+\eqref{t4e9-girl} is $p_HR-p_Hc^S-(1-p_H)c^F=I-A$, i.e.
+\begin{align}
+  p_Hc^S+(1-p_H)c^F=A+(p_HR-I)=A+\mathit{NPV}. \nonumber
+\end{align}
+Substituting $c^S=h(c^F)$,
+\begin{align}
+  p_H\,h(c^F)+(1-p_H)\,c^F = A+\mathit{NPV}. \label{t4e9-sol}
+\end{align}
+Differentiating the identity $u(h(c))=u(c)+B/\Delta p$ with respect to $c$,
+\begin{align}
+  u'\big(h(c)\big)\,h'(c)=u'(c) \quad\Longrightarrow\quad h'(c)=\frac{u'(c)}{u'(h(c))}\ \ge\ 1, \nonumber
+\end{align}
+because $h(c)>c$ and $u'$ is decreasing. Hence the left-hand side of \eqref{t4e9-sol} is increasing
+in $c^F$, so \eqref{t4e9-sol} defines a unique $c^F=c(A)$, increasing in $A$. Substituting $u(c^S)=u(c^F)+B/\Delta p$ into
+\eqref{t4e9-gobj}, her utility is
+\begin{align}
+  V(A) &= p_H\Big(u(c(A))+\frac{B}{\Delta p}\Big)+(1-p_H)\,u(c(A)) \nonumber\\
+       &= u(c(A))+\frac{p_HB}{\Delta p}. \label{t4e9-V}
+\end{align}
+
+\step{7}{(ii) Without limited liability} Only \eqref{t4e9-pc} can fail. Let $\mathit{CE}$ be the certainty
+equivalent of the lottery $(c^S,c^F)$, $u(\mathit{CE})=V(A)$, and $\pi\equiv \mathbb{E}[c]-\mathit{CE}$ its
+risk premium; by \eqref{t4e9-sol}, $\mathbb{E}[c]=A+\mathit{NPV}$. Then
+\begin{align}
+  \text{financing}\iff V(A)\ge u(A)\iff \mathit{CE}\ge A\iff \pi(A)\le \mathit{NPV}. \label{t4e9-nll}
+\end{align}
+A risk-neutral entrepreneur ($\pi=0$) without limited liability is always financed (she can be
+punished with $c^F<0$; there is no $\bar A$). A risk-averse one is financed only if the risk premium
+of the incentive lottery does not exceed the NPV: risk aversion alone can block positive-NPV projects.
+Whether this gives a threshold in $A$ depends on how $\pi$ varies with wealth (with $B$ in utility
+units, a richer entrepreneur needs a larger money spread to produce the utility gap $B/\Delta p$).
+
+\step{8}{(ii) With limited liability} \eqref{t4e9-ll} requires $c(A)\ge0$. Because the left-hand side of
+\eqref{t4e9-sol} is increasing, $c(A)\ge0$ iff $A+\mathit{NPV}\ge p_Hh(0)$, i.e.
+\begin{align}
+  A\ \ge\ A_{LL}\equiv I-p_H\big[R-h(0)\big]. \label{t4e9-all}
+\end{align}
+Below $A_{LL}$ no contract satisfies \eqref{t4e9-girl}, \eqref{t4e9-gic} and \eqref{t4e9-ll}: the cheapest
+incentive-compatible contract, $c^F=0$, $c^S=h(0)$, already costs more than $A+\mathit{NPV}$. Above
+$A_{LL}$ the solution is that of Step 6 with $c^F=c(A)\ge0$, so the minimum equity is
+$\bar A=\min\{A\ge A_{LL}:\ V(A)\ge u(A)\}$. Two remarks. First, for $A>A_{LL}$ the entrepreneur
+receives $c^F>0$ in failure: unlike the risk-neutral case, pure debt ($c^F=0$) is no longer optimal,
+because she buys partial insurance. Second, risk neutrality gives back the book: with $u(c)=c$,
+$h(0)=B/\Delta p$ and \eqref{t4e9-all} is \eqref{t4e9-Abar} with $c_0=0$; part (i) is the case of a floor
+$c_0$ instead of $0$. If $u$ is normalised so that $u'(0)=1$, concavity gives $h(0)\ge B/\Delta p$, so
+$A_{LL}\ge\bar A_{rn}$: risk aversion raises the equity requirement.
+
+\answer{(ii)} Both (IR$_l$) and (IC$_b$) bind; the contract solves \eqref{t4e9-sol} with
+$u(c^S)=u(c^F)+B/\Delta p$, and the first-order conditions \eqref{t4e9-focs}--\eqref{t4e9-focf} give
+$c^S>c^F$ (partial insurance). Without limited liability, financing obtains iff the risk premium of
+the incentive lottery is at most the NPV, $\pi(A)\le\mathit{NPV}$. With limited liability, also
+$A\ge A_{LL}=I-p_H[R-h(0)]$, and $\bar A=\min\{A\ge A_{LL}:V(A)\ge u(A)\}$; above $A_{LL}$ she gets
+$c^F>0$, so pure debt is no longer optimal.
+
+\intuition Incentives need a spread between the success and failure payoffs. A risk-neutral
+entrepreneur bears that spread for free; a subsistence floor or limited liability bounds the
+punishment, so the spread must be paid as a rent in success, and a risk-averse entrepreneur must in
+addition be compensated for the risk. Both raise the stake she keeps and lower pledgeable income.
+The $p_H=1$ case is the exception: failure then proves shirking, so an unbounded punishment off the
+equilibrium path removes the agency cost.
+
+\pitfalls
+\begin{itemize}
+  \item Subtracting $c_0$ from the cash instead of adding it to the payments: the entrepreneur must be
+        paid at least $c_0$ in \emph{both} states, which costs investors $c_0$ in expectation; the two
+        bookkeepings agree only if this is done consistently.
+  \item Treating $p_H=1$ like $p_H<1$. With $p_H=1$ failure never occurs under effort, so the
+        $-\infty$ punishment is free; with $p_H<1$ it would hit her on the equilibrium path.
+  \item In (ii), carrying over the risk-neutral result that pure debt ($c^F=0$) is optimal. A
+        risk-averse borrower buys partial insurance, $c^F>0$, whenever $A>A_{LL}$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~571): $\bar A=I+c_0-p_H(R-B/\Delta p)$ for $p_H<1$, the
+programme of (ii) with binding incentive constraint. For $p_H=1$ the book writes the pledgeable
+income as $p_HR$, i.e.\ with $c_0$ kept aside from $A$; this is \eqref{t4e9-P1}--\eqref{t4e9-Abar1}
+in other bookkeeping. The book only states the programme for (ii) and cites Holmstr\"om (1979) and
+Shavell (1979); Steps 6--8 are this solution's.
+
+\refbib Tirole \S3.2.1--3.2.2, pp.~115--117; answer p.~571.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 10 AS 10
+\exsec{10. Maximal incentives principle in the fixed-investment model --- Tirole Exercise 3.18, p.~151}
+
+\asked In the fixed-investment model, failure now yields a positive income $R^F$ (salvage value)
+instead of $0$. Show that a debt contract (investors take everything in failure and a fixed amount
+in success) is an optimal financial structure, and show that, unlike the variable-investment model
+of Section~3.4.3, other contracts may be optimal too.
+
+\approach This is the lecture's ``debt dominates equity'' result (maximal incentives principle,
+Topic~4A). Set up the borrower's programme: maximise her expected reward subject to (IC$_b$),
+(IR$_l$) and limited liability. With a fixed investment her utility equals the NPV for \emph{every}
+contract on which (IR$_l$) binds, so the contract matters only for feasibility, i.e.\ for
+\emph{pledgeable income}. Paying her in failure buys no incentive, so the contract that maximises
+pledgeable income pays her nothing in failure: debt. Uniqueness fails because, when $A>\bar A$, the
+spare pledgeable income can be paid in either state.
+
+\notation
+\begin{itemize}
+  \item $I$: fixed investment; $A$: entrepreneur's cash; $R^S>R^F>0$: income in success / failure,
+        with $R^F<I-A$; $R\equiv R^S-R^F$.
+  \item $p_H$, $p_L=p_H-\Delta p$, $B$: as in Section 3.2.
+  \item $R_b^S$, $R_b^F\ge0$: entrepreneur's reward in success / failure (limited liability).
+  \item $\mathit{NPV}\equiv p_HR^S+(1-p_H)R^F-I=p_HR+R^F-I>0$; $U_b$: entrepreneur's net utility.
+  \item $D$: face value of debt; $\bar A$: minimum cash for financing.
+\end{itemize}
+
+\step{1}{Programme} The borrower designs the contract $(R_b^S,R_b^F)$; her incentive constraint is
+$p_HR_b^S+(1-p_H)R_b^F\ge p_LR_b^S+(1-p_L)R_b^F+B$, which simplifies (collect $R_b^S$ and $R_b^F$
+terms, $(1-p_L)-(1-p_H)=\Delta p$) to \eqref{t4e10-ic}:
+\begin{align}
+  U_b=\max_{R_b^S,R_b^F}\; & p_HR_b^S+(1-p_H)R_b^F-A \label{t4e10-obj}\\
+  \text{s.t. }\; & (\Delta p)(R_b^S-R_b^F)\ \ge\ B, \tag{IC$_b$}\label{t4e10-ic}\\
+  & p_H(R^S-R_b^S)+(1-p_H)(R^F-R_b^F)\ \ge\ I-A, \tag{IR$_l$}\label{t4e10-irl}\\
+  & R_b^S\ge0,\ R_b^F\ge0. \tag{LL}\label{t4e10-ll}
+\end{align}
+
+\step{2}{The breakeven constraint binds; $U_b$ is the NPV} If \eqref{t4e10-irl} were slack, raising
+$R_b^S$ would raise \eqref{t4e10-obj} and relax \eqref{t4e10-ic}. With \eqref{t4e10-irl} binding,
+solve it for her expected reward,
+\begin{align}
+  p_HR^S-p_HR_b^S+(1-p_H)R^F-(1-p_H)R_b^F &= I-A \nonumber\\
+  p_HR_b^S+(1-p_H)R_b^F &= p_HR^S+(1-p_H)R^F-(I-A), \nonumber
+\end{align}
+and substitute it into \eqref{t4e10-obj}:
+\begin{align}
+  U_b &= \big[p_HR^S+(1-p_H)R^F-(I-A)\big]-A \nonumber\\
+      &= p_HR^S+(1-p_H)R^F-I \nonumber\\
+      &= \mathit{NPV}. \label{t4e10-Ub}
+\end{align}
+Because $I$ is fixed, \eqref{t4e10-Ub} is the same for \emph{every} feasible contract with binding
+\eqref{t4e10-irl}. The financial structure matters only for feasibility: it must deliver
+\eqref{t4e10-ic} while leaving investors $I-A$.
+
+\step{3}{Maximal pledgeable income and the financing condition} The constraint set is nonempty iff
+the largest expected income that can go to investors subject to \eqref{t4e10-ic} and
+\eqref{t4e10-ll} covers $I-A$, i.e.\ iff expected income minus the \emph{smallest} expected reward
+compatible with \eqref{t4e10-ic} and \eqref{t4e10-ll} is at least $I-A$. Using
+$R_b^S\ge R_b^F+B/\Delta p$ from \eqref{t4e10-ic},
+\begin{align}
+  p_HR_b^S+(1-p_H)R_b^F &\ge p_H\Big(R_b^F+\frac{B}{\Delta p}\Big)+(1-p_H)R_b^F \nonumber\\
+                        &= R_b^F+p_H\frac{B}{\Delta p}\ \ge\ p_H\frac{B}{\Delta p}, \nonumber
+\end{align}
+the last step by $R_b^F\ge0$; both bounds are attained by $R_b^F=0$, $R_b^S=B/\Delta p$. Each unit of
+failure reward costs one unit of expected income and buys no incentive. So
+\begin{align}
+  \mathcal{P} &= p_HR^S+(1-p_H)R^F-p_H\frac{B}{\Delta p} \nonumber\\
+              &= p_H(R^S-R^F)+R^F-p_H\frac{B}{\Delta p} \nonumber\\
+              &= R^F+p_H\Big(R-\frac{B}{\Delta p}\Big), \label{t4e10-P}
+\end{align}
+and financing obtains iff $\mathcal{P}\ge I-A$, i.e.
+\begin{align}
+  A\ \ge\ \bar A\equiv I-R^F-p_H\Big(R-\frac{B}{\Delta p}\Big)=p_H\frac{B}{\Delta p}-\mathit{NPV}, \label{t4e10-Abar}
+\end{align}
+where the second form uses $\mathit{NPV}=p_HR+R^F-I$.
+The safe income $R^F$ works exactly like cash on hand.
+
+\step{4}{A debt contract is optimal} Let investors hold debt of face value $D$ defined by
+\begin{align}
+  p_HD+(1-p_H)R^F = I-A. \label{t4e10-D}
+\end{align}
+In failure the firm defaults and investors take $R^F$; in success they get $D$. By $R^F<I-A$,
+\eqref{t4e10-D} gives $D>R^F$, so the borrower gets $R_b^F=0$. Substituting \eqref{t4e10-D} into
+\eqref{t4e10-Abar} (written as $p_H(R^S-B/\Delta p)+(1-p_H)R^F\ge I-A$),
+\begin{align}
+  p_H\Big(R^S-\frac{B}{\Delta p}\Big)+(1-p_H)R^F &\ge p_HD+(1-p_H)R^F \nonumber\\
+  p_H\Big(R^S-\frac{B}{\Delta p}\Big) &\ge p_HD \nonumber\\
+  R^S-\frac{B}{\Delta p} &\ge D \nonumber\\
+  R_b^S=R^S-D &\ge \frac{B}{\Delta p}, \label{t4e10-debtic}
+\end{align}
+(subtracting $(1-p_H)R^F$, then dividing by $p_H>0$, then rearranging)
+so \eqref{t4e10-ic} holds, \eqref{t4e10-irl} binds by construction, and by \eqref{t4e10-Ub} debt
+attains the maximum. It is optimal whenever financing is feasible.
+
+\step{5}{Debt is not uniquely optimal} The optimal set is every $(R_b^S,R_b^F)\ge0$ with binding
+\eqref{t4e10-irl} and \eqref{t4e10-ic}. From the binding \eqref{t4e10-irl},
+$R_b^S=[A+\mathit{NPV}-(1-p_H)R_b^F]/p_H$. Substituting this into \eqref{t4e10-ic},
+\begin{align}
+  (\Delta p)\Big(\frac{A+\mathit{NPV}-(1-p_H)R_b^F}{p_H}-R_b^F\Big) &\ge B \nonumber\\
+  (\Delta p)\,\frac{A+\mathit{NPV}-(1-p_H)R_b^F-p_HR_b^F}{p_H} &\ge B \nonumber\\
+  \frac{A+\mathit{NPV}-R_b^F}{p_H} &\ge \frac{B}{\Delta p} \nonumber\\
+  A+\mathit{NPV}-R_b^F &\ge p_H\frac{B}{\Delta p} \nonumber\\
+  R_b^F &\le A+\mathit{NPV}-p_H\frac{B}{\Delta p}=A-\bar A, \label{t4e10-set}
+\end{align}
+using \eqref{t4e10-Abar} in the last line. So every $R_b^F\in[0,A-\bar A]$ is optimal (add
+$R_b^F\le R^F$ if investors' claim must be nonnegative in each state). The contract is unique only
+at $A=\bar A$. For $A>\bar A$, a small failure reward (debt plus a little equity, or even all-equity
+when its implied $R_b^F$ satisfies \eqref{t4e10-set}) does as well. Illustration: $R^S=12$, $R^F=2$,
+$p_H=0.8$, $p_L=0.4$, $B=1.6$, $I=9$, $A=3$. Then $B/\Delta p=1.6/0.4=4$,
+$\mathit{NPV}=0.8(12)+0.2(2)-9=9.6+0.4-9=1$, $\bar A=0.8(4)-1=2.2$, and by \eqref{t4e10-D}
+$D=(9-3-0.2(2))/0.8=5.6/0.8=7$ (with $2<7\le12-4=8$). The optimal set is
+$R_b^F\in[0,\,3-2.2]=[0,0.8]$; at $R_b^F=0.8$, $R_b^S=(3+1-0.2(0.8))/0.8=3.84/0.8=4.8$ and
+\eqref{t4e10-ic} binds: $0.4(4.8-0.8)=1.6=B$.
+
+\step{6}{Contrast with variable investment} In Section 3.4.3 the entrepreneur's utility
+$(p_HR+R^F-1)I$ rises with $I$, so she expands $I$ until the financing constraint binds, the
+analogue of $A=\bar A$. Then the slack in \eqref{t4e10-set} is zero, $R_b^F=0$ is forced and debt is
+the unique optimum; any $R_b^F>0$ would waste incentive power and reduce the borrowing capacity (3.16).
+
+\answer{(3.18)} Debt with face value $D$ given by $p_HD+(1-p_H)R^F=I-A$ (so $R^F<D\le R^S-B/\Delta p$)
+is optimal whenever the project can be financed, $A\ge\bar A=I-R^F-p_H(R-B/\Delta p)$. It is not
+uniquely optimal: every contract with $R_b^F\in[0,A-\bar A]$ and binding (IR$_l$) gives the same
+utility $\mathit{NPV}$; the optimum is unique only at $A=\bar A$.
+
+\intuition Paying the entrepreneur in failure costs expected income but weakens incentives, so it is
+the worst way to reward her; debt, which gives her nothing in failure, maximises incentives per unit
+of pay. With a fixed project, once the project is funded there is no further use for pledgeable
+income, so any leftover slack can be paid out in either state.
+
+\pitfalls
+\begin{itemize}
+  \item Concluding that all-equity is never optimal, as in Section~3.4.3. That needs the investment to
+        expand until the financing constraint binds; with a fixed $I$ and $A>\bar A$ it does not bind.
+  \item Leaving $R^F$ out of pledgeable income. The salvage value is not subject to moral hazard and
+        works exactly like cash on hand: $\bar A$ falls one for one with $R^F$.
+  \item Writing (IC$_b$) as $(\Delta p)R_b^S\ge B$, forgetting that a failure reward $R_b^F$ weakens
+        incentives: what matters is the spread $R_b^S-R_b^F$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~579), including condition (1) there,
+$p_H(R-B/\Delta p)\ge I-(A+R^F)$, the debt implementation with $R^F<D<R^S$ and the
+non-uniqueness when (IR$_l$) holds with slack at $R_b^F=0$; \eqref{t4e10-set} makes the size of the
+optimal set explicit.
+
+\refbib Tirole \S3.2.2, pp.~116--117; \S3.4.3, pp.~128--129; answer p.~579.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 11 AS 11
+\exsec{11. Retained-earnings benefit --- Tirole Exercise 3.11, p.~148}
+
+\asked (i) Find how much one extra unit of retained earnings (the entrepreneur's date-1 profit kept
+in the firm) is worth to her at date 2, given that it helps finance a second project whose private
+benefit $B^2$ is still random. (ii) Show, by argument or example, that the existence of the second
+project can get the first project financed even though no date-2 income can be pledged at date 1.
+
+\approach Two applications of the fixed-investment model (lecture Topic~4A, investment and internal
+funds). At date 2, retained earnings play the role of cash $A$ in (IR$_l$): more of them lets the
+second project be financed for higher values of $B^2$. Their \emph{shadow value} is the derivative of
+the entrepreneur's gross date-2 utility. At date 1, that continuation value is lost when project 1
+fails, so it works as an extra reward for effort: the date-1 incentive constraint needs less cash
+reward, and date-1 \emph{pledgeable income} rises.
+
+\notation
+\begin{itemize}
+  \item Project $t\in\{1,2\}$: investment $I^t$, income $R^t$ in success, probabilities $p_H^t$,
+        $p_L^t=p_H^t-\Delta p^t$, private benefit $B^t$; $\mathit{NPV}^2\equiv p_H^2R^2-I^2>0$.
+  \item $A^1$: entrepreneur's cash at date 1; $R_b^1$: her date-1 reward in success (her retained
+        earnings), $0$ in failure.
+  \item $B^2\in[\underline B^2,\bar B^2]$: random, c.d.f.\ $F$, density $f$, revealed at the start of date 2.
+  \item $\hat B^2(R)$: largest $B^2$ for which project 2 is financed with retained earnings $R$.
+  \item $W(R)$: entrepreneur's expected gross date-2 utility with retained earnings $R$; $\mu(R)\equiv W'(R)$:
+        shadow value of retained earnings ($v$ in \S3.4.2).
+\end{itemize}
+\assume No discounting; the entrepreneur's only date-2 wealth is $R_b^1$ (or $0$), and date-2 lenders
+cannot be pledged date-1 income.
+
+\step{1}{(i) Date-2 financing given retained earnings $R$} Project 2 is financed iff its pledgeable
+income covers the outside funding, (IR$_l$) for project 2:
+\begin{align}
+  p_H^2\Big(R^2-\frac{B^2}{\Delta p^2}\Big) &\ge I^2-R. \label{t4e11-f2}
+\end{align}
+Solving \eqref{t4e11-f2} for $B^2$ (expand, move $p_H^2B^2/\Delta p^2$ to the right and $I^2-R$ to
+the left, then multiply by $\Delta p^2/p_H^2>0$),
+\begin{align}
+  p_H^2R^2-\frac{p_H^2B^2}{\Delta p^2} &\ge I^2-R \nonumber\\
+  \frac{p_H^2B^2}{\Delta p^2} &\le p_H^2R^2-I^2+R=\mathit{NPV}^2+R \nonumber\\
+  B^2\ \le\ \hat B^2(R) &\equiv \frac{\Delta p^2}{p_H^2}\big(\mathit{NPV}^2+R\big). \label{t4e11-Bhat}
+\end{align}
+By the assumption $\underline B^2>\Delta p^2\,\mathit{NPV}^2/p_H^2$, \eqref{t4e11-Bhat} gives
+$\hat B^2(0)<\underline B^2$: with no retained earnings, project 2 is never financed.
+
+\step{2}{(i) Gross date-2 utility} We follow the hint and compute her expected gross utility. If
+financed, project 2's lenders break even and the entrepreneur gets her cash plus $\mathit{NPV}^2$
+(equation (3.6)); otherwise she keeps $R$. With probability $F(\hat B^2(R))$ it is financed, so
+\begin{align}
+  W(R) &= F\big(\hat B^2(R)\big)\big(R+\mathit{NPV}^2\big)+\Big[1-F\big(\hat B^2(R)\big)\Big]R \nonumber\\
+       &= R+F\big(\hat B^2(R)\big)\,\mathit{NPV}^2. \label{t4e11-W}
+\end{align}
+
+\step{3}{(i) Shadow value} Differentiating \eqref{t4e11-W} and using
+$d\hat B^2/dR=\Delta p^2/p_H^2$ from \eqref{t4e11-Bhat},
+\begin{align}
+  \mu(R)=W'(R) &= 1+f\big(\hat B^2(R)\big)\,\frac{d\hat B^2}{dR}\,\mathit{NPV}^2 \nonumber\\
+               &= 1+f\big(\hat B^2(R)\big)\,\frac{\Delta p^2}{p_H^2}\,\mathit{NPV}^2\ \ge 1. \label{t4e11-mu}
+\end{align}
+One unit of retained earnings is worth one unit of consumption plus the expected NPV it unlocks: it
+raises the probability of financing at the margin by $f\,\Delta p^2/p_H^2$.
+
+\answer{(i)} $\mu(R)=1+f\big(\hat B^2(R)\big)\,(\Delta p^2/p_H^2)\,(p_H^2R^2-I^2)\ \ge1$, with
+$\hat B^2(R)=(\Delta p^2/p_H^2)\big(p_H^2R^2-I^2+R\big)$ and gross utility
+$W(R)=R+F(\hat B^2(R))(p_H^2R^2-I^2)$.
+
+\step{4}{(ii) Date-1 incentive constraint} By \eqref{t4e11-W} and Step 1, $W(0)=0+F(\hat B^2(0))\,\mathit{NPV}^2=0$, so
+the entrepreneur works at date 1 iff
+\begin{align}
+  p_H^1W(R_b^1)+(1-p_H^1)W(0) &\ge p_L^1W(R_b^1)+(1-p_L^1)W(0)+B^1 \nonumber\\
+  (p_H^1-p_L^1)W(R_b^1)-(p_H^1-p_L^1)W(0) &\ge B^1 \nonumber\\
+  (\Delta p^1)\,W(R_b^1) &\ge B^1 \qquad (W(0)=0) \nonumber\\
+  (\Delta p^1)\big[R_b^1+F\big(\hat B^2(R_b^1)\big)\mathit{NPV}^2\big] &\ge B^1, \tag{IC$^1$}\label{t4e11-ic}
+\end{align}
+the last line substituting \eqref{t4e11-W}.
+Let $\tilde R_b^1$ be the smallest $R_b^1$ satisfying \eqref{t4e11-ic}. Whenever
+$F(\hat B^2(\tilde R_b^1))>0$,
+\begin{align}
+  \tilde R_b^1 = \frac{B^1}{\Delta p^1}-F\big(\hat B^2(\tilde R_b^1)\big)\mathit{NPV}^2 < \frac{B^1}{\Delta p^1}. \label{t4e11-Rt}
+\end{align}
+
+\step{5}{(ii) Date-1 financing} The entrepreneur maximises $p_H^1W(R_b^1)-A^1$ subject to
+\eqref{t4e11-ic} and $p_H^1(R^1-R_b^1)\ge I^1-A^1$. Since $W$ is increasing \eqref{t4e11-mu}, the
+breakeven constraint binds, and financing is possible iff
+\begin{align}
+  p_H^1\big(R^1-\tilde R_b^1\big)\ \ge\ I^1-A^1. \label{t4e11-fin}
+\end{align}
+By \eqref{t4e11-Rt} the left-hand side exceeds the stand-alone pledgeable income
+$p_H^1(R^1-B^1/\Delta p^1)$. So for $A^1$ with
+$p_H^1(R^1-B^1/\Delta p^1)<I^1-A^1\le p_H^1(R^1-\tilde R_b^1)$, project 1 is funded only
+because project 2 exists, although none of project 2's income is pledged at date 1.
+
+\step{6}{(ii) An example} Project 2: $I^2=20$, $R^2=40$, $p_H^2=0.75$, $p_L^2=0.25$, $B^2\sim U[7,9]$,
+so $\mathit{NPV}^2=10$ and $\Delta p^2\mathit{NPV}^2/p_H^2=20/3<7$ (assumption holds; also $p_L^2R^2+B^2<I^2$).
+By \eqref{t4e11-Bhat}, $\hat B^2(R)=\tfrac23(10+R)$, which lies in $[7,9]$ for $R\in[0.5,3.5]$; there
+$F=(\hat B^2-7)/2$ and \eqref{t4e11-W}--\eqref{t4e11-mu} give
+\begin{align}
+  W(R) &= R+\frac{\tfrac23(10+R)-7}{2}\,(10) \nonumber\\
+       &= R+\frac{(20+2R-21)/3}{2}\,(10) = R+\frac{5(2R-1)}{3} \nonumber\\
+       &= \frac{3R+10R-5}{3}=\frac{13R-5}{3}, \nonumber\\
+  \mu &= 1+\Big(\frac12\Big)\Big(\frac{0.5}{0.75}\Big)(10)=1+\frac{10}{3}=\frac{13}{3}. \nonumber
+\end{align}
+Project 1: $I^1=4.5$, $R^1=10$, $p_H^1=0.5$, $p_L^1=0.25$, $B^1=0.5$, so $B^1/\Delta p^1=2$. Alone, the
+pledgeable income is $(0.5)(10-2)=4$ and $\bar A^1=4.5-4=0.5$. With project 2, \eqref{t4e11-ic} at
+equality reads $W(\tilde R_b^1)=B^1/\Delta p^1$, i.e.\ $(13\tilde R_b^1-5)/3=2$, so
+$13\tilde R_b^1=6+5=11$, $\tilde R_b^1=11/13\approx0.846154$ (inside $[0.5,3.5]$, where the formula
+for $W$ holds), and
+\begin{align}
+  p_H^1(R^1-\tilde R_b^1) = (0.5)\Big(10-\frac{11}{13}\Big)=\frac{119}{26}\approx 4.576923 > 4.5. \nonumber
+\end{align}
+The threshold falls from $0.5$ to $4.5-119/26=-1/13\approx-0.076923$: any $A^1\in[0,0.5)$ is now funded
+(at $A^1=0$, $R_b^1=10-4.5/0.5=1\ge\tilde R_b^1$).
+
+\answer{(ii)} Yes. Because project 2's rent is lost on failure, the date-1 reward needed for effort
+falls to $\tilde R_b^1<B^1/\Delta p^1$ and date-1 pledgeable income rises to
+$p_H^1(R^1-\tilde R_b^1)>p_H^1(R^1-B^1/\Delta p^1)$. Any $A^1$ with
+$p_H^1(R^1-B^1/\Delta p^1)<I^1-A^1\le p_H^1(R^1-\tilde R_b^1)$ is financed only thanks to project 2
+(in the example, $A^1\in[0,0.5)$).
+
+\intuition Retained earnings are worth more than their face value because they are the net worth that
+gets the next project financed. That future rent is lost if project 1 fails, so it acts as a reward for
+date-1 effort: part of the incentive is paid with continuation value instead of cash, and the cash
+saved becomes pledgeable to date-1 lenders.
+
+\pitfalls
+\begin{itemize}
+  \item Valuing retained earnings at face ($\mu=1$). Each unit also raises the chance that project 2 is
+        financed, worth $f\,(\Delta p^2/p_H^2)\,\mathit{NPV}^2$ more.
+  \item Writing the date-1 incentive constraint with $R_b^1$ alone, $(\Delta p^1)R_b^1\ge B^1$: the
+        reward for success is $W(R_b^1)$, which includes the continuation rent.
+  \item Treating project 2's income as pledgeable at date 1. The effect works only through the
+        entrepreneur's incentives; date-1 lenders are repaid out of $R^1$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~575): $\mu=1+f(\hat B^2)(d\hat B^2/dR_b^1)\mathit{NPV}^2$ and the
+date-1 constraint $(\Delta p^1)[R_b^1+F(\hat B^2(R_b^1))\mathit{NPV}^2]\ge B^1$. The book writes the
+constraint without $W(0)$; this is right because the assumption on $\underline B^2$ makes $W(0)=0$
+(Step 1). The numerical example is this solution's.
+
+\refbib Tirole \S3.2.2, pp.~116--117; \S3.4.2, p.~128 (shadow value of equity); answer p.~575.
+%% END-FROM
+
+% =============================================================================
+\exsec{12. Continuous investment and decreasing returns to scale --- Tirole Exercise 3.5, p.~146}
+
+\asked (i) How the investment the entrepreneur can carry out, $I(A)$, changes with her assets
+$A$ when returns are decreasing, $R(I)$ concave. (ii) How the shadow value of assets
+$v=dU_b^g/dA$ (the marginal value of one more unit of cash, in gross utility) changes with $A$.
+
+\approach Variable-investment Holmstr\"om--Tirole model (Tirole \S3.4) with a concave return.
+The incentive constraint still requires $R_b\ge BI/\Delta p$, so pledgeable income is
+$p_H[R(I)-BI/\Delta p]$; competitive investors break even, so the entrepreneur maximizes the NPV
+$p_HR(I)-I$ subject to the investors' breakeven constraint. Kuhn--Tucker tells which constraint
+binds; implicit differentiation of the binding constraint gives $I'(A)$; the envelope theorem
+gives $v$ as $1$ plus the multiplier of the breakeven constraint.
+
+\notation
+\begin{itemize}
+  \item $R(I)$: income on success, $R'>0$, $R''<0$, $R'(0)>1/p_H>R'(\infty)$; $0$ on failure.
+  \item $p_H$, $p_L$, $\Delta p$; $BI$: private benefit from misbehaving; $A$: cash; $R_b$: entrepreneur's reward on success.
+  \item $I^*$: first-best scale, $p_HR'(I^*)=1$; $A^*$: cash needed to finance $I^*$.
+  \item $U_b=p_HR(I)-I$: net utility (NPV); $U_b^g=A+U_b$: gross utility; $v=dU_b^g/dA$; $\mu$: multiplier of the breakeven constraint.
+  \item $D(I)\equiv 1-p_HR'(I)+p_HB/\Delta p$.
+\end{itemize}
+
+\step{1}{Pledgeable income} The incentive constraint is $(\Delta p)R_b\ge BI$, so the smallest
+stake is $R_b=BI/\Delta p$ and the most that can be promised to investors in expectation is
+\begin{align}
+  \mathcal P(I) &= p_H\Big[R(I)-\frac{BI}{\Delta p}\Big]. \label{r4e12-P}
+\end{align}
+
+\step{2}{The program} Investors break even, so the entrepreneur's net utility is the NPV and she
+solves
+\begin{align}
+  \max_I\ & p_HR(I)-I \nonumber\\
+  \text{s.t. }\ & p_H\Big[R(I)-\frac{BI}{\Delta p}\Big]\ge I-A. \tag{BB}
+\end{align}
+
+\step{3}{The unconstrained optimum} The objective is concave; its derivative $p_HR'(I)-1$ is
+positive at $I=0$ (since $R'(0)>1/p_H$), negative for large $I$ (since $R'(\infty)<1/p_H$), and
+decreasing (since $R''<0$). So it has a unique maximum $I^*$, given by $p_HR'(I^*)=1$. It is
+feasible if (BB) holds at $I^*$, i.e.\ if
+\begin{align}
+  A\ge A^* &\equiv I^*-p_H\Big[R(I^*)-\frac{BI^*}{\Delta p}\Big]. \label{r4e12-Astar}
+\end{align}
+Then $I(A)=I^*$ and the multiplier is $\mu=0$.
+
+\step{4}{The constrained region $A<A^*$} Define $g(I)=p_HR(I)-(p_HB/\Delta p+1)I+A$, so (BB) is
+$g(I)\ge 0$. $g$ is concave and $g(0)=p_HR(0)+A\ge 0$ (with $R(0)\ge 0$), so the feasible set is an interval
+$[0,\bar I(A)]$, where $\bar I(A)$ is the larger root of $g=0$, and $g'(\bar I)\le 0$ there, i.e.\
+$D(\bar I)=-g'(\bar I)\ge 0$ (strictly, generically). When $A<A^*$, $I^*>\bar I(A)$; the concave
+objective increases up to $I^*$, so on $[0,\bar I(A)]$ it is maximized at the boundary:
+\begin{align}
+  I(A)=\bar I(A):\qquad p_H\Big[R(I)-\frac{BI}{\Delta p}\Big] &= I-A. \label{r4e12-bind}
+\end{align}
+The Lagrangian $\mathcal L=p_HR(I)-I+\mu\big[p_HR(I)-p_HBI/\Delta p-I+A\big]$ has first-order condition
+\begin{align}
+  p_HR'(I)-1+\mu\Big[p_HR'(I)-\frac{p_HB}{\Delta p}-1\Big] &= 0 \nonumber\\
+  \mu &= \frac{p_HR'(I)-1}{1+p_HB/\Delta p-p_HR'(I)} = \frac{p_HR'(I)-1}{D(I)} > 0, \label{r4e12-mu}
+\end{align}
+positive because $I<I^*$ makes $p_HR'(I)>1$.
+
+\step{5}{(i) Slope and curvature of $I(A)$} Differentiate \eqref{r4e12-bind} with respect to $A$,
+with $I=I(A)$:
+\begin{align}
+  p_HR'(I)\,I'-\frac{p_HB}{\Delta p}\,I' &= I'-1 \nonumber\\
+  I'\Big[1-p_HR'(I)+\frac{p_HB}{\Delta p}\Big] &= 1 \nonumber\\
+  I'(A) &= \frac{1}{D(I)} > 0. \label{r4e12-Ip}
+\end{align}
+Differentiate again, using $dD/dA=-p_HR''(I)\,I'$:
+\begin{align}
+  I''(A) &= -\frac{1}{D^2}\,\frac{dD}{dA} = \frac{p_HR''(I)\,I'(A)}{D(I)^2} < 0. \nonumber
+\end{align}
+
+\answer{(i)} For $A<A^*$, $I(A)$ is given by the binding breakeven constraint
+\eqref{r4e12-bind}; it is increasing and concave, with slope $1/[1-p_HR'(I)+p_HB/\Delta p]$. For
+$A\ge A^*$, $I(A)=I^*$ (flat).
+
+\step{6}{(ii) The shadow value} For $A<A^*$, $U_b^g=A+p_HR(I(A))-I(A)$; differentiating and
+substituting \eqref{r4e12-Ip},
+\begin{align}
+  v=\frac{dU_b^g}{dA} &= 1+\big[p_HR'(I)-1\big]I'(A) \nonumber\\
+    &= 1+\frac{p_HR'(I)-1}{1-p_HR'(I)+p_HB/\Delta p} \nonumber\\
+    &= \frac{1-p_HR'(I)+p_HB/\Delta p+p_HR'(I)-1}{1-p_HR'(I)+p_HB/\Delta p} \nonumber\\
+    &= \frac{p_HB/\Delta p}{1-p_HR'(I(A))+p_HB/\Delta p}. \label{r4e12-v}
+\end{align}
+By \eqref{r4e12-mu}, $v=1+\mu$, which is the envelope theorem ($\partial\mathcal L/\partial A=\mu$
+plus the direct $1$). For $A\ge A^*$, $v=1$ (net shadow value $0$). At $A=A^*$,
+$p_HR'(I^*)=1$ and \eqref{r4e12-v} gives $(p_HB/\Delta p)/(p_HB/\Delta p)=1$: $v$ is continuous.
+
+\step{7}{(ii) $v$ decreases with $A$} Differentiate \eqref{r4e12-v}:
+\begin{align}
+  \frac{dv}{dA} &= -\frac{p_HB/\Delta p}{D(I)^2}\,\frac{dD}{dA}
+   = -\frac{p_HB/\Delta p}{D(I)^2}\big(-p_HR''(I)\big)I'(A) < 0, \nonumber
+\end{align}
+since $-p_HR''>0$ and $I'>0$.
+
+\answer{(ii)} $v(A)=\dfrac{p_HB/\Delta p}{1-p_HR'(I(A))+p_HB/\Delta p}>1$ and strictly decreasing
+for $A<A^*$; $v=1$ for $A\ge A^*$. (With constant returns, $R'=R$ and $v$ is the constant
+(3.15).)
+
+\emph{Numerical illustration.} $R(I)=4\sqrt I$, $p_H=0.5$, $B/\Delta p=3$ (e.g.\ $B=0.75$,
+$\Delta p=0.25$). Then $R'(I)=2/\sqrt I$, so $R'(0)=\infty>2$ and $R'(\infty)=0<2$; $p_HR'(I)=1/\sqrt I$,
+$I^*=1$; $\mathcal P(I)=0.5(4\sqrt I-3I)=2\sqrt I-1.5I$; $A^*=1-(2-1.5)=0.5$; $p_HB/\Delta p=1.5$.
+For $A<0.5$, \eqref{r4e12-bind} reads $2\sqrt I-1.5I=I-A$, i.e.\ with $s=\sqrt I$,
+$2.5s^2-2s-A=0$, larger root $s=[2+\sqrt{4+10A}]/5$:
+\begin{center}
+\begin{tabular}{cccccc}
+\toprule
+$A$ & $s=\sqrt{I}$ & $I(A)$ & $D=1-1/s+1.5$ & $I'=1/D$ & $v=1.5/D$\\
+\midrule
+$0$   & $0.8$      & $0.64$     & $1.25$     & $0.8$      & $1.2$\\
+$0.2$ & $0.889898$ & $0.791918$ & $1.376276$ & $0.726599$ & $1.089898$\\
+$0.5$ & $1$        & $1$        & $1.5$      & $0.666667$ & $1$\\
+\bottomrule
+\end{tabular}
+\end{center}
+(at $A=0.2$, $1/s=p_HR'=1.123724$). Investment rises at a falling rate and $v$ falls from $1.2$
+to $1$ at $A^*=0.5$.
+
+\intuition With decreasing returns, the first units of investment are very productive and
+pledgeable income is large relative to cost, so even a poor entrepreneur invests something.
+Each extra unit of cash relaxes the breakeven constraint and lets her expand, but the units she
+adds are less and less productive, so a unit of cash is worth less the richer she is. Once she
+can fund the first-best scale, cash is worth exactly its face value. With constant returns
+(Tirole \S3.4) the shadow value is instead a constant above $1$.
+\pitfalls
+\begin{itemize}
+  \item Confusing gross and net shadow values: the derivative of the net utility $U_b$ is
+        $v-1$, which is $0$ (not $1$) once $I^*$ is affordable.
+  \item Picking the smaller root of the breakeven condition: the entrepreneur wants the
+        largest feasible scale below $I^*$.
+  \item Writing $I=kA$ as in the constant-returns model; with concave $R$ the relation is
+        nonlinear and the ``multiplier'' $I/A$ changes with $A$.
+\end{itemize}
+\bookans Matches the book's answer (p.~573): (BB) binds when $A$ is small, $\mu=0$ when $I^*$ is
+feasible, and the shadow value decreases with $A$. The book's displayed
+$dU_b/dA=1/\{(p_HB/\Delta p)/(p_HR'-1)-1\}$ is the derivative of \emph{net} utility; it equals
+$(p_HR'-1)/(1-p_HR'+p_HB/\Delta p)=v-1$ in our notation, which is the same result.
+\refbib{Tirole Ch.~3, \S3.4.1--3.4.2 ``The Continuous-Investment Model'', ``The Lenders' Credit Analysis'', eq.~(3.15), pp.~127--128.}
+
+% =============================================================================
+\exsec{13. Diversification with variable-investment projects --- Tirole Exercise 4.10, pp.~191--192}
+
+\asked (i) If each of two independent variable-investment projects is financed on its own
+(project finance), what utility does the entrepreneur get, and does having two projects help?
+(ii) What utility does she get if the incomes of the two projects can be pledged jointly
+(cross-pledging)?
+
+\approach Project finance is just the model of Tirole \S3.4 twice, so the equity multiplier
+$1/(1-\rho_0)$ applies to each project and total utility depends only on total cash. Under
+cross-pledging (Tirole \S4.2.1.2) the entrepreneur's reward can depend on both outcomes; the
+cheapest way to provide incentives is to pay only when both projects succeed (the outcome most
+indicative of effort), which lowers the expected rent per unit of investment and raises
+pledgeable income from $\rho_0$ to $\rho_0'$.
+
+\notation
+\begin{itemize}
+  \item $I^i$: investment in project $i\in\{1,2\}$; $I=I^1+I^2$; $A$: total cash; $A_i$: cash put into project $i$.
+  \item Project $i$ yields $RI^i$ on success, $0$ on failure; $p_H$, $p_L=p_H-\Delta p$; private benefit $BI^i$ from misbehaving on $i$.
+  \item $\rho_1=p_HR>1>\rho_0=p_H(R-B/\Delta p)$; $\rho_0'=p_H\big(R-\frac{p_H}{p_H+p_L}\frac{B}{\Delta p}\big)<1$.
+  \item $R_b^i$: reward on success of project $i$ (project finance); $R_k$, $k\in\{0,1,2\}$: reward when $k$ projects succeed (cross-pledging); $m$: expected reward.
+  \item $\pi_k^H$, $\pi_k^L$: probability of $k$ successes if she works on both / shirks on both.
+\end{itemize}
+
+\step{1}{(i) Project finance} Project $i$ is financed alone with cash $A_i$, $A_1+A_2=A$. Its
+constraints are those of Exercise~7(i) with $(I^i,A_i)$ in place of $(I,A)$, so by \eqref{r4e7-k}
+and \eqref{r4e7-Ub},
+\begin{align}
+  I^i &= \frac{A_i}{1-\rho_0}, \qquad U_b^i=(\rho_1-1)I^i. \nonumber
+\end{align}
+Adding the two projects,
+\begin{align}
+  U_b &= (\rho_1-1)\frac{A_1}{1-\rho_0}+(\rho_1-1)\frac{A_2}{1-\rho_0} \nonumber\\
+      &= \frac{\rho_1-1}{1-\rho_0}(A_1+A_2) = \frac{\rho_1-1}{1-\rho_0}A. \label{r4e13-pf}
+\end{align}
+
+\answer{(i)} $U_b=\dfrac{\rho_1-1}{1-\rho_0}A$, whatever the split of $A$: the same as with a
+single project, so there is no benefit from a second project under project finance.
+
+\step{2}{(ii) Outcome probabilities} With cross-pledging the reward depends on the number of
+successes. With independent projects,
+\begin{align}
+  \pi_2^H &= p_H^2, & \pi_1^H &= 2p_H(1-p_H), & \pi_0^H &= (1-p_H)^2, \nonumber\\
+  \pi_2^L &= p_L^2, & \pi_1^L &= 2p_L(1-p_L), & \pi_0^L &= (1-p_L)^2, \nonumber
+\end{align}
+and if she shirks on project $i$ only, both succeed with probability $p_Hp_L$.
+
+\step{3}{(ii) Reward only joint success} We find the cheapest scheme that deters shirking on both
+projects (private benefit $B(I^1+I^2)=BI$). Define the likelihood ratios
+$\ell_k=(\pi_k^H-\pi_k^L)/\pi_k^H$:
+\begin{align}
+  \ell_2 &= 1-\frac{p_L^2}{p_H^2}, \qquad
+  \ell_1 = 1-\frac{p_L(1-p_L)}{p_H(1-p_H)}, \qquad
+  \ell_0 = 1-\frac{(1-p_L)^2}{(1-p_H)^2}<0. \nonumber
+\end{align}
+$\ell_1<\ell_2$ because
+\begin{align}
+  \frac{p_L(1-p_L)}{p_H(1-p_H)}>\frac{p_L^2}{p_H^2}
+  &\iff \frac{p_H(1-p_L)}{1-p_H}>p_L \qquad(\text{multiplying by }p_H^2/p_L>0) \nonumber\\
+  &\iff p_H-p_Hp_L>p_L-p_Hp_L \iff p_H>p_L. \nonumber
+\end{align}
+The incentive constraint is $\sum_k(\pi_k^H-\pi_k^L)R_k\ge BI$. Since $\pi_k^H-\pi_k^L=\ell_k\pi_k^H\le\ell_2\pi_k^H$
+and $R_k\ge 0$,
+\begin{align}
+  BI \le \sum_k\ell_k\pi_k^HR_k \le \ell_2\sum_k\pi_k^HR_k = \ell_2\,m
+  \;\Rightarrow\; m\ge\frac{BI}{\ell_2}=\frac{p_H^2BI}{p_H^2-p_L^2}=\frac{p_H^2BI}{(p_H+p_L)\Delta p}, \label{r4e13-m}
+\end{align}
+with equality when $R_1=R_0=0$ and
+\begin{align}
+  R_2 &= \frac{BI}{p_H^2-p_L^2}=\frac{BI}{(p_H+p_L)\Delta p}. \label{r4e13-R2}
+\end{align}
+
+\step{4}{(ii) The single-shirking constraint also holds} Shirking on project $i$ only gives
+$p_Hp_LR_2+BI^i$, so it is deterred if
+\begin{align}
+  p_H^2R_2 &\ge p_Hp_LR_2+BI^i \nonumber\\
+  p_H(\Delta p)R_2 &\ge BI^i. \nonumber
+\end{align}
+Substituting \eqref{r4e13-R2}: $p_H(\Delta p)\frac{BI}{(p_H+p_L)\Delta p}=\frac{p_H}{p_H+p_L}BI\ge BI^i$,
+i.e.\ $I^i\le\frac{p_H}{p_H+p_L}I$. Nothing else depends on the split, so take $I^1=I^2=I/2$:
+the condition becomes $\frac12\le\frac{p_H}{p_H+p_L}$, i.e.\ $p_L\le p_H$, which holds. Hence
+\eqref{r4e13-R2} is optimal.
+
+\step{5}{(ii) Financing capacity} Investors break even (binding, as in Exercise~7) on expected
+income $p_HRI$ minus the expected reward \eqref{r4e13-m}:
+\begin{align}
+  p_HRI-\frac{p_H^2BI}{(p_H+p_L)\Delta p} &\ge I-A \nonumber\\
+  p_H\Big(R-\frac{p_H}{p_H+p_L}\frac{B}{\Delta p}\Big)I &\ge I-A \nonumber\\
+  \rho_0'I &\ge I-A \nonumber\\
+  I &\le \frac{A}{1-\rho_0'} \qquad(\text{dividing by }1-\rho_0'>0). \label{r4e13-I}
+\end{align}
+
+\step{6}{(ii) Utility} As in \eqref{r4e7-Ub}, the borrower receives the NPV, $U_b=(\rho_1-1)I$,
+and invests the maximum \eqref{r4e13-I}:
+\begin{align}
+  U_b &= \frac{\rho_1-1}{1-\rho_0'}A. \label{r4e13-cp}
+\end{align}
+The gain over project finance comes from
+\begin{align}
+  \rho_0'-\rho_0 &= p_H\frac{B}{\Delta p}\Big(1-\frac{p_H}{p_H+p_L}\Big)
+                  = p_H\frac{B}{\Delta p}\cdot\frac{p_L}{p_H+p_L}>0, \nonumber
+\end{align}
+where $p_L/(p_H+p_L)=d_2$ is Tirole's diversification measure.
+
+\answer{(ii)} $U_b=\dfrac{\rho_1-1}{1-\rho_0'}A>\dfrac{\rho_1-1}{1-\rho_0}A$: cross-pledging
+raises the borrowing capacity and hence the NPV.
+
+\emph{Numerical illustration.} $p_H=0.8$, $p_L=0.4$, $R=1.5$, $B=0.3$, $A=10$: $\rho_1=1.2$,
+$\rho_0=0.6$, $p_H/(p_H+p_L)=2/3$, $\rho_0'=0.8(1.5-\tfrac23\cdot0.75)=0.8(1.5-0.5)=0.8$.
+Project finance: $I=10/0.4=25$ ($12.5$ per project with $A_i=5$; $R_b^i=0.3(12.5)/0.4=9.375$;
+pledgeable $0.8(1.5\cdot12.5-9.375)=7.5=12.5-5$), $U_b=0.2(25)=5$. Cross-pledging:
+$I=10/0.2=50$, $U_b=0.2(50)=10$; $R_2=0.3(50)/(1.2\cdot0.4)=31.25$, $m=0.64(31.25)=20$, investors
+get $0.8(1.5)(50)-20=60-20=40=I-A$; both-shirk constraint $(0.64-0.16)(31.25)=15=BI$;
+single-shirk $0.8(0.4)(31.25)=10\ge BI^i=0.3(25)=7.5$. Here $\ell_2=1-0.25=0.75$ and
+$\ell_1=1-0.24/0.16=-0.5$.
+
+\intuition Under project finance, a failure on one project costs the entrepreneur nothing on the
+other, so each project carries its own full incentive rent. Pooling lets the income of a
+successful project serve as collateral for the other: she is paid only if both succeed, an
+outcome that is much less likely when she shirks ($p_L^2$ against $p_H^2$), so a smaller
+expected reward deters shirking. The rent per unit of investment falls, pledgeable income per
+unit rises from $\rho_0$ to $\rho_0'$, and with variable scale this translates into a larger
+investment and a larger NPV, not just easier access as with fixed projects.
+\pitfalls
+\begin{itemize}
+  \item Paying a reward when exactly one project succeeds ($R_1>0$): that is project finance in
+        disguise and wastes incentive money.
+  \item Checking only one of the two deviations (shirk on both, shirk on one); both must hold,
+        and the equal split $I^1=I^2$ is what makes the second one slack.
+  \item Expecting a higher NPV per unit of investment: diversification raises the \emph{scale},
+        the NPV per unit stays $\rho_1-1$.
+\end{itemize}
+\bookans Matches the book's answer (p.~587): $U_b=(\rho_1-1)A/(1-\rho_0)$ under project finance,
+with no benefit from a second project; under cross-pledging $R_2>0=R_1=R_0$, $I^1=I^2=I/2$, and
+$U_b=(\rho_1-1)A/(1-\rho_0')$.
+\refbib{Tirole Ch.~3, \S3.4.2, pp.~127--128; Ch.~4, \S4.2.1 ``The Benefits of Diversification: The Case of Two Projects'', pp.~158--160.}
+
+% =============================================================================
+\exsec{14. Variable effort, marginal value of net worth, pooling of equity --- Tirole Exercise 3.20, p.~152}
+
+\asked (i) Check that without borrowing the entrepreneur's net utility is $\tfrac12R^2-I$. (ii)
+Find the cash threshold $\bar A$ below which the project is not funded, and show that the
+marginal value of net worth $V'(A)$ is positive, zero at $A=I$, and decreasing. (iii) Two
+entrepreneurs, one of whom will turn out to need $I_H$ (and could not raise it alone) and the
+other $I_L$: should they agree in advance to pool their cash so that the lucky one subsidizes
+the unlucky one?
+
+\approach Continuous effort replaces the binary choice: with stake $R_b$ the entrepreneur picks
+$p=R_b$, so pledgeable income $R_b(R-R_b)$ is hump-shaped (a ``Laffer curve'' in the
+entrepreneur's stake). Competitive investors break even, so her utility is the NPV, which falls as
+her stake is diluted. Implicit differentiation of the breakeven condition gives $V'$ and $V''$.
+Part (iii) applies concavity of the value of net worth: moving cash where it is worth most
+(the firm that cannot otherwise invest) can pay, at the cost of weaker incentives in the other.
+
+\notation
+\begin{itemize}
+  \item $I>A$: fixed investment; $A$: cash; $R\in(\sqrt{2I},1)$: income on success; $p$: success probability, effort cost $\tfrac12p^2$.
+  \item $R_b$: entrepreneur's reward on success; $\mathcal P(R_b)=p(R-R_b)$: pledgeable income; $W(R_b)=pR-\tfrac12p^2-I$: NPV at the effort induced by $R_b$.
+  \item $V(A)$: NPV (= borrower's net utility) when financed with cash $A$; $V^*=\tfrac12R^2-I$; $A_1=I-\tfrac14R^2$; $A_2$: cash at which $V=0$.
+  \item (iii): $I_L<I_H$; $\bar I=(I_L+I_H)/2$; $V_I(\cdot)$: the function $V$ for investment $I$; $A_L$, $A_H$: cash allocated to the lucky / unlucky project.
+\end{itemize}
+
+\step{1}{(i) No borrowing} With $A\ge I$ the entrepreneur is residual claimant, $R_b=R$, and she
+chooses $p$ to maximize $pR-\tfrac12p^2-I$. The first-order condition is $R-p=0$, so $p=R$
+(interior because $R<1$), and
+\begin{align}
+  U_b &= (R)R-\tfrac12(R)^2-I = \tfrac12R^2-I = V^*, \nonumber
+\end{align}
+positive because $R>\sqrt{2I}\iff R^2>2I$.
+
+\answer{(i)} $U_b=V^*=\tfrac12R^2-I>0$, independent of $A$ for $A\ge I$.
+
+\step{2}{(ii) Effort and pledgeable income} With stake $R_b$, she maximizes $pR_b-\tfrac12p^2$:
+the first-order condition $R_b-p=0$ gives $p=R_b$. Investors receive $R-R_b$ with probability $p$:
+\begin{align}
+  \mathcal P(R_b) &= R_b(R-R_b), \qquad \mathcal P'(R_b)=R-2R_b, \label{r4e14-P}
+\end{align}
+so $\mathcal P$ is maximized at $R_b=\tfrac12R$, where $\mathcal P=\tfrac12R\cdot\tfrac12R=\tfrac14R^2$.
+
+\step{3}{(ii) Only $R_b\ge\tfrac12R$ matters} $\mathcal P$ is symmetric around $\tfrac12R$:
+$\mathcal P(R-R_b)=(R-R_b)R_b=\mathcal P(R_b)$. The NPV at the induced effort is
+$W(R_b)=R_bR-\tfrac12R_b^2-I$, with $W'(R_b)=R-R_b>0$ for $R_b<R$. So for any $R_b<\tfrac12R$, the
+stake $R-R_b>R_b$ yields the same pledgeable income and a higher NPV: we can restrict attention
+to $R_b\in[\tfrac12R,R]$.
+
+\step{4}{(ii) The borrower's utility is the NPV} Her net utility is $pR_b-\tfrac12p^2-A=\tfrac12R_b^2-A$.
+With binding breakeven $R_b(R-R_b)=I-A$, i.e.\ $A=I-R_bR+R_b^2$,
+\begin{align}
+  U_b &= \tfrac12R_b^2-(I-R_bR+R_b^2) = R_bR-\tfrac12R_b^2-I = W(R_b). \nonumber
+\end{align}
+She wants the largest $R_b$ compatible with breakeven, the larger root of
+$R_b^2-RR_b+(I-A)=0$:
+\begin{align}
+  R_b(A) &= \frac{R+\sqrt{R^2-4(I-A)}}{2}, \qquad V(A)=W\big(R_b(A)\big). \label{r4e14-Rb}
+\end{align}
+
+\step{5}{(ii) The threshold} A real root requires $R^2-4(I-A)\ge 0$, i.e.\
+$A\ge A_1=I-\tfrac14R^2$ (the maximum pledgeable income covers $I-A$). The NPV must also be
+nonnegative. At $A_1$, $R_b=\tfrac12R$ and
+\begin{align}
+  V(A_1) &= \tfrac12R\cdot R-\tfrac12\big(\tfrac12R\big)^2-I = \tfrac12R^2-\tfrac18R^2-I = \tfrac38R^2-I. \nonumber
+\end{align}
+If $\tfrac38R^2\ge I$, the threshold is $A_1$. Otherwise $V(A_1)<0$ and the threshold is $A_2>A_1$
+with $V(A_2)=0$: $R_bR-\tfrac12R_b^2=I\iff R_b^2-2RR_b+2I=0$, root $R_b=R-\sqrt{R^2-2I}$ (which is
+$\ge\tfrac12R$ exactly when $I\ge\tfrac38R^2$); writing $s=\sqrt{R^2-2I}$,
+\begin{align}
+  A_2 &= I-R_b(R-R_b) = I-(R-s)s = I-Rs+(R^2-2I) = R^2-I-R\sqrt{R^2-2I}. \nonumber
+\end{align}
+
+\answer{(ii-a)} $\bar A=\max\{A_1,A_2\}$ with $A_1=I-\tfrac14R^2$ and
+$A_2=R^2-I-R\sqrt{R^2-2I}$ (relevant only if $I>\tfrac38R^2$).
+
+\step{6}{(ii) $V'(A)$} By the chain rule, $V'(A)=W'(R_b)\,R_b'(A)=(R-R_b)R_b'(A)$. Differentiate
+the breakeven identity $R_b(R-R_b)=I-A$:
+\begin{align}
+  (R-2R_b)R_b' &= -1 \nonumber\\
+  R_b'(A) &= \frac{1}{2R_b-R} > 0 \qquad(R_b>\tfrac12R), \nonumber\\
+  V'(A) &= \frac{R-R_b}{2R_b-R} > 0 \qquad(\tfrac12R<R_b<R). \label{r4e14-Vp}
+\end{align}
+At $A=I$, \eqref{r4e14-Rb} gives $R_b=\frac{R+\sqrt{R^2}}{2}=R$, so $V'(I)=0$; for $A>I$, $V=V^*$ is
+flat, so $V'$ is continuous at $I$.
+
+\step{7}{(ii) $V''(A)$} Let $h(R_b)=(R-R_b)/(2R_b-R)$. By the quotient rule,
+\begin{align}
+  h'(R_b) &= \frac{-(2R_b-R)-2(R-R_b)}{(2R_b-R)^2} = \frac{-2R_b+R-2R+2R_b}{(2R_b-R)^2} = \frac{-R}{(2R_b-R)^2}, \nonumber\\
+  V''(A) &= h'(R_b)\,R_b'(A) = -\frac{R}{(2R_b-R)^3} < 0. \label{r4e14-Vpp}
+\end{align}
+
+\answer{(ii-b)} $V'(A)=\dfrac{R-R_b(A)}{2R_b(A)-R}>0$ for $\bar A\le A<I$, $V'(I)=0$, and
+$V''(A)=-R/(2R_b-R)^3<0$.
+
+\emph{Numerical illustration.} $R=0.9$, $I=0.3$ ($\sqrt{2I}=0.774597<0.9<1$): $V^*=0.405-0.3=0.105$;
+$\tfrac14R^2=0.2025$, $A_1=0.3-0.2025=0.0975$; $\tfrac38R^2=0.30375\ge 0.3$, so $\bar A=0.0975$ and
+$V(\bar A)=0.30375-0.3=0.00375$. At $A=0.2$: $\sqrt{0.81-0.4}=0.640312$,
+$R_b=(0.9+0.640312)/2=0.7701562$, $V=0.6931406-0.2965703-0.3=0.0965703$ (also
+$\tfrac12R_b^2-A=0.2965703-0.2=0.0965703$), $V'=(0.9-0.7701562)/0.640312=0.129844/0.640312=0.202782$,
+$V''=-0.9/0.640312^3=-3.4282$.
+
+\step{8}{(iii) Without pooling} The lucky entrepreneur ($I_L$) is funded: $I_L-A<\tfrac14R^2$, and
+$\tfrac38R^2>I_H>I_L$ makes the NPV positive. The unlucky one ($I_H$) is not: even the maximum
+pledgeable income $\tfrac14R^2$ is below $I_H-A$. Each is lucky with probability $\tfrac12$, so
+ex ante each expects $\tfrac12V_{I_L}(A)$.
+
+\step{9}{(iii) Pooling with both projects funded: equal stakes} With cash $2A$ pooled, rewards
+$R_b^L$, $R_b^H$, and investors breaking even overall, total NPV is
+$\sum_i\big[R_b^iR-\tfrac12(R_b^i)^2\big]-I_L-I_H$. The Lagrangian is
+\begin{align}
+  \mathcal L &= \sum_{i\in\{L,H\}}\Big[R_b^iR-\tfrac12(R_b^i)^2\Big]
+     +\lambda\Big[\sum_iR_b^i(R-R_b^i)-(I_L+I_H-2A)\Big], \nonumber
+\end{align}
+and the first-order condition for each $i$,
+\begin{align}
+  R-R_b^i+\lambda(R-2R_b^i) &= 0 \;\Rightarrow\; R_b^i=\frac{R(1+\lambda)}{1+2\lambda}, \nonumber
+\end{align}
+is the same for both: $R_b^L=R_b^H=R_b$. The breakeven constraint becomes
+$2R_b(R-R_b)=I_L+I_H-2A$, i.e.\ $R_b(R-R_b)=\bar I-A$, feasible because
+$I_L+I_H-2A<\tfrac12R^2\iff\bar I-A<\tfrac14R^2$. Each entrepreneur's (equal) net utility is
+\begin{align}
+  V_{\bar I}(A) &= R_bR-\tfrac12R_b^2-\bar I, \label{r4e14-both}
+\end{align}
+positive because $R_b\ge\tfrac12R$ gives $R_bR-\tfrac12R_b^2\ge\tfrac38R^2>I_H>\bar I$. Each project's
+own breakeven $R_b(R-R_b)=I_i-A_i$ fixes the split: $A_H-A_L=I_H-I_L$ and $A_L+A_H=2A$, so
+\begin{align}
+  A_L &= A-\tfrac12(I_H-I_L), \qquad A_H=A+\tfrac12(I_H-I_L): \nonumber
+\end{align}
+the lucky firm transfers $\tfrac12(I_H-I_L)$ of net worth to the unlucky one. (Note
+$V_{\bar I}(A)=V_{I_L}(A_L)-\tfrac12(I_H-I_L)$: the lucky firm's NPV minus half the extra cost.)
+
+\step{10}{(iii) Pooling with only the lucky project funded} The lucky firm can use up to $2A$
+(the rest is returned), so total NPV is $V_{I_L}(\min\{2A,I_L\})$ and each expects
+$\tfrac12V_{I_L}(\min\{2A,I_L\})>\tfrac12V_{I_L}(A)$, because $V_{I_L}$ is strictly increasing
+below $I_L$ (Step~6) and $A<I_L$. Pooling always beats no pooling.
+
+\step{11}{(iii) Cross-subsidize or not} The entrepreneurs commit to fund both projects if and
+only if
+\begin{align}
+  V_{\bar I}(A) &> \tfrac12V_{I_L}\big(\min\{2A,I_L\}\big). \label{r4e14-cond}
+\end{align}
+Raising $I_H$ lowers the left side (higher average cost, more dilution of $R_b$) and leaves the
+right side unchanged, so \eqref{r4e14-cond} holds for $I_H$ below a threshold. Illustration:
+$R=0.9$, $A=0.08$, $I_L=0.25$ ($I_L-A=0.17<0.2025$):
+\begin{itemize}
+  \item no pooling: $R_b=(0.9+\sqrt{0.81-0.68})/2=(0.9+0.360555)/2=0.6302776$,
+        $V_{I_L}(0.08)=0.5672498-0.1986249-0.25=0.1186249$, ex ante $0.059312$;
+  \item pooling, lucky only ($2A=0.16$, $I_L-2A=0.09$): $R_b=0.7854102$,
+        $V_{I_L}(0.16)=0.7068692-0.3084346-0.25=0.1484346$, ex ante $0.074217$;
+  \item pooling, both, $I_H=0.285$: $\bar I=0.2675$, $\bar I-A=0.1875$, $R_b=0.5724745$,
+        $V_{\bar I}=0.5152270-0.1638635-0.2675=0.0838635>0.074217$: cross-subsidize
+        (transfer $\tfrac12(0.285-0.25)=0.0175$);
+  \item pooling, both, $I_H=0.30$: $\bar I=0.275$, $\bar I-A=0.195$, $R_b=0.5366025$,
+        $V_{\bar I}=0.4829423-0.1439711-0.275=0.0639711<0.074217$: pool, but fund only the lucky firm.
+\end{itemize}
+Both values of $I_H$ satisfy the exercise's assumptions ($I_H-A>0.2025$, $I_H<0.30375$,
+$I_L+I_H-2A<0.405$).
+
+\answer{(iii)} Yes, they always want to pool. They commit to the lucky firm cross-subsidizing the
+unlucky one (equal stakes, transfer $\tfrac12(I_H-I_L)$) when \eqref{r4e14-cond} holds, which is
+the case for $I_H$ below a threshold; for higher $I_H$ the pool funds only the lucky project.
+
+\intuition With continuous effort, every unit of outside money dilutes the entrepreneur's stake
+and lowers effort, so the value of net worth is smooth: very high near the funding threshold,
+zero once she is fully self-financed, and decreasing in between. Concavity is the reason to
+share: a unit of net worth is worth more where it is scarce. Pooling at least lets the lucky
+firm use both entrepreneurs' cash; funding both projects as well brings a second NPV but forces
+both stakes down to the common $R_b$, and when the unlucky project is too expensive that
+dilution costs more than the extra project brings.
+\pitfalls
+\begin{itemize}
+  \item Dropping the effort cost from the NPV ($R_bR-I$ instead of $R_bR-\tfrac12R_b^2-I$): the
+        borrower's utility is net of the private cost of effort.
+  \item Taking the smaller root of $R_b(R-R_b)=I-A$; it gives the same pledgeable income with a
+        lower NPV.
+  \item In (iii), comparing the lucky firm's NPV $V_{I_L}(A_L)$ with the alternatives instead of
+        each entrepreneur's expected value $V_{\bar I}(A)$, which is lower by $\tfrac12(I_H-I_L)$.
+\end{itemize}
+\bookans (i) and (ii) match the book's answer (p.~580): $p=R_b$, $\mathcal P=R_b(R-R_b)$,
+$A_1=I-\tfrac14R^2$, $\bar A=\max\{A_1,A_2\}$, $V'(A)=[R-R_b(A)]\,dR_b/dA>0$, $V'(I)=0$, $V''<0$.
+(iii) matches the book's conclusions (pp.~580--581): equal stakes, pooling always optimal,
+cross-subsidization from lucky to unlucky for $I_H$ below a threshold. Two differences in the
+book's displays: its $V(A-\tfrac12(I_H-I_L))$ is the lucky firm's NPV, while the ex ante value per
+entrepreneur subtracts $\tfrac12(I_H-I_L)$ (\eqref{r4e14-both}); and it writes
+$\tfrac12V(\max(2A,I_L))$ where $\min$ is meant (with $\max$ the value would always be $V^*$).
+\refbib{Tirole Ch.~3, \S3.2.1--3.2.2, pp.~115--117 (footnote~3 points to this exercise for continuous effort). Cestone and Fumagalli (2005), cited in the statement.}
+
+% =============================================================================
+\exsec{15. Hedging or gambling on net worth? --- Tirole Exercise 3.21, pp.~152--153}
+
+\asked Before knowing her date-1 cash $A_0+\varepsilon$, the entrepreneur can hedge for free
+(locking in $A_0$) or not (``gamble''). Show which she prefers in five settings: (i) fixed
+investment, binary effort: hedge if $A_0\ge\bar A$, gamble if $A_0<\bar A$; (ii) fixed
+investment, continuous effort: hedge; (iii) variable investment with private benefit $B(I)$:
+hedge if $B$ is convex, indifferent if linear, gamble if concave; (iv) variable investment and
+unobservable income: hedge; (v) with a date-0 contract with investors, insulating investment from
+$\varepsilon$ (full hedging) is optimal even where gambling was.
+
+\approach Froot--Scharfstein--Stein logic (Tirole \S5.4): a risk-neutral entrepreneur hedges if
+and only if the date-1 value of cash, $U(A)$, is concave, because hedging gives $U(A_0)$ and
+gambling $\mathbb{E}[U(A_0+\varepsilon)]$, with $\mathbb{E}[A_0+\varepsilon]=A_0$ (Jensen). Each
+part derives $U$ from a model seen before: the step at $\bar A$ (Tirole \S3.2), the concave $V$
+of Exercise~14, the investment rule $I(A)$ of the variable model with nonlinear $B(I)$, and the
+self-financed technology $R(A)$. Part (v) is liquidity management: contracting at date~0 removes
+the reason to gamble.
+
+\notation
+\begin{itemize}
+  \item $A_0$: expected date-1 cash; $\varepsilon\in[\underline\varepsilon,\bar\varepsilon]$, $\mathbb{E}[\varepsilon]=0$, $A_0+\underline\varepsilon\ge 0$; $F(x)=\Pr(\varepsilon<x)$.
+  \item $U(A)$: date-1 gross utility with cash $A$; $U^h=U(A_0)$ (hedge), $U^g=\mathbb{E}[U(A_0+\varepsilon)]$ (gamble).
+  \item (i): $\bar A$ from $p_H(R-B/\Delta p)=I-\bar A$; $V=p_HR-I$. (ii): as Exercise~14. (iii): $\rho_1=p_HR$; $B(I)$, $B'>0$; $I(A)$. (iv): $R(I)$ concave, unobservable.
+\end{itemize}
+
+\step{0}{The comparison} Because $\mathbb{E}[A_0+\varepsilon]=A_0$, she hedges if
+$U(A_0)>\mathbb{E}[U(A_0+\varepsilon)]$, which holds for every nondegenerate $\varepsilon$ when $U$
+is strictly concave, and the reverse when $U$ is strictly convex (Jensen's inequality).
+
+\step{1}{(i) Date-1 utility} From (3.6), a borrower with cash $A\ge\bar A$ is funded and gets the
+NPV $V$; below $\bar A$ she is not funded and keeps her cash:
+\begin{align}
+  U(A) &= A+V\cdot\mathbf 1\{A\ge\bar A\}. \nonumber
+\end{align}
+
+\step{2}{(i) $A_0\ge\bar A$} Hedging gives $U^h=A_0+V$. Gambling gives
+\begin{align}
+  U^g &= \mathbb{E}[A_0+\varepsilon]+V\Pr(A_0+\varepsilon\ge\bar A) \nonumber\\
+      &= A_0+V\big[1-F(\bar A-A_0)\big] < A_0+V = U^h, \nonumber
+\end{align}
+because a wide support ($\underline\varepsilon<\bar A-A_0$) makes $F(\bar A-A_0)>0$. She hedges.
+
+\step{3}{(i) $A_0<\bar A$} Hedging gives $U^h=A_0$ (no funding). Gambling gives
+$U^g=A_0+V[1-F(\bar A-A_0)]>A_0$, because a wide support ($\bar\varepsilon>\bar A-A_0$) gives a
+positive chance of reaching $\bar A$. She gambles.
+
+\emph{Numerical illustration.} $I=100$, $R=150$, $p_H=0.8$, $p_L=0.4$, $B=30$ ($\bar A=40$,
+$V=20$, from Exercise~8), $\varepsilon$ uniform on $[-20,20]$. $A_0=50$: $U^h=70$;
+$\Pr(\varepsilon\ge-10)=0.75$, $U^g=50+20(0.75)=65<70$: hedge. $A_0=30$: $U^h=30$;
+$\Pr(\varepsilon\ge10)=0.25$, $U^g=30+20(0.25)=35>30$: gamble ($A_0+\underline\varepsilon=10\ge0$).
+
+\answer{(i)} Hedge if $A_0\ge\bar A$ (gambling only risks losing funding); gamble if
+$A_0<\bar A$ (gambling gives a chance of funding).
+
+\step{4}{(ii) Breakeven and NPV in terms of $R_b$} As in Exercise~14, $p=R_b$; the investors'
+breakeven condition is $R_b(R-R_b)\ge I-A$ and the NPV is
+\begin{align}
+  W(R_b) &= R_bR-\tfrac12R_b^2-I, \nonumber
+\end{align}
+with $R_b\in[\tfrac12R,R]$ without loss of generality (Exercise~14, Step~3). Since
+$I-A_0<\tfrac14R^2$ and the support is small, she is funded in every state, and
+$U(A)=A+V(A)$ with $V(A)=W(R_b(A))$.
+
+\step{5}{(ii) Concavity} By \eqref{r4e14-Vp}--\eqref{r4e14-Vpp}, $V'>0$ and $V''<0$ for $A<I$;
+for $A\ge I$, $V=V^*$ is flat and $V'(I)=0$, so $V$ is concave on the whole range. $U$ is then
+strictly concave where $A<I$, and $U^h=A_0+V(A_0)>A_0+\mathbb{E}[V(A_0+\varepsilon)]=U^g$.
+
+\emph{Numerical illustration.} $R=0.9$, $I=0.3$, $A_0=0.2$, $\varepsilon=\pm0.05$ with
+probability $\tfrac12$ ($I-A=0.15<0.2025$ in the bad state). $V(0.15)$: $R_b=(0.9+0.458258)/2=0.6791288$,
+$V=0.6112159-0.2306080-0.3=0.0806080$. $V(0.25)$: $R_b=(0.9+0.781025)/2=0.8405125$,
+$V=0.7564612-0.3532306-0.3=0.1032306$. Then $\mathbb{E}[V]=(0.0806080+0.1032306)/2=0.0919193<V(0.2)=0.0965703$.
+
+\answer{(ii)} She hedges: with continuous effort the value of net worth is concave, so risk
+in net worth lowers expected utility.
+
+\step{6}{(iii) The investment rule} With investment constrained by pledgeable income and good
+behaviour induced, investment solves the binding breakeven condition
+\begin{align}
+  p_H\Big[RI-\frac{B(I)}{\Delta p}\Big] &= I-A
+  \iff \phi(I)\equiv(1-\rho_1)I+\frac{p_H}{\Delta p}B(I)=A. \label{r4e15-phi}
+\end{align}
+``Constrained'' means the marginal pledgeable income is below $1$ at the solution:
+$\phi'(I)=1-\rho_1+(p_H/\Delta p)B'(I)>0$. Differentiating $\phi(I(A))=A$ once and twice,
+\begin{align}
+  \phi'(I)\,I' &= 1 \;\Rightarrow\; I'(A)=\frac{1}{\phi'(I)}>0, \nonumber\\
+  I''(A) &= -\frac{\phi''(I)\,I'}{\phi'(I)^2} = -\frac{(p_H/\Delta p)B''(I)}{\phi'(I)^3}. \nonumber
+\end{align}
+So $I$ is concave if $B''>0$, linear if $B''=0$, convex if $B''<0$.
+
+\step{7}{(iii) Utility} Investors break even, so $U(A)=A+(\rho_1-1)I(A)$ and
+\begin{align}
+  U^h-U^g &= (\rho_1-1)\big\{I(A_0)-\mathbb{E}[I(A_0+\varepsilon)]\big\}, \nonumber
+\end{align}
+positive if $I$ is concave, zero if linear, negative if convex (Jensen, $\rho_1>1$).
+
+\emph{Numerical illustration.} $p_H=0.8$, $\Delta p=0.4$, $R=1.5$ ($\rho_1=1.2$, $p_H/\Delta p=2$),
+$B(I)=0.3I+0.1g(I)$, so $\phi(I)=(1-1.2)I+2(0.3I+0.1g)=0.4I+0.2g(I)$; $A_0=10$, $\varepsilon=\pm5$.
+\begin{itemize}
+  \item Linear ($g=0$): $I=A/0.4$: $I(5)=12.5$, $I(15)=37.5$, mean $25=I(10)$: indifferent.
+  \item Convex ($g=I^2$): $0.2I^2+0.4I-A=0$, $I=[-0.4+\sqrt{0.16+0.8A}]/0.4$: $I(5)=4.0990$,
+        $I(10)=6.1414$, $I(15)=7.7178$; mean $5.9084<6.1414$: hedge (gain $0.2(6.1414-5.9084)=0.0466$).
+  \item Concave ($g=\sqrt I$): with $s=\sqrt I$, $0.4s^2+0.2s-A=0$, $s=[-0.2+\sqrt{0.04+1.6A}]/0.8$:
+        $I(5)=10.8528$, $I(10)=22.6219$, $I(15)=34.5606$; mean $22.7067>22.6219$: gamble
+        (gain $0.2(22.7067-22.6219)=0.0170$).
+\end{itemize}
+In all three cases $\phi'(I)>0$ everywhere ($0.4$, $0.4+0.4I$, $0.4+0.1/\sqrt I$).
+
+\answer{(iii)} Hedge if $B$ is convex ($I(A)$ concave), indifferent if $B$ is linear
+($I=kA$), gamble if $B$ is concave ($I(A)$ convex).
+
+\step{8}{(iv) Unobservable income} Investors can be promised nothing, so they lend nothing and
+$I=A$ (investing all cash is optimal by assumption): $U(A)=R(A)$, concave. Hence
+$U^h=R(A_0)>\mathbb{E}[R(A_0+\varepsilon)]=U^g$. Example: $R(I)=2\sqrt I$, $A_0=1$,
+$\varepsilon=\pm0.5$: $U^h=2\sqrt1=2$; $U^g=\tfrac12(2\sqrt{0.5}+2\sqrt{1.5})=\tfrac12(1.414214+2.449490)=1.931852<2$.
+
+\answer{(iv)} She hedges: with self-financing and a concave technology, the value of cash is
+concave.
+
+\step{9}{(v) Date-0 contracting replicates and improves on gambling} Without hedging, each
+$\varepsilon$ leads to an investment $I(\varepsilon)$ and to cash used $A(\varepsilon)\le A_0+\varepsilon$,
+with $\mathcal P(I(\varepsilon))\ge I(\varepsilon)-A(\varepsilon)$ in every state ($\mathcal P$: pledgeable income).
+Taking expectations,
+\begin{align}
+  \mathbb{E}[\mathcal P(I)] &\ge \mathbb{E}[I]-\mathbb{E}[A(\varepsilon)] \ge \mathbb{E}[I]-A_0, \nonumber
+\end{align}
+since $\mathbb{E}[A(\varepsilon)]\le\mathbb{E}[A_0+\varepsilon]=A_0$. Now let her sign at date~0:
+investors absorb $\varepsilon$ (full hedging), she draws the investment $\tilde I$ from the same
+distribution as $I(\varepsilon)$ but independently of $\varepsilon$, contributes
+$\mathbb{E}[A(\varepsilon)]$ and keeps $A_0-\mathbb{E}[A(\varepsilon)]$. Investors' expected profit is
+$\mathbb{E}[\mathcal P(\tilde I)]-\mathbb{E}[\tilde I]+\mathbb{E}[A(\varepsilon)]\ge 0$ by the inequality above,
+incentives given $\tilde I$ are unchanged, and her expected NPV and leftover cash are the same: she
+is at least as well off. She can do strictly better when gambling wastes resources. In case (i)
+with $A_0<\bar A$, funding happens with probability $1-F(\bar A-A_0)$ and
+$[1-F(\bar A-A_0)]\bar A<A_0$ (cash is unused in every state); a date-0 random-financing contract
+(Exercise~5) funds the project with probability $x=A_0/\bar A>1-F(\bar A-A_0)$. In the
+illustration with $A_0=30$: $[1-F]\bar A=0.25(40)=10<30$; $x=30/40=0.75$ and
+$U=30+0.75(20)=45>35$.
+
+\answer{(v)} With a date-0 contract, any outcome of gambling can be replicated with investment
+independent of $\varepsilon$ (full hedging), and often improved on (here $45$ against $35$): the
+taste for gambling in (i) and (iii) comes from the absence of contracting at date~0.
+
+\intuition Risk neutrality does not imply indifference to hedging: what matters is the
+curvature of the value of internal funds. Financing frictions can make it concave (continuous
+effort, self-financed concave technology, convex private benefits), so hedging pays, or convex
+(the funding threshold, concave private benefits), so gambling pays. When the firm can arrange
+its financing before the shock, it can buy the ``lottery'' it wants directly, without wasting cash,
+and insulating investment from the shock becomes optimal.
+\pitfalls
+\begin{itemize}
+  \item Concluding that a risk-neutral entrepreneur never cares about hedging; the curvature of
+        $U(A)$, not her utility function, decides.
+  \item In (ii), writing the NPV without the effort cost ($R_bR-I$); the conclusion survives
+        but $V'$ is then wrong.
+  \item Forgetting $\mathbb{E}[\varepsilon]=0$: hedging changes the risk, not the mean of cash on hand.
+\end{itemize}
+\bookans (i), (iii), (iv) and (v) match the book's answer (pp.~581--582). Two display slips in the
+book: in (i) the date-1 gross utility is printed as $[p_HR-I]+[A-\bar A]$ where $[p_HR-I]+A$ is
+meant (its next line, $U_b^h=[p_HR-I]+A_0$, uses $A$); in (ii) it prints $U_b=R_bR-I$ and
+$dV/dA=R/(2R_b(A)-R)$, omitting the effort cost $\tfrac12R_b^2$; with it,
+$dV/dA=(R-R_b)/(2R_b-R)$, as in its own answer to Exercise~3.20 (at the illustration point,
+$0.202782$ instead of $1.405564$). Both are still positive with negative second derivative, so
+the conclusion (hedge) is unchanged.
+\refbib{Tirole Ch.~3, \S3.2.2, pp.~116--117; \S3.4, pp.~127--128; Exercise~3.20, p.~152; Ch.~5, \S5.4 ``Corporate Risk Management'', pp.~213--219.}
+
+\end{document}

@@ -1,0 +1,154 @@
+% Short answer key for Listas/lista-topic3-asymmetric-information.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-topic3-asymmetric-information-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Topic 3 list --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list --- Topic 3: Asymmetric information}\\[4pt]{\large Answer key (full derivations in \url{lista-topic3-asymmetric-information-solutions.pdf})}\end{center}
+
+% =============================================================================
+% Topic 3 list (asymmetric information), exercises 1--8. Short answers.
+% =============================================================================
+\section*{1. Winner's curse in IPO allocations (Ross Cap.~15, Q3)}
+Full allocations: $1{,}000(7)-1{,}000(5)=\$2{,}000$. Expected, with the underpriced issue rationed to half:
+$$E[G]=0.5(1{,}000)(7)-1{,}000(5)=3{,}500-5{,}000=-\$1{,}500 .$$
+Principle: the winner's curse (\pt{``maldi\c{c}\~ao do vencedor''}): the uninformed get full allocations exactly of the bad issues. Breaking even would need underpricing of $5/0.5=\$10$ on the good issue.
+
+\section*{2. Investment and available cash (GT 19.4)}
+Outsiders price new securities at the pooled value, so a good firm sells external claims at a discount (Myers--Majluf); internal cash avoids it. In the lecture model with cash $A$:
+$$U_G(A)=(pR-I)-(I-A)\left(\frac{p}{m}-1\right),$$
+so the discount falls with $A$ (lecture numbers: $8$ at $A=0$, $9$ at $A=15$, against an NPV of 10). With $q=0.5$, $\alpha=0.2$ ($m=0.56$, $mR=28<30$) the firm invests only if $A\ge I-mR=2$. Moral hazard ($I\le kA$) and issue costs push the same way: investment depends on cash.
+
+\section*{3. IST: equity or debt (Berk 16.29)}
+\textbf{(a)} With $n=500/13.50=37.04$ million new shares: (i) $v=12.50$: equity $1{,}750/137.04=12.77>$ debt $(1{,}250-20)/100=12.30$: \textbf{issue equity}. (ii) $v=14.50$: equity $1{,}950/137.04=14.23<$ debt $14.30$: \textbf{borrow}.\\
+\textbf{(b)} Equity reveals $v=12.50$: price falls to \$12.50. \textbf{(c)} Debt reveals $v=14.50$: price rises to \$14.30.\\
+\textbf{(d)} With a net tax benefit $X$, the high type borrows; at a fixed 13.50 the low type issues equity only if $X<27.03$ million, but since equity would be priced at 12.50 once it reveals the low type, both types borrow: debt carries no information and the price moves only by $X/100$ (pecking order).
+
+\section*{4. Issuing undervalued equity (GT 19.6)}
+At the outsiders' price $600/100=\$6$: $n=100/6=16.67$ new shares. Taking the project: $P=(1{,}000+120)/116.67=\$9.60$; passing it up: $P=1{,}000/100=\$10.00$. The firm passes up a project with NPV 20, because new holders get $160$ of value for $100$ (transfer 60 $>$ NPV 20). It would invest only at an issue price $\ge 1{,}000(100)/[100(120)]=\$8.33$. (If the issue is priced with the project, $\$6.20$: $n=16.13$, $P=\$9.64<\$10$; same conclusion.)
+
+\section*{5. Dividend suspension (Ross CQ 17.6)}
+Return $=(25-28.50)/28.50=-12.28\%$. Under MM the payout itself is irrelevant; the fall is the \emph{information content} of the dividend: firms cut dividends only when they expect weaker cash flows, so the suspension (and the cost overruns behind it) makes the market revise future cash flows and dividends down. Clientele selling may add a little; the cash kept (avoiding an external issue) is outweighed by the bad news.
+
+\section*{6. Privately known private benefit (Tirole 6.1)}
+\textbf{(i)} (a) $R_b<B_L/\Delta p$: both shirk, profit $\le p_LR-I<0$ by (2). (b) $R_b\ge B_H/\Delta p$: both work, profit $\le p_H(R-B_H/\Delta p)-I<0$ by (1). (c) In between: good works, bad shirks, profit $m(R-R_b)-I$, $m=\alpha p_H+(1-\alpha)p_L$; the bad type always pools, so good types cannot be financed alone.\\
+\textbf{(ii)} $\alpha^*$ solves $[\alpha^*p_H+(1-\alpha^*)p_L](R-B_L/\Delta p)=I$, in $(0,1)$ by (1)--(2). $\alpha<\alpha^*$: no $R_b$ breaks even (breakdown). $\alpha\ge\alpha^*$: $R_b^*=R-I/m\in[B_L/\Delta p,B_H/\Delta p)$ is a pooling equilibrium.\\
+\textbf{(iii)} Lenders earn $I(p_H-m)/m>0$ on good types and $-I(m-p_L)/m<0$ on bad ones; the good type gets $R_b^*<R-I/p_H$, the bad type (unfunded under symmetric information) is funded. More lending, lower quality: NPV $mR-I<p_HR-I$. Matches the book (pp.~595--596).
+
+\section*{7. Rock's model (Amaro de Matos 6.2.7 \#4, \#6)}
+\textbf{\#4} Fill probability $\min\{1,n/D\}$: $\pi=\min\{1,n/(D_U+D_I)\}\le\min\{1,n/D_U\}=\pi'$, strict when informed demand causes rationing (in (6.7), $\pi/\pi'=1-\alpha$).\\
+\textbf{\#6} From (6.7), $G=(1-\alpha)U(p_0)-L(p_0)=0$ with $U=\int_{p_0}^\infty(v-p_0)f$, $L=\int_0^{p_0}(p_0-v)f$:
+$$\frac{dp_0}{d\alpha}=-\frac{U(p_0)}{F(p_0)+(1-\alpha)[1-F(p_0)]}<0 .$$
+More informed investors leave the uninformed fewer good issues, so the price must fall for them to break even (uniform $v$ on $[0,2]$: $p_0=1,\,0.889,\,0.75$ at $\alpha=0,\,0.36,\,0.64$). Matches the book (p.~269).
+
+\section*{8. Pooling with a continuum of types (Tirole 6.2)}
+Type $B$ behaves iff $B\le(\Delta p)R_b$, so $U_l=H((\Delta p)R_b)p_H(R-R_b)+[1-H]p_L(R-R_b)-I$; the share behaving rises with $R_b$. Any $R_b<\bar B/\Delta p$ funds shirkers (success probability $p_L+\Delta p H<p_H$): lower quality. If $U_l\ge0$, $H[p_H(R-R_b)-I]\ge(1-H)[I-p_L(R-R_b)]>0$: positive profit on good types (externality). With $p_L=0$, uniform $H$: $U_l+I\le(p_H^2/\bar B)R_b(R-R_b)\le p_H^2R^2/(4\bar B)$ (max at $R_b=R/2$), so if this is $<I$ no loan breaks even, although types $B\le p_HR-I$ are creditworthy (e.g.\ $p_H=0.8$, $R=100$, $I=50$, $\bar B=50$: $32<50$, creditworthy mass $0.6$). Matches the book (pp.~596--597).
+
+% =============================================================================
+% Topic 3 list, exercises 9--15 (short answer key).
+% =============================================================================
+\section*{9. Adverse selection and ratings (Tirole 6.6)}
+
+\textbf{(i)} (1): the good type's pledgeable income $p_H(R-b/\Delta p)$ covers $I-A$, the bad type's does not.
+(2): a pool in which the good type works and the bad type shirks loses money even at $R_b=b/\Delta p$.
+Any contract the good type accepts, the bad one accepts too. $R_b\ge B/\Delta p$ loses by (1),
+$R_b<b/\Delta p$ is refused ($p_LR+B<I$), and $R_b\in[b/\Delta p,B/\Delta p)$ pools and loses by (2): no lending.
+
+\textbf{(ii)} The bad type is recognised, unfundable: $x=0$, payoff $A$. The good type is believed good in
+both events, so $p_H(R-R_b^G)=I-A+rx$. The bad type's no-mimicking condition
+$A\ge x(A-rx)+(1-x)[p_L(R-(I-A+rx)/p_H)+B]$ is a concave function of $x$, violated at $x=0$ and slack at
+$x=1$, so the cheapest separating $\hat x\in(0,1)$ makes it bind. The total cost
+$y=r\hat x=(1-\hat x)(c_0-A)/[\hat x+(1-\hat x)p_L/p_H]$ rises with $r$ from 0. Separation needs
+$y\le\min\{p_H(R-b/\Delta p)-(I-A),\,p_HR-I,\,A\}$, i.e.\ $r\le\bar r$. Example: $\hat x=0.727038$ at $r=1$,
+$\bar r=1.555556$.
+
+\section*{10. Maturity structure (Tirole 6.10)}
+
+The good type issues short-term debt $d=r$ (no hoarding) plus a dilutable long-term claim
+$L=I-A-r>0$. At date 1 she is known to be good and raises $\rho$ against $\rho_0^G$, feasible since
+$\rho+L\le\rho_0^G\iff I-A\le r+\rho_0^G-\rho$. Her payoff $A+r+p_HR-\rho-I$ equals her symmetric-information
+payoff, so the signal is \emph{costless}. A mimicking bad type has no cash left, can raise only
+$\rho_0^B<\rho$, is liquidated and gets $0\le A$. Hoarding liquidity would have let her continue.
+Example: $L=0.6$, $R_b=3.625\ge B/\Delta p=3$.
+
+\section*{11. Myers--Majluf: whose interest does management serve? (Amaro de Matos 3.2.6 \#4)}
+
+\textbf{All shareholders:} $E+S+a+b\ge E+S+a\iff b\ge0$. Every positive-NPV project is taken, every firm
+issues, the issue is uninformative and $P'=S+E(\widetilde A+\widetilde B)$.
+
+\textbf{New shareholders:} $\frac{E}{P'+E}(E+S+a+b)\ge E\iff b\ge P'-(S+a)$. Both this line and (3.20) pass
+through $(a,b)=(P'-S,0)$. The new rule is less restrictive for $a>P'-S$ and more restrictive for
+$a<P'-S$. With rational pricing $P'=S+E(Z\mid Z\ge P'-S)$, $Z=\widetilde A+\widetilde B$, which forces issues
+to have probability zero, so the new-equity market breaks down.
+
+\section*{12. Pecking order with variable investment (Tirole 6.8)}
+
+\textbf{(i)} $\max_{I,R_b^S,R_b^F}p_HR_b^S+(1-p_H)R_b^F$ s.t.\
+(IR$_l$) $p_H(R^SI-R_b^S)+(1-p_H)(R^FI-R_b^F)\ge I-A$,
+(M) $q_HR_b^S+(1-q_H)R_b^F\le\tilde U_b^{SI}$,
+(IC$_b$) $(\Delta p)(R_b^S-R_b^F)\ge BI$.
+
+\textbf{(ii)} Moving reward from failure to success with $p_H\delta R^S+(1-p_H)\delta R^F=0$ leaves the objective
+and (IR$_l$) unchanged. It relaxes (IC$_b$), and (M) by $-\frac{p_H-q_H}{1-p_H}\delta R^S<0$. The slack then
+lets $I$ and $R_b^S$ rise, so $R_b^F=0$: investors take all of $R^FI$ (debt first).
+
+\textbf{(iii)} Weak monotonic profit holds ($U_l(\tilde c^{SI})=(p_H-q_H)[(R^S-B/\Delta p)-R^F]\tilde I\ge0$,
+automatic if $R^F=0$). Lemma 6.2 then makes the separating allocation the low-information-intensity
+optimum, and Lemma 6.3 with Proposition 6.1 makes it the unique PBE iff $\alpha\le\alpha^*$.
+
+\section*{13. Information sharing among lenders (Tirole 6.7)}
+
+\textbf{(i)} Foreign banks never lend at date 1, and the local bank lends only to $p$-types at
+$R_b^1=0$. Without sharing, the incumbent wins only borrowers who succeeded and charges $R_b^2=0$:
+$\pi^{ns}=\alpha[pR-I+\delta p(R-I)]$, $U_b^{ns}=0$. With sharing there is Bertrand competition at date 2:
+$\pi^s=\alpha(pR-I)$, $U_b^s=\delta\alpha p(R-I)$. Since $\pi^{ns}-\pi^s=\alpha\delta p(R-I)>0$, banks do not share.
+
+\textbf{(ii)} Without sharing, $\alpha^{ns}=0$ and $\pi^{ns}=0$. With sharing, $C'(\alpha^s)=\delta p(R-I)$,
+$\alpha^s\in(0,1)$, and $\pi^s=\alpha^s(pR-I)>0$: banks share. Example ($\alpha=0.3$): $\pi^{ns}=1.464$,
+$\pi^s=0.6$; with endogenous $\alpha$, $\alpha^s=0.324324$ and $\pi^s=0.648649$.
+
+\section*{14. Leland--Pyle with mean-variance preferences (Amaro de Matos 3.2.6 \#2)}
+
+No book answer (it cites Leland--Pyle 1977, p.~377); derived here. Debt drops out of $\widetilde W_1$. The two
+FOCs plus the CAPM $\lambda$ give $(1-\alpha)X'(\alpha)=b\alpha\sigma_u^2$, with
+$\sigma_u^2=\sigma_\varepsilon^2-\operatorname{cov}(\varepsilon,M)^2/\sigma_M^2$, so
+$X(\alpha)=X(0)-b\sigma_u^2[\alpha+\ln(1-\alpha)]$. Holding the managers' own equity money
+$E_m=K-\alpha B-(1-\alpha)V(\alpha)$ fixed,
+$$B'(\alpha)=\frac{1}{\alpha^2}\Bigl[V(\alpha)-K+E_m-\frac{b\sigma_u^2\alpha^2}{1+r}\Bigr]>0
+\iff V-B>\frac{b\sigma_u^2\alpha}{1+r}.$$
+So debt rises with $\alpha$ when equity value exceeds the marginal risk cost of retention: ``most cases''.
+If instead $\alpha(V-B)$ is held fixed, $B'=V'+e/\alpha^2>0$ always.
+
+\section*{15. Assets in place with a continuum of types (Tirole 6.5)}
+
+\textbf{(i)} Type $p$ issues iff $\tau R\ge(p+\tau)R_l$, so the issuers are $p\le p^*$.
+\textbf{(ii)} $R_l=I/(m^-(p^*)+\tau)$; at an interior cutoff $\tau R/I=(p^*+\tau)/(m^-(p^*)+\tau)$. The cutoff
+satisfies $p^*>\underline p$ because type $\underline p$ strictly gains, and $p^*<\bar p$ when
+$\tau R/I<(\bar p+\tau)/(E[p]+\tau)$. The highest $p^*$ has the lowest $R_l$ and Pareto-dominates.
+\textbf{(iii)} Yes: $V_0-V_1=[1-F(p^*)]R\,[m^+(p^*)-p^*(m^-+\tau)/(p^*+\tau)]>0$ (zero only if everyone issues).
+\textbf{(iv)} With $H=(\tau R/I)(m^-+\tau)-(p^*+\tau)$, we have $H_{p^*}<0$ and $H_\tau>0$, so $dp^*/d\tau>0$ and the
+volume $F(p^*)I$ rises (the book prints $[1-F(p^*)]I$, a typo). Uniform example: $p^*=0.3$, $R_l=5$,
+$V_0-V_1=0.75$, $dp^*/d\tau=5.5$.
+
+\end{document}

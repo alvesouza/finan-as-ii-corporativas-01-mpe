@@ -1,0 +1,1692 @@
+% Worked solutions for Listas/lista-topic5-nonverifiable-income-termination.md (13 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-topic5-nonverifiable-income-termination-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize Topic 5 list --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list --- Topic 5: Nonverifiable income, strategic default, termination, debt structure}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-topic5-nonverifiable-income-termination.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-topic5-nonverifiable-income-termination-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Control passing to creditors --- Grinblatt \& Titman 16.10, p.~593}
+
+\asked The exercise has two parts. \emph{(preferences)}: explain how what shareholders want the firm
+to do differs from what creditors want, given the claims each one holds. \emph{(decisions)}: explain
+which corporate decisions (risk, liquidation, investment, payouts, management) are likely to change once
+bankruptcy hands control of the firm to the debt holders.
+
+\approach Each claimant's preferences follow from the shape of its payoff as a function of firm value:
+equity is a call option on the firm (convex), debt is a short put plus a riskless bond (concave). Whoever
+holds control maximises the expected value of \emph{its own} claim, not total value; this is the
+debt holder--equity holder conflict of G\&T \S16.2. In the lecture's language, default is the event that
+transfers control to creditors, which is what makes their claim enforceable when income is not
+verifiable. A two-state numerical example makes each bias concrete.
+
+\notation
+\begin{itemize}
+  \item $F>0$: face value of the debt due now; $V_L\geq 0$: value if the firm is liquidated now.
+  \item $\tilde V$: random value of the firm if it keeps operating (going-concern value), $E[\tilde V]$ its mean; risk neutrality and a zero interest rate, as in the chapter's examples.
+  \item $E(\cdot)$, $D(\cdot)$: payoffs of equity and debt for a given total value $V$.
+\end{itemize}
+
+\step{1}{Two claims, two payoff shapes} By absolute priority, at a value $V$ the claims pay
+\begin{align}
+  D(V) &= \min(V,F), \label{t5e1-debt}\\
+  E(V) &= \max(V-F,0). \label{t5e1-equity}
+\end{align}
+Equity \eqref{t5e1-equity} is a call option on the firm: convex, it gains from upside and is
+protected on the downside. Debt \eqref{t5e1-debt} is concave: it gains nothing above $F$ and bears the
+losses below $F$. Each group, when in control, picks the action that maximises the expected value
+of its own claim, not $E[\tilde V]$ (G\&T Result 16.2, p.~562).
+
+\step{2}{Equity holders' preferences while they control the firm} Near distress, \eqref{t5e1-equity}
+makes shareholders (and the managers who represent them) prefer:
+(i) \emph{risk} --- asset substitution, even into negative-NPV gambles, because the downside falls on
+creditors; (ii) \emph{continuation} over liquidation --- reluctance to liquidate, since liquidation
+pays them $\max(V_L-F,0)=0$ when $F>V_L$, like exercising an out-of-the-money option;
+(iii) \emph{no new equity-financed investment} --- debt overhang, since the existing debt captures
+much of the payoff; (iv) \emph{quick payoffs} --- shortsighted investment (G\&T \S 16.2, pp.~562--578).
+Illustration with the book's Eastern Airlines numbers (p.~576): $F=500$; continuing gives
+$\tilde V=600$ or $200$ with probability $\tfrac12$ each; liquidating now gives $V_L=480$ (\$ millions).
+Using \eqref{t5e1-equity} and \eqref{t5e1-debt},
+\begin{align}
+  E_{\text{cont}} &= \tfrac12\max(600-500,0)+\tfrac12\max(200-500,0) \label{t5e1-Econt}\\
+                  &= \tfrac12(100)+\tfrac12(0) = 50, \nonumber\\
+  E_{\text{liq}}  &= \max(480-500,0) = 0, \label{t5e1-Eliq}\\
+  D_{\text{cont}} &= \tfrac12\min(600,500)+\tfrac12\min(200,500) \label{t5e1-Dcont}\\
+                  &= \tfrac12(500)+\tfrac12(200) = 350, \nonumber\\
+  D_{\text{liq}}  &= \min(480,500) = 480. \label{t5e1-Dliq}
+\end{align}
+Shareholders want to continue ($50>0$), creditors want to liquidate ($480>350$), and the firm is
+worth $E[\tilde V]=\tfrac12(600)+\tfrac12(200)=400$ if it continues against $480$ if it liquidates:
+equity control destroys 80.
+
+\step{3}{Creditors' preferences once they take control} In bankruptcy (or after a covenant
+default) control passes to the debt holders or their representatives (G\&T p.~576). By
+\eqref{t5e1-debt} they are \emph{conservative}: they value the downside fully and the upside above
+$F$ not at all. They therefore prefer (i) safe strategies and lower risk; (ii) liquidation or asset
+sales whenever $V_L$ exceeds the expected value of their claim under continuation, which is
+efficient in Step~2's example; (iii) cash collection and cost cutting over long-horizon, risky
+investment. The bias can now run the other way: with $F=V_L=500$ and $\tilde V=800$ or $300$
+(own numbers), continuing is worth $E[\tilde V]=\tfrac12(800)+\tfrac12(300)=550>500$, but
+\begin{align}
+  D_{\text{cont}} &= \tfrac12\min(800,500)+\tfrac12\min(300,500) \label{t5e1-Dcont2}\\
+                  &= \tfrac12(500)+\tfrac12(300) = 400 < 500 = D_{\text{liq}}, \nonumber
+\end{align}
+so creditors liquidate a firm worth more alive (the Emruss case, pp.~577--578, has the same logic:
+senior creditors liquidate because liquidation pays them in full).
+
+\answer{(preferences)} Equity holders (convex claim $\max(V-F,0)$) favour risk, continuation over
+liquidation, no new equity-financed investment and quick payoffs; debt holders (concave claim
+$\min(V,F)$) favour safety, liquidation whenever $V_L$ exceeds the expected value of their claim under
+continuation, and cash collection. In the example, equity wants to continue ($50>0$), debt wants to
+liquidate ($480>350$).
+
+\step{4}{How decisions change after bankruptcy} Relative to equity control: risk is cut, failing
+divisions are closed or sold, liquidation becomes more likely (sometimes too likely), dividends stop,
+and managers are often replaced. When Chapter~11 converts the debt into equity of the reorganised
+firm, the former creditors become residual claimants: debt overhang and the incentive to gamble
+disappear, and decisions move back toward maximising total value. Absolute-priority violations
+(p.~560) leave shareholders some bargaining power, so the shift of control is only partial.
+
+\answer{(decisions)} After bankruptcy the firm takes less risk, sells or closes failing assets,
+liquidates more often (sometimes too often: with $\tilde V=800$ or $300$ and $V_L=F=500$, creditors
+liquidate a firm worth $550>500$ alive), stops dividends and often replaces management; once the debt is
+converted into equity, decisions move back toward maximising total value.
+
+\intuition Each claimant behaves like the shape of its payoff: the convex claim gambles and delays
+liquidation, the concave claim plays safe and liquidates early. Shifting control to creditors in
+default is what makes their claim credible --- the same role the termination threat plays in
+Topic~5 --- but it replaces one bias by the opposite one unless the claims are restructured.
+\pitfalls
+\begin{itemize}
+  \item Saying that creditors in control maximise firm value: they maximise $E[\min(\tilde V,F)]$ and
+        ignore the upside above $F$, so they can liquidate a firm worth more alive.
+  \item Treating liquidation as always efficient (or always inefficient): it is efficient only when
+        $V_L>E[\tilde V]$; the bias depends on who holds control.
+  \item Forgetting absolute-priority violations and debt-for-equity swaps, which change the payoff
+        shapes and hence the post-bankruptcy decisions.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~16, \S 16.1 ``Bankruptcy'', pp.~559--561; \S 16.2 ``Debt Holder--Equity Holder Conflicts'', pp.~561--578 (``The Reluctance to Liquidate Problem'', pp.~575--578); Ch.~18, p.~643 (creditor influence makes managers ``too conservative'').}
+
+% =============================================================================
+\exsec{2. Duration of debt: proving (5.11) --- Amaro de Matos 5.2.5 \#3, p.~148}
+
+\asked Derive the face value $r_1$ of one-period (short-term) debt in Diamond's (1991) rating model,
+i.e.\ show that competitive lenders who must earn $R$ per period set $r_1$ as in (5.11).
+
+\approach Short-term debt is priced by a one-period break-even condition: what the lenders expect to
+hold at $t=1$, averaged over the upgrade and downgrade states, must equal $R$ per unit lent. The state
+probabilities come from the rating model ($f^u=1$: only good projects are upgraded), and the claim's
+$t=1$ value in each state is given in the text. This is the lecture's maturity question: short-term
+debt is repriced at $t=1$ on the basis of nonverifiable (but observable) news.
+
+\notation
+\begin{itemize}
+  \item $f\in(0,1)$: date-0 probability that the project is good (credit rating); $f^u=1$, $f^d<f$: posterior after an upgrade / a downgrade.
+  \item $e\in(0,1)$: probability that a good project is downgraded at $t=1$; bad projects are always downgraded (since $f^u=1$).
+  \item $r_1$: face value of one-period debt due at $t=1$; $V_s^u$, $V_s^d$: its $t=1$ value after an upgrade / a downgrade.
+  \item $R>1$: gross one-period return of the lenders' alternative; $L$: liquidation value; $X$: payoff of a successful project; $\pi\in(0,1)$; $q^d=\pi+f^d(1-\pi)$: repayment probability after a downgrade (5.10).
+  \item $P_u$, $P_d$: probabilities of an upgrade and a downgrade for a borrower of unknown type; $M\equiv\max(L,q^dX/R)$.
+\end{itemize}
+
+\step{1}{Probabilities of upgrade and downgrade} We need the weights of the two $t=1$ states. By the
+law of total probability over the two types, with $\Pr(\text{up}\mid\text{good})=1-e$ and
+$\Pr(\text{up}\mid\text{bad})=0$ (only good projects are upgraded, since $f^u=1$):
+\begin{align}
+  P_u &= f\,(1-e)+(1-f)\,(0) \nonumber\\
+      &= f(1-e), \label{t5e2-Pu}\\
+  P_d &= 1-P_u = 1-(1-e)f. \label{t5e2-Pd}
+\end{align}
+The downgrade posterior is consistent with these by Bayes' rule, since a downgrade comes from a good
+project with probability $fe$ and from a bad one with probability $(1-f)(1)$:
+\begin{align}
+  f^d = \frac{fe}{fe+(1-f)} = \frac{fe}{P_d}. \label{t5e2-bayes}
+\end{align}
+
+\step{2}{Value of the claim at $t=1$} After an upgrade the borrower is known to be good and
+refinances $r_1$ with new debt of face value $r_1R$, repaid with certainty, so
+\begin{align}
+  V_s^u = r_1. \label{t5e2-Vu}
+\end{align}
+After a downgrade the value is the one stated in the text, $V_s^d=\min[r_1,\max(L,q^dX/R)]=\min(r_1,M)$.
+
+\step{3}{Lenders' break-even} Lenders give $K=1$ at $t=0$ and require an expected value $R$ at
+$t=1$ (one period at the per-period return $R$):
+\begin{align}
+  P_uV_s^u+P_dV_s^d &= R. \label{t5e2-be}
+\end{align}
+Substituting \eqref{t5e2-Pu}, \eqref{t5e2-Pd} and \eqref{t5e2-Vu} into \eqref{t5e2-be}:
+\begin{align}
+  \bigl(f(1-e)\bigr)(r_1)+\bigl(1-(1-e)f\bigr)V_s^d &= R, \nonumber\\
+  (1-e)f\,r_1 &= R-[1-(1-e)f]V_s^d, \nonumber\\
+  r_1 &= \frac{R-[1-(1-e)f]V_s^d}{(1-e)f}, \label{t5e2-r1}
+\end{align}
+where the second line subtracts $[1-(1-e)f]V_s^d$ from both sides and the third divides by
+$(1-e)f>0$. This is (5.11). $\blacksquare$
+
+\step{4}{Solving the fixed point} Since $V_s^d$ depends on $r_1$, \eqref{t5e2-r1} is an equation in
+$r_1$; we solve it case by case to see when the debt is risky. Case A, $r_1\leq M$: then $V_s^d=r_1$ and
+\eqref{t5e2-r1} gives
+\begin{align}
+  (1-e)f\,r_1+[1-(1-e)f](r_1) &= R, \nonumber\\
+  r_1\bigl[(1-e)f+1-(1-e)f\bigr] &= R, \nonumber\\
+  r_1 &= R, \label{t5e2-caseA}
+\end{align}
+consistent if and only if $R\leq M$: the debt is riskless. Case B, $R>M$: then $V_s^d=M$ and
+\begin{align}
+  r_1 = \frac{R-[1-(1-e)f](M)}{(1-e)f}. \label{t5e2-caseB}
+\end{align}
+It is consistent ($r_1>M$) because
+\begin{align}
+  r_1-M &= \frac{R-[1-(1-e)f]M-(1-e)f\,M}{(1-e)f} \nonumber\\
+        &= \frac{R-M}{(1-e)f}>0, \nonumber
+\end{align}
+and $r_1>R$ because $r_1-R=[1-(1-e)f](R-M)/[(1-e)f]>0$ (subtract $R=(1-e)fR/[(1-e)f]$ from
+\eqref{t5e2-caseB}). The premium $r_1-R$ pays for the shortfall $R-M$ that lenders bear in the
+downgrade state.
+
+\answer{(5.11)} $r_1=\dfrac{R-[1-(1-e)f]\,V_s^d}{(1-e)f}$, from the break-even
+$f(1-e)\,r_1+[1-(1-e)f]\,V_s^d=R$. Since $V_s^d=\min(r_1,M)$, it gives $r_1=R$ (riskless debt) when
+$R\le M$ and $r_1=[R-(1-(1-e)f)M]/[(1-e)f]>R$ otherwise.
+
+\intuition Short-term lenders are paid in full whenever the borrower is upgraded and receive at
+most the refinancing or liquidation value after a downgrade; the face value is set so that the
+probability-weighted average of the two equals the safe return. Because the downgrade state carries
+the loss, $r_1$ rises with the probability $1-(1-e)f$ of a downgrade.
+\pitfalls
+\begin{itemize}
+  \item Requiring $R^2$ instead of $R$: short-term debt runs one period, so the lenders' target at
+        $t=1$ is $R$ (long-term debt is the one priced against $R^2$).
+  \item Writing the upgrade probability as $f$ or $1-e$: it is $f(1-e)$, because bad projects are never
+        upgraded ($f^u=1$) and good ones are upgraded only with probability $1-e$.
+  \item Treating $V_s^d$ as a constant: it is $\min[r_1,\max(L,q^dX/R)]$, so (5.11) is a fixed point and
+        must be checked for consistency.
+\end{itemize}
+\bookans Matches the book's answer (p.~268), which writes the break-even condition
+$P_uV_s^u+P_dV_s^d=R$ with $P_u=f(1-e)$ and solves for $r_1$. Step~4 is an addition.
+\refbib{Amaro de Matos Ch.~5, \S 5.2.3 ``The Choice of the Duration'', pp.~139--141; Appendix C.5.2, p.~268.}
+
+% =============================================================================
+\exsec{3. Threat of termination: continuation probability --- Amaro de Matos 5.2.5 \#1, p.~148}
+
+\asked Show that the optimal liquidation probability $\beta_\circ$ after a declared zero cash flow,
+given by (5.8), falls when the probability $q$ of the good cash flow rises (i.e.\ sign the derivative
+$\partial\beta_\circ/\partial q$).
+
+\approach With nonverifiable income, repayment is enforced only by the \emph{threat of termination}:
+after a zero report the investor liquidates with probability $\beta_\circ$, set at the lowest level that
+lets her break even. The denominator of (5.8) is her expected recovery per unit of $\beta_\circ$, a
+$q$-weighted average of the recovery after a \emph{strategic default} ($y/2$) and after a \emph{liquidity
+default} ($L_\circ$). Differentiating the ratio and signing $y/2-L_\circ$ answers the question.
+
+\notation
+\begin{itemize}
+  \item $q\in(0,1)$: probability of the cash flow $x$ at $t=1$; $y>0$: second-period cash flow; $K>0$: investment.
+  \item $\beta_\circ\in[0,1]$: probability of liquidation after a declared zero cash flow (the continuation probability is $1-\beta_\circ$).
+  \item $S=y/2$: entrepreneur's share in a strategic-default buyback, so the investor gets $y-S=y/2$.
+  \item $\alpha\in[0,1]$: efficiency of an outside buyer; $c\sim U[0,\bar c]$: buyer's information cost, with $\alpha y/2\leq\bar c$; $L_\circ=\alpha^2y^2/(4\bar c)$: expected liquidation payoff.
+  \item $\Pi(q)$: investor's expected recovery per unit of $\beta_\circ$, the denominator of (5.8).
+\end{itemize}
+
+\step{1}{Write $\beta_\circ$ as a ratio} From (5.8),
+\begin{align}
+  \beta_\circ(q) &= \frac{K}{\Pi(q)}, \label{t5e3-beta}\\
+  \Pi(q) &= q\,\frac{y}{2}+(1-q)\frac{\alpha^2y^2}{4\bar c}. \label{t5e3-Pi}
+\end{align}
+
+\step{2}{Differentiate} The sign of the comparative static is the sign of a derivative, so we compute
+it. Writing \eqref{t5e3-beta} as $\beta_\circ=K\,\Pi(q)^{-1}$ and applying the chain rule ($K$, $y$,
+$\alpha$, $\bar c$ do not depend on $q$):
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q} &= K\cdot(-1)\,\Pi(q)^{-2}\cdot\Pi'(q) \nonumber\\
+  &= -\frac{K\,\Pi'(q)}{\Pi(q)^2}. \label{t5e3-dbeta}
+\end{align}
+\eqref{t5e3-Pi} is linear in $q$; $\frac{d}{dq}\bigl[q\,\tfrac y2\bigr]=\tfrac y2$ and
+$\frac{d}{dq}\bigl[(1-q)\tfrac{\alpha^2y^2}{4\bar c}\bigr]=-\tfrac{\alpha^2y^2}{4\bar c}$, so
+\begin{align}
+  \Pi'(q) &= \frac{y}{2}-\frac{\alpha^2y^2}{4\bar c}. \label{t5e3-dPi}
+\end{align}
+Substituting \eqref{t5e3-dPi} and \eqref{t5e3-Pi} into \eqref{t5e3-dbeta}:
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q} &= \frac{-K\left(\dfrac{y}{2}-\dfrac{\alpha^2y^2}{4\bar c}\right)}{\left[q\,\dfrac{y}{2}+(1-q)\dfrac{\alpha^2y^2}{4\bar c}\right]^2}. \label{t5e3-final}
+\end{align}
+
+\step{3}{Sign} The denominator of \eqref{t5e3-final} is positive and $K>0$, so the sign is the
+opposite of that of $\Pi'(q)$. Factor $y/2$ out of \eqref{t5e3-dPi}:
+\begin{align}
+  \Pi'(q) &= \frac{y}{2}\left[1-\frac{\alpha^2y^2}{4\bar c}\cdot\frac{2}{y}\right] \nonumber\\
+          &= \frac{y}{2}\left[1-\frac{\alpha^2y}{2\bar c}\right] \nonumber\\
+          &= \frac{y}{2}\left[1-\alpha\cdot\frac{\alpha y}{2\bar c}\right]. \label{t5e3-factor}
+\end{align}
+The assumption $\alpha y/2\leq\bar c$ gives $\alpha y/(2\bar c)\leq 1$, and $\alpha\leq1$, so the
+bracket is $\geq0$; it is $>0$ unless $\alpha=1$ and $y/2=\bar c$. Hence $\Pi'(q)\geq0$ and
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q}\leq 0, \label{t5e3-sign}
+\end{align}
+strictly except in that knife-edge case, where $L_\circ=y/2$ and $\beta_\circ=K/(y/2)$ does not
+depend on $q$. $\blacksquare$ (Interior solution assumed: $\Pi(q)\geq K$, so that $\beta_\circ\leq1$.)
+The inefficiency $(1-q)\beta_\circ(y-L_\circ)$ in (5.7) is then also decreasing in $q$. By the
+product rule, with $L_\circ$ independent of $q$ and $y-L_\circ>0$ (because $L_\circ\le y/2$),
+\begin{align}
+  \frac{\partial}{\partial q}\Bigl[(1-q)\beta_\circ(y-L_\circ)\Bigr]
+  &= (y-L_\circ)\Bigl[-\beta_\circ+(1-q)\frac{\partial\beta_\circ}{\partial q}\Bigr]<0, \label{t5e3-ineff}
+\end{align}
+since $\beta_\circ>0$ and $\partial\beta_\circ/\partial q\le0$ by \eqref{t5e3-sign}.
+
+\answer{(sign)} $\dfrac{\partial\beta_\circ}{\partial q}
+=-\dfrac{K\left(\frac y2-\frac{\alpha^2y^2}{4\bar c}\right)}{\left[q\frac y2+(1-q)\frac{\alpha^2y^2}{4\bar c}\right]^2}\le0$
+(strictly negative unless $\alpha=1$ and $y/2=\bar c$); the incompleteness cost $(1-q)\beta_\circ(y-L_\circ)$
+also falls with $q$.
+
+\intuition The investor recovers $y/2$ when she threatens a firm that defaulted strategically
+(it had $x$ and buys itself back) but only $L_\circ\leq y/2$ when the default is a genuine liquidity
+default (an outside buyer has to be found). A higher $q$ puts more weight on the first, richer
+recovery, so a smaller liquidation probability suffices to break even --- as in the lecture's
+$1-\gamma_0=(I-A)/[pE(\tilde R_2)+(1-p)L]$ (slide 11).
+\pitfalls
+\begin{itemize}
+  \item Letting $L_\circ$ depend on $q$: it is fixed by the buyer's bargaining and information cost,
+        $L_\circ=\alpha^2y^2/(4\bar c)$, so only the weights $q$ and $1-q$ move.
+  \item Signing the derivative without the assumption $\alpha y/2\le\bar c$: it is what makes
+        $\Pr(c\le\alpha y/2)=\alpha y/(2\bar c)$ a probability and gives $L_\circ\le y/2$.
+  \item Claiming a strict decrease always: at $\alpha=1$, $y/2=\bar c$ the two recoveries coincide and
+        $\beta_\circ$ does not depend on $q$.
+\end{itemize}
+\bookans Matches the book's answer (p.~267), which gives \eqref{t5e3-final} with ``$\leq0$''. The
+book's argument assumes $\alpha y/2<\bar c$ (strict) and writes the step as ``$\alpha^2y/2<\bar c$'';
+with the text's weak inequality $\alpha y/2\leq\bar c$ the derivative can be zero in the knife-edge
+case of Step~3.
+\refbib{Amaro de Matos Ch.~5, \S 5.2.1 ``Extending the Model'', pp.~134--137, eq.~(5.8); Appendix C.5.2, p.~267.}
+
+% =============================================================================
+\exsec{4. Entrepreneur control and renegotiation --- Amaro de Matos 5.1.6 \#3, p.~134}
+
+\asked Under entrepreneur control and a contract with $t_s<\hat t$ (so the investor sets $t_s=0$),
+show that renegotiating the contract after the state is revealed makes the entrepreneur better off in
+expectation than sticking to the original contract.
+
+\approach This is the Aghion--Bolton incomplete-contract model: the contract cannot depend on $\theta$,
+and with $t_s=0$ the entrepreneur picks the action with the larger private benefit, which is the wrong
+action in $\theta_b$. Ex post both parties observe $\theta$, so there is a surplus from switching to
+$a_b$ that can be shared by a side payment (Coasean renegotiation, as in the lecture's discussion of
+renegotiation after default). Comparing her payoff with and without the side payment, given that she
+has all the bargaining power, gives the result.
+
+\notation
+\begin{itemize}
+  \item $q\in(0,1)$: probability of the good state $\theta_g$; $a_g$, $a_b$: the actions optimal in $\theta_g$, $\theta_b$.
+  \item $y^i_j\in[0,1]$: expected return in state $\theta_i$ under action $a_j$; $l^i_j$: entrepreneur's private benefit.
+  \item $t_s$, $t'_s\geq0$: variable and fixed parts of the transfer $t(s,r)=t_sr+t'_s$; $\hat t=(l^b_g-l^b_b)/(y^b_b-y^b_g)$.
+  \item $\pi_2=qy^g_g+(1-q)y^b_g$: investor's expected return without renegotiation.
+  \item $T$: transfer from the investor to the entrepreneur agreed in renegotiation; $\pi^E_{wt}$, $\pi^E_w$: entrepreneur's expected payoff without and with renegotiation.
+\end{itemize}
+
+\assume As in the text, $l^b_b<l^b_g$, $y^b_b>y^b_g$, and $a_b$ is optimal in $\theta_b$:
+$y^b_b+l^b_b>y^b_g+l^b_g$; in $\theta_g$, $l^g_g>l^g_b$, so the entrepreneur picks $a_g$ there
+(``the entrepreneur will always choose $a_g$''). The fixed fee is zero, as $\pi_2$ implies (a fixed fee
+paid in both scenarios would cancel in the comparison). Renegotiation happens after $\theta$ is revealed
+and before the action; the entrepreneur has all the bargaining power and offers to take $a_b$ against
+a payment $T$ (the text's ``willing to pay up to'').
+
+\step{1}{Payoff without renegotiation} This is the benchmark. With $t_s=0$ (and $t'_s=0$) her reward
+$t_sy^i_j+t'_s+l^i_j$ reduces to $l^i_j$, so she takes $a_g$ in both states ($l^g_g>l^g_b$ and
+$l^b_g>l^b_b$) and gets
+\begin{align}
+  \pi^E_{wt} = q\,l^g_g+(1-q)\,l^b_g. \label{t5e4-wt}
+\end{align}
+
+\step{2}{Room for renegotiation} We find the largest side payment the investor accepts. In $\theta_g$
+the action is already optimal; nothing to renegotiate. In $\theta_b$ switching from $a_g$ to $a_b$
+raises the investor's return from $y^b_g$ to $y^b_b$; paying $T$ leaves her $y^b_b-T$, which beats $y^b_g$
+iff $T\leq y^b_b-y^b_g$. With all the bargaining power, the entrepreneur asks for the maximum:
+\begin{align}
+  T = y^b_b-y^b_g. \label{t5e4-T}
+\end{align}
+
+\step{3}{The entrepreneur accepts} She switches to $a_b$ if $T+l^b_b\geq l^b_g$. Substituting
+\eqref{t5e4-T}:
+\begin{align}
+  (y^b_b-y^b_g)+l^b_b &\geq l^b_g \nonumber\\
+  \Longleftrightarrow\quad y^b_b+l^b_b &\geq y^b_g+l^b_g, \label{t5e4-accept}
+\end{align}
+which holds strictly by optimality of $a_b$ in $\theta_b$.
+
+\step{4}{Payoff with renegotiation} In $\theta_b$ she now gets $l^b_b+T$. Using \eqref{t5e4-T},
+\begin{align}
+  \pi^E_w &= q\,l^g_g+(1-q)\bigl[l^b_b+(y^b_b-y^b_g)\bigr]. \label{t5e4-w}
+\end{align}
+Subtracting \eqref{t5e4-wt} from \eqref{t5e4-w} (the $q\,l^g_g$ terms cancel):
+\begin{align}
+  \pi^E_w-\pi^E_{wt} &= (1-q)\bigl[l^b_b+(y^b_b-y^b_g)\bigr]-(1-q)\,l^b_g \nonumber\\
+  &= (1-q)\bigl[l^b_b+y^b_b-y^b_g-l^b_g\bigr] \nonumber\\
+  &= (1-q)\bigl[(y^b_b+l^b_b)-(y^b_g+l^b_g)\bigr]>0, \label{t5e4-gain}
+\end{align}
+by \eqref{t5e4-accept} and $q<1$. The investor's payoff is unchanged:
+\begin{align}
+  q\,y^g_g+(1-q)\bigl[y^b_b-(y^b_b-y^b_g)\bigr] = q\,y^g_g+(1-q)\,y^b_g = \pi_2. \label{t5e4-inv}
+\end{align}
+So renegotiation raises the entrepreneur's expected payoff by the full efficiency gain in the bad
+state and leaves the investor at $\pi_2$. $\blacksquare$
+
+\answer{(gain)} $\pi^E_w-\pi^E_{wt}=(1-q)\bigl[(y^b_b+l^b_b)-(y^b_g+l^b_g)\bigr]>0$, with side payment
+$T=y^b_b-y^b_g$ in $\theta_b$; the investor's expected payoff stays at $\pi_2=qy^g_g+(1-q)y^b_g$.
+
+\intuition With $t_s<\hat t$ the contract gives the entrepreneur no stake in the return, so in
+the bad state she picks the action with the larger private benefit, which destroys value. Ex post
+both parties see the loss and can split the gain by a side payment; with all bargaining power on
+her side, she captures the whole surplus. Feasibility is unaffected because the investor's payoff
+stays at $\pi_2$.
+\pitfalls
+\begin{itemize}
+  \item Giving part of the renegotiation surplus to the investor: the text puts all bargaining power on
+        the entrepreneur, so $T$ is the investor's full willingness to pay and her payoff stays $\pi_2$.
+  \item Renegotiating in $\theta_g$ too: there $a_g$ is already optimal and there is no surplus.
+  \item Skipping the entrepreneur's acceptance check $T+l^b_b\ge l^b_g$: it holds only because $a_b$ is
+        optimal in $\theta_b$ ($y^b_b+l^b_b>y^b_g+l^b_g$).
+\end{itemize}
+\bookans Matches the book's answer (p.~266) in the result. The book's two middle lines carry sign
+typos: ``$=ql^g_g+(1-q)(y^b_b-l^b_b)+(1-q)y^b_g$'' should read $ql^g_g+(1-q)(y^b_b+l^b_b)-(1-q)y^b_g$,
+and ``$\geq ql^g_g+(1-q)(y^b_g-l^b_g)+(1-q)y^b_g$'' should read $ql^g_g+(1-q)(y^b_g+l^b_g)-(1-q)y^b_g$;
+the book also writes $\geq$, while the inequality is strict under the text's strict optimality
+assumption and $q<1$.
+\refbib{Amaro de Matos Ch.~5, \S 5.1.1 ``The Model'' and \S 5.1.2 ``Entrepreneur Control'', pp.~127--131; Appendix C.5.1, p.~266.}
+
+% =============================================================================
+\exsec{5. Diamond (1991): short- vs.\ long-term debt, no liquidation --- Amaro de Matos 5.2.5 \#5, p.~148}
+
+\asked (a) Compute the face value $\rho$ of long-term debt (due at $t=2$) and $r_1$ of short-term debt
+(due at $t=1$) for the given numbers. (b) Show that no borrower is ever liquidated at $t=1$.
+(c) Compute what a good project's entrepreneur gets with long-term debt. (d) Compute the probability $e$
+that a good project is downgraded. (e) Compute what a good project's entrepreneur gets with short-term
+debt (and compare with (c)).
+
+\approach Diamond's (1991) maturity model: lenders price debt competitively from the public rating, and
+at $t=1$ nonverifiable news (an upgrade or a downgrade) reprices short-term debt. Long-term debt is
+priced once, $\rho q=R^2$; short-term debt by (5.11). Liquidation can only happen if a downgraded
+borrower cannot roll over, i.e.\ if $q^dX/R<r_1$ and $L$ beats refinancing, so (b) is a check of that
+condition. Lemma~5.2.1 then predicts the answer to (c) vs.\ (e): without liquidation, good types prefer the
+debt with the higher downgrade value $V^d$, i.e.\ short-term debt, because it shifts repayment onto the
+(mostly bad) downgraded pool.
+
+\notation
+\begin{itemize}
+  \item $L=R=1$: liquidation value and gross per-period safe return; $\pi=\tfrac12$: success probability of a bad project; $X=\tfrac74$: payoff on success; $C=0$: control rent.
+  \item $f=\tfrac12$, $f^u=1$, $f^d=\tfrac13$: prior and posterior probabilities of a good project; $e$: probability that a good project is downgraded.
+  \item $q$, $q^d$: repayment probabilities at $t=0$ and after a downgrade, (5.9)--(5.10).
+  \item $\rho$: face value of long-term debt due at $t=2$; $r_1$: face value of short-term debt due at $t=1$; $V^d$: $t=1$ value of the debt after a downgrade ($V_l^d$ long, $V_s^d$ short).
+  \item $U_l$, $U_s$: expected payoff of a good project under long- and short-term debt.
+\end{itemize}
+
+\step{1}{Repayment probabilities and $e$} Every later step needs $q$, $q^d$ and $e$, so we compute them
+first. From (5.9) and (5.10),
+\begin{align}
+  q &= \pi+f(1-\pi) = \tfrac12+\tfrac12\left(\tfrac12\right) = \tfrac34, \label{t5e5-q}\\
+  q^d &= \pi+f^d(1-\pi) = \tfrac12+\tfrac13\left(\tfrac12\right) = \tfrac23. \label{t5e5-qd}
+\end{align}
+Bad projects are always downgraded ($f^u=1$) and good ones with probability $e$, so a downgrade has
+probability $fe+(1-f)$ and Bayes' rule gives the downgrade posterior:
+\begin{align}
+  f^d &= \frac{fe}{fe+(1-f)}. \label{t5e5-bayes}
+\end{align}
+Solving \eqref{t5e5-bayes} for $e$ (multiply out, collect the $e$ terms, divide):
+\begin{align}
+  f^d\bigl[fe+(1-f)\bigr] &= fe, \nonumber\\
+  f^d(1-f) &= fe-f^dfe = fe(1-f^d), \nonumber\\
+  e &= \frac{f^d(1-f)}{f(1-f^d)} \label{t5e5-e}\\
+    &= \frac{\left(\tfrac13\right)\left(\tfrac12\right)}{\left(\tfrac12\right)\left(\tfrac23\right)}
+     = \frac{1/6}{1/3} = \tfrac12. \nonumber
+\end{align}
+Hence the probability of an upgrade is $(1-e)f=\left(\tfrac12\right)\left(\tfrac12\right)=\tfrac14$ and of a
+downgrade $1-\tfrac14=\tfrac34$.
+
+\step{2}{(a) Face values} Each face value comes from the lenders' break-even condition at its own
+horizon. \emph{Long-term debt}: the lender lends $K=1$ for two periods and requires $\rho q=R^2$;
+substituting \eqref{t5e5-q},
+\begin{align}
+  \rho\left(\tfrac34\right) &= (1)^2, \nonumber\\
+  \rho &= \frac{1}{3/4}=\tfrac43\approx1.3333\leq X=1.75. \label{t5e5-rho}
+\end{align}
+\emph{Short-term debt}: guess $r_1\leq\max(L,q^dX/R)$, so that $V_s^d=\min[r_1,\max(L,q^dX/R)]=r_1$ (the
+debt is repaid in full after a downgrade). Substituting $R=1$, $(1-e)f=\tfrac14$ and $V_s^d=r_1$ into (5.11):
+\begin{align}
+  r_1 &= \frac{1-\left[1-\tfrac14\right](r_1)}{\tfrac14}, \nonumber\\
+  \tfrac14r_1 &= 1-\tfrac34r_1, \nonumber\\
+  \tfrac14r_1+\tfrac34r_1 &= 1, \nonumber\\
+  r_1 &= 1. \label{t5e5-r1}
+\end{align}
+Check of the guess: $q^dX/R=\left(\tfrac23\right)\left(\tfrac74\right)/1=\tfrac76\approx1.1667$, so
+$\max(L,q^dX/R)=\tfrac76\geq r_1=1$. At $t=1$ the upgraded borrower rolls $r_1$ over into debt of face
+value $r_1R=1$, and the downgraded borrower into debt of face value $r_1R/q^d=1/\tfrac23=\tfrac32$.
+
+\answer{(a)} Short-term debt: $r_1=1$ (riskless, $r_1=R$). Long-term debt: $\rho=\tfrac43\approx1.3333$.
+
+\step{3}{(b) No liquidation} Long-term debt has no payment due at $t=1$, so there is no default and
+no liquidation. Short-term debt: after an upgrade the borrower refinances at face value $1$; after a
+downgrade new lenders lend $r_1=1$ against face value $\tfrac32\leq X=\tfrac74$, and they break even
+because $q^d\cdot\tfrac32=\left(\tfrac23\right)\left(\tfrac32\right)=1=Rr_1$. Equivalently the
+refinancing condition $q^dX/R=\tfrac76>r_1=1$ holds. Every borrower repays $r_1$ at $t=1$, so the
+liquidation right is never triggered. (Even after a default, lenders would refinance rather than
+liquidate, since $q^dX/R=\tfrac76>L=1$.) Both contracts are of the kind covered by Lemma~5.2.1.
+
+\answer{(b)} No liquidation: long-term debt has no $t=1$ payment, and with short-term debt every
+downgraded borrower rolls over $r_1=1$ into face value $\tfrac32\le X=\tfrac74$ (equivalently
+$q^dX/R=\tfrac76>r_1=1$).
+
+\step{4}{(c) Good project, long-term debt} A good project pays $X$ for sure, keeps its control rent $C$
+and repays $\rho$:
+\begin{align}
+  U_l &= X+C-\rho \label{t5e5-Ul}\\
+      &= \left(\tfrac74\right)+(0)-\left(\tfrac43\right) = \tfrac{21-16}{12} = \tfrac{5}{12}\approx0.4167. \nonumber
+\end{align}
+Check with the Lemma's formula, using $V_l^d=q^d\rho/R=\left(\tfrac23\right)\left(\tfrac43\right)=\tfrac89$,
+$R^2/f=1/\tfrac12=2$ and $1/f^d-1/q^d=3-\tfrac32=\tfrac32$:
+\begin{align}
+  X+C-\frac{R^2}{f}+RV^de\left(\frac1{f^d}-\frac1{q^d}\right)
+  &= \tfrac74-2+(1)\left(\tfrac89\right)\left(\tfrac12\right)\left(\tfrac32\right) \nonumber\\
+  &= -\tfrac14+\tfrac23 = \tfrac{-3+8}{12} = \tfrac{5}{12}. \nonumber
+\end{align}
+
+\answer{(c)} $U_l=X+C-\rho=\tfrac5{12}\approx0.4167$.
+
+\step{5}{(d) Probability that a good project is downgraded} From \eqref{t5e5-e}, $e=\tfrac12$: half of
+the good projects are downgraded at $t=1$ (and all bad ones are), which is what makes $f^d=\tfrac13$.
+Check with \eqref{t5e5-bayes}: $fe/[fe+(1-f)]=\tfrac14/\bigl(\tfrac14+\tfrac12\bigr)=\tfrac13$.
+
+\answer{(d)} $e=\tfrac12$ (the overall downgrade probability is $1-(1-e)f=\tfrac34$).
+
+\step{6}{(e) Good project, short-term debt} With probability $1-e$ it is upgraded and repays $r_1R=1$
+at $t=2$; with probability $e$ it is downgraded and repays $RV_s^d/q^d=\tfrac32$ (with $V_s^d=r_1=1$).
+From the Lemma's payoff expression,
+\begin{align}
+  U_s &= e\left(X+C-\frac{RV_s^d}{q^d}\right)+(1-e)(X+C-r_1R) \label{t5e5-Us}\\
+      &= \tfrac12\left(\tfrac74+0-\tfrac32\right)+\tfrac12\left(\tfrac74+0-1\right) \nonumber\\
+      &= \tfrac12\left(\tfrac14\right)+\tfrac12\left(\tfrac34\right) = \tfrac12. \nonumber
+\end{align}
+Check: $X+C-R^2/f+RV_s^de(1/f^d-1/q^d)=-\tfrac14+(1)(1)\left(\tfrac12\right)\left(\tfrac32\right)=-\tfrac14+\tfrac34=\tfrac12$.
+So $U_s=\tfrac12>U_l=\tfrac{5}{12}$ (gain $\tfrac12-\tfrac5{12}=\tfrac1{12}\approx0.0833$): good projects prefer
+short-term debt, as Lemma~5.2.1 predicts since $V_s^d=1>V_l^d=\tfrac89$.
+
+\answer{(e)} $U_s=\tfrac12$, above $U_l=\tfrac5{12}$ by $\tfrac1{12}\approx0.0833$: the good entrepreneur
+prefers short-term debt.
+
+\intuition Long-term debt locks in the date-0 pooled price $\rho=\tfrac43$, which subsidises the
+bad projects. Short-term debt lets the price be reset at $t=1$: the upgraded good projects (half
+of them) refinance at the riskless rate and pay only $1$; the downgraded ones pay more ($\tfrac32$),
+but no project is liquidated, so the reset is pure gain for the good type on average. Short maturity
+is attractive when refinancing risk is not a liquidation risk.
+\pitfalls
+\begin{itemize}
+  \item Pricing long-term debt with $R$ instead of $R^2$, or with $q^d$ instead of $q$: at $t=0$ the
+        relevant repayment probability is the prior one, $q=\tfrac34$, over two periods.
+  \item Confusing $e$ (probability that a \emph{good} project is downgraded, $\tfrac12$) with the
+        probability of a downgrade for an unknown type ($\tfrac34$).
+  \item Charging the downgraded good borrower $r_1R=1$ instead of $RV_s^d/q^d=\tfrac32$: after a downgrade
+        new lenders price the rollover at the pooled repayment probability $q^d$.
+\end{itemize}
+\bookans The book gives no worked answer: Appendix C (p.~268) only cites example~1 of Diamond (1991),
+pp.~716--717, which is not in \texttt{Livros/}. The solution above is derived here from \S 5.2.3 and
+Lemma~5.2.1. Note that the parameters set $L=1=K$, while the text assumes $L<K=1$; this does not
+matter here because liquidation never occurs.
+\refbib{Amaro de Matos Ch.~5, \S 5.2.3 ``The Choice of the Duration'', pp.~139--142 (Lemma~5.2.1, p.~142); Appendix C.5.2, p.~268.}
+
+% =============================================================================
+\exsec{6. Optimal contracts in the Bolton--Scharfstein model --- Tirole 7.7, p.~325}
+
+\asked Redo the Bolton--Scharfstein contract with three reward levels instead of one per date-0
+outcome. \emph{(PD)}: write the predation-deterrence constraint for this contract. \emph{(IC)}: write the
+date-0 incentive constraint. \emph{($r_b^S$)}: show that the reward after date-0 success without
+refinancing can be set to zero. \emph{(ordering)}: show that the reward after success--success is at least
+the reward after failure--success, which is at least $B/\Delta p$.
+
+\approach Bolton--Scharfstein is the lecture's threat-of-termination logic applied to a firm with a
+predatory rival: the refinancing probabilities $z^S$, $z^F$ are the termination threat that disciplines
+date-0 effort, while predation deterrence requires that threat to be weak. With risk neutrality only
+\emph{expected} rewards matter, so the proof is a reshuffling argument: move reward to where it relaxes
+the binding constraints and leaves the others unchanged.
+
+\notation
+\begin{itemize}
+  \item $p_H=1$, $p_L<1$, $\Delta p=1-p_L$: success probabilities; $B_0$, $B$: private benefits from misbehaving at dates 0 and 1 ($B_0<B$).
+  \item $D$, $M$: duopoly and monopoly profits ($M\geq D>0$); $I$: investment per date; $A$: firm 2's net worth.
+  \item $z^S$, $z^F\in[0,1]$: probabilities of date-1 refinancing after date-0 success (profit $D$) / failure (profit 0).
+  \item $r_b^S\geq0$: reward after date-0 success without refinancing; $R_b^{SS}$, $R_b^{FS}\geq B/\Delta p$: rewards after date-1 success following date-0 success / failure.
+  \item $W^S\equiv z^SR_b^{SS}+(1-z^S)r_b^S$: entrepreneur's expected reward after date-0 success; $U_b(z^S)=D-I+z^S(D-I)$: NPV.
+\end{itemize}
+
+\step{1}{Date-1 behaviour} Whenever firm 2 is refinanced, $R_b^{SS},R_b^{FS}\geq B/\Delta p$ make good
+behaviour optimal at date 1, so firm 2 succeeds with probability $p_H=1$ and the entrepreneur
+collects $R_b^{SS}$ or $R_b^{FS}$ for sure.
+
+\step{2}{Generalised (PD)} Firm 1's payoffs do not depend on how firm 2 pays its entrepreneur;
+they depend only on whether firm 2 is active at date 1, which by Step~1 means profit $D$ for firm 1
+instead of $M$. Preying costs firm 1 its date-0 profit $D$ and lowers firm 2's refinancing
+probability from $z^S$ to $z^F$, so firm~1's expected date-1 profit rises by
+$z^FD+(1-z^F)M-[z^SD+(1-z^S)M]=(z^S-z^F)(M-D)$. Preying is unprofitable iff the cost $D$ is at least this
+gain. Hence (PD) is unchanged:
+\begin{align}
+  D \geq (z^S-z^F)(M-D). \label{t5e6-PD}
+\end{align}
+
+\answer{(PD)} $D\ge(z^S-z^F)(M-D)$, the same as with simple contracts: the rewards
+$r_b^S,R_b^{SS},R_b^{FS}$ do not enter it.
+
+\step{3}{Generalised (IC)} If the entrepreneur behaves at date 0 (and (PD) holds), date-0 success is
+certain and she gets $W^S$. If she misbehaves she gets $B_0$, succeeds with probability $p_L$ (then
+$W^S$), and fails with probability $1-p_L$ (then $z^FR_b^{FS}$). Behaving is optimal if
+\begin{align}
+  W^S &\geq B_0+p_LW^S+(1-p_L)z^FR_b^{FS}, \nonumber\\
+  W^S-p_LW^S-(1-p_L)z^FR_b^{FS} &\geq B_0, \nonumber\\
+  (1-p_L)\bigl(W^S-z^FR_b^{FS}\bigr) &\geq B_0, \nonumber\\
+  (\Delta p)\bigl[z^SR_b^{SS}+(1-z^S)r_b^S-z^FR_b^{FS}\bigr] &\geq B_0, \label{t5e6-IC}
+\end{align}
+using $\Delta p=p_H-p_L=1-p_L$ and the definition of $W^S$ in the last line.
+With $r_b^S=0$, $\mathcal R_b^S=z^SR_b^{SS}$ and $\mathcal R_b^F=z^FR_b^{FS}$ this is the text's (IC).
+
+\answer{(IC)} $(\Delta p)\bigl[z^SR_b^{SS}+(1-z^S)r_b^S-z^FR_b^{FS}\bigr]\ge B_0$.
+
+\step{4}{Generalised (IR$_l$) and the objective} On the equilibrium path date 0 succeeds; investors
+receive $D$, pay $r_b^S$ if there is no refinancing, and if there is refinancing invest $I$, receive $D$
+and pay $R_b^{SS}$:
+\begin{align}
+  D-(1-z^S)r_b^S+z^S(D-I-R_b^{SS}) &\geq I-A \nonumber\\
+  \Longleftrightarrow\quad (D-I)+z^S(D-I)-\bigl[z^SR_b^{SS}+(1-z^S)r_b^S\bigr]+A &\geq 0 \nonumber\\
+  \Longleftrightarrow\quad U_b(z^S)-W^S+A &\geq 0, \label{t5e6-IR}
+\end{align}
+where the second line moves $I-A$ to the left and groups terms, and the third uses
+$U_b(z^S)=D-I+z^S(D-I)$ and the definition of $W^S$.
+The entrepreneur's utility is $W^S-A$; with \eqref{t5e6-IR} binding it equals $U_b(z^S)$, which is
+increasing in $z^S$ (Assumption~7.1). The contract maximises $U_b(z^S)$ subject to \eqref{t5e6-PD},
+\eqref{t5e6-IC}, \eqref{t5e6-IR} and the floors $R_b^{SS},R_b^{FS}\geq B/\Delta p$.
+
+\step{5}{$r_b^S=0$} The pair $(r_b^S,R_b^{SS})$ enters \eqref{t5e6-IC}, \eqref{t5e6-IR} and the
+objective only through $W^S$, and does not enter \eqref{t5e6-PD}. Take a contract with
+$z^S\in(0,1)$ and $r_b^S>0$, and replace it by
+\begin{align}
+  \tilde r_b^S = 0,\qquad \tilde R_b^{SS} = R_b^{SS}+\frac{(1-z^S)r_b^S}{z^S}. \label{t5e6-shift}
+\end{align}
+Then $z^S\tilde R_b^{SS}+(1-z^S)(0)=z^SR_b^{SS}+(1-z^S)r_b^S=W^S$, and $\tilde R_b^{SS}>R_b^{SS}\geq B/\Delta p$,
+so every constraint and the objective are unchanged. If $z^S=1$, $r_b^S$ is never paid and can be set to
+0. Finally $z^S=0$ is never optimal: from a feasible contract with $z^S=0$, moving to a small
+$z^S=\varepsilon>0$ with $r_b^S=0$ and $R_b^{SS}=W^S/\varepsilon$ keeps $W^S$ (hence \eqref{t5e6-IC}), keeps
+\eqref{t5e6-PD} for $\varepsilon\leq D/(M-D)$, meets the floor $W^S/\varepsilon\geq B/\Delta p$ for
+small $\varepsilon$ (as $W^S\geq B_0/\Delta p>0$), relaxes \eqref{t5e6-IR} because $U_b(\varepsilon)>U_b(0)$,
+and raises the objective. Hence, without loss of generality, $r_b^S=0$.
+
+\answer{($r_b^S$)} $r_b^S=0$ without loss of generality: any $r_b^S>0$ can be moved into $R_b^{SS}$,
+raising it by $(1-z^S)r_b^S/z^S$, with all constraints and the NPV unchanged.
+
+\step{6}{$R_b^{SS}\geq R_b^{FS}\geq B/\Delta p$} $R_b^{FS}$ is paid only off the equilibrium path:
+it appears in \eqref{t5e6-IC} with a negative sign and nowhere else. Lowering it to its floor
+$B/\Delta p$ relaxes \eqref{t5e6-IC} and leaves everything else unchanged, so the optimal contract
+can set
+\begin{align}
+  R_b^{FS} = \frac{B}{\Delta p} \leq R_b^{SS}. \label{t5e6-RFS}
+\end{align}
+The book adds that \eqref{t5e6-IC} binds when \eqref{t5e6-PD} binds (otherwise $z^F$ could be
+raised to relax (PD)); then $R_b^{FS}>B/\Delta p$ would leave \eqref{t5e6-IC} slack, so \eqref{t5e6-RFS}
+holds at every optimum. With (PD) binding, $z^F=z^S-D/(M-D)$ and $r_b^S=0$, substituting into
+\eqref{t5e6-IC}:
+\begin{align}
+  z^SR_b^{SS}-\left(z^S-\frac{D}{M-D}\right)R_b^{FS} &= \frac{B_0}{\Delta p}, \nonumber\\
+  z^S(R_b^{SS}-R_b^{FS})+\frac{D}{M-D}\,R_b^{FS} &= \frac{B_0}{\Delta p}, \label{t5e6-ICbind}
+\end{align}
+where the first line divides \eqref{t5e6-IC} (with equality) by $\Delta p$ and the second expands
+$-(z^S-\frac{D}{M-D})R_b^{FS}$ and groups the $z^S$ terms.
+
+\answer{(ordering)} $R_b^{FS}=B/\Delta p$ (its floor) and $R_b^{SS}\ge B/\Delta p=R_b^{FS}$, so
+$R_b^{SS}\ge R_b^{FS}\ge B/\Delta p$.
+
+\intuition Under risk neutrality only expected rewards matter, so the entrepreneur should be paid
+where it helps incentives most --- in the continuation branch after success, which also ties her pay
+to the date-1 output. Paying her after date-0 failure only weakens date-0 incentives; the contract
+does it only because predation deterrence forces refinancing after failure ($z^F>0$), and then the
+date-1 incentive floor $B/\Delta p$ is the least it can pay.
+\pitfalls
+\begin{itemize}
+  \item Setting $R_b^{FS}=0$: once the firm is refinanced after failure, the date-1 incentive constraint
+        still requires $R_b^{FS}\ge B/\Delta p$; the floor, not zero, is the minimum.
+  \item Putting the rewards into (PD): firm~1 cares only about whether firm~2 is active at date~1, so
+        (PD) depends on $z^S-z^F$ alone.
+  \item Writing the IC with a generic $p_H$: here $p_H=1$, so the date-0 success probability gap is
+        $\Delta p=1-p_L$ and success is certain on the equilibrium path.
+\end{itemize}
+\bookans Matches the book's answer (pp.~603--604): same (PD), (IC$'$) and (IR$'$), $r_b^S=0$ by
+shifting reward into $R_b^{SS}$, and $R_b^{FS}=B/\Delta p$. The book argues $R_b^{SS}\geq R_b^{FS}$ via
+the binding (IC$'$) and leaves aside $z^S=0$; Step~5 covers that case and Step~6 gives the direct argument.
+\refbib{Tirole Ch.~7, \S 7.1.2.1 ``Financial Muscle and Predation'' (Bolton--Scharfstein), pp.~290--294; Answers, pp.~603--604.}
+
+% =============================================================================
+\exsec{7. Liquidation incentives with a private signal --- Tirole 3.14, pp.~149--150}
+
+\asked (i) With a verifiable interim signal $\gamma$: explain why the entrepreneur's pay should depend
+only on $\gamma$, compute the pledgeable income, and show that the project is financed iff $A\ge\bar A$.
+(ii) With $\gamma$ seen only by the entrepreneur: design the cheapest scheme $(R_b,L_b)$ that makes her
+both behave and report $\gamma$ truthfully, and show that financing now requires
+$A\ge\bar A+\underline\gamma B/[(\Delta p)(\Delta\gamma)]$.
+
+\approach Fixed-investment model of Tirole \S3.2 (pledgeable income, $\mathcal P\ge I-A$) with an
+interim liquidation option. In (i) the signal is a sufficient statistic for effort, so pay on $\gamma$
+and liquidate after bad news. In (ii) the liquidation decision rests on information only the insider
+has --- the Topic~5 problem of nonverifiable information --- so the contract must add truth-telling
+constraints: the entrepreneur must not gain by hiding bad news to avoid termination. The extra rent
+this requires is the increase in the net-worth threshold.
+
+\notation
+\begin{itemize}
+  \item $A<I$: entrepreneur's cash and the investment; $R$: final profit on success; $L$: liquidation value, fully pledgeable.
+  \item $\gamma\in\{\underline\gamma,\bar\gamma\}$: success probability revealed by the signal; $\Delta\gamma=\bar\gamma-\underline\gamma>0$; $\bar\gamma R>L>\underline\gamma R$.
+  \item $p_H$, $p_L$, $\Delta p=p_H-p_L>0$: probability of $\gamma=\bar\gamma$ if she behaves / misbehaves; $B$: private benefit.
+  \item (i) $w(\gamma)\geq0$: reward after signal $\gamma$; $\mathcal P$: pledgeable income; $\bar A$: financing threshold.
+  \item (ii) $R_b$: reward if she announces $\bar\gamma$ and the profit is $R$; $L_b$: reward if she announces $\underline\gamma$ (liquidation); $\mathcal P'$: pledgeable income.
+\end{itemize}
+
+\step{1}{(i) Rewards depend on $\gamma$ only} Effort affects only the distribution of $\gamma$; once
+$\gamma$ is known, the final outcome is pure noise for the entrepreneur ($\gamma$ is a sufficient
+statistic for effort). With risk neutrality, any scheme that pays according to $\gamma$ and the final
+profit acts on effort and on the investors' cost only through the expected reward given $\gamma$,
+$w(\gamma)$. Paying $w(\gamma)$ directly leaves both unchanged, so rewards can be made contingent on
+$\gamma$ alone.
+
+\step{2}{(i) Liquidation policy} With $\gamma$ verifiable, the contract liquidates if and only if
+$\gamma=\underline\gamma$: this raises investors' income by $L-\underline\gamma R>0$ after a bad signal,
+and continuing after a good one gives $\bar\gamma R>L$. The rewards are transfers that do not depend
+on this choice, so it maximises both NPV and pledgeable income.
+
+\step{3}{(i) Incentive constraint and pledgeable income} Pledgeable income is total expected income
+minus the smallest expected rent compatible with effort, so we first find that rent. Behaving is optimal if
+\begin{align}
+  p_Hw(\bar\gamma)+(1-p_H)w(\underline\gamma) &\geq p_Lw(\bar\gamma)+(1-p_L)w(\underline\gamma)+B, \nonumber\\
+  (p_H-p_L)w(\bar\gamma)-\bigl[(1-p_L)-(1-p_H)\bigr]w(\underline\gamma) &\geq B, \nonumber\\
+  (\Delta p)\bigl[w(\bar\gamma)-w(\underline\gamma)\bigr] &\geq B. \label{t5e7-ICi}
+\end{align}
+The expected rent $p_Hw(\bar\gamma)+(1-p_H)w(\underline\gamma)$ rises in both rewards, so the cheapest
+scheme sets $w(\underline\gamma)=0$ (limited liability) and $w(\bar\gamma)=B/\Delta p$, an expected rent
+$p_HB/\Delta p$. With the liquidation policy of Step~2, total expected income is
+$p_H\bar\gamma R+(1-p_H)L$. Hence
+\begin{align}
+  \mathcal P = p_H\bar\gamma R+(1-p_H)L-p_H\frac{B}{\Delta p}. \label{t5e7-Pi}
+\end{align}
+
+\step{4}{(i) Financing condition} Investors lend if $\mathcal P\geq I-A$. Using \eqref{t5e7-Pi} and the
+definition of $\bar A$, $p_H(\bar\gamma R-B/\Delta p)+(1-p_H)L=I-\bar A$:
+\begin{align}
+  p_H\left(\bar\gamma R-\frac{B}{\Delta p}\right)+(1-p_H)L &\geq I-A \nonumber\\
+  \Longleftrightarrow\quad I-\bar A &\geq I-A \nonumber\\
+  \Longleftrightarrow\quad A&\geq\bar A. \label{t5e7-Abar}
+\end{align}
+
+\answer{(i)} Pay on $\gamma$ only, $w(\bar\gamma)=B/\Delta p$, $w(\underline\gamma)=0$, liquidate iff
+$\gamma=\underline\gamma$; $\mathcal P=p_H(\bar\gamma R-B/\Delta p)+(1-p_H)L$; financed iff $A\ge\bar A$.
+
+\step{5}{(ii) Truth-telling constraints} Now only the entrepreneur sees $\gamma$. Announcing
+$\bar\gamma$ gives continuation and an expected reward $\gamma R_b$; announcing $\underline\gamma$ gives
+liquidation and $L_b$. Truth-telling in each state requires
+\begin{align}
+  \bar\gamma R_b &\geq L_b, \label{t5e7-TTg}\\
+  L_b &\geq \underline\gamma R_b. \label{t5e7-TTb}
+\end{align}
+
+\step{6}{(ii) Effort constraint} Given truthful reports, she gets $\bar\gamma R_b$ after a good signal
+and $L_b$ after a bad one, so, as in \eqref{t5e7-ICi},
+\begin{align}
+  (\Delta p)\bigl(\bar\gamma R_b-L_b\bigr) \geq B. \label{t5e7-ICii}
+\end{align}
+
+\step{7}{(ii) Cheapest scheme} Investors receive $p_H\bar\gamma(R-R_b)+(1-p_H)(L-L_b)$, so they
+minimise the expected rent $p_H\bar\gamma R_b+(1-p_H)L_b$. Both $R_b$ and $L_b$ should be as low as
+\eqref{t5e7-TTb} and \eqref{t5e7-ICii} allow; making both bind,
+\begin{align}
+  L_b &= \underline\gamma R_b, \label{t5e7-Lb}\\
+  (\Delta p)\bigl(\bar\gamma R_b-(\underline\gamma R_b)\bigr) &= B, \nonumber\\
+  R_b &= \frac{B}{(\Delta p)(\Delta\gamma)}, \label{t5e7-Rb}\\
+  L_b &= \underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)}. \nonumber
+\end{align}
+(Formally: with $\delta\equiv\bar\gamma R_b-L_b\geq B/\Delta p$, \eqref{t5e7-TTb} is
+$L_b\geq\underline\gamma\delta/\Delta\gamma$, so the rent $L_b+p_H\delta\geq(\underline\gamma/\Delta\gamma+p_H)\delta$
+is minimised at $\delta=B/\Delta p$.) \eqref{t5e7-TTg} holds since $\bar\gamma R_b-L_b=B/\Delta p>0$.
+
+\step{8}{(ii) Pledgeable income and financing condition} Substituting \eqref{t5e7-Lb}--\eqref{t5e7-Rb}
+into the rent, and writing $\bar\gamma=\underline\gamma+\Delta\gamma$ in the second line,
+\begin{align}
+  p_H\bar\gamma R_b+(1-p_H)L_b &= \bigl[p_H\bar\gamma+(1-p_H)\underline\gamma\bigr]\frac{B}{(\Delta p)(\Delta\gamma)} \nonumber\\
+  &= \bigl[p_H\underline\gamma+p_H\Delta\gamma+\underline\gamma-p_H\underline\gamma\bigr]\frac{B}{(\Delta p)(\Delta\gamma)} \nonumber\\
+  &= \bigl[\underline\gamma+p_H\Delta\gamma\bigr]\frac{B}{(\Delta p)(\Delta\gamma)} \nonumber\\
+  &= p_H\frac{B}{\Delta p}+\underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)}. \label{t5e7-rent}
+\end{align}
+So, subtracting this rent from total expected income and using \eqref{t5e7-Pi},
+\begin{align}
+  \mathcal P' &= p_H\bar\gamma R+(1-p_H)L-p_H\frac{B}{\Delta p}-\underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)} \nonumber\\
+  &= \mathcal P-\underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)}, \label{t5e7-Pii}
+\end{align}
+and $\mathcal P'\geq I-A$ is, using $\mathcal P=I-\bar A$ from \eqref{t5e7-Abar},
+\begin{align}
+  I-\bar A-\underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)} &\geq I-A \nonumber\\
+  \Longleftrightarrow\quad A &\geq \bar A+\underline\gamma\,\frac{B}{(\Delta p)(\Delta\gamma)}. \qquad\blacksquare \label{t5e7-Aii}
+\end{align}
+(Continuing after both signals would avoid the truth-telling problem but costs the same rent,
+since then $(\Delta p)(\Delta\gamma)R_b\geq B$, and loses $(1-p_H)(L-\underline\gamma R)$ of pledgeable income;
+so truthful liquidation is better. Implicitly $R_b\leq R$ and $L_b\leq L$.)
+
+\answer{(ii)} $R_b=\dfrac{B}{(\Delta p)(\Delta\gamma)}$, $L_b=\underline\gamma R_b$; pledgeable income falls
+by $\underline\gamma B/[(\Delta p)(\Delta\gamma)]$, so the project is funded iff
+$A\ge\bar A+\underline\gamma\,\dfrac{B}{(\Delta p)(\Delta\gamma)}$.
+
+\intuition When the signal is private, the entrepreneur must be paid to admit bad news, because
+admitting it kills the project in which she has a stake: she gets $L_b=\underline\gamma R_b$, a
+``golden parachute'' worth what she would expect by hiding the news. That raises the stake needed
+for effort from $B/\Delta p$ to $B/[(\Delta p)(\Delta\gamma)]$ and the expected rent by
+$\underline\gamma B/[(\Delta p)(\Delta\gamma)]$; the net-worth threshold rises one for one. It vanishes
+when $\underline\gamma=0$ (nothing to hide) and grows as the signal becomes less informative ($\Delta\gamma\to0$).
+\pitfalls
+\begin{itemize}
+  \item Setting $L_b=0$ in (ii): then an entrepreneur with bad news reports $\bar\gamma$ (she gets
+        $\underline\gamma R_b>0$ by continuing), the project is never liquidated and the $L$ income is lost.
+  \item Writing the effort constraint as $(\Delta p)\bar\gamma R_b\ge B$: after a bad signal she still gets
+        $L_b$, so what effort buys is the \emph{difference} $\bar\gamma R_b-L_b$.
+  \item Counting $L$ as pledgeable after a good signal or $\bar\gamma R$ after a bad one: the efficient
+        policy continues iff $\gamma=\bar\gamma$ because $\bar\gamma R>L>\underline\gamma R$.
+\end{itemize}
+\bookans Matches the book's answer (pp.~577--578): $L_b=\underline\gamma R_b$, $(\Delta p)(\bar\gamma R_b-L_b)=B$,
+and the threshold $\bar A+\underline\gamma B/[(\Delta p)(\Delta\gamma)]$.
+\refbib{Tirole Ch.~3, \S 3.2 ``The Fixed-Investment Model'' and \S 3.2.2 ``The Lenders' Credit Analysis'', pp.~115--117; Exercise 3.14, pp.~149--150; Answers, pp.~577--578.}
+
+% =============================================================================
+\exsec{8. Decreasing returns to scale and debt maturity --- Tirole Exercise 5.7, p.~232}
+
+\asked (i) In the liquidity model with short-term income $rI$ and a continuum of reinvestment shocks
+$\rho I$, but with a concave success payoff $R(I)$, derive the first-order conditions that pin down the
+scale $I$ and the continuation cutoff $\rho^*$. (ii) Under free cash flow ($r>\rho^*$), find how a
+stronger balance sheet (higher $A$) changes debt maturity, i.e.\ the short-term debt the firm must pay at
+date~1 per unit of investment.
+
+\approach Holmstr\"om--Tirole liquidity model (Tirole \S5.3.2 and \S5.6.1): the borrower maximises the
+NPV subject to the lenders' break-even, a Lagrangian problem in $(I,\rho^*)$. Continuing after a shock
+$\rho$ costs $\rho I$ and is worth $\rho_1$ in value but only $\rho_0$ in pledgeable income, so the
+optimal cutoff lies between them. Under free cash flow the cutoff is implemented by short-term debt that
+pumps $(r-\rho^*)I$ out of the firm --- the termination threat of the lecture, here a liquidity sweep ---
+so maturity moves with $\rho^*$, and comparative statics in $A$ answer (ii).
+
+\notation
+\begin{itemize}
+  \item $I>0$: investment (endogenous); $A\ge 0$: the entrepreneur's cash; lenders are competitive, rate of return 0.
+  \item $R(I)$: date-2 income in case of continuation and success, $R(0)=0$, $R'>0$, $R''<0$.
+  \item $rI$: short-term (date-1) income, verifiable and fully pledgeable, $r>0$.
+  \item $\rho\ge 0$: per-unit liquidity shock (reinvestment need $\rho I$), c.d.f.\ $F$, density $f$ on $[0,\infty)$; $\rho^*$: continuation cutoff (continue iff $\rho\le\rho^*$).
+  \item $p_H>p_L$: success probabilities when behaving / misbehaving, $\Delta p=p_H-p_L$; $BI$: private benefit from misbehaving; $R_b$: entrepreneur's stake in success.
+  \item $\rho_1(I)\equiv p_H R(I)/I$ and $\rho_0(I)\equiv p_H[R(I)/I-B/\Delta p]$: per-unit expected income and per-unit pledgeable income at scale $I$; $\rho_1-\rho_0=p_HB/\Delta p$.
+  \item $\mu\ge 0$: Lagrange multiplier of the lenders' breakeven constraint.
+\end{itemize}
+
+\step{1}{The program} We set up the borrower's problem. As in Section 5.6.1, the incentive constraint
+$(\Delta p)R_b\ge BI$ binds (any larger stake only lowers pledgeable income), so the income pledgeable in
+case of success is $R(I)-BI/\Delta p$. With competitive lenders the entrepreneur gets the NPV: short-term
+income, plus expected date-2 income when continuing (probability $F(\rho^*)$), minus the investment and the
+expected reinvestment,
+\begin{align}
+  U_b &= rI + F(\rho^*)\,p_H R(I) - \Big[1+\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big] I, \label{t5e8-Ub}
+\end{align}
+subject to the lenders' breakeven constraint
+\begin{align}
+  rI + F(\rho^*)\,p_H\Big[R(I)-\frac{BI}{\Delta p}\Big] &\ge I - A + \Big[\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big] I. \label{t5e8-IR}
+\end{align}
+The Lagrangian is $\mathcal L = U_b + \mu\,[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]$.
+
+\step{2}{(i) First-order conditions} We differentiate $\mathcal L$ with respect to each choice variable.
+By the fundamental theorem of calculus, $\frac{d}{d\rho^*}\int_0^{\rho^*}\rho f\,d\rho=\rho^* f(\rho^*)$, and
+$\frac{d}{d\rho^*}F(\rho^*)=f(\rho^*)$. Term by term,
+\begin{align}
+  \frac{\partial U_b}{\partial\rho^*} &= f(\rho^*)\,p_HR(I)-\rho^*f(\rho^*)\,I, \nonumber\\
+  \frac{\partial[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]}{\partial\rho^*} &= f(\rho^*)\,p_H\Big[R(I)-\frac{BI}{\Delta p}\Big]-\rho^*f(\rho^*)\,I, \nonumber
+\end{align}
+so $\partial\mathcal L/\partial\rho^*=0$ reads
+\begin{align}
+  0 &= f(\rho^*)\big[p_HR(I)-\rho^*I\big] + \mu f(\rho^*)\Big[p_HR(I)-\frac{p_HBI}{\Delta p}-\rho^*I\Big]. \nonumber
+\end{align}
+Dividing by $f(\rho^*)I>0$ and using $\rho_1(I)=p_HR(I)/I$ and $\rho_0(I)=p_H[R(I)/I-B/\Delta p]$,
+\begin{align}
+  0 &= \big[\rho_1(I)-\rho^*\big] + \mu\big[\rho_0(I)-\rho^*\big]. \label{t5e8-focrho}
+\end{align}
+Collecting the $\rho^*$ terms, $(1+\mu)\rho^*=\rho_1(I)+\mu\rho_0(I)$, so
+$\rho^*=\frac{\rho_1(I)+\mu\rho_0(I)}{1+\mu}$, a weighted average that lies between $\rho_0(I)$ and $\rho_1(I)$,
+the analogue of (5.8). With respect to $I$, the derivatives are
+\begin{align}
+  \frac{\partial U_b}{\partial I} &= r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho, \nonumber\\
+  \frac{\partial[\text{LHS}-\text{RHS of }\eqref{t5e8-IR}]}{\partial I} &= r+F(\rho^*)p_H\Big(R'(I)-\frac{B}{\Delta p}\Big)-1-\int_0^{\rho^*}\!\rho f\,d\rho, \nonumber
+\end{align}
+so $\partial\mathcal L/\partial I=0$ is
+\begin{align}
+  0 &= \Big[r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big]
+       + \mu\Big[r+F(\rho^*)p_H\Big(R'(I)-\frac{B}{\Delta p}\Big)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big]. \label{t5e8-focI}
+\end{align}
+These two conditions, together with \eqref{t5e8-IR} holding with equality, determine $(I,\rho^*,\mu)$.
+
+\step{3}{(i) Eliminating $\mu$} The multiplier is not observable, so we combine the two conditions into
+one that involves only $(I,\rho^*)$. Write the second bracket of \eqref{t5e8-focI} as the first minus
+$F(\rho^*)p_HB/\Delta p$ and collect:
+\begin{align}
+  (1+\mu)\Big[r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho\Big] &= \mu F(\rho^*)\frac{p_HB}{\Delta p}. \label{t5e8-focI2}
+\end{align}
+From \eqref{t5e8-focrho}, $\mu(\rho^*-\rho_0)=\rho_1-\rho^*$, so
+$\mu=\frac{\rho_1-\rho^*}{\rho^*-\rho_0}$ and $1+\mu=\frac{\rho^*-\rho_0+\rho_1-\rho^*}{\rho^*-\rho_0}=\frac{\rho_1-\rho_0}{\rho^*-\rho_0}$,
+hence $\frac{\mu}{1+\mu}=\frac{\rho_1-\rho^*}{\rho_1-\rho_0}$. Since
+$\rho_1-\rho_0=p_H\frac{R(I)}{I}-p_H\Big(\frac{R(I)}{I}-\frac{B}{\Delta p}\Big)=\frac{p_HB}{\Delta p}$,
+\begin{align}
+  \frac{\mu}{1+\mu}\,\frac{p_HB}{\Delta p} &= \frac{\rho_1(I)-\rho^*}{\rho_1(I)-\rho_0(I)}\,\bigl(\rho_1(I)-\rho_0(I)\bigr) = \rho_1(I)-\rho^*. \label{t5e8-mu}
+\end{align}
+Dividing \eqref{t5e8-focI2} by $1+\mu$ and substituting \eqref{t5e8-mu}:
+\begin{align}
+  r+F(\rho^*)p_HR'(I)-1-\int_0^{\rho^*}\!\rho f\,d\rho &= F(\rho^*)\Big(\frac{p_HR(I)}{I}-\rho^*\Big). \nonumber
+\end{align}
+Move the $R$ terms to the left and the rest to the right:
+\begin{align}
+  F(\rho^*)\,p_H\Big[R'(I)-\frac{R(I)}{I}\Big] &= 1-r+\int_0^{\rho^*}\!\rho f\,d\rho-\rho^*F(\rho^*) \nonumber\\
+  &= 1-r-\Big[\rho^*F(\rho^*)-\int_0^{\rho^*}\!\rho f\,d\rho\Big]. \nonumber
+\end{align}
+The bracket is $\int_0^{\rho^*}(\rho^*-\rho)f(\rho)\,d\rho$; integrating by parts with $F(0)=0$,
+$\int_0^{\rho^*}(\rho^*-\rho)f\,d\rho=\big[(\rho^*-\rho)F(\rho)\big]_0^{\rho^*}+\int_0^{\rho^*}F(\rho)\,d\rho=\int_0^{\rho^*}F(\rho)\,d\rho$.
+Dividing by $F(\rho^*)>0$,
+\begin{align}
+  p_H\Big[R'(I)-\frac{R(I)}{I}\Big] &= \frac{1-r-\int_0^{\rho^*}F(\rho)\,d\rho}{F(\rho^*)}. \label{t5e8-key}
+\end{align}
+The binding \eqref{t5e8-IR}, solved for $A$ and with $p_H[R(I)-BI/\Delta p]=I\rho_0(I)$, reads
+\begin{align}
+  A &= I-rI+\Big[\int_0^{\rho^*}\rho f(\rho)\,d\rho\Big]I-F(\rho^*)\,I\rho_0(I) \nonumber\\
+    &= I\Big[1-r+\int_0^{\rho^*}\rho f(\rho)\,d\rho - F(\rho^*)\rho_0(I)\Big]. \label{t5e8-IRb}
+\end{align}
+Check: with constant returns, $R(I)=RI$, the left side of \eqref{t5e8-key} is 0 and \eqref{t5e8-key} becomes
+$\int_0^{\rho^*}F=1-r$, which is (5.6$''$). With strict concavity and $R(0)=0$, $R(I)/I>R'(I)$, so the left
+side is negative and $\int_0^{\rho^*}F>1-r$: the marginal unit of scale is worth less than the average one,
+so at the margin the firm spends more on continuation and less on scale than (5.6$''$) would say.
+
+\answer{(i)} The FOCs are \eqref{t5e8-focrho}, $\rho_1(I)-\rho^*+\mu[\rho_0(I)-\rho^*]=0$, and
+\eqref{t5e8-focI}; eliminating $\mu$, the optimum $(I,\rho^*)$ solves
+$p_H[R'(I)-R(I)/I]=\bigl[1-r-\int_0^{\rho^*}F(\rho)\,d\rho\bigr]/F(\rho^*)$ together with the binding
+break-even \eqref{t5e8-IRb}, with $\rho_0(I)<\rho^*<\rho_1(I)$.
+
+\step{4}{(ii) $I$ and $\rho^*$ move together} Condition \eqref{t5e8-key} links the two choices; we find
+the sign of that link. Write $\varphi(I)\equiv p_H[R(I)/I-R'(I)]>0$, increasing by assumption, and
+$h(\rho^*)$ for the right side of \eqref{t5e8-key}, so \eqref{t5e8-key} is $-\varphi(I)=h(\rho^*)$. The
+numerator of $h$ is $N(\rho^*)=1-r-\int_0^{\rho^*}F$, with $N'(\rho^*)=-F(\rho^*)$; by the quotient rule,
+\begin{align}
+  h'(\rho^*) &= \frac{N'(\rho^*)F(\rho^*)-N(\rho^*)f(\rho^*)}{F(\rho^*)^2} \nonumber\\
+             &= \frac{-F(\rho^*)^2 - f(\rho^*)\big[1-r-\int_0^{\rho^*}F\big]}{F(\rho^*)^2} \nonumber\\
+             &= -1 - \frac{f(\rho^*)}{F(\rho^*)}\,h(\rho^*). \label{t5e8-hprime}
+\end{align}
+\assume Tirole's answer takes $h$ decreasing. Since $h<0$ at the optimum, \eqref{t5e8-hprime} is negative iff
+$f(\rho^*)\big[\int_0^{\rho^*}F-(1-r)\big]<F(\rho^*)^2$. This holds, e.g., for $F$ uniform on $[0,\bar\rho]$
+($f=1/\bar\rho$, $F(\rho^*)=\rho^*/\bar\rho$, $\int_0^{\rho^*}F=\rho^{*2}/(2\bar\rho)$): multiplying by $\bar\rho^2$, the
+condition reads $\rho^{*2}/2-\bar\rho(1-r)<\rho^{*2}$, always true for $r\le1$. We assume it.
+
+Then along \eqref{t5e8-key} an increase in $I$ lowers $-\varphi(I)$, which requires a lower $h$, i.e.\ a higher
+$\rho^*$. Totally differentiating $-\varphi(I)=h(\rho^*)$ gives $-\varphi'(I)\,dI=h'(\rho^*)\,d\rho^*$, so
+\eqref{t5e8-key} defines $\rho^*=g(I)$ with
+\begin{align}
+  g'(I) &= \frac{-\varphi'(I)}{h'(\rho^*)} > 0. \label{t5e8-g}
+\end{align}
+
+\step{5}{(ii) Effect of $A$} The binding break-even \eqref{t5e8-IRb} tells how much net worth a given
+$(I,\rho^*)$ requires; we differentiate its right side. With respect to $\rho^*$,
+\begin{align}
+  \frac{\partial A}{\partial\rho^*} &= I\big[\rho^*f(\rho^*)-f(\rho^*)\rho_0(I)\big] \nonumber\\
+  &= I f(\rho^*)\big[\rho^*-\rho_0(I)\big] > 0, \label{t5e8-dArho}
+\end{align}
+positive because $\rho^*>\rho_0(I)$ by \eqref{t5e8-focrho}. With respect to $I$ (using $\frac{d}{dI}[I\rho_0(I)]=p_H[R'(I)-B/\Delta p]$),
+\begin{align}
+  \frac{\partial A}{\partial I} &= 1-r+\int_0^{\rho^*}\!\rho f\,d\rho - F(\rho^*)p_H\Big[R'(I)-\frac{B}{\Delta p}\Big]. \nonumber
+\end{align}
+The second bracket of \eqref{t5e8-focI} is $-\partial A/\partial I$ and the first is $-\partial A/\partial I+F(\rho^*)p_HB/\Delta p$,
+so \eqref{t5e8-focI} reads $-(1+\mu)\,\partial A/\partial I + F(\rho^*)p_HB/\Delta p=0$, i.e.
+\begin{align}
+  \frac{\partial A}{\partial I} &= \frac{F(\rho^*)\,p_HB}{(1+\mu)\Delta p} > 0. \label{t5e8-dAI}
+\end{align}
+Along the optimum, $\rho^*=g(I)$, so by \eqref{t5e8-g}, \eqref{t5e8-dArho} and \eqref{t5e8-dAI}
+\begin{align}
+  \frac{dA}{dI} &= \frac{\partial A}{\partial I}+\frac{\partial A}{\partial\rho^*}\,g'(I) > 0, \label{t5e8-dAdI}
+\end{align}
+hence $dI/dA=1/(dA/dI)>0$ and $d\rho^*/dA=g'(I)\,dI/dA>0$: a weaker balance sheet lowers both the scale
+and the cutoff.
+
+\step{6}{(ii) Debt maturity} Under the free-cash-flow assumption $r>\rho^*$ the optimum is implemented as in
+Section 5.6.1(a): the firm keeps $\rho^*I$ to meet shocks $\rho\le\rho^*$, must pay out
+$P_1=(r-\rho^*)I$ at date 1 (short-term debt), is barred from diluting the initial investors, and the investors' long-term
+claim is $R(I)-BI/\Delta p$ in case of success. Per unit of investment the short-term debt is $r-\rho^*$, and by Step 5
+\begin{align}
+  \frac{d(r-\rho^*)}{dA} &= -\frac{d\rho^*}{dA} < 0. \label{t5e8-mat}
+\end{align}
+A firm with a weaker balance sheet (lower $A$) issues more short-term debt per unit of investment: its debt
+maturity is shorter. (The level $(r-\rho^*)I$ can move either way, because $I$ falls too.)
+
+\answer{(ii)} $dI/dA>0$ and $d\rho^*/dA>0$, so the short-term debt per unit of investment, $r-\rho^*$,
+falls with $A$: weaker balance sheets carry shorter maturity (more of the date-1 cash flow is paid out),
+provided $h'(\rho^*)<0$ (true, e.g., for uniform shocks).
+
+\intuition A weak balance sheet makes pledgeable income scarce. The firm raises it by continuing less often,
+i.e.\ by keeping less liquidity in the firm, which means sweeping more of the date-1 cash flow out to creditors
+through short-term debt. Decreasing returns add one more channel: a lower scale raises $R(I)/I$ and hence per-unit
+pledgeable income, and the two margins (scale and continuation) are cut together.
+
+\pitfalls
+\begin{itemize}
+  \item Carrying over the constant-returns result $\int_0^{\rho^*}F=1-r$, under which $\rho^*$ does not
+        depend on $A$: with $R''<0$ the left side of \eqref{t5e8-key} is negative and moves with $I$, which
+        is what makes $\rho^*$ depend on $A$.
+  \item Stating the FOCs without the multiplier on the break-even: the cutoff is a weighted average of
+        $\rho_1$ (value) and $\rho_0$ (pledgeable income), not $\rho_1$ alone.
+  \item Reading ``shorter maturity'' off the level $(r-\rho^*)I$: since $I$ also falls with $A$, the
+        unambiguous statement is per unit of investment.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~593): same condition \eqref{t5e8-key} (the book writes its numerator as
+$1-r-\int_0^{\rho^*}(\rho^*-\rho)f(\rho)d\rho$, equal to ours by integration by parts) and the same conclusion
+(lower $A$ $\Rightarrow$ lower $I$ and $\rho^*$ $\Rightarrow$ more short-term debt). The book states without proof that the
+right side of \eqref{t5e8-key} is decreasing in $\rho^*$; \eqref{t5e8-hprime} shows this needs a condition on $F$
+(true for the uniform).
+
+\refbib Tirole \S5.3.2 ``Continuum of Liquidity Shocks'', pp.~209--210; \S5.6.1 ``Optimal Claim Maturity'', p.~226;
+Exercise 5.7, p.~232; answer p.~593.
+
+% =============================================================================
+\exsec{9. The priority game: uncoordinated lending and short-term bias --- Tirole Exercise 5.9, p.~233}
+
+\asked (i) Find the first-best date-1 deepening investment $I_1^*$ and show that a mix of short- and
+long-term debt implements it, with some indeterminacy in how the claims (and the entrepreneur's pay)
+are split. (ii) With an opaque balance sheet and many lenders, show that the entrepreneur gains by
+secretly swapping long-term claim for short-term claim with one lender, and say whether this pins down
+the split left open in (i).
+
+\approach Without moral hazard the borrower captures the NPV, so (i) is a plain optimisation plus
+counting equations against unknowns. In (ii) the date-1 payout to one lender is paid out of the
+reinvestment fund, lowering the success probability of \emph{every} long-term claim: an externality
+that neither party to the side deal internalises (a common-agency, ``priority'' problem). Only
+collusion-proof structures survive, which is the lecture's point that maturity is chosen to discipline
+what the insider can do with unverifiable cash.
+
+\notation
+\begin{itemize}
+  \item $I$: fixed date-0 investment; $A=0$; no moral hazard (private benefit 0); risk-free rate 0.
+  \item $r>0$: known date-1 return; $R$ or 0: date-2 return, success probability $p+\tau(I_1)$.
+  \item $I_1\ge 0$: date-1 deepening investment; $\tau$ increasing, concave, $\tau'(0)=\infty$, $\tau'(r)R<1$.
+  \item $r_l,r_b\ge 0$: date-1 payments to lenders (short-term debt) and to the entrepreneur;
+        $R_l,R_b\ge0$: success-contingent date-2 payments, $R_l+R_b=R$.
+  \item $I_1^*$: first-best deepening investment; $\delta r_l,\delta R_l>0$: sizes of a secret deal.
+\end{itemize}
+
+\step{1}{(i) First best} The first best maximises total surplus over $I_1$. The NPV is date-1 cash not
+reinvested plus expected date-2 income minus the initial investment:
+\begin{align}
+  \text{NPV}(I_1) &= r - I_1 + [p+\tau(I_1)]R - I. \label{t5e9-npv}
+\end{align}
+Its derivatives are $\text{NPV}'(I_1)=-1+\tau'(I_1)R$ and $\text{NPV}''(I_1)=\tau''(I_1)R\le0$, so it is
+concave and the first-order condition $\text{NPV}'(I_1^*)=0$ is sufficient:
+\begin{align}
+  -1+\tau'(I_1^*)\,R &= 0 \quad\Longleftrightarrow\quad \tau'(I_1^*)\,R = 1. \label{t5e9-fb}
+\end{align}
+$\tau'(0)=\infty$ gives $I_1^*>0$; $\tau'(r)R<1=\tau'(I_1^*)R$ and $\tau'$ decreasing give $I_1^*<r$, so
+$r-I_1^*>0$ can be paid out at date 1.
+
+\step{2}{(i) Implementation and indeterminacy} With transparent books the contract fixes the date-1
+payouts, and hence $I_1=r-r_l-r_b$. The first best requires
+\begin{align}
+  r_b+r_l+I_1^* &= r, \label{t5e9-c1}\\
+  R_b+R_l &= R, \label{t5e9-c2}\\
+  I &= r_l+[p+\tau(I_1^*)]R_l, \label{t5e9-c3}
+\end{align}
+the last being the lenders' breakeven condition. Four unknowns $(r_b,r_l,R_b,R_l)$ and three equations: one
+degree of freedom. For instance (when $r-I_1^*<I$), maximal short-term debt $r_b=0$, $r_l=r-I_1^*$ with
+$R_l=\frac{I-(r-I_1^*)}{p+\tau(I_1^*)}$; or pure long-term debt $r_l=0$, $R_l=\frac{I}{p+\tau(I_1^*)}$ (if this is $\le R$),
+with the entrepreneur taking $r_b=r-I_1^*$. Without moral hazard the entrepreneur gets the first-best NPV in all
+cases, so the split of her pay between $r_b$ and $R_b$, and of the lenders' claims between short and long
+term, is undetermined.
+
+\answer{(i)} $I_1^*$ solves $\tau'(I_1^*)R=1$, with $0<I_1^*<r$; any $(r_b,r_l,R_b,R_l)\ge0$ with
+$r_b+r_l=r-I_1^*$, $R_b+R_l=R$ and $r_l+[p+\tau(I_1^*)]R_l=I$ implements it --- one degree of freedom
+in the short-/long-term split.
+
+\step{3}{(ii) The secret deal} With $r-I_1^*<I$, \eqref{t5e9-c3} and $r_l\le r-I_1^*$ force $R_l>0$, hence $R_b<R$
+by \eqref{t5e9-c2}. Starting from any first-best structure, the entrepreneur offers one lender $+\delta r_l$ in short-term
+claim against the transfer to herself of $\delta R_l$ of his long-term claim. The lender is atomistic, takes $I_1$ as given,
+and accepts iff
+\begin{align}
+  \delta r_l &\ge [p+\tau(I_1)]\,\delta R_l. \label{t5e9-acc}
+\end{align}
+Date-1 cash is fixed and the other claims cannot be defrauded, so the extra payout comes out of deepening investment:
+\begin{align}
+  \delta I_1 &= -\delta r_l. \label{t5e9-dI1}
+\end{align}
+The entrepreneur's utility is $U_b=r_b+[p+\tau(I_1)]R_b$; in the deal $r_b$ is unchanged and she
+receives the long-term claim the lender gives up, $\delta R_b=\delta R_l$. To first order (product rule),
+\begin{align}
+  \delta U_b &= \tau'(I_1)\,(\delta I_1)\,R_b + [p+\tau(I_1)]\,(\delta R_l). \nonumber
+\end{align}
+Substituting \eqref{t5e9-dI1} and \eqref{t5e9-acc} at equality ($\delta R_l=\delta r_l/[p+\tau(I_1)]$),
+\begin{align}
+  \delta U_b &= \tau'(I_1)\,(-\delta r_l)\,R_b + [p+\tau(I_1)]\Big(\frac{\delta r_l}{p+\tau(I_1)}\Big) \nonumber\\
+             &= \big[1-\tau'(I_1)R_b\big]\,\delta r_l. \label{t5e9-dU}
+\end{align}
+At $I_1=I_1^*$, \eqref{t5e9-fb} gives $\tau'(I_1^*)=1/R$, so $\tau'(I_1^*)R_b=R_b/R<1$ and
+$\delta U_b=(1-R_b/R)\,\delta r_l=\frac{R-R_b}{R}\,\delta r_l=(R_l/R)\,\delta r_l>0$: the deal pays. The gain is
+exactly the loss $\tau'(I_1^*)R_l\,\delta r_l=(R_l/R)\delta r_l$ of the other long-term claimholders, whose success probability
+falls; total value is unchanged to first order because $I_1^*$ maximises \eqref{t5e9-npv}.
+
+\step{4}{(ii) The indeterminacy is resolved} Lenders anticipate such deals, so only collusion-proof structures are
+equilibria. By \eqref{t5e9-dU} no deal pays iff
+\begin{align}
+  \tau'(I_1)\,R_b &\ge 1. \label{t5e9-cp}
+\end{align}
+The entrepreneur bears the NPV loss ex ante, and \eqref{t5e9-npv} rises with $I_1$ below $I_1^*$; since $\tau'$ falls with $I_1$,
+she sets $I_1$ as high as \eqref{t5e9-cp} allows, so \eqref{t5e9-cp} binds: $\tau'(I_1)R_b=1$. Because $R_b<R$,
+$\tau'(I_1)>\tau'(I_1^*)$ and $I_1<I_1^*$. A larger $R_b$ permits a larger $I_1$, so $R_b$ must be the largest compatible with
+breakeven, which requires paying her nothing at date 1, $r_b=0$, and all date-1 free cash to lenders, $r_l=r-I_1$:
+\begin{align}
+  I &= r-I_1+[p+\tau(I_1)](R-R_b), \label{t5e9-be}\\
+  \tau'(I_1)\,R_b &= 1. \label{t5e9-cpb}
+\end{align}
+These two equations pin down $(I_1,R_b)$, hence $r_l=r-I_1$ and $R_l=R-R_b$. So yes, opacity resolves the
+indeterminacy: the entrepreneur is paid only long-term ($r_b=0$), lenders hold more short-term debt
+($r-I_1>r-I_1^*$), and deepening investment is below the first best.
+
+\answer{(ii)} At the first best a secret swap gives $\delta U_b=[1-\tau'(I_1^*)R_b]\delta r_l=(R_l/R)\delta r_l>0$.
+Yes, the indeterminacy is resolved: $r_b=0$, $r_l=r-I_1$, and $(I_1,R_b)$ solve $\tau'(I_1)R_b=1$ and
+$I=r-I_1+[p+\tau(I_1)](R-R_b)$, with $I_1<I_1^*$ (a short-term bias).
+
+\intuition A lender who cashes out early is paid out of the firm's reinvestment fund, and the cost (a lower success
+probability) falls on every long-term claimant. Neither the colluding lender nor the entrepreneur internalises the
+loss of the other lenders, so with opaque books maturity is biased toward the short term. The entrepreneur can only
+commit not to strip the firm by holding a large long-term stake herself, and $\tau'(I_1)R_b=1$ shows how large.
+
+\pitfalls
+\begin{itemize}
+  \item Letting the colluding lender internalise the fall in $I_1$: he is atomistic, takes $I_1$ as given
+        and accepts any deal with $\delta r_l\ge[p+\tau(I_1)]\delta R_l$.
+  \item Counting the deal as value-creating: at $I_1^*$ total value is unchanged to first order; the
+        entrepreneur's gain is the other long-term holders' loss.
+  \item Concluding that ``more long-term debt'' fixes the bias: what deters stripping is the
+        entrepreneur's own long-term stake $R_b$, which is why $r_b=0$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~594): $\tau'(I_1^*)R=1$; one degree of freedom; $\delta U_b=[1-\tau'(I_1)R_b]\delta r_l>0$;
+resolution with $r_b=0$, $I=r-I_1+[p+\tau(I_1)](R-R_b)$ and $\tau'(I_1)R_b=1$, $I_1<I_1^*$.
+
+\refbib Tirole \S5.6.1 ``Optimal Claim Maturity'', p.~226; Exercise 5.9, p.~233; answer p.~594.
+
+% =============================================================================
+\exsec{10. One vs.\ two creditors: strategic and liquidity default --- Amaro de Matos 5.2.5 \#2, p.~148}
+
+\asked \emph{(strategic)}: show that when the manager defaults strategically and buys the firm back,
+the creditors collect more if the assets are split between two creditors than if one creditor holds
+them all. \emph{(liquidity)}: show that when the default is a genuine liquidity default and the assets are
+sold to an outside buyer, two creditors collect less in expectation than one.
+
+\approach This is Bolton and Scharfstein (1996) inside the strategic-default model of \S5.2.1: the
+investor's recovery is $y-S$ after a strategic default and $L_\circ$ after a liquidity default, and both
+come from bargaining. With two creditors each holds an asset the other party needs to realise the
+synergy $\Delta$, so each has hold-up power. Splitting the surplus by the Shapley value (the three-player
+version of the equal split $S=y/2$) gives both formulas on p.~138; comparing them with $y/2$ and
+$\alpha^2y^2/(4\bar c)$ answers the two parts.
+
+\notation
+\begin{itemize}
+  \item $K$: investment; $q$: probability of cash flow $x$ at $t=1$ (else 0); $y$: $t=2$ cash flow if the manager continues.
+  \item $S$: the manager's payoff when she strategically defaults and buys the firm back; $y-S$: what the creditor(s) get.
+  \item $\alpha\in[0,1]$: efficiency of an outside buyer ($\alpha y$); $c\sim U[0,\bar c]$: buyer's information cost.
+  \item $L_\circ$ / $\overline L_\circ$: expected liquidation payoff to creditors after a zero cash flow, with one / two creditors.
+  \item $y^A,y^B\ge0$: cash flows of assets $A$ and $B$ run separately; $\Delta=y-y^A-y^B\in(0,y]$: synergy.
+  \item $\beta_\circ$: liquidation probability after a zero report, $\beta_\circ=K/[q(y-S)+(1-q)L_\circ]$ from (5.6).
+\end{itemize}
+\assume With two creditors, creditor 1 holds asset $A$ and creditor 2 asset $B$. Multilateral bargaining follows the
+Shapley value, the three-player version of the equal split used for one creditor; disagreement payoffs are 0
+(as behind $S=y/2$ in the one-creditor case). The book only cites Bolton and Scharfstein (1996), pp.~10--13;
+the derivation below is ours, and it reproduces both formulas printed on p.~138.
+
+\step{1}{One creditor (benchmark)} We first record the one-creditor recoveries the comparison is made
+against. Manager and creditor split $y$ equally: $S=y/2$, so in a strategic default the creditor gets
+\begin{align}
+  y-S &= \frac{y}{2}. \label{t5e10-s1}
+\end{align}
+After a zero cash flow the buyer gets $\alpha y/2$, buys iff $c\le\alpha y/2$ (probability $\alpha y/(2\bar c)$), and the creditor gets $\alpha y/2$:
+\begin{align}
+  L_\circ &= \Big(\frac{\alpha y}{2\bar c}\Big)\Big(\frac{\alpha y}{2}\Big) = \frac{\alpha^2y^2}{4\bar c}. \label{t5e10-L1}
+\end{align}
+
+\step{2}{Two creditors, strategic default} Players: manager $M$, creditors 1 and 2. Worth of a coalition: $y$ if it contains $M$ and both assets,
+$y^A$ ($y^B$) if it contains $M$ and only asset $A$ ($B$), and 0 without $M$. Over the $3!=6$ orderings, $M$'s marginal contribution is 0
+when she comes first (orderings $M12$, $M21$), $y^A$ in ordering $1M2$ and $y^B$ in $2M1$ (she joins a
+coalition holding one asset, worth 0 without her), and $y$ when last ($12M$, $21M$). Averaging over the six
+orderings and using $y^A+y^B=y-\Delta$:
+\begin{align}
+  S &= \frac{0+0+y^A+y^B+y+y}{6} = \frac{2y+y^A+y^B}{6} \nonumber\\
+    &= \frac{2y+(y-\Delta)}{6} = \frac{3y-\Delta}{6} \nonumber\\
+    &= \frac{y}{2}-\frac{\Delta}{6}, \label{t5e10-S2}
+\end{align}
+which is the book's $S$. The two creditors together get
+\begin{align}
+  y-S &= y-\Big(\frac{y}{2}-\frac{\Delta}{6}\Big) \nonumber\\
+      &= \frac{y}{2}+\frac{\Delta}{6} \;>\; \frac{y}{2}. \label{t5e10-s2}
+\end{align}
+Comparing with \eqref{t5e10-s1}: two creditors are paid more in a strategic default, by $\Delta/6$. Each creditor can hold up the synergy $\Delta$,
+so the manager keeps less when she buys the firm back.
+
+\answer{(strategic)} Two creditors get $y-S=\dfrac y2+\dfrac\Delta6>\dfrac y2$ (one creditor): more, by
+$\Delta/6$.
+
+\step{3}{Two creditors, liquidity default} Replace $M$ by the outside buyer, whose coalition worths are $\alpha y$, $\alpha y^A$, $\alpha y^B$
+(the cost $c$ is sunk and not bargained over, as in Step 1). By \eqref{t5e10-S2} the buyer gets $\alpha(y/2-\Delta/6)$, buys iff
+$c\le\alpha(y/2-\Delta/6)$, which for $c\sim U[0,\bar c]$ has probability $\alpha(y/2-\Delta/6)/\bar c$
+(assume $\alpha(y/2-\Delta/6)\le\bar c$), and the creditors share $\alpha y-\alpha(y/2-\Delta/6)=\alpha(y/2+\Delta/6)$.
+Expected liquidation payoff = probability of a sale times the creditors' share:
+\begin{align}
+  \overline L_\circ &= \Big(\frac{\alpha(3y-\Delta)}{6\bar c}\Big)\Big(\frac{\alpha(3y+\Delta)}{6}\Big) \nonumber\\
+                    &= \frac{\alpha^2(3y-\Delta)(3y+\Delta)}{36\bar c} = \frac{\alpha^2(9y^2-\Delta^2)}{36\bar c} \nonumber\\
+                    &= \frac{9\alpha^2y^2}{36\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}
+                     = \frac{\alpha^2y^2}{4\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}, \label{t5e10-L2}
+\end{align}
+the book's formula. By \eqref{t5e10-L1}, $\overline L_\circ=L_\circ-\alpha^2\Delta^2/(36\bar c)<L_\circ$: two creditors are paid less in a liquidity
+default. The creditors' extra share does not compensate the lower probability that a buyer shows up, which falls
+from $\alpha y/(2\bar c)$ to $\alpha(y/2-\Delta/6)/\bar c$.
+
+\answer{(liquidity)} Two creditors expect $\overline L_\circ=\dfrac{\alpha^2y^2}{4\bar c}-\dfrac{\alpha^2\Delta^2}{36\bar c}
+<L_\circ=\dfrac{\alpha^2y^2}{4\bar c}$: less, by $\alpha^2\Delta^2/(36\bar c)$.
+
+\step{4}{The $\beta_\circ$ denominator and the printed sign} By (5.6) the denominator of $\beta_\circ$ is $q(y-S)+(1-q)L$. With two creditors,
+substituting \eqref{t5e10-s2} and \eqref{t5e10-L2},
+\begin{align}
+  D_2 &= q\Big(\frac{y}{2}+\frac{\Delta}{6}\Big) + (1-q)\Big(\frac{\alpha^2y^2}{4\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}\Big). \label{t5e10-D2}
+\end{align}
+The book prints $q(\frac y2-\frac\Delta6)$ in the first term (p.~138), i.e.\ $qS$ instead of $q(y-S)$ (the two coincide only when
+$S=y/2$, the one-creditor case). That is a sign error: with the printed term the two-creditor denominator would be below the one-creditor
+one for every $q$, contradicting the same page's remarks that it ``can be greater or less'' and that two creditors are paid more in strategic default.
+With \eqref{t5e10-D2} and $D_1=q\frac y2+(1-q)L_\circ$,
+\begin{align}
+  D_2-D_1 &= q\Big(\frac y2+\frac\Delta6-\frac y2\Big)+(1-q)\big(\overline L_\circ-L_\circ\big) \nonumber\\
+          &= q\,\frac{\Delta}{6}-(1-q)\,\frac{\alpha^2\Delta^2}{36\bar c}. \label{t5e10-dD}
+\end{align}
+It is positive (two creditors liquidate less often) iff, multiplying by $36\bar c/\Delta>0$,
+$6\bar c\,q>(1-q)\alpha^2\Delta$, i.e.\ $q(6\bar c+\alpha^2\Delta)>\alpha^2\Delta$, i.e.\
+$q>\bar q\equiv\frac{\alpha^2\Delta}{6\bar c+\alpha^2\Delta}$: when bankruptcy risk is low, as the book concludes.
+
+\step{5}{Numerical illustration (ours)} Take $y=10$, $y^A=4$, $y^B=3$ ($\Delta=10-4-3=3$), $\alpha=0.8$, $\bar c=6$, $q=0.6$, $K=2$. Then
+$S=10/2-3/6=5-0.5=4.5$ and $y-S=5.5$ versus $5$ with one creditor. In liquidity default the buyer gets $0.8(4.5)=3.6$, buys with probability
+$3.6/6=0.6$ (versus $4/6=0.666667$), and the creditors get $0.8(5.5)=4.4$:
+\begin{align}
+  \overline L_\circ &= (0.6)(4.4) = 2.64 \;<\; L_\circ=\frac{(0.64)(100)}{24}=2.666667. \nonumber
+\end{align}
+Denominators: $D_1=(0.6)(5)+(0.4)(2.666667)=4.066667$ and $D_2=(0.6)(5.5)+(0.4)(2.64)=4.356$, so $\beta_\circ$ falls from
+$2/4.066667=0.491803$ to $2/4.356=0.459137$. The misprinted term would give $(0.6)(4.5)+(0.4)(2.64)=3.756$ and $\beta_\circ=0.532481$.
+Here $\bar q=1.92/37.92=0.050633$; at $q=0.02$, \eqref{t5e10-dD} gives $-0.016133<0$ and one creditor is better.
+
+\intuition Splitting the assets among creditors gives each a veto over the synergy $\Delta$. This hold-up power makes strategic default
+costly for the manager, so more can be credibly repaid (good when default is mostly strategic, high $q$). The same hold-up power scares
+off outside buyers when the firm genuinely fails, lowering the liquidation value (bad when default is mostly for liquidity, low $q$).
+
+\pitfalls
+\begin{itemize}
+  \item Comparing $S$ instead of $y-S$: $S$ is what the \emph{manager} keeps; the creditors' recovery is
+        $y-S$, which rises with two creditors.
+  \item Keeping the buyer's probability of purchase fixed at $\alpha y/(2\bar c)$: the buyer's share
+        falls to $\alpha(y/2-\Delta/6)$, so fewer buyers show up, and that loss dominates.
+  \item Copying the printed two-creditor denominator $q(y/2-\Delta/6)+\dots$: its first term must be
+        $q(y-S)=q(y/2+\Delta/6)$.
+\end{itemize}
+
+\bookans The book (p.~268) only cites Bolton and Scharfstein (1996), pp.~10--13; derived here. Our $S$ and $\overline L_\circ$ match p.~138.
+The printed two-creditor denominator on p.~138 has a sign error: its first term should be $q(y/2+\Delta/6)=q(y-S)$, not $q(y/2-\Delta/6)$.
+
+\refbib Amaro de Matos \S5.2.1 ``Extending the Model'', pp.~134--137; \S5.2.2 ``The Case of Many Creditholders'', pp.~137--138; exercise p.~148.
+
+% =============================================================================
+\exsec{11. When the good entrepreneur prefers liquidating debt --- Amaro de Matos 5.2.5 \#4, p.~148}
+
+\asked Prove that if $(q^dX+f^dC)/R\le L$, condition (5.12), then the entrepreneur of a good project
+prefers a debt structure that liquidates the firm after a downgrade to any structure that does not
+(the comparison of Lemma~5.2.2).
+
+\approach Diamond (1991): liquidation after a downgrade costs the good entrepreneur $X+C$ in that state
+but lets lenders recover $L$ from the whole downgraded pool, most of which is bad, so the upgraded (good)
+firms pay less. Lemma~5.2.2 reduces the comparison to $C<\widehat C$. The proof therefore (1) derives
+both payoffs from the break-even (5.11) and Bayes' rule, (2) obtains $U^L-U^N=e(\widehat C-C)$, and
+(3) bounds $\widehat C$ from below using the fact that no non-liquidating debt can be worth more than
+$q^dX/R$ after a downgrade.
+
+\notation
+\begin{itemize}
+  \item $X$: $t=2$ payoff (good project surely, bad with probability $\pi$); $C\ge0$: nonassignable control rent; $L$: liquidation value; $R$: gross return per period.
+  \item $f$: initial rating; $f^u=1$, $f^d$: posterior of ``good'' after an upgrade / downgrade; $e\in(0,1)$: probability a good project is downgraded.
+  \item $P_d$: probability of a downgrade for an unknown type; $q^d=\pi+f^d(1-\pi)$: repayment probability after a downgrade.
+  \item $V^d$: $t=1$ value of a non-liquidating debt after a downgrade; $r_1$: face value of short-term debt; $U^N$, $U^L$: good entrepreneur's payoffs under non-liquidating and liquidating debt.
+\end{itemize}
+
+\step{1}{Bayes} Both payoffs depend on the downgrade probability, which we link to $f^d$. Since $f^u=1$,
+bad projects are always downgraded and good ones with probability $e$, so
+\begin{align}
+  P_d &= fe+(1-f) = 1-(1-e)f, \label{t5e11-Pd}\\
+  f^d &= \frac{fe}{P_d}\quad\Longleftrightarrow\quad \frac{P_d}{f}=\frac{e}{f^d}. \label{t5e11-fd}
+\end{align}
+
+\step{2}{Non-liquidating debt} We compute the good entrepreneur's payoff when a downgrade does not
+trigger liquidation. After a downgrade, the debt worth $V^d$ at $t=1$ requires a $t=2$ payment
+$RV^d/q^d$ (new or existing lenders break even at the pooled repayment probability $q^d$), which the good
+firm pays for sure; after an upgrade it pays $r_1R$. (For long-term debt read $r_1=\rho/R$: then the
+break-even $P_u(\rho/R)+P_dV_l^d=R$ is (5.11), since $P_u+P_dq^d=q$ and $\rho q=R^2$.) Rearranging (5.11),
+$(1-e)f\,r_1=R-P_dV^d$; multiplying by $R/f$ and using \eqref{t5e11-fd},
+\begin{align}
+  (1-e)\,r_1R &= \frac{R\,(R-P_dV^d)}{f} \nonumber\\
+              &= \frac{R^2}{f}-RV^d\,\frac{P_d}{f} \nonumber\\
+              &= \frac{R^2}{f}-\frac{eRV^d}{f^d}. \label{t5e11-r1}
+\end{align}
+So, expanding and substituting \eqref{t5e11-r1},
+\begin{align}
+  U^N &= e\Big(X+C-\frac{RV^d}{q^d}\Big)+(1-e)(X+C-r_1R) \nonumber\\
+      &= (X+C)-\frac{eRV^d}{q^d}-(1-e)\,r_1R \nonumber\\
+      &= (X+C)-\frac{eRV^d}{q^d}-\frac{R^2}{f}+\frac{eRV^d}{f^d} \nonumber\\
+      &= X+C-\frac{R^2}{f}+eRV^d\Big(\frac{1}{f^d}-\frac{1}{q^d}\Big), \label{t5e11-UN}
+\end{align}
+the expression in the proof of Lemma 5.2.1.
+
+\step{3}{Liquidating debt} Now a downgraded firm is liquidated and the lenders get $L$, so \eqref{t5e11-r1} holds with $V^d=L$, and the good
+entrepreneur gets nothing after a downgrade:
+\begin{align}
+  U^L &= (1-e)(X+C) - (1-e)\,r_1R \nonumber\\
+      &= (1-e)(X+C)-\Big(\frac{R^2}{f}-\frac{eRL}{f^d}\Big) \nonumber\\
+      &= (1-e)(X+C)-\frac{R^2}{f}+\frac{eRL}{f^d}. \label{t5e11-UL}
+\end{align}
+
+\step{4}{Lemma 5.2.2} We now compare the two. Subtracting \eqref{t5e11-UN} from \eqref{t5e11-UL}, the
+$R^2/f$ terms cancel and $(1-e)(X+C)-(X+C)=-e(X+C)$:
+\begin{align}
+  U^L-U^N &= -e(X+C)+\frac{eRL}{f^d}-eRV^d\Big(\frac{1}{f^d}-\frac{1}{q^d}\Big) \nonumber\\
+          &= e\Big[\frac{LR}{f^d}-X-RV^d\Big(\frac{1}{f^d}-\frac{1}{q^d}\Big)-C\Big] \nonumber\\
+          &= e\,(\widehat C-C), \label{t5e11-diff}
+\end{align}
+so (with $e>0$) the good entrepreneur prefers liquidation iff $C<\widehat C$.
+
+\step{5}{A bound on $V^d$} A downgraded firm can pay at most $X$ at $t=2$, and repays with probability $q^d$; so any non-liquidating debt has
+\begin{align}
+  V^d &\le \frac{q^dX}{R}. \label{t5e11-Vb}
+\end{align}
+(Long-term: $V_l^d=q^d\rho/R$ with $\rho\le X$. Short-term without liquidation: $V_s^d=r_1\le q^dX/R$, the refinancing condition.)
+
+\step{6}{(5.12) is sufficient} Since $\frac1{f^d}-\frac1{q^d}>0$ by (5.10), $\widehat C$ falls with $V^d$; substituting \eqref{t5e11-Vb} into the definition of $\widehat C$,
+\begin{align}
+  \widehat C &\ge \frac{LR}{f^d}-X-R\Big(\frac{q^dX}{R}\Big)\Big(\frac{1}{f^d}-\frac{1}{q^d}\Big) \nonumber\\
+             &= \frac{LR}{f^d}-X-\frac{q^dX}{f^d}+\frac{q^dX}{q^d} \nonumber\\
+             &= \frac{LR}{f^d}-X-\frac{q^dX}{f^d}+X \nonumber\\
+             &= \frac{LR-q^dX}{f^d}. \label{t5e11-Cb}
+\end{align}
+Inequality (5.12), $(q^dX+f^dC)/R\le L$, i.e.\ $q^dX+f^dC\le LR$, is equivalent (subtract $q^dX$, divide by $f^d>0$) to
+\begin{align}
+  C &\le \frac{LR-q^dX}{f^d}. \label{t5e11-512}
+\end{align}
+Chaining \eqref{t5e11-512} and \eqref{t5e11-Cb}: $C\le\widehat C$, and by \eqref{t5e11-diff} $U^L\ge U^N$. The preference is strict unless both
+\eqref{t5e11-512} and \eqref{t5e11-Vb} hold with equality (a knife-edge with $\rho=X$ or $r_1=q^dX/R$). This proves the claim.
+
+\answer{(proof)} For any non-liquidating structure, $V^d\le q^dX/R$ gives $\widehat C\ge(LR-q^dX)/f^d$;
+(5.12) is $C\le(LR-q^dX)/f^d$; hence $C\le\widehat C$ and $U^L-U^N=e(\widehat C-C)\ge0$: the good entrepreneur
+prefers the liquidating structure.
+
+\step{7}{Remark on $\widehat C>0$} \eqref{t5e11-Cb} also shows $\widehat C\ge0$ whenever $LR\ge q^dX$, i.e.\ whenever lenders really prefer liquidating
+a downgraded firm to rolling it over --- the condition for a liquidating structure to exist. Without it, $\widehat C$ can be negative:
+with the numbers of Amaro de Matos exercise 5.2.5 \#5 ($L=R=1$, $X=\tfrac74$, $f^d=\tfrac13$, $q^d=\tfrac23$) and short-term debt
+($V^d=1$), $\widehat C=3-1.75-(1)(1)\bigl(3-\tfrac32\bigr)=-0.25$; so the lemma's ``$>0$'' presumes credible liquidation.
+
+\intuition Liquidation costs the good entrepreneur her firm (and $C$) in the downgrade state, but it shifts financing costs onto the pool
+of downgraded firms, most of whom are bad: lenders recover $L$ from every downgraded firm, so the upgraded, i.e.\ good, firms pay less.
+(5.12) says the continuation value of a downgraded firm --- what lenders could ever collect, $q^dX$, plus the control rent weighted by the
+share of good types, $f^dC$ --- is below $L$; then the cross-subsidy gain outweighs the lost rent.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting that a liquidated good entrepreneur loses both $X$ and the control rent $C$ in the
+        downgrade state: $U^L$ has $(1-e)(X+C)$, not $X+C$.
+  \item Signing $\frac1{f^d}-\frac1{q^d}$ wrongly: $q^d>f^d$ by (5.10), so it is positive and $\widehat C$
+        \emph{decreases} in $V^d$; the bound $V^d\le q^dX/R$ is therefore the worst case for liquidation.
+  \item Dropping $R$ when moving between (5.12) and $C\le(LR-q^dX)/f^d$: (5.12) is stated per unit of $R$.
+\end{itemize}
+
+\bookans The book (p.~268) only cites the appendix of Diamond (1991), pp.~732--733; proved here.
+
+\refbib Amaro de Matos \S5.2.3 ``The Choice of the Duration'', pp.~139--142 (Lemmas 5.2.1--5.2.2, (5.9)--(5.12)); exercise p.~148.
+
+% =============================================================================
+\exsec{12. Diamond (1991): liquidation after a downgrade --- Amaro de Matos 5.2.5 \#6 (with \#5), p.~148}
+
+\asked \emph{Part 0} (exercise \#5, needed as the base case): (a) face values of short- and long-term
+debt; (b) show there is no liquidation; (c) the good entrepreneur's payoff with long-term debt; (d) the
+probability $e$ that a good project is downgraded; (e) her payoff with short-term debt.
+\emph{(i)} With $X=1.4$, $C=0.35$, show that short-term debt now leads to liquidation after a downgrade.
+\emph{(ii)} Show that the good entrepreneur then prefers long-term debt. \emph{(iii)} Show that this
+preference reverses when the initial rating is $f=\tfrac34$.
+
+\approach Diamond's (1991) maturity trade-off. Short-term debt is repriced at $t=1$ on nonverifiable
+rating news: without liquidation that only shifts repayment onto the downgraded pool, which helps good
+types (Lemma~5.2.1); with liquidation it also costs the good type $X+C$ whenever she is downgraded
+(Lemma~5.2.2: liquidating debt wins iff $C<\widehat C$). A downgraded borrower is liquidated when the
+most she can promise, $q^dX/R$, is below both $r_1$ and $L$. The rating $f$ matters through $e$: a higher
+$f$ (with $f^d$ fixed) means good types are rarely downgraded, so the liquidation cost is rarely paid.
+
+\notation
+\begin{itemize}
+  \item $X$: $t=2$ payoff (good project surely, bad with probability $\pi$); $C\ge0$: control rent; $L$: liquidation value; $R$: gross return per period.
+  \item $f$: initial rating; $f^u=1$, $f^d$: posterior of ``good'' after an upgrade / downgrade; $e$: probability that a good project is downgraded;
+        $P_d$: probability of a downgrade for an unknown type; $q^d=\pi+f^d(1-\pi)$; $V^d$: $t=1$ value of the debt after a downgrade ($V_s^d$ short, $V_l^d$ long).
+  \item $\rho$: face value of long-term debt; $r_1$: face value of short-term debt; $q$: $t=0$ repayment probability (5.9);
+        $F^d$: face value of the $t=1$ refinancing after a downgrade; $U_{LT}$, $U_{ST}$: good entrepreneur's payoff with long- / short-term debt.
+  \item Part 0 (\#5): $L=R=1$, $\pi=\frac12$, $X=\frac74$, $C=0$, $f=\frac12$, $f^d=\frac13$. Exercise \#6: $X=1.4$, $C=0.35$, then $f=\frac34$.
+\end{itemize}
+\assume (a) $L=1=K$ contradicts the text's $L<K$; it is harmless here but makes short-term debt riskless ($r_1=R$).
+(b) When $f$ becomes $\frac34$ we keep $f^d=\frac13$, as the statement says (``keep everything'') and as Proposition 5.2.1 does; then $e$ adjusts.
+The book only cites Diamond (1991), examples 1--3; all numbers below are derived here.
+
+\step{1}{Part 0 (a): face values} Each face value is set by the lenders' break-even at its horizon. By (5.9),
+\begin{align}
+  q &= \pi+f(1-\pi) = \tfrac12+\big(\tfrac12\big)\big(\tfrac12\big) = \tfrac34. \label{t5e12-q}
+\end{align}
+Long-term debt satisfies $\rho q=R^2$:
+\begin{align}
+  \rho &= \frac{R^2}{q} = \frac{(1)}{(3/4)} = \frac43 \;\le X. \label{t5e12-rho}
+\end{align}
+For short-term debt we need $e$, $P_d$, $q^d$. Bad projects are always downgraded ($f^u=1$) and good ones
+with probability $e$, so $P_d=fe+(1-f)$ and Bayes' rule gives
+\begin{align}
+  f^d &= \frac{fe}{fe+(1-f)}. \label{t5e12-bayes}
+\end{align}
+Solving for $e$: $f^d[fe+(1-f)]=fe$, so $f^d(1-f)=fe(1-f^d)$ and
+\begin{align}
+  e &= \frac{f^d(1-f)}{f(1-f^d)} = \frac{(1/3)(1/2)}{(1/2)(2/3)} = \frac{1/6}{1/3} = \frac12, \label{t5e12-e}\\
+  P_d &= 1-(1-e)f = 1-\big(\tfrac12\big)\big(\tfrac12\big) = \tfrac34, \label{t5e12-Pd}\\
+  q^d &= \pi+f^d(1-\pi) = \tfrac12+\big(\tfrac13\big)\big(\tfrac12\big)=\tfrac23. \label{t5e12-qd}
+\end{align}
+A downgraded firm can roll over up to $q^dX/R=(2/3)(7/4)=7/6>L$. Conjecture no liquidation, $V_s^d=r_1$; then (5.11),
+multiplied by $(1-e)f$, gives
+\begin{align}
+  (1-e)f\,r_1 &= R-P_d\,r_1, \nonumber\\
+  r_1\big[(1-e)f+P_d\big] &= R, \nonumber\\
+  r_1 &= R = 1, \label{t5e12-r1}
+\end{align}
+since $(1-e)f+P_d=1$. Indeed $r_1=1\le 7/6$, so $V_s^d=\min[1,\max(1,7/6)]=1=r_1$: consistent.
+
+\answer{0(a)} $r_1=1$, $\rho=\tfrac43$.
+
+\step{2}{Part 0 (b): no liquidation} Long-term debt has no $t=1$ payment. A downgraded short-term borrower refinances $r_1=1$ with face
+\begin{align}
+  F^d &= \frac{Rr_1}{q^d} = \frac{(1)(1)}{(2/3)} = \frac32 \;\le X=\frac74, \label{t5e12-Fd}
+\end{align}
+and the lenders would not liquidate anyway since $q^dX/R=7/6>L=1$.
+
+\answer{0(b)} No liquidation: the downgraded borrower refinances at face $F^d=\tfrac32\le X$.
+
+\step{3}{Part 0 (c)--(e)} (c) The good project always pays $\rho$:
+$U_{LT}=X+C-\rho=\frac74-\frac43=\frac{21-16}{12}=\frac5{12}=0.416667$. (d) By \eqref{t5e12-e}, $e=\frac12$.
+(e) Upgraded firms roll over at $r_1R=1$, downgraded ones pay $F^d$:
+\begin{align}
+  U_{ST} &= e(X+C-F^d)+(1-e)(X+C-r_1R) \nonumber\\
+         &= \big(\tfrac12\big)\big(\tfrac74-\tfrac32\big)+\big(\tfrac12\big)\big(\tfrac74-1\big) \nonumber\\
+         &= \big(\tfrac12\big)\big(\tfrac14\big)+\big(\tfrac12\big)\big(\tfrac34\big) = \tfrac18+\tfrac38 = \tfrac12. \label{t5e12-UST0}
+\end{align}
+Short-term debt is preferred ($\frac12>\frac5{12}$), as Lemma 5.2.1 predicts: by the Lemma's payoff expression,
+with $R^2/f=2$ and $e(\frac1{f^d}-\frac1{q^d})=\frac12\bigl(3-\frac32\bigr)=\frac34$,
+\begin{align}
+  U &= X+C-\frac{R^2}{f}+eRV^d\Big(\frac1{f^d}-\frac1{q^d}\Big) = \tfrac74+0-2+\tfrac34V^d = -\tfrac14+\tfrac34V^d, \label{t5e12-lemma1}
+\end{align}
+with $V_s^d=1$ (giving $-\frac14+\frac34=\frac12$) $>V_l^d=q^d\rho/R=\frac89$ (giving $-\frac14+\frac23=\frac5{12}$).
+
+\answer{0(c)--(e)} (c) $U_{LT}=\tfrac5{12}\approx0.416667$; (d) $e=\tfrac12$; (e) $U_{ST}=\tfrac12$.
+
+\step{4}{\#6, $f=\frac12$: short-term debt is liquidated after a downgrade} Now $X=1.4$, $C=0.35$; $q,\rho,e,P_d,q^d$ are unchanged, and
+$\rho=\frac43\le1.4$ keeps long-term debt feasible. A downgraded firm can now roll over at most
+\begin{align}
+  \frac{q^dX}{R} &= \big(\tfrac23\big)(1.4) = \tfrac{14}{15} = 0.933333 \;<\; L=1. \label{t5e12-roll}
+\end{align}
+If it were not liquidated, \eqref{t5e12-r1} would give $r_1=1>14/15$: it could not refinance. So it defaults, and the lenders, offered at
+most $14/15$ by continuation against $L=1$ from liquidation, liquidate. Hence $V_s^d=\max(L,q^dX/R)=1$ and by (5.11)
+\begin{align}
+  r_1 &= \frac{R-P_dV_s^d}{(1-e)f} = \frac{1-(3/4)(1)}{(1/4)} = 1, \label{t5e12-r1b}
+\end{align}
+consistent with $V_s^d=\min[1,\max(1,14/15)]=1$.
+
+\answer{(i)} $q^dX/R=\tfrac{14}{15}<r_1=1$ and $<L=1$: a downgraded short-term borrower cannot refinance
+and is liquidated.
+
+\step{5}{\#6, $f=\frac12$: long-term debt is preferred} The good firm keeps control only after an upgrade:
+\begin{align}
+  U_{ST} &= (1-e)(X+C-r_1R) = \big(\tfrac12\big)(1.4+0.35-1) = \big(\tfrac12\big)(0.75) = 0.375, \label{t5e12-UST1}\\
+  U_{LT} &= X+C-\rho = 1.75-\tfrac43 = 0.416667. \label{t5e12-ULT1}
+\end{align}
+$U_{LT}>U_{ST}$. To check this against Lemma~5.2.2, write both payoffs with (5.11) and Bayes
+($P_d/f=e/f^d$, from \eqref{t5e12-bayes}). The liquidating short-term debt has $V_s^d=L$, so
+$(1-e)r_1R=R(R-P_dL)/f=R^2/f-eRL/f^d$ and
+$U_{ST}=(1-e)(X+C)-R^2/f+eRL/f^d$; the long-term debt has the Lemma~5.2.1 payoff
+$U_{LT}=X+C-R^2/f+eRV_l^d(1/f^d-1/q^d)$. Subtracting,
+\begin{align}
+  U_{ST}-U_{LT} &= -e(X+C)+\frac{eRL}{f^d}-eRV_l^d\Big(\frac1{f^d}-\frac1{q^d}\Big)
+  = e\big(\widehat C-C\big), \label{t5e12-diff}
+\end{align}
+with $\widehat C$ as in Lemma~5.2.2. With $V^d=V_l^d=\frac89$:
+$\widehat C=\frac{(1)(1)}{1/3}-1.4-(1)\big(\tfrac89\big)\big(3-\tfrac32\big)=1.6-\tfrac43=0.266667<C=0.35$, and \eqref{t5e12-diff} gives
+$U_{ST}-U_{LT}=(0.5)(0.266667-0.35)=-0.041667$. (Condition (5.12) fails: $(q^dX+f^dC)/R=0.933333+0.116667=1.05>L$.)
+
+\answer{(ii)} $U_{LT}=0.416667>U_{ST}=0.375$ (gap $-0.041667=e(\widehat C-C)$ with $\widehat C=0.266667<C$):
+long-term debt is preferred.
+
+\step{6}{\#6, $f=\frac34$: the conclusion reverses} With $f^d=\frac13$ kept, \eqref{t5e12-e}--\eqref{t5e12-Pd} and \eqref{t5e12-q}--\eqref{t5e12-rho} give
+\begin{align}
+  e &= \frac{(1/3)(1/4)}{(3/4)(2/3)} = \frac{1/12}{1/2} = \frac16, \quad P_d = 1-\big(\tfrac56\big)\big(\tfrac34\big)=1-\tfrac58=\tfrac38, \nonumber\\
+  q &= \tfrac12+\big(\tfrac34\big)\big(\tfrac12\big)=\tfrac78, \quad \rho=\frac{(1)}{(7/8)}=\tfrac87=1.142857. \nonumber
+\end{align}
+$q^d=\frac23$ is unchanged, so \eqref{t5e12-roll} still holds and short-term debt is still liquidated after a downgrade;
+with $(1-e)f=\big(\tfrac56\big)\big(\tfrac34\big)=\tfrac58$, (5.11) gives $r_1=\frac{1-(3/8)(1)}{(5/8)}=\frac{5/8}{5/8}=1$. Then
+\begin{align}
+  U_{ST} &= (1-e)(X+C-r_1R) = \big(\tfrac56\big)(0.75) = 0.625, \label{t5e12-UST2}\\
+  U_{LT} &= X+C-\rho = 1.75-\tfrac87 = 0.607143, \label{t5e12-ULT2}
+\end{align}
+so now short-term (liquidating) debt is preferred. Check: $V_l^d=q^d\rho/R=\big(\tfrac23\big)\big(\tfrac87\big)=\frac{16}{21}$,
+$\widehat C=1.6-\big(\tfrac{16}{21}\big)\big(\tfrac32\big)=1.6-\tfrac87=0.457143>C=0.35$, and by \eqref{t5e12-diff}
+$e(\widehat C-C)=\frac16(0.107143)=0.017857=U_{ST}-U_{LT}$.
+Proposition 5.2.1 (p.~142) agrees: its bound is
+$\frac{\pi[R^2-LR+f^d(C+X-R^2)]}{(1-\pi)[LR-f^d(C+X)]}=\frac{(1/2)[1-1+(1/3)(0.75)]}{(1/2)[1-(1/3)(1.75)]}=\frac{(1/2)(0.25)}{(1/2)(0.416667)}=0.6$, and $f=\frac12<0.6<\frac34$.
+
+\answer{(iii)} At $f=\tfrac34$ ($e=\tfrac16$): $U_{ST}=0.625>U_{LT}=0.607143$ (gap $0.017857$): short-term,
+liquidating debt is now preferred.
+
+\intuition With a low rating the good firm is downgraded often ($e=\frac12$); liquidation then costs it the control rent too often, and
+long-term debt, which never triggers liquidation, wins. With a high rating, good firms are rarely downgraded ($e=\frac16$), while the
+downgraded pool is mostly bad firms; liquidating that pool lets good firms borrow cheaply after the upgrade, which now outweighs the rare loss of control.
+(If instead $e=\frac12$ were kept at $f=\frac34$, then $f^d=\frac35$, $q^dX/R=1.12>L$, there is no liquidation, and short-term debt still wins by Lemma 5.2.1, $0.625$ vs $0.607143$.)
+
+\pitfalls
+\begin{itemize}
+  \item Keeping $e=\tfrac12$ when $f$ rises to $\tfrac34$: the statement keeps everything else, including
+        $f^d=\tfrac13$, so $e$ must be recomputed by Bayes ($e=\tfrac16$).
+  \item Giving the liquidated good entrepreneur something after a downgrade: liquidation removes $X$ and
+        $C$, so $U_{ST}=(1-e)(X+C-r_1R)$ only.
+  \item Checking only $q^dX/R<r_1$ for liquidation: lenders liquidate because, in addition, $L$ beats the
+        best refinancing offer, $L=1>q^dX/R=\tfrac{14}{15}$.
+\end{itemize}
+
+\bookans The book (p.~268) only cites examples 1--3 of Diamond (1991), pp.~716--719; derived here. The three claims of \#6 are confirmed
+(liquidation after downgrade; long-term preferred at $f=\frac12$; reversal at $f=\frac34$), consistent with Proposition 5.2.1.
+
+\refbib Amaro de Matos \S5.2.3 ``The Choice of the Duration'', pp.~139--142 ((5.9)--(5.12), Lemmas 5.2.1--5.2.2, Proposition 5.2.1); exercises p.~148.
+
+% =============================================================================
+\exsec{13. A borrower-friendly bankruptcy court --- Tirole Exercise 4.9, pp.~190--191}
+
+\asked (i) Explain why the date-1 profit $r$ and the liquidation value $L$ should go to investors, why the
+borrower's stake on continuation is exactly $B/\Delta p$, and what conditions (1) and (2) mean. (ii) Write
+the borrower's optimisation over the continuation rule and give the equation for the cutoff $r^*$.
+(iii) Show that short-term debt $d=r^*$ implements the optimum (liquidation = bankruptcy) and say how
+$d$ moves with the borrower's equity $A$. (iv) If a court gives the borrower half of $L$ in bankruptcy and
+$r^*>\hat r$, show that the borrower can no longer be financed. (v) If $r^*<\hat r$, show that the court
+either blocks financing or makes bankruptcy more likely, hurting the borrower and not the lenders.
+
+\approach Tirole's fixed-investment model with an interim, verifiable signal $r$ and a liquidation
+option. Continuation is always efficient but pledges only $\rho_0(r)<\rho_1(r)$, while liquidation
+pledges all of $L$; when pledgeable income is scarce, the optimal contract buys it with a \emph{threat of
+termination} after bad news, which short-term debt implements (default $\Rightarrow$ creditors take control
+and liquidate). Anything that lowers what investors get in bankruptcy lowers pledgeable income ex ante;
+competitive lenders still break even, so the cost falls on the borrower.
+
+\notation
+\begin{itemize}
+  \item $I$, $A<I$: investment and cash; $r\in[0,\bar r]$: verifiable date-1 profit, density $f$, c.d.f.\ $F$, mean $E[r]$.
+  \item $L>0$: liquidation value; $R$: date-2 success profit; $p_H(r)$, $p_L(r)$: success probabilities (work / shirk), $p_H'>0$, $\Delta p$ constant; $B$: private benefit.
+  \item $\rho_1(r)=p_H(r)R$, $\rho_0(r)=p_H(r)[R-B/\Delta p]$: expected and pledgeable continuation income, both increasing in $r$.
+  \item $r^*$: continuation cutoff; $d$: short-term debt; $\hat r$: $\rho_0(\hat r)=L/2$; $r^{**}$: cutoff under the borrower-friendly court.
+  \item $\mathcal P(x)$: investors' expected income with cutoff $x$; $\text{NPV}(x)$: total surplus with cutoff $x$.
+\end{itemize}
+
+\step{1}{(i) Who gets $r$ and $L$; $R_b=B/\Delta p$; conditions (1)--(2)} $r$ and $L$ are verifiable and not subject to moral hazard, so
+pledging them to investors costs no incentives. Any part of them left to the borrower lowers pledgeable income, which (Step 2) must then be
+recovered by liquidating more often, an efficiency loss by (1). For the same reason, in continuation the incentive constraint
+$[p_H(r)-p_L(r)]R_b\ge B$, i.e.\ $(\Delta p)R_b\ge B$, should bind: $R_b=B/\Delta p$. Allowing $R_b(r)\ge B/\Delta p$ in the program of Step 2 leaves the NPV
+unchanged (a transfer) but lowers the left side of the breakeven constraint by $\int_{r^*}^{\bar r}p_H(r)[R_b(r)-B/\Delta p]f\,dr$, forcing a higher $r^*$.
+
+Interpretation. (1) $\rho_1(r)>L$: continuation is always efficient. (2), right inequality $I-A>E[r+\rho_0(r)]$: always continuing
+leaves too little pledgeable income to finance the project. (2), left inequality $E[r]+L>I-A$: always liquidating would raise enough.
+So financing requires some inefficient liquidation.
+
+\answer{(i)} Give $r$ and $L$ to investors (they cost no incentives, and anything left to the borrower
+must be recovered by liquidating more often); $R_b=B/\Delta p$ on continuation. (1): continuation is always
+efficient; (2): the project cannot be financed without some liquidation, but can be with enough of it.
+
+\step{2}{(ii) Program and cutoff} With cutoff $x$ (continue iff $r\ge x$), the borrower maximises the NPV (lenders break even, so
+she receives the whole surplus): date-1 profit, plus $\rho_1(r)$ on continuation states, plus $L$ on liquidation states (probability $F(x)$):
+\begin{align}
+  \max_{x}\;\text{NPV}(x) &= E[r]+\int_{x}^{\bar r}\rho_1(r)f(r)\,dr+F(x)L-I \label{t5e13-npv}\\
+  \text{s.t.}\quad \mathcal P(x) &\equiv E[r]+\int_{x}^{\bar r}\rho_0(r)f(r)\,dr+F(x)L \;\ge\; I-A. \label{t5e13-be}
+\end{align}
+(A cutoff rule is without loss: continuing at $r$ gains $\rho_1(r)-L>0$ in value and costs $L-\rho_0(r)$ in pledgeable income; the gain/cost
+ratio rises with $r$, so continuation goes to the highest $r$'s.) Differentiating by Leibniz's rule,
+$\frac{d}{dx}\int_x^{\bar r}g(r)f(r)\,dr=-g(x)f(x)$ and $\frac{d}{dx}F(x)L=f(x)L$, so
+\begin{align}
+  \text{NPV}'(x) &= -\rho_1(x)f(x)+f(x)L \nonumber\\
+                 &= -f(x)\big[\rho_1(x)-L\big] < 0, \label{t5e13-dnpv}\\
+  \mathcal P'(x) &= f(x)\big[L-\rho_0(x)\big]. \label{t5e13-dP}
+\end{align}
+By \eqref{t5e13-dnpv} the borrower wants the lowest $x$ satisfying \eqref{t5e13-be}, so $r^*$ is the lowest root of
+\begin{align}
+  E[r]+\int_{r^*}^{\bar r}\rho_0(r)f(r)\,dr+F(r^*)L &= I-A. \label{t5e13-rstar}
+\end{align}
+By (2), $\mathcal P(0)=E[r+\rho_0(r)]<I-A<E[r]+L=\mathcal P(\bar r)$, so $r^*\in(0,\bar r)$; since $\rho_0$ is increasing, $\mathcal P$ rises while $\rho_0<L$ and falls after,
+so at the lowest root $\rho_0(r^*)\le L$. (The statement's ``$r^*\in(0,r)$'' should read $(0,\bar r)$.)
+
+\answer{(ii)} $\max_x\,E[r]+\int_x^{\bar r}\rho_1f\,dr+F(x)L-I$ s.t.\ $E[r]+\int_x^{\bar r}\rho_0f\,dr+F(x)L\ge I-A$;
+$r^*$ is the lowest root of $E[r]+\int_{r^*}^{\bar r}\rho_0(r)f(r)\,dr+F(r^*)L=I-A$.
+
+\step{3}{(iii) Short-term debt and equity} Let the firm owe short-term debt $d=r^*$ at date 1 (plus, inter alia, the residual $r-r^*$ to investors
+and a long-term claim $R-B/\Delta p$ on success). If $r\ge r^*$, it pays $d$ out of $r$ and continues. If $r<r^*$, it defaults; creditors take control and
+liquidate (``bankruptcy''), collecting $r+L$. They do not renegotiate, because continuing would give them at most
+$\rho_0(r)<\rho_0(r^*)\le L$. Default cannot be strategic since $r$ is verifiable. Differentiating \eqref{t5e13-rstar} with respect to $A$ and using \eqref{t5e13-dP},
+\begin{align}
+  f(r^*)\big[L-\rho_0(r^*)\big]\,\frac{dr^*}{dA} &= -1 \nonumber\\
+  \frac{dr^*}{dA} &= -\frac{1}{f(r^*)\,[L-\rho_0(r^*)]} < 0. \label{t5e13-drdA}
+\end{align}
+Less equity requires more pledgeable income, obtained by liquidating more often: short-term debt rises.
+
+\answer{(iii)} Short-term debt $d=r^*$: the firm continues iff it can pay $d$; otherwise creditors take
+control and liquidate. $dd/dA=dr^*/dA=-1/\{f(r^*)[L-\rho_0(r^*)]\}<0$: less equity, more short-term debt.
+
+\step{4}{(iv) Court splits $L$, case $r^*>\hat r$} Investors now get $L/2$ on liquidation. Whatever the continuation policy, their income at state $r$
+(besides $r$) is at most $\max\{L/2,\rho_0(r)\}$, so the best they can be promised is
+\begin{align}
+  \mathcal P^{c}_{\max} &= E[r]+\int_0^{\bar r}\max\{L/2,\rho_0(r)\}f(r)\,dr. \label{t5e13-Pmax}
+\end{align}
+Compare state by state with the contract of (ii), which gives $L$ on $[0,r^*)$ and $\rho_0(r)$ on $[r^*,\bar r]$. For $r<\hat r$: $\max=L/2<L$. For $\hat r\le r<r^*$:
+$\max=\rho_0(r)<\rho_0(r^*)\le L$. For $r\ge r^*>\hat r$: $\max=\rho_0(r)$, the same. Hence $\mathcal P^{c}_{\max}<\mathcal P(r^*)=I-A$ by \eqref{t5e13-rstar}: no contract lets
+investors break even, and the borrower loses access to financing.
+
+\answer{(iv)} With $r^*>\hat r$, even the best policy under the court yields $\mathcal P^c_{\max}<I-A$:
+no financing.
+
+\step{5}{(v) Case $r^*<\hat r$} With cutoff $x$, investors get $\mathcal P^c(x)=E[r]+\int_x^{\bar r}\rho_0 f\,dr+F(x)L/2$, with
+$\mathcal P^{c\prime}(x)=f(x)[L/2-\rho_0(x)]$, positive below $\hat r$ and negative above. At the old cutoff,
+\begin{align}
+  \mathcal P^c(r^*) &= \mathcal P(r^*)-F(r^*)\frac L2 = I-A-F(r^*)\frac L2 < I-A. \label{t5e13-Pc}
+\end{align}
+So if $\mathcal P^c(\hat r)<I-A$ there is no financing; otherwise the new cutoff $r^{**}\in(r^*,\hat r]$ solves $\mathcal P^c(r^{**})=I-A$: bankruptcy becomes
+more likely. Lenders break even in every case (or do not lend), so they are not hurt. The borrower receives the NPV, and by \eqref{t5e13-dnpv}
+$\text{NPV}(r^{**})<\text{NPV}(r^*)$: she is hurt (or loses financing altogether). Revealed preference says the same: under an enforcing court she
+could have promised investors only $L/2$ in bankruptcy, and chose not to.
+
+\answer{(v)} Either $\mathcal P^c(\hat r)<I-A$ (no financing) or the cutoff rises to $r^{**}\in(r^*,\hat r]$
+(more bankruptcy); lenders always break even, the borrower's NPV falls.
+
+\step{6}{Numerical illustration (ours)} $r\sim U[0,1]$ ($E[r]=0.5$), $p_H(r)=0.3+0.5r$, $R=2$, $B/\Delta p=1.6$ (e.g.\ $B=0.4$, $\Delta p=0.25$), so
+$\rho_1(r)=(0.3+0.5r)(2)=0.6+r$, $\rho_0(r)=(0.3+0.5r)(2-1.6)=0.12+0.2r$, and $E[r+\rho_0]=0.5+0.12+0.2(0.5)=0.72$. With $f=1$ on $[0,1]$,
+\begin{align}
+  \mathcal P(x) &= 0.5+\int_x^1(0.12+0.2r)\,dr+Lx = 0.5+0.12(1-x)+0.1(1-x^2)+Lx \nonumber\\
+                &= 0.72+(L-0.12)x-0.1x^2. \nonumber
+\end{align}
+\emph{Case (v):} $L=0.5$, $I-A=0.75$ (conditions (1)--(2) hold: $0.6>0.5$, $1>0.75>0.72$). \eqref{t5e13-rstar} is
+$0.72+0.38x-0.1x^2=0.75$, i.e.\ $0.1x^2-0.38x+0.03=0$, with discriminant $0.38^2-4(0.1)(0.03)=0.1444-0.012=0.1324$; the lowest root is
+\begin{align}
+  r^* &= \frac{0.38-\sqrt{0.1324}}{0.2} = \frac{0.38-0.363868}{0.2} = 0.080659, \nonumber
+\end{align}
+with $\rho_0(r^*)=0.12+0.2(0.080659)=0.136132$ and, by \eqref{t5e13-drdA} with $f=1$, $dr^*/dA=-1/(0.5-0.136132)=-1/0.363868=-2.748249$.
+Here $\hat r$ solves $0.12+0.2\hat r=0.25$, so $\hat r=(0.25-0.12)/0.2=0.65>r^*$.
+Under the court $\mathcal P^c(x)=0.72+(0.25-0.12)x-0.1x^2=0.72+0.13x-0.1x^2$, so
+$\mathcal P^c(\hat r)=0.72+0.0845-0.04225=0.76225\ge0.75$, and $\mathcal P^c(r^{**})=0.75$ gives $0.1x^2-0.13x+0.03=0$, discriminant
+$0.0169-0.012=0.0049$, $r^{**}=(0.13-\sqrt{0.0049})/0.2=(0.13-0.07)/0.2=0.3$.
+The borrower's loss is $\int_{r^*}^{r^{**}}(\rho_1-L)\,dr=\int_{r^*}^{r^{**}}(0.1+r)\,dr=0.1(0.3-0.080659)+(0.09-0.080659^2)/2=0.021934+0.041747=0.063681$.
+\emph{Case (iv):} $L=0.3$, $I-A=0.78$: \eqref{t5e13-rstar} is $0.1x^2-0.18x+0.06=0$, discriminant $0.0324-0.024=0.0084$, so
+$r^*=(0.18-0.091652)/0.2=0.441742$, with $\rho_0(r^*)=0.208348\le L$; $\hat r=(0.15-0.12)/0.2=0.15<r^*$. \eqref{t5e13-Pmax} gives
+$0.5+\int_0^{0.15}0.15\,dr+\int_{0.15}^1(0.12+0.2r)\,dr=0.5+(0.15)(0.15)+0.12(0.85)+0.1(1-0.0225)=0.5+0.0225+0.102+0.09775=0.72225<0.78$: no financing.
+
+\intuition Bankruptcy is the borrower's commitment device: handing $L$ to investors after bad news is what makes the loan pay. A court that
+gives the borrower half of $L$ ex post destroys pledgeable income ex ante. Competitive lenders still break even, so the whole cost lands on the
+borrower: more frequent (inefficient) bankruptcy, or no loan at all.
+
+\pitfalls
+\begin{itemize}
+  \item Taking the highest root of the break-even equation: liquidation is inefficient by (1), so the
+        borrower wants the \emph{lowest} cutoff that still lets investors break even.
+  \item Concluding that the court helps borrowers or hurts lenders: lenders anticipate the split and
+        break even (or do not lend); the whole cost is borne by the borrower.
+  \item Thinking the default could be strategic here: $r$ is verifiable, so default happens only when
+        $r<d$ and creditors liquidate because $\rho_0(r)<L$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~586--587): same program, $r^*$ the lowest value satisfying breakeven, $d=r^*$, $dr^*/dA<0$, no financing when
+$r^*>\hat r$, and when $r^*<\hat r$ either no financing or bankruptcy over a larger interval $[0,r^{**})$, $r^{**}>r^*$, hurting the borrower only.
+(The book's wording ``no bankruptcy occurs on some interval $[0,r^{**}]$'' must mean bankruptcy occurs there.)
+
+\refbib Tirole \S3.2.1 ``The Fixed-Investment Model'' and \S3.2.2 ``The Lenders' Credit Analysis'', pp.~115--117; Exercise 4.9, pp.~190--191; answer pp.~586--587.
+
+\end{document}

@@ -372,4 +372,106 @@ check(-1.2 * 6.7, -8.04, 1e-12)
 check(10 / 1.01, 9.900990, 5e-7)
 check(4 - 5 * a, 10, 1e-12)
 
+# ---- numbers added by the deeper format (spec Section C) ----
+# 1. discount factor, required two-year return, pitfall
+check(1.09**2, 1.1881, 5e-9)
+check(1.1881 - 1, 0.1881, 1e-12)
+check(80000 + 30000 - 100000, 10000, 1e-9)
+check(-100000 + 98644.90, -1355.10, 0.005)
+# 2. market risk premium; pitfalls (market return instead of premium; equal weights)
+check(0.10 - 0.04, 0.06, 1e-12)
+check(0.04 + 1.6 * 0.10, 0.20, 1e-12)
+check((1.6 + 1.0) / 2, 1.3, 1e-12)
+# 3. pitfall: study included
+check(-(115000 + 30000 + 5000 + 20000), -170000, 0.5)
+# 4.
+check(1080 / 1000, 1.08, 1e-12)
+# 5.
+check(1 * 30, 30, 1e-12)
+check(0.60 * 0.0768, 0.04608, 5e-9)
+# 6. premium and pitfall (average of equity betas)
+check(0.14 - 0.08, 0.06, 1e-12)
+check((0.90 + 0.85) / 2, 0.875, 1e-12)
+check(V6 / 1000, 5.07, 0.005)
+# 7. discount factors, brackets, NPV at r = 0
+check(1.11**2, 1.2321, 5e-9)
+check(1.11**3, 1.367631, 5e-9)
+check(1.11**4, 1.51807041, 5e-12)
+check(npv(0.14, A7), 1.617, 5e-4)
+check(npv(0.15, A7), -0.688, 5e-4)
+check(npv(0.17, B7), 1.360, 5e-4)
+check(npv(0.18, B7), -0.325, 5e-4)
+check(npv(0.05, diff7), 0.440, 5e-4)
+check(npv(0.06, diff7), -0.326, 5e-4)
+check(npv(0.0, A7), 45, 1e-12)
+check(npv(0.0, B7), 40, 1e-12)
+# 8. annuity factors written out, IRR brackets
+for r, d, one_minus, a_p in [(0.06, 0.5583948, 0.4416052, 7.36009),
+                             (0.02, 0.8203483, 0.1796517, 8.98259),
+                             (0.11, 0.3521845, 0.6478155, 5.88923)]:
+    check((1 + r) ** -10, d, 5e-8)
+    check(1 - (1 + r) ** -10, one_minus, 5e-8)
+    check(one_minus / r, a_p, 5e-6)  # displayed arithmetic
+check(npv8(0.027), -0.0414, 5e-5)
+check(npv8(0.028), 0.0465, 5e-5)
+check(npv8(0.108), 0.0130, 5e-5)
+check(npv8(0.109), -0.0034, 5e-5)
+check(npv8(0.06), 0.693, 5e-4)
+check(npv8(0.02), -1.017, 5e-4)
+check(npv8(0.11), -0.020, 5e-4)
+# 9. after-tax debt cost, pitfall numbers
+check(0.048 * 0.65, 0.0312, 1e-12)
+check(0.11 * 0.0312, 0.003432, 5e-7)
+check(rU9 * 100, 4.59, 0.005)
+check(w_cs * 100, 6.5, 0.05)
+check(0.063936 + 0.001248, 0.065184, 5e-7)
+# 10. interest, tax saving, NPV at the WACC
+check(0.5 * 0.06, 0.03, 1e-12)
+check(0.08 * 5, 0.4, 1e-12)
+check(0.25 * 0.4, 0.1, 1e-12)
+check(0.4 - 0.1, 0.3, 1e-12)
+check(-10 + 1 / 0.10, 0.0, 1e-12)
+# 11. depreciation, tax-shield cross-check, annuity written out
+check(25000 / 10, 2500, 1e-12)
+check(30000 - 18000 - 1000, 11000, 1e-12)
+check(11000 * 0.65, 7150, 1e-9)
+check(0.35 * 2500, 875, 1e-9)
+check(7150 + 875, fcf11, 1e-9)
+check(1.14**-10, 0.2697438, 5e-8)
+check(1 - 1.14**-10, 0.7302562, 5e-8)
+check(0.7302562 / 0.14, 5.216116, 5e-7)  # displayed arithmetic
+# 12. displayed arithmetic with the printed factors
+for c, f, p in [(-52, 1.11, -46.847), (76, 1.2321, 61.683), (92, 1.367631, 67.270),
+                (112, 1.518070, 73.778)]:
+    check(c / f, p, 5e-4)
+check(1090.909 / 1.518070, 718.616, 5e-4)
+check(1350 / 1.518070, 889.287, 5e-4)
+check(1510 / 1.518070, 994.684, 5e-4)
+check(0.10 * 250, 25, 1e-12)
+# 13. book value, year 2-4 lines, discount factors, land PV cost
+check(4.2e6 - 3 * 1.4e6, 0.0, 1e-6)
+for e, t, o, d in [(1025900, 348806, 2077094, 1.4e6), (760700, 258638, 1902062, 1.4e6),
+                   (1431400, 486676, 944724, 0.0)]:
+    check(e - t + d, o, 0.5)
+check(1.13**2, 1.2769, 5e-9)
+check(1.13**3, 1.442897, 5e-9)
+check(1.13**4, 1.63047361, 5e-12)
+for c, f, p in [(1595756, 1.13, 1412173.45), (2077094, 1.2769, 1626669.28),
+                (1902062, 1.442897, 1318224.38), (2933724, 1.63047361, 1799307.87)]:
+    check(c / f, p, 0.005)
+check(1.6e6 / 1.63047361, 981309.96, 0.005)
+check(1.5e6 - 981309.96, 518690.04, 0.005)
+check(npv13, 331375, 0.5)
+# 14. determinant pieces, collecting terms, q2, NPV2 gap
+check(1.01 * 5, 5.05, 1e-12)
+check(1.01 * 10, 10.10, 1e-12)
+check(5 * 0.990099, 4.950495, 5e-7)
+check(1.749505 / 5, 0.349901, 5e-7)
+check(1.01 * 0.640198, 0.6466, 5e-5)
+check(2 - V2, 0.139010, 5e-7)
+check(psi1, 0.3499, 5e-5)
+check(psi2, 0.6402, 5e-5)
+check(V2, 1.861, 5e-4)
+check(V2 - 2, -0.139, 5e-4)
+
 print(f"PASS {n} checks")

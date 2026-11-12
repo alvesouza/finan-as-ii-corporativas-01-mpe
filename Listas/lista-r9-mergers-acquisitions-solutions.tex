@@ -1,0 +1,1161 @@
+% Worked solutions for Listas/lista-r9-mergers-acquisitions.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r9-mergers-acquisitions-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R9 (M\&A) --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\E}{\mathbb{E}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R9 --- Mergers and acquisitions}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r9-mergers-acquisitions.md}; each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-r9-mergers-acquisitions-solutions-short.pdf}. Editions are the local copies: Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial Management}, 13th ed. (2023); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Tirole, \emph{The Theory of Corporate Finance} (2005). Numbers that illustrate a conceptual answer are labelled ``illustration'' and are not part of the statement.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. True or false: valuation and acquisitions --- Higgins 9.1, p.~378}
+
+\asked Five statements to classify as true or false, each with a short reason. (a) Whether
+acquisitions destroy value for the shareholders of the \emph{acquired} (target) firm. (b) Which
+discount rate a DCF valuation of a target should use. (c) Whether a buyer should pay a larger
+control premium for a well-run firm. (d) Whether liquidation value is a floor for the share price.
+(e) Whether a share price that management finds too low pushes management toward a buyout.
+
+\approach Higgins' framework for the market for control: the most a buyer can pay is the target's
+value under the buyer's control, $V^{\text{new}}$; the stand-alone (minority) value is $V^{\text{sq}}$;
+the control premium pays for $V^{\text{new}}-V^{\text{sq}}$, the value of changing how the firm is run.
+Discount rates follow the risk of the cash flows (value additivity), and every ``floor'' on a price
+requires someone with the power to enforce it.
+
+\notation
+\begin{itemize}
+  \item $V^{\text{sq}}$: value of the target's equity under current management (the pre-bid market value of a minority stake).
+  \item $V^{\text{new}}$: value under the acquirer's management; $V^{\text{new}}-V^{\text{sq}}$: value of control.
+  \item $r_T$, $r_A$: costs of capital appropriate to the target's and the acquirer's cash flows.
+  \item $L$: liquidation value per share; $p$: market price per share.
+\end{itemize}
+
+\step{1}{(a) Target shareholders} We look at who receives the premium. Bids are made well above the
+pre-bid price, and the target's price jumps on announcement (Figure~5.3 of Exercise~3: about
+$+20$ percentage points on the announcement days, $\approx 28\%$ cumulative). Target shareholders sell
+at $V^{\text{sq}}+\text{premium}$.
+\answer{(a)} \textbf{False}: targets' shareholders gain on average (returns of 20\% or more around the
+announcement); it is the \emph{acquirers'} gains that are doubtful.
+
+\step{2}{(b) Discount rate} We apply value additivity. The value of a stream of cash flows does not
+depend on who owns it, so the target's free cash flows $FCF_t^T$ are discounted at the rate that reflects
+their own risk:
+\begin{align}
+  V^T &= \sum_{t\ge 1}\frac{\E[FCF_t^T]}{(1+r_T)^t}. \label{r9e1-dcf}
+\end{align}
+Using $r_A$ would value a risky target too high when the acquirer is safer ($r_A<r_T$) and too low when it
+is riskier.
+\answer{(b)} \textbf{False}: discount at the \emph{target's} cost of capital (the risk of the cash flows
+being valued), not the acquirer's.
+
+\step{3}{(c) Control premium} We compute the maximum premium as the value of control. Illustration: two
+targets each worth $V^{\text{sq}}=100$; under the buyer the poorly run one is worth $140$, the well run one
+$105$ (little left to improve). The maximum premium in percent is
+\begin{align}
+  \frac{V^{\text{new}}-V^{\text{sq}}}{V^{\text{sq}}} &= \frac{(140)-(100)}{100}=40\% \quad\text{(poorly run)}, \nonumber\\
+  \frac{V^{\text{new}}-V^{\text{sq}}}{V^{\text{sq}}} &= \frac{(105)-(100)}{100}=5\% \quad\text{(well run)}. \nonumber
+\end{align}
+\answer{(c)} \textbf{False}: the premium pays for improvements; a well-managed firm offers little to
+improve, so the premium should be \emph{smaller}.
+
+\step{4}{(d) Liquidation value} We ask who can force liquidation. A minority shareholder cannot sell
+the assets; only the controlling party (or, with dispersed ownership, incumbent management) can. If
+they prefer to continue (optimism, private benefits), the price can stay below $L$: illustration, $L=50$
+and $p=40$, a gap of $50-40=10$ per share that only a buyer of control can capture.
+\answer{(d)} \textbf{False}: liquidation value is a floor only if someone with control is willing to
+liquidate; otherwise the shares can trade below it (which is precisely what invites a raider).
+
+\step{5}{(e) MBO motive} Management knows more than the market. Illustration from the book's answer:
+price \$30, management's estimate \$80, so buying the firm yields $80-30=50$ per share to the insiders.
+\answer{(e)} \textbf{True}: an unusually low price relative to management's private valuation makes a
+management buyout attractive, and also creates a conflict of interest (managers gain from a low price).
+
+\intuition All five items read off one identity: price paid $=V^{\text{sq}}+$premium, and the premium
+is bounded by the value of control $V^{\text{new}}-V^{\text{sq}}$. Who captures that value depends on
+competition among bidders and on information; who can enforce a floor depends on control rights.
+\pitfalls
+\begin{itemize}
+  \item Confusing target and acquirer returns: targets gain, acquirers roughly break even on average.
+  \item Using the acquirer's WACC for the target because ``the acquirer is paying''; the discount rate
+        belongs to the cash flows.
+  \item Treating liquidation value as an arbitrage floor; it is not, because liquidation requires control.
+\end{itemize}
+\bookans True/false classification matches the book's answer (pp.~425--426): F, F, F, F, T.
+\refbib{Higgins Ch.~9, ``The Market for Control'' and ``The Premium for Control'', pp.~354--357; ``The Empirical Evidence'', p.~364; Figure~5.3, p.~169.}
+
+% =============================================================================
+\exsec{2. LBO candidates and management buyouts --- Grinblatt \& Titman 20.5 and 20.8, p.~731}
+
+\asked (20.5) Why LBOs cluster in industries with stable cash flows and non-specialized products.
+(20.8) Why an MBO improves incentives even though the same managers stay in charge.
+
+\approach An LBO replaces most equity by debt. Debt capacity is limited by expected distress costs,
+which depend on cash-flow volatility (risk of default) and on asset specificity (how much value is lost
+in liquidation or fire sales). For 20.8 the lever is ownership and the free-cash-flow discipline of
+debt (Jensen 1986): the agency problem is about the managers' \emph{stake} and \emph{discretion}, not
+their identity.
+
+\notation
+\begin{itemize}
+  \item $X$: next-period operating cash flow; $D$: face value of debt; riskless debt requires $D\le \min X$.
+  \item $s$: managers' fraction of the equity; a \$1 increase in equity value gives managers $s\cdot 1$.
+\end{itemize}
+
+\step{1}{(20.5) Stability and debt capacity} We compare how much riskless debt two firms with the same
+mean cash flow can carry. Illustration: stable firm $X\in\{90,110\}$, volatile firm $X\in\{40,160\}$,
+both with mean $100$. The largest face value repaid in every state is the worst cash flow:
+\begin{align}
+  D_{\text{stable}} &= 100-10=90, \nonumber\\
+  D_{\text{volatile}} &= 100-60=40. \nonumber
+\end{align}
+The stable firm can borrow more than twice as much without default risk, so the tax shield and the
+discipline of debt come with few expected distress costs.
+
+\step{2}{(20.5) Specialization} Specialized assets and products lose value when the firm is distressed:
+customers fear for after-sales service and spare parts, suppliers ask for cash, and specialized
+assets fetch low prices because few buyers can use them (the Shleifer--Vishny point of Exercise~14).
+Expected distress costs are therefore larger for the same default probability.
+\answer{(20.5)} Highly levered structures are cheap only when default is unlikely (stable cash flows)
+and costly default is mild (generic products and redeployable assets); both reduce the expected costs
+of financial distress that limit leverage, while the tax and free-cash-flow benefits remain.
+
+\step{3}{(20.8) Same managers, new incentives} Illustration: before the buyout managers own $s=5\%$;
+after it, $s=15\%$ (Kaplan 1989: management ownership roughly triples). For each \$1 of value they create,
+\begin{align}
+  \text{before: } s\cdot 1 &= 0.05, & \text{after: } s\cdot 1 &= 0.15, & \frac{0.15}{0.05}&=3. \nonumber
+\end{align}
+In addition, the heavy debt service pre-commits free cash flow, which removes the option to spend it on
+negative-NPV projects, and the buyout sponsor sits on a small active board.
+\answer{(20.8)} The incentive problem is not that the managers are bad but that they own little and have
+discretion over free cash flow. An MBO raises their equity stake and commits cash to debt service and
+active owners, so the \emph{same} managers face sharper incentives. Keeping them also keeps their
+firm-specific knowledge.
+
+\intuition An LBO trades financial flexibility for discipline. That trade pays where flexibility is
+least needed (steady, mature businesses) and where the discipline is most valuable (large free cash flow).
+\pitfalls
+\begin{itemize}
+  \item Saying LBOs need ``high growth''; growth firms need flexibility and have intangible, specific assets.
+  \item Thinking an MBO's benefit requires replacing managers; it comes from ownership and debt, not new people.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~20 (LBOs and MBOs, financial synergies and disciplinary takeovers); Amaro de Matos \S7.2, pp.~187--189.}
+
+% =============================================================================
+\exsec{3. Target stock prices around acquisition announcements --- Higgins 5.10, p.~189}
+
+\asked (a) Whether a three-day price response is consistent with efficiency. (b) A trading rule that
+would profit from it. (c) What happens to the response if many traders use the rule. (d) How this
+shows inefficiencies ``destroying themselves''. (e) Whether a target trading above the bid proves
+inefficiency, and what explains it.
+
+\approach Semistrong efficiency: prices reflect all public information at once, so no rule based on
+public news earns abnormal returns. A predictable post-announcement drift is a public, exploitable
+pattern. The price above the bid is valued as an expectation over possible outcomes (counter-bids),
+which is the competition-among-bidders logic of the M\&A models (Exercise~9).
+
+\notation
+\begin{itemize}
+  \item $CAR_t$: cumulative percentage change in the target's price up to day $t$ (Figure~5.3 values in the list).
+  \item Index $100\,(1+CAR_t)$: price relative to day $-40$.
+\end{itemize}
+
+\step{1}{(a) Efficiency} From Figure~5.3 the announcement move is from $\approx 8.5\%$ (day $-1$) to
+$\approx 28.5\%$ (day $+1$), a jump of $28.5-8.5=20$ points that happens almost instantly. If the same jump were spread
+over three days, the day-1 and day-2 returns would be predictable from public news already released.
+\answer{(a)} No: a predictable response to public news violates semistrong-form efficiency.
+
+\step{2}{(b) Trading rule} We compute the return of buying at the close of day 0. Suppose one third of the
+jump occurs on day 0. The index at the close of day 0 is
+\begin{align}
+  100+8.5+\frac{20}{3} &= 115.17, \label{r9e3-day0}
+\end{align}
+and selling at the close of day 2 at $100+28.5=128.5$ yields
+\begin{align}
+  \frac{128.5}{115.17}-1 &= 11.6\% \label{r9e3-ret}
+\end{align}
+in two days with no risk specific to the strategy beyond deal risk.
+\answer{(b)} Buy target shares as soon as an offer is announced and sell when the price has finished
+adjusting (two days later).
+
+\step{3}{(c)--(d) Self-destruction} Purchases at the close of day 0 push the day-0 price up; competition
+among traders moves the trade ever earlier until the whole adjustment happens on the announcement, i.e.\
+the pattern of Figure~5.3.
+\answer{(c)} The response would become (almost) instantaneous; the profit disappears.
+\answer{(d)} The profit opportunity attracts the trading that eliminates it; this is why markets with
+many informed traders look efficient.
+
+\step{4}{(e) Price above the bid} We value a target share as an expectation over outcomes. Illustration:
+bid \$60; with probability $0.3$ a rival bids \$75, with $0.6$ the bid succeeds at \$60, with $0.1$ the deal
+fails and the price falls back to \$35:
+\begin{align}
+  \E[\text{value}] &= (0.3)(75)+(0.6)(60)+(0.1)(35) = 22.5+36+3.5 = 62 > 60. \label{r9e3-exp}
+\end{align}
+\answer{(e)} No: the market expects a higher (competing or revised) bid; the price above the offer is the
+expected value of the share, not a mistake.
+
+\intuition Event studies measure how fast public news enters prices. The jump on day 0 is the
+premium being capitalized, and a price above the bid is the market's forecast of a bidding contest.
+\pitfalls
+\begin{itemize}
+  \item Reading the pre-announcement drift (days $-40$ to $-1$) as proof of inefficiency; it is consistent with
+        leakage and rumours (and with insider trading, which semistrong efficiency does not rule out).
+  \item Concluding in (e) that ``price $>$ bid'' is irrational; it is a probability-weighted value.
+\end{itemize}
+\refbib{Higgins Ch.~5, ``How Rapidly Do Stock Prices Adjust to New Information?'' and Figure~5.3, pp.~168--169.}
+
+% =============================================================================
+\exsec{4. Sources of LBO premiums --- Amaro de Matos 7.2.4 \#3, p.~189}
+
+\asked Explain where the large and lasting premiums received by pre-buyout public shareholders come from.
+
+\approach A premium is a transfer of part of the value $V^{\text{post}}-V^{\text{pre}}$ to the selling
+shareholders. List the sources of that difference: real gains (taxes, incentives, efficiency) and
+transfers from other claimants (bondholders, employees) or from information.
+
+\notation
+\begin{itemize}
+  \item $D$: new permanent debt; $\tau$: corporate tax rate; $\tau D$: present value of a perpetual tax shield (MM with taxes).
+  \item $V^{\text{pre}}$, $V^{\text{post}}$: firm value before and after the buyout.
+\end{itemize}
+
+\step{1}{Tax benefits} We value the interest tax shield. Illustration: permanent new debt $D=600$ and
+$\tau=34\%$:
+\begin{align}
+  PV(\text{tax shield}) &= \tau D = (0.34)(600)=204. \label{r9e4-ts}
+\end{align}
+Kaplan finds that pre-buyout shareholders' returns are positively related to these tax benefits.
+
+\step{2}{Agency costs} Management ownership roughly triples (Kaplan 1989a), and debt service commits free
+cash flow that managers could otherwise waste (Jensen's free-cash-flow hypothesis); operating
+performance improves after the buyout.
+
+\step{3}{Transfers} Bondholders and preferred stockholders lose at the announcement (the new debt is
+senior or riskier), and employment grows more slowly; these losses are small relative to the premiums.
+
+\step{4}{Information and efficiency} Managers know more than outside shareholders, so a buyout can
+signal undervaluation; and private ownership speeds decisions and avoids disclosure to rivals.
+\answer{(\#3)} Tax savings from high leverage; lower agency costs (managerial ownership and the
+discipline of debt on free cash flow); wealth transfers from bondholders, preferred stockholders and
+employees; managers' private information (undervaluation); efficiency gains of private ownership.
+
+\intuition The premium is sustainable when it rests on real value creation (taxes, incentives,
+efficiency); transfers and information effects explain part of it but are too small on their own.
+\pitfalls
+\begin{itemize}
+  \item Listing only taxes: Kaplan shows post-buyout returns follow operating improvements, not taxes.
+  \item Treating bondholder losses as the main source; the evidence finds them small.
+\end{itemize}
+\bookans Matches the book's answer (p.~271): taxes, agency costs, transfers from bondholders, preferred
+stockholders and employees, information, efficiency.
+\refbib{Amaro de Matos \S7.2.3, pp.~187--189.}
+
+% =============================================================================
+\exsec{5. Grossman--Hart with a toehold --- Amaro de Matos 8.1.5 \#1, p.~205}
+
+\asked Show that a bidder who already owns shares of the target can profit from a bid at a tender
+price $p\ge v$, although without shares such a bid makes a loss.
+
+\approach This is the Grossman--Hart \emph{free-rider problem}: atomistic shareholders tender only if
+$p\ge v$, because a non-tendering shareholder keeps a share worth $v$ after a successful bid. With no toehold
+the raider then buys the whole improvement at its full value and loses the cost $c$. A toehold earns the
+improvement on the shares already owned, which free riding cannot take away (Tirole \S11.5.2.2).
+
+\notation
+\begin{itemize}
+  \item $q=f(a^\circ)$: value per share under incumbent management (status quo); $v=\max_a f(a)+Z$: value under the raider, $Z>0$; shares normalized to 1.
+  \item $p$: tender price per share; $c\ge 0$: cost of the raid; $\theta\in(0,\tfrac12)$: toehold (the book's answer calls it $x$).
+\end{itemize}
+
+\step{1}{Why shareholders need $p\ge v$} A shareholder's tender decision does not change the outcome
+(Assumption~8.1.1). If the bid succeeds, keeping a share yields $v$ and tendering yields $p$; so tendering
+is optimal only if
+\begin{align}
+  p &\ge v. \label{r9e5-fr}
+\end{align}
+
+\step{2}{No toehold} The raider buys all shares at $p$ and owns a firm worth $v$:
+\begin{align}
+  \Pi_r(\theta=0) &= v-p-c \le v-v-c = -c < 0 \quad\text{when } p\ge v. \label{r9e5-no}
+\end{align}
+
+\step{3}{With a toehold} The raider already owns $\theta$ and buys the remaining $1-\theta$ at $p$. After the
+bid he owns the whole firm, worth $v$. The book counts his end-of-raid wealth minus the cash spent:
+\begin{align}
+  \Pi_r &= v-p(1-\theta)-c. \label{r9e5-book}
+\end{align}
+Setting \eqref{r9e5-book} positive and dividing by $p>0$,
+\begin{align}
+  v-p+p\theta-c &> 0 \nonumber\\
+  p\theta &> p-v+c \nonumber\\
+  \theta &> 1+\frac{c-v}{p}. \label{r9e5-cond}
+\end{align}
+At $p=v$ the threshold is $1+(c-v)/v=c/v$, which is below 1 whenever $c<v$: some toehold suffices.
+
+\step{4}{Incremental profit} Before bidding, the toehold is worth $\theta q$; the raid's \emph{net} gain
+subtracts it:
+\begin{align}
+  \Delta\Pi_r &= v-p(1-\theta)-c-\theta q \nonumber\\
+              &= \theta(v-q)-(1-\theta)(p-v)-c. \label{r9e5-inc}
+\end{align}
+At $p=v$ this is $\theta(v-q)-c$, positive if $\theta>c/(v-q)$. Illustration: $v=100$, $q=80$, $c=1$,
+$\theta=0.1$, $p=100$:
+\begin{align}
+  \Pi_r &= (100)-(100)(1-0.1)-(1) = 100-90-1=9, \nonumber\\
+  \Delta\Pi_r &= (0.1)(100-80)-(1) = 2-1 = 1>0, \nonumber
+\end{align}
+while without a toehold $\Pi_r=100-100-1=-1$. Solving $\Delta\Pi_r=0$ in \eqref{r9e5-inc} for $p$, the highest profitable bid is
+$p=v+[\theta(v-q)-c]/(1-\theta)=100+1/0.9=101.11$.
+\answer{(\#1)} With a toehold $\theta$, $\Pi_r=v-p(1-\theta)-c>0$ iff $\theta>1+(c-v)/p$ (at $p=v$: $\theta>c/v$);
+net of the toehold's initial value the bid pays iff $\theta(v-q)>c+(1-\theta)(p-v)$. The raider profits from the
+value created on the shares he already holds.
+
+\intuition Free riding lets the small shareholders capture all the value created on \emph{their} shares;
+it cannot touch the value created on the raider's own shares. A toehold therefore restores an incentive
+to raid even at a price that leaves the tendering shareholders indifferent.
+\pitfalls
+\begin{itemize}
+  \item Forgetting that tendering shareholders compare $p$ with $v$ (post-raid value), not with $q$.
+  \item Counting the raider's profit on the toehold as $\theta v$ instead of $\theta(v-q)$: the toehold was already worth $\theta q$.
+\end{itemize}
+\bookans Matches the book's answer (p.~271): profit $v-p(1-x)-c>0\iff x>1+(c-v)/p$. The book does not
+subtract the toehold's pre-bid value; Step~4 adds that refinement.
+\refbib{Amaro de Matos \S8.1.1, pp.~193--194; Tirole \S11.5.2.2, p.~433.}
+
+% =============================================================================
+\exsec{6. News Corp.\ and Dow Jones --- Higgins 9.3, p.~379}
+
+\asked (a) The cost of the acquisition to News Corp.'s shareholders. (b) The value News Corp.\ placed
+on control of Dow Jones.
+
+\approach Buying all the shares of a company means buying its assets and \emph{assuming} its
+liabilities, so the cost of the acquisition is the price paid for equity plus the (market value,
+approximated by book value) of the interest-bearing debt taken over. The value of control is the premium
+over the pre-bid (minority) market value.
+
+\notation
+\begin{itemize}
+  \item $p_b=\$60$: bid per share; $p_0=\$33$: pre-bid price; $n=82$ million shares.
+  \item $D=\$1.46$ billion: interest-bearing liabilities (book value, used as proxy for market value).
+\end{itemize}
+
+\step{1}{(a) Equity paid} We multiply the bid by the shares outstanding:
+\begin{align}
+  p_b n &= (60)(82\text{ million}) = \$4.92\text{ billion}. \label{r9e6-eq}
+\end{align}
+
+\step{2}{(a) Add the assumed debt} The buyer becomes responsible for Dow Jones's debt:
+\begin{align}
+  \text{Cost} &= p_b n + D = (4.92)+(1.46) = \$6.38\text{ billion}. \label{r9e6-cost}
+\end{align}
+\answer{(a)} About \$6.38 billion (an estimate because book debt approximates market debt).
+
+\step{3}{(b) Value of control} We compute the premium over the pre-bid price, per share and in total:
+\begin{align}
+  (p_b-p_0)\,n &= (60-33)(82\text{ million}) = (27)(82\text{ million}) = \$2.214\text{ billion}, \label{r9e6-ctrl}\\
+  \frac{p_b-p_0}{p_0} &= \frac{27}{33} = 81.8\%. \nonumber
+\end{align}
+\answer{(b)} About \$2.21 billion, an 81.8\% premium over the pre-bid equity value of $33\times 82=\$2.706$ billion.
+
+\intuition The pre-bid price is the value of a minority stake under current management; News Corp.\ paid
+\$2.21 billion more because it expected to run Dow Jones differently (or to enjoy private benefits).
+\pitfalls
+\begin{itemize}
+  \item Reporting only the \$4.92 billion paid for equity: the assumed debt is part of the price.
+  \item Computing the control value from total cost (\$6.38 billion) instead of the premium over the pre-bid equity value.
+\end{itemize}
+\bookans Matches the book's answer (p.~426): \$6.38 billion and \$2.21 billion.
+\refbib{Higgins Ch.~9, ``The Premium for Control'', pp.~354--357.}
+
+% =============================================================================
+\exsec{7. Procureps: EPS dilution as a merger criterion --- Higgins 9.9, p.~381}
+
+\asked (a) Fill in the table: market values, prices, the maximum number of shares Procureps (P) can
+issue without diluting its EPS of \$2, their value and the implied maximum premium for V1 and for V2.
+(b) What this says about the ``avoid EPS dilution'' rule.
+
+\approach In an exchange-of-shares merger with no synergies, the combined earnings are the sum of the
+earnings. Keeping EPS at \$2 caps the combined share count; the extra shares are worth P's price; the
+premium compares that value with the target's market value. The rule depends only on P/E ratios, not on
+value creation.
+
+\notation
+\begin{itemize}
+  \item $E_P=2$, $E_{V1}=E_{V2}=1$: earnings (\$ million); P/E: $30$, $8$, $35$; one million shares each.
+  \item $n^{\max}$: maximum combined shares with EPS $\ge 2$; $\Delta n=n^{\max}-1$: new shares; $p_P$: P's share price.
+\end{itemize}
+
+\step{1}{Market values and prices} Market value $=$ P/E $\times$ earnings, and price $=$ value $/$ shares:
+\begin{align}
+  MV_P &= (30)(2)=60, & p_P&=60/1=\$60, \nonumber\\
+  MV_{V1} &= (8)(1)=8, & p_{V1}&=\$8, \nonumber\\
+  MV_{V2} &= (35)(1)=35, & p_{V2}&=\$35. \nonumber
+\end{align}
+
+\step{2}{Maximum shares} Combined earnings are $2+1=3$ in either merger. EPS stays at 2 if
+\begin{align}
+  \frac{3}{n^{\max}} &= 2 \;\Rightarrow\; n^{\max}=\frac{3}{2}=1.5 \text{ million}, \qquad \Delta n = 1.5-1 = 0.5\text{ million}. \label{r9e7-n}
+\end{align}
+
+\step{3}{Value of the new shares and premium} At P's price the 0.5 million new shares are worth
+$(0.5)(60)=\$30$ million. The maximum premium over each target's market value is
+\begin{align}
+  \text{V1: }\frac{30}{8}-1 &= 3.75-1 = 275\%, \label{r9e7-v1}\\
+  \text{V2: }\frac{30}{35}-1 &= 0.857-1 = -14.3\%. \label{r9e7-v2}
+\end{align}
+
+\begin{center}
+\begin{tabular}{lccccc}
+\toprule
+Company & P & V1 & P+V1 & V2 & P+V2\\
+\midrule
+Earnings (\$m) & 2 & 1 & 3 & 1 & 3\\
+P/E & 30 & 8 & & 35 & \\
+Market value (\$m) & 60 & 8 & & 35 & \\
+Shares (m) & 1 & 1 & 1.5 & 1 & 1.5\\
+EPS (\$) & 2 & 1 & 2 & 1 & 2\\
+Price (\$) & 60 & 8 & & 35 & \\
+Max.\ new shares (m) & & & 0.5 & & 0.5\\
+Value of new shares (\$m) & & & 30 & & 30\\
+Max.\ premium (\%) & & & 275 & & $-14$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\answer{(a)} Procureps can pay up to a 275\% premium for V1 but must buy V2 at a 14\% \emph{discount} to
+avoid EPS dilution.
+
+\step{4}{(b) What the rule does to value} With no synergies, value is conserved. Buying V2 at its market
+price issues $35/60=0.583$ million shares; EPS falls to $3/1.583=\$1.89$, but the share price is unchanged:
+\begin{align}
+  \frac{60+35}{1+0.583} &= \frac{95}{1.583} = \$60. \nonumber
+\end{align}
+Buying V1 at the ``allowed'' 275\% premium keeps EPS at \$2 but transfers $30-8=\$22$ million to V1's
+holders: P's price falls to $(60+8)/1.5=\$45.33$, a loss of \$14.67 per share.
+\answer{(b)} The criterion is shortsighted: it favours low-P/E, low-growth targets and penalizes
+high-growth ones, and it can approve value-destroying deals while rejecting value-neutral ones. Value, not
+EPS, is the test.
+
+\intuition EPS accretion is an artefact of exchanging high-P/E paper for low-P/E earnings; the market
+prices the combined firm at a blended P/E, so EPS moves while value does not.
+\pitfalls
+\begin{itemize}
+  \item Valuing the new shares at the target's price instead of the acquirer's.
+  \item Reading EPS dilution as value destruction (the V2 case shows EPS down, price unchanged).
+\end{itemize}
+\bookans Matches the book's answer (p.~427): 275\% and $-14\%$.
+\refbib{Higgins Ch.~9, ``Avoiding Dilution in Earnings per Share'', p.~362.}
+
+% =============================================================================
+\exsec{8. Hansen: cash versus stock with a uniform target value --- Amaro de Matos 8.2.6 \#3, p.~223}
+
+\asked Show that with $v\sim U(0,100)$ and $w(v)=1.5v$ no cash offer benefits both sides, while an
+offer of a fraction $\beta$ of the merged firm's shares is accepted by every target type and still
+benefits the acquirer whenever its own value $x$ is below 150.
+
+\approach Hansen's model is a lemons problem: the target knows $v$, the acquirer does not. A cash offer
+$C$ is accepted only by targets with $v\le C$ (adverse selection), so the acquirer's gain is computed
+\emph{conditional on acceptance}. A stock offer makes the target's payment contingent on what the
+target is worth (the target receives a share of $x+w(v)$), which weakens the adverse selection: the
+means of payment matters under asymmetric information.
+
+\notation
+\begin{itemize}
+  \item $v\in(0,100)$: target's stand-alone value, privately known to the target; $F(v)=v/100$, $f(v)=1/100$.
+  \item $w(v)=1.5v$: target's value to the acquirer; $x>0$: acquirer's value, publicly known.
+  \item $C$: cash offer; $\beta\in(0,1)$: fraction of the merged firm offered; $v^*$: highest accepting type.
+  \item $E(w\mid C)=\E[w(v)\mid v\le C]$: value to the acquirer of the targets that accept.
+\end{itemize}
+
+\step{1}{Who accepts a cash offer} The target sells for $C$ only if $C\ge v$, so the accepted types are
+$v\in(0,C]$ with probability $F(C)=C/100$ (for $C\le 100$).
+
+\step{2}{Value of what the acquirer gets} Conditional on $v\le C$, $v$ is uniform on $(0,C)$ with mean
+$C/2$, so
+\begin{align}
+  E(w\mid C) &= 1.5\,\E[v\mid v\le C] = 1.5\cdot\frac{C}{2} = 0.75\,C. \label{r9e8-Ew}
+\end{align}
+
+\step{3}{Cash gain} Substituting \eqref{r9e8-Ew} into $E(\Pi_r\mid C)=F(C)[E(w\mid C)-C]$,
+\begin{align}
+  E(\Pi_r\mid C) &= \frac{C}{100}\,\big[(0.75C)-C\big] \nonumber\\
+                 &= -\frac{0.25\,C^2}{100} < 0 \quad\text{for every } C\in(0,100]. \label{r9e8-cash}
+\end{align}
+(At $C=100$, where every type accepts, the loss is $-25$.) The acquirer always pays $C$ for assets worth
+$0.75C$ to it: although $w(v)=1.5v>v$ creates gains from trade for every type, no cash offer is
+profitable.
+\answer{(cash)} No mutually beneficial cash trade exists: $E(\Pi_r\mid C)=-0.0025\,C^2<0$ for all $C$.
+
+\step{4}{Who accepts a stock offer} A target of type $v$ holding $\beta$ of the merged firm gets
+$\beta[x+w(v)]$; it accepts iff
+\begin{align}
+  \beta(x+1.5v) &\ge v \iff \beta \ge \frac{v}{x+1.5v}. \label{r9e8-acc}
+\end{align}
+The right-hand side increases in $v$: its derivative is
+\begin{align}
+  \frac{d}{dv}\frac{v}{x+1.5v} &= \frac{(x+1.5v)-1.5v}{(x+1.5v)^2} = \frac{x}{(x+1.5v)^2} > 0, \nonumber
+\end{align}
+which is Hansen's condition $dw/dv=1.5<(x+1.5v)/v$. So the hardest type to please is $v=100$, and every
+type accepts iff
+\begin{align}
+  \beta(x+150) &\ge 100 \iff \beta \ge \frac{100}{x+150}. \label{r9e8-bmin}
+\end{align}
+
+\step{5}{Acquirer's participation} If every type accepts, the acquirer gets $w(v)$ with mean
+$\E[1.5v]=1.5\times 50=75$, and keeps $1-\beta$ of the merged firm. Condition \eqref{r9e8-acc} of the
+model, (8.12), is
+\begin{align}
+  (1-\beta)(x+75) &\ge x \iff \beta \le 1-\frac{x}{x+75} = \frac{75}{x+75}. \label{r9e8-bmax}
+\end{align}
+
+\step{6}{Both conditions} A $\beta$ exists iff the lower bound \eqref{r9e8-bmin} does not exceed the
+upper bound \eqref{r9e8-bmax}. Cross-multiplying (both denominators positive):
+\begin{align}
+  \frac{100}{x+150} &\le \frac{75}{x+75} \nonumber\\
+  100(x+75) &\le 75(x+150) \nonumber\\
+  100x+7500 &\le 75x+11250 \nonumber\\
+  25x &\le 3750 \nonumber\\
+  x &\le 150. \label{r9e8-x}
+\end{align}
+With $x<150$ the inequality is strict, so some $\beta$ gives the acquirer a strict gain. Example $x=100$:
+$\beta\in[100/250,\,75/175]=[0.4,\,0.4286]$; at $\beta=0.4$ the acquirer's gain is
+$(1-0.4)(100+75)-100=105-100=5$.
+
+\step{7}{Necessity (partial-acceptance stock offers)} An offer accepted only by $v\le v^*$ sets
+$\beta=v^*/(x+1.5v^*)$ and yields conditional value $E(w\mid v^*)=0.75v^*$, so the gain is
+$F(v^*)\{(1-\beta)(x+0.75v^*)-x\}$. Since $1-\beta=(x+0.5v^*)/(x+1.5v^*)$,
+\begin{align}
+  (1-\beta)(x+0.75v^*)-x &= \frac{(x+0.5v^*)(x+0.75v^*)-x(x+1.5v^*)}{x+1.5v^*} \nonumber\\
+  &= \frac{x^2+1.25xv^*+0.375v^{*2}-x^2-1.5xv^*}{x+1.5v^*} \nonumber\\
+  &= \frac{v^*(0.375v^*-0.25x)}{x+1.5v^*}, \nonumber
+\end{align}
+positive iff $v^*>\tfrac{2}{3}x$. As $v^*\le 100$, some stock offer gains iff $x<150$: the bound is also
+necessary.
+\answer{(stock)} Any $\beta\in[100/(x+150),\,75/(x+75)]$ is accepted by all types and benefits the acquirer;
+the interval is non-empty iff $x\le 150$ (strict gain for $x<150$), and no stock offer gains for $x\ge 150$.
+
+\intuition Cash is a fixed payment: only targets worth less than the offer accept, so the acquirer buys
+lemons. Stock pays each target in proportion to the merged value, which rises with $w(v)$; part of the
+payment adjusts with the target's quality. The adjustment is diluted when the acquirer is large, because
+then $\beta(x+w)$ moves little with $v$; hence the upper bound on $x$.
+\pitfalls
+\begin{itemize}
+  \item Evaluating the cash offer at the unconditional mean $\E[w]=75$ instead of the mean among
+        targets that accept ($0.75C$): the winner's curse.
+  \item Checking the target's condition at the mean $v$ instead of at the highest accepting type.
+  \item Reading the book's ``$p\le 75/(x+75)$'' literally; the $p$ is a misprint for $\beta$.
+\end{itemize}
+\bookans Matches the book's answer (p.~276): the acquirer gets $0.75C$ for $C$; stock works when
+$\beta(x+150)\ge 100$ and $(1-\beta)(x+75)\ge x$, consistent iff $x\le 150$.
+\refbib{Amaro de Matos \S8.2.2, pp.~207--210; Hansen (1987).}
+
+% =============================================================================
+\exsec{9. Fishman (1988): why the preemptive signal is not fully revealing --- Amaro de Matos 8.2.6 \#1, p.~223}
+
+\asked Why bidder 1's opening bid in Fishman's equilibrium reveals only a range of $v_1$, and how the
+equilibrium would change if bidder 2 could observe $v_1$.
+
+\approach Preemptive bidding is signalling: a high opening bid deters bidder 2 from paying $c_2$ to
+enter an auction. Deterrence only requires bidder 2 to believe that $v_1$ is high enough on average
+(above the threshold $r$); once that belief is induced, a higher type gains nothing by bidding more.
+Compare with the complete-information benchmark where no signal is needed.
+
+\notation
+\begin{itemize}
+  \item $v$: target's stand-alone value; $v_i$: bidder $i$'s valuation, density $f_i$ on $[l,h]$; $c_2$: bidder 2's cost of learning $v_2$.
+  \item $g(v_1)\equiv\E_{v_2}[\Pi_2(v_1,\tilde v_2,\cdot,1)]+c_2=\E[\max(\tilde v_2-v_1,0)]$: bidder 2's gross expected gain from an auction against $v_1$, decreasing in $v_1$.
+  \item $r$: preemption threshold, $\E[g(\tilde v_1)\mid \tilde v_1\ge r]=c_2$; $w$: complete-information entry cutoff, $g(w)=c_2$.
+  \item $\bar p(v_1)=\E_{v_2}\min[\max(v,\tilde v_2),v_1]$: the highest preemptive bid type $v_1$ is willing to make.
+\end{itemize}
+
+\step{1}{Bidder 2's payoff} From (8.10) with $d=1$, $\Pi_2=v_2-\min(v_2,v_1)-c_2=\max(v_2-v_1,0)-c_2$:
+in the ascending auction bidder 2 wins when $v_2>v_1$ and pays $v_1$. Hence its expected payoff is
+$g(v_1)-c_2$, and $g$ falls as $v_1$ rises.
+
+\step{2}{What the equilibrium reveals} Bidder 1 offers $\bar p(r)$ if $v_1\ge r$ and $v$ if $v_1<r$.
+Bidder 2 sees one of two messages: ``$v_1\in[v,r)$'' or ``$v_1\ge r$''. All types above $r$ make the
+\emph{same} bid. They do not separate because bidder 2's decision depends only on its belief about
+$v_1$, and the pooled belief $\E[g\mid v_1\ge r]=c_2$ already makes it stay out; bidding more costs a type
+above $r$ money and changes nothing.
+\answer{(why)} The equilibrium is a two-message (partition) equilibrium: bidder 2 learns only whether
+$v_1<r$ or $v_1\ge r$, not $v_1$ itself, so it is not fully revealing.
+
+\step{3}{Complete information} If bidder 2 observed $v_1$, it would enter iff $g(v_1)\ge c_2$, i.e.\
+iff $v_1<w$ with $g(w)=c_2$. Bidder 1 would no longer need a costly signal; he would open at $v$ (the
+lowest acceptable price) and let bidder 2 decide on the true $v_1$. Because $g$ is decreasing and
+$\E[g\mid v_1\ge r]=c_2$, the value at the bottom of the pool is above the pool average:
+$g(r)>c_2=g(w)$, hence $w>r$.
+
+\step{4}{Illustration} Take $v_1,v_2\sim U[0,1]$, $v=0.6$ (so $\E[\tilde v_i]=0.5<v$) and $c_2=0.02$.
+Then $g(v_1)=\int_{v_1}^1(t-v_1)\,dt=(1-v_1)^2/2$.
+\begin{align}
+  \text{cutoff } w:&\quad \frac{(1-w)^2}{2}=0.02 \;\Rightarrow\; 1-w=\sqrt{0.04}=0.2 \;\Rightarrow\; w=0.8, \nonumber\\
+  \text{threshold } r:&\quad \frac{1}{1-r}\int_r^1\frac{(1-t)^2}{2}\,dt=\frac{(1-r)^2}{6}=0.02 \;\Rightarrow\; 1-r=\sqrt{0.12}=0.3464 \;\Rightarrow\; r=0.6536. \nonumber
+\end{align}
+At $v_1=r$, $g(r)=0.12/2=0.06>0.02$. The preemptive bid is
+\begin{align}
+  \bar p(r) &= v\cdot\Pr(\tilde v_2<v)+\int_v^r t\,dt + r\cdot\Pr(\tilde v_2>r) \nonumber\\
+            &= (0.6)(0.6)+\frac{r^2-0.36}{2}+r(1-r) = 0.36+0.0336+0.2264 = 0.62. \nonumber
+\end{align}
+Types $v_1\in[0.6536,\,0.8)$ deter bidder 2 by pooling at $0.62$ but would face entry under observability.
+\answer{(observable $v_1$)} Bidder 1 bids $v$; bidder 2 competes iff $v_1<w$, with $w>r$. Types in
+$[r,w)$ are deterred in the signalling equilibrium but not under observability: preemption is more
+frequent with private information, and the target receives a premium ($\bar p(r)>v$) only because of it.
+
+\intuition Signalling is needed only to the extent that it changes the rival's action, and that
+action is binary (enter or not). A binary decision can be steered by a binary message, so the
+equilibrium pools types. Private information lets weak-but-above-$r$ types free ride on strong types'
+deterrence.
+\pitfalls
+\begin{itemize}
+  \item Expecting separation because types differ: separation requires each type's payoff to depend on the
+        rival's \emph{exact} belief, which it does not here.
+  \item Computing $r$ from $g(r)=c_2$ (the marginal type) instead of the average over $v_1\ge r$.
+\end{itemize}
+\bookans Matches the book's answer (p.~276): bidder 2 learns only $v\le v_1<r$ or $v_1\ge r$; with
+observable $v_1$ it competes iff $v_1<w$ with $r<w$, so types in $[r,w)$ are deterred only in the
+signalling equilibrium.
+\refbib{Amaro de Matos \S8.2.1, pp.~206--207; Fishman (1988).}
+
+% =============================================================================
+\exsec{10. Jegadeesh--Chowdhry: no pooling equilibrium --- Amaro de Matos 8.1.5 \#8, p.~205}
+
+\asked With toehold $\alpha_m=0.3$, types $Z_L=40$ (40\%) and $Z_H=80$ (60\%), and success probability
+$P(\pi)=\ln\pi$, show that the pooling equilibrium (both types hold $\alpha_m$ and bid $Z_M$) breaks down.
+
+\approach A pooling equilibrium fails if some type can deviate to an action that the other type would
+not mimic and that the deviating type strictly prefers. Here the low type deviates to a lower bid
+$Z_L$ together with a smaller toehold $\alpha'$, chosen so that the high type is exactly indifferent
+(the cheapest credible signal). This uses results~1 and 2 of Jegadeesh--Chowdhry: the cost of a lower
+toehold is the same for both types, but a lower bid helps the low type more.
+
+\notation
+\begin{itemize}
+  \item $G(\pi,\alpha;Z)=P(\pi)[0.5Z-(0.5-\alpha)\pi]$: bidder's value (8.6), bid premium $\pi$, toehold $\alpha$, type $Z$.
+  \item $P(\pi)=\ln\pi$: increasing and concave (Assumption~8.1.4) and positive for $\pi>1$.
+  \item $Z_M=\E[Z]$: pooled bid (free-rider condition binding: $\pi=\E[Z\mid\alpha,\pi]$).
+\end{itemize}
+
+\step{1}{Pooled bid} With no information in $\alpha$ or $\pi$, the free-rider condition requires
+$\pi=\E[Z]$:
+\begin{align}
+  Z_M &= (0.4)(40)+(0.6)(80) = 16+48 = 64. \label{r9e10-ZM}
+\end{align}
+
+\step{2}{Values in the pool} With $\ln 64=4.15888$,
+\begin{align}
+  G(64,0.3;80) &= \ln(64)\,[0.5(80)-(0.5-0.3)(64)] \nonumber\\
+               &= 4.15888\,[40-12.8] = 4.15888(27.2)=113.1216, \label{r9e10-GH}\\
+  G(64,0.3;40) &= \ln(64)\,[0.5(40)-(0.2)(64)] \nonumber\\
+               &= 4.15888\,[20-12.8] = 4.15888(7.2)=29.944. \label{r9e10-GL}
+\end{align}
+The low type pays $64>40$ for a gain worth 40 to it: it is subsidizing the high type.
+
+\step{3}{The deviation that the high type will not mimic} The low type bids $\pi=Z_L=40$ (which
+shareholders accept if they believe the bidder is the low type) with toehold $\alpha'$ such that the high
+type is indifferent:
+\begin{align}
+  G(40,\alpha';80) &= G(64,0.3;80) \nonumber\\
+  \ln(40)\,[40-(0.5-\alpha')40] &= 113.1216 \nonumber\\
+  3.688879\,(20+40\alpha') &= 113.1216 \nonumber\\
+  20+40\alpha' &= \frac{113.1216}{3.688879} = 30.6656 \nonumber\\
+  \alpha' &= \frac{30.6656-20}{40} = 0.26664. \label{r9e10-ap}
+\end{align}
+Any $\alpha$ slightly below $\alpha'$ makes mimicking strictly unattractive for the high type.
+
+\step{4}{The low type gains} Its value from the deviation is
+\begin{align}
+  G(40,\alpha';40) &= \ln(40)\,[0.5(40)-(0.5-0.26664)(40)] \nonumber\\
+                   &= 3.688879\,[20-9.3344] = 3.688879(10.6656) = 39.344 > 29.944. \label{r9e10-dev}
+\end{align}
+\answer{(\#8)} The low type strictly prefers to bid 40 with a toehold $\alpha'=0.2666<0.3$ (value $39.34$
+versus $29.94$ in the pool), and the high type does not imitate it (value $113.12$ either way); so the
+pooling equilibrium does not survive. The toehold works as a signal: a \emph{smaller} toehold credibly
+signals a lower valuation.
+
+\step{5}{Why the signal separates} Result 2: $\partial G/\partial\alpha=\pi P(\pi)$ does not depend on $Z$, so
+reducing the toehold from $0.3$ to $\alpha'$ at bid 40 costs both types the same,
+$40\ln(40)(0.3-0.26664)=4.92$. Result 1: $\partial[G(64)-G(40)]/\partial Z=0.5[P(64)-P(40)]>0$, so
+bidding low is worth more to the low type. Equal costs and unequal benefits sort the types.
+
+\intuition In Jegadeesh--Chowdhry the bid premium \emph{rises} with the toehold: a bidder who buys
+many shares before the offer reveals a high valuation, and must then bid high. A low-valuation bidder
+deliberately buys fewer shares than it could, to be believed when it bids low.
+\pitfalls
+\begin{itemize}
+  \item Choosing $\alpha'$ to make the \emph{low} type indifferent; the binding constraint is that the high type does not mimic.
+  \item Using $Z_M$ as the low type's bid after deviating; the point of the deviation is the lower bid.
+\end{itemize}
+\bookans Matches the book's answer (pp.~274--275): $Z_M=64$, $G=113.1216$ and $29.944$,
+$\alpha'=0.2667$; the book prints $G(40,0.2667;40)=39.337$, against $39.344$ here with $\alpha'$ unrounded
+(rounding of $\alpha'$ and of the logarithms).
+\refbib{Amaro de Matos \S8.1.4, pp.~201--204; Jegadeesh and Chowdhry (1994).}
+
+% =============================================================================
+\exsec{11. Takeover defenses: a flip-over pill whose new shares vote --- Tirole 11.1, p.~441}
+
+\asked Redo Tirole's poison-pill analysis (\S11.5.2.4) when the shares issued to non-tendering
+shareholders after a hostile takeover carry votes: what fraction the raider must buy, the
+shareholders' indifference condition, the raider's premium and profit, and the optimal pill.
+
+\approach Free-riding logic (Grossman--Hart, Tirole \S11.5.1): with a continuum of shareholders the
+success probability $\beta$ makes them indifferent between tendering and holding. The pill is a
+transfer from the raider to the non-tendering holders after success. Voting new shares add one
+element: they dilute the raider's \emph{votes}, so the raider needs a larger fraction of the old shares
+to keep control after the pill is triggered. Tirole's footnote 26 says the analysis is ``basically
+unchanged''; we verify that and quantify the change.
+
+\notation
+\begin{itemize}
+  \item $v$, $\hat v$: investor value per old share under incumbent and raider, $\hat v-v\equiv 1$; $\hat w$: raider's private benefit.
+  \item $m$: new shares received free by each untendered old share after a successful takeover (Tirole's example: $m=1$).
+  \item $\kappa'$: fraction of old shares the raider must buy; $\Delta_u$: gain per untendered old share; $\Delta_r$: dilution per raider share.
+  \item $P$: premium over $v$; $\beta$: probability of success.
+\end{itemize}
+
+\step{1}{Control threshold} After success the raider holds $\kappa'$ old shares and the others hold
+$(1-\kappa')(1+m)$ shares, all voting. He keeps a majority iff
+\begin{align}
+  \frac{\kappa'}{\kappa'+(1+m)(1-\kappa')} &\ge \frac12 \nonumber\\
+  2\kappa' &\ge \kappa'+(1+m)(1-\kappa') \nonumber\\
+  \kappa'(2+m) &\ge 1+m \nonumber\\
+  \kappa' &\ge \frac{1+m}{2+m}. \label{r9e11-k}
+\end{align}
+With non-voting new shares the threshold is $\kappa=\tfrac12$; with $m=1$ it becomes $\kappa'=2/3$.
+
+\step{2}{Cash-flow split at the threshold} Total cash-flow shares are $\kappa'+(1+m)(1-\kappa')$, which
+at $\kappa'=(1+m)/(2+m)$ equals $2(1+m)/(2+m)$. A raider share is worth
+$\hat v(2+m)/[2(1+m)]$ and an untendered old share (with its $m$ new ones) $(1+m)\hat v(2+m)/[2(1+m)]=\hat v(2+m)/2$:
+\begin{align}
+  \Delta_u &= \frac{(2+m)\hat v}{2}-\hat v = \frac{m\hat v}{2}, &
+  \Delta_r &= \hat v-\frac{(2+m)\hat v}{2(1+m)} = \frac{m\hat v}{2(1+m)}. \label{r9e11-D}
+\end{align}
+The pill is a pure transfer: $\kappa'\Delta_r=\frac{1+m}{2+m}\cdot\frac{m\hat v}{2(1+m)}=\frac{m\hat v}{2(2+m)}=(1-\kappa')\Delta_u$, so
+\begin{align}
+  \kappa'(\Delta_r+\Delta_u) &= (1-\kappa')\Delta_u+\kappa'\Delta_u = \Delta_u. \label{r9e11-cons}
+\end{align}
+
+\step{3}{Tendering indifference} A holder compares $v+P$ with keeping a share worth $\hat v+\Delta_u$ if the
+raid succeeds and $v$ otherwise:
+\begin{align}
+  \beta(\hat v+\Delta_u)+(1-\beta)v &= v+P \nonumber\\
+  \beta(\hat v-v+\Delta_u) &= P \nonumber\\
+  \beta &= \frac{P}{1+\Delta_u}. \label{r9e11-beta}
+\end{align}
+
+\step{4}{Raider's profit} He buys $\kappa'$ shares at $v+P$, which are worth $\hat v-\Delta_r$ to him on
+success and $v$ on failure:
+\begin{align}
+  \pi &= \beta\hat w+\kappa'[\beta(\hat v-\Delta_r)+(1-\beta)v-(v+P)] \nonumber\\
+      &= \beta\hat w+\kappa'[\beta(1-\Delta_r)-P] \nonumber\\
+      &= \beta\hat w+\kappa'[\beta(1-\Delta_r)-\beta(1+\Delta_u)] \quad\text{(using \eqref{r9e11-beta})} \nonumber\\
+      &= \beta\hat w-\beta\kappa'(\Delta_r+\Delta_u) \nonumber\\
+      &= \beta(\hat w-\Delta_u) \quad\text{(using \eqref{r9e11-cons})}. \label{r9e11-pi}
+\end{align}
+This is Tirole's formula with $\Delta$ replaced by $\Delta_u$. If $\hat w>\Delta_u$ the raider sets $\beta=1$,
+i.e.\ $P=1+\Delta_u$, and earns $\hat w-\Delta_u$; otherwise he does not bid.
+
+\step{5}{Numbers} $v=2$, $\hat v=3$, $\hat w=2$, $m=1$. Voting: $\kappa'=2/3$, $\Delta_u=1(3)/2=1.5$,
+$\Delta_r=3/4=0.75$, check $\tfrac23(0.75)=\tfrac13(1.5)=0.5$; premium $P=1+1.5=2.5$ and profit
+$2-1.5=0.5$. Non-voting (Tirole's footnote 27): $\kappa=\tfrac12$, $\Delta=\hat v\,m/(2+m)=3/3=1$, $P=2$,
+profit $2-1=1$.
+
+\step{6}{Optimal pill} With $\hat w$ known, the target sets $\Delta_u^*=\hat w$, extracting the whole private
+benefit ($P=1+\hat w$, $\pi=0$), exactly as with non-voting shares. Only the instrument changes: voting new
+shares deliver $\Delta_u=m\hat v/2$ per untendered share versus $m\hat v/(2+m)$, so fewer new shares are needed,
+$m=2\hat w/\hat v=4/3$ (with $\kappa'=0.7$) instead of $m=2\hat w/(\hat v-\hat w)=4$ in the example.
+\answer{(11.1)} With voting new shares the raider must buy $\kappa'=(1+m)/(2+m)>\tfrac12$ of the shares;
+the equilibrium is otherwise unchanged: $\beta=P/(1+\Delta_u)$, $\pi=\beta(\hat w-\Delta_u)$, bid
+$P=1+\Delta_u$ when $\hat w>\Delta_u$, optimal pill $\Delta_u^*=\hat w$. A given number of new shares
+is a stronger defense (larger $\Delta_u$), and the pill also raises the number of shares that must be tendered.
+
+\intuition Whatever the pill does to votes, it is a transfer from the raider to the holdouts on
+success. Free riding prices that transfer into the premium, so the raider pays it on every share he
+buys; net of the transfer, he keeps only his private benefit minus the holdouts' gain. Voting rights
+change how many shares he must buy, not that accounting.
+\pitfalls
+\begin{itemize}
+  \item Keeping $\kappa=\tfrac12$: with voting new shares, a bare majority of old shares loses control once the pill is triggered.
+  \item Writing the raider's loss per share as $\Delta_u$ (the holdouts' gain); only at $\kappa=\tfrac12$ are the two equal.
+\end{itemize}
+\bookans No answer in the book; Tirole's footnote 26 (``basically unchanged'') is consistent with the result.
+\refbib{Tirole \S11.5.1--11.5.2, pp.~431--434.}
+
+% =============================================================================
+\exsec{12. Hansen: every cash offer is dominated by a stock offer --- Amaro de Matos 8.2.6 \#4, p.~223}
+
+\asked For any cash offer $C$ that the acquirer would make (non-negative expected gain), construct a
+stock offer that is accepted by exactly the same target types and leaves the acquirer with a higher
+expected wealth.
+
+\approach The book's construction: $\beta^*=C/[x+w(C)]$. Two steps: (i) show that under Hansen's
+assumption $dw/dv<(x+w)/v$ the target types who accept $\beta^*$ are exactly those who accept $C$,
+namely $v\le C$; (ii) subtract the two expected wealths and sign the difference. The economics: stock
+pays the target in a currency whose value moves with $w(v)$, which shifts part of the lemons cost back to
+the target.
+
+\notation
+\begin{itemize}
+  \item $v\in[v_l,v_h]$, distribution $F$, density $f$; $w(v)\ge v$, increasing; $x$: acquirer's value (known).
+  \item $C$: feasible cash offer, $E(\Pi_r\mid C)=F(C)[E(w\mid C)-C]\ge 0$, with $E(w\mid C)=\E[w(v)\mid v\le C]$.
+  \item $\beta^*=C/[x+w(C)]$; $W^{\text{cash}}$, $W^{\text{stock}}$: acquirer's expected wealth.
+\end{itemize}
+
+\step{1}{The acceptance rule is the same} Type $v$ accepts $\beta^*$ iff $\beta^*[x+w(v)]\ge v$, i.e.\ iff
+$h(v)\equiv v/[x+w(v)]\le\beta^*=h(C)$. Differentiating $h$ (quotient rule),
+\begin{align}
+  h'(v) &= \frac{[x+w(v)]-v\,w'(v)}{[x+w(v)]^2} > 0 \iff w'(v) < \frac{x+w(v)}{v}, \label{r9e12-h}
+\end{align}
+which is Hansen's assumption. So $h$ is strictly increasing and $h(v)\le h(C)\iff v\le C$: the stock offer
+is accepted with probability $F(C)$, by the same types as the cash offer.
+
+\step{2}{The two expected wealths} From (8.14) and the stock formula,
+\begin{align}
+  W^{\text{cash}} &= F(C)[E(w\mid C)-C]+x, \label{r9e12-Wc}\\
+  W^{\text{stock}} &= F(C)(1-\beta^*)[E(w\mid C)+x]+[1-F(C)]x. \label{r9e12-Ws}
+\end{align}
+
+\step{3}{The difference} Expand \eqref{r9e12-Ws} and subtract \eqref{r9e12-Wc}:
+\begin{align}
+  W^{\text{stock}}-W^{\text{cash}} &= F(C)\{(1-\beta^*)[E(w\mid C)+x]-x\}+x-F(C)[E(w\mid C)-C]-x \nonumber\\
+  &= F(C)\{E(w\mid C)+x-\beta^*[E(w\mid C)+x]-x-E(w\mid C)+C\} \nonumber\\
+  &= F(C)\{C-\beta^*[E(w\mid C)+x]\}. \nonumber
+\end{align}
+Substitute $C=\beta^*[x+w(C)]$ (definition of $\beta^*$):
+\begin{align}
+  W^{\text{stock}}-W^{\text{cash}} &= F(C)\{\beta^*[x+w(C)]-\beta^*[E(w\mid C)+x]\} \nonumber\\
+  &= F(C)\,\beta^*\,[w(C)-E(w\mid C)]. \label{r9e12-diff}
+\end{align}
+
+\step{4}{Sign} $E(w\mid C)$ averages $w$ over $v\le C$, and $w$ is increasing, so $E(w\mid C)\le w(C)$ with
+strict inequality when $w$ is strictly increasing and $F$ has mass below $C$. Since $F(C)>0$ and
+$\beta^*>0$ for an offer that is ever accepted, \eqref{r9e12-diff} is positive. The stock offer also
+satisfies the acquirer's participation constraint, because its gain exceeds the cash gain, which is $\ge 0$.
+
+\step{5}{Illustration} $v\sim U[0,100]$, $w(v)=1.2v+30$, $x=200$ (Hansen's condition holds:
+$1.2<(230+1.2v)/v$). For $C=60$: $F=0.6$, $E(w\mid C)=1.2(30)+30=66$,
+\begin{align}
+  \text{cash gain} &= 0.6(66-60)=3.6, \qquad \beta^*=\frac{60}{200+102}=0.19868, \nonumber\\
+  \text{stock gain} &= 3.6+0.6(0.19868)(102-66)=3.6+4.29=7.89. \nonumber
+\end{align}
+The optimal cash offer solves $w(C)-C-F(C)/f(C)=1.2C+30-C-C=0$, so $C^*=37.5$ with gain
+$0.375(52.5-37.5)=5.625$; the matching stock offer does better again by $0.375\,\beta^*(75-52.5)$.
+\answer{(\#4)} For any feasible $C$, the stock offer $\beta^*=C/[x+w(C)]$ is accepted by the same types
+($v\le C$) and raises the acquirer's expected wealth by $F(C)\beta^*[w(C)-E(w\mid C)]\ge 0$. Cash offers are
+(weakly) dominated; strictly so when $w$ is strictly increasing.
+
+\intuition With cash the marginal accepting type $v=C$ is paid $C$, and so is every lower type.
+With stock, the payment $\beta^*[x+w(v)]$ is lower for lower types, because the shares they receive are
+worth less when the asset they bring is worth less. The acquirer saves $\beta^*[w(C)-w(v)]$ on each
+inframarginal type, which is \eqref{r9e12-diff} on average.
+\pitfalls
+\begin{itemize}
+  \item Matching the stock offer by value at the mean type instead of at the marginal type $v=C$; then the acceptance sets differ.
+  \item Forgetting Hansen's monotonicity assumption: without it $v/[x+w(v)]$ may be non-monotone and the acceptance set of a stock offer is not an interval.
+\end{itemize}
+\bookans The book only refers to page 80 of Hansen (1987) (p.~277); the proof above completes the
+``simple algebraic exercise'' stated on p.~210.
+\refbib{Amaro de Matos \S8.2.2, pp.~208--210; Hansen (1987).}
+
+% =============================================================================
+\exsec{13. Fishman (1989): face value needed to signal, cash versus debt --- Amaro de Matos 8.2.6 \#8, p.~223}
+
+\asked Show that, to signal that $v_1$ is at least a given level, bidder 1 needs a smaller face value
+if it pays in cash than if it pays with debt: $p_c(v_1)<p_d(v_1)$.
+
+\approach A signal works if lower types are unwilling to send it; the face value needed to signal
+$v_1\ge r$ is the most that type $r$ is willing to offer, $p_c(r)$ with cash and $p_d(r)$ with debt
+(above it type $r$ prefers not to preempt). Compare the two closed forms. The economics: cash is a
+\emph{costlier} signal per unit of face value, because it is paid even in the bad state, when the
+target is worth $v_1^-<p$ to the bidder; debt is refused in the bad state and costs nothing there.
+
+\notation
+\begin{itemize}
+  \item $\gamma\in(0,1)$: probability of the good signal $s^+$; $v_1^\pm$, $\tilde v_2^\pm$: valuations in each state, $v_i^+>v_i^-$.
+  \item $p_d(v_1)=\E\min[\max(v,\tilde v_2^+),v_1^+]$; $p_c(v_1)=\gamma\,p_d(v_1)+(1-\gamma)v_1^-$.
+  \item Model facts: $v\le p\le v_1^+$ (so $v_1^+\ge v$) and $\min\{v_1^-,p\}<v$ with $p\ge v$ (so $v_1^-<v$).
+\end{itemize}
+
+\step{1}{Write the difference} Subtract $p_d$ from $p_c$:
+\begin{align}
+  p_c(v_1)-p_d(v_1) &= \gamma p_d(v_1)+(1-\gamma)v_1^- - p_d(v_1) \nonumber\\
+  &= (1-\gamma)v_1^- - (1-\gamma)p_d(v_1) \nonumber\\
+  &= (1-\gamma)\,[v_1^- - p_d(v_1)]. \label{r9e13-diff}
+\end{align}
+
+\step{2}{Bound $p_d$ from below} For every realization, $\max(v,\tilde v_2^+)\ge v$ and $v_1^+\ge v$, so
+$\min[\max(v,\tilde v_2^+),v_1^+]\ge v$. Taking expectations, $p_d(v_1)\ge v$.
+
+\step{3}{Bound $v_1^-$ from above} In the bad state the debt offer (face $p\ge v$) is worth
+$\min\{v_1^-,p\}<v$. If $v_1^-\ge v$ then $\min\{v_1^-,p\}\ge v$, a contradiction; so $v_1^-<v$.
+
+\step{4}{Sign} Combining, $v_1^-<v\le p_d(v_1)$, so $v_1^--p_d(v_1)<0$; with $1-\gamma>0$,
+\eqref{r9e13-diff} is negative:
+\begin{align}
+  p_c(v_1) &< p_d(v_1). \label{r9e13-res}
+\end{align}
+For $\gamma=1$ (the target's signal is uninformative about the bad state), $p_c=p_d$.
+
+\step{5}{Illustration} $\gamma=0.6$, $v=0.6$, $\tilde v_2^+\sim U[0,1]$, $v_1^+=0.9$, $v_1^-=0.4$:
+\begin{align}
+  p_d &= (0.6)(0.6)+\frac{0.9^2-0.6^2}{2}+(0.9)(0.1) = 0.36+0.225+0.09=0.675, \nonumber\\
+  p_c &= (0.6)(0.675)+(0.4)(0.4) = 0.405+0.16=0.565, \nonumber
+\end{align}
+and $p_c-p_d=(0.4)(0.4-0.675)=-0.11$.
+\answer{(\#8)} $p_c(v_1)-p_d(v_1)=(1-\gamma)[v_1^--p_d(v_1)]<0$ because $p_d\ge v>v_1^-$: signalling a
+given valuation needs a lower face value with cash than with debt.
+
+\intuition A signal is credible when it is expensive for those who should not send it. Paying cash commits
+the bidder to overpay in the bad state (pay $p$ for an asset worth $v_1^-$), a cost that a low type fears
+more; so a smaller cash offer is as informative as a larger debt offer. This is why, in Fishman's model,
+preemptive (high-valuation) bidders pay cash, the opposite of Hansen's link between cash and an
+undervalued acquirer.
+\pitfalls
+\begin{itemize}
+  \item Comparing the \emph{values} of the offers to the target instead of their face values.
+  \item Forgetting that debt is worthless to the bidder's cost in the bad state because the target rejects it.
+\end{itemize}
+\bookans Matches the book's answer (pp.~277--278): the inequality reduces to $(\gamma-1)[p_d-v_1^-]<0$,
+equality when $\gamma=1$.
+\refbib{Amaro de Matos \S8.2.3, pp.~212--214; Fishman (1989).}
+
+% =============================================================================
+\exsec{14. Shleifer--Vishny with an arbitrary resale price --- Tirole 14.2, p.~515}
+
+\asked Redo \S14.2.2 when the distressed firm's assets sell at any per-unit price $P\in[0,\rho_0]$
+rather than $P=\rho_0$: the entrepreneurs' utilities (the analogues of $\alpha$ and $\kappa$), the
+borrowing capacity, the interaction between the two firms' investments and the symmetric equilibrium.
+
+\approach Tirole's continuous-investment moral-hazard model (pledgeable income $\rho_0$, NPV $\rho_1$
+per unit) applied to an industry: assets of a distressed firm are worth something only to the other
+firm, whose investors can pay at most the pledgeable income $\rho_0$ (the \emph{redeployability} and
+\emph{fire-sale} logic). A lower $P$ moves surplus from the seller's to the buyer's investors; competitive
+lending passes each lender's surplus to its entrepreneur.
+
+\notation
+\begin{itemize}
+  \item $I_i$, $A_i$: firm $i$'s investment and net worth; $x$: probability a firm is productive; $\mu$, $\nu$: Table~14.1 conditional probabilities, $x(1-\mu)=(1-x)(1-\nu)$ (14.3).
+  \item $\rho_1=p_HR$: per-unit NPV; $\rho_0=p_H(R-B/\Delta p)<1$: per-unit pledgeable income; $\rho_1-\rho_0=p_HB/\Delta p$: entrepreneur's per-unit rent.
+  \item $P\in[0,\rho_0]$: per-unit resale price; $\hat\alpha$, $\hat\kappa$: coefficients of $U_{bi}=\hat\alpha I_i+\hat\kappa I_j$.
+\end{itemize}
+
+\step{1}{Who gets what in a transaction} When firm $j$ is distressed and $i$ productive (probability
+$x(1-\mu)$), lender $i$ pays $PI_j$ and raises entrepreneur $i$'s stake so that $(\Delta p)\delta R_{bi}=BI_j$;
+the acquired assets yield expected income $\rho_1I_j$, of which $(\rho_1-\rho_0)I_j$ is the entrepreneur's
+rent and $\rho_0I_j$ goes to lender $i$. Per unit:
+\begin{align}
+  \text{seller's investors: } P, \qquad \text{buyer's investors: } \rho_0-P, \qquad \text{buyer's entrepreneur: } \rho_1-\rho_0. \label{r9e14-split}
+\end{align}
+
+\step{2}{Entrepreneur's utility} Lenders break even, so entrepreneur $i$ gets the NPV of everything her
+firm does: own operations, the sale of her assets when she alone is distressed (probability $(1-x)(1-\nu)$),
+and the purchase of $j$'s assets:
+\begin{align}
+  U_{bi} &= [x\rho_1-1]I_i+(1-x)(1-\nu)PI_i+x(1-\mu)[(\rho_1-\rho_0)+(\rho_0-P)]I_j \nonumber\\
+         &= [x\rho_1+(1-x)(1-\nu)P-1]I_i+x(1-\mu)(\rho_1-P)I_j \equiv \hat\alpha I_i+\hat\kappa I_j. \label{r9e14-U}
+\end{align}
+Comparing with $\alpha=x\rho_1+(1-x)(1-\nu)\rho_0-1$ and $\kappa=x(1-\mu)(\rho_1-\rho_0)$,
+\begin{align}
+  \hat\alpha &= \alpha-(1-x)(1-\nu)(\rho_0-P), &
+  \hat\kappa &= \kappa+x(1-\mu)(\rho_0-P), \label{r9e14-ak}
+\end{align}
+and by (14.3) the two corrections are equal, so $\hat\alpha+\hat\kappa=\alpha+\kappa$: bargaining power
+only redistributes surplus between the firms for given investments.
+
+\step{3}{Borrowing capacity} Lender $i$'s breakeven now includes its surplus $\rho_0-P$ on acquisitions:
+\begin{align}
+  x\rho_0I_i+(1-x)(1-\nu)PI_i+x(1-\mu)(\rho_0-P)I_j &= I_i-A_i. \label{r9e14-be}
+\end{align}
+Collecting the $I_i$ terms on the right,
+\begin{align}
+  A_i+x(1-\mu)(\rho_0-P)I_j &= I_i[1-x\rho_0-(1-x)(1-\nu)P] \nonumber\\
+  I_i &= \frac{A_i+x(1-\mu)(\rho_0-P)I_j}{1-x\rho_0-(1-x)(1-\nu)P} \label{r9e14-I}\\
+      &= \frac{A_i+x(1-\mu)(\rho_0-P)I_j}{1+(1-x)(1-\nu)(\rho_0-P)-\rho_0[x+(1-x)(1-\nu)]}. \nonumber
+\end{align}
+For $P<\rho_0$, $\partial I_i/\partial I_j=x(1-\mu)(\rho_0-P)/[1-x\rho_0-(1-x)(1-\nu)P]>0$: investments are
+\emph{strategic complements} (a cheap future acquisition raises what lender $i$ will lend today), while
+firm $i$'s own collateral is worth less ($P$ instead of $\rho_0$). For $P=\rho_0$ this is (14.7).
+
+\step{4}{Symmetric equilibrium} With $A_1=A_2=A$ and $I_1=I_2=I$, \eqref{r9e14-I} gives
+\begin{align}
+  I[1-x\rho_0-(1-x)(1-\nu)P-x(1-\mu)(\rho_0-P)] &= A. \nonumber
+\end{align}
+Using $x(1-\mu)=(1-x)(1-\nu)$, the $P$ terms cancel: $-(1-x)(1-\nu)P-(1-x)(1-\nu)\rho_0+(1-x)(1-\nu)P$, so
+\begin{align}
+  I &= \frac{A}{1-\rho_0[x+(1-x)(1-\nu)]} = kA, \label{r9e14-sym}
+\end{align}
+independent of $P$: the lower collateral value and the cheaper acquisition offset each other.
+
+\step{5}{Investment decision} Each entrepreneur invests if $\hat\alpha>0$ (her own investment's
+marginal value; $\hat\kappa I_j$ is a windfall she does not control). Because $\hat\alpha\le\alpha$, the
+threshold correlation $\hat\nu^*$ where $\hat\alpha=0$ is below $\nu^*$: lower seller bargaining power
+shrinks the region where firms invest, although total surplus per symmetric firm $(\hat\alpha+\hat\kappa)I$
+is unchanged when they do.
+
+\step{6}{Illustration} $x=0.8$, $\nu=0.3$ ($\mu=1-0.14/0.8=0.825$), $\rho_1=1.5$, $\rho_0=0.6$, $P=0.3$, $A=1$:
+$\alpha=1.2+0.084-1=0.284$, $\kappa=0.8(0.175)(0.9)=0.126$, $\hat\alpha=0.284-0.14(0.3)=0.242$,
+$\hat\kappa=0.126+0.042=0.168$, and $\hat\alpha+\hat\kappa=0.41=\alpha+\kappa$. The denominator of \eqref{r9e14-I}
+is $1-0.48-0.042=0.478$, the slope $0.042/0.478=0.0879$, and $I=1/(1-0.6\times0.94)=1/0.436=2.294$ for any $P$,
+NPV $0.41\times2.294=0.940$. With $x=0.6$ instead, $\nu^*=1-0.1/(0.4\times0.6)=0.583$ but $\hat\nu^*=1-0.1/(0.4\times0.3)=0.167$.
+\answer{(14.2)} $U_{bi}=\hat\alpha I_i+\hat\kappa I_j$ with $\hat\alpha=\alpha-(1-x)(1-\nu)(\rho_0-P)$,
+$\hat\kappa=\kappa+x(1-\mu)(\rho_0-P)$, $\hat\alpha+\hat\kappa=\alpha+\kappa$;
+$I_i=[A_i+x(1-\mu)(\rho_0-P)I_j]/[1-x\rho_0-(1-x)(1-\nu)P]$, increasing in $I_j$ when $P<\rho_0$; in symmetric
+equilibrium $I=A/\{1-\rho_0[x+(1-x)(1-\nu)]\}$, independent of $P$.
+
+\intuition The resale price is a transfer between the two industry members. It changes each firm's
+incentive to invest (selling cheap hurts, buying cheap helps) and makes each firm's debt capacity
+depend on the other's size; but in a symmetric industry every firm is equally likely to be the seller
+and the buyer, so the transfers wash out of debt capacity and total value.
+\pitfalls
+\begin{itemize}
+  \item Leaving lender $i$'s acquisition surplus $(\rho_0-P)I_j$ out of the breakeven condition; it is what makes capacity depend on $I_j$.
+  \item Using $\alpha+\kappa$ to decide investment; an individual firm invests on $\hat\alpha$, the windfall term does not depend on its own choice.
+\end{itemize}
+\bookans Matches the book's answer (p.~618): $\hat\alpha$, $\hat\kappa$, the capacity formula and the
+$P$-independence of symmetric investment.
+\refbib{Tirole \S14.2.2, pp.~500--503.}
+
+% =============================================================================
+\exsec{15. Liquidity management and acquisitions --- Tirole 14.3, p.~515}
+
+\asked (i) The safe firm's optimal credit line and acquisition cutoff when the retooling cost $\rho$ is
+random and privately observed, given the price $P$: show $P+\rho^*=1$. (ii) The distressed seller's
+pricing problem, the equilibrium $P<1$, and how $P$ responds to a larger credit line. (iii) The limit
+when $F$ collapses to a point $\bar\rho$.
+
+\approach Chapter~5's liquidity--scale trade-off: a unit of liquidity reserved for a future need costs
+investment scale today (multiplier $1/(1-\rho_0)$), and a credit line caps which shocks are met. Here the
+``shock'' is an acquisition opportunity of cost $(P+\rho)J$. The seller is a monopolist facing an
+unknown buyer's maximum willingness to pay, so it trades off price against the probability of a sale
+(monotone hazard rate gives a unique price).
+
+\notation
+\begin{itemize}
+  \item $I$, $J$: safe and risky firms' investments; $A$: safe firm's net worth; $1-x$: probability the risky firm is distressed.
+  \item $\rho\sim F$ on $[0,\infty)$, density $f$, $f/F$ decreasing; $G(\rho)\equiv F(\rho)/f(\rho)$, so $G'>0$.
+  \item $L$: credit line per unit of $J$; $\rho_0J$: cash from a seasoned offering; the acquisition is feasible iff $(P+\rho)J\le(\rho_0+L)J$, so $\rho^*=\rho_0+L-P$.
+\end{itemize}
+
+\step{1}{(i) NPV and breakeven} The acquisition, when it happens, yields NPV $\rho_1-(P+\rho)$ per unit
+and pledgeable income $\rho_0-(P+\rho)$ per unit to investors (who fund it through the line and the
+offering). Following Chapter~5,
+\begin{align}
+  U_b^s &= (\rho_1-1)I+(1-x)J\int_0^{\rho^*}[\rho_1-(P+\rho)]\,dF(\rho), \label{r9e15-U}\\
+  \rho_0I+(1-x)J\int_0^{\rho^*}[\rho_0-(P+\rho)]\,dF(\rho) &= I-A. \label{r9e15-be}
+\end{align}
+Solving \eqref{r9e15-be} for $I$ (move $\rho_0I$ to the right and divide by $1-\rho_0>0$):
+\begin{align}
+  I &= \frac{A-(1-x)J\int_0^{\rho^*}[(P+\rho)-\rho_0]\,dF(\rho)}{1-\rho_0}. \label{r9e15-I}
+\end{align}
+Substituting \eqref{r9e15-I} in \eqref{r9e15-U}:
+\begin{align}
+  U_b^s &= (\rho_1-1)\frac{A-(1-x)J\int_0^{\rho^*}[(P+\rho)-\rho_0]\,dF}{1-\rho_0}+(1-x)J\int_0^{\rho^*}[\rho_1-(P+\rho)]\,dF. \label{r9e15-U2}
+\end{align}
+
+\step{2}{(i) Optimal cutoff} Differentiate \eqref{r9e15-U2} in $\rho^*$ (Leibniz rule: each integral contributes
+its integrand at $\rho^*$ times $f(\rho^*)$), and write $s=P+\rho^*$:
+\begin{align}
+  \frac{\partial U_b^s}{\partial\rho^*} &= (1-x)Jf(\rho^*)\Big[-\frac{(\rho_1-1)(s-\rho_0)}{1-\rho_0}+\rho_1-s\Big]. \nonumber
+\end{align}
+Setting the bracket to zero and multiplying by $1-\rho_0$:
+\begin{align}
+  (\rho_1-s)(1-\rho_0) &= (\rho_1-1)(s-\rho_0) \nonumber\\
+  \rho_1-\rho_1\rho_0-s+s\rho_0 &= \rho_1s-\rho_1\rho_0-s+\rho_0 \nonumber\\
+  \rho_1+s\rho_0 &= \rho_1s+\rho_0 \nonumber\\
+  \rho_1-\rho_0 &= s(\rho_1-\rho_0) \nonumber\\
+  s &= 1. \nonumber
+\end{align}
+The bracket is positive for $s<1$ and negative for $s>1$ (it is linear in $s$ with slope
+$-(\rho_1-1)/(1-\rho_0)-1<0$), so this is a maximum:
+\begin{align}
+  P+\rho^* &= 1, \qquad\text{credit line } L^*=\rho^*+P-\rho_0=1-\rho_0 \text{ per unit of } J. \label{r9e15-cut}
+\end{align}
+\answer{(i)} The safe firm secures a credit line $L^*J$ with $\rho_0+L^*=P+\rho^*=1$: it acquires iff the
+total unit cost of buying, $P+\rho$, is at most 1, the unit cost of growing internally (``make or buy'').
+Numerically, with $F$ exponential ($\lambda=2$), $\rho_0=0.6$, $\rho_1=1.5$, $x=0.8$, $J=A=1$ and $P=0.4$, a grid
+search over $\rho^*$ maximizes $U_b^s$ at $\rho^*=0.6=1-P$.
+
+\step{3}{(ii) Seller's problem} The seller does not observe $\rho$ and anticipates the line $L$; a sale
+occurs iff $\rho\le\rho_0+L-P$. Its assets have no other use, so it maximizes expected revenue per unit:
+\begin{align}
+  \max_P\; P\,F(\rho_0+L-P). \label{r9e15-seller}
+\end{align}
+The first-order condition (with $\rho^*=\rho_0+L-P$) is
+\begin{align}
+  F(\rho^*)-Pf(\rho^*) &= 0 \iff P = \frac{F(\rho^*)}{f(\rho^*)}=G(\rho^*). \label{r9e15-foc}
+\end{align}
+In equilibrium $L=L^*=1-\rho_0$, so $\rho^*=1-P$ and $P$ solves $\phi(P)\equiv -P+G(1-P)=0$. At $P=0$,
+$\phi=G(1)>0$; at $P=1$, $\phi=-1+G(0)=-1<0$ (as $F(0)=0$); and $\phi'(P)=-1-G'(1-P)<0$ because $G'>0$ by the
+monotone hazard rate. Hence a unique $P\in(0,1)$.
+
+\step{4}{(ii) Larger credit line} Differentiate $-P+G(\rho_0+L-P)=0$ in $L$:
+\begin{align}
+  -\frac{dP}{dL}+G'\Big(1-\frac{dP}{dL}\Big) &= 0 \;\Rightarrow\; \frac{dP}{dL}=\frac{G'}{1+G'}\in(0,1). \label{r9e15-dPdL}
+\end{align}
+The cutoff rises, $d\rho^*/dL=1-dP/dL=1/(1+G')>0$: the seller captures part of a larger line but the
+probability of a sale still increases. Example $F(\rho)=1-e^{-2\rho}$: $G(\rho)=(e^{2\rho}-1)/2$,
+$G'=e^{2\rho}$; the equilibrium is $P=0.6040$, $\rho^*=0.3960$, $F(\rho^*)=0.547$, and
+$dP/dL=e^{0.792}/(1+e^{0.792})=0.688$ (confirmed by finite differences).
+\answer{(ii)} The risky firm maximizes $PF(\rho_0+L-P)$; the equilibrium price solves $P=F(1-P)/f(1-P)$,
+unique and in $(0,1)$; a higher anticipated $L$ raises $P$ with pass-through $G'/(1+G')<1$, so the
+probability of a deal rises too.
+
+\step{5}{(iii) Spike at $\bar\rho$} Informally (as in the book): a price whose cutoff $1-P$ stays below
+$\bar\rho$ sells with probability near 0, so the seller does better by setting a cutoff just above
+$\bar\rho$; a cutoff that stays above $\bar\rho$ gives $Pf\approx0$ and $F\approx1$, violating the
+first-order condition $F=Pf$ unless the cutoff converges to $\bar\rho$. So $1-P\to\bar\rho$ and $F(\rho^*)\to1$.
+Explicit sequence: $F$ uniform on $[\bar\rho-\varepsilon,\bar\rho+\varepsilon]$ ($f/F=1/(\rho-\bar\rho+\varepsilon)$
+decreasing). Revenue $P\cdot\min\{(1-P-\bar\rho+\varepsilon)/(2\varepsilon),1\}$ increases in the cutoff up to
+$\rho^*=\bar\rho+\varepsilon$ when $1-\bar\rho>3\varepsilon$, so $P=1-\bar\rho-\varepsilon$ and $F(\rho^*)=1$; as
+$\varepsilon\to0$, $P\to1-\bar\rho$. Example $\bar\rho=0.5$, $\varepsilon=0.05$: $P=0.45$, sale with probability 1.
+\answer{(iii)} $P+\bar\rho=1$ in the limit and $F(\rho^*)\to1$: the price equals the buyer's make-or-buy
+indifference price, the competitive outcome, and a deal is (almost) sure.
+
+\intuition The buyer hoards exactly the liquidity that makes buying as cheap as building; the seller,
+knowing this, prices like a monopolist against the buyer's uncertain retooling cost. With little
+uncertainty the monopolist extracts everything up to the make-or-buy price and the deal always
+happens; with more uncertainty it prices some deals away, so trade is inefficiently low.
+\pitfalls
+\begin{itemize}
+  \item Forgetting the opportunity cost of liquidity: hoarding reduces $I$ through \eqref{r9e15-I}; ignoring it gives the wrong cutoff $\rho^*=\rho_1-P$.
+  \item Treating $L$ as observed by the seller out of equilibrium; the seller prices on the \emph{anticipated} line.
+\end{itemize}
+\bookans Matches the book's answer (pp.~618--619): $\rho^*=1-P$, $\rho_0+L^*=1$; $P$ maximizes $F(\rho_0+L^*-P)P$,
+unique in $(0,1)$; $0<dP/dL<1$; informal limit argument for (iii).
+\refbib{Tirole \S14.2.5.3, pp.~506--508; \S5.3.1, pp.~207--209.}
+
+\end{document}

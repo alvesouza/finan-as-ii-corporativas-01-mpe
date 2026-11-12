@@ -1,0 +1,1265 @@
+% Worked solutions for Listas/lista-r5b-trade-credit-working-capital.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number below is asserted in lista-r5b-trade-credit-working-capital-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R5b --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\title{List R5b --- Trade credit and working capital management\\[2pt]
+\large Worked solutions}
+\author{Finan\c{c}as II --- Corporativas (MPE Insper)}
+\date{}
+
+\begin{document}
+\maketitle
+\noindent Statements are in \texttt{Listas/lista-r5b-trade-credit-working-capital.md}; each
+exercise is cited by number and printed page and is not restated. Editions are the local
+copies: Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed.
+(2011); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao
+Financeira}, 9th ed. (2013); Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial
+Management}, 13th ed. (2023); Grinblatt = Grinblatt \& Titman, \emph{Financial Markets and
+Corporate Strategy}, 2nd ed. (2002). Ross prints thousands with a period (\pt{\$89.804}); below
+they are written $89{,}804$. Money is in the units of each statement.
+
+\medskip\noindent\textbf{Conventions used throughout.} A year has 365 days (all four books use
+365). Days ratios use the year-flow divided by 365: inventory and payables days on cost of goods
+sold (COGS), receivables days on sales. The effective annual rate (EAR) of a rate $r$ earned over
+$n$ days is $(1+r)^{365/n}-1$, i.e.\ compounding over $365/n$ periods (Berk Eq.~5.1; Ross,
+p.~709).
+
+\tableofcontents
+
+% =====================================================================
+\exsec{1. Westerly Industries: cash conversion cycle --- Berk 19.3, p.~586}
+
+\asked Compute the cash conversion cycle (CCC): the number of days between paying suppliers for
+inventory and collecting cash from customers, from one year of sales and COGS and the year-end
+balances of receivables, inventory and payables.
+
+\approach The CCC is the sum of inventory days and receivables days (the operating cycle) minus
+payables days (Berk, \S19.1). Each ``days'' figure converts a balance into the number of days of
+the matching flow it represents: inventory and payables are carried at cost, so they are divided
+by daily COGS; receivables are carried at selling price, so they are divided by daily sales.
+
+\notation
+\begin{itemize}
+  \item $S$, $C$: annual sales and COGS (\$); $AR$, $INV$, $AP$: receivables, inventory, payables (\$).
+  \item $D_{INV}$, $D_{AR}$, $D_{AP}$: inventory, receivables and payables days (days, $\ge 0$).
+  \item $OC = D_{INV}+D_{AR}$: operating cycle; $CCC = OC - D_{AP}$ (days, any sign).
+\end{itemize}
+\assume The balances are representative of the year (no averages are given).
+
+\step{1}{Daily flows}
+Divide each annual flow by 365 to get the denominators of the days ratios:
+\begin{align}
+  C/365 &= (80{,}000)/365 = 219.18, \notag\\
+  S/365 &= (100{,}000)/365 = 273.97. \notag
+\end{align}
+
+\step{2}{The three days ratios}
+\begin{align}
+  D_{INV} &= \frac{INV}{C/365} = \frac{(15{,}000)}{(80{,}000/365)} = 68.44 \ \text{days}, \label{r5be1-inv}\\
+  D_{AR} &= \frac{AR}{S/365} = \frac{(30{,}000)}{(100{,}000/365)} = 109.50 \ \text{days}, \label{r5be1-ar}\\
+  D_{AP} &= \frac{AP}{C/365} = \frac{(40{,}000)}{(80{,}000/365)} = 182.50 \ \text{days}. \label{r5be1-ap}
+\end{align}
+
+\step{3}{Cash conversion cycle}
+Add inventory and receivables days, then subtract payables days:
+\begin{align}
+  CCC &= D_{INV} + D_{AR} - D_{AP} \label{r5be1-ccc}\\
+  &= (68.44) + (109.50) - (182.50) \notag\\
+  &= (177.94) - (182.50) \notag\\
+  &= -4.56 \ \text{days}. \notag
+\end{align}
+
+\answer{\unskip} $CCC = -4.56$ days (operating cycle $177.94$ days, payables $182.50$ days).
+
+\intuition A negative CCC means suppliers wait longer to be paid (half a year) than it takes
+Westerly to turn inventory into cash; suppliers finance the whole operating cycle, and a little
+more. The firm needs no cash of its own to carry working capital --- the opposite of the usual
+case. Whether this is good depends on why: if Westerly is forgoing early-payment discounts or
+stretching beyond the due date, the ``free'' financing may be very expensive (Exercises 7 and 13).
+
+\pitfalls
+\begin{itemize}
+  \item Dividing payables or inventory by sales instead of COGS: it mixes cost-based balances with a
+        price-based flow and understates both ratios.
+  \item Reporting the operating cycle ($177.94$ days) as the answer, i.e.\ forgetting to net out payables.
+  \item Treating the negative sign as an arithmetic error; it is a legitimate outcome.
+\end{itemize}
+
+\refbib Berk Ch.~19, \S19.1 ``Overview of Working Capital'', The Cash Cycle, p.~567. No printed answer.
+
+% =====================================================================
+\exsec{2. Mediadora: operating and cash cycles --- Ross 18.6, p.~654}
+
+\asked Compute the operating cycle (days from buying inventory to collecting the sale) and the cash
+cycle (days from paying suppliers to collecting the sale) from beginning and ending balances,
+credit sales and COGS, and interpret them.
+
+\approach Ross (\S18.2) computes each period from a turnover ratio built on the \emph{average}
+of beginning and ending balances: inventory and payables turnover on COGS, receivables turnover
+on credit sales; days $=365/\text{turnover}$. Operating cycle $=$ inventory period $+$
+receivables period; cash cycle $=$ operating cycle $-$ payables period.
+
+\notation
+\begin{itemize}
+  \item $\overline{INV}$, $\overline{AR}$, $\overline{AP}$: average inventory, receivables, payables (\$).
+  \item $T_{INV}$, $T_{AR}$, $T_{AP}$: turnovers (times per year); $D_{INV}$, $D_{AR}$, $D_{AP}$: periods (days).
+  \item $S_c = 89{,}804$: credit sales; $C = 56{,}384$: COGS (\$).
+\end{itemize}
+
+\step{1}{Average balances}
+\begin{align}
+  \overline{INV} &= (9{,}780 + 11{,}380)/2 = 10{,}580, \notag\\
+  \overline{AR} &= (4{,}108 + 4{,}938)/2 = 4{,}523, \notag\\
+  \overline{AP} &= (7{,}636 + 7{,}927)/2 = 7{,}781.5. \notag
+\end{align}
+
+\step{2}{Turnovers}
+\begin{align}
+  T_{INV} &= C/\overline{INV} = (56{,}384)/(10{,}580) = 5.3293, \notag\\
+  T_{AR} &= S_c/\overline{AR} = (89{,}804)/(4{,}523) = 19.8550, \notag\\
+  T_{AP} &= C/\overline{AP} = (56{,}384)/(7{,}781.5) = 7.2459. \notag
+\end{align}
+
+\step{3}{Periods in days}
+\begin{align}
+  D_{INV} &= 365/T_{INV} = 365/(5.3293) = 68.49 \ \text{days}, \label{r5be2-inv}\\
+  D_{AR} &= 365/T_{AR} = 365/(19.8550) = 18.38 \ \text{days}, \label{r5be2-ar}\\
+  D_{AP} &= 365/T_{AP} = 365/(7.2459) = 50.37 \ \text{days}. \label{r5be2-ap}
+\end{align}
+
+\step{4}{The two cycles}
+\begin{align}
+  OC &= D_{INV} + D_{AR} = (68.49) + (18.38) = 86.87 \ \text{days}, \label{r5be2-oc}\\
+  CC &= OC - D_{AP} = (86.87) - (50.37) = 36.50 \ \text{days}. \label{r5be2-cc}
+\end{align}
+
+\answer{\unskip} Operating cycle $= 86.87$ days; cash cycle $= 36.50$ days.
+
+\noindent\textbf{Interpretation.} Goods sit in inventory for about 68 days and customers take
+about 18 days to pay, so it takes 87 days to turn a purchase into cash. Suppliers finance 50 of
+those days. For the remaining $36.5$ days the firm has paid out cash that has not yet come back,
+and that gap must be financed (cash, a bank line or equity). Most of the cycle is inventory, so
+inventory management is where days can be cut; receivables are already quick.
+
+\intuition The cash cycle measures how long the firm's own money is tied up per unit of
+activity. Multiplied by daily COGS ($56{,}384/365 \approx 154$ per day) it gives an order of
+magnitude for the working capital that must be funded; any day saved frees that much cash.
+
+\pitfalls
+\begin{itemize}
+  \item Using ending instead of average balances; Ross uses averages when both are given.
+  \item Building receivables turnover on COGS or payables turnover on sales.
+  \item Interpreting the cash cycle as a profitability measure; it is a financing-need measure.
+\end{itemize}
+
+\refbib Ross Cap.~18, \S18.2 ``O ciclo operacional e o ciclo financeiro'', pp.~627--631 (worked
+example in the chapter review, 18.1, pp.~651--652). No printed answer.
+
+% =====================================================================
+\exsec{3. Cash discounts on a 400-unit order --- Ross 20.1, p.~733}
+
+\asked (a) How long until the bill is due and how much is paid on the due date. (b) The size of
+the discount, the deadline to get it, and the discounted payment. (c) How much interest is
+implicitly paid by skipping the discount, and for how many days of credit.
+
+\approach The terms ``1/10, net 30'' mean: pay the full invoice by day 30, or pay 1\% less by day
+10. Skipping the discount is a loan from the supplier of the \emph{discounted} amount for the
+days between the discount deadline and the due date; the forgone discount is the interest (Ross,
+\S20.2, ``Custo de cr\'edito'').
+
+\notation
+\begin{itemize}
+  \item $F$: invoice amount (\$); $d = 0.01$: discount rate; $t_d = 10$, $t_n = 30$: discount and net days.
+  \item $r$: interest rate for the $t_n - t_d$ days of credit; EAR: its effective annual equivalent.
+\end{itemize}
+
+\step{1}{Invoice amount}
+$F = (400)(125) = 50{,}000$.
+
+\step{2}{(a) Full credit period}
+The bill is due on day $t_n = 30$; paying then costs the full $F = \$50{,}000$.
+
+\answer{(a)} 30 days; pay \$50{,}000.
+
+\step{3}{(b) Discount}
+\begin{align}
+  dF &= (0.01)(50{,}000) = 500, \notag\\
+  F - dF &= (50{,}000) - (500) = 49{,}500. \notag
+\end{align}
+
+\answer{(b)} A 1\% discount (\$500) for paying within 10 days; pay \$49{,}500.
+
+\step{4}{(c) Implicit interest and days of credit}
+Not taking the discount means keeping \$49{,}500 for $30-10 = 20$ extra days and paying \$500
+more. The rate for those 20 days and its annual equivalent are
+\begin{align}
+  r &= \frac{dF}{F - dF} = \frac{(500)}{(49{,}500)} = 1.0101\%, \label{r5be3-r}\\
+  \text{EAR} &= (1+r)^{365/20} - 1 = (1.010101)^{18.25} - 1 = 20.13\%. \label{r5be3-ear}
+\end{align}
+
+\answer{(c)} Implicit interest of \$500 for 20 days of credit ($1.0101\%$ per 20 days, an EAR of $20.13\%$).
+
+\intuition The discount looks tiny, but it is earned for paying only 20 days early; repeated 18
+times a year it compounds to about 20\%. A buyer that can borrow below 20\% should borrow and take
+the discount; a buyer whose marginal funding costs more should pay on day 30 --- never on day 15,
+which gives up the discount without using the credit.
+
+\pitfalls
+\begin{itemize}
+  \item Computing the rate on the full invoice ($500/50{,}000 = 1\%$): the amount borrowed is the discounted price.
+  \item Counting 30 days of credit instead of 20; the first 10 days are free under both choices.
+  \item Annualising by simple interest ($1.0101\% \times 18.25 = 18.43\%$), which understates the cost.
+\end{itemize}
+
+\refbib Ross Cap.~20, \S20.2 ``Condi\c{c}\~oes de venda'', ``Custo de cr\'edito'', p.~709. No printed answer.
+
+% =====================================================================
+\exsec{4. Kyoto Boy: collection period with a discount --- Ross 20.3, p.~733}
+
+\asked (a) The average collection period (PMR) when 65\% of customers pay on day 10 (taking
+the 2\% discount) and the rest pay on day 30. (b) The average receivables balance for 1{,}300
+sales a month at \$1{,}700 each.
+
+\approach The PMR is the payment day averaged over customers, weighted by the share that pays on
+each day (Ross, ``O desconto financeiro e o PMR'', p.~710). Receivables then follow from
+$AR = \text{average daily sales} \times PMR$ (Ross, \S20.1, Eq.\ for ``Contas a receber'').
+
+\notation
+\begin{itemize}
+  \item $w = 0.65$: share of customers taking the discount; $PMR$: average collection period (days).
+  \item $S_m$, $S_a$: monthly and annual sales (\$, before discounts); $AR$: average receivables (\$).
+\end{itemize}
+\assume Customers pay exactly on day 10 or day 30; sales are measured before discounts (as in
+Ross's own example, p.~710); daily sales $=$ annual sales$/365$.
+
+\step{1}{(a) Weighted collection period}
+\begin{align}
+  PMR &= w \cdot 10 + (1-w)\cdot 30 \label{r5be4-pmr}\\
+  &= (0.65)(10) + (0.35)(30) \notag\\
+  &= 6.5 + 10.5 \notag\\
+  &= 17 \ \text{days}. \notag
+\end{align}
+
+\answer{(a)} $PMR = 17$ days.
+
+\step{2}{(b) Annual and daily sales}
+\begin{align}
+  S_m &= (1{,}300)(1{,}700) = 2{,}210{,}000, \notag\\
+  S_a &= 12\,(2{,}210{,}000) = 26{,}520{,}000, \notag\\
+  S_a/365 &= (26{,}520{,}000)/365 = 72{,}657.53 \ \text{per day}. \notag
+\end{align}
+
+\step{3}{(b) Receivables}
+\begin{align}
+  AR &= (S_a/365)\times PMR = (72{,}657.53)(17) = 1{,}235{,}178.08. \label{r5be4-ar}
+\end{align}
+
+\answer{(b)} Average receivables $\approx \$1{,}235{,}178$.
+
+\intuition The discount pulls two-thirds of the customers forward by 20 days, so the firm carries
+only 17 days of sales instead of 30. The price is the 2\% given away on 65\% of sales; whether it
+pays depends on the value of the 13 days of financing released, the subject of Exercise 3 seen
+from the seller's side.
+
+\pitfalls
+\begin{itemize}
+  \item Averaging the days without weights ($(10+30)/2 = 20$).
+  \item Multiplying the PMR by \emph{monthly} sales; with a 30-day month the result would be
+        $2{,}210{,}000 \times 17/30 = 1{,}252{,}333.33$, a different (and inconsistent) day count.
+  \item Netting the discount out of sales without saying so; it changes the answer by about 1\%.
+\end{itemize}
+
+\refbib Ross Cap.~20, \S20.1 ``Cr\'edito e contas a receber'' and \S20.2, ``O desconto financeiro
+e o PMR'', p.~710. No printed answer.
+
+% =====================================================================
+\exsec{5. Happy Valley Homecare: inventory days --- Berk 19.17, p.~589}
+
+\asked (a) How many days of COGS HVHS holds in inventory. (b) How much less inventory it would
+carry at the industry's 73 days.
+
+\approach Inventory days $=$ inventory$/$(COGS$/365$) (Berk, \S19.1 and \S19.5). Inverting the
+ratio, the inventory a firm must carry at a target number of days is target days $\times$ daily
+COGS; the difference with the current balance is cash released once.
+
+\notation
+\begin{itemize}
+  \item $C = 8{,}000{,}000$: COGS; $\overline{INV} = 2{,}000{,}000$: average inventory (\$).
+  \item $D_{INV}$: inventory days; $D^* = 73$: industry days; $INV^*$: inventory at $D^*$ (\$).
+\end{itemize}
+
+\step{1}{(a) Daily COGS and inventory days}
+\begin{align}
+  C/365 &= (8{,}000{,}000)/365 = 21{,}917.81, \notag\\
+  D_{INV} &= \overline{INV}/(C/365) = (2{,}000{,}000)/(21{,}917.81) = 91.25 \ \text{days}. \label{r5be5-dio}
+\end{align}
+
+\answer{(a)} $D_{INV} = 91.25$ days.
+
+\step{2}{(b) Inventory at the industry average}
+\begin{align}
+  INV^* &= D^*\,(C/365) = (73)(21{,}917.81) = 1{,}600{,}000, \notag\\
+  \overline{INV} - INV^* &= (2{,}000{,}000) - (1{,}600{,}000) = 400{,}000. \label{r5be5-red}
+\end{align}
+Check: $(91.25 - 73)\times 21{,}917.81 = (18.25)(21{,}917.81) = 400{,}000$.
+
+\answer{(b)} Inventory investment falls by \$400{,}000.
+
+\intuition Each day of inventory ties up one day of COGS. Cutting 18.25 days frees \$400{,}000
+once (a one-time cash inflow), plus the carrying cost on it every year after. Sales (\$20 million)
+play no role: inventory is at cost.
+
+\pitfalls
+\begin{itemize}
+  \item Using sales instead of COGS ($2{,}000{,}000/(20{,}000{,}000/365) = 36.5$ days), which
+        makes HVHS look far better than the industry.
+  \item Reporting the saving as annual; it is a one-time release of capital.
+\end{itemize}
+
+\refbib Berk Ch.~19, \S19.1, p.~567; \S19.5 ``Inventory Management'', p.~580. No printed answer.
+
+% =====================================================================
+\exsec{6. The Greek Connection: NWC and the CCC --- Berk 19.6, p.~587}
+
+\asked (a) Net working capital from the balance sheet. (b) The cash conversion cycle. (c) The
+CCC if receivables days had been the industry's 30 days.
+
+\approach Berk defines net working capital as current assets minus current liabilities (\S19.1);
+the CCC is built as in Exercise 1. Part (c) changes only the receivables component, so the CCC
+moves one-for-one with receivables days.
+
+\notation
+\begin{itemize}
+  \item $CA$, $CL$: current assets and liabilities (\$ thousand); $NWC = CA - CL$.
+  \item $S = 32{,}000$, $C = 20{,}000$: sales and COGS (\$ thousand); days ratios as in Exercise 1.
+\end{itemize}
+
+\step{1}{(a) Net working capital}
+\begin{align}
+  CA &= 2{,}000 + 3{,}950 + 1{,}300 = 7{,}250, \notag\\
+  CL &= 1{,}500 + 1{,}000 + 1{,}220 = 3{,}720, \notag\\
+  NWC &= CA - CL = (7{,}250) - (3{,}720) = 3{,}530. \label{r5be6-nwc}
+\end{align}
+
+\answer{(a)} $NWC = \$3{,}530$ thousand (\$3.53 million).
+
+\noindent Remark: the \emph{operating} part, which excludes cash and interest-bearing notes, is
+$AR + INV - AP - \text{Accruals} = 3{,}950 + 1{,}300 - 1{,}500 - 1{,}220 = 2{,}530$ thousand.
+
+\step{2}{(b) Daily flows and days ratios}
+\begin{align}
+  S/365 &= (32{,}000)/365 = 87.671, \qquad C/365 = (20{,}000)/365 = 54.795, \notag\\
+  D_{AR} &= (3{,}950)/(87.671) = 45.05 \ \text{days}, \notag\\
+  D_{INV} &= (1{,}300)/(54.795) = 23.73 \ \text{days}, \notag\\
+  D_{AP} &= (1{,}500)/(54.795) = 27.38 \ \text{days}. \notag
+\end{align}
+
+\step{3}{(b) Cash conversion cycle}
+\begin{align}
+  CCC &= D_{INV} + D_{AR} - D_{AP} = (23.73) + (45.05) - (27.38) = 41.40 \ \text{days}. \label{r5be6-ccc}
+\end{align}
+
+\answer{(b)} $CCC = 41.40$ days.
+
+\step{4}{(c) Receivables at 30 days}
+Replace $D_{AR}$ by 30 in \eqref{r5be6-ccc}:
+\begin{align}
+  CCC' &= (23.73) + (30) - (27.38) = 26.35 \ \text{days}, \label{r5be6-cccc}\\
+  CCC - CCC' &= (41.40) - (26.35) = 15.05 \ \text{days}. \notag
+\end{align}
+The receivables balance consistent with 30 days and the cash it would release are
+\begin{align}
+  AR' &= (30)(87.671) = 2{,}630.14, \notag\\
+  AR - AR' &= (3{,}950) - (2{,}630.14) = 1{,}319.86 \ \text{thousand}. \notag
+\end{align}
+
+\answer{(c)} $CCC' = 26.35$ days (15.05 days shorter), releasing about \$1.32 million of receivables.
+
+\intuition Greek Connection's customers take 45 days against an industry norm of 30: the firm is
+lending to its customers for an extra 15 days. Matching the norm would cut the CCC by a third
+and release \$1.32 million --- more than a third of its NWC --- that could repay the notes payable.
+
+\pitfalls
+\begin{itemize}
+  \item Computing receivables days on COGS ($3{,}950/54.795 = 72$ days).
+  \item Leaving notes payable out of current liabilities in (a); NWC in Berk's definition includes them.
+  \item In (c), recomputing all three components; only receivables days change.
+\end{itemize}
+
+\refbib Berk Ch.~19, \S19.1 ``Overview of Working Capital'', pp.~566--567; \S19.3 ``Receivables
+Management'', p.~576. No printed answer.
+
+% =====================================================================
+\exsec{7. Terms 3/15, net 40 --- Berk 19.14, p.~588}
+
+\asked The effective annual cost of skipping a 3\% discount (a) when paying on the due date, day
+40, and (b) when stretching payment to day 50.
+
+\approach Skipping the discount borrows the discounted price, $97\%$ of the invoice, from day 15
+until the payment day, at a cost of $3\%$ of the invoice. The rate per period is $3/97$; the
+period is the number of days of credit actually used, and the EAR compounds that period over a
+365-day year (Berk, Example 19.3 and Example 19.7, ``stretching the accounts payable'').
+
+\notation
+\begin{itemize}
+  \item $d = 0.03$: discount; $t_d = 15$: discount deadline; $t$: actual payment day.
+  \item $r = d/(1-d)$: rate per credit period; $n = t - t_d$: days of credit (days).
+\end{itemize}
+
+\step{1}{Rate per credit period}
+On a \$100 invoice, pay \$97 on day 15 or \$100 later: \$3 of interest on \$97 borrowed,
+\begin{align}
+  r = \frac{d}{1-d} = \frac{(0.03)}{(0.97)} = 3.0928\%. \label{r5be7-r}
+\end{align}
+
+\step{2}{(a) Pay on day 40}
+Credit period $n = 40 - 15 = 25$ days; there are $365/25 = 14.6$ such periods per year:
+\begin{align}
+  \text{EAR}_{40} &= (1+r)^{365/25} - 1 \notag\\
+  &= (1.030928)^{14.6} - 1 \notag\\
+  &= 56.00\%. \label{r5be7-a}
+\end{align}
+
+\answer{(a)} Effective annual cost $= 56.00\%$.
+
+\step{3}{(b) Pay on day 50}
+Now $n = 50 - 15 = 35$ days and $365/35 = 10.4286$ periods:
+\begin{align}
+  \text{EAR}_{50} &= (1.030928)^{10.4286} - 1 \notag\\
+  &= 37.39\%. \label{r5be7-b}
+\end{align}
+
+\answer{(b)} Effective annual cost $= 37.39\%$.
+
+\intuition The interest charge is fixed (\$3 per \$97), so the longer the firm keeps the money,
+the lower the rate per day: stretching from 40 to 50 days cuts the cost from 56\% to 37\%. But
+both are far above normal bank rates, so the first-best is usually to borrow from the bank and
+take the discount. Stretching has hidden costs the formula does not see --- late-payment penalties,
+a damaged credit rating, suppliers that refuse future credit.
+
+\pitfalls
+\begin{itemize}
+  \item Using 40 or 50 days as the period instead of the days beyond the discount date (25, 35).
+  \item Using $3/100$ instead of $3/97$.
+  \item Reporting the APR $3.0928\% \times 14.6 = 45.15\%$ as the cost; Berk's ``Common Mistake''
+        box (p.~572) warns that the EAR is the right comparison.
+\end{itemize}
+
+\refbib Berk Ch.~19, \S19.2 ``Trade Credit'', Cost of Trade Credit, pp.~571--572 (Example 19.3);
+\S19.4 ``Payables Management'', Stretching Accounts Payable, p.~579 (Example 19.7). No printed answer.
+
+% =====================================================================
+\exsec{8. Toyota vs.\ Apple: operating and cash conversion cycles --- Higgins 2.13, p.~75}
+
+\asked (a) The operating cycle of each firm (inventory days $+$ collection period) and what it
+means. (b) The cash conversion cycle (operating cycle $-$ payables period) and what it means. (c)
+The pros and cons of Apple's way of running operations relative to Toyota's.
+
+\approach Higgins (Ch.~2, ``Operating and Cash Conversion Cycles'') defines days inventory
+outstanding and the payables period on COGS, the collection period on sales, all with 365 days.
+Because each firm's ratios are in its own currency per day, the yen/dollar difference cancels
+inside each ratio and the days are directly comparable.
+
+\notation
+\begin{itemize}
+  \item $D_{INV}$, $D_{AR}$, $D_{AP}$: days inventory outstanding, collection period, payables period (days).
+  \item $OC = D_{INV} + D_{AR}$; $CCC = OC - D_{AP}$ (days). Figures in millions (\yen{} or \$).
+\end{itemize}
+
+\step{1}{Daily flows}
+\begin{align}
+  \text{Toyota: } C/365 &= (24{,}522{,}364)/365 = 67{,}184.56, & S/365 &= (29{,}929{,}992)/365 = 82{,}000.0, \notag\\
+  \text{Apple: } C/365 &= (169{,}559)/365 = 464.55, & S/365 &= (274{,}515)/365 = 752.10. \notag
+\end{align}
+
+\step{2}{(a) Inventory days and collection period}
+\begin{align}
+  D_{INV}^{T} &= (2{,}434{,}918)/(67{,}184.56) = 36.24, & D_{AR}^{T} &= (8{,}709{,}065)/(82{,}000.0) = 106.21, \notag\\
+  D_{INV}^{A} &= (4{,}061)/(464.55) = 8.74, & D_{AR}^{A} &= (16{,}120)/(752.10) = 21.43. \notag
+\end{align}
+
+\step{3}{(a) Operating cycles}
+\begin{align}
+  OC^{T} &= (36.24) + (106.21) = 142.45 \ \text{days}, \label{r5be8-oct}\\
+  OC^{A} &= (8.74) + (21.43) = 30.18 \ \text{days}. \label{r5be8-oca}
+\end{align}
+
+\answer{(a)} Toyota $142.45$ days; Apple $30.18$ days. On average Toyota needs about 142 days from
+acquiring inventory to collecting the customer's cash, Apple only 30. Toyota's cycle is dominated
+by receivables: 106 days, which reflects dealer financing and Toyota's captive finance arm
+(customer loans and leases sit in receivables).
+
+\step{4}{(b) Payables periods}
+\begin{align}
+  D_{AP}^{T} &= (2{,}434{,}180)/(67{,}184.56) = 36.23 \ \text{days}, \notag\\
+  D_{AP}^{A} &= (42{,}296)/(464.55) = 91.05 \ \text{days}. \notag
+\end{align}
+
+\step{5}{(b) Cash conversion cycles}
+\begin{align}
+  CCC^{T} &= (142.45) - (36.23) = 106.22 \ \text{days}, \label{r5be8-ccct}\\
+  CCC^{A} &= (30.18) - (91.05) = -60.87 \ \text{days}. \label{r5be8-ccca}
+\end{align}
+
+\answer{(b)} Toyota $106.22$ days; Apple $-60.87$ days. Toyota pays for its inputs about 106 days
+before it collects, so it must finance that gap; Apple collects from customers about 61 days
+\emph{before} it pays its suppliers, so its suppliers finance its operations and more. In balance
+sheet terms, Apple's trade working capital $AR + INV - AP = 16{,}120 + 4{,}061 - 42{,}296 =
+-22{,}115$ million is a source of funds, while Toyota's, $8{,}709{,}065 + 2{,}434{,}918 -
+2{,}434{,}180 = 8{,}709{,}803$ million yen, is a large use.
+
+\step{6}{(c) Advantages and disadvantages of Apple's model}
+\begin{itemize}
+  \item \emph{Advantages.} (i) No need to finance working capital; growth generates cash instead of
+        consuming it, because each extra dollar of sales adds more payables than receivables and
+        inventory. (ii) Little inventory means little obsolescence risk in a fast-changing product
+        line. (iii) Bargaining power over suppliers and outsourced assembly lets Apple push the
+        holding of inventory and the waiting for payment upstream.
+  \item \emph{Disadvantages and risks.} (i) Thin inventory risks stock-outs and lost sales when
+        demand spikes or a supply chain is disrupted. (ii) Demanding quick payment can drive
+        customers (carriers, retailers) away. (iii) Paying slowly can strain or alienate
+        suppliers, raise the prices they charge, or create fragility if a supplier fails. (iv) The
+        model depends on market power; a firm without Apple's brand cannot copy it.
+  \item \emph{Why Toyota differs.} Selling cars on credit (dealer floor-plan and consumer
+        financing) is part of Toyota's product offer; the long receivables period is a business
+        choice funded by its financial-services arm, not a collection failure.
+\end{itemize}
+
+\intuition The CCC tells you who finances whom along the supply chain. A negative cycle is a
+quasi-free loan from suppliers, available only to firms with market power and fast inventory
+turnover.
+
+\pitfalls
+\begin{itemize}
+  \item Converting yen to dollars before computing days; it is unnecessary because each ratio is
+        within one currency.
+  \item Basing the payables period on sales instead of COGS.
+  \item Calling Apple's negative CCC ``risk-free''; it comes with supplier and stock-out risks.
+\end{itemize}
+
+\bookans Higgins p.~404: DIO 36.2 and 8.7 days; collection period 106.2 and 21.4 days; operating
+cycle 142.4 and 30.1 days; payables 36.2 and 91.0 days; CCC 106.2 and $-60.9$ days; (c) the same
+advantages and risks. Matches the book's answer; the book adds rounded components (e.g.\ $36.2 +
+106.2 = 142.4$, $8.7 + 21.4 = 30.1$), which explains the differences in the second decimal.
+
+\refbib Higgins Ch.~2, ``Operating and Cash Conversion Cycles'', p.~47.
+
+% =====================================================================
+\exsec{9. Hand-to-Mouth: forgone discount vs.\ two bank loans --- Berk 20.8, p.~613}
+
+\asked Which of three ways to get \$10{,}000 of usable funds for about 30 days is cheapest: (A)
+skipping a 2/10, net 30 discount; (B) a 12\% APR loan with a 5\% non-interest compensating
+balance and a \$100 fee; (C) a 15\% APR loan with a 1\% origination fee.
+
+\approach Compare effective annual rates computed on the cash the firm can actually use. A fee
+paid up front and a compensating balance both reduce usable proceeds while interest is charged on
+the face value, so the loan must be grossed up until usable funds equal \$10{,}000 (Berk,
+\S20.3, ``Common Loan Stipulations and Fees''). The trade-credit cost is as in Exercise 7.
+
+\notation
+\begin{itemize}
+  \item $L$: face value borrowed (\$); $i$: interest for the 30-day loan (\$); $r$: 30-day rate on usable funds.
+  \item EAR $= (1+r)^{365/n} - 1$ with $n$ the length of the credit period (days).
+\end{itemize}
+\assume A 30-day loan is one month: interest $= (\text{APR}/12)\,L$, paid at maturity. The
+compensating balance is applied to the repayment at maturity (Berk's Timmons example, p.~603).
+All three rates are annualised with 365 days, $365/n$ periods, so they are comparable.
+
+\step{1}{Alternative A: forgo the discount}
+Paying \$98 on day 10 or \$100 on day 30 means borrowing \$98 for $n = 20$ days:
+\begin{align}
+  r_A &= (2)/(98) = 2.0408\%, \notag\\
+  \text{EAR}_A &= (1.020408)^{365/20} - 1 = (1.020408)^{18.25} - 1 = 44.59\%. \label{r5be9-a}
+\end{align}
+
+\step{2}{Alternative B: gross up the face value}
+Usable proceeds $= L - 0.05L - 100 = 10{,}000$, so
+\begin{align}
+  0.95\,L &= 10{,}000 + 100 = 10{,}100, \notag\\
+  L &= (10{,}100)/(0.95) = 10{,}631.58. \notag
+\end{align}
+The compensating balance is $0.05\,L = 531.58$. Interest and net repayment at day 30:
+\begin{align}
+  i_B &= (0.12/12)(10{,}631.58) = 106.32, \notag\\
+  \text{Net repayment} &= L + i_B - 0.05L = (10{,}631.58) + (106.32) - (531.58) = 10{,}206.32, \notag\\
+  r_B &= (10{,}206.32)/(10{,}000) - 1 = 2.0632\%, \notag\\
+  \text{EAR}_B &= (1.020632)^{365/30} - 1 = (1.020632)^{12.1667} - 1 = 28.21\%. \label{r5be9-b}
+\end{align}
+
+\step{3}{Alternative C: gross up for the 1\% fee}
+Usable proceeds $= 0.99\,L = 10{,}000$:
+\begin{align}
+  L &= (10{,}000)/(0.99) = 10{,}101.01 \quad (\text{fee } 0.01L = 101.01), \notag\\
+  i_C &= (0.15/12)(10{,}101.01) = 126.26, \notag\\
+  \text{Repayment} &= (10{,}101.01) + (126.26) = 10{,}227.27, \notag\\
+  r_C &= (10{,}227.27)/(10{,}000) - 1 = 2.2727\%, \notag\\
+  \text{EAR}_C &= (1.022727)^{12.1667} - 1 = 31.45\%. \label{r5be9-c}
+\end{align}
+
+\step{4}{Ranking}
+$\text{EAR}_B = 28.21\% < \text{EAR}_C = 31.45\% < \text{EAR}_A = 44.59\%$. With 12 monthly periods
+instead of $365/30$ the loan EARs are $27.77\%$ and $30.95\%$; the ranking is unchanged.
+
+\answer{\unskip} Alternative B (Bank A) is cheapest, at an EAR of about 28\%; forgoing the discount is by
+far the most expensive (44.6\%).
+
+\intuition The stated APRs (12\% vs.\ 15\%) understate both loans' costs, because the borrower pays
+interest on money it cannot use (the fee, the idle balance). Bank A's lower APR survives these
+add-ons. Trade credit that ``costs nothing'' in cash outlay is the most expensive source here: 2\%
+for only 20 days. Note also that alternative A finances 20 days, not the 30 needed --- another
+reason to prefer a bank loan and take the discount.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing APRs (12\%, 15\%) directly, ignoring the fee and the compensating balance.
+  \item Borrowing only \$10{,}000 in B and C: usable proceeds would then fall short of the need.
+  \item Forgetting that the compensating balance is returned at maturity (it offsets the repayment).
+\end{itemize}
+
+\refbib Berk Ch.~20, \S20.3 ``Short-Term Financing with Bank Loans'', Common Loan Stipulations and
+Fees, pp.~602--603; Ch.~19, \S19.2, pp.~571--572. No printed answer.
+
+% =====================================================================
+\exsec{10. Pe\c{c}as A\'ereas: one-off vs.\ repeat order --- Ross 20.9, pp.~733--734}
+
+\asked (a) Whether to grant one period of credit on a one-off order of eight engines with a 0.5\%
+default chance. (b) The default probability that makes that NPV zero. (c) The same two questions
+when a customer who pays becomes a permanent, never-defaulting customer. (d) Why repeat business
+makes credit terms more liberal.
+
+\approach Ross's one-period credit model (\S20.4, context block in the list): granting credit
+risks the variable cost now against the expected price next period. For a one-off sale,
+$\text{NPV} = -v + (1-\pi)P/(1+R)$ [20.8]. With repeat business a paying customer is worth a
+perpetuity of margins, $\text{NPV} = -v + (1-\pi)(P - v)/R$ [20.9]. Break-even probabilities set
+each NPV to zero.
+
+\notation
+\begin{itemize}
+  \item $v = 1.6$: variable cost per engine; $P = 1.87$: credit price per engine (\$ million).
+  \item $\pi = 1/200 = 0.005$: default probability; $R = 0.029$: required return per period.
+  \item $\pi^*$: break-even default probability. The order is 8 engines.
+\end{itemize}
+
+\step{1}{(a) NPV per engine, one-off sale}
+\begin{align}
+  \text{NPV} &= -v + \frac{(1-\pi)P}{1+R} \label{r5be10-npv}\\
+  &= -1.6 + \frac{(0.995)(1.87)}{1.029} \notag\\
+  &= -1.6 + \frac{1.86065}{1.029} \notag\\
+  &= -1.6 + 1.808212 \notag\\
+  &= 0.208212 \ \text{per engine}. \notag
+\end{align}
+For the order: $8 \times 0.208212 = 1.665695$ (\$ million).
+
+\answer{(a)} Yes: NPV $\approx \$1.67$ million for the eight-engine order ($\$208{,}212$ per engine).
+
+\step{2}{(b) Break-even default probability}
+Set \eqref{r5be10-npv} to zero and solve for $\pi$:
+\begin{align}
+  0 &= -v + (1-\pi^*)P/(1+R) \notag\\
+  (1-\pi^*)P &= v(1+R) \notag\\
+  1-\pi^* &= \frac{v(1+R)}{P} = \frac{(1.6)(1.029)}{1.87} = \frac{1.6464}{1.87} = 0.880428 \notag\\
+  \pi^* &= 1 - 0.880428 = 0.119572. \label{r5be10-pib}
+\end{align}
+
+\answer{(b)} $\pi^* \approx 11.96\%$.
+
+\step{3}{(c) Repeat business}
+A paying customer generates $P - v = 1.87 - 1.6 = 0.27$ per engine every period forever:
+\begin{align}
+  \text{NPV} &= -v + \frac{(1-\pi)(P-v)}{R} \label{r5be10-npvc}\\
+  &= -1.6 + \frac{(0.995)(0.27)}{0.029} \notag\\
+  &= -1.6 + \frac{0.26865}{0.029} \notag\\
+  &= -1.6 + 9.263793 \notag\\
+  &= 7.663793 \ \text{per engine}, \notag
+\end{align}
+i.e.\ $8 \times 7.663793 = 61.310345$ (\$ million) for the order. Break-even:
+\begin{align}
+  (1-\pi^*)(P - v)/R &= v \notag\\
+  1-\pi^* &= \frac{vR}{P - v} = \frac{(1.6)(0.029)}{0.27} = \frac{0.0464}{0.27} = 0.171852 \notag\\
+  \pi^* &= 1 - 0.171852 = 0.828148. \label{r5be10-pic}
+\end{align}
+
+\answer{(c)} Yes: NPV $\approx \$61.31$ million for the order; break-even default probability $\approx 82.81\%$.
+
+\step{4}{(d) Why repeat business liberalises credit}
+\begin{itemize}
+  \item In a one-off sale the firm risks $v$ to win one payment $P$; the upside is a single margin.
+  \item With repeat business, the first credit sale is a screening device: risking $v$ once buys,
+        with probability $1-\pi$, a customer whose value is the perpetuity $(P - v)/R$. That prize
+        is many times $P$ (here $9.31$ vs.\ $1.87$ per engine), so the firm tolerates a much higher
+        default rate on new customers ($82.8\%$ vs.\ $12.0\%$).
+  \item Defaulters reveal themselves after one period and are dropped, so the loss is capped at
+        one unit of variable cost, while good customers keep paying. Credit is cheap
+        information about who is a good customer.
+\end{itemize}
+
+\intuition Granting credit to a new customer is an option-like investment: limited downside ($v$
+once), large upside (a stream of margins). The more valuable the relationship, the looser the
+credit standard.
+
+\pitfalls
+\begin{itemize}
+  \item Discounting the perpetuity in (c) by $1+R$ or using $P$ instead of $P - v$: the customer
+        pays $P$ but the firm spends $v$ again on each repeat order.
+  \item Computing the NPV with $\pi$ applied to the cost as well as the price; the cost is spent
+        for sure.
+  \item Forgetting to multiply by the eight engines when reporting the order's NPV.
+\end{itemize}
+
+\refbib Ross Cap.~20, \S20.4 ``Pol\'itica de cr\'edito \'otima'' / ``Quando o cr\'edito deve ser
+concedido?'' (Uma venda \'unica; Neg\'ocios repetidos), pp.~717--718. No printed answer.
+
+% =====================================================================
+\exsec{11. Lince S/A: seasonal cash budget and short-term plan --- Ross 18.15, p.~657}
+
+\asked (a) Fill in the quarterly cash budget: net cash inflow, ending cash and the cumulative
+surplus over the \$30 million minimum. (b) Build the short-term financial plan in which surpluses
+earn 2\% per quarter and deficits are borrowed at 3\% per quarter, and give the net cash cost
+(interest paid minus investment income) for the year.
+
+\approach Ross's cash budget (\S18.4): collections follow from the collection period, payments
+from the payables period, both as fractions of a 90-day quarter; net cash inflow $=$ collections
+$-$ disbursements. The short-term plan (\S18.6) then invests any cash above the minimum and
+borrows to cover any shortfall, with interest computed on the beginning-of-quarter balances.
+
+\notation
+\begin{itemize}
+  \item $S_q$: sales in quarter $q$; $Pur_q = 0.45\,S_{q+1}$: purchases in $q$ (\$ million).
+  \item $Col_q$, $Pay_q$: collections and payments to suppliers; $NCF_q$: net cash inflow.
+  \item $I_q$: short-term investments at the end of $q$; $Inc_q = 0.02\,I_{q-1}$: investment income.
+\end{itemize}
+\assume A quarter has 90 days. Collection period 45 days: $45/90 = 1/2$ of a quarter's sales is
+collected in the quarter, the other half in the next; the \$68 million opening receivables are
+collected in Q1. Suppliers paid in 36 days: $36/90 = 0.4$ of a quarter's purchases is paid the
+next quarter, $0.6$ in the same quarter. Last year's Q4 purchases were $0.45 \times 210 = 94.5$
+(45\% of this year's Q1 sales). The book's first row, \pt{``Meta para o saldo de caixa \$30''}, is
+read as the beginning cash balance, which the statement fixes at \$64 million (the \$30 is the
+minimum balance, and the part (b) table itself starts at \$64).
+
+\step{1}{Collections}
+\begin{align}
+  Col_1 &= 68 + \tfrac12(210) = 68 + 105 = 173, \notag\\
+  Col_2 &= \tfrac12(210) + \tfrac12(180) = 105 + 90 = 195, \notag\\
+  Col_3 &= \tfrac12(180) + \tfrac12(245) = 90 + 122.5 = 212.5, \notag\\
+  Col_4 &= \tfrac12(245) + \tfrac12(280) = 122.5 + 140 = 262.5. \notag
+\end{align}
+
+\step{2}{Purchases and payments to suppliers}
+Purchases: $Pur_1 = 0.45(180) = 81$, $Pur_2 = 0.45(245) = 110.25$, $Pur_3 = 0.45(280) = 126$,
+$Pur_4 = 0.45(240) = 108$. Payments $Pay_q = 0.4\,Pur_{q-1} + 0.6\,Pur_q$:
+\begin{align}
+  Pay_1 &= 0.4(94.5) + 0.6(81) = 37.8 + 48.6 = 86.4, \notag\\
+  Pay_2 &= 0.4(81) + 0.6(110.25) = 32.4 + 66.15 = 98.55, \notag\\
+  Pay_3 &= 0.4(110.25) + 0.6(126) = 44.1 + 75.6 = 119.7, \notag\\
+  Pay_4 &= 0.4(126) + 0.6(108) = 50.4 + 64.8 = 115.2. \notag
+\end{align}
+
+\step{3}{Disbursements and net cash inflow}
+Wages, taxes and other: $0.25 S_q = 52.5,\ 45,\ 61.25,\ 70$; interest and dividends 12 each
+quarter; capital spending 80 in Q2.
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+ & Q1 & Q2 & Q3 & Q4\\
+\midrule
+Payments to suppliers & 86.40 & 98.55 & 119.70 & 115.20\\
+Wages, taxes, other & 52.50 & 45.00 & 61.25 & 70.00\\
+Interest and dividends & 12.00 & 12.00 & 12.00 & 12.00\\
+Capital spending & 0.00 & 80.00 & 0.00 & 0.00\\
+\midrule
+Total disbursements & 150.90 & 235.55 & 192.95 & 197.20\\
+Collections & 173.00 & 195.00 & 212.50 & 262.50\\
+\midrule
+Net cash inflow & 22.10 & $-40.55$ & 19.55 & 65.30\\
+\bottomrule
+\end{tabular}
+\end{center}
+For example $NCF_2 = 195 - (98.55 + 45 + 12 + 80) = 195 - 235.55 = -40.55$.
+
+\step{4}{(a) Cash budget}
+Ending cash $=$ beginning cash $+$ $NCF_q$; cumulative surplus $=$ ending cash $- 30$:
+\begin{center}
+\begin{tabular}{lrrrr}
+\toprule
+ & Q1 & Q2 & Q3 & Q4\\
+\midrule
+Beginning cash balance & 64.00 & 86.10 & 45.55 & 65.10\\
+Net cash inflow & 22.10 & $-40.55$ & 19.55 & 65.30\\
+Ending cash balance & 86.10 & 45.55 & 65.10 & 130.40\\
+Minimum cash balance & 30.00 & 30.00 & 30.00 & 30.00\\
+Cumulative surplus (deficit) & 56.10 & 15.55 & 35.10 & 100.40\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\answer{(a)} Ending cash 86.10, 45.55, 65.10, 130.40; cumulative surplus 56.10, 15.55, 35.10,
+100.40 (\$ million). There is never a deficit.
+
+\step{5}{(b) Short-term plan}
+Hold exactly \$30 million; invest the excess; earn $2\%$ on the investments held at the start of
+each quarter. Q1: invest $64 + 22.10 - 30 = 56.10$. Q2: income $0.02(56.10) = 1.122$; the deficit
+$-40.55 + 1.122 = -39.428$ is covered by selling investments, so $I_2 = 56.10 - 39.428 = 16.672$.
+Q3: income $0.02(16.672) = 0.33344$; invest $19.55 + 0.33344 = 19.88344$; $I_3 = 36.55544$. Q4:
+income $0.02(36.55544) = 0.73111$; invest $65.30 + 0.73111 = 66.03111$; $I_4 = 102.58655$.
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+ & Q1 & Q2 & Q3 & Q4\\
+\midrule
+Beginning cash balance & 64.000 & 30.000 & 30.000 & 30.000\\
+Net cash inflow & 22.100 & $-40.550$ & 19.550 & 65.300\\
+New short-term investments & 56.100 & 0.000 & 19.883 & 66.031\\
+Income from short-term investments & 0.000 & 1.122 & 0.333 & 0.731\\
+Short-term investments sold & 0.000 & 39.428 & 0.000 & 0.000\\
+New short-term borrowing & 0 & 0 & 0 & 0\\
+Interest on short-term borrowing & 0 & 0 & 0 & 0\\
+Short-term borrowing repaid & 0 & 0 & 0 & 0\\
+Ending cash balance & 30.000 & 30.000 & 30.000 & 30.000\\
+Minimum cash balance & 30.000 & 30.000 & 30.000 & 30.000\\
+Cumulative surplus (deficit) & 0.000 & 0.000 & 0.000 & 0.000\\
+Beginning short-term investments & 0.000 & 56.100 & 16.672 & 36.555\\
+Ending short-term investments & 56.100 & 16.672 & 36.555 & 102.587\\
+Beginning short-term debt & 0 & 0 & 0 & 0\\
+Ending short-term debt & 0 & 0 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+Net cash cost $=$ interest paid $-$ investment income:
+\begin{align}
+  0 - (0 + 1.122 + 0.33344 + 0.73111) = -2.18655. \label{r5be11-cost}
+\end{align}
+
+\answer{(b)} No borrowing is ever needed; the net cash cost is $-\$2.19$ million, i.e.\ a net
+investment \emph{income} of about \$2.19 million for the year.
+
+\intuition Lince's seasonal pattern (big Q2 capital spending, strong Q4 collections) is fully
+covered by the opening cash cushion of \$64 million: the Q2 dip is met by selling part of what was
+invested in Q1. The cash budget is the tool that reveals this timing; annual totals alone would
+hide the Q2 squeeze. With a lower opening balance the same plan would show Q2 borrowing at 3\%.
+
+\pitfalls
+\begin{itemize}
+  \item Basing purchases on the current quarter's sales instead of next quarter's, or forgetting
+        last year's Q4 purchases (94.5) in the Q1 payment.
+  \item Collecting 45/90 of the \emph{previous} quarter's sales only, i.e.\ swapping the two halves.
+  \item Computing investment income on end-of-quarter balances (it is earned on what was invested
+        during the quarter, the beginning balance).
+\end{itemize}
+
+\refbib Ross Cap.~18, \S18.4 ``O or\c{c}amento de caixa'', pp.~639--642; \S18.6 ``Um plano
+financeiro de curto prazo'', pp.~649--650. No printed answer.
+
+% =====================================================================
+\exsec{12. BCD Manufacturing: tax shield vs.\ lost supplier credit --- Grinblatt 17.5, p.~619}
+
+\asked Whether BCD should borrow \$1 billion to buy back 40\% of its stock, when the debt's tax
+saving is \$48 million a year but suppliers threaten to withdraw net-30 terms, which would cost an
+extra 2\% a year on \$1.5 billion of inventory; and why.
+
+\approach Grinblatt \& Titman's stakeholder theory of capital structure (\S17.1): leverage creates
+tax benefits but imposes costs through non-financial stakeholders --- here suppliers who fear
+being unpaid and react by tightening credit. Compare the two flows on the same (after-tax, annual)
+basis, then ask what else the suppliers' reaction signals.
+
+\notation
+\begin{itemize}
+  \item $D = 1{,}000$: new debt; $r_D = 0.12$: interest rate; $\tau = 0.40$: marginal tax rate (\$ million).
+  \item $INV = 1{,}500$: inventory; $c = 0.02$: extra annual financing cost if trade credit is lost.
+\end{itemize}
+\assume The \$48 million and the 2\% cost are annual and recur as long as the debt is in place;
+the 2\% is a pre-tax, tax-deductible financing cost (it replaces trade credit with costlier funds).
+
+\step{1}{Annual tax saving}
+\begin{align}
+  \text{Interest} &= r_D D = (0.12)(1{,}000) = 120, \notag\\
+  \text{Tax saving} &= \tau\, r_D D = (0.40)(120) = 48. \label{r5be12-ts}
+\end{align}
+
+\step{2}{Annual cost of losing trade credit}
+\begin{align}
+  \text{Pre-tax cost} &= c\, INV = (0.02)(1{,}500) = 30, \notag\\
+  \text{After-tax cost} &= (1-\tau)(30) = (0.60)(30) = 18. \label{r5be12-sc}
+\end{align}
+
+\step{3}{Net annual effect}
+\begin{align}
+  48 - 18 = 30 \ \text{per year} \quad (\text{even with no tax deduction: } 48 - 30 = 18 > 0). \notag
+\end{align}
+In present value, with perpetual debt, the tax shield is $\tau D = (0.40)(1{,}000) = 400$, while
+the after-tax supplier cost discounted at 12\% is $18/0.12 = 150$; the net is $400 - 150 = 250$.
+
+\step{4}{Qualitative judgement}
+The narrow arithmetic favours the repurchase, but the suppliers' reaction is a warning sign:
+\begin{itemize}
+  \item Suppliers are a stakeholder group that bears costs in distress; if they react, customers
+        (who worry about warranties and spare parts) and employees (who worry about their jobs) may
+        too, and those indirect distress costs are not in the \$18 million.
+  \item The \$48 million is not riskless: it is earned only if BCD has taxable income to shelter;
+        higher leverage raises the chance of losses and of financial distress.
+  \item Personal taxes on interest reduce the net tax advantage of debt (Miller), so \$48 million
+        overstates the gain to shareholders.
+  \item The supplier credit could perhaps be preserved by negotiation (collateral, shorter terms,
+        a smaller repurchase).
+\end{itemize}
+
+\answer{\unskip} On the numbers given, go ahead: the tax saving (\$48 million) exceeds the after-tax cost
+of lost trade credit (\$18 million) by \$30 million a year (\$250 million in PV for perpetual
+debt). But management should first weigh the indirect costs the supplier threat foreshadows; if
+other stakeholders react similarly, the decision can flip.
+
+\intuition Capital structure is not only a deal between shareholders and lenders. Firms whose
+suppliers, customers or employees make firm-specific investments pay for leverage through worse
+terms from them. The optimal debt ratio is lower when those stakeholders are important and
+easily spooked.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing the \$48 million tax saving with the \$120 million of interest: interest replaces
+        dividends to equity; only the tax saving is a gain to the firm.
+  \item Comparing an after-tax gain with a pre-tax cost without saying so.
+  \item Stopping at the arithmetic and ignoring what the suppliers' reaction implies about distress costs.
+\end{itemize}
+
+\refbib Grinblatt \& Titman Ch.~17, \S17.1 ``The Stakeholder Theory of Capital Structure'',
+pp.~597--600. No printed answer.
+
+% =====================================================================
+\exsec{13. International Motor Corporation: CCC and payables --- Berk 19.15, p.~588}
+
+\asked (a) IMC's cash conversion cycle in 2009 and 2010, what changed, and what that implies for
+its cash needs. (b) Whether, with suppliers' terms of net 30, IMC manages its payables well.
+
+\approach The CCC as in Exercise 1, computed for each year from that year's flows and year-end
+balances, then decomposed to see which component moved. For (b), compare payables days with the
+30 days allowed: with net terms and no discount, paying early has no benefit (Berk, \S19.4,
+``Determining Accounts Payable Days Outstanding'').
+
+\notation
+\begin{itemize}
+  \item $D_{INV}^{y}$, $D_{AR}^{y}$, $D_{AP}^{y}$, $CCC^{y}$ for year $y \in \{2009, 2010\}$ (days).
+  \item Flows and balances in \$ million.
+\end{itemize}
+
+\step{1}{Daily flows}
+\begin{align}
+  2009:&\quad C/365 = (52{,}000)/365 = 142.47, \quad S/365 = (60{,}000)/365 = 164.38, \notag\\
+  2010:&\quad C/365 = (61{,}000)/365 = 167.12, \quad S/365 = (75{,}000)/365 = 205.48. \notag
+\end{align}
+
+\step{2}{(a) 2009}
+\begin{align}
+  D_{INV} &= (6{,}200)/(142.47) = 43.52, \quad D_{AR} = (2{,}800)/(164.38) = 17.03, \notag\\
+  D_{AP} &= (3{,}600)/(142.47) = 25.27, \notag\\
+  CCC^{2009} &= (43.52) + (17.03) - (25.27) = 35.28 \ \text{days}. \label{r5be13-09}
+\end{align}
+
+\step{3}{(a) 2010}
+\begin{align}
+  D_{INV} &= (6{,}600)/(167.12) = 39.49, \quad D_{AR} = (6{,}900)/(205.48) = 33.58, \notag\\
+  D_{AP} &= (4{,}600)/(167.12) = 27.52, \notag\\
+  CCC^{2010} &= (39.49) + (33.58) - (27.52) = 45.55 \ \text{days}. \label{r5be13-10}
+\end{align}
+
+\step{4}{(a) What changed}
+$CCC^{2010} - CCC^{2009} = 45.55 - 35.28 = 10.26$ days. By component: inventory $-4.03$ days,
+receivables $+16.55$ days, payables $+2.26$ days (which shortens the CCC). The deterioration is
+entirely receivables: had 2010 receivables days stayed at 17.03, receivables would have been
+$17.03 \times 205.48 = 3{,}500$ instead of 6{,}900, i.e.\ \$3{,}400 million less. The extra
+10.26 days of the CCC, valued at 2010 daily sales, tie up about $10.26 \times 205.48 \approx
+\$2{,}109$ million.
+
+\answer{(a)} CCC $= 35.28$ days (2009) and $45.55$ days (2010), a rise of $10.26$ days driven by
+slower collections (receivables days $17.03 \to 33.58$). All else equal IMC needs more cash (on
+the order of \$2 billion) to finance working capital.
+
+\step{5}{(b) Payables against net 30}
+Payables days were $25.27$ (2009) and $27.52$ (2010), both below the 30 days suppliers allow. With
+net-30 terms there is no discount for paying early, so every day paid before day 30 is free
+financing given up. Paying on day 30 in 2010 would mean payables of $30 \times 167.12 =
+5{,}013.70$ instead of 4{,}600, i.e.\ \$413.70 million more interest-free credit
+($30 \times 142.47 - 3{,}600 = 673.97$ in 2009).
+
+\answer{(b)} No: IMC pays in about 25--28 days although it may take 30 at no cost; it could raise
+roughly \$414 million of free financing (2010) by paying on the due date. It has improved slightly
+from 2009, and it should not stretch beyond 30 days.
+
+\intuition IMC's working capital got worse because customers pay slower --- possibly a deliberate
+loosening of credit to push the 25\% sales growth, possibly a collection problem; the aging
+schedule would tell. On the payables side it leaves free money on the table. Both point to
+working capital as a cheap source of the cash its growth needs.
+
+\pitfalls
+\begin{itemize}
+  \item Using one year's flows with the other year's balances.
+  \item Advising IMC to stretch payables beyond 30 days; the costless target is exactly the due date.
+  \item Reading the higher CCC as ``more cash on hand''; it means more cash is \emph{needed}.
+\end{itemize}
+
+\refbib Berk Ch.~19, \S19.1, p.~567; \S19.4 ``Payables Management'', pp.~578--579. No printed answer.
+
+% =====================================================================
+\exsec{14. Senna S/A: switch-to-credit NPV and break-even price --- Ross 20.18 (with 20.14), pp.~734--735}
+
+\asked Part 0 (Problem 14): whether to switch from cash-only sales at \$91 to one-period credit
+at \$94 with sales rising from 3{,}850 to 3{,}940 units. Problem 18: the price per unit under the
+new policy that makes the switch's NPV zero when new-policy sales are 4{,}100 units.
+
+\approach Ross's NPV of switching credit policy (\S20.3): the switch costs this period's cash
+receipts under the old policy plus the variable cost of the extra units, $PQ + v(Q' - Q)$ [20.5];
+from next period on, the firm gains the difference in monthly margins forever. Ross's formula
+[20.6] assumes the same price; with a new price $P'$ the perpetual increment is
+$(P'-v)Q' - (P - v)Q$. The break-even price sets the NPV to zero.
+
+\notation
+\begin{itemize}
+  \item $P = 91$, $P'$: old and new price; $v = 47$: unit cost (\$); $Q = 3{,}850$, $Q'$: old and new units per period.
+  \item $R = 0.025$: required return per period.
+\end{itemize}
+
+\step{1}{Part 0 --- cost of switching}
+\begin{align}
+  \text{Cost} &= PQ + v(Q' - Q) \label{r5be14-cost}\\
+  &= (91)(3{,}850) + (47)(3{,}940 - 3{,}850) \notag\\
+  &= 350{,}350 + 4{,}230 = 354{,}580. \notag
+\end{align}
+
+\step{2}{Part 0 --- perpetual benefit and NPV}
+\begin{align}
+  \Delta CF &= (P' - v)Q' - (P - v)Q \notag\\
+  &= (94 - 47)(3{,}940) - (91 - 47)(3{,}850) \notag\\
+  &= 185{,}180 - 169{,}400 = 15{,}780 \ \text{per period}, \notag\\
+  \text{NPV} &= -354{,}580 + 15{,}780/0.025 = -354{,}580 + 631{,}200 = 276{,}620. \label{r5be14-npv0}
+\end{align}
+Part 0 answer: switch (NPV $= \$276{,}620$).
+
+\step{3}{Problem 18 --- cost of switching at 4{,}100 units}
+\begin{align}
+  \text{Cost} &= (91)(3{,}850) + (47)(4{,}100 - 3{,}850) = 350{,}350 + 11{,}750 = 362{,}100. \notag
+\end{align}
+
+\step{4}{Problem 18 --- solve NPV $= 0$ for $P'$}
+\begin{align}
+  0 &= -362{,}100 + \frac{(P' - 47)(4{,}100) - 169{,}400}{0.025} \notag\\
+  (P' - 47)(4{,}100) - 169{,}400 &= (0.025)(362{,}100) = 9{,}052.5 \notag\\
+  (P' - 47)(4{,}100) &= 169{,}400 + 9{,}052.5 = 178{,}452.5 \notag\\
+  P' - 47 &= 178{,}452.5/4{,}100 = 43.525 \notag\\
+  P' &= 47 + 43.525 = 90.525. \label{r5be14-p}
+\end{align}
+
+\answer{\unskip} Break-even credit price $P' \approx \$90.53$ per unit (and in Part 0 the switch has NPV
+$\$276{,}620$).
+
+\intuition At 4{,}100 units the extra volume alone pays for one month's delayed receipts, so the
+firm could even charge slightly \emph{less} on credit (\$90.53) than for cash (\$91) and break even.
+The credit ``markup'' needed is negative: the volume effect does the work.
+
+\pitfalls
+\begin{itemize}
+  \item Using the new price in the switching cost: what is lost this period is the old cash
+        revenue $PQ$, not $P'Q'$.
+  \item Applying Ross's [20.6] with $(P - v)(Q' - Q)$ when the price changes; that formula holds
+        only for $P' = P$.
+  \item Forgetting the extra variable cost $v(Q' - Q)$ in the switching cost.
+\end{itemize}
+
+\refbib Ross Cap.~20, \S20.3 ``An\'alise da pol\'itica de cr\'edito'', pp.~712--714 (Eqs.\
+20.2--20.7). No printed answer.
+
+% =====================================================================
+\exsec{15. Toys-4-Kids: seasonal vs.\ level production --- Higgins 3.14 (with 3.13), pp.~107--109}
+
+\asked (a) Redo the quarterly pro forma with level production (COGS 65\% of sales, production
+$=$ annual COGS$/4$, payables $=$ 10\% of average quarterly sales). (b) The effect on annual
+profit. (c) The effect on quarter-end inventory and on external financing. (d) Whether the firm
+can borrow that much, the obsolescence risk of building inventory ahead of sales, and whether it
+worries lenders.
+
+\approach Percent-of-sales pro forma with external financing required (EFR) as the plug (Higgins
+Ch.~3, Problem 13): with cash at its \$200 minimum, EFR $=$ total assets $-$ (liabilities $+$
+equity); if EFR is negative, set it to zero and let cash absorb the excess. The forecasts hold
+only on each quarter-end date, which is why seasonality matters (Higgins, ``Seasonality'',
+pp.~86--87).
+
+\notation
+\begin{itemize}
+  \item $S_q$: net sales; $C_q = 0.65 S_q$: cost of sales; $Prod = \sum_q C_q/4$: quarterly
+        production; $INV_q$: end-of-quarter inventory (\$ thousand).
+  \item $\tau = 0.40$: tax rate (from the book's table, $188/470$); $EFR_q$: external financing required.
+\end{itemize}
+\assume As in Problem 13: operating expenses 560 per quarter, receivables 75\% of quarterly sales,
+accrued taxes equal to the quarter's tax (paid in arrears, negative $=$ refund due), net plant
+1{,}000, long-term debt 400, opening equity 3{,}000, opening inventory 500, minimum cash 200,
+no dividends; interest on new financing ignored, as the problem instructs. Seasonal figures are
+recomputed unrounded (the book's table rounds to thousands).
+
+\step{1}{Base case (Problem 13) logic}
+In Q1, with cash at 200, assets would be $200 + 225 + 500 + 1{,}000 = 1{,}925$ against liabilities
+and equity of $2{,}960$, so EFR would be $-1{,}035$; it is set to 0 and cash becomes $2{,}960 -
+1{,}725 = 1{,}235$ (Q2 likewise, EFR $-727$). In Q3 and Q4 EFR is positive: $530.5$ and $920.5$
+(the book prints 530 and 920). Annual profit after tax: $(1-0.40)(0.30 \times 8{,}875 - 4 \times
+560) = 253.5$.
+
+\step{2}{(a) Level production: cost of sales and production}
+Annual sales $\sum S_q = 300 + 375 + 3{,}200 + 5{,}000 = 8{,}875$.
+\begin{align}
+  C_q &= 0.65 S_q = 195,\ 243.75,\ 2{,}080,\ 3{,}250; \quad \textstyle\sum_q C_q = 5{,}768.75, \notag\\
+  Prod &= (5{,}768.75)/4 = 1{,}442.1875 \ \text{per quarter}. \notag
+\end{align}
+
+\step{3}{(a) Inventory}
+$INV_q = INV_{q-1} + Prod - C_q$, starting from 500:
+\begin{align}
+  INV_1 &= 500 + 1{,}442.1875 - 195 = 1{,}747.1875, \notag\\
+  INV_2 &= 1{,}747.1875 + 1{,}442.1875 - 243.75 = 2{,}945.625, \notag\\
+  INV_3 &= 2{,}945.625 + 1{,}442.1875 - 2{,}080 = 2{,}307.8125, \notag\\
+  INV_4 &= 2{,}307.8125 + 1{,}442.1875 - 3{,}250 = 500. \notag
+\end{align}
+
+\step{4}{(a) Income statement}
+Gross profit $S_q - C_q = 105,\ 131.25,\ 1{,}120,\ 1{,}750$; minus 560 gives profit before tax
+$-455,\ -428.75,\ 560,\ 1{,}190$; tax at 40\%: $-182,\ -171.5,\ 224,\ 476$; profit after tax
+$-273,\ -257.25,\ 336,\ 714$. Equity: $3{,}000 - 273 = 2{,}727$; $2{,}727 - 257.25 = 2{,}469.75$;
+$+336 = 2{,}805.75$; $+714 = 3{,}519.75$.
+
+\step{5}{(a) Balance sheet and EFR}
+Payables $= 0.10 \times (8{,}875/4) = 0.10 \times 2{,}218.75 = 221.875$ every quarter. With cash at
+200, for Q1: assets $200 + 225 + 1{,}747.1875 + 1{,}000 = 3{,}172.1875$; liabilities and equity
+$221.875 - 182 + 400 + 2{,}727 = 3{,}166.875$; $EFR_1 = 3{,}172.1875 - 3{,}166.875 = 5.3125$.
+The other quarters follow in the same way:
+\begin{center}\small
+\begin{tabular}{lrrrr}
+\toprule
+Level production (\$ thousand) & Qtr 1 & Qtr 2 & Qtr 3 & Qtr 4\\
+\midrule
+Net sales & 300.0 & 375.0 & 3,200.0 & 5,000.0\\
+Cost of sales (65\%) & 195.0 & 243.8 & 2,080.0 & 3,250.0\\
+Gross profit & 105.0 & 131.3 & 1,120.0 & 1,750.0\\
+Operating expenses & 560.0 & 560.0 & 560.0 & 560.0\\
+Profit before tax & $-455.0$ & $-428.8$ & 560.0 & 1,190.0\\
+Income taxes (40\%) & $-182.0$ & $-171.5$ & 224.0 & 476.0\\
+Profit after tax & $-273.0$ & $-257.3$ & 336.0 & 714.0\\
+\midrule
+Cash & 200.0 & 200.0 & 200.0 & 200.0\\
+Accounts receivable (75\%) & 225.0 & 281.3 & 2,400.0 & 3,750.0\\
+Inventory & 1,747.2 & 2,945.6 & 2,307.8 & 500.0\\
+Net plant \& equipment & 1,000.0 & 1,000.0 & 1,000.0 & 1,000.0\\
+Total assets & 3,172.2 & 4,426.9 & 5,907.8 & 5,450.0\\
+\midrule
+Accounts payable & 221.9 & 221.9 & 221.9 & 221.9\\
+Accrued taxes & $-182.0$ & $-171.5$ & 224.0 & 476.0\\
+Current liabilities & 39.9 & 50.4 & 445.9 & 697.9\\
+Long-term debt & 400.0 & 400.0 & 400.0 & 400.0\\
+Equity & 2,727.0 & 2,469.8 & 2,805.8 & 3,519.8\\
+Total liabilities and equity & 3,166.9 & 2,920.1 & 3,651.6 & 4,617.6\\
+\midrule
+External financing required & 5.3 & 1,506.8 & 2,256.2 & 832.4\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\answer{(a)} EFR under level production: about \$5 thousand, \$1{,}507 thousand, \$2{,}256 thousand
+and \$832 thousand in Q1--Q4 (table above).
+
+\step{6}{(b) Annual profit}
+Only the cost-of-sales ratio changes, so
+\begin{align}
+  \Delta PBT &= (0.70 - 0.65)(8{,}875) = 443.75, \notag\\
+  \Delta PAT &= (1 - 0.40)(443.75) = 266.25 \quad (519.75 \text{ vs.\ } 253.5). \notag
+\end{align}
+
+\answer{(b)} Profit after tax rises by \$266.25 thousand, from \$253.5 to \$519.75 thousand (more
+than double).
+
+\step{7}{(c) Inventory and financing}
+Inventory rises above the seasonal 500 by $1{,}247.2$, $2{,}445.6$ and $1{,}807.8$ in Q1--Q3 and is
+back to 500 in Q4. EFR changes from (0, 0, 530.5, 920.5) to (5.3, 1{,}506.8, 2{,}256.2, 832.4),
+i.e.\ by $+5.3$, $+1{,}506.8$, $+1{,}725.7$ and $-88.1$. In Q4 less is needed, because accumulated
+extra profit ($+266.25$ of equity) and higher accrued taxes ($+100$) outweigh lower payables
+($221.875$ vs.\ 500). The average extra quarter-end financing is $(5.3125 + 1{,}506.75 +
+1{,}725.6875 - 88.125)/4 = 3{,}149.625/4 = 787.4$; the pre-tax saving of 443.75 would be wiped out
+only at an interest rate of $443.75/787.4 = 56.36\%$ a year --- a rough bound, since it uses
+quarter-end balances only.
+
+\answer{(c)} Ending inventory balloons in Q1--Q3 (peak \$2.95 million in Q2) and external
+financing is needed from Q1, peaking at about \$2.26 million in Q3 instead of \$0.92 million in Q4;
+by year-end the need is slightly lower (\$832 vs.\ \$920 thousand).
+
+\step{8}{(d) Can it borrow, and the obsolescence risk}
+\begin{itemize}
+  \item \emph{Capacity.} The peak loan (\$2.26 million in Q3) is about $2{,}256/4{,}708 = 47.9\%$
+        of receivables plus inventory ($2{,}400 + 2{,}307.8 = 4{,}707.8$); in Q2 the loan is 46.7\% of
+        $281.3 + 2{,}945.6 = 3{,}226.9$, but there the collateral is almost all inventory. A
+        seasonal, self-liquidating bank line is plausible, but on tougher terms than the base case,
+        where loans were under a quarter of receivables (Higgins's answer to 13(d)).
+  \item \emph{Obsolescence.} Toys are fashion goods: a line built in Q1--Q2 for Christmas may be
+        out of style, mis-forecast or superseded by the time it sells. Unsold goods must be
+        discounted or written off, and the planned 5-point margin gain disappears. Level production
+        converts a demand forecast into a physical bet made months in advance. (Higgins's aside
+        about left shoes is a reminder that what is cheapest to produce is not always what sells.)
+  \item \emph{Lenders.} Yes. Inventory is weak collateral: specific to the firm, valued at cost,
+        and worth little in liquidation if it is last season's toys. A lender will apply a heavy
+        haircut, ask for covenants and monitor sales; repayment depends on the Q3--Q4 selling
+        season actually happening. Receivables in Q3--Q4 are better collateral than inventory in
+        Q1--Q2.
+\end{itemize}
+
+\answer{(d)} Probably yes, as a seasonal line secured by receivables and inventory, but the lender
+bears the obsolescence risk of a Q2 balance sheet that is mostly toys not yet sold, and will price
+and limit the loan accordingly.
+
+\intuition Level production trades a lower production cost for a larger and earlier investment in
+inventory. The profit gain is real and large relative to any plausible interest cost; the hidden
+cost is risk --- forecast and obsolescence risk --- which falls on the firm and its lenders.
+
+\pitfalls
+\begin{itemize}
+  \item Keeping payables at 10\% of each quarter's sales; under level production purchases are
+        smooth, hence payables on average sales.
+  \item Computing inventory as a percentage of sales instead of with the boq/eoq recursion.
+  \item Reading the Q4 EFR (lower than seasonal) as ``level production needs less financing''; the
+        peak need is in Q2--Q3.
+\end{itemize}
+
+\bookans Problem 14 has no printed answer. For Part 0 (Problem 13), Higgins p.~408: negative taxes
+are a reduction of tax liability (or a rebate); cash exceeds the minimum because EFR would be
+negative and cash becomes the balancing item; EFR is the balancing item when positive; the firm
+should easily borrow, as amounts are less than a quarter of receivables. Step 1 matches this.
+
+\refbib Higgins Ch.~3, ``Pro Forma Statements'' and ``Seasonality'', pp.~86--87; Problems 13--14,
+pp.~107--109; answers p.~408.
+
+\end{document}

@@ -315,9 +315,9 @@ To write $M$ in the form (3.9), the expression (3.8) was substituted in equation
 
 $$E(X) = \int_0^t x\frac{dx}{t} = \frac{t}{2} \quad \text{and} \quad E(\mathbf{1}_{\{X < B\}}) = \int_0^B \frac{dx}{t} = \frac{B}{t},$$
 
-with $B$ taken to be less than $t$.
+with $B$ taken to be less¹² than $t$.
 
-The signal of the true $t$ is therefore a function $a(B)$ at time 0. The manager chooses $B$ so as to maximize its schedule $M$. The debt level $B$ must therefore satisfy the first-order condition
+The signal of the true $t$ is therefore a function $a(B)$ at time 0. The manager chooses $B$ so as to maximize its schedule $M$. The debt level $B$ must therefore satisfy the first-order condition¹³
 
 $$\frac{1}{2}\gamma_\circ a'(B) = \gamma_1\frac{L}{t}. \qquad (3.10)$$
 
@@ -357,6 +357,12 @@ For this signaling to be an equilibrium, it should satisfy two conditions:
 In equilibrium all types of agents other than $c$ will pay a cost, since they will implicitly accept a positive probability of incurring a penalty.
 
 The optimum level of debt is used to identify the class to which the firm belongs. Note that given the type of the firm, its value is directly given by equation (3.8), independently of its capital structure which is compatible with the MM framework.
+
+*From Amaro de Matos, Notes to Chapter 3, p. 280 (PDF 298):*
+
+> 12. Otherwise, bankruptcy is certain.
+>
+> 13. This is true as far as it is an internal optimum—that is, as far as the optimal level of $B$ satisfies $0 < B < t$.
 
 *(The statement’s $\gamma_0$ is the book’s $\gamma_\circ$.)*
 
@@ -422,10 +428,28 @@ Suppose further that under symmetric information only the good borrower is credi
 
 Assume that $r < I - A < r + [\rho_0^G - \rho]$. Show that the good borrower can costlessly signal her type.
 
+#### Context needed to solve it
+
+*From Tirole §6.3, Application 6 "Short-Term Maturities", pp. 254–255 (PDF 267–268) — the model of which the exercise is a variant (there the liquidity shock is random; in the exercise it is deterministic and the asymmetry is about the success probabilities). It defines $R$ and the preferences the statement leaves implicit:*
+
+Let us consider the following variant of the model of debt maturities set up in Section 5.2. At date 0 the entrepreneur has a project of fixed size $I$, has wealth $A$, and must borrow $I - A$. At date 1, the investment yields a deterministic and verifiable short-term (date-1) profit $r > 0$. With probability $\lambda$, continuation requires reinvesting $\rho$ (the liquidation value is equal to 0); with probability $1 - \lambda$, continuation requires no reinvestment.⁵¹
+
+In the case of continuation, the firm at date 2 yields $R$ in the case of success and 0 in the case of failure. The probability of success is $p_H$ in the case of good behavior and $p_L = p_H - \Delta p$ in the case of misbehavior (which yields private benefit $B$). Moral hazard is introduced in order to create an entrepreneurial rent from continuation, or, equivalently, a cost for the entrepreneur associated with early termination. Put differently, moral hazard introduces a friction in the date-1 refinancing market. Let
+
+$$\rho_1 \equiv p_H R \quad \text{and} \quad \rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the continuation NPV and pledgeable income, respectively.
+
+[…] the borrower can use retentions $(r - d)$ together with what can be raised in the capital market $(\rho_0)$ to meet shock $\rho$.
+
+> 51. As usual, the entrepreneur is risk neutral and protected by limited liability; and the investors are risk neutral and demand a 0 rate of return.
+
+*Figure 6.1 (timeline, left to right):* Date 0: Entrepreneur has wealth $A$ and fixed-size investment project $I - A$. → Date 1: Short-run income $r$. Reinvestment need $\rho$ (prob. $\lambda$) or 0 (prob. $1 - \lambda$). → (if reinvestment) Moral hazard ($p = p_H$ or $p_L$). → Outcome: success ($R$) or failure (0).
+
 ---
 
 ### 11. Herd behavior
-**Source:** Tirole, Ch. 6, Exercise 6.9, p. 278 (PDF 291) · Answer in book: yes, p. 600
+**Source:** Tirole, Ch. 6, Exercise 6.9, pp. 278–279 (PDF 291) · Answer in book: yes, p. 600
 
 It is often argued that the managers of industrial companies, banks, or mutual funds are prone to herd.⁸¹ They engage in similar investments with sometimes little evidence that their strategy is the most profitable. An economic agent may indeed select a popular strategy against her own information that another strategy may be more profitable. A number of contributions have demonstrated that herding behavior may actually be individually rational even though it is often collectively inefficient. The literature on herding behavior starts with the seminal contributions of Banerjee (1992), Bikhchandani et al. (1992), Scharfstein and Stein (1990), and Welch (1992); see Bikhchandani and Sharma (2001) for a survey of applications of this literature to financial markets.
 
@@ -846,7 +870,7 @@ $$\tilde{U}_b^{SI} \equiv \tilde{U}_b(\tilde{c}^{SI}) \geqslant \tilde{U}_b(\til
 ---
 
 ### 15. Reputational capital
-**Source:** Tirole, Ch. 6, Exercise 6.3, p. 274 (PDF 287) · Answer in book: yes, p. 597
+**Source:** Tirole, Ch. 6, Exercise 6.3, pp. 274–275 (PDF 287) · Answer in book: yes, p. 597
 
 Consider the fixed-investment model. All parameters are common knowledge between the borrower and the investors, except the private benefit which is known only to the borrower. The private benefit is equal to $B$ with probability $1 - \alpha$ and to $b$ with probability $\alpha$, where $B > b > 0$.
 

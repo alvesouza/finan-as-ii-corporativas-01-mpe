@@ -1,4 +1,5 @@
 % Worked solutions for Listas/lista-r1-accounting-capital-structure.md (15 exercises).
+% Format: .agent/notes/solutions-and-roadmap-spec.md, sections B and C (deeper solutions).
 % Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
 % Every number below is asserted in lista-r1-accounting-capital-structure-solutions_check.py.
 \documentclass[11pt,a4paper]{article}
@@ -31,6 +32,10 @@
 \newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
 \newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
 \newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
 
 \title{List R1 --- Introduction, accounting revision and the capital structure\\[2pt]
 \large Worked solutions}
@@ -52,6 +57,17 @@ written $196{,}000$. Money is in the units of each statement.
 % =====================================================================
 \exsec{1. Transactions and the balance sheet --- Higgins 1.4, p.~33}
 
+\asked For each of eight transactions, say which balance sheet accounts move, by how much and in
+which direction, and check that assets still equal liabilities plus equity afterwards.
+(a) selling used equipment above its book value; (b) buying a building with part cash, part bank
+loan; (c) buying a building with cash only; (d) paying suppliers; (e) buying back own shares;
+(f) a cash sale of merchandise; (g) a credit sale of merchandise; (h) paying a dividend.
+
+\approach Every transaction is recorded twice, so the balance sheet identity $A = L + E$ must hold
+in changes: $\Delta A = \Delta L + \Delta E$. For each item, write the two (or three) accounts that
+move, then read $\Delta E$ off the identity. Equity moves only when owners gain or lose value
+(a gain, a profit, a payout, a buyback); swaps of one asset for another do not touch it.
+
 \notation
 \begin{itemize}
   \item $A$, $L$, $E$: total assets, total liabilities, owners' equity (\$; $A = L + E$).
@@ -62,67 +78,121 @@ written $196{,}000$. Money is in the units of each statement.
 repurchased shares are carried as treasury stock, a deduction from equity.
 
 \step{1}{The identity in changes}
-The balance sheet identity holds before and after each transaction,
+Subtracting the identity before the transaction from the identity after it gives the rule used in
+every part:
 \begin{align}
   A &= L + E, \label{e1-id}\\
+  A + \Delta A &= (L + \Delta L) + (E + \Delta E), \notag\\
   \Delta A &= \Delta L + \Delta E. \label{e1-did}
 \end{align}
 
 \step{2}{(a) Sale of used equipment}
-Cash rises by the price and equipment falls by its book value:
+Cash rises by the price received and the equipment account falls by its book value, so total assets
+change by the difference:
 \begin{align}
   \Delta A &= \Delta\text{Cash} + \Delta\text{Equipment} \notag\\
   &= (500{,}000) + (-300{,}000) \notag\\
   &= 200{,}000. \label{e1-a}
 \end{align}
-By \eqref{e1-did}, $\Delta E = 200{,}000$: the gain on sale (price minus book value) enters
-retained earnings; liabilities do not change.
+No liability changes, $\Delta L = 0$, so \eqref{e1-did} gives $\Delta E = \Delta A - \Delta L =
+200{,}000 - 0 = 200{,}000$: the gain on sale (price minus book value) enters retained earnings.
+
+\answer{(a)} Cash $+\$500{,}000$, equipment $-\$300{,}000$; assets and equity (retained earnings) both rise by $\$200{,}000$.
 
 \step{3}{(b) Building financed 40\% cash, 60\% loan}
+The cash part and the loan part are each a share of the price:
 \begin{align}
   \Delta\text{Cash} &= -(0.40)(80) \notag\\
   &= -32 \ \text{million}, \label{e1-b1}\\
   \Delta\text{Bank loan} &= (0.60)(80) \notag\\
   &= 48 \ \text{million}. \label{e1-b2}
 \end{align}
-Assets change by $\Delta A = (80) + (-32) = 48$ million, equal to $\Delta L = 48$ from
-\eqref{e1-b2}; equity is unchanged.
+Assets gain the building and lose the cash:
+\begin{align}
+  \Delta A &= \Delta\text{Buildings} + \Delta\text{Cash} \notag\\
+  &= (80) + (-32) \notag\\
+  &= 48 \ \text{million}. \notag
+\end{align}
+By \eqref{e1-did}, $\Delta E = \Delta A - \Delta L = 48 - 48 = 0$.
+
+\answer{(b)} Buildings $+\$80$ million, cash $-\$32$ million, bank loan $+\$48$ million; assets and liabilities rise by $\$48$ million, equity unchanged.
 
 \step{4}{(c) Building bought for cash}
-$\Delta A = (60) + (-60) = 0$: buildings $+60$ million, cash $-60$ million. Totals are
-unchanged; only the composition of assets moves (less liquid).
+One asset is exchanged for another of equal value:
+\begin{align}
+  \Delta A &= \Delta\text{Buildings} + \Delta\text{Cash} \notag\\
+  &= (60) + (-60) \notag\\
+  &= 0. \notag
+\end{align}
+With $\Delta L = 0$, \eqref{e1-did} gives $\Delta E = 0$. Only the composition of assets moves
+(from liquid cash to an illiquid building).
+
+\answer{(c)} Buildings $+\$60$ million, cash $-\$60$ million; totals unchanged.
 
 \step{5}{(d) Payment to trade creditors}
-Cash $-40{,}000$ and accounts payable $-40{,}000$: $\Delta A = \Delta L = -40{,}000$, $\Delta E = 0$.
+Paying a supplier settles a liability with cash: $\Delta\text{Cash} = -40{,}000$ and
+$\Delta\text{Accounts payable} = -40{,}000$, so $\Delta A = \Delta L = -40{,}000$ and, by
+\eqref{e1-did}, $\Delta E = -40{,}000 - (-40{,}000) = 0$.
+
+\answer{(d)} Cash and accounts payable both fall by $\$40{,}000$; equity unchanged.
 
 \step{6}{(e) Share repurchase}
+The firm pays the price on each share bought back:
 \begin{align}
   \Delta\text{Cash} &= -(10{,}000)(24) \notag\\
   &= -240{,}000. \label{e1-e}
 \end{align}
-Equity falls by the same amount (treasury stock), $\Delta E = -240{,}000$; liabilities unchanged.
+No liability changes, so by \eqref{e1-did} $\Delta E = \Delta A = -240{,}000$ (recorded as
+treasury stock, a deduction from equity).
+
+\answer{(e)} Cash $-\$240{,}000$ and equity $-\$240{,}000$; liabilities unchanged.
 
 \step{7}{(f) Cash sale of merchandise}
-Cash $+80{,}000$, inventory $-C_f$, so $\Delta A = 80{,}000 - C_f$ and, by \eqref{e1-did}, retained
-earnings rise by the gross profit $\Delta E = 80{,}000 - C_f$.
+Cash comes in at the sale price and inventory leaves at its cost:
+$\Delta A = \Delta\text{Cash} + \Delta\text{Inventory} = 80{,}000 - C_f$. With $\Delta L = 0$,
+\eqref{e1-did} gives $\Delta E = 80{,}000 - C_f$, the gross profit, added to retained earnings.
+
+\answer{(f)} Cash $+\$80{,}000$, inventory $-C_f$; equity rises by the gross profit $80{,}000 - C_f$.
 
 \step{8}{(g) Credit sale of merchandise}
-Accounts receivable $+120{,}000$, inventory $-C_g$, $\Delta E = 120{,}000 - C_g$. Same effect on
-equity as a cash sale; the asset received is a receivable, not cash.
+The same as (f), except the asset received is a claim on the customer:
+$\Delta A = \Delta\text{Receivables} + \Delta\text{Inventory} = 120{,}000 - C_g$, so
+$\Delta E = 120{,}000 - C_g$.
+
+\answer{(g)} Accounts receivable $+\$120{,}000$, inventory $-C_g$; equity rises by $120{,}000 - C_g$.
 
 \step{9}{(h) Dividend}
-Cash $-50{,}000$ and retained earnings $-50{,}000$: $\Delta A = \Delta E = -50{,}000$.
+A dividend pays cash out of retained earnings: $\Delta\text{Cash} = -50{,}000$, $\Delta L = 0$, so
+$\Delta E = \Delta A = -50{,}000$.
+
+\answer{(h)} Cash and retained earnings both fall by $\$50{,}000$.
 
 \intuition Every transaction has two sides. Only exchanges with outsiders that create or destroy
 value for owners (a gain, a profit, a payout, a buyback) move equity; swaps of one asset for
 another, or borrowing to buy an asset, change the composition or size of the balance sheet
-without touching equity.
+without touching equity. This is why book equity is a residual: it is whatever is left after
+liabilities are subtracted from assets.
+
+\pitfalls
+\begin{itemize}
+  \item Booking the full \$500{,}000 in (a) as a gain: the gain is only the excess over book value, \$200{,}000.
+  \item Treating a credit sale (g) as having no effect until cash arrives: accrual accounting records it at the sale.
+  \item Recording a dividend (h) or a buyback (e) as an expense: both are distributions to owners and bypass the income statement.
+\end{itemize}
 
 \refbib Higgins Ch.~1, \S\,``The Balance Sheet'' (with ``Current Assets and Liabilities''),
 pp.~9--11; \S\,``Measuring Earnings'', p.~12. No printed answer (even-numbered problem).
 
 % =====================================================================
 \exsec{2. Local Co.\ margins --- Berk 2.12, p.~54}
+
+\asked (a) The share of each sales dollar left after the direct cost of the goods sold (gross
+margin). (b) The share left after also paying the costs of running the business, including
+depreciation (operating margin). (c) The share left for shareholders after taxes (net profit margin).
+
+\approach Build the income statement top-down (Berk's Table 2.3 layout) and divide each subtotal by
+sales. Each margin is one more layer of cost removed: production, operations, then financing and
+taxes (Berk Eqs.~2.9--2.11).
 
 \notation
 \begin{itemize}
@@ -131,9 +201,11 @@ pp.~9--11; \S\,``Measuring Earnings'', p.~12. No printed answer (even-numbered p
   \item $\tau$: tax rate ($0 \le \tau < 1$); $GP$: gross profit; $OI$: operating income; $NI$: net income.
 \end{itemize}
 \assume No interest expense and no other income (none is given), so $OI$ is also pretax income.
-Depreciation is an operating expense, as in Berk's Table 2.3 (p.~34).
+Depreciation is an operating expense, as in Berk's Table 2.3 (p.~34). The \$500{,}000 of SG\&A is
+$0.5$ million.
 
 \step{1}{Gross profit and gross margin (a)}
+Gross profit removes only the cost of the goods sold; dividing by sales gives the margin:
 \begin{align}
   GP &= S - C \label{e2-gp}\\
   &= (10) - (6) \notag\\
@@ -144,8 +216,10 @@ Depreciation is an operating expense, as in Berk's Table 2.3 (p.~34).
  &= 40\%. \notag
 \end{align}
 
+\answer{(a)} Gross margin $= 40\%$.
+
 \step{2}{Operating income and operating margin (b)}
-Using \eqref{e2-gp},
+Operating income subtracts every operating expense from gross profit \eqref{e2-gp}:
 \begin{align}
   OI &= GP - SGA - RD - D \label{e2-oi}\\
   &= (4) - (0.5) - (1) - (1) \notag\\
@@ -156,11 +230,17 @@ Using \eqref{e2-gp},
  &= 15\%. \notag
 \end{align}
 
+\answer{(b)} Operating margin $= 15\%$.
+
 \step{3}{Net income and net profit margin (c)}
-Using \eqref{e2-oi} and no interest,
+With no interest, pretax income is $OI$ from \eqref{e2-oi}; taxes are $\tau$ times it, and net income
+is what remains:
 \begin{align}
-  NI &= OI(1-\tau) \label{e2-ni}\\
-  &= (1.5)(1-0.35) \notag\\
+  Tax &= \tau \, OI \notag\\
+  &= (0.35)(1.5) \notag\\
+  &= 0.525, \notag\\
+  NI &= OI - Tax \label{e2-ni}\\
+  &= (1.5) - (0.525) \notag\\
   &= 0.975, \notag\\
   \text{Net profit margin} &= NI/S \notag\\
   &= (0.975)/(10) \notag\\
@@ -168,15 +248,32 @@ Using \eqref{e2-oi} and no interest,
  &= 9.75\%. \notag
 \end{align}
 
+\answer{(c)} Net profit margin $= 9.75\%$.
+
 \intuition Each margin peels off one more layer of cost: production costs (gross), the cost of
 running the business (operating), then financing and taxes (net). The gap between operating and
-net margin here is only the 35\% tax.
+net margin here is only the 35\% tax, because Local has no debt: $15\% \times (1 - 0.35) = 9.75\%$.
+
+\pitfalls
+\begin{itemize}
+  \item Leaving depreciation out of operating expenses: it is non-cash, but it is an operating cost in the income statement.
+  \item Mixing units: SG\&A is \$500{,}000, i.e.\ $0.5$ million, not 500 million.
+  \item Applying the tax to gross profit instead of pretax income.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.4 ``The Income Statement'', pp.~33--35; \S2.5 ``Income Statement Analysis''
 (Eqs.~2.9--2.11), pp.~35--36.
 
 % =====================================================================
 \exsec{3. Nokela: earnings versus cash flow --- Berk 2.31, p.~57}
+
+\asked (a) By how much the purchase changes reported net income in each of the four years.
+(b) By how much it changes the firm's cash flow in each of the four years.
+
+\approach Earnings see the purchase only through depreciation, an expense spread over four years
+that is deductible for tax. Cash flow sees the purchase price when it is paid and, afterwards, only
+the tax that depreciation saves (the depreciation tax shield). Comparing the two shows that earnings
+and cash differ in timing, not in total.
 
 \notation
 \begin{itemize}
@@ -187,26 +284,31 @@ net margin here is only the 35\% tax.
 \assume Nokela has enough other taxable income to use the depreciation deduction each year.
 
 \step{1}{Impact on earnings (a)}
-Depreciation is deducted before tax, so each year it lowers net income by its after-tax amount:
+Depreciation lowers pretax income by $D$; taxes then fall by $\tau D$, so net income falls by the
+difference:
 \begin{align}
-  \Delta NI_t &= -D(1-\tau) \label{e3-ni}\\
+  \Delta NI_t &= -D + \tau D \notag\\
+  &= -D(1-\tau) \label{e3-ni}\\
   &= -(10)(1-0.40) \notag\\
-  &= -6 \quad (t \notag\\
- &= 1,2,3,4). \notag
+  &= -(10)(0.60) \notag\\
+  &= -6 \quad \text{for each } t = 1,\dots,4. \notag
 \end{align}
 
+\answer{(a)} Earnings fall by \$6 million in each of the four years.
+
 \step{2}{Impact on cash flow (b)}
-The purchase is a cash outflow in year 1; depreciation is not a cash cost, but it saves taxes of
-$\tau D$ each year:
+The purchase is a cash outflow in year 1. Depreciation is not paid to anyone, but it lowers the tax
+bill by $\tau D$ every year:
 \begin{align}
   \tau D &= (0.40)(10) \notag\\
   &= 4, \label{e3-ts}\\
   \Delta CF_1 &= -I + \tau D \notag\\
   &= -(40) + (4) \notag\\
   &= -36, \label{e3-cf1}\\
-  \Delta CF_t &= \tau D = 4 \quad (t \notag\\
-  &= 2,3,4). \label{e3-cft}
+  \Delta CF_t &= \tau D = 4 \quad \text{for } t = 2,3,4. \label{e3-cft}
 \end{align}
+
+\answer{(b)} Cash flow changes by $-\$36$ million in year 1 and $+\$4$ million in each of years 2--4.
 
 \step{3}{Consistency check}
 Over the four years both measures add to the same total, using \eqref{e3-ni}--\eqref{e3-cft}:
@@ -214,18 +316,36 @@ Over the four years both measures add to the same total, using \eqref{e3-ni}--\e
   \textstyle\sum_t \Delta NI_t &= 4(-6) \notag\\
   &= -24, \notag\\
   \textstyle\sum_t \Delta CF_t &= (-36) + 3(4) \notag\\
+  &= (-36) + (12) \notag\\
   &= -24. \notag
 \end{align}
+Both equal the after-tax cost of the machine, $-I(1-\tau) = -(40)(0.60) = -24$.
 
 \intuition Accounting spreads the cost evenly ($-6$ a year); cash flow records it when paid
 ($-36$ up front) and then gives back the tax shield ($+4$ a year). Same total, different timing,
-and timing is what matters for value.
+and timing is what matters for value: at any positive discount rate the cash-flow pattern is worse
+for the firm than the earnings pattern suggests.
+
+\pitfalls
+\begin{itemize}
+  \item Charging the whole \$40 million against year-1 earnings: a capital expense reaches earnings only through depreciation.
+  \item Treating depreciation as a cash outflow in (b): its only cash effect is the tax saving $\tau D$.
+  \item Forgetting the tax effect in (a) and answering $-10$ a year.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.4, pp.~33--35 (depreciation as a non-cash expense); \S2.6 ``The Statement
 of Cash Flows'', pp.~42--45.
 
 % =====================================================================
 \exsec{4. GE: book versus market --- Berk 2.8, p.~53}
+
+\asked (a) The market value of GE's equity, and how many times book equity it is.
+(b) Debt relative to equity, once with book equity and once with market equity.
+(c) The value of GE's operating business net of its cash (enterprise value).
+
+\approach Market capitalization is shares times price; ratios then follow from their definitions in
+Berk \S2.3. Enterprise value (Berk Eq.~2.5) adds debt to market equity and subtracts cash, because
+a buyer of the whole firm would pay off the debt and keep the cash.
 
 \notation
 \begin{itemize}
@@ -234,6 +354,7 @@ of Cash Flows'', pp.~42--45.
 \end{itemize}
 
 \step{1}{Market capitalization and market-to-book (a)}
+Multiply shares by price, then divide by book equity:
 \begin{align}
   MV_E &= N \times P \label{e4-mc}\\
   &= (10.3)(38) \notag\\
@@ -243,7 +364,10 @@ of Cash Flows'', pp.~42--45.
   &= 3.345. \notag
 \end{align}
 
+\answer{(a)} Market capitalization $= \$391.4$ billion; market-to-book $= 3.35$.
+
 \step{2}{Debt-equity ratios (b)}
+The same debt is divided by each measure of equity, book and then market from \eqref{e4-mc}:
 \begin{align}
   (D/E)_{\text{book}} &= D/BE \notag\\
   &= (467)/(117) \notag\\
@@ -253,18 +377,33 @@ of Cash Flows'', pp.~42--45.
   &= 1.193. \notag
 \end{align}
 
+\answer{(b)} Book $D/E = 3.99$; market $D/E = 1.19$.
+
 \step{3}{Enterprise value (c)}
-Using \eqref{e4-mc} and Berk's Eq.~2.5,
+First net the cash against debt, then add market equity from \eqref{e4-mc} (Berk Eq.~2.5):
 \begin{align}
-  EV &= MV_E + D - Cash \notag\\
-  &= (391.4) + (467) - (16) \notag\\
+  \text{Net debt} &= D - Cash \notag\\
+  &= (467) - (16) \notag\\
+  &= 451, \notag\\
+  EV &= MV_E + \text{Net debt} \notag\\
+  &= (391.4) + (451) \notag\\
   &= 842.4 \ \text{billion}. \notag
 \end{align}
+
+\answer{(c)} Enterprise value $= \$842.4$ billion.
 
 \intuition Investors valued GE's equity at more than three times its book value, so leverage
 measured at book (4.0) overstates the claim of debt relative to what equity is worth (1.2).
 Enterprise value nets out cash: it is the value of the operating business that a buyer of all the
-equity and all the debt would acquire.
+equity and all the debt would acquire. For capital structure questions the market ratio is the
+relevant one, since it compares claims at the prices investors pay for them.
+
+\pitfalls
+\begin{itemize}
+  \item Using book equity in enterprise value: $EV$ uses market capitalization.
+  \item Adding cash instead of subtracting it in $EV$.
+  \item Mixing units (shares in billions, price in dollars, debt in billions): keep everything in billions of dollars.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.3 ``Balance Sheet Analysis'' (market-to-book, debt-equity, Eq.~2.5),
 pp.~30--33.
@@ -272,54 +411,104 @@ pp.~30--33.
 % =====================================================================
 \exsec{5. True or false on ratios --- Higgins 2.3, p.~71}
 
+\asked For each of seven claims about ratios, say whether it is true or false and give the reason.
+(a) assets/equity versus one plus liabilities/equity; (b) whether ROE is always at least ROA;
+(c) whether the collection period must be shorter than the payables period; (d) whether the
+current ratio is always at least the acid-test ratio; (e) whether a higher asset turnover is
+preferable, all else equal; (f) whether equal earnings yields allow different P/E ratios;
+(g) whether paper gains are worth less than realized gains when there are no taxes or costs.
+
+\approach Write each ratio from its definition and see whether the claim follows algebraically
+(an identity), depends on a sign condition, or is an empirical tendency that need not hold. One
+counterexample is enough to make an ``always'' claim false.
+
 \notation
 \begin{itemize}
   \item $A$, $L$, $E$: assets, liabilities, equity (\$; $L \ge 0$, $E > 0$ unless stated).
-  \item $NI$: net income (any sign); $CA$, $CL$, $Inv$: current assets, current liabilities, inventory.
+  \item $NI$: net income (any sign); $S$: sales; $CA$, $CL$, $Inv$: current assets, current liabilities, inventory.
   \item $P$: share price; $EPS$: earnings per share.
 \end{itemize}
 
-\step{1}{(a) True}
+\step{1}{(a) Assets-to-equity}
+Substitute $A = L + E$ and split the fraction:
 \begin{align}
   \frac{A}{E} &= \frac{L + E}{E} \notag\\
+  &= \frac{L}{E} + \frac{E}{E} \notag\\
   &= 1 + \frac{L}{E}. \label{e5-a}
 \end{align}
-This is the balance sheet identity divided by $E$.
 
-\step{2}{(b) False as stated; true for non-negative income}
-Divide $ROE = NI/E$ by $ROA = NI/A$:
+\answer{(a)} True: it is the balance sheet identity divided by $E$.
+
+\step{2}{(b) ROE versus ROA}
+Multiply and divide ROE by $A$ to relate it to ROA:
 \begin{align}
-  ROE &= ROA \times \frac{A}{E}. \label{e5-b}
+  ROE &= \frac{NI}{E} \notag\\
+  &= \frac{NI}{A}\cdot\frac{A}{E} \notag\\
+  &= ROA \times \frac{A}{E}. \label{e5-b}
 \end{align}
-By \eqref{e5-a}, $A/E \ge 1$ when $L \ge 0$. If $NI \ge 0$, \eqref{e5-b} gives $ROE \ge ROA$. If
-$NI < 0$, the same multiplier makes $ROE$ \emph{more} negative: with $NI = -10$, $A = 100$,
-$E = 50$, $ROA = -10\%$ and $ROE = (-10\%)(2) = -20\% < ROA$. Leverage amplifies returns in both
-directions, so ``always'' fails for loss-making firms (and the comparison breaks with negative equity).
-
-\step{3}{(c) False}
-The collection period and the payables period are set largely by industry practice and bargaining
-power. A payables period longer than the collection period is convenient (suppliers finance the
-receivables) but nothing forces it.
-
-\step{4}{(d) True}
+By \eqref{e5-a}, $A/E = 1 + L/E \ge 1$ when $L \ge 0$. If $NI \ge 0$, multiplying $ROA \ge 0$ by a
+number $\ge 1$ gives $ROE \ge ROA$. If $NI < 0$, the same multiplier makes $ROE$ \emph{more}
+negative. Counterexample: $NI = -10$, $A = 100$, $E = 50$ (so $L = 50$):
 \begin{align}
-  \frac{CA}{CL} - \frac{CA - Inv}{CL} &= \frac{Inv}{CL} \ge 0, \notag
+  ROA &= (-10)/(100) = -0.10, \notag\\
+  A/E &= (100)/(50) = 2, \notag\\
+  ROE &= (-0.10)(2) = -0.20 < ROA. \notag
+\end{align}
+Leverage amplifies returns in both directions, so ``always'' fails for loss-making firms (and the
+comparison breaks down with negative equity).
+
+\answer{(b)} False as stated (true only when $NI \ge 0$ and $E > 0$).
+
+\step{3}{(c) Collection period versus payables period}
+The collection period $AR/(S/365)$ and the payables period $AP/(COGS/365)$ are set by industry
+practice and bargaining power with customers and suppliers. A payables period longer than the
+collection period is convenient (suppliers then finance the receivables), but no identity forces it.
+
+\answer{(c)} False: it is a desirable situation, not a requirement.
+
+\step{4}{(d) Current ratio versus acid test}
+The acid test removes inventory from the numerator, so subtract the two ratios:
+\begin{align}
+  \frac{CA}{CL} - \frac{CA - Inv}{CL} &= \frac{CA - (CA - Inv)}{CL} \notag\\
+  &= \frac{Inv}{CL} \ge 0, \notag
 \end{align}
 since inventory is never negative and $CL > 0$.
 
-\step{5}{(e) True}
-By the DuPont decomposition $ROE = (NI/S)(S/A)(A/E)$, a higher asset turnover $S/A$ with margin
-and leverage held fixed raises ROE: the same sales are produced with fewer assets.
+\answer{(d)} True.
 
-\step{6}{(f) False}
-The earnings yield is $EPS/P = 1/(P/EPS)$; equal earnings yields imply equal P/E ratios.
+\step{5}{(e) Asset turnover}
+By the DuPont decomposition, obtained by multiplying and dividing $NI/E$ by $S$ and by $A$,
+\begin{align}
+  ROE &= \frac{NI}{S}\cdot\frac{S}{A}\cdot\frac{A}{E}, \notag
+\end{align}
+a higher asset turnover $S/A$, with margin and leverage held fixed, raises ROE: the same sales are
+produced with fewer assets.
 
-\step{7}{(g) False}
+\answer{(e)} True (all else equal).
+
+\step{6}{(f) Earnings yield and P/E}
+The earnings yield is the reciprocal of the P/E ratio, $EPS/P = 1/(P/EPS)$. If two firms have the same
+$EPS/P$, taking reciprocals gives the same $P/EPS$.
+
+\answer{(f)} False: equal earnings yields imply equal P/E ratios.
+
+\step{7}{(g) Paper gains}
 Without taxes and transaction costs, a paper gain can be turned into cash at any moment by
-selling, so it is worth exactly as much as an equal realized gain.
+selling the asset at its market value, so it is worth exactly as much as an equal realized gain.
+
+\answer{(g)} False.
 
 \intuition These are accounting identities, not empirical regularities: (a), (d), (f) follow
-from definitions; (b) holds only because leverage is a multiplier, which also magnifies losses.
+from definitions; (b) holds only because leverage is a multiplier, which also magnifies losses;
+(g) is the economist's view that value is market value, whether or not the accountant has
+recognized it.
+
+\pitfalls
+\begin{itemize}
+  \item Answering (b) True without noticing that the multiplier $A/E$ also scales losses.
+  \item Confusing earnings yield with dividend yield in (f).
+  \item Treating ``should'' in (c) as an accounting rule rather than a matter of bargaining.
+\end{itemize}
 
 \bookans Matches the book's answers (p.~401) for (a), (c)--(g). For (b) the book answers True,
 arguing that ROA can exceed ROE only with negative liabilities; that argument implicitly assumes
@@ -332,14 +521,25 @@ pp.~42--48; ``Financial Leverage'', pp.~48--53; ``The Value Problem'', pp.~56--5
 % =====================================================================
 \exsec{6. Book and market leverage of two firms --- Berk 2.21, p.~55}
 
+\asked (a) Debt divided by market equity for each firm. (b) Debt divided by book equity for each
+firm. (c) How many times operating income covers interest for each firm. (d) Which firm is more
+likely to have trouble paying its debt.
+
+\approach Debt-equity ratios measure the size of the debt claim relative to the owners' stake; the
+coverage ratio measures the flow of earnings available to pay interest (Berk \S2.5 ``Leverage
+Ratios''). Distress is about paying the interest bill, so (d) is judged mainly by coverage, backed
+by leverage.
+
 \notation
 \begin{itemize}
   \item $D$: debt; $BE$: book equity; $ME$: market equity; $OI$: operating income; $Int$: interest
         expense (\$ million, $> 0$); subscripts $A$, $B$ for the firm.
 \end{itemize}
-\assume Interest coverage uses operating income, one of the earnings measures Berk lists (p.~37).
+\assume Interest coverage uses operating income (here equal to EBIT), one of the earnings measures
+Berk lists (p.~37).
 
 \step{1}{Market debt-equity (a)}
+Divide debt by market equity for each firm:
 \begin{align}
   (D/E)^{mkt}_A &= (500)/(400) \notag\\
   &= 1.25, \notag\\
@@ -347,7 +547,10 @@ pp.~42--48; ``Financial Leverage'', pp.~48--53; ``The Value Problem'', pp.~56--5
   &= 2.00. \notag
 \end{align}
 
+\answer{(a)} A: 1.25; B: 2.00.
+
 \step{2}{Book debt-equity (b)}
+Divide the same debt by book equity:
 \begin{align}
   (D/E)^{bk}_A &= (500)/(300) \notag\\
   &= 1.667, \notag\\
@@ -355,7 +558,10 @@ pp.~42--48; ``Financial Leverage'', pp.~48--53; ``The Value Problem'', pp.~56--5
   &= 2.286. \notag
 \end{align}
 
+\answer{(b)} A: 1.67; B: 2.29.
+
 \step{3}{Interest coverage (c)}
+Coverage is operating income over interest:
 \begin{align}
   \text{Coverage} &= OI/Int, \label{e6-cov}\\
   \text{Coverage}_A &= (100)/(50) \notag\\
@@ -364,67 +570,131 @@ pp.~42--48; ``Financial Leverage'', pp.~48--53; ``The Value Problem'', pp.~56--5
   &= 1.143. \notag
 \end{align}
 
-\step{4}{Who struggles more (d)}
-Firm B: higher leverage on both measures, and by \eqref{e6-cov} its operating income covers interest
-only 1.14 times, so a fall of about 12.5\% in operating income ($1/8$ of it) would leave it unable to pay
-interest out of earnings; Firm A can absorb a 50\% fall.
+\answer{(c)} A: 2.00; B: 1.14.
 
-\intuition Ratios scale away firm size. Firm B is about a sixth of A's size but carries
-proportionally more debt and has almost no cushion of earnings above its interest bill.
+\step{4}{Who struggles more (d)}
+The cushion is operating income above interest; the fall in operating income the firm can absorb
+before earnings no longer cover interest is that cushion divided by operating income:
+\begin{align}
+  \text{Max.\ fall}_A &= (OI_A - Int_A)/OI_A \notag\\
+  &= (100 - 50)/(100) \notag\\
+  &= 0.50, \notag\\
+  \text{Max.\ fall}_B &= (OI_B - Int_B)/OI_B \notag\\
+  &= (8 - 7)/(8) \notag\\
+  &= 0.125. \notag
+\end{align}
+
+\answer{(d)} Firm B: higher leverage on both measures, coverage of only 1.14, and a fall of just
+12.5\% in operating income leaves it unable to pay interest out of earnings (Firm A can absorb 50\%).
+
+\intuition Ratios scale away firm size. Firm B is much smaller (debt of 80 against A's 500, i.e.\
+$80/500 = 16\%$), but it carries proportionally more debt and has almost no cushion of earnings
+above its interest bill. The ranking does not depend on using book or market equity here; when
+the two disagree, market values reflect what the claims are worth today.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing debt levels (500 vs.\ 80) instead of ratios.
+  \item Inverting coverage (interest over income) and reading a low number as safe.
+  \item Concluding from book ratios alone when market equity is available.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.3 (debt-equity ratios), pp.~30--33; \S2.5 ``Leverage Ratios'', p.~37.
 
 % =====================================================================
 \exsec{7. DuPont for a retail firm --- Berk 2.27, p.~56}
 
+\asked (a) The firm's return on equity now. (b) The ROE if the net margin rises to 4\%, all else
+fixed. (c) The ROE if, in addition, revenue rises 20\% with assets and liabilities unchanged.
+
+\approach The DuPont identity (Berk Eq.~2.18) writes ROE as margin times asset turnover times the
+equity multiplier. Each scenario changes one or two factors, so ROE is recomputed by substitution;
+a levels check (sales, net income, equity) confirms each result.
+
 \notation
 \begin{itemize}
   \item $m$: net profit margin $NI/S$; $T$: total asset turnover $S/A$; $A = 44$: total assets;
         $BE = 18$: book equity (\$ million); $EM = A/BE$: equity multiplier.
 \end{itemize}
-\assume In (c) book equity stays at 18 (the statement fixes assets and liabilities), so only $T$ changes.
+\assume In (c) book equity stays at 18 (the statement fixes assets and liabilities), so only $T$
+and $m$ change relative to (a).
 
 \step{1}{Equity multiplier and DuPont identity}
+The identity follows from multiplying and dividing $NI/BE$ by $S$ and $A$; the multiplier comes from
+the data:
 \begin{align}
-  ROE &= m \times T \times EM, \label{e7-dp}\\
+  ROE &= \frac{NI}{BE} = \frac{NI}{S}\cdot\frac{S}{A}\cdot\frac{A}{BE} = m \times T \times EM, \label{e7-dp}\\
   EM &= (44)/(18) \notag\\
   &= 2.4444. \label{e7-em}
 \end{align}
 
 \step{2}{Current ROE (a)}
-Substituting \eqref{e7-em} into \eqref{e7-dp},
+Substitute $m = 0.035$, $T = 1.8$ and \eqref{e7-em} into \eqref{e7-dp}:
 \begin{align}
   ROE_a &= (0.035)(1.8)(2.4444) \notag\\
+  &= (0.063)(2.4444) \notag\\
   &= 0.1540 \notag\\
  &= 15.4\%. \notag
 \end{align}
-Check in levels: $S = (1.8)(44) = 79.2$, $NI = (0.035)(79.2) = 2.772$, $ROE = (2.772)/(18) = 0.154$.
+Check in levels:
+\begin{align}
+  S &= T \times A = (1.8)(44) = 79.2, \notag\\
+  NI &= m \times S = (0.035)(79.2) = 2.772, \notag\\
+  ROE_a &= NI/BE = (2.772)/(18) = 0.154. \notag
+\end{align}
+
+\answer{(a)} $ROE = 15.4\%$.
 
 \step{3}{Higher margin (b)}
+Only $m$ changes, to $0.04$:
 \begin{align}
   ROE_b &= (0.04)(1.8)(2.4444) \notag\\
+  &= (0.072)(2.4444) \notag\\
   &= 0.1760 \notag\\
  &= 17.6\%. \notag
 \end{align}
 
+\answer{(b)} $ROE = 17.6\%$.
+
 \step{4}{Higher margin and 20\% more revenue (c)}
-With $A$ fixed, turnover rises by 20\%:
+With $A$ fixed, revenue up 20\% means turnover up 20\%:
 \begin{align}
   T_c &= (1.8)(1.20) \notag\\
   &= 2.16, \label{e7-tc}\\
   ROE_c &= (0.04)(2.16)(2.4444) \notag\\
+  &= (0.0864)(2.4444) \notag\\
   &= 0.2112 \notag\\
  &= 21.1\%. \notag
 \end{align}
-In levels: $S = 95.04$, $NI = (0.04)(95.04) = 3.8016$, $ROE = 3.8016/18 = 0.2112$.
+In levels: $S = (79.2)(1.20) = 95.04$, $NI = (0.04)(95.04) = 3.8016$, $ROE = (3.8016)/(18) = 0.2112$.
+
+\answer{(c)} $ROE = 21.1\%$.
 
 \intuition ROE is a product, so proportional changes multiply: $+14.3\%$ in margin
-($4/3.5$) and $+20\%$ in turnover give $(1.143)(1.2) = 1.371$ times the original ROE.
+($0.04/0.035 = 1.143$) and $+20\%$ in turnover give $(1.143)(1.2) = 1.371$ times the original ROE,
+and indeed $0.2112/0.1540 = 1.371$. Leverage is unchanged throughout, so all the gain comes from
+operations.
+
+\pitfalls
+\begin{itemize}
+  \item Adding percentage changes ($14.3\% + 20\%$) instead of multiplying the factors.
+  \item Using ROA ($m \times T$) as the answer and forgetting the equity multiplier.
+  \item In (c), raising assets with revenue: the statement holds assets fixed, so turnover rises.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.5 ``Investment Returns'' and ``The DuPont Identity'' (Eq.~2.18), pp.~37--39.
 
 % =====================================================================
 \exsec{8. Atlantic vs.\ Pacific: ROE, ROA, ROIC --- Higgins 2.7, p.~73}
+
+\asked (a) Return on equity, on assets and on invested capital for each company. (b) Why Pacific's
+ROE is much higher, and whether that makes it the better company. (c) Why Atlantic's ROA is
+higher, and what that says. (d) How the ROICs compare and what that says.
+
+\approach Compute net income after interest and tax, then the three ratios from Higgins'
+definitions. To explain the gaps, derive the leverage identity linking ROE to ROIC: it separates
+the return of the business (ROIC) from the boost that debt gives shareholders when ROIC exceeds the
+after-tax cost of debt.
 
 \notation
 \begin{itemize}
@@ -435,6 +705,7 @@ In levels: $S = 95.04$, $NI = (0.04)(95.04) = 3.8016$, $ROE = 3.8016/18 = 0.2112
 \end{itemize}
 
 \step{1}{Net income}
+Subtract interest $rD$ from EBIT, then apply the tax:
 \begin{align}
   NI &= (EBIT - rD)(1-t), \label{e8-ni}\\
   NI_{Atl} &= (450 - (0.07)(290))(0.70) \notag\\
@@ -448,52 +719,80 @@ In levels: $S = 95.04$, $NI = (0.04)(95.04) = 3.8016$, $ROE = 3.8016/18 = 0.2112
 \end{align}
 
 \step{2}{ROE, ROA, ROIC (a)}
-Using \eqref{e8-ni} and $A_{Atl} = 1200$, $A_{Pac} = 1860$:
+Total assets are $A_{Atl} = 290 + 910 = 1200$ and $A_{Pac} = 1490 + 370 = 1860$. After-tax EBIT is
+$(450)(0.70) = 315$ for Atlantic and $(470)(0.70) = 329$ for Pacific. With \eqref{e8-ni}:
 \begin{align}
   ROE_{Atl} &= (300.79)/(910) \notag\\
   &= 0.3305, \notag\\
   ROA_{Atl} &= (300.79)/(1200) \notag\\
   &= 0.2507, \notag\\
-  ROIC_{Atl} &= (450)(0.70)/(1200) \notag\\
+  ROIC_{Atl} &= (315)/(1200) \notag\\
   &= 0.2625, \notag\\
   ROE_{Pac} &= (255.99)/(370) \notag\\
   &= 0.6919, \notag\\
   ROA_{Pac} &= (255.99)/(1860) \notag\\
   &= 0.1376, \notag\\
-  ROIC_{Pac} &= (470)(0.70)/(1860) \notag\\
+  ROIC_{Pac} &= (329)/(1860) \notag\\
   &= 0.1769. \notag
 \end{align}
-So ROE 33.1\% vs.\ 69.2\%, ROA 25.1\% vs.\ 13.8\%, ROIC 26.3\% vs.\ 17.7\%.
+
+\answer{(a)} Atlantic: ROE 33.1\%, ROA 25.1\%, ROIC 26.3\%. Pacific: ROE 69.2\%, ROA 13.8\%, ROIC 17.7\%.
 
 \step{3}{Why Pacific's ROE is higher (b)}
-Write $NI = [ROIC(D+E) - r(1-t)D]$, divide by $E$:
+Derive ROE in terms of ROIC. Expand \eqref{e8-ni}, replace $EBIT(1-t)$ by $ROIC\,(D+E)$ (the
+definition of ROIC), collect the $D$ terms and divide by $E$:
 \begin{align}
-  ROE &= ROIC + \bigl(ROIC - r(1-t)\bigr)\frac{D}{E}. \label{e8-lev}
+  NI &= EBIT(1-t) - r(1-t)D \notag\\
+  &= ROIC\,(D+E) - r(1-t)D \notag\\
+  &= ROIC\,E + \bigl(ROIC - r(1-t)\bigr)D, \notag\\
+  ROE = \frac{NI}{E} &= ROIC + \bigl(ROIC - r(1-t)\bigr)\frac{D}{E}. \label{e8-lev}
 \end{align}
-With $r(1-t) = (0.07)(0.70) = 0.049$, \eqref{e8-lev} gives
+The after-tax cost of debt is $r(1-t) = (0.07)(0.70) = 0.049$. Substituting each company's numbers
+into \eqref{e8-lev}:
 \begin{align}
   ROE_{Atl} &= (0.2625) + (0.2625 - 0.049)(290/910) \notag\\
+  &= (0.2625) + (0.2135)(0.31868) \notag\\
+  &= (0.2625) + (0.06804) \notag\\
   &= 0.3305, \notag\\
-  ROE_{Pac} &= (0.1769) + (0.1769 - 0.049)(1490/370) \notag\\
+  ROE_{Pac} &= (0.176882) + (0.176882 - 0.049)(1490/370) \notag\\
+  &= (0.176882) + (0.127882)(4.02703) \notag\\
+  &= (0.176882) + (0.51498) \notag\\
   &= 0.6919, \notag
 \end{align}
 reproducing Step~2. Pacific's ROE comes from its debt-equity ratio of 4.03 (vs.\ 0.32), not from
-better operations; it is also riskier for shareholders. It is not a better company on this evidence.
+better operations: its leverage term is 0.515 against Atlantic's 0.068, while its ROIC is lower.
+
+\answer{(b)} Pacific's higher ROE is a leverage effect ($D/E = 4.03$ vs.\ 0.32); it does not make
+Pacific a better company, and its shareholders bear much more risk.
 
 \step{4}{Why Atlantic's ROA is higher (c)}
 ROA puts the income of shareholders only (after interest) over the capital of both shareholders and
-creditors, so it penalizes leverage: Pacific's large interest bill lowers the numerator. The gap mixes
-leverage with operating performance and says little on its own.
+creditors, so it penalizes leverage: Pacific's interest bill of 104.3 (vs.\ 20.3) lowers the
+numerator while the debt raises the denominator.
+
+\answer{(c)} Atlantic's ROA is higher partly because it has less debt; ROA mixes financing with
+operating performance and says little on its own.
 
 \step{5}{ROIC comparison (d)}
-ROIC is independent of financing: Atlantic earns 26.3\% after tax on all invested capital against
-Pacific's 17.7\%, so Atlantic's assets are more productive. Both exceed the after-tax cost of debt,
-which is why leverage raises ROE in \eqref{e8-lev}; whether either beats its full cost of capital
-depends on business risk, not shown here.
+ROIC uses after-tax EBIT, which does not depend on how the firm is financed, over all invested
+capital. Atlantic earns 26.3\% against Pacific's 17.7\%. Both exceed the after-tax cost of debt
+(4.9\%), which is why leverage raises ROE in \eqref{e8-lev}; whether either beats its full cost of
+capital depends on business risk, not shown here.
+
+\answer{(d)} Atlantic's ROIC is higher (26.3\% vs.\ 17.7\%): its assets are more productive, so on
+operating performance Atlantic is the better company.
 
 \intuition ROE answers ``how much per dollar of owners' money'', ROA mixes in the financing choice,
 and ROIC isolates the business. Compare operating performance with ROIC, then read ROE as ROIC
-plus a leverage bonus (or penalty).
+plus a leverage bonus (or penalty): the bonus is the spread $ROIC - r(1-t)$ times $D/E$, and it
+turns negative, magnifying losses, if ROIC falls below the after-tax cost of debt.
+
+\pitfalls
+\begin{itemize}
+  \item Computing ROIC with net income instead of after-tax EBIT, which reintroduces the financing choice.
+  \item Forgetting that interest is tax-deductible: the cost of debt in \eqref{e8-lev} is $r(1-t)$, not $r$.
+  \item Ranking companies by ROE without adjusting for leverage and risk.
+\end{itemize}
 
 \bookans Matches the book's answer (pp.~402--403): ROE 33.1\% / 69.2\%, ROA 25.1\% / 13.8\%,
 ROIC 26.3\% / 17.7\%; same conclusions for (b)--(d).
@@ -503,6 +802,15 @@ ROIC 26.3\% / 17.7\%; same conclusions for (b)--(d).
 
 % =====================================================================
 \exsec{9. Nave Espacial Jetson: cash flows --- Ross 2.14, p.~48}
+
+\asked (a) The cash generated by operations in 2009 (\pt{fluxo de caixa operacional}). (b) The net
+cash paid to creditors. (c) The net cash paid to shareholders. (d) Given that net fixed assets rose
+by 27,000, the investment in net working capital (\pt{acr\'escimo ao CCL}).
+
+\approach Ross's cash flow identity: cash flow from assets equals cash flow to creditors plus cash
+flow to shareholders, and cash flow from assets equals operating cash flow minus net capital
+spending minus the change in net working capital. Parts (a)--(c) are direct; (d) is the one unknown
+left in the identity, solved by rearranging it.
 
 \notation
 \begin{itemize}
@@ -514,6 +822,8 @@ ROIC 26.3\% / 17.7\%; same conclusions for (b)--(d).
 \end{itemize}
 
 \step{1}{EBIT and operating cash flow (a)}
+EBIT subtracts operating costs from sales; OCF adds back depreciation (not a cash cost) and
+subtracts the taxes actually paid (Ross \S2.4):
 \begin{align}
   EBIT &= S - C - X - Dep \notag\\
   &= (196{,}000) - (104{,}000) - (6{,}800) - (9{,}100) \notag\\
@@ -523,43 +833,73 @@ ROIC 26.3\% / 17.7\%; same conclusions for (b)--(d).
   &= 63{,}745. \label{e9-ocf}
 \end{align}
 
+\answer{(a)} $OCF = \$63{,}745$.
+
 \step{2}{Cash flow to creditors (b)}
-Net new long-term borrowing was $-7{,}300$ (debt retired):
+Creditors received the interest and, in addition, the 7,300 of debt that was retired; net new
+long-term borrowing is therefore $-7{,}300$:
 \begin{align}
   CFC &= Int - \text{net new borrowing} \label{e9-cfcdef}\\
   &= (14{,}800) - (-7{,}300) \notag\\
   &= 22{,}100. \label{e9-cfc}
 \end{align}
 
+\answer{(b)} $CFC = \$22{,}100$.
+
 \step{3}{Cash flow to shareholders (c)}
+Shareholders received the dividends but put 5,700 of new equity in:
 \begin{align}
   CFS &= Div - \text{net new equity} \notag\\
   &= (10{,}400) - (5{,}700) \notag\\
   &= 4{,}700. \label{e9-cfs}
 \end{align}
 
+\answer{(c)} $CFS = \$4{,}700$.
+
 \step{4}{Change in net working capital (d)}
-The cash flow identity $CFA = CFC + CFS = OCF - NCS - \Delta NWC$ with
-\eqref{e9-cfc}--\eqref{e9-cfs}:
+Cash flow from assets is the sum of what went to the two groups of investors,
+\eqref{e9-cfc} and \eqref{e9-cfs}. Net capital spending is the rise in net fixed assets plus the
+depreciation that was charged against them. Then rearrange $CFA = OCF - NCS - \Delta NWC$ for the
+unknown:
 \begin{align}
-  CFA &= (22{,}100) + (4{,}700) \notag\\
+  CFA &= CFC + CFS \notag\\
+  &= (22{,}100) + (4{,}700) \notag\\
   &= 26{,}800, \label{e9-cfa}\\
   NCS &= \Delta\text{NFA} + Dep \notag\\
   &= (27{,}000) + (9{,}100) \notag\\
   &= 36{,}100, \label{e9-ncs}\\
-  \Delta NWC &= OCF - NCS - CFA \notag\\
+  CFA &= OCF - NCS - \Delta NWC \notag\\
+  \Rightarrow\ \Delta NWC &= OCF - NCS - CFA \notag\\
   &= (63{,}745) - (36{,}100) - (26{,}800) \notag\\
   &= 845. \notag
 \end{align}
 
+\answer{(d)} The addition to net working capital was \$845.
+
 \intuition The firm's operations threw off 63,745; it reinvested 36,100 in fixed assets and 845 in
 working capital, and paid the remaining 26,800 to its investors, mostly to creditors (interest plus
-debt repayment).
+debt repayment). The identity is just ``cash generated $=$ cash reinvested $+$ cash paid out''.
+
+\pitfalls
+\begin{itemize}
+  \item Treating retired debt as a source of cash for creditors: repayment is cash \emph{to} them, so it is added (net new borrowing is negative).
+  \item Using the 27,000 rise in net fixed assets as $NCS$: depreciation must be added back.
+  \item Subtracting interest in $OCF$: in Ross's definition interest belongs to cash flow to creditors.
+\end{itemize}
 
 \refbib Ross Cap.~2, \S2.4 ``Fluxo de caixa'', pp.~37--44.
 
 % =====================================================================
 \exsec{10. Blake's Restaurant Supply: from statements to cash --- Higgins 1.11, p.~34}
+
+\asked (a) The cash actually collected from customers in 2021. (b) The cost of the goods produced
+in 2021 (not of those sold). (c) Capital expenditures in 2021, with no assets sold. (d) Cash flow
+from operations in 2021, assuming no financing flows.
+
+\approach Each answer comes from a stock--flow equation: closing balance $=$ opening balance
+$+$ inflows $-$ outflows. Write it for receivables, inventory and net fixed assets, and solve for
+the unknown flow. For (d), the change in cash is the sum of operating, investing and financing
+flows; an indirect calculation from net income is a cross-check.
 
 \notation
 \begin{itemize}
@@ -570,48 +910,72 @@ debt repayment).
 \end{itemize}
 
 \step{1}{Cash collected from sales (a)}
-Receivables accumulate sales not yet collected: $AR_1 = AR_0 + S - \text{Collections}$, so
+Receivables grow with sales and shrink with collections, $AR_1 = AR_0 + S - \text{Collections}$;
+solve for collections:
 \begin{align}
   \text{Collections} &= S - (AR_1 - AR_0) \notag\\
   &= (782) - (87 - 57) \notag\\
+  &= (782) - (30) \notag\\
   &= 752. \notag
 \end{align}
 
+\answer{(a)} \$752 million collected.
+
 \step{2}{Cost of goods produced (b)}
-$Inv_1 = Inv_0 + \text{Production} - COGS$, so
+Inventory grows with production and shrinks with goods sold, $Inv_1 = Inv_0 + \text{Production} -
+COGS$; solve for production:
 \begin{align}
   \text{Production} &= COGS + (Inv_1 - Inv_0) \notag\\
   &= (502) + (29 - 39) \notag\\
+  &= (502) + (-10) \notag\\
   &= 492. \notag
 \end{align}
 
+\answer{(b)} Cost of goods produced $= \$492$ million.
+
 \step{3}{Capital expenditures (c)}
-$NFA_1 = NFA_0 + Capex - Dep$ (no disposals), so
+Net fixed assets grow with capex and shrink with depreciation (no disposals),
+$NFA_1 = NFA_0 + Capex - Dep$; solve for capex:
 \begin{align}
   Capex &= (NFA_1 - NFA_0) + Dep \notag\\
   &= (482 - 404) + (61) \notag\\
+  &= (78) + (61) \notag\\
   &= 139. \label{e10-capex}
 \end{align}
 
+\answer{(c)} Capital expenditures $= \$139$ million.
+
 \step{4}{Cash flow from operations (d)}
 With no financing flows, the change in cash is operating plus investing cash flow, and investing
-is $-Capex$ from \eqref{e10-capex}:
+is $-Capex$ from \eqref{e10-capex}; solve for $CFO$:
 \begin{align}
   \Delta Cash &= CFO - Capex, \notag\\
   CFO &= \Delta Cash + Capex \notag\\
   &= (135 - 86) + (139) \notag\\
+  &= (49) + (139) \notag\\
   &= 188. \label{e10-cfo}
 \end{align}
-Indirect check from the income statement:
+Indirect check: start from net income, add back depreciation, subtract increases in operating
+assets and add increases in operating liabilities, with $\Delta AR = 87 - 57 = 30$,
+$\Delta Inv = 29 - 39 = -10$, $\Delta AP = 44 - 39 = 5$:
 \begin{align}
   CFO &= NI + Dep - \Delta AR - \Delta Inv + \Delta AP \notag\\
   &= (142) + (61) - (30) - (-10) + (5) \notag\\
   &= 188. \notag
 \end{align}
 
+\answer{(d)} Cash flow from operations $= \$188$ million.
+
 \intuition Accrual accounting records sales when made and costs when goods are sold; cash
 records them when money moves. Rising receivables keep 30 of sales out of the bank; running down
-inventory and stretching payables put cash back in.
+inventory and stretching payables put cash back in. That is why CFO (188) exceeds net income (142).
+
+\pitfalls
+\begin{itemize}
+  \item Adding the rise in receivables to sales in (a): uncollected sales reduce cash, they do not increase it.
+  \item Confusing goods produced with goods sold in (b): production differs from COGS by the change in inventory.
+  \item Forgetting to add depreciation back in (c): the change in net fixed assets is capex net of depreciation.
+\end{itemize}
 
 \bookans Matches the book's answer (pp.~399--400): 752, 492, 139, 188 (\$ million).
 
@@ -620,6 +984,15 @@ Statement'', pp.~18--22.
 
 % =====================================================================
 \exsec{11. Ind\'ustrias Dahlia: cash flow identity --- Ross 2.21, p.~49}
+
+\asked (a) Net income for 2009. (b) Operating cash flow for 2009. (c) Cash flow from assets for
+2009, and whether a negative value is possible. (d) With no new debt, the cash flows to creditors
+and to shareholders, and an interpretation of the signs of all answers (a)--(d).
+
+\approach Build the income statement to get net income and taxes, apply Ross's definitions of
+$OCF$, $NCS$ and $\Delta NWC$ to get cash flow from assets, then split it between creditors and
+shareholders with the identity $CFA = CFC + CFS$. The new equity raised is the residual that makes
+the identity hold.
 
 \notation
 \begin{itemize}
@@ -630,42 +1003,62 @@ Statement'', pp.~18--22.
 \end{itemize}
 
 \step{1}{Net income (a)}
+Go down the income statement: EBIT, then pretax income after interest, then tax at 34\%:
 \begin{align}
-  EBIT &= (22{,}800) - (16{,}050) - (4{,}050) \notag\\
+  EBIT &= S - COGS - Dep \notag\\
+  &= (22{,}800) - (16{,}050) - (4{,}050) \notag\\
   &= 2{,}700, \label{e11-ebit}\\
-  EBT &= (2{,}700) - (1{,}830) \notag\\
+  EBT &= EBIT - Int \notag\\
+  &= (2{,}700) - (1{,}830) \notag\\
   &= 870, \notag\\
-  Tax &= (0.34)(870) \notag\\
+  Tax &= \tau\, EBT \notag\\
+  &= (0.34)(870) \notag\\
   &= 295.80, \label{e11-tax}\\
-  NI &= (870) - (295.80) \notag\\
+  NI &= EBT - Tax \notag\\
+  &= (870) - (295.80) \notag\\
   &= 574.20. \notag
 \end{align}
 
+\answer{(a)} Net income $= \$574.20$.
+
 \step{2}{Operating cash flow (b)}
-By \eqref{e9-ocfdef} with \eqref{e11-ebit} and \eqref{e11-tax},
+Apply \eqref{e9-ocfdef} with \eqref{e11-ebit} and \eqref{e11-tax}:
 \begin{align}
-  OCF &= (2{,}700) + (4{,}050) - (295.80) \notag\\
+  OCF &= EBIT + Dep - Tax \notag\\
+  &= (2{,}700) + (4{,}050) - (295.80) \notag\\
   &= 6{,}454.20. \label{e11-ocf}
 \end{align}
 
+\answer{(b)} $OCF = \$6{,}454.20$.
+
 \step{3}{Cash flow from assets (c)}
+Net capital spending is the change in net fixed assets plus depreciation; the change in net
+working capital is closing minus opening $CA - CL$; then subtract both from $OCF$:
 \begin{align}
-  NCS &= (16{,}800 - 13{,}650) + (4{,}050) \notag\\
+  NCS &= (NFA_1 - NFA_0) + Dep \notag\\
+  &= (16{,}800 - 13{,}650) + (4{,}050) \notag\\
+  &= (3{,}150) + (4{,}050) \notag\\
   &= 7{,}200, \label{e11-ncs}\\
-  \Delta NWC &= (5{,}930 - 3{,}150) - (4{,}800 - 2{,}700) \notag\\
+  \Delta NWC &= (CA_1 - CL_1) - (CA_0 - CL_0) \notag\\
+  &= (5{,}930 - 3{,}150) - (4{,}800 - 2{,}700) \notag\\
   &= (2{,}780) - (2{,}100) \notag\\
   &= 680, \label{e11-nwc}\\
   CFA &= OCF - NCS - \Delta NWC \notag\\
   &= (6{,}454.20) - (7{,}200) - (680) \notag\\
   &= -1{,}425.80. \label{e11-cfa}
 \end{align}
-A negative CFA is possible: the firm invested $7{,}880$ in fixed assets and working capital, more
-than the $6{,}454.20$ its operations generated, and raised the difference from investors.
+A negative CFA is possible: the firm invested $NCS + \Delta NWC = 7{,}200 + 680 = 7{,}880$ in fixed
+assets and working capital, more than the $6{,}454.20$ its operations generated, and raised the
+difference $7{,}880 - 6{,}454.20 = 1{,}425.80$ from investors.
+
+\answer{(c)} $CFA = -\$1{,}425.80$; yes, possible, because investment exceeded operating cash flow.
 
 \step{4}{Cash flow to creditors and shareholders (d)}
-No new debt, so by \eqref{e9-cfcdef}
+With no new debt, \eqref{e9-cfcdef} leaves only interest; the shareholders' flow is what remains of
+$CFA$; and the equity raised follows from $CFS = Div - \text{net new equity}$:
 \begin{align}
-  CFC &= (1{,}830) - (0) \notag\\
+  CFC &= Int - \text{net new borrowing} \notag\\
+  &= (1{,}830) - (0) \notag\\
   &= 1{,}830, \label{e11-cfc}\\
   CFS &= CFA - CFC \notag\\
   &= (-1{,}425.80) - (1{,}830) \notag\\
@@ -675,16 +1068,34 @@ No new debt, so by \eqref{e9-cfcdef}
   &= 4{,}555.80. \notag
 \end{align}
 
+\answer{(d)} $CFC = \$1{,}830$; $CFS = -\$3{,}255.80$ (shareholders contributed \$4{,}555.80 of new equity, net of the \$1{,}300 dividend).
+
 \intuition Signs: net income and OCF are positive (the business is profitable and generates cash);
 CFA is negative (growth spending exceeds that cash); CFC is positive (creditors received their
 interest); CFS is negative (shareholders put in 4,555.80 of new equity, net of the 1,300 dividend
 they received). A growing firm is a net user of investors' cash.
+
+\pitfalls
+\begin{itemize}
+  \item Reading a negative CFA as a loss: it reflects investment, not unprofitability (NI is positive).
+  \item Computing $\Delta NWC$ from current assets alone, forgetting the rise in current liabilities.
+  \item Setting $CFS$ equal to dividends: new equity raised must be netted out.
+\end{itemize}
 
 \refbib Ross Cap.~2, \S2.2 ``A demonstra\c{c}\~ao de resultados do exerc\'icio'', pp.~30--34;
 \S2.4 ``Fluxo de caixa'', pp.~37--44.
 
 % =====================================================================
 \exsec{12. Global's marketing campaign --- Berk *2.19, p.~54}
+
+\asked (a) Global's EBIT in the campaign scenario (sales up 15\%, operating margin 4.50\%).
+(b) Its net income, with interest unchanged and the 2009 tax ratio. (c) Its share price if the
+P/E ratio and the share count stay as reported.
+
+\approach Propagate the shock down the income statement of Berk's Table 2.3: new sales times new
+margin gives EBIT; subtracting the fixed interest gives pretax income; the effective tax ratio gives
+net income. With P/E constant, price is P/E times the new EPS (Eqs.~2.8 and 2.19). Fixed interest
+makes this an exercise in financial leverage.
 
 \notation
 \begin{itemize}
@@ -694,7 +1105,8 @@ they received). A growing firm is a net user of investors' cash.
 \textbf{Data used} (Berk Table 2.3, p.~34; Eq.~2.8, p.~34; p.~39). Reported 2010: net sales
 $186.7$, operating income $=$ EBIT $= 10.4$ (no other income), so $m = 10.4/186.7 = 5.57\%$;
 interest expense $7.7$; pretax income $2.7$; taxes $0.7$; net income $2.0$; $N = 3.6$ million
-shares; P/E $= 36/2.0 = 18$ (p.~39). Reported 2009: pretax income $2.5$, taxes $0.6$.
+shares; P/E $= 36/2.0 = 18$ (p.~39), so the reported price is $P = (18)(2.0/3.6) = 10$. Reported
+2009: pretax income $2.5$, taxes $0.6$.
 
 \assume The 5.57\% margin is Global's reported 2010 margin, so the campaign scenario replaces the
 reported 2010: sales are 15\% above the reported $186.7$ and interest stays at the reported $7.7$.
@@ -702,6 +1114,7 @@ The tax rate is the 2009 ratio, as the statement says. (If the 2010 ratio $0.7/2
 instead, the results are given at the end.)
 
 \step{1}{EBIT (a)}
+Raise sales by 15\%, then apply the new operating margin (EBIT $=$ operating income, no other income):
 \begin{align}
   S' &= (186.7)(1.15) \notag\\
   &= 214.705, \label{e12-s}\\
@@ -710,31 +1123,55 @@ instead, the results are given at the end.)
   &= 9.6617. \label{e12-ebit}
 \end{align}
 
+\answer{(a)} $EBIT = \$9.66$ million.
+
 \step{2}{Net income (b)}
+Compute the 2009 tax ratio, subtract the unchanged interest from \eqref{e12-ebit}, then apply the tax:
 \begin{align}
   \tau_{2009} &= (0.6)/(2.5) \notag\\
   &= 0.24, \label{e12-tau}\\
-  EBT' &= (9.6617) - (7.7) \notag\\
+  EBT' &= EBIT' - Int \notag\\
+  &= (9.6617) - (7.7) \notag\\
   &= 1.9617, \notag\\
-  NI' &= (1.9617)(1 - 0.24) \notag\\
+  NI' &= EBT'(1 - \tau_{2009}) \notag\\
+  &= (1.9617)(1 - 0.24) \notag\\
+  &= (1.9617)(0.76) \notag\\
   &= 1.4909. \label{e12-ni}
 \end{align}
 
+\answer{(b)} Net income $= \$1.49$ million.
+
 \step{3}{Share price (c)}
-With P/E and $N$ unchanged,
+From Eq.~2.19, $P = (P/E)\times EPS$, and from Eq.~2.8, $EPS = NI/N$; with P/E and $N$ unchanged,
 \begin{align}
   P' &= (P/E) \times NI'/N \notag\\
   &= (18)(1.4909/3.6) \notag\\
   &= (18)(0.41414) \notag\\
   &= 7.45. \label{e12-p}
 \end{align}
-\textit{Alternative tax rate.} With $\tau = 0.7/2.7 = 0.25926$: $NI' = (1.9617)(0.74074) = 1.4531$ and
-$P' = (18)(1.4531/3.6) = 7.27$.
 
-\intuition Sales up 15\% but margin down by a fifth leaves EBIT below the reported $10.4$. Because
-interest is fixed, the fall in EBIT ($-7.1\%$) becomes a fall of about $27\%$ in pretax income: that
-is financial leverage at work, and with a constant P/E the price falls in proportion to earnings,
-from \$10 to about \$7.45.
+\answer{(c)} Share price $\approx \$7.45$ (down from \$10).
+
+\textit{Alternative tax rate.} With the 2010 ratio $\tau = 0.7/2.7 = 0.25926$:
+\begin{align}
+  NI' &= (1.9617)(1 - 0.25926) \notag\\
+  &= (1.9617)(0.74074) \notag\\
+  &= 1.4531, \notag\\
+  P' &= (18)(1.4531/3.6) \notag\\
+  &= 7.27. \notag
+\end{align}
+
+\intuition Sales up 15\% but margin down by about a fifth ($1 - 4.50/5.57 = 0.19$) leaves EBIT
+below the reported $10.4$: $9.6617/10.4 - 1 = -7.1\%$. Because interest is fixed, that fall in EBIT
+becomes a fall of $1.9617/2.7 - 1 = -27\%$ in pretax income: that is financial leverage at work, and
+with a constant P/E the price falls in proportion to earnings, from \$10 to about \$7.45.
+
+\pitfalls
+\begin{itemize}
+  \item Growing 2009 sales (176.1) instead of the reported 2010 sales whose margin was 5.57\%.
+  \item Letting interest scale with sales: the statement fixes it at 7.7.
+  \item Using a statutory tax rate instead of the 2009 ratio of taxes to pretax income ($0.6/2.5$).
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.4, pp.~33--35 (Table 2.3); \S2.5 ``Profitability Ratios'' and ``Valuation
 Ratios'' (Eqs.~2.10, 2.19), pp.~35--36, 39.
@@ -742,15 +1179,25 @@ Ratios'' (Eqs.~2.10, 2.19), pp.~35--36, 39.
 % =====================================================================
 \exsec{13. Quisco: develop in house or acquire with stock --- Berk *2.23, p.~55}
 
+\asked (a) The change in EPS if Quisco spends \$500 million on in-house R\&D, expensed this year,
+at a 35\% tax rate. (b) The change in EPS if it instead pays \$900 million in its own shares for a
+firm with no income of its own. (c) Which route hurts reported earnings less, and whether it is
+also the cheaper one.
+
+\approach EPS is net income over shares (Berk Eq.~2.8). The R\&D route changes the numerator (by
+the after-tax expense); the stock route changes only the denominator (new shares). Whether a route
+is cheaper is a question about value given up by existing shareholders, not about EPS.
+
 \notation
 \begin{itemize}
   \item $N = 6{,}500$ million shares; $P = 18$ (\$); $EPS_0 = 0.80$: EPS without the technology.
   \item $R = 500$: in-house R\&D cost; $V = 900$: value of shares paid for the target (\$ million);
-        $\tau = 0.35$; $\Delta N$: new shares issued.
+        $\tau = 0.35$; $\Delta N$: new shares issued (million).
 \end{itemize}
 \assume New shares are issued at the current price of \$18.
 
 \step{1}{Baseline net income}
+Invert $EPS = NI/N$:
 \begin{align}
   NI_0 &= EPS_0 \times N \notag\\
   &= (0.80)(6{,}500) \notag\\
@@ -758,45 +1205,75 @@ Ratios'' (Eqs.~2.10, 2.19), pp.~35--36, 39.
 \end{align}
 
 \step{2}{In-house development (a)}
-The R\&D expense lowers net income by its after-tax amount:
+The R\&D expense lowers pretax income by $R$ and taxes by $\tau R$, so net income falls by
+$R(1-\tau)$; the share count is unchanged:
 \begin{align}
   \Delta NI &= -R(1-\tau) \notag\\
+  &= -(500)(1 - 0.35) \notag\\
   &= -(500)(0.65) \notag\\
   &= -325, \label{e13-dni}\\
-  \Delta EPS_a &= (-325)/(6{,}500) \notag\\
+  \Delta EPS_a &= \Delta NI/N \notag\\
+  &= (-325)/(6{,}500) \notag\\
   &= -0.05, \notag\\
-  EPS_a &= (0.80) - (0.05) \notag\\
+  EPS_a &= (0.80) + (-0.05) \notag\\
   &= 0.75. \notag
 \end{align}
 
+\answer{(a)} EPS falls by \$0.05, from \$0.80 to \$0.75.
+
 \step{3}{Acquisition with stock (b)}
+The number of new shares is the payment divided by the price; net income is unchanged by
+assumption, so EPS is $NI_0$ over the larger share count:
 \begin{align}
   \Delta N &= V/P \notag\\
   &= (900)/(18) \notag\\
   &= 50, \label{e13-dn}\\
   EPS_b &= NI_0/(N + \Delta N) \notag\\
   &= (5{,}200)/(6{,}500 + 50) \notag\\
+  &= (5{,}200)/(6{,}550) \notag\\
   &= 0.7939, \notag\\
   \Delta EPS_b &= (0.7939) - (0.80) \notag\\
   &= -0.0061. \notag
 \end{align}
+Equivalently, $EPS_b = EPS_0 \times N/(N + \Delta N) = (0.80)(6{,}500/6{,}550) = (0.80)(0.99237)
+= 0.7939$: the share count rises by $50/6{,}550 = 0.76\%$ of the new total.
+
+\answer{(b)} EPS falls by about \$0.006, to \$0.7939.
 
 \step{4}{Which is cheaper (c)}
-The acquisition has the smaller effect on reported EPS ($-0.6$ cents vs.\ $-5$ cents), but it is not
-cheaper. Existing shareholders give up \$900 million of value (the 50 million shares go to the
-target's owners), against an after-tax cost of \$325 million (\$500 million pretax) for in-house
-development: building is cheaper by \$575 million after tax, assuming both routes deliver the
+Compare the value each route costs existing shareholders. Stock: they give up 50 million shares
+worth $(50)(18) = 900$ million to the target's owners. In house: the after-tax cost is 325 million
+\eqref{e13-dni} (500 million pretax). The difference is $900 - 325 = 575$ million.
+
+\answer{(c)} The acquisition has the smaller effect on EPS ($-0.6$ cents vs.\ $-5$ cents), but it is
+not cheaper: building in house costs \$575 million less after tax, assuming both routes deliver the
 same technology.
 
 \intuition EPS measures how accounting allocates a cost, not the cost itself. Expensing R\&D hits
 earnings at once; paying with stock spreads the same economic transfer as dilution, which EPS
-records only as a small rise in the share count.
+records only as a small rise in the share count. A manager judged on EPS is pushed toward the
+more expensive route.
+
+\pitfalls
+\begin{itemize}
+  \item Ignoring the tax deduction in (a) and answering $-500/6{,}500 = -0.077$.
+  \item Concluding that the route with the smaller EPS hit is cheaper: the cost is the value given up, \$900 million in shares.
+  \item Forgetting that the share count is in billions (6.5 billion $=$ 6,500 million) when dividing.
+\end{itemize}
 
 \refbib Berk Ch.~2, \S2.4 (EPS, Eq.~2.8), pp.~33--35; \S2.8 ``Financial Reporting in Practice'',
 pp.~46--48.
 
 % =====================================================================
 \exsec{14. Complete the balance sheet --- Higgins 2.11, p.~74}
+
+\asked Fill every blank line of the balance sheet (receivables, total current assets, net fixed
+assets, payables, short-term debt, total current liabilities, long-term debt, equity, total
+liabilities and equity) from cash, inventory, total assets and six ratios.
+
+\approach Each ratio links a stock to a flow. Start from the one ratio whose stock is given and
+whose flow is unknown (days' sales in cash pins down sales), then use sales and inventory to get
+the other stocks one at a time; the balance sheet identity closes the remaining gaps.
 
 \notation
 \begin{itemize}
@@ -810,36 +1287,48 @@ pp.~46--48.
 \end{itemize}
 
 \step{1}{Sales from days' sales in cash}
+Days' sales in cash $= Cash/(S/365) = 34$; multiply both sides by $S/365$ and solve for $S$, then
+record daily sales for the next steps:
 \begin{align}
   S &= 365 \times Cash/34 \notag\\
-  &= 365 \times (1{,}100{,}000)/34 \notag\\
-  &= 11{,}808{,}824. \label{e14-s}
+  &= (365)(1{,}100{,}000)/34 \notag\\
+  &= (401{,}500{,}000)/34 \notag\\
+  &= 11{,}808{,}824, \label{e14-s}\\
+  S/365 &= (1{,}100{,}000)/34 \notag\\
+  &= 32{,}352.94. \notag
 \end{align}
 
-\step{2}{Receivables and current assets}
-Using \eqref{e14-s},
+\step{2}{Receivables, current assets, net fixed assets}
+Receivables are 71 days of sales \eqref{e14-s}; current assets add the three items; net fixed
+assets are the rest of total assets:
 \begin{align}
   AR &= 71 \times S/365 \notag\\
-  &= 71 \times (11{,}808{,}824)/365 \notag\\
+  &= 71 \times (32{,}352.94) \notag\\
   &= 2{,}297{,}059, \label{e14-ar}\\
-  CA &= (1{,}100{,}000) + (2{,}297{,}059) + (1{,}900{,}000) \notag\\
+  CA &= Cash + AR + Inv \notag\\
+  &= (1{,}100{,}000) + (2{,}297{,}059) + (1{,}900{,}000) \notag\\
   &= 5{,}297{,}059, \label{e14-ca}\\
-  NFA &= (8{,}000{,}000) - (5{,}297{,}059) \notag\\
+  NFA &= TA - CA \notag\\
+  &= (8{,}000{,}000) - (5{,}297{,}059) \notag\\
   &= 2{,}702{,}941. \notag
 \end{align}
 
 \step{3}{COGS and payables}
+Inventory turnover gives COGS; payables are 36 days of COGS:
 \begin{align}
   COGS &= 5 \times Inv \notag\\
   &= 5 \times (1{,}900{,}000) \notag\\
   &= 9{,}500{,}000, \label{e14-cogs}\\
+  COGS/365 &= (9{,}500{,}000)/365 \notag\\
+  &= 26{,}027.40, \notag\\
   AP &= 36 \times COGS/365 \notag\\
-  &= 36 \times (9{,}500{,}000)/365 \notag\\
+  &= 36 \times (26{,}027.40) \notag\\
   &= 936{,}986. \label{e14-ap}
 \end{align}
 
 \step{4}{Current liabilities and short-term debt}
-Using \eqref{e14-ca} and \eqref{e14-ap},
+The current ratio gives current liabilities from \eqref{e14-ca}; short-term debt is what is left
+after payables \eqref{e14-ap}:
 \begin{align}
   CL &= CA/2.6 \notag\\
   &= (5{,}297{,}059)/2.6 \notag\\
@@ -850,15 +1339,19 @@ Using \eqref{e14-ca} and \eqref{e14-ap},
 \end{align}
 
 \step{5}{Total liabilities, long-term debt, equity}
+Liabilities are 75\% of assets; long-term debt is the non-current part; equity is the residual:
 \begin{align}
   TL &= (0.75)(8{,}000{,}000) \notag\\
   &= 6{,}000{,}000, \notag\\
   LTD &= TL - CL \notag\\
   &= (6{,}000{,}000) - (2{,}037{,}330) \notag\\
   &= 3{,}962{,}670, \notag\\
-  E &= (8{,}000{,}000) - (6{,}000{,}000) \notag\\
+  E &= TA - TL \notag\\
+  &= (8{,}000{,}000) - (6{,}000{,}000) \notag\\
   &= 2{,}000{,}000. \notag
 \end{align}
+
+\answer{(balance sheet)} The completed statement (dollars, rounded to the dollar):
 
 \begin{center}
 \begin{tabular}{lr@{\qquad}lr}
@@ -880,6 +1373,13 @@ Total assets & 8,000,000 & Total liabilities and equity & 8,000,000\\
 anchor (cash) pins down sales, the ratios fill in the balance sheet line by line, and the identity
 $TA = TL + E$ closes it.
 
+\pitfalls
+\begin{itemize}
+  \item Basing the payables period on sales: the statement says it is based on COGS.
+  \item Applying inventory turnover to sales instead of COGS.
+  \item Taking all liabilities as current: long-term debt is $TL - CL$.
+\end{itemize}
+
 \bookans Matches the book's answer (pp.~403--404), line by line (figures rounded to the dollar).
 
 \refbib Higgins Ch.~2, \S\,``Asset Turnover'' (collection period, inventory turnover, payables
@@ -888,6 +1388,15 @@ assets), pp.~48--53.
 
 % =====================================================================
 \exsec{15. Taco Mel: statements and cash flows for two years --- Ross 2.25--2.26, pp.~50--51}
+
+\asked Problem 25: build an income statement and a balance sheet for 2008 and 2009 from the list
+of accounts. Problem 26: for 2009, compute cash flow from assets, cash flow to creditors and cash
+flow to shareholders.
+
+\approach Sort the accounts into the two statements (Ross \S\S2.1--2.2). Equity is not given, so it
+is the balancing item of each balance sheet. Then apply the cash flow identity of Ross \S2.4 as in
+Exercises 9 and 11; net new equity is backed out from the change in equity minus the addition to
+retained earnings, and the check $CFA = CFC + CFS$ verifies everything.
 
 \notation
 \begin{itemize}
@@ -899,6 +1408,9 @@ long-term debt; equity is the balancing item. Cash flow to creditors uses long-t
 following Ross \S2.4.
 
 \step{1}{Income statements (Problem 25)}
+For each year: EBIT $=$ sales $-$ COGS $-$ other expenses $-$ depreciation; pretax income $=$ EBIT
+$-$ interest; tax at 34\%; net income; and the addition to retained earnings $=$ net income $-$
+dividends:
 \begin{align}
   EBIT_{08} &= (7{,}233) - (2{,}487) - (591) - (1{,}038) \notag\\
   &= 3{,}117, \label{e15-ebit8}\\
@@ -923,6 +1435,8 @@ following Ross \S2.4.
 \end{align}
 
 \step{2}{Balance sheets (Problem 25)}
+Current assets are cash $+$ receivables $+$ inventory; total assets add net fixed assets; current
+liabilities are payables $+$ short-term notes; equity is total assets minus all liabilities:
 \begin{align}
   CA_{08} &= (3{,}792) + (5{,}021) + (8{,}927) \notag\\
   &= 17{,}740, \notag\\
@@ -941,6 +1455,8 @@ following Ross \S2.4.
   E_{09} &= (53{,}409) - (4{,}742) - (15{,}435) \notag\\
   &= 33{,}232. \label{e15-e9}
 \end{align}
+
+\answer{(25)} The two statements:
 
 \begin{center}
 \begin{tabular}{lrr@{\qquad}lrr}
@@ -964,20 +1480,29 @@ Add.\ to ret.\ earnings & 855.12 & 945.24 & Owners' equity & 32,129 & 33,232\\
 \end{center}
 
 \step{3}{Cash flow from assets, 2009 (Problem 26)}
-By \eqref{e9-ocfdef} with \eqref{e15-ebit9} and \eqref{e15-tax9},
+Apply \eqref{e9-ocfdef} with \eqref{e15-ebit9} and \eqref{e15-tax9}; net capital spending is the change
+in net fixed assets plus depreciation; the change in NWC uses the current accounts of Step~2:
 \begin{align}
-  OCF &= (3{,}543) + (1{,}085) - (1{,}007.76) \notag\\
+  OCF &= EBIT_{09} + Dep_{09} - Tax_{09} \notag\\
+  &= (3{,}543) + (1{,}085) - (1{,}007.76) \notag\\
   &= 3{,}620.24, \notag\\
-  NCS &= (33{,}921 - 31{,}805) + (1{,}085) \notag\\
+  NCS &= (NFA_{09} - NFA_{08}) + Dep_{09} \notag\\
+  &= (33{,}921 - 31{,}805) + (1{,}085) \notag\\
+  &= (2{,}116) + (1{,}085) \notag\\
   &= 3{,}201, \notag\\
-  \Delta NWC &= (19{,}488 - 4{,}742) - (17{,}740 - 4{,}716) \notag\\
+  \Delta NWC &= (CA_{09} - CL_{09}) - (CA_{08} - CL_{08}) \notag\\
+  &= (19{,}488 - 4{,}742) - (17{,}740 - 4{,}716) \notag\\
   &= (14{,}746) - (13{,}024) \notag\\
   &= 1{,}722, \notag\\
-  CFA &= (3{,}620.24) - (3{,}201) - (1{,}722) \notag\\
+  CFA &= OCF - NCS - \Delta NWC \notag\\
+  &= (3{,}620.24) - (3{,}201) - (1{,}722) \notag\\
   &= -1{,}302.76. \label{e15-cfa}
 \end{align}
 
 \step{4}{Cash flow to creditors and shareholders, 2009 (Problem 26)}
+Creditors: interest minus net new long-term debt. Shareholders: the change in equity has two
+sources, retained earnings and new shares, so net new equity is the change in equity minus
+$RE_{09}$ \eqref{e15-re9}; then $CFS = Div - \text{net new equity}$:
 \begin{align}
   CFC &= Int - (LTD_{09} - LTD_{08}) \notag\\
   &= (579) - (15{,}435 - 12{,}700) \notag\\
@@ -985,6 +1510,7 @@ By \eqref{e9-ocfdef} with \eqref{e15-ebit9} and \eqref{e15-tax9},
   &= -2{,}156, \label{e15-cfc}\\
   \text{net new equity} &= (E_{09} - E_{08}) - RE_{09} \notag\\
   &= (33{,}232 - 32{,}129) - (945.24) \notag\\
+  &= (1{,}103) - (945.24) \notag\\
   &= 157.76, \notag\\
   CFS &= Div - \text{net new equity} \notag\\
   &= (1{,}011) - (157.76) \notag\\
@@ -992,10 +1518,19 @@ By \eqref{e9-ocfdef} with \eqref{e15-ebit9} and \eqref{e15-tax9},
 \end{align}
 Check: $CFC + CFS = (-2{,}156) + (853.24) = -1{,}302.76 = CFA$ in \eqref{e15-cfa}.
 
-\intuition Taco Mel's operations generated 3,620 but it spent 4,923 on fixed assets and working
-capital, so investors as a group financed the gap of 1,303: creditors supplied 2,156 net (2,735 of
-new long-term debt less 579 of interest), which covered both the gap and a net payout of 853 to
-shareholders.
+\answer{(26)} $CFA = -\$1{,}302.76$; $CFC = -\$2{,}156$; $CFS = \$853.24$.
+
+\intuition Taco Mel's operations generated 3,620 but it spent $NCS + \Delta NWC = 3{,}201 + 1{,}722
+= 4{,}923$ on fixed assets and working capital, so investors as a group financed the gap of 1,303:
+creditors supplied 2,156 net (2,735 of new long-term debt less 579 of interest), which covered both
+the gap and a net payout of 853 to shareholders.
+
+\pitfalls
+\begin{itemize}
+  \item Putting short-term notes in long-term debt, which moves 732/717 out of NWC and into $CFC$.
+  \item Treating the whole change in equity (1,103) as new equity: most of it is retained earnings.
+  \item Reading a negative $CFC$ as a payment by the firm: it means creditors lent more than they received.
+\end{itemize}
 
 \refbib Ross Cap.~2, \S2.1 ``O balan\c{c}o patrimonial'', pp.~25--30; \S2.2, pp.~30--34;
 \S2.4 ``Fluxo de caixa'', pp.~37--44.

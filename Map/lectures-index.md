@@ -37,6 +37,9 @@ from [[Map/books-index|books-index]], printed pages).
 > [[Listas/lista-topic3-asymmetric-information|Topic 3]] (15),
 > [[Listas/lista-topic4-moral-hazard-overhang|Topic 4A+4B]] (15),
 > [[Listas/lista-topic5-nonverifiable-income-termination|Topic 5]] (13; no book exercise on sovereign debt).
+> **Ementário topics not yet lectured (2026-11-12):** [[Listas/lista-r8-governance-activism|R8 governance & activism]],
+> [[Listas/lista-r9-mergers-acquisitions|R9 M&A]], [[Listas/lista-r10-macro-implications|R10 macro implications]].
+> Every list has a worked-solutions PDF (`Listas/<list>-solutions.pdf`).
 > **Narrations (TTS, > 2 h each):** `Leituras/topic3-…`, `topic4a-…`, `topic4b-…`, `topic5-…-narrated.txt`.
 
 ---

@@ -1,6 +1,7 @@
 % =============================================================================
 % Worked solutions for Listas/lista-r2-valuation.md (Ricca R2 -- Valuation).
 % Statements are not restated: each section cites the exercise by number and page.
+% Format: spec Sections B + C (.agent/notes/solutions-and-roadmap-spec.md).
 % Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
 % Numbers: python -I Listas/lista-r2-valuation-solutions_check.py  -> PASS
 % =============================================================================
@@ -38,6 +39,10 @@
 \newcommand{\bookcheck}[1]{\par\smallskip\noindent\textbf{Book answer.}~#1}
 \newcommand{\remark}[1]{\par\smallskip\noindent\textit{Remark.}~#1}
 \newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
 
 \begin{document}
 
@@ -53,11 +58,20 @@ local editions: Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Financ
 Grinblatt \& Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed.\ (2002); Ross,
 Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed.\ (2013);
 Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001). Rates are written as
-decimals inside equations. Every number below is reproduced by
+decimals inside equations. Each exercise follows the same order: what is asked, approach,
+notation, steps with a boxed answer per part, intuition, common mistakes, book answer and
+reference. Every number below is reproduced by
 \texttt{Listas/lista-r2-valuation-solutions\_check.py}.
 
 % =============================================================================
 \section{NPV of a two-year investment --- Berk 8.2, p.~241}
+
+\asked Find the value created today by paying \$100{,}000 now to receive \$80{,}000 in one year
+and \$30{,}000 in two years, when money costs 9\% a year, and say whether to invest.
+
+\approach The NPV rule: discount every cash flow to $t=0$ at the cost of capital and add them.
+The cost of capital is the return investors give up by not investing elsewhere at the same risk,
+so a positive NPV means the project beats that alternative.
 
 \begin{notation}
   \item $C_0=100{,}000$: investment paid today, in dollars ($t=0$).
@@ -66,29 +80,53 @@ decimals inside equations. Every number below is reproduced by
   \item $\mathrm{NPV}$: net present value at $t=0$, in dollars, any real number.
 \end{notation}
 
-\step{1}{NPV definition} The NPV is the present value of all cash flows, outflows negative:
+\step{1}{NPV definition} Each future dollar is divided by $(1+r)^t$ to bring it to today; the
+outflow is already at $t=0$ and enters with a minus sign:
 \begin{equation}\label{eq:1npv}
   \mathrm{NPV} = -C_0 + \frac{C_1}{1+r} + \frac{C_2}{(1+r)^2}.
 \end{equation}
 
-\step{2}{Substitute the data} Placing the numbers in \eqref{eq:1npv}:
+\step{2}{Discount factors} The two-year factor compounds the rate twice:
+\begin{equation}\label{eq:1df}
+  (1.09)^2 = (1.09)(1.09) = 1.1881.
+\end{equation}
+
+\step{3}{Substitute the data} Placing the numbers and \eqref{eq:1df} in \eqref{eq:1npv}:
 \begin{align}
-  \mathrm{NPV} &= -(100{,}000) + \frac{(80{,}000)}{(1.09)} + \frac{(30{,}000)}{(1.09)^2} \notag\\
+  \mathrm{NPV} &= -(100{,}000) + \frac{(80{,}000)}{(1.09)} + \frac{(30{,}000)}{(1.1881)} \notag\\
                &= -100{,}000 + 73{,}394.50 + 25{,}250.40 \notag\\
+               &= -100{,}000 + 98{,}644.90 \notag\\
                &= -1{,}355.10. \label{eq:1res}
 \end{align}
 
-\step{3}{Decision} By \eqref{eq:1res} the NPV is negative: the inflows are worth \$98{,}644.90
+\step{4}{Decision} By \eqref{eq:1res} the NPV is negative: the inflows are worth \$98{,}644.90
 today, less than the \$100{,}000 they cost. Reject the investment.
 
-\intuition{The inflows sum to \$110{,}000, a 10\% total return over two years, which is less than
-9\% per year compounded. Money returned later is worth less, so the project destroys
-\$1{,}355.10 of value relative to investing at the cost of capital.}
+\answer{(NPV)} $\mathrm{NPV}=-\$1{,}355.10<0$: do not invest.
+
+\intuition{The inflows sum to \$110{,}000, a 10\% total return over two years, while 9\% per year
+compounded would require $1.1881-1=18.81\%$ over two years. Money returned later is worth less,
+so the project destroys \$1{,}355.10 of value relative to investing at the cost of capital.}
+
+\pitfalls
+\begin{itemize}
+  \item Adding undiscounted cash flows ($110{,}000-100{,}000=+10{,}000$) and accepting.
+  \item Discounting the year-2 flow by $1.09\times2=2.18$ or by $1.18$ instead of $(1.09)^2$.
+  \item Discounting $C_0$ as well: it is paid today, its discount factor is 1.
+\end{itemize}
 
 \refline{Berk, \S8.1--8.2 (The NPV decision rule; using the NPV rule), pp.~212--216.}
 
 % =============================================================================
 \section{CAPM: Intel and Boeing --- Berk 12.24, p.~377}
+
+\asked (a) and (b): the expected return the CAPM assigns to Intel (beta 1.6) and Boeing (beta 1).
+(c): the beta of a 60/40 Intel--Boeing portfolio. (d): that portfolio's expected return,
+computed once from its beta and once as the average of the two stocks' returns.
+
+\approach The security market line prices every asset by its beta: expected return equals the
+risk-free rate plus beta times the market risk premium. Beta and expected return are both
+linear in portfolio weights, which is why (d) has two routes that must agree.
 
 \begin{notation}
   \item $r_f=0.04$: risk-free rate; $E[R_m]=0.10$: expected market return; $E[R_m]-r_f$: market risk premium.
@@ -97,26 +135,36 @@ today, less than the \$100{,}000 they cost. Reject the investment.
   \item $w_I=0.6$, $w_B=0.4$: portfolio weights, $w_I+w_B=1$; $\beta_P$: beta of $P$.
 \end{notation}
 
-\step{1}{The CAPM (security market line)} For any security $i$,
+\step{1}{The CAPM (security market line)} For any security $i$, the compensation for risk is its
+beta times the premium of the market over the risk-free rate:
 \begin{equation}\label{eq:2sml}
   E[R_i] = r_f + \beta_i\,(E[R_m]-r_f).
 \end{equation}
+The market risk premium is
+\begin{equation}\label{eq:2mrp}
+  E[R_m]-r_f = 0.10-0.04 = 0.06.
+\end{equation}
 
-\step{2}{(a) Intel} Substituting $\beta_I$ into \eqref{eq:2sml}:
+\step{2}{(a) Intel} Substituting $\beta_I$ and \eqref{eq:2mrp} into \eqref{eq:2sml}:
 \begin{align}
-  E[R_I] &= (0.04) + (1.6)(0.10-0.04) \notag\\
+  E[R_I] &= (0.04) + (1.6)(0.06) \notag\\
          &= 0.04 + 0.096 \notag\\
          &= 0.136 = 13.6\%. \label{eq:2I}
 \end{align}
 
-\step{3}{(b) Boeing} Substituting $\beta_B$ into \eqref{eq:2sml}:
+\answer{(a)} $E[R_I]=13.6\%$.
+
+\step{3}{(b) Boeing} Substituting $\beta_B$ and \eqref{eq:2mrp} into \eqref{eq:2sml}:
 \begin{align}
-  E[R_B] &= (0.04) + (1.0)(0.10-0.04) \notag\\
+  E[R_B] &= (0.04) + (1.0)(0.06) \notag\\
          &= 0.04 + 0.06 \notag\\
          &= 0.10 = 10\%. \label{eq:2B}
 \end{align}
 
-\step{4}{(c) Portfolio beta} Beta is linear in portfolio weights:
+\answer{(b)} $E[R_B]=10\%$ (beta 1: the market's return).
+
+\step{4}{(c) Portfolio beta} The portfolio's return is $w_IR_I+w_BR_B$, and covariance with the
+market is linear, so beta is the weighted average of the betas:
 \begin{align}
   \beta_P &= w_I\beta_I + w_B\beta_B \label{eq:2bp}\\
           &= (0.6)(1.6) + (0.4)(1.0) \notag\\
@@ -124,8 +172,10 @@ today, less than the \$100{,}000 they cost. Reject the investment.
           &= 1.36. \label{eq:2bpres}
 \end{align}
 
+\answer{(c)} $\beta_P=1.36$.
+
 \step{5}{(d) Portfolio expected return, two ways} First, substituting $\beta_P$ from
-\eqref{eq:2bpres} into \eqref{eq:2sml}:
+\eqref{eq:2bpres} and \eqref{eq:2mrp} into \eqref{eq:2sml}:
 \begin{align}
   E[R_P] &= (0.04) + (1.36)(0.06) \notag\\
          &= 0.04 + 0.0816 \notag\\
@@ -138,16 +188,35 @@ Second, as the weighted average of \eqref{eq:2I} and \eqref{eq:2B}:
          &= 0.0816 + 0.04 \notag\\
          &= 0.1216 = 12.16\%. \label{eq:2p2}
 \end{align}
-The two routes agree because both \eqref{eq:2sml} and \eqref{eq:2bp} are linear in the weights.
+The two routes agree because both \eqref{eq:2sml} and \eqref{eq:2bp} are linear in the weights:
+$w_I(r_f+\beta_I\cdot0.06)+w_B(r_f+\beta_B\cdot0.06)=(w_I+w_B)r_f+(w_I\beta_I+w_B\beta_B)\,0.06$,
+and $w_I+w_B=1$.
+
+\answer{(d)} $E[R_P]=12.16\%$ by both routes.
 
 \intuition{Under the CAPM only market risk is priced, and it is measured by beta. Intel moves 1.6
 times as much as the market, so it earns 1.6 risk premiums. A portfolio is priced by its
 average beta, so averaging returns or averaging betas gives the same answer.}
 
+\pitfalls
+\begin{itemize}
+  \item Multiplying beta by the market \emph{return} (10\%) instead of the \emph{premium} (6\%):
+        $0.04+1.6(0.10)=20\%$ is wrong.
+  \item Averaging the betas with equal weights (1.3) instead of the 60/40 weights.
+  \item Forgetting $r_f$ in route one of (d), or adding it twice when averaging returns.
+\end{itemize}
+
 \refline{Berk, \S12.1 (expected return of a portfolio), p.~347; \S12.4 (the CAPM), pp.~366--372.}
 
 % =============================================================================
 \section{Coffee shop: the initial cash flow --- Berk 9.18, p.~276}
+
+\asked Find the single cash flow at $t=0$ that belongs in the coffee-shop NPV, deciding which of
+the five dollar amounts given (study, purchase price, resale value, capex, inventory) count.
+
+\approach The incremental-cash-flow principle: include a cash flow only if it changes because
+the project is taken. Sunk costs are out (they happen either way); opportunity costs are in
+(using an asset you own means not selling it); working capital is an investment like capex.
 
 \begin{notation}
   \item $S=20{,}000$: feasibility study already paid (sunk). $P=100{,}000$: price paid for the space two years ago (sunk).
@@ -156,10 +225,9 @@ average beta, so averaging returns or averaging betas gives the same answer.}
   \item $\mathrm{CF}_0$: incremental cash flow at $t=0$, in dollars.
 \end{notation}
 
-\step{1}{Incremental principle} Only cash flows that change because the shop is opened count.
-$S$ and $P$ have already been paid whatever is decided, so they are excluded. Using the space
-for the shop means giving up the sale of it, so the after-tax sale value $L$ is a cost of the
-project:
+\step{1}{Incremental principle} Compare the two worlds, ``open the shop'' and ``do not''. $S$ and
+$P$ have already been paid in both, so they cancel. Opening the shop means giving up the sale of
+the space, so the after-tax sale value $L$ is lost only in the ``open'' world, as are $K$ and $N$:
 \begin{equation}\label{eq:3cf}
   \mathrm{CF}_0 = -(L + K + N).
 \end{equation}
@@ -170,14 +238,33 @@ project:
                 &= -150{,}000. \label{eq:3res}
 \end{align}
 
+\answer{(CF$_0$)} $\mathrm{CF}_0=-\$150{,}000$.
+
 \intuition{The question is ``what do I give up today to run the shop?''. The answer is the
 \$115{,}000 I could pocket by selling the space, plus the new money for equipment and stock.
 The study and the old purchase price are gone either way.}
+
+\pitfalls
+\begin{itemize}
+  \item Including the \$20{,}000 study ($-170{,}000$): it is sunk.
+  \item Using the historical \$100{,}000 instead of today's after-tax \$115{,}000 as the cost of
+        the space, or leaving the space out because ``we already own it''.
+  \item Forgetting the \$5{,}000 inventory: working capital ties up cash just like equipment.
+\end{itemize}
 
 \refline{Berk, \S9.3--9.4 (incremental free cash flow; opportunity costs, sunk costs), pp.~254--265.}
 
 % =============================================================================
 \section{Pre-tax WACC and the return on assets --- Berk 13.4, p.~403}
+
+\asked Show, with the numbers of the balance sheet, that a portfolio holding 40\% debt and 60\%
+equity of this firm earns the same expected return as the firm's assets, i.e.\ that the pre-tax
+WACC equals the expected return on assets.
+
+\approach Compute each claim's payoff in each state (debt first, equity is the residual), turn
+payoffs into expected returns, and compare the weighted average with the assets' return. Then
+prove it in general: the claims add up to the assets state by state (value additivity), so their
+value-weighted return is the assets' return.
 
 \begin{notation}
   \item $A_0=1000$, $D_0=400$, $E_0=600$: market values today of assets, debt and equity, $A_0=D_0+E_0$.
@@ -187,7 +274,7 @@ The study and the old purchase price are gone either way.}
   \item $w_D=D_0/A_0=0.4$, $w_E=E_0/A_0=0.6$: capital-structure weights.
 \end{notation}
 
-\step{1}{Debt payoff} Debt is promised $D_0(1+r_D)$:
+\step{1}{Debt payoff} Debt holders are promised principal plus 5\% interest, $D_0(1+r_D)$:
 \begin{align}
   D_1 &= (400)(1.05) \notag\\
       &= 420. \label{eq:4d1}
@@ -195,13 +282,14 @@ The study and the old purchase price are gone either way.}
 Since $A_1^L=960>420$, the promise is paid in both states, so debt is riskless and its
 expected return is $r_D=0.05$.
 
-\step{2}{Equity payoffs} Equity receives what is left, $E_1^s=A_1^s-D_1$. Substituting \eqref{eq:4d1}:
+\step{2}{Equity payoffs} Equity receives what is left after debt, $E_1^s=A_1^s-D_1$. Substituting \eqref{eq:4d1}:
 \begin{align}
   E_1^H &= 1200-(420) = 780, \notag\\
   E_1^L &= 960-(420) = 540. \label{eq:4e1}
 \end{align}
 
-\step{3}{Expected equity return} Using \eqref{eq:4e1}:
+\step{3}{Expected equity return} Average the payoffs \eqref{eq:4e1} with probability $1/2$ each,
+then divide by today's price:
 \begin{align}
   E[E_1] &= (0.5)(780) + (0.5)(540) \notag\\
          &= 390 + 270 \notag\\
@@ -211,16 +299,18 @@ expected return is $r_D=0.05$.
       &= 0.10. \label{eq:4re}
 \end{align}
 
-\step{4}{Expected asset return}
+\step{4}{Expected asset return} The same two operations for the assets:
 \begin{align}
   E[A_1] &= (0.5)(1200) + (0.5)(960) \notag\\
          &= 600 + 480 \notag\\
          &= 1080, \notag\\
   r_A &= \frac{(1080)}{(1000)} - 1 \notag\\
+      &= 1.08 - 1 \notag\\
       &= 0.08. \label{eq:4ra}
 \end{align}
 
-\step{5}{Return on the 40/60 portfolio (pre-tax WACC)} Substituting $r_D$ and \eqref{eq:4re}:
+\step{5}{Return on the 40/60 portfolio (pre-tax WACC)} A portfolio's return is the
+weighted average of its holdings' returns. Substituting $r_D$ and \eqref{eq:4re}:
 \begin{align}
   w_D r_D + w_E r_E &= (0.4)(0.05) + (0.6)(0.10) \notag\\
                     &= 0.02 + 0.06 \notag\\
@@ -228,23 +318,45 @@ expected return is $r_D=0.05$.
 \end{align}
 which equals $r_A$ in \eqref{eq:4ra}.
 
-\step{6}{Why it must hold (general proof)} With $w_D=D_0/A_0$ and $w_E=E_0/A_0$,
+\step{6}{Why it must hold (general proof)} Write each return as expected payoff over price minus
+one, with $w_D=D_0/A_0$ and $w_E=E_0/A_0$, and multiply out:
 \begin{align}
   w_D r_D + w_E r_E &= \frac{D_0}{A_0}\Big(\frac{E[D_1]}{D_0}-1\Big) + \frac{E_0}{A_0}\Big(\frac{E[E_1]}{E_0}-1\Big) \notag\\
+  &= \frac{E[D_1]}{A_0} - \frac{D_0}{A_0} + \frac{E[E_1]}{A_0} - \frac{E_0}{A_0} \notag\\
   &= \frac{E[D_1]+E[E_1]}{A_0} - \frac{D_0+E_0}{A_0} \notag\\
   &= \frac{E[A_1]}{A_0} - 1 = r_A, \label{eq:4gen}
 \end{align}
 where the last line uses $D_1+E_1=A_1$ state by state (all asset cash flows go to debt or
-equity) and $D_0+E_0=A_0$.
+equity, so $E[D_1]+E[E_1]=E[A_1]$) and $D_0+E_0=A_0$.
+
+\answer{(proof)} $r_D=5\%$, $r_E=10\%$, $0.4(5\%)+0.6(10\%)=8\%=r_A$.
 
 \intuition{Holding 40\% of the debt and 60\% of the equity is holding 100\% of the claims on the
 assets, scaled down. A portfolio that owns the whole cash flow of the assets must earn what the
 assets earn; leverage only splits that return between the two claims.}
 
+\pitfalls
+\begin{itemize}
+  \item Using book weights or the payoffs next year as weights; the weights are today's market
+        values, 400/1000 and 600/1000.
+  \item Computing equity's return on the payoff difference ($780-540$) or forgetting to subtract
+        the \emph{interest} as well as the principal ($1200-400$).
+  \item Applying the after-tax WACC: there are no taxes here, and the identity is about the
+        \emph{pre-tax} WACC.
+\end{itemize}
+
 \refline{Berk, \S13.1 (a first look at the WACC), pp.~383--386; \S13.3, p.~390.}
 
 % =============================================================================
 \section{WACC for SKYE Corporation --- Higgins 8.7, p.~328}
+
+\asked Compute SKYE's weighted-average cost of capital from the table: decide which debt rate
+(coupon or yield), which weights (book or market) and which equity cost to use.
+
+\approach Higgins' Equation 8.1, $K_W=[(1-t)K_DD+K_EE]/(D+E)$: each source of capital weighted by
+its value, debt at its after-tax cost because interest is tax deductible. The cost of equity
+comes from the CAPM (Higgins' Eq.~8.2); the cost of debt is the yield, the return a buyer of the
+debt earns today.
 
 \begin{notation}
   \item $E$: market value of equity (millions of dollars); $D$: value of interest-bearing debt (millions), $D,E>0$.
@@ -253,10 +365,13 @@ assets earn; leverage only splits that return between the two claims.}
   \item $K_E$: cost of equity; $K_W$: weighted-average cost of capital.
 \end{notation}
 
-\step{1}{Weights} Equity at market value, $E=(30)(1)=30$. The market value of the debt is not
-given (no maturity), so, as Higgins does, use its book value $D=10$. Total $D+E=40$.
+\step{1}{Weights} Equity at market value is shares times price:
+\begin{equation}\label{eq:5w}
+  E=(1)(30)=30, \qquad D=10, \qquad D+E=10+30=40.
+\end{equation}
+The market value of the debt is not given (no maturity), so, as Higgins does, use its book value $D=10$.
 
-\step{2}{Cost of equity (CAPM)}
+\step{2}{Cost of equity (CAPM)} Risk-free rate plus beta times the excess return on stocks:
 \begin{align}
   K_E &= r_f + \beta\,\mathrm{MRP} \label{eq:5ke}\\
       &= (0.06) + (0.75)(0.063) \notag\\
@@ -264,20 +379,24 @@ given (no maturity), so, as Higgins does, use its book value $D=10$. Total $D+E=
       &= 0.10725. \label{eq:5keres}
 \end{align}
 
-\step{3}{After-tax cost of debt} The relevant rate is the yield, not the 9\% coupon:
+\step{3}{After-tax cost of debt} The relevant rate is the yield, not the 9\% coupon; each dollar
+of interest saves $t$ dollars of tax, so the firm's net cost is $(1-t)K_D$:
 \begin{align}
   (1-t)K_D &= (1-0.40)(0.0768) \notag\\
+           &= (0.60)(0.0768) \notag\\
            &= 0.04608. \label{eq:5kd}
 \end{align}
 
 \step{4}{WACC} Higgins' Equation 8.1, $K_W = \dfrac{(1-t)K_D D + K_E E}{D+E}$. Substituting
-\eqref{eq:5kd}, \eqref{eq:5keres} and Step 1:
+\eqref{eq:5kd}, \eqref{eq:5keres} and \eqref{eq:5w}:
 \begin{align}
   K_W &= \frac{(0.04608)(10) + (0.10725)(30)}{(40)} \notag\\
       &= \frac{0.4608 + 3.2175}{40} \notag\\
       &= \frac{3.6783}{40} \notag\\
       &= 0.0919575 \approx 9.2\%. \label{eq:5res}
 \end{align}
+
+\answer{(WACC)} $K_W\approx9.2\%$.
 
 \intuition{The firm's capital is three-quarters equity, so the WACC sits close to the 10.7\% cost
 of equity, pulled down by cheap debt whose cost is cut further by the interest tax deduction.}
@@ -286,12 +405,31 @@ of equity, pulled down by cheap debt whose cost is cut further by the interest t
 value of debt exceeds \$10 million and the true market-weight WACC is slightly lower. Without a
 maturity the market value cannot be computed; book value is the stated fallback.}
 
+\pitfalls
+\begin{itemize}
+  \item Using the 9\% coupon as the cost of debt: the coupon was set at issue; the yield is
+        today's required return.
+  \item Forgetting the tax adjustment $(1-t)$ on debt, or applying it to equity too.
+  \item Weighting equity at book value; the price times shares (\$30 million) is the market value.
+\end{itemize}
+
 \bookcheck{Matches the book's answer, $K_W=9.2\%$ (p.~422).}
 
 \refline{Higgins, \S8.4.1--8.4.2 (cost of capital defined; cost of capital for Polaris, CAPM), pp.~295--304.}
 
 % =============================================================================
 \section{GM--Hughes: cost of capital from comparables --- Grinblatt 11.10--11.13, p.~416}
+
+\asked 11.10: strip the leverage out of Lockheed's and Northrop's equity betas to get the beta
+each would have if all-equity financed. 11.11: average those two asset betas to estimate the
+beta of Hughes' assets. 11.12: turn that beta into a discount rate. 11.13: value Hughes' growing
+cash flows at that rate.
+
+\approach The comparison (pure-play) method: the risk of a project is read off firms in the same
+business, not off the buyer. Their equity betas mix business risk with leverage, so we unlever:
+the asset beta is the value-weighted average of the debt and equity betas. Without taxes, MM
+says the asset cost of capital does not depend on financing, so the target $D/E$ does not enter.
+The value then follows from the growing-perpetuity formula.
 
 \begin{notation}
   \item $\beta_E$: equity beta; $D/E$: debt-to-equity ratio (market values); $\beta_A$: asset (unlevered) beta.
@@ -306,18 +444,20 @@ equity, so their beta is the value-weighted average:
 \begin{equation}\label{eq:6ba}
   \beta_A = \frac{E}{D+E}\,\beta_E + \frac{D}{D+E}\,\beta_D.
 \end{equation}
-Substituting $\beta_D=0$ and dividing numerator and denominator by $E$:
+Substituting $\beta_D=0$ removes the second term; dividing numerator and denominator by $E$:
 \begin{equation}\label{eq:6ba2}
-  \beta_A = \frac{\beta_E}{1+D/E}.
+  \beta_A = \frac{E\,\beta_E}{D+E} = \frac{\beta_E}{(D+E)/E} = \frac{\beta_E}{1+D/E}.
 \end{equation}
-Lockheed, substituting into \eqref{eq:6ba2}:
+Lockheed, substituting $\beta_E=0.90$ and $D/E=0.90$ into \eqref{eq:6ba2}:
 \begin{align}
   \beta_{A,L} &= \frac{(0.90)}{1+(0.90)} = \frac{0.90}{1.90} = 0.4736842. \label{eq:6bl}
 \end{align}
-Northrop, substituting into \eqref{eq:6ba2}:
+Northrop, substituting $\beta_E=0.85$ and $D/E=0.70$ into \eqref{eq:6ba2}:
 \begin{align}
   \beta_{A,N} &= \frac{(0.85)}{1+(0.70)} = \frac{0.85}{1.70} = 0.5000000. \label{eq:6bn}
 \end{align}
+
+\answer{(11.10)} $\beta_{A,L}=0.474$, $\beta_{A,N}=0.500$.
 
 \step{2}{Hughes asset beta (11.11)} Averaging \eqref{eq:6bl} and \eqref{eq:6bn}:
 \begin{align}
@@ -326,18 +466,20 @@ Northrop, substituting into \eqref{eq:6ba2}:
               &= 0.4868421. \label{eq:6bh}
 \end{align}
 
+\answer{(11.11)} $\beta_{A,H}=0.487$.
+
 \step{3}{Cost of capital (11.12)} With the CAPM ($\bar R_T$ plays the role of the market return),
-substituting \eqref{eq:6bh}:
+the premium is $\bar R_T-r_f=0.14-0.08=0.06$. Substituting \eqref{eq:6bh}:
 \begin{align}
   r_A &= r_f + \beta_{A,H}(\bar R_T - r_f) \label{eq:6ra}\\
-      &= (0.08) + (0.4868421)(0.14-0.08) \notag\\
+      &= (0.08) + (0.4868421)(0.06) \notag\\
       &= 0.08 + 0.0292105 \notag\\
       &= 0.1092105 \approx 10.92\%. \label{eq:6rares}
 \end{align}
 The target $D/E=1$ does not change this: without taxes the cost of the assets is independent of
 how they are financed (MM). Check: relevering \eqref{eq:6ba2} at $D/E=1$ gives
 $\beta_{E,H}=(0.4868421)(1+1)=0.9736842$, so $r_E=(0.08)+(0.9736842)(0.06)=0.08+0.0584211=0.1384211$
-and
+and, with weights $D/V=E/V=0.5$,
 \begin{align}
   \mathrm{WACC} &= (0.5)(0.08) + (0.5)(0.1384211) \notag\\
                 &= 0.04 + 0.0692105 \notag\\
@@ -345,14 +487,19 @@ and
 \end{align}
 the same as \eqref{eq:6rares}.
 
-\step{4}{Value of Hughes (11.13)} The cash flow grows at $g$ forever, so it is a growing perpetuity.
-Substituting \eqref{eq:6rares}:
+\answer{(11.12)} $r_A\approx10.92\%$.
+
+\step{4}{Value of Hughes (11.13)} The cash flow starts at $C_1$ next year and grows at $g$
+forever, so it is a growing perpetuity, valued at $C_1/(r-g)$ (requires $g<r$). Substituting
+\eqref{eq:6rares}:
 \begin{align}
   V_H &= \frac{C_1}{r_A-g} \label{eq:6v}\\
       &= \frac{(300)}{(0.1092105)-(0.05)} \notag\\
       &= \frac{300}{0.0592105} \notag\\
       &= 5{,}066.67 \text{ (\$ millions)}. \label{eq:6vres}
 \end{align}
+
+\answer{(11.13)} $V_H\approx\$5{,}066.67$ million ($\approx\$5.07$ billion).
 
 \remark{Using GM's own beta would be wrong: $\beta_{A,GM}=1.20/1.40=0.8571429$, giving
 $r=(0.08)+(0.8571429)(0.06)=0.08+0.0514286=0.1314286$ and $V=300/(0.1314286-0.05)=300/0.0814286=3{,}684.21$,
@@ -362,11 +509,27 @@ undervaluing Hughes by about \$1.4 billion.}
 firms in the same business, after stripping out their leverage, because leverage scales equity
 risk without changing the risk of the operations.}
 
+\pitfalls
+\begin{itemize}
+  \item Averaging the \emph{equity} betas ($0.875$) and using that as the asset beta: it keeps
+        the comparables' leverage.
+  \item Dividing by $D/E$ instead of $1+D/E$, or using $D/V$ where the table gives $D/E$.
+  \item Discounting with GM's cost of capital, or using $C_0$ instead of next year's $C_1$ in
+        the growing perpetuity.
+\end{itemize}
+
 \refline{Grinblatt \& Titman, \S11.3 (the effect of leverage on comparisons), p.~379; \S11.4 and
 Example~11.2 (comparison method, adjusting for leverage without taxes), pp.~384--386.}
 
 % =============================================================================
 \section{Mutually exclusive projects and the crossover rate --- Berk 8.26, p.~244}
+
+\asked (a) The NPV of each project at 11\%. (b) The discount rate that sets each project's NPV to
+zero. (c) The discount rate at which both projects have the same NPV. (d) Which one to take.
+
+\approach NPV at the cost of capital ranks mutually exclusive projects; IRR does not, because it
+ignores scale and timing. The crossover rate is found by subtracting one project from the other
+and computing the IRR of the difference: at that rate the incremental project is worth zero.
 
 \begin{notation}
   \item $C^A_t$, $C^B_t$: cash flows of projects $A$ and $B$ at $t=0,\dots,4$ (as tabulated in the statement).
@@ -375,26 +538,43 @@ Example~11.2 (comparison method, adjusting for leverage without taxes), pp.~384-
   \item $\Delta_t=C^A_t-C^B_t$: incremental cash flows of $A$ over $B$; $r^\ast$: crossover rate.
 \end{notation}
 
-\step{1}{(a) NPVs at 11\%} Substituting $r_0$ in the definition:
+\step{1}{Discount factors at 11\%} Each later factor multiplies the previous one by 1.11:
+\begin{equation}\label{eq:7df}
+  (1.11)^2 = 1.2321, \qquad (1.11)^3 = 1.367631, \qquad (1.11)^4 = 1.51807041.
+\end{equation}
+
+\step{2}{(a) NPVs at 11\%} Substituting $r_0$ and \eqref{eq:7df} in the definition:
 \begin{align}
-  \mathrm{NPV}_A &= -100 + \frac{25}{(1.11)} + \frac{30}{(1.11)^2} + \frac{40}{(1.11)^3} + \frac{50}{(1.11)^4} \notag\\
+  \mathrm{NPV}_A &= -100 + \frac{25}{(1.11)} + \frac{30}{(1.2321)} + \frac{40}{(1.367631)} + \frac{50}{(1.51807041)} \notag\\
                  &= -100 + 22.5225 + 24.3487 + 29.2477 + 32.9365 \notag\\
                  &= 9.055, \label{eq:7na}\\
-  \mathrm{NPV}_B &= -100 + \frac{50}{(1.11)} + \frac{40}{(1.11)^2} + \frac{30}{(1.11)^3} + \frac{20}{(1.11)^4} \notag\\
+  \mathrm{NPV}_B &= -100 + \frac{50}{(1.11)} + \frac{40}{(1.2321)} + \frac{30}{(1.367631)} + \frac{20}{(1.51807041)} \notag\\
                  &= -100 + 45.0450 + 32.4649 + 21.9357 + 13.1746 \notag\\
                  &= 12.620. \label{eq:7nb}
 \end{align}
 
-\step{2}{(b) IRRs} Both streams have one sign change ($-$ then $+$), so $\mathrm{NPV}_j(r)$ is
-strictly decreasing in $r$ and has exactly one root. Solving $\mathrm{NPV}_j(r)=0$ numerically:
+\answer{(a)} $\mathrm{NPV}_A=9.055$, $\mathrm{NPV}_B=12.620$.
+
+\step{3}{(b) IRRs} Both streams have one sign change ($-$ then $+$), so $\mathrm{NPV}_j(r)$ is
+strictly decreasing in $r$ and has exactly one root. Bracketing first, by evaluating the NPV
+formula at nearby rates:
+\begin{align}
+  \mathrm{NPV}_A(0.14) &= 1.617 > 0, & \mathrm{NPV}_A(0.15) &= -0.688 < 0, \notag\\
+  \mathrm{NPV}_B(0.17) &= 1.360 > 0, & \mathrm{NPV}_B(0.18) &= -0.325 < 0, \notag
+\end{align}
+so $\mathrm{IRR}_A\in(14\%,15\%)$ and $\mathrm{IRR}_B\in(17\%,18\%)$. Narrowing each interval
+(bisection, or a spreadsheet's IRR function):
 \begin{equation}\label{eq:7irr}
   \mathrm{IRR}_A = 14.70\%, \qquad \mathrm{IRR}_B = 17.80\%.
 \end{equation}
 
-\step{3}{(c) Crossover rate} Indifference means $\mathrm{NPV}_A(r)=\mathrm{NPV}_B(r)$, i.e.\
-the incremental project $\Delta$ has zero NPV:
+\answer{(b)} $\mathrm{IRR}_A=14.70\%$, $\mathrm{IRR}_B=17.80\%$.
+
+\step{4}{(c) Crossover rate} Indifference means $\mathrm{NPV}_A(r)=\mathrm{NPV}_B(r)$, i.e.\
+$\mathrm{NPV}_A(r)-\mathrm{NPV}_B(r)=0$; since NPV is linear in the cash flows, this is the NPV of
+the incremental project $\Delta$:
 \begin{align}
-  \Delta &= (0-0,\ 25-50,\ 30-40,\ 40-30,\ 50-20) = (0,\,-25,\,-10,\,10,\,30), \notag\\
+  \Delta &= (-100-(-100),\ 25-50,\ 30-40,\ 40-30,\ 50-20) = (0,\,-25,\,-10,\,10,\,30), \notag\\
   0 &= \frac{-25}{1+r} + \frac{-10}{(1+r)^2} + \frac{10}{(1+r)^3} + \frac{30}{(1+r)^4}. \label{eq:7cross}
 \end{align}
 Multiplying \eqref{eq:7cross} by $(1+r)^4$ and writing $x=1+r>0$:
@@ -402,27 +582,48 @@ Multiplying \eqref{eq:7cross} by $(1+r)^4$ and writing $x=1+r>0$:
   -25x^3 - 10x^2 + 10x + 30 = 0.
 \end{equation}
 The coefficients change sign once, so by Descartes' rule \eqref{eq:7poly} has exactly one
-positive root. Solving numerically,
+positive root. Bracketing with \eqref{eq:7cross}: $\mathrm{NPV}_\Delta(0.05)=0.440>0$ and
+$\mathrm{NPV}_\Delta(0.06)=-0.326<0$, so $r^\ast\in(5\%,6\%)$. Narrowing,
 \begin{equation}\label{eq:7rstar}
   r^\ast = 5.57\%, \qquad \mathrm{NPV}_A(r^\ast) = \mathrm{NPV}_B(r^\ast) = 24.86.
 \end{equation}
-For $r<r^\ast$, $A$ has the higher NPV (its cash arrives later, so it gains more from a low
-rate); for $r>r^\ast$, $B$ does.
+For $r<r^\ast$, $A$ has the higher NPV (at $r=0$: $\mathrm{NPV}_A=45$ against $\mathrm{NPV}_B=40$;
+its cash arrives later, so it gains more from a low rate); for $r>r^\ast$, $B$ does.
 
-\step{4}{(d) Decision} At $r_0=11\%>r^\ast$, \eqref{eq:7nb} exceeds \eqref{eq:7na}: take project
+\answer{(c)} Indifferent at $r^\ast\approx5.57\%$.
+
+\step{5}{(d) Decision} At $r_0=11\%>r^\ast$, \eqref{eq:7nb} exceeds \eqref{eq:7na}: take project
 $B$. Both IRRs in \eqref{eq:7irr} exceed 11\%, so each project alone is acceptable; the choice
 between them follows the NPV. The IRR ranking happens to agree here, but it would rank wrongly
 at any cost of capital below $5.57\%$.
 
+\answer{(d)} Take project $B$ (higher NPV at 11\%).
+
 \intuition{IRR measures a rate, NPV measures value. When projects differ in timing, the one with
 earlier cash flows can have the higher IRR yet the lower NPV at low discount rates. The
 crossover rate is exactly the IRR of the difference between the projects.}
+
+\pitfalls
+\begin{itemize}
+  \item Choosing by IRR alone: correct here only because $11\%>r^\ast$.
+  \item Finding the crossover by averaging the IRRs, or by equating the IRRs, instead of solving
+        $\mathrm{NPV}_A(r)=\mathrm{NPV}_B(r)$.
+  \item Taking both projects because both NPVs are positive: they are mutually exclusive.
+\end{itemize}
 
 \refline{Berk, \S8.3 (alternative rules, IRR), pp.~216--226; \S8.4 (choosing between projects,
 crossover), pp.~226--232.}
 
 % =============================================================================
 \section{Innovation Company: how many IRRs? --- Berk 8.17, p.~243}
+
+\asked (a) The NPV at 6\%, 2\% and 11\%, with the accept/reject call at each rate. (b) How many
+discount rates set the NPV to zero. (c) Whether the ``IRR above cost of capital'' rule gives a
+usable answer for this project.
+
+\approach Value the cash flows with two standard formulas: a ten-year annuity for the profits and
+a perpetuity for the support cost. The cash flows change sign twice ($-$, $+$, $-$), so the NPV
+can cross zero twice, which is exactly when the IRR rule breaks down (Berk, ``multiple IRRs'').
 
 \begin{notation}
   \item $I_0=5$: up-front cost (\$ millions); $\pi=1$: profit per year for years 1--10 (\$ millions).
@@ -431,12 +632,21 @@ crossover), pp.~226--232.}
   \item $N(r)$: NPV of the project at rate $r$ (\$ millions).
 \end{notation}
 
-\step{1}{NPV function} An annuity of profits plus a perpetuity of costs:
+\step{1}{NPV function} The profits are an annuity of $\pi$ for ten years, worth $\pi\,a(r)$; the
+support cost is a perpetuity of $s$ starting at $t=1$, worth $s/r$:
 \begin{equation}\label{eq:8n}
   N(r) = -I_0 + \pi\,a(r) - \frac{s}{r}.
 \end{equation}
 
-\step{2}{(a) Evaluate at 6\%, 2\% and 11\%} Substituting each rate into \eqref{eq:8n}:
+\step{2}{Annuity factors} Writing the formula $a(r)=\big(1-(1+r)^{-10}\big)/r$, substituting each
+rate, then computing:
+\begin{align}
+  a(0.06) &= \frac{1-(1.06)^{-10}}{0.06} = \frac{1-0.5583948}{0.06} = \frac{0.4416052}{0.06} = 7.36009, \notag\\
+  a(0.02) &= \frac{1-(1.02)^{-10}}{0.02} = \frac{1-0.8203483}{0.02} = \frac{0.1796517}{0.02} = 8.98259, \notag\\
+  a(0.11) &= \frac{1-(1.11)^{-10}}{0.11} = \frac{1-0.3521845}{0.11} = \frac{0.6478155}{0.11} = 5.88923. \notag
+\end{align}
+
+\step{3}{(a) Evaluate at 6\%, 2\% and 11\%} Substituting each rate and its factor into \eqref{eq:8n}:
 \begin{align}
   N(0.06) &= -5 + (1)(7.36009) - \frac{0.1}{0.06} \notag\\
           &= -5 + 7.36009 - 1.66667 \notag\\
@@ -450,10 +660,13 @@ crossover), pp.~226--232.}
 \end{align}
 Undertake the project at 6\% (NPV $\approx$ \$693{,}420); reject it at 2\% and at 11\%.
 
-\step{3}{(b) Number of IRRs} For $r>0$, multiply \eqref{eq:8n} by $r$ (which preserves the
-zeros):
+\answer{(a)} NPV $=\$0.693$M at 6\% (accept); $-\$1.017$M at 2\% and $-\$0.020$M at 11\% (reject).
+
+\step{4}{(b) Number of IRRs} For $r>0$, multiply \eqref{eq:8n} by $r$ (which preserves the
+zeros), substituting $a(r)$ and the data:
 \begin{align}
-  r\,N(r) &= -5r + \big(1-(1+r)^{-10}\big) - 0.1 \notag\\
+  r\,N(r) &= -5r + r\cdot\frac{1-(1+r)^{-10}}{r} - r\cdot\frac{0.1}{r} \notag\\
+          &= -5r + \big(1-(1+r)^{-10}\big) - 0.1 \notag\\
           &= 0.9 - (1+r)^{-10} - 5r. \notag
 \end{align}
 So $N(r)=0$ if and only if
@@ -462,25 +675,49 @@ So $N(r)=0$ if and only if
 \end{equation}
 Since $(1+r)^{-10}$ is strictly convex, $g$ is strictly concave, and a strictly concave function
 crosses a straight line at most twice. By \eqref{eq:8n2}--\eqref{eq:8n11}, $N$ changes sign on
-$(0.02,0.06)$ and again on $(0.06,0.11)$, so there are exactly two IRRs. Solving numerically:
+$(0.02,0.06)$ and again on $(0.06,0.11)$, so there are exactly two IRRs. Bracketing more
+tightly with \eqref{eq:8n}: $N(0.027)=-0.0414$, $N(0.028)=0.0465$, $N(0.108)=0.0130$,
+$N(0.109)=-0.0034$. Narrowing each interval:
 \begin{equation}\label{eq:8irr}
   \mathrm{IRR}_1 = 2.75\%, \qquad \mathrm{IRR}_2 = 10.88\%.
 \end{equation}
 
-\step{4}{(c) What the IRR rule says} The rule ``accept if the IRR exceeds the cost of capital'' is
+\answer{(b)} Two IRRs: $2.75\%$ and $10.88\%$.
+
+\step{5}{(c) What the IRR rule says} The rule ``accept if the IRR exceeds the cost of capital'' is
 not defined when there are two IRRs: at $r=6\%$ one IRR is above $r$ and the other below.
 The NPV is positive exactly for $2.75\%<r<10.88\%$ (by \eqref{eq:8g}, between the two
 crossings) and negative outside, so only the NPV rule gives the right answer. At very low rates
 the perpetual support cost, $s/r$, dominates; at high rates the up-front cost does.
 
+\answer{(c)} The IRR rule is uninformative (two IRRs); use NPV: accept only for $2.75\%<r<10.88\%$.
+
 \intuition{The cash flows change sign twice ($-$, then $+$ for ten years, then $-$ forever), so
 the project is partly an investment and partly a loan that is never repaid. Different rates
 favour different parts, and NPV is positive only in a window of rates.}
+
+\pitfalls
+\begin{itemize}
+  \item Netting the support cost into the profits for ten years only ($0.9$ per year) and
+        forgetting that it continues forever after year 10.
+  \item Assuming a lower discount rate always raises NPV: here a lower rate inflates the
+        perpetual cost $s/r$ faster than the ten-year profits.
+  \item Reporting one IRR from a spreadsheet and applying the IRR rule to it.
+\end{itemize}
 
 \refline{Berk, \S8.3 (IRR rule pitfalls: multiple IRRs), pp.~216--226.}
 
 % =============================================================================
 \section{CoffeeStop: WACC for the liquor division --- Berk 13.20, p.~405}
+
+\asked Find the discount rate for CoffeeStop's new liquor division, financed 11\% with debt,
+given betas and capital structures of CoffeeStop and of a liquor company.
+
+\approach Divisional (project-based) cost of capital: a division is discounted at the rate of a
+pure-play firm in the same business. BF Liquors is that comparable, and it already has the
+division's planned 11\% debt, so its WACC (CAPM cost of equity, after-tax cost of debt) is the
+division's WACC, as in Berk's DuPont--Weyerhaeuser example. The unlever/relever route is shown
+as a check.
 
 \begin{notation}
   \item $\beta_E=0.26$: equity beta of the pure-play comparable BF Liquors; $E/V=0.89$, $D/V=0.11$: its weights.
@@ -493,29 +730,40 @@ the wrong risk. BF Liquors is the pure play, and it has the same leverage, $D/V=
 planned for the division. Its WACC is therefore the division's WACC (Berk, divisional costs of
 capital).
 
-\step{2}{Cost of equity (CAPM)}
+\step{2}{Cost of equity (CAPM)} Substituting the comparable's beta into the security market line:
 \begin{align}
-  r_E &= (0.03) + (0.26)(0.06) \notag\\
+  r_E &= r_f + \beta_E\,\mathrm{MRP} \notag\\
+      &= (0.03) + (0.26)(0.06) \notag\\
       &= 0.03 + 0.0156 \notag\\
       &= 0.0456. \label{eq:9re}
 \end{align}
 
-\step{3}{WACC} Substituting \eqref{eq:9re} into $r_{\mathrm{wacc}} = \frac{E}{V}r_E + \frac{D}{V}r_D(1-\tau)$:
+\step{3}{WACC} The after-tax WACC weights each cost by its share of value, debt net of the tax
+saving:
+\begin{equation}\label{eq:9def}
+  r_{\mathrm{wacc}} = \frac{E}{V}r_E + \frac{D}{V}r_D(1-\tau).
+\end{equation}
+Substituting \eqref{eq:9re} and the data; first $r_D(1-\tau)=(0.048)(0.65)=0.0312$:
 \begin{align}
   r_{\mathrm{wacc}} &= (0.89)(0.0456) + (0.11)(0.048)(1-0.35) \notag\\
+                    &= (0.89)(0.0456) + (0.11)(0.0312) \notag\\
                     &= 0.040584 + 0.003432 \notag\\
                     &= 0.044016 \approx 4.40\%. \label{eq:9wacc}
 \end{align}
 
+\answer{(WACC)} $r_{\mathrm{wacc}}\approx4.40\%$.
+
 \step{4}{Check: unlever and relever} The pre-tax WACC equals the unlevered cost of capital (as
 proved in Exercise 4):
 \begin{align}
-  r_U &= (0.89)(0.0456) + (0.11)(0.048) \notag\\
+  r_U &= \frac{E}{V}r_E + \frac{D}{V}r_D \notag\\
+      &= (0.89)(0.0456) + (0.11)(0.048) \notag\\
       &= 0.040584 + 0.00528 \notag\\
       &= 0.045864. \label{eq:9ru}
 \end{align}
-The after-tax WACC subtracts the interest tax shield, $r_{\mathrm{wacc}} = r_U - \frac{D}{V}\tau r_D$,
-which follows from the two definitions. Substituting \eqref{eq:9ru} at the division's $D/V=0.11$:
+Subtracting the definition of $r_U$ from \eqref{eq:9def} leaves only the tax term,
+$r_{\mathrm{wacc}}-r_U=\frac{D}{V}r_D(1-\tau)-\frac{D}{V}r_D=-\frac{D}{V}\tau r_D$, so
+$r_{\mathrm{wacc}} = r_U - \frac{D}{V}\tau r_D$. Substituting \eqref{eq:9ru} at the division's $D/V=0.11$:
 \begin{align}
   r_{\mathrm{wacc}} &= (0.045864) - (0.11)(0.35)(0.048) \notag\\
                     &= 0.045864 - 0.001848 \notag\\
@@ -526,16 +774,34 @@ the same as \eqref{eq:9wacc}, as it must be when the division copies the compara
 \remark{The data are not fully consistent under the CAPM: the cost of debt implies a debt beta
 $(0.048-0.03)/0.06=0.30$, above the equity beta of $0.26$, so $r_E<r_D$. The answer uses the
 inputs as given. Using CoffeeStop's own WACC, $(0.96)(0.03+0.61\cdot0.06)+(0.04)(0.048)(0.65)
-=(0.96)(0.0666)+0.001248=0.065184$, would overstate the division's rate by about 2.1 points.}
+=(0.96)(0.0666)+0.001248=0.063936+0.001248=0.065184$, would overstate the division's rate by
+about 2.1 points.}
 
 \intuition{A firm should discount each line of business at the rate investors demand for that
 business. A liquor division is valued like a liquor company, not like the parent.}
+
+\pitfalls
+\begin{itemize}
+  \item Using CoffeeStop's beta 0.61 (or its WACC, 6.5\%) for the liquor division.
+  \item Forgetting the $(1-\tau)$ on the cost of debt, which gives the pre-tax 4.59\%.
+  \item Unlevering BF Liquors' beta and then relevering at CoffeeStop's 4\% debt instead of the
+        division's planned 11\%.
+\end{itemize}
 
 \refline{Berk, \S13.3 (WACC), p.~390; \S13.5 (project-based costs of capital, divisional costs),
 pp.~396--398.}
 
 % =============================================================================
 \section{Karamazov Semiconductors: enterprise vs.\ equity IRR --- Higgins 8.16, p.~330}
+
+\asked (a) The firm's WACC from the 50/50 structure and the costs given. (b) The project's IRR on
+the whole investment (enterprise view). (c) The IRR on the shareholders' own money, after paying
+the lenders (equity view). (d) Why (b) and (c) differ and how each is to be used.
+
+\approach Higgins' enterprise and equity perspectives (\S8.6.1): the enterprise view discounts
+unlevered cash flows at the WACC; the equity view nets out debt flows and uses the cost of
+equity. A perpetuity's IRR is simply its annual cash flow over the investment, because
+$-I+C/\mathrm{IRR}=0$.
 
 \begin{notation}
   \item $I=10$: investment (\$ millions); $C=1$: after-tax (unlevered) cash flow per year in perpetuity (\$ millions).
@@ -544,30 +810,41 @@ pp.~396--398.}
   \item Assumption: the debt is perpetual (kept at 50\% of the project), interest paid annually.
 \end{notation}
 
-\step{1}{(a) WACC}
+\step{1}{(a) WACC} Weighted average of the after-tax cost of debt and the cost of equity:
 \begin{align}
   K_W &= \frac{D}{V}(1-t)K_D + \frac{E}{V}K_E \notag\\
       &= (0.5)(1-0.25)(0.08) + (0.5)(0.14) \notag\\
+      &= (0.5)(0.06) + 0.07 \notag\\
       &= 0.03 + 0.07 \notag\\
       &= 0.10. \label{eq:10kw}
 \end{align}
 
-\step{2}{(b) Enterprise IRR} Enterprise cash flows are $-I$ then $C$ forever. The IRR solves
-$-I + C/\mathrm{IRR}=0$:
+\answer{(a)} $K_W=10\%$.
+
+\step{2}{(b) Enterprise IRR} Enterprise cash flows are $-I$ at $t=0$ and $C$ forever. A perpetuity
+of $C$ discounted at rate $\rho$ is worth $C/\rho$, so the IRR solves $-I + C/\mathrm{IRR}=0$;
+multiplying by $\mathrm{IRR}$ and dividing by $I$:
 \begin{align}
   \mathrm{IRR}_{\mathrm{ent}} &= \frac{C}{I} = \frac{(1)}{(10)} \notag\\
                               &= 0.10. \label{eq:10ent}
 \end{align}
 
-\step{3}{(c) Equity IRR} Equity puts up $E=5$ and receives $C$ minus after-tax interest:
+\answer{(b)} $\mathrm{IRR}_{\mathrm{ent}}=10\%$.
+
+\step{3}{(c) Equity IRR} Equity puts up $E=5$; lenders put up $D=5$ and receive interest
+$K_DD=(0.08)(5)=0.4$ a year. Interest is deductible, saving $t\,K_DD=(0.25)(0.4)=0.1$ of tax, so
+the after-tax cost to the shareholders is
 \begin{align}
   K_D(1-t)D &= (0.08)(1-0.25)(5) \notag\\
-            &= 0.3, \label{eq:10int}\\
+            &= 0.4-0.1 = 0.3, \label{eq:10int}\\
   C_E &= C - K_D(1-t)D = (1) - (0.3) \notag\\
       &= 0.7, \label{eq:10ce}\\
   \mathrm{IRR}_{\mathrm{eq}} &= \frac{C_E}{E} = \frac{(0.7)}{(5)} \notag\\
                              &= 0.14. \label{eq:10eq}
 \end{align}
+(The perpetuity argument of Step 2 applies to the equity flows $-5$, then $0.7$ forever.)
+
+\answer{(c)} $\mathrm{IRR}_{\mathrm{eq}}=14\%$.
 
 \step{4}{(d) Why they differ} The two IRRs measure returns on different cash flows: the
 enterprise IRR \eqref{eq:10ent} is the return on all capital, the equity IRR \eqref{eq:10eq} is
@@ -575,17 +852,36 @@ the return on the shareholders' part only, after paying debt holders. Leverage c
 surplus over the after-tax cost of debt on a smaller equity base, so the equity IRR is higher
 and also riskier. Each IRR must be compared with its own hurdle: $10\%$ against $K_W=10\%$ and
 $14\%$ against $K_E=14\%$. Both comparisons give the same verdict: the project earns exactly
-its cost of capital (NPV $=0$). Comparing the equity IRR with the WACC (or the enterprise IRR
-with the cost of equity) would mix perspectives.
+its cost of capital (NPV $=-10+1/0.10=-10+10=0$). Comparing the equity IRR with the WACC (or
+the enterprise IRR with the cost of equity) would mix perspectives.
+
+\answer{(d)} Different cash flows and risk; compare $10\%$ with $K_W$ and $14\%$ with $K_E$: both
+say NPV $=0$.
 
 \intuition{Debt does not create the extra 4 points of equity return; it transfers risk. Viewed
 consistently, the enterprise and equity perspectives always agree on whether a project creates
 value.}
 
+\pitfalls
+\begin{itemize}
+  \item Comparing the 14\% equity IRR with the 10\% WACC and concluding the project is great.
+  \item Deducting pre-tax interest (0.4) instead of after-tax interest (0.3) in the equity flows.
+  \item Using the full \$10 million as the equity investment in (c).
+\end{itemize}
+
 \refline{Higgins, \S8.6.1 (the enterprise perspective vs.\ the equity perspective), pp.~307--310.}
 
 % =============================================================================
 \section{Percolated Fiber: fixing the consultants' report --- Berk 9.25, p.~277}
+
+\asked (a) The correct free cash flows in years 0 to 10, repairing the consultants' earnings
+forecast (missing working capital, non-incremental overhead, earnings instead of cash). (b) The
+project's value (NPV) at a 14\% cost of capital.
+
+\approach Free cash flow $=$ unlevered net income $+$ depreciation $-$ capex $-$ increase in NWC
+(Berk \S9.3). Only incremental items count, so allocated overhead and the consultants' fee are
+excluded. The years 1--9 flows are equal, so the ten-year annuity formula values them, with the
+NWC recovery discounted separately.
 
 \begin{notation}
   \item Amounts in thousands of dollars; $t=0,\dots,10$ years.
@@ -595,12 +891,14 @@ value.}
   \item $\tau$: tax rate; $\mathrm{FCF}_t$: free cash flow; $r=0.14$: cost of capital; $a$: ten-year annuity factor at 14\%.
 \end{notation}
 
-\step{1}{Tax rate} From the report, $\tau = 2{,}625/7{,}500 = 0.35$.
+\step{1}{Tax rate} The report's tax line over its EBIT line gives the rate:
+$\tau = 2{,}625/7{,}500 = 0.35$. Depreciation $25{,}000/10=2{,}500$ matches the report.
 
 \step{2}{Irrelevant items} The \$1 million consultants' fee is owed whatever is decided (sunk):
 excluded. Only the incremental 1{,}000 of SG\&A enters.
 
-\step{3}{Incremental EBIT and unlevered net income (years 1--10)}
+\step{3}{Incremental EBIT and unlevered net income (years 1--10)} Revenue minus incremental costs
+and depreciation, then tax at 35\%:
 \begin{align}
   \mathrm{EBIT} &= 30{,}000 - 18{,}000 - (1{,}000) - 2{,}500 \notag\\
                 &= 8{,}500, \notag\\
@@ -608,14 +906,28 @@ excluded. Only the incremental 1{,}000 of SG\&A enters.
   \text{Unlevered NI} &= 8{,}500 - (2{,}975) = 5{,}525. \label{eq:11ni}
 \end{align}
 
-\step{4}{(a) Free cash flows} $\mathrm{FCF}_t = \text{Unlevered NI}_t + \mathrm{Dep}_t - \mathrm{CapEx}_t - \Delta\mathrm{NWC}_t$:
+\step{4}{(a) Free cash flows} $\mathrm{FCF}_t = \text{Unlevered NI}_t + \mathrm{Dep}_t - \mathrm{CapEx}_t - \Delta\mathrm{NWC}_t$.
+At $t=0$ only capex and the NWC build-up occur; in years 1--9 add back depreciation (a non-cash
+charge); in year 10 the NWC comes back ($\Delta\mathrm{NWC}_{10}=-10{,}000$):
 \begin{align}
   \mathrm{FCF}_0 &= -(25{,}000) - (10{,}000) = -35{,}000, \notag\\
   \mathrm{FCF}_{1\ldots9} &= (5{,}525) + (2{,}500) = 8{,}025, \label{eq:11fcf}\\
   \mathrm{FCF}_{10} &= (8{,}025) + (10{,}000) = 18{,}025. \notag
 \end{align}
+Cross-check with the tax-shield form, $\mathrm{FCF}=(\text{Rev}-\text{Costs})(1-\tau)+\tau\,\mathrm{Dep}$:
+$(30{,}000-18{,}000-1{,}000)(0.65)+(0.35)(2{,}500)=(11{,}000)(0.65)+875=7{,}150+875=8{,}025$.
 
-\step{5}{(b) Value at 14\%} Writing $\mathrm{FCF}_{10}$ as $8{,}025$ plus the NWC recovery:
+\answer{(a)} $\mathrm{FCF}_0=-35{,}000$; $\mathrm{FCF}_{1\ldots9}=8{,}025$; $\mathrm{FCF}_{10}=18{,}025$ (\$ thousands).
+
+\step{5}{Annuity factor and year-10 factor} Writing the formula, substituting $r=0.14$, $T=10$,
+then computing:
+\begin{align}
+  (1.14)^{10} &= 3.707221, \qquad (1.14)^{-10} = 0.2697438, \notag\\
+  a &= \frac{1-(1+r)^{-T}}{r} = \frac{1-0.2697438}{0.14} = \frac{0.7302562}{0.14} = 5.216116. \notag
+\end{align}
+
+\step{6}{(b) Value at 14\%} Writing $\mathrm{FCF}_{10}$ as $8{,}025$ plus the NWC recovery, so that
+$8{,}025$ is a ten-year annuity:
 \begin{align}
   \mathrm{NPV} &= -35{,}000 + 8{,}025\,a + \frac{10{,}000}{(1.14)^{10}} \notag\\
                &= -35{,}000 + (8{,}025)(5.216116) + \frac{10{,}000}{(3.707221)} \notag\\
@@ -625,15 +937,36 @@ excluded. Only the incremental 1{,}000 of SG\&A enters.
 The project adds about \$9.56 million of value (the future cash flows are worth \$44.56 million
 against \$35 million invested), far from the consultants' \$48.75 million.
 
+\answer{(b)} $\mathrm{NPV}\approx\$9{,}556.77$ thousand ($\approx\$9.56$ million).
+
 \intuition{Earnings are not cash: the equipment is paid for up front, not in yearly instalments
 of depreciation; working capital ties up cash until year 10; and money in year 10 is worth much
 less than money today. Overhead that exists anyway is not caused by the project.}
+
+\pitfalls
+\begin{itemize}
+  \item Keeping the full \$2 million SG\&A (the \$1 million overhead is not incremental), or
+        subtracting the \$1 million consultants' fee (sunk).
+  \item Forgetting to add back depreciation, or subtracting the \$25 million capex again in
+        each year through depreciation \emph{and} at $t=0$.
+  \item Omitting the NWC recovery in year 10, or the NWC outflow at $t=0$.
+\end{itemize}
 
 \refline{Berk, \S9.2--9.3 (incremental earnings and free cash flow), pp.~250--260; \S9.4 (NWC,
 sunk costs, overhead), pp.~260--265.}
 
 % =============================================================================
 \section{Torino Marine: three terminal values --- Higgins 9.11, p.~382}
+
+\asked (a) The firm (enterprise) value at end-2021 with a no-growth terminal value after 2025.
+(b) The equity value per share implied by (a). (c) Equity per share when the terminal value
+assumes 5\% perpetual growth with the reinvestment it needs. (d) Equity per share when the
+terminal value comes from a P/E multiple of 12 on 2025 net income.
+
+\approach Discounted free cash flow (Higgins \S9.2): enterprise value $=$ PV of the explicit FCF
+forecast $+$ PV of a terminal value at 2025, all at the WACC; equity $=$ enterprise value $-$
+interest-bearing debt. The three parts change only the terminal value: a level perpetuity, a
+growing perpetuity, and a market multiple (which values equity, so debt is added back).
 
 \begin{notation}
   \item Amounts in \$ millions; valuation date end of 2021; $\mathrm{FCF}_{2022},\dots,\mathrm{FCF}_{2025}=-52,76,92,112$.
@@ -642,16 +975,19 @@ sunk costs, overhead), pp.~260--265.}
   \item $D=250$: interest-bearing liabilities; $n=40$: shares (millions); $g=0.05$: growth in (c).
 \end{notation}
 
-\step{1}{PV of the explicit forecast (common to all parts)}
+\step{1}{PV of the explicit forecast (common to all parts)} Year 2022 is one year after the
+valuation date, 2025 four years; the factors are $1.11$, $(1.11)^2=1.2321$,
+$(1.11)^3=1.367631$, $(1.11)^4=1.518070$:
 \begin{align}
-  PV_{FCF} &= \frac{-52}{(1.11)} + \frac{76}{(1.11)^2} + \frac{92}{(1.11)^3} + \frac{112}{(1.11)^4} \notag\\
+  PV_{FCF} &= \frac{-52}{(1.11)} + \frac{76}{(1.2321)} + \frac{92}{(1.367631)} + \frac{112}{(1.518070)} \notag\\
            &= -46.847 + 61.683 + 67.270 + 73.778 \notag\\
            &= 155.884. \label{eq:12pv}
 \end{align}
-The discount factor to 2025 is $(1.11)^4 = 1.518070$.
+Any terminal value dated 2025 is divided by $(1.11)^4 = 1.518070$.
 
 \step{2}{(a) No-growth terminal value} With depreciation equal to capex and no change in
-working capital, $\mathrm{FCF}=\mathrm{EBIT}(1-t)$ from 2026 on, a level perpetuity:
+working capital, $\mathrm{FCF}=\mathrm{EBIT}(1-t)+\mathrm{Dep}-\mathrm{CapEx}-\Delta\mathrm{NWC}=\mathrm{EBIT}(1-t)$
+from 2026 on, a level perpetuity valued at $\mathrm{FCF}/K_W$:
 \begin{align}
   TV_{2025} &= \frac{\mathrm{EBIT}(1-t)}{K_W} = \frac{(200)(1-0.40)}{(0.11)} \notag\\
             &= \frac{120}{0.11} = 1{,}090.909, \notag\\
@@ -659,14 +995,20 @@ working capital, $\mathrm{FCF}=\mathrm{EBIT}(1-t)$ from 2026 on, a level perpetu
   \mathrm{FMV}_a &= (155.884) + (718.616) = 874.500. \label{eq:12a}
 \end{align}
 
-\step{3}{(b) Equity per share} Equity is enterprise value minus debt. Substituting \eqref{eq:12a}:
+\answer{(a)} $\mathrm{FMV}\approx\$874.5$ million.
+
+\step{3}{(b) Equity per share} Equity is enterprise value minus debt, divided by shares.
+Substituting \eqref{eq:12a}:
 \begin{align}
   \frac{\mathrm{FMV}_a - D}{n} &= \frac{(874.500) - (250)}{(40)} \notag\\
                                &= \frac{624.500}{40} = 15.61 \text{ dollars per share}. \label{eq:12b}
 \end{align}
 
+\answer{(b)} \$15.61 per share.
+
 \step{4}{(c) Growing terminal value} 2026 EBIT is $200(1.05)$; FCF subtracts net capex (30) and
-working-capital investment (15):
+working-capital investment (15). All three pieces grow at 5\%, so FCF grows at 5\% and the
+terminal value is the growing perpetuity $\mathrm{FCF}_{2026}/(K_W-g)$:
 \begin{align}
   \mathrm{FCF}_{2026} &= (200)(1.05)(1-0.40) - 30 - 15 \notag\\
                       &= (210)(0.60) - 45 \notag\\
@@ -677,10 +1019,13 @@ working-capital investment (15):
   \text{per share} &= \frac{(1{,}045.171) - (250)}{(40)} = \frac{795.171}{40} = 19.88. \label{eq:12c}
 \end{align}
 
-\step{5}{(d) Multiple-based terminal value} 2025 net income deducts interest on the debt:
+\answer{(c)} \$19.88 per share (enterprise value \$1{,}045.2 million).
+
+\step{5}{(d) Multiple-based terminal value} 2025 net income deducts interest (10\% on 250) before
+tax; the multiple then values equity, and debt is added back to get an enterprise value:
 \begin{align}
   NI_{2025} &= \big(200 - (0.10)(250)\big)(1-0.40) \notag\\
-            &= (175)(0.60) = 105, \notag\\
+            &= (200-25)(0.60) = (175)(0.60) = 105, \notag\\
   E_{2025} &= (12)(105) = 1{,}260, \notag\\
   TV_{2025} &= E_{2025} + D = (1{,}260) + (250) = 1{,}510, \notag\\
   PV(TV) &= \frac{1{,}510}{(1.518070)} = 994.684, \notag\\
@@ -690,10 +1035,21 @@ working-capital investment (15):
 The P/E multiple values equity, so debt is added back to get an enterprise terminal value that
 can be discounted at the WACC together with the FCFs.
 
+\answer{(d)} \$22.51 per share.
+
 \intuition{Most of the value (82--86\%) sits in the terminal value, so the method chosen for it
 drives the answer: \$15.61, \$19.88 or \$22.51 per share. Growth is worth something only because
 the reinvestment it needs (\$45 million in 2026) earns more than the WACC; the market multiple
 of 12 implies even more optimism than 5\% growth.}
+
+\pitfalls
+\begin{itemize}
+  \item Discounting the 2025 terminal value by $(1.11)^5$, or treating it as a 2026 amount.
+  \item Using $\mathrm{EBIT}$ instead of $\mathrm{EBIT}(1-t)$ as the perpetual FCF, or forgetting
+        net capex and NWC in the growth case.
+  \item In (d), discounting the P/E equity value as if it were enterprise value (forgetting to
+        add back the \$250 million), or applying the multiple to EBIT.
+\end{itemize}
 
 \bookcheck{Matches the book's answers (p.~427): (a) \$874.5 million, (b) \$15.61, (c)
 \$1{,}045.2 million and \$19.88, (d) \$22.51 per share. In (d) the book adds \$155.8 instead of
@@ -705,6 +1061,15 @@ pp.~342--348; \S9.3 (valuation by comparables, P/E), p.~349.}
 
 % =============================================================================
 \section{Calculating project NPV (CUTO) --- Ross 10.31 (Desafio), p.~356}
+
+\asked Find the NPV at 13\% of CUTO's four-year zither project, deciding how to treat the land
+(bought for \$1.4 million, worth \$1.5 million now and \$1.6 million in four years), the
+marketing study, depreciation, salvage of the equipment and working capital.
+
+\approach Build incremental cash flows year by year (Ross \S10.2--10.4): operating cash flow
+$=$ EBIT$(1-\tau)+$ depreciation; add capital spending, NWC and after-tax salvage; then
+discount. The land enters at its opportunity cost (today's after-tax sale value) and comes back
+at its after-tax value in year 4; the land's purchase price and the study are sunk.
 
 \begin{notation}
   \item Amounts in dollars; $t=0,\dots,4$ years; $\tau=0.34$: tax rate; $R=0.13$: required return.
@@ -727,10 +1092,11 @@ anos}'': straight line to zero over three years, as in Ross's Problem~9 of the s
 \begin{align}
   \mathrm{Dep}_{1,2,3} &= \frac{(4{,}200{,}000)}{3} = 1{,}400{,}000, \qquad \mathrm{Dep}_4 = 0. \label{eq:13dep}
 \end{align}
-The book value at $t=4$ is therefore zero.
+The book value at $t=4$ is therefore $4{,}200{,}000-3(1{,}400{,}000)=0$.
 
 \step{3}{Operating cash flow} For each year, $\mathrm{EBIT}_t = S_t - \mathrm{VC}_t - \mathrm{FC} - \mathrm{Dep}_t$
-and $\mathrm{OCF}_t = \mathrm{EBIT}_t(1-\tau) + \mathrm{Dep}_t$. Year 1 in full:
+and $\mathrm{OCF}_t = \mathrm{EBIT}_t(1-\tau) + \mathrm{Dep}_t$ (tax is paid on EBIT; depreciation is
+a non-cash charge added back). Year 1 in full:
 \begin{align}
   S_1 &= (3{,}200)(780) = 2{,}496{,}000, \notag\\
   \mathrm{VC}_1 &= (0.15)(2{,}496{,}000) = 374{,}400, \notag\\
@@ -739,7 +1105,19 @@ and $\mathrm{OCF}_t = \mathrm{EBIT}_t(1-\tau) + \mathrm{Dep}_t$. Year 1 in full:
   NI_1 &= 296{,}600 - (100{,}844) = 195{,}756, \notag\\
   \mathrm{OCF}_1 &= (195{,}756) + (1{,}400{,}000) = 1{,}595{,}756. \label{eq:13ocf1}
 \end{align}
-The other years follow the same lines:
+Years 2--4, the same lines:
+\begin{align}
+  S_2 &= (4{,}300)(780) = 3{,}354{,}000, \quad \mathrm{VC}_2 = (0.15)(3{,}354{,}000) = 503{,}100, \notag\\
+  \mathrm{EBIT}_2 &= 3{,}354{,}000 - 503{,}100 - 425{,}000 - 1{,}400{,}000 = 1{,}025{,}900, \notag\\
+  \mathrm{OCF}_2 &= 1{,}025{,}900 - (0.34)(1{,}025{,}900) + 1{,}400{,}000 = 1{,}025{,}900 - 348{,}806 + 1{,}400{,}000 = 2{,}077{,}094, \notag\\
+  S_3 &= (3{,}900)(780) = 3{,}042{,}000, \quad \mathrm{VC}_3 = (0.15)(3{,}042{,}000) = 456{,}300, \notag\\
+  \mathrm{EBIT}_3 &= 3{,}042{,}000 - 456{,}300 - 425{,}000 - 1{,}400{,}000 = 760{,}700, \notag\\
+  \mathrm{OCF}_3 &= 760{,}700 - (0.34)(760{,}700) + 1{,}400{,}000 = 760{,}700 - 258{,}638 + 1{,}400{,}000 = 1{,}902{,}062, \notag\\
+  S_4 &= (2{,}800)(780) = 2{,}184{,}000, \quad \mathrm{VC}_4 = (0.15)(2{,}184{,}000) = 327{,}600, \notag\\
+  \mathrm{EBIT}_4 &= 2{,}184{,}000 - 327{,}600 - 425{,}000 - 0 = 1{,}431{,}400, \notag\\
+  \mathrm{OCF}_4 &= 1{,}431{,}400 - (0.34)(1{,}431{,}400) + 0 = 1{,}431{,}400 - 486{,}676 = 944{,}724. \notag
+\end{align}
+Summary:
 \begin{center}
 \begin{tabular}{lrrrr}
 \toprule
@@ -764,35 +1142,58 @@ price is a taxable gain:
              &= 400{,}000 - 136{,}000 = 264{,}000. \label{eq:13sv}
 \end{align}
 
-\step{5}{Total cash flows} Assuming the working capital is fully recovered when sales stop:
+\step{5}{Total cash flows} Adding capital items to the OCFs, assuming the working capital is
+fully recovered when sales stop:
 \begin{align}
   \mathrm{CF}_0 &= -(4{,}200{,}000) - (1{,}500{,}000) - (125{,}000) = -5{,}825{,}000, \notag\\
   \mathrm{CF}_{1,2,3} &= \mathrm{OCF}_{1,2,3} = 1{,}595{,}756,\ 2{,}077{,}094,\ 1{,}902{,}062, \notag\\
   \mathrm{CF}_4 &= (944{,}724) + (1{,}600{,}000) + (264{,}000) + (125{,}000) = 2{,}933{,}724. \label{eq:13cf}
 \end{align}
 
-\step{6}{NPV at 13\%} Discounting \eqref{eq:13cf}:
+\step{6}{NPV at 13\%} The discount factors are $1.13$, $(1.13)^2=1.2769$, $(1.13)^3=1.442897$,
+$(1.13)^4=1.63047361$. Discounting \eqref{eq:13cf}:
 \begin{align}
-  \mathrm{NPV} &= -5{,}825{,}000 + \frac{1{,}595{,}756}{(1.13)} + \frac{2{,}077{,}094}{(1.13)^2}
-                  + \frac{1{,}902{,}062}{(1.13)^3} + \frac{2{,}933{,}724}{(1.13)^4} \notag\\
+  \mathrm{NPV} &= -5{,}825{,}000 + \frac{1{,}595{,}756}{(1.13)} + \frac{2{,}077{,}094}{(1.2769)}
+                  + \frac{1{,}902{,}062}{(1.442897)} + \frac{2{,}933{,}724}{(1.63047361)} \notag\\
                &= -5{,}825{,}000 + 1{,}412{,}173.45 + 1{,}626{,}669.28 + 1{,}318{,}224.38 + 1{,}799{,}307.87 \notag\\
                &= 331{,}374.98. \label{eq:13npv}
 \end{align}
 The NPV is positive: CUTO should go ahead.
+
+\answer{(NPV)} $\mathrm{NPV}\approx\$331{,}375>0$: accept.
 
 \remark{The English original of this problem uses the U.S.\ three-year MACRS schedule (33.33\%,
 44.45\%, 14.81\%, 7.41\%). With that schedule (book value also zero at $t=4$) the NPV is
 \$337{,}231.54: the faster write-off brings tax savings forward, but the decision is unchanged.}
 
 \intuition{The land is not free because the firm already owns it: giving up \$1.5 million today
-to get \$1.6 million back in four years costs the project about \$519{,}000 in present value at
-13\%. The project still pays for that and for the equipment, so it creates value.}
+to get \$1.6 million back in four years costs the project
+$1{,}500{,}000-1{,}600{,}000/1.63047361=1{,}500{,}000-981{,}309.96=518{,}690.04$, about
+\$519{,}000 in present value at 13\%. The project still pays for that and for the equipment, so
+it creates value.}
+
+\pitfalls
+\begin{itemize}
+  \item Charging the \$1.4 million historical land cost or the \$125{,}000 study: both are sunk.
+  \item Ignoring the land's year-4 resale value of \$1.6 million (or its $t=0$ opportunity cost).
+  \item Adding the full \$400{,}000 salvage without taxing the gain over the zero book value, or
+        forgetting to recover the \$125{,}000 NWC in year 4.
+\end{itemize}
 
 \refline{Ross, \S10.2 (incremental cash flows: sunk and opportunity costs, NWC), pp.~320--322;
 \S10.3--10.4 (pro forma statements, depreciation, salvage), pp.~322--339.}
 
 % =============================================================================
 \section{State prices from a traded project --- Amaro de Matos 1.2.6 \#5, p.~28}
+
+\asked (a) The prices today of one unit of consumption in each of the two states, implied by the
+risk-free rate and project 1's price, assuming no arbitrage. (b) Whether an agent invests in
+project 1 (cost 5) and in project 2 (cost 2), given their payoffs.
+
+\approach Amaro de Matos' Proposition~1.2.1: no arbitrage $\Leftrightarrow$ a strictly positive
+state-price vector $\psi$ with $V=\Gamma\psi$. With two states and two independent traded assets
+(the bond and project 1) the market is complete, so $\psi$ is unique and prices any payoff. A
+project is worth undertaking when its market value exceeds its investment (positive NPV, \S1.2.3).
 
 \begin{notation}
   \item States $s\in\{1,2\}$ at $t=1$; $\psi=(\psi_1,\psi_2)^\top$: state prices (value today of one unit paid in state $s$ only).
@@ -806,10 +1207,10 @@ to get \$1.6 million back in four years costs the project about \$519{,}000 in p
 \begin{equation}\label{eq:14gamma}
   \Gamma = \begin{pmatrix} 1.01 & 1.01\\ 10 & 5\end{pmatrix}, \qquad V = \begin{pmatrix} 1\\ 6.7\end{pmatrix}.
 \end{equation}
-Its determinant is $(1.01)(5)-(1.01)(10)=-5.05\ne0$, so the two payoff vectors are linearly
-independent and span both states. The number of independent assets equals the number of states,
-so the market is complete (Amaro de Matos \S1.2.1) and the state-price vector, if it exists, is
-unique: $\psi=\Gamma^{-1}V$ (\S1.2.2).
+Its determinant is $(1.01)(5)-(1.01)(10)=5.05-10.10=-5.05\ne0$, so the two payoff vectors are
+linearly independent and span both states. The number of independent assets equals the number
+of states, so the market is complete (Amaro de Matos \S1.2.1) and the state-price vector, if it
+exists, is unique: $\psi=\Gamma^{-1}V$ (\S1.2.2).
 
 \step{2}{No arbitrage gives the pricing equations} By Proposition~1.2.1, absence of arbitrage is
 equivalent to a strictly positive $\psi$ with $V=\Gamma\psi$. Row by row:
@@ -822,12 +1223,13 @@ equivalent to a strictly positive $\psi$ with $V=\Gamma\psi$. Row by row:
 \begin{equation}\label{eq:14sum}
   \psi_1 + \psi_2 = \frac{1}{1.01} = 0.990099.
 \end{equation}
-So $\psi_2 = 0.990099-\psi_1$. Substituting into \eqref{eq:14p}:
+So $\psi_2 = 0.990099-\psi_1$. Substituting into \eqref{eq:14p} and collecting the $\psi_1$ terms:
 \begin{align}
   6.7 &= 10\psi_1 + 5(0.990099-\psi_1) \notag\\
+      &= 10\psi_1 + 4.950495 - 5\psi_1 \notag\\
       &= 5\psi_1 + 4.950495, \notag\\
-  \psi_1 &= \frac{6.7-4.950495}{5} = \frac{1.749505}{5} \notag\\
-         &= 0.349901. \label{eq:14psi1}
+  5\psi_1 &= 6.7-4.950495 = 1.749505, \notag\\
+  \psi_1 &= \frac{1.749505}{5} = 0.349901. \label{eq:14psi1}
 \end{align}
 Substituting \eqref{eq:14psi1} into \eqref{eq:14sum}:
 \begin{align}
@@ -837,7 +1239,9 @@ Substituting \eqref{eq:14psi1} into \eqref{eq:14sum}:
 Both components are strictly positive, so by Proposition~1.2.1 (and exercise \#1 of the same
 section) the prices $V$ admit no arbitrage, and $\psi=(0.349901,\ 0.640198)$ is the unique
 state-price vector. Check: $10(0.349901)+5(0.640198)=3.49901+3.20099=6.70000$. Equivalently,
-the risk-neutral probabilities are $q_1=(1.01)(0.349901)=0.3534$ and $q_2=0.6466$.
+the risk-neutral probabilities are $q_1=(1.01)(0.349901)=0.3534$ and $q_2=(1.01)(0.640198)=0.6466$.
+
+\answer{(a)} $\psi=(\psi_1,\psi_2)\approx(0.3499,\ 0.6402)$.
 
 \step{4}{(b) Value of project 2} In a complete market every payoff is priced by $\psi$:
 \begin{align}
@@ -863,15 +1267,28 @@ an arbitrage, which Step~2 rules out.
 increasing in consumption.
 (i) Project 2: whatever future consumption the agent obtains by investing 2 in project 2 can be
 obtained by buying the replicating portfolio of Step~4 for 1.860990. The second route leaves
-$0.139010$ more for consumption today with the same future consumption, so by monotonicity it
-is strictly preferred; no agent invests in project 2.
+$2-1.860990=0.139010$ more for consumption today with the same future consumption, so by
+monotonicity it is strictly preferred; no agent invests in project 2.
 (ii) Project 1: investing 5 and selling claims to its payoff at the market value 6.7 raises
 today's consumption by 1.7 and leaves future consumption unchanged, which every agent strictly
 prefers. Hence agents invest in project 1 only, and this does not depend on their preferences.
 
+\answer{(b)} No: $V_2=1.861<2$ ($\mathrm{NPV}_2=-0.139$), while $\mathrm{NPV}_1=1.7>0$; agents invest
+in project 1 only.
+
 \intuition{With two states and two independent traded assets, every state-contingent payoff has
 one market price. A project is worth doing if it produces its payoff more cheaply than the
 market sells it: project 1 does (5 against 6.7), project 2 does not (2 against 1.86).}
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting the risk-free asset as the second pricing equation, leaving one equation for
+        two unknowns.
+  \item Using the bond payoff 1 instead of $1.01$ (price 1 buys $1+r$), which gives
+        $\psi_1+\psi_2=1$.
+  \item Judging project 2 by its expected payoff or by the sign of $\Gamma_{21}$ instead of
+        comparing its state-price value with the investment of 2.
+\end{itemize}
 
 \bookcheck{Matches the book's answer (p.~247): $\psi\approx(0.35,\ 0.64)$, $V_2=1.86$,
 $\mathrm{NPV}_1=1.7$, $\mathrm{NPV}_2=-0.14$, invest in project 1 only.}
@@ -882,6 +1299,18 @@ $\mathrm{NPV}_1=1.7$, $\mathrm{NPV}_2=-0.14$, invest in project 1 only.}
 
 % =============================================================================
 \section{Investment independent of preferences under uncertainty --- Amaro de Matos 1.2.6 \#4, p.~28}
+
+\asked Two agents with different utilities and endowments can invest in a technology whose
+output is uncertain ($F_1$ or $F_2$). Find conditions under which both choose the same
+investment, i.e.\ the investment decision does not depend on who makes it: Fisher separation
+extended to uncertainty.
+
+\approach Under certainty, Fisher separation (Proposition~1.1.1) holds because a capital market
+lets each agent separate the production choice (maximise market value) from the consumption
+choice. Under uncertainty, the same works if agents can trade every state-contingent payoff at
+common prices: complete markets with state prices $\psi$ (Proposition~1.2.1). Then each agent's
+wealth is endowment value plus the market value created by investing, and every agent maximises
+the latter. We prove sufficiency directly, then show the book's first-order-condition route.
 
 \begin{notation}
   \item Agents $i\in\{A,B\}$; dates $t=0,1$; states $s\in\{1,2\}$ at $t=1$ with probabilities $p_1=p$, $p_2=1-p$, $0<p<1$.
@@ -920,7 +1349,7 @@ consumes endowment, output and security payoffs at $t=1$:
   y_i^s &= Y_i^s + F_s(\epsilon_i) + z_i^s, \qquad s=1,2. \label{eq:15b1}
 \end{align}
 Lending $b$ at the risk-free rate is the case $z_i^1=z_i^2=(1+r)b$, which by (S2) costs
-$(\psi_1+\psi_2)(1+r)b=b$; so the bond is included in \eqref{eq:15b0}--\eqref{eq:15b1}.
+$(\psi_1+\psi_2)(1+r)b=\frac{1}{1+r}(1+r)b=b$; so the bond is included in \eqref{eq:15b0}--\eqref{eq:15b1}.
 
 \step{2}{Collapse to one wealth constraint} From \eqref{eq:15b1}, $z_i^s = y_i^s - Y_i^s - F_s(\epsilon_i)$.
 Substituting into \eqref{eq:15b0}:
@@ -946,6 +1375,7 @@ with consumption $(x',y'^1,y'^2)$ satisfying \eqref{eq:15w} at $\epsilon'$. Defi
 Substituting $(x'',y'^1,y'^2)$ and $\epsilon^\ast$ into the left side of \eqref{eq:15w}:
 \begin{align}
   x'' + \psi_1y'^1 + \psi_2y'^2 &= \big(x' + \Pi(\epsilon^\ast)-\Pi(\epsilon')\big) + \psi_1y'^1 + \psi_2y'^2 \notag\\
+  &= \big(x' + \psi_1y'^1 + \psi_2y'^2\big) + \Pi(\epsilon^\ast) - \Pi(\epsilon') \notag\\
   &= \big(W_i^0 + \Pi(\epsilon')\big) + \Pi(\epsilon^\ast) - \Pi(\epsilon') \notag\\
   &= W_i^0 + \Pi(\epsilon^\ast), \notag
 \end{align}
@@ -954,7 +1384,8 @@ $V_i(x'',y'^1,y'^2)>V_i(x',y'^1,y'^2)$, contradicting optimality. Hence every ag
 investment lies in $\arg\max_{\epsilon\ge0}\Pi(\epsilon)$. The argument used only that utility
 increases in $x$: not the form of $U_i$, not $(X_i,Y_i^1,Y_i^2)$, and not even $p$.
 
-\step{4}{The maximiser is unique and solves \eqref{eq:15foc}} Differentiating $\Pi$:
+\step{4}{The maximiser is unique and solves \eqref{eq:15foc}} Differentiating $\Pi$ term by term
+($\psi_s$ are constants):
 \begin{align}
   \Pi'(\epsilon) &= \psi_1F_1'(\epsilon)+\psi_2F_2'(\epsilon)-1, \label{eq:15d1}\\
   \Pi''(\epsilon) &= \psi_1F_1''(\epsilon)+\psi_2F_2''(\epsilon) < 0, \label{eq:15d2}
@@ -963,12 +1394,17 @@ where \eqref{eq:15d2} uses $\psi_s>0$ (S2) and concavity with one $F_s$ strictly
 So $\Pi$ is strictly concave and has at most one maximiser. By (S3), $\Pi'(\bar\epsilon)<0$, and
 $\Pi'$ is decreasing, so $\Pi$ falls beyond $\bar\epsilon$: a maximiser exists on the compact set
 $[0,\bar\epsilon]$. The Kuhn--Tucker conditions for $\max_{\epsilon\ge0}\Pi$ are $\Pi'(\epsilon^\ast)\le0$,
-$\epsilon^\ast\ge0$, $\epsilon^\ast\Pi'(\epsilon^\ast)=0$; with \eqref{eq:15d1} they give
-\eqref{eq:15foc}. Both agents therefore choose $\epsilon_A=\epsilon_B=\epsilon^\ast$. $\square$
+$\epsilon^\ast\ge0$, $\epsilon^\ast\Pi'(\epsilon^\ast)=0$. If $\Pi'(0)>0$, then $\epsilon^\ast=0$ violates
+$\Pi'(\epsilon^\ast)\le0$, so $\epsilon^\ast>0$ and $\Pi'(\epsilon^\ast)=0$, which with \eqref{eq:15d1}
+is the first case of \eqref{eq:15foc}; if $\Pi'(0)\le0$, strict concavity gives $\Pi'(\epsilon)<0$
+for all $\epsilon>0$, so $\epsilon^\ast=0$. Both agents therefore choose
+$\epsilon_A=\epsilon_B=\epsilon^\ast$. $\square$
 
 \step{5}{Link with the agents' first-order conditions (the book's route)} Substituting
-\eqref{eq:15b0}--\eqref{eq:15b1} into $V_i$ and differentiating with respect to $z_i^s$ and
-$\epsilon_i$ at an interior optimum:
+\eqref{eq:15b0}--\eqref{eq:15b1} into $V_i$, i.e.\ $x_i=X_i-\epsilon_i-\psi_1z_i^1-\psi_2z_i^2$ and
+$y_i^s=Y_i^s+F_s(\epsilon_i)+z_i^s$, and differentiating with respect to $z_i^s$ and $\epsilon_i$ at
+an interior optimum (chain rule: $\partial x_i/\partial z_i^s=-\psi_s$, $\partial y_i^s/\partial z_i^s=1$,
+$\partial x_i/\partial\epsilon_i=-1$, $\partial y_i^s/\partial\epsilon_i=F_s'$):
 \begin{align}
   \frac{\partial V_i}{\partial z_i^s} &= -\psi_s\,\bar U_x + p_s\,U_y^s = 0
      \ \Longrightarrow\ \psi_s = \frac{p_s\,U_y^s}{\bar U_x}, \label{eq:15fz}\\
@@ -977,15 +1413,15 @@ $\epsilon_i$ at an interior optimum:
 where $\bar U_x\equiv p\,\partial_xU_i(x_i,y_i^1)+(1-p)\,\partial_xU_i(x_i,y_i^2)>0$ and $U_y^s\equiv\partial_yU_i(x_i,y_i^s)>0$.
 Dividing \eqref{eq:15fe} by $\bar U_x$ and substituting \eqref{eq:15fz}:
 \begin{align}
-  \Big(\frac{p\,U_y^1}{\bar U_x}\Big)F_1'(\epsilon_i) + \Big(\frac{(1-p)\,U_y^2}{\bar U_x}\Big)F_2'(\epsilon_i) &= 1, \notag\\
+  -1 + \Big(\frac{p\,U_y^1}{\bar U_x}\Big)F_1'(\epsilon_i) + \Big(\frac{(1-p)\,U_y^2}{\bar U_x}\Big)F_2'(\epsilon_i) &= 0, \notag\\
   (\psi_1)F_1'(\epsilon_i) + (\psi_2)F_2'(\epsilon_i) &= 1, \label{eq:15same}
 \end{align}
 which is \eqref{eq:15foc}. Each agent's marginal rates of substitution are individual, but in a
 complete market each agent trades until they equal the \emph{common} prices $\psi_s$, and only
 those prices enter \eqref{eq:15same}. With $q_s=(1+r)\psi_s$ (so $q_1+q_2=1$ by (S2)),
-\eqref{eq:15same} reads $q_1F_1'(\epsilon^\ast)+q_2F_2'(\epsilon^\ast)=1+r$: the expected marginal
-return under the risk-neutral measure equals the gross risk-free rate, the uncertainty version
-of $\phi(\epsilon^\ast)=r$ in \S1.1.5.
+multiplying \eqref{eq:15same} by $1+r$ gives $q_1F_1'(\epsilon^\ast)+q_2F_2'(\epsilon^\ast)=1+r$: the
+expected marginal return under the risk-neutral measure equals the gross risk-free rate, the
+uncertainty version of $\phi(\epsilon^\ast)=r$ in \S1.1.5.
 
 \step{6}{Why completeness is needed, and a second sufficient condition} With only the bond,
 $z_i^1=z_i^2$ is forced and \eqref{eq:15fz} is replaced by the single condition
@@ -1000,16 +1436,32 @@ uncertainty, $F_1'(\epsilon)=F_2'(\epsilon)\equiv F'(\epsilon)$ for all $\epsilo
 ``trivial uncertainty''). Substituting into \eqref{eq:15inc}:
 \begin{align}
   m_i\,(F'(\epsilon_i)) + (1-m_i)\,(F'(\epsilon_i)) &= 1+r, \notag\\
+  \big(m_i + 1 - m_i\big)F'(\epsilon_i) &= 1+r, \notag\\
   F'(\epsilon_i) &= 1+r, \notag
 \end{align}
 the same for every agent. So either (S1)--(S3), or a bond market plus nonstochastic marginal
 returns (with concave $F$), is sufficient.
+
+\answer{(conditions)} Complete, frictionless markets with strictly positive state prices (no
+arbitrage) and a concave technology: then both agents choose $\epsilon^\ast$ solving
+$\psi_1F_1'(\epsilon^\ast)+\psi_2F_2'(\epsilon^\ast)=1$, i.e.\ $q_1F_1'+q_2F_2'=1+r$, independent of
+$U_i$ and endowments. (Alternative: bond market and $F_1'=F_2'$.)
 
 \intuition{Fisher separation survives uncertainty when markets let every agent reshape the
 project's risky output into whatever consumption pattern they like at common prices. Then the
 best project is the one with the highest market value, and all agents, however patient or risk
 averse, agree on it. Without complete markets each agent values the risky output with private
 marginal utilities, and investment depends on who is investing.}
+
+\pitfalls
+\begin{itemize}
+  \item Weighting $F_1'$ and $F_2'$ by the true probabilities $p,1-p$ instead of the state prices
+        (or risk-neutral probabilities): that is only right for risk-neutral agents.
+  \item Thinking a risk-free bond alone is enough: with a bond only, each agent's weights $m_i$
+        in \eqref{eq:15inc} depend on their own marginal utilities.
+  \item Stating the first-order condition without the conditions (concavity, a scale bound) that
+        make the optimum exist and be unique.
+\end{itemize}
 
 \bookcheck{Matches the book's answer (pp.~245--247): a unique state-price vector (two states and
 two independent assets) gives an investment rule, its (C.3), $q(\theta_1)F_\epsilon(\epsilon,\theta_1)+q(\theta_2)F_\epsilon(\epsilon,\theta_2)=1+r$,

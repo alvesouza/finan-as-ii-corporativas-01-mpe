@@ -560,6 +560,12 @@ Exercise 5.7 (decreasing returns to scale). Extend the treatment of Section 5.6.
 
 #### Context needed to solve it
 
+*From Tirole §3.4.1 "The Continuous-Investment Model", p. 127 (PDF 140):*
+
+The continuous-investment model of this section is the polar opposite of the fixed-investment one. The fixed-investment model depicts a situation in which returns are sharply decreasing beyond some investment level. In contrast, we now assume that there are constant returns to scale in the investment technology. An investment $I \in [0, \infty)$ yields income $RI$, proportional to $I$, in the case of success, and 0 in the case of failure. The borrower's private benefit from misbehaving is also taken to be proportional to investment. As before, the borrower has a choice between behaving, in which case she derives no private benefit and the probability of success is $p_H$, and misbehaving, that is, enjoying private benefit $BI$, and reducing the probability of success to $p_L = p_H - \Delta p < p_H$. […]
+
+The borrower initially has cash $A$, and must therefore borrow $I - A$ to finance a project of size $I$. A loan agreement specifies that the lenders (who as before are assumed to make no profit) and the borrower receive 0 each in the case of failure, and $R_l$ and $R_b$, respectively, in the case of success, where $R_l + R_b = RI$.
+
 *From Tirole §5.3.2 "Continuum of Liquidity Shocks", pp. 209–210 (PDF 222–223):*
 
 After the (endogenous size) investment $I$ is sunk at date 0 and before the borrower works on the project, some exogenous shock occurs at date 1 that determines a per-unit-of-investment level $\rho \in [0, \infty)$ of "cost overruns." That is, a cash infusion equal to $\rho I$ is needed in order for the project to continue. If $\rho I$ is not invested, the project is abandoned altogether and thus yields no income. As in Section 5.2, the fraction $\rho$ is *a priori* distributed according to the continuous distribution $F(\rho)$ on $[0, \infty)$, with density $f(\rho)$. (As we already observed, the model of Section 3.4 is therefore a special case, with $F$ being a spike at $\rho = 0$.)

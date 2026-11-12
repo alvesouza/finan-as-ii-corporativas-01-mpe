@@ -169,7 +169,7 @@ Which alternative is the cheapest source of financing for Hand-to-Mouth?
 ---
 
 ### 10. Peças Aéreas: grant credit on a one-off vs. repeat order
-**Source:** Ross, Cap. 20, Exercise 20.9, p. 733 (PDF 757) · Answer in book: no
+**Source:** Ross, Cap. 20, Exercise 20.9, pp. 733–734 (PDF 757) · Answer in book: no
 
 **Avaliação da política de crédito** [OA2] A Peças Aéreas é um atacadista que armazena componentes de motor e equipamento de testes para a indústria de aviões comerciais. Um novo cliente fez um pedido de oito motores à turbina de alta derivação que aumentam a economia de combustível. O custo variável é de \$1,6 milhão por unidade, e o preço a prazo é de \$1,87 milhão cada. O crédito é concedido por um período e, com base na experiência histórica, o pagamento de aproximadamente 1 de cada 200 pedidos nunca é recebido. O retorno exigido é de 2,9% por período.
 

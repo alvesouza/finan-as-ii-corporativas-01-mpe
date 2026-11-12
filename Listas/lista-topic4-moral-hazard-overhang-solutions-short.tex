@@ -1,0 +1,157 @@
+% Short answer key for Listas/lista-topic4-moral-hazard-overhang.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-topic4-moral-hazard-overhang-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Topic 4 list --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list --- Topic 4: Moral hazard, credit rationing, asset substitution, debt overhang}\\[4pt]{\large Answer key (full derivations in \url{lista-topic4-moral-hazard-overhang-solutions.pdf})}\end{center}
+
+% Topic 4 list, exercises 1--8: short answers (fragment). Amounts in \$ million.
+
+\section*{1. DIP financing and existing creditors}
+Debt overhang blocks junior financing: in Grinblatt--Titman's Lily example a junior lender gets at
+most $150-110=40<100$, so the project (NPV $50$) is passed up and the old lenders get $0$. A senior
+DIP loan of $100$ is riskless and leaves the old lenders $\min\{150-100,110\}=50>0$. In general,
+with a safe DIP loan $\min\{V_s+X_s-I,F\}\ge\min\{V_s,F\}$ in every state: they lose priority but
+the pool grows by more. Lecture numbers ($500/200$, $F=300$, $I=60$, $+100$): $D$ rises from
+$250$ to $270$ and $E$ from $100$ to $120$; $20+20=40=$ NPV. Caveat: DIP can also keep alive firms
+that should be liquidated (Result 16.11).
+
+\section*{2. Asset substitution: project A or B}
+\textbf{(a)} $\mathit{NPV}_A=0.5(120)+0.5(60)-100=-10$; $\mathit{NPV}_B=101-100=1$.\\
+\textbf{(b)} Equity gets $\max\{X-100,0\}$: $E_A=0.5(20)+0.5(0)=10$, $E_B=0.5(1)+0.5(1)=1$; debt
+$D_A=80$, $D_B=100$. Equity wants \textbf{A}: it loses $11$ of firm value but takes $20$ from the
+creditors ($E_A-E_B=-11+20=9$). Levered equity is a call option and prefers risk.
+
+\section*{3. Debt overhang on vacant land}
+\textbf{(a)} $E=0$, $D=10/1.10=9.09$.
+\textbf{(b)} $\mathit{NPV}=-20+(35-10)/1.10=2.73$ (the forgone vacant-land value counts).
+\textbf{(c)} $E=(35-15)/1.10=18.18$, $D=15/1.10=13.64$.
+\textbf{(d)} No: equity pays $20$ for $18.18$ ($-1.82$); the debt gains $13.64-9.09=4.55$;
+$-1.82+4.55=2.73=$ NPV. The creditors capture more than the whole NPV: debt overhang.
+
+\section*{4. Short-term debt and incentive problems}
+Conflicts arise because equity changes the value of a claim whose terms are fixed. Debt repriced
+at the time of the decision sets $F_j$ so that $\mathbb{E}[\min\{X_j,F_j\}]=L$, hence $E_j=V_j-L$:
+equity internalizes the whole value and chooses the efficient strategy. In Exercise 2,
+$E_A=90-100<0$, $E_B=101-100=1$, so B is chosen. Debt overhang (Myers): debt maturing before the
+new project is repriced with it, so the benefit of a safer firm shows up as a lower rate for equity.
+Asset substitution: the rate is reset after the risk choice. Cost: rollover and interest-rate risk.
+
+\section*{5. Random financing}
+\textbf{(i)} $x\,p_H(R-R_b)\ge xI-\hat A$; with (IC$_b$) $R_b\ge B/\Delta p$ (shirking gives the
+borrower $x(p_LR+B-I)<0$) this becomes $x\bar A\le\hat A$.\\
+\textbf{(ii)} With breakeven binding, $U_b=x(p_HR-I)$, increasing in $x$; $x\le\hat A/\bar A$
+rises with $\hat A$, so $\hat A=A$, $x^*=A/\bar A$, $U_b^*=(A/\bar A)(p_HR-I)$ and $R_b=B/\Delta p$.
+$x^*$ rises linearly from 0 at $A=0$ to 1 at $A=\bar A$ (then stays at 1): utility no longer
+jumps at $\bar A$. Example: $\bar A=40$, $A=10$, NPV $20$: $x^*=0.25$, $U_b^*=5$. Matches Tirole
+p.~571.
+
+\section*{6. Zymase: leverage and strategy choice}
+\textbf{(a)} $\mathbb{E}[X]$: A $75$, B $70$, C $0.1(300)+0.9(40)=66$: \textbf{A}.\\
+\textbf{(b)} $F=40$: equity A $35$, B $0.5(100)=50$, C $0.1(260)=26$: \textbf{B}.\\
+\textbf{(c)} $F=110$: equity A $0$, B $0.5(30)=15$, C $0.1(190)=19$: \textbf{C}.\\
+\textbf{(d)} Agency cost $=\mathbb{E}[X_A]-\mathbb{E}[X_{\text{chosen}}]$: $75-70=5$ with \$40m of
+debt, $75-66=9$ with \$110m (payoff-date expected values; divide by $1+r_f$ for today).
+
+\section*{7. Ajax Manufacturing: debt overhang}
+\textbf{16.12} $\mathit{NPV}=0.2(85)+0.8(150)-75=137-75=62$. Equity is junior to the \$70m bond:
+it gets $15$ or $80$, worth $0.2(15)+0.8(80)=67<75$. Even all the equity cannot raise \$75m:
+\textbf{no}. (Bond would be worth $70$; $70-8=62$.)\\
+\textbf{16.13} Same NPV, $0.2(5)+0.8(170)-75=62$, but equity gets $0$ or $100$, worth $80\ge75$:
+\textbf{yes} (new holders take $75/80=93.75\%$; old keep $5$). The bond falls to
+$0.2(5)+0.8(70)=57$: the riskier process moves $13$ from the bond to equity, which cures the
+overhang; the bondholders still prefer it to getting $0$.
+
+\section*{8. Project riskiness and credit rationing}
+Same minimum stake $B/\Delta p$; $\bar A^j=p_H^jB/\Delta p-(p_H^jR^j-I)$ and equal NPVs give
+$\bar A^A-\bar A^B=(p_H^A-p_H^B)B/\Delta p>0$. The riskier \textbf{variant B is less prone to
+credit rationing}: the safe project pays the success-contingent rent more often, so less income is
+pledgeable. Example ($I=100$, $\Delta p=0.2$, $B=9$, $p_H^A=0.8$, $p_H^B=0.6$, $p_HR=120$):
+$\bar A^A=16$, $\bar A^B=7$. Matches Tirole p.~578; the book adds that if a misbehaviour contract
+can finance the safe project ($I-A\le p_L^AR^A$), the risky one may be the more rationed.
+
+\section*{9. Entrepreneurial risk aversion (Tirole 3.2)}
+(i) $p_H<1$: failure occurs on path, so $c^F\ge c_0$; cheapest IC contract $c^F=c_0$, $c^S=c_0+B/\Delta p$.
+Pledgeable income $p_H(R-B/\Delta p)-c_0$, so
+$\bar A=I+c_0-p_H(R-B/\Delta p)=\bar A_{rn}+c_0>c_0$ (rationing on $[c_0,\bar A)$).
+$p_H=1$: failure only after shirking, punished by $-\infty$; IC is free, $\mathcal P=R-c_0$,
+$\bar A=I+c_0-R<c_0$: everyone is financed (needs $c_0>0$ under limited liability).\\
+(ii) $\max p_Hu(c^S)+(1-p_H)u(c^F)$ s.t.\ $p_H(R-c^S)-(1-p_H)c^F\ge I-A$,
+$(\Delta p)[u(c^S)-u(c^F)]\ge B$, [$c^F\ge0$], $V\ge u(A)$. Both IR$_l$ and IC bind ($\mu=0$ would mean
+full insurance); $1/u'(c^S)=(1+\mu\Delta p/p_H)/\lambda$, $1/u'(c^F)=(1-\mu\Delta p/(1-p_H))/\lambda$.
+No LL: financed iff the risk premium of the incentive lottery $\le\mathit{NPV}$. LL: need
+$A\ge A_{LL}=I-p_H[R-u^{-1}(u(0)+B/\Delta p)]$ plus $V(A)\ge u(A)$; above $A_{LL}$, $c^F>0$ (partial insurance).
+
+\section*{10. Maximal incentives principle (Tirole 3.18)}
+IR$_l$ binds, so $U_b=\mathit{NPV}$ for every feasible contract. Max pledgeable income at
+$R_b^F=0$, $R_b^S=B/\Delta p$: financed iff $p_H(R-B/\Delta p)\ge I-(A+R^F)$.
+Debt $D$ with $p_HD+(1-p_H)R^F=I-A$ has $R^F<D\le R^S-B/\Delta p$, so it is optimal.
+Optimal set: all $R_b^F\in[0,A-\bar A]$ with IR$_l$ binding, $\bar A=p_HB/\Delta p-\mathit{NPV}$:
+unique (debt) only at $A=\bar A$. With variable investment $A=\bar A(I)$ always binds, so debt is unique.
+
+\section*{11. Retained-earnings benefit (Tirole 3.11)}
+(i) Project 2 financed iff $B^2\le\hat B^2(R)=\frac{\Delta p^2}{p_H^2}(\mathit{NPV}^2+R)$; never with $R=0$.
+Gross utility $W(R)=R+F(\hat B^2(R))\mathit{NPV}^2$; shadow value
+$\mu=1+f(\hat B^2)\frac{\Delta p^2}{p_H^2}\mathit{NPV}^2\ge1$.\\
+(ii) IC$^1$: $(\Delta p^1)[R_b^1+F(\hat B^2(R_b^1))\mathit{NPV}^2]\ge B^1$, so the minimum stake
+$\tilde R_b^1<B^1/\Delta p^1$ and pledgeable income $p_H^1(R^1-\tilde R_b^1)$ is larger than stand-alone.
+Example ($B^2\sim U[7,9]$, $\mathit{NPV}^2=10$; $B^1/\Delta p^1=2$): $\mu=13/3$, $\tilde R_b^1=11/13$,
+pledgeable $119/26\approx4.576923>I^1=4.5$; threshold falls from $0.5$ to $-0.076923$.
+
+\section*{12. Renegotiation and debt forgiveness (Tirole 3.6)}
+(i) Status quo: borrower $p_LR_b+BI$, lender $p_L(RI-R_b)$. Gains need $\hat R_b\ge BI/\Delta p$; best for
+the lender $\hat R_b=BI/\Delta p$, so renegotiation iff $(\Delta p)RI-p_HBI/\Delta p+p_LR_b\ge0$.\\
+(ii) Fictitious project: income $(\Delta p)RI$, investment $0$, cash $p_LR_b$; the condition is
+``pledgeable income $\ge0-$cash''.\\
+(iii) Lender gets $p_L(RI-R_b)$; capacity $I\le kA$ if $p_HB/\Delta p\ge(\Delta p)R$, and
+$A/(1-p_LR)<kA$ otherwise: never above $kA$.\\
+(iv) Any renegotiated outcome is an IC contract lenders accept ex ante, so it could be signed directly;
+without renegotiation the NPV is negative. WLOG $R_b\ge BI/\Delta p$.
+
+\section*{13. Loan size and collateral (Tirole 4.17)}
+$\max p_HR(I)-I-(1-p_H)[C-\phi(C)]$ s.t.\ $p_H[R(I)-BI/\Delta p+C]+(1-p_H)\phi(C)\ge I-A$.
+FOCs ($\theta=\mu/(1+\mu)>0$): $p_HR'(I)-1=\theta\,p_HB/\Delta p$, $\phi'(C)=1-\theta/(1-p_H)$.
+$d\theta/dA<0$, so as $A$ falls: $I\downarrow$, $C\uparrow$. Agency cost $b=p_HB/\Delta p$: $dI/db<0$ always;
+$dC/db>0$ iff $\varepsilon(I)(1+\theta b)>\theta(1-\theta)b$, $\varepsilon=-IR''/R'$. Fails e.g.\ for
+$R=3I^{0.95}$, $\phi=\ln(1+C)$, $p_H=0.5$, $A=1$: $b=1\to C=1.9003$, $b=4\to C=0.3292$.
+
+\section*{14. Dealing with asset substitution (Tirole 7.3)}
+(i) LHS of (1) = maximal pledgeable income; $U_b^*=(1-x)L_0+xp_HR-I$; optimal contracts:
+$(1-x)(L_0-r_b)+xp_H(R-R_b)=I-A$, $R_b\ge B/\Delta p$; at $\bar A$: $r_b=0$, debt $D=R-B/\Delta p$.\\
+(ii) (2) = FOC of the NPV in $L$: $L_0$ is efficient. Step contract; no substitution iff
+$(1-x)r_b\ge x\tau(0)R_b$. Min rent: $R_b=B/\Delta p$, $r_b=\frac{x\tau(0)}{1-x}\frac{B}{\Delta p}$, so
+$A^*=\bar A+x\tau(0)B/\Delta p$. Example: $\bar A=0.7$, $r_b=0.375$, $A^*=0.85$.
+
+\section*{15. Borrower-friendly bankruptcy court (Tirole 4.9)}
+(i) Pledge $r$ and $L$; $R_b=B/\Delta p$. (1): continuation efficient; (2): always continuing is not
+fundable, always liquidating is.\\
+(ii) $\max E[r]+LF(r^*)+\int_{r^*}\rho_1f-I$ s.t.\ $E[r]+LF(r^*)+\int_{r^*}^{\bar r}\rho_0f=I-A$;
+$r^*$ = smallest root, $\rho_0(r^*)<L$.\\
+(iii) Short-term debt $d=r^*$; default = bankruptcy = liquidation; $dr^*/dA=-1/[(L-\rho_0(r^*))f(r^*)]<0$.\\
+(iv) $r^*>\hat r$: investors' income $\le\max\{L/2,\rho_0\}$, strictly below breakeven: no financing.\\
+(v) $r^*<\hat r$: either no financing or cutoff $r^{**}\in(r^*,\hat r]$; lenders break even, borrower's
+NPV falls. Example: $I-A=3.31$, $r^*=0.0040$, $r^{**}=0.0471$.
+
+\end{document}

@@ -348,6 +348,24 @@ Suppose further that under symmetric information only the good borrower is credi
 
 Assume that $r < I - A < r + [\rho_0^G - \rho]$. Show that the good borrower can costlessly signal her type.
 
+#### Context needed to solve it
+
+*From Tirole §6.3, Application 6 "Short-Term Maturities", pp. 254–255 (PDF 267–268) — the model of which the exercise is a variant (there the liquidity shock is random; in the exercise it is deterministic and the asymmetry is about the success probabilities). It defines $R$ and the preferences the statement leaves implicit:*
+
+Let us consider the following variant of the model of debt maturities set up in Section 5.2. At date 0 the entrepreneur has a project of fixed size $I$, has wealth $A$, and must borrow $I - A$. At date 1, the investment yields a deterministic and verifiable short-term (date-1) profit $r > 0$. With probability $\lambda$, continuation requires reinvesting $\rho$ (the liquidation value is equal to 0); with probability $1 - \lambda$, continuation requires no reinvestment.⁵¹
+
+In the case of continuation, the firm at date 2 yields $R$ in the case of success and 0 in the case of failure. The probability of success is $p_H$ in the case of good behavior and $p_L = p_H - \Delta p$ in the case of misbehavior (which yields private benefit $B$). Moral hazard is introduced in order to create an entrepreneurial rent from continuation, or, equivalently, a cost for the entrepreneur associated with early termination. Put differently, moral hazard introduces a friction in the date-1 refinancing market. Let
+
+$$\rho_1 \equiv p_H R \quad \text{and} \quad \rho_0 \equiv p_H\left(R - \frac{B}{\Delta p}\right)$$
+
+denote the continuation NPV and pledgeable income, respectively.
+
+[…] the borrower can use retentions $(r - d)$ together with what can be raised in the capital market $(\rho_0)$ to meet shock $\rho$.
+
+> 51. As usual, the entrepreneur is risk neutral and protected by limited liability; and the investors are risk neutral and demand a 0 rate of return.
+
+*Figure 6.1 (timeline, left to right):* Date 0: Entrepreneur has wealth $A$ and fixed-size investment project $I - A$. → Date 1: Short-run income $r$. Reinvestment need $\rho$ (prob. $\lambda$) or 0 (prob. $1 - \lambda$). → (if reinvestment) Moral hazard ($p = p_H$ or $p_L$). → Outcome: success ($R$) or failure (0).
+
 ---
 
 ### 11. Myers–Majluf: whose interest does management serve?

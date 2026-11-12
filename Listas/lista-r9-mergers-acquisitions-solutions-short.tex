@@ -1,0 +1,122 @@
+% Short answer key for Listas/lista-r9-mergers-acquisitions.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r9-mergers-acquisitions-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R9 (M\&A) --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\E}{\mathbb{E}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R9 --- Mergers and acquisitions}\\[4pt]{\large Answer key (full derivations in \url{lista-r9-mergers-acquisitions-solutions.pdf})}\end{center}
+
+\section*{1. True or false: valuation and acquisitions (Higgins 9.1)}
+\textbf{(a)} False: targets' shareholders gain (20\%+ at announcement); acquirers' gains are doubtful.
+\textbf{(b)} False: discount the target's FCF at the \emph{target's} cost of capital (risk of the cash flows).
+\textbf{(c)} False: the premium pays for improvements; a well-run firm has little to improve (e.g.\ 5\% vs 40\%).
+\textbf{(d)} False: liquidation needs someone with control willing to liquidate.
+\textbf{(e)} True: price \$30 vs insiders' \$80 makes an MBO attractive (and creates a conflict of interest). Matches p.~425--426.
+
+\section*{2. LBO candidates and MBOs (G\&T 20.5, 20.8)}
+\textbf{20.5} Stable cash flows carry more riskless debt (worst case 90 vs 40 for the same mean 100), and
+generic products/redeployable assets keep distress costs low; so the tax and free-cash-flow benefits of
+leverage come cheap. \textbf{20.8} The problem is the managers' small stake and discretion, not their
+identity: ownership rises (5\% $\to$ 15\% of each \$1 created, $\times3$) and debt service commits free cash flow.
+
+\section*{3. Target prices around announcements (Higgins 5.10)}
+\textbf{(a)} No: a predictable response to public news violates semistrong efficiency.
+\textbf{(b)} Buy on announcement, sell after two days: with one third of the 20-point jump on day 0,
+$128.5/115.17-1=11.6\%$. \textbf{(c)} The response becomes instantaneous. \textbf{(d)} Exploiting the
+inefficiency removes it. \textbf{(e)} No: the price is an expectation that includes a higher (rival) bid,
+e.g.\ $0.3(75)+0.6(60)+0.1(35)=62>60$.
+
+\section*{4. Sources of LBO premiums (Amaro de Matos 7.2.4 \#3)}
+Tax shields ($\tau D=0.34\times600=204$ in an illustration); lower agency costs (managerial ownership, debt
+disciplines free cash flow); transfers from bondholders, preferred stockholders and employees (small);
+managers' private information; efficiency of private ownership. Matches p.~271.
+
+\section*{5. Grossman--Hart with a toehold (Amaro de Matos 8.1.5 \#1)}
+Shareholders tender only if $p\ge v$, so with no toehold $\Pi_r=v-p-c<0$. With toehold $\theta$:
+$\Pi_r=v-p(1-\theta)-c>0\iff\theta>1+(c-v)/p$ (at $p=v$: $\theta>c/v$). Net of the toehold's initial value
+$\theta q$: $\theta(v-q)>c+(1-\theta)(p-v)$. Example $v=100$, $q=80$, $c=1$, $\theta=0.1$, $p=100$: $\Pi_r=9$,
+net gain $1$. Matches p.~271.
+
+\section*{6. News Corp.\ and Dow Jones (Higgins 9.3)}
+\textbf{(a)} $60\times82\text{m}+1.46\text{bn}=4.92+1.46=\$6.38$ billion (equity plus assumed debt).
+\textbf{(b)} $(60-33)\times82\text{m}=\$2.21$ billion, an 81.8\% premium. Matches p.~426.
+
+\section*{7. Procureps (Higgins 9.9)}
+\textbf{(a)} $MV_P=60$ ($p=\$60$), $MV_{V1}=8$, $MV_{V2}=35$; EPS $=2$ caps shares at $3/2=1.5$m, so
+$0.5$m new shares worth $\$30$m: max premium $30/8-1=275\%$ for V1, $30/35-1=-14\%$ for V2.
+\textbf{(b)} The rule favours low-P/E targets and blocks high-growth ones; it is unrelated to value
+(buying V2 at market dilutes EPS to \$1.89 but keeps the price at \$60; buying V1 at 275\% keeps EPS at \$2
+but drops the price to \$45.33). Matches p.~427.
+
+\section*{8. Hansen, uniform case (Amaro de Matos 8.2.6 \#3)}
+Cash $C$ is accepted iff $v\le C$; $E(w\mid C)=0.75C$, so $E(\Pi_r\mid C)=(C/100)(0.75C-C)<0$ for all $C$.
+Stock $\beta$: all types accept iff $\beta\ge100/(x+150)$ (worst type $v=100$, since $v/(x+1.5v)$ rises);
+acquirer gains iff $(1-\beta)(x+75)\ge x\iff\beta\le75/(x+75)$. Compatible iff $25x\le3750\iff x\le150$
+(e.g.\ $x=100$: $\beta\in[0.4,0.4286]$, gain $5$ at $\beta=0.4$); for $x\ge150$ no cutoff $v^*$ works either. Matches p.~276.
+
+\section*{9. Fishman (1988), partial revelation (Amaro de Matos 8.2.6 \#1)}
+All $v_1\ge r$ bid $\bar p(r)$, all $v_1<r$ bid $v$: bidder 2 learns only the interval, because its entry
+decision depends only on whether $\E[g(v_1)\mid\text{message}]\ge c_2$. With $v_1$ observable bidder 1 bids $v$
+and bidder 2 enters iff $v_1<w$, $g(w)=c_2$, with $w>r$; types in $[r,w)$ are deterred only under
+signalling. Example $U[0,1]$, $v=0.6$, $c_2=0.02$: $r=0.654$, $w=0.8$, $\bar p(r)=0.62$. Matches p.~276.
+
+\section*{10. Jegadeesh--Chowdhry, no pooling (Amaro de Matos 8.1.5 \#8)}
+$Z_M=0.4(40)+0.6(80)=64$; $G(64,0.3;80)=27.2\ln64=113.12$; $G(64,0.3;40)=7.2\ln64=29.94$.
+Low type deviates to bid 40 with $\alpha'$ from $\ln40\,(20+40\alpha')=113.12$: $\alpha'=0.2666$; then
+$G(40,\alpha';40)=39.34>29.94$, and the high type is indifferent. No pooling; a smaller toehold signals a
+lower valuation. Matches pp.~274--275 (book: 39.337 with rounded $\alpha'$).
+
+\section*{11. Flip-over pill with voting new shares (Tirole 11.1)}
+With $m$ free voting shares per untendered share, the raider keeps control iff $\kappa'\ge(1+m)/(2+m)$
+($2/3$ for $m=1$). Holdouts gain $\Delta_u=m\hat v/2$, raider shares lose $\Delta_r=m\hat v/[2(1+m)]$, with
+$\kappa'\Delta_r=(1-\kappa')\Delta_u$. Then $\beta=P/(1+\Delta_u)$, $\pi=\beta(\hat w-\Delta_u)$, bid $P=1+\Delta_u$
+if $\hat w>\Delta_u$, optimal pill $\Delta_u^*=\hat w$: Tirole's results with $\Delta\to\Delta_u$. Example
+$v=2$, $\hat v=3$, $\hat w=2$, $m=1$: $P=2.5$, $\pi=0.5$ (non-voting: $P=2$, $\pi=1$). No book answer.
+
+\section*{12. Hansen, stock dominates cash (Amaro de Matos 8.2.6 \#4)}
+Take $\beta^*=C/[x+w(C)]$. Hansen's $w'<(x+w)/v$ makes $v/[x+w(v)]$ increasing, so $\beta^*$ is accepted iff
+$v\le C$ (same $F(C)$). Then $W^{\text{stock}}-W^{\text{cash}}=F(C)\{C-\beta^*[E(w\mid C)+x]\}
+=F(C)\beta^*[w(C)-E(w\mid C)]\ge0$. Example $U[0,100]$, $w=1.2v+30$, $x=200$, $C=60$: cash gain $3.6$,
+stock gain $7.89$. Book refers to Hansen (1987), p.~80.
+
+\section*{13. Fishman (1989), cash vs debt face value (Amaro de Matos 8.2.6 \#8)}
+$p_c-p_d=(1-\gamma)[v_1^--p_d]<0$ since $p_d=\E\min[\max(v,\tilde v_2^+),v_1^+]\ge v>v_1^-$. Cash is paid in
+the bad state too, so it is a costlier signal per unit of face value and a lower face value suffices. Example $\gamma=0.6$: $p_d=0.675$,
+$p_c=0.565$. Matches pp.~277--278.
+
+\section*{14. Shleifer--Vishny with arbitrary $P$ (Tirole 14.2)}
+$U_{bi}=\hat\alpha I_i+\hat\kappa I_j$, $\hat\alpha=\alpha-(1-x)(1-\nu)(\rho_0-P)$, $\hat\kappa=\kappa+x(1-\mu)(\rho_0-P)$,
+$\hat\alpha+\hat\kappa=\alpha+\kappa$. Capacity $I_i=[A_i+x(1-\mu)(\rho_0-P)I_j]/[1-x\rho_0-(1-x)(1-\nu)P]$
+(strategic complements if $P<\rho_0$); symmetric $I=A/\{1-\rho_0[x+(1-x)(1-\nu)]\}$, independent of $P$.
+Example ($x=0.8$, $\nu=0.3$, $\rho_1=1.5$, $\rho_0=0.6$, $P=0.3$): $\hat\alpha=0.242$, $\hat\kappa=0.168$, $I=2.294A$. Matches p.~618.
+
+\section*{15. Liquidity management and acquisitions (Tirole 14.3)}
+\textbf{(i)} $U=(\rho_1-1)I+(1-x)J\int_0^{\rho^*}[\rho_1-P-\rho]dF$, breakeven
+$\rho_0I+(1-x)J\int_0^{\rho^*}[\rho_0-P-\rho]dF=I-A$; the FOC gives $(\rho_1-s)(1-\rho_0)=(\rho_1-1)(s-\rho_0)$, so
+$s=P+\rho^*=1$ and $\rho_0+L^*=1$.
+\textbf{(ii)} Seller: $\max_P PF(\rho_0+L-P)$; $P=F(1-P)/f(1-P)$, unique in $(0,1)$ by the hazard-rate condition;
+$dP/dL=G'/(1+G')\in(0,1)$, $G=F/f$. Exponential $\lambda=2$: $P=0.604$, $dP/dL=0.688$.
+\textbf{(iii)} Spike at $\bar\rho$: $P\to1-\bar\rho$, $F(\rho^*)\to1$ (uniform $\pm\varepsilon$: $P=1-\bar\rho-\varepsilon$). Matches pp.~618--619.
+
+\end{document}

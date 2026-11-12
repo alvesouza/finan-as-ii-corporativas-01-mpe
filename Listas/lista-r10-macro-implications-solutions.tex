@@ -1,0 +1,1118 @@
+% Worked solutions for Listas/lista-r10-macro-implications.md (15 exercises, Tirole Ch. 13-16 and Part VII).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r10-macro-implications-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R10 --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\allowdisplaybreaks
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer\if\relax\detokenize{#1}\relax\else\ #1\fi.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\Rc}{\mathcal{R}}
+\newcommand{\Pc}{\mathcal{P}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R10 --- Macroeconomic implications of corporate-finance frictions}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r10-macro-implications.md}; each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-r10-macro-implications-solutions-short.pdf}. All references are to Tirole, \emph{The Theory of Corporate Finance} (Princeton, 2005); ``book answer'' = Part VII, ``Answers to Selected Exercises''. Where a parameter example is given, it satisfies every assumption of the exercise and each of its numbers is asserted in \url{lista-r10-macro-implications-solutions_check.py}.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Investor protection and the interest rate --- Tirole 13.1, p.~493}
+
+\asked (i) How much of the project's return can be promised to investors, and which entrepreneurs (which wealth levels $A$) obtain financing when investors require the gross return $1+r$. (ii) Which equation pins down the market interest rate $r$, and whether $r$ rises or falls when investor protection improves (lower $B$).
+
+\approach Each firm is the fixed-investment model of Tirole \S3.2: incentives cap the \emph{pledgeable income}, and only entrepreneurs with enough net worth pass the solvency test. With an endogenous interest rate the cutoff wealth $A^*(r)$ moves with $r$, and $r$ clears the market for loanable funds (Tirole \S13.2). The comparative static follows from the implicit-function theorem.
+
+\notation
+\begin{itemize}
+  \item $A\in[0,I]$: entrepreneur's wealth, c.d.f.\ $G$, density $g$; $I$: fixed investment; $R$: return if success.
+  \item $p_H$, $p_L=p_H-\Delta p$: success probabilities when working / shirking; $B$: private benefit from shirking.
+  \item $R_b$: entrepreneur's reward if success; $\Pc\equiv p_H(R-B/\Delta p)$: pledgeable income.
+  \item $r>0$: interest rate; $S(r)$, $S'>0$: consumers' savings; $A^*(r)$: cutoff wealth for financing.
+\end{itemize}
+
+\step{1}{Incentive constraint and pledgeable income} The entrepreneur works iff her expected reward when working is at least the one when shirking plus $B$:
+\begin{align}
+  p_HR_b &\geq p_LR_b+B \nonumber\\
+  (\Delta p)R_b &\geq B \nonumber\\
+  R_b &\geq \frac{B}{\Delta p}. \label{r10e1-ic}
+\end{align}
+Investors receive $R-R_b$ in case of success, so the most they can expect is, using the smallest $R_b$ in \eqref{r10e1-ic},
+\begin{align}
+  \Pc = p_H\left(R-\frac{B}{\Delta p}\right). \label{r10e1-P}
+\end{align}
+
+\step{2}{Financing condition} Investors lend $I-A$ and require $(1+r)(I-A)$ in expectation; financing is possible iff
+\begin{align}
+  (1+r)(I-A) &\leq p_H\left(R-\frac{B}{\Delta p}\right) \label{r10e1-fc}\\
+  \iff A &\geq A^*(r)\equiv I-\frac{p_H(R-B/\Delta p)}{1+r}. \label{r10e1-Astar}
+\end{align}
+By the assumption $I>\Pc$, $A^*(r)>0$ for every $r\geq0$. A financed entrepreneur gets $p_HR-(1+r)(I-A)$ instead of $(1+r)A$ from lending her wealth; she prefers to invest iff $p_HR\geq(1+r)I$, which holds for the moderate $r$ of the equilibrium (it holds in the example below).
+
+\answer{(i)} Pledgeable income $p_H(R-B/\Delta p)$; financing iff $(1+r)(I-A)\leq p_H(R-B/\Delta p)$, i.e.\ $A\geq A^*(r)$.
+
+\step{3}{Market for loanable funds} Financed firms (mass $1-G(A^*)$) demand $I-A$ each; consumers supply $S(r)$ and unfinanced entrepreneurs lend their wealth:
+\begin{align}
+  S(r)+\int_0^{A^*(r)}A\,g(A)\,dA = \int_{A^*(r)}^{I}(I-A)\,g(A)\,dA. \label{r10e1-mc}
+\end{align}
+Adding $\int_{A^*}^{I}A\,g(A)\,dA$ to both sides and using $\int_{A^*}^{I}I\,g\,dA=[1-G(A^*)]I$:
+\begin{align}
+  S(r)+\int_0^{I}A\,g(A)\,dA = [1-G(A^*(r))]\,I. \label{r10e1-mc2}
+\end{align}
+Total savings (left) must equal total investment (right).
+
+\step{4}{Uniqueness} The left side of \eqref{r10e1-mc2} increases with $r$ ($S'>0$). Differentiating \eqref{r10e1-Astar},
+\begin{align}
+  \frac{\partial A^*}{\partial r} = \frac{p_H(R-B/\Delta p)}{(1+r)^2}>0, \label{r10e1-dAr}
+\end{align}
+so the right side, $[1-G(A^*)]I$, decreases with $r$. The two curves cross at most once.
+
+\step{5}{Effect of $B$} Write \eqref{r10e1-mc2} as $\Phi(r,B)\equiv S(r)+\int_0^IA\,g\,dA-[1-G(A^*(r,B))]I=0$. Its partial derivatives are
+\begin{align}
+  \Phi_r &= S'(r)+g(A^*)\,I\,\frac{\partial A^*}{\partial r}>0, \label{r10e1-Phir}\\
+  \Phi_B &= g(A^*)\,I\,\frac{\partial A^*}{\partial B}, \qquad \frac{\partial A^*}{\partial B}=\frac{p_H}{(1+r)\Delta p}>0. \label{r10e1-PhiB}
+\end{align}
+By the implicit-function theorem,
+\begin{align}
+  \frac{dr}{dB} = -\frac{\Phi_B}{\Phi_r} = -\frac{g(A^*)\,I\,p_H/[(1+r)\Delta p]}{S'(r)+g(A^*)\,I\,\Pc/(1+r)^2}<0. \label{r10e1-drdB}
+\end{align}
+A lower $B$ (better protection) raises $r$.
+
+\step{6}{Example} $I=1$, $G$ uniform on $[0,1]$, $S(r)=2r$, $p_H=0.8$, $R=1.5$, $\Delta p=0.4$. Then $\int_0^1A\,dA=0.5$, $1-G(A^*)=\Pc/(1+r)$, and \eqref{r10e1-mc2} reads $(2r+0.5)(1+r)=\Pc$.
+With $B=0.3$: $\Pc=0.8(1.5-0.75)=0.6$, so $2r^2+2.5r-0.1=0$ and $r=(-2.5+\sqrt{6.25+0.8})/4=0.038795$; $A^*=1-0.6/1.038795=0.4224$; financed share $0.6/1.038795=0.577592$.
+With $B=0.2$: $\Pc=0.8(1.5-0.5)=0.8$, so $2r^2+2.5r-0.3=0$, $r=0.110272$, $A^*=0.279456$, financed share $0.720544$. Also $(1+r)I=1.11\leq p_HR=1.2$.
+
+\answer{(ii)} $r$ solves $S(r)+\int_0^IA\,g(A)\,dA=[1-G(A^*(r))]I$ with $A^*(r)=I-p_H(R-B/\Delta p)/(1+r)$; lowering $B$ raises $r$ (eq.~\eqref{r10e1-drdB}).
+
+\intuition Better governance raises the income that can be pledged, so more entrepreneurs pass the solvency test and the demand for loanable funds rises. With savings that respond to $r$, the interest rate goes up; this transfers part of the gain to savers and raises the cutoff $A^*$ again, so general equilibrium dampens the expansion of credit (it does not reverse it: the financed share still rises).
+
+\pitfalls
+\begin{itemize}
+  \item Writing the financing condition as $\Pc\geq I-A$, forgetting that investors now require $1+r$.
+  \item Omitting the wealth of unfinanced entrepreneurs from the supply side of \eqref{r10e1-mc}.
+  \item Concluding that investment rises one-for-one with the partial-equilibrium fall in $A^*$: the rise in $r$ pushes $A^*$ back up.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~616--617): same cutoff, same clearing equation in both forms, and ``an increase in investor protection raises the equilibrium interest rate.'' The derivative \eqref{r10e1-drdB} and the example are additions.
+\refbib{Tirole \S3.2 (fixed investment); \S13.2 ``Capital Squeezes and Economic Activity: The Balance-Sheet Channel'', pp.~471--478.}
+
+% =============================================================================
+\exsec{2. Time-consistent government policy --- Tirole 16.2, pp.~564--565}
+
+\asked (i) The investment that entrepreneurs undertake when they expect policy $\tau$, and the policy the government actually picks once investment is sunk. (ii) The policy a government that moves first would choose. (iii) How the answer to (i) changes if investors are foreign and the government gives them less weight.
+
+\approach Each firm is the variable-investment model (Tirole \S3.4) with success probability shifted by $\tau$. The government's policy raises everyone's success probability but costs $\gamma(\tau)I$. Comparing the ex post choice (investment fixed) with the ex ante choice (investment responds to $\tau$) is the classic time-consistency problem of Tirole \S16.3.2: ex post the government ignores the effect of policy on borrowing capacity.
+
+\notation
+\begin{itemize}
+  \item $\tau\geq0$: policy (raises the probability of success to $p_H+\tau$ or $p_L+\tau$); $\gamma(\tau)I$: its social cost, $\gamma'>0$, $\gamma''>0$.
+  \item $R$, $B$, $\Delta p$, $A$, $I$: as in the variable-investment model; $R_b$, $R_l=RI-R_b$: entrepreneur's and investors' payoffs if success.
+  \item $W$: social welfare = entrepreneurs' + investors' welfare.
+\end{itemize}
+
+\step{1}{Incentive constraint} With policy $\tau$, behaving gives success probability $p_H+\tau$, misbehaving $p_L+\tau$ and $BI$:
+\begin{align}
+  (p_H+\tau)R_b &\geq (p_L+\tau)R_b+BI \nonumber\\
+  [(p_H+\tau)-(p_L+\tau)]R_b &\geq BI \nonumber\\
+  R_b &\geq \frac{BI}{\Delta p}. \label{r10e2-ic}
+\end{align}
+The policy does not change the incentive constraint: $\tau$ cancels.
+
+\step{2}{Borrowing capacity} Investors break even (rate 0) if $(p_H+\tau)(RI-R_b)=I-A$. With \eqref{r10e2-ic} binding:
+\begin{align}
+  (p_H+\tau)\left(R-\frac{B}{\Delta p}\right)I &= I-A \nonumber\\
+  I\left[1-(p_H+\tau)\left(R-\frac{B}{\Delta p}\right)\right] &= A \nonumber\\
+  I(\tau) &= \frac{A}{1-(p_H+\tau)(R-B/\Delta p)}. \label{r10e2-I}
+\end{align}
+The denominator is positive by the assumption $1>(p_H+\tau)(R-B/\Delta p)$, and $I'(\tau)>0$.
+
+\step{3}{Ex post policy} Once $I$ is sunk, welfare is expected output minus the cost of the policy minus the (sunk) investment:
+\begin{align}
+  W^{\text{ex post}}(\tau) &= (p_H+\tau)RI-\gamma(\tau)I-I, \label{r10e2-Wexpost}\\
+  \frac{\partial W^{\text{ex post}}}{\partial\tau} &= RI-\gamma'(\tau)I = 0 \;\Longrightarrow\; \gamma'(\tau^*)=R. \label{r10e2-tau}
+\end{align}
+The second-order condition holds ($-\gamma''I<0$). Investors anticipate $\tau^*$, so $I=I(\tau^*)$ from \eqref{r10e2-I}.
+
+\answer{(i)} $I(\tau)=A/[1-(p_H+\tau)(R-B/\Delta p)]$; equilibrium policy $\gamma'(\tau^*)=R$, investment $I(\tau^*)$.
+
+\step{4}{Ex ante policy} Choosing $\tau$ before borrowing, the government knows investment will be $I(\tau)$. Investors break even, so welfare is the NPV:
+\begin{align}
+  W(\tau) &= [(p_H+\tau)R-1-\gamma(\tau)]\,I(\tau), \label{r10e2-W}\\
+  W'(\tau^c) &= [R-\gamma'(\tau^c)]\,I(\tau^c)+[(p_H+\tau^c)R-1-\gamma(\tau^c)]\,I'(\tau^c)=0, \nonumber\\
+  [\gamma'(\tau^c)-R]\,I(\tau^c) &= [(p_H+\tau^c)R-1-\gamma(\tau^c)]\,\frac{dI}{d\tau}(\tau^c). \label{r10e2-tauc}
+\end{align}
+The right side is positive (NPV per unit positive, $I'>0$), so $\gamma'(\tau^c)>R=\gamma'(\tau^*)$ and, $\gamma'$ being increasing, $\tau^c>\tau^*$.
+
+\step{5}{Example} $p_H=0.5$, $R=2$, $B/\Delta p=1$, $A=1$, $\gamma(\tau)=10\tau^2$ (so $\gamma'=20\tau$; this quadratic only illustrates the relevant range). Then $\tau^*=R/20=0.1$, $I(\tau^*)=1/(1-0.6)=2.5$, $W(\tau^*)=0.25$. Ex ante, $W(\tau)=(2\tau-10\tau^2)/(0.5-\tau)$; $W'=0$ gives $(2-20\tau)(0.5-\tau)+(2\tau-10\tau^2)=0$, i.e.\ $10\tau^2-10\tau+1=0$, so $\tau^c=(10-\sqrt{60})/20=0.112702>\tau^*$ and $W(\tau^c)=0.254033$.
+
+\answer{(ii)} $\tau^c$ solves \eqref{r10e2-tauc}; $\gamma'(\tau^c)>R$, so $\tau^c>\tau^*$: commitment yields a more investor-friendly policy.
+
+\step{6}{Foreign investors} Suppose the government puts weight $\omega<1$ on investors' payoff $(p_H+\tau)R_l$. Ex post it maximizes $(p_H+\tau)(RI-R_l)+\omega(p_H+\tau)R_l-\gamma(\tau)I$:
+\begin{align}
+  RI-(1-\omega)R_l-\gamma'(\tau)I &= 0 \nonumber\\
+  \gamma'(\tau_\omega) &= R-(1-\omega)\frac{R_l}{I} = R-(1-\omega)\left(R-\frac{B}{\Delta p}\right)<R, \label{r10e2-omega}
+\end{align}
+using $R_l=(R-B/\Delta p)I$ at the binding \eqref{r10e2-ic}. In the example, $\omega=0.5$ gives $\gamma'=1.5$ and $\tau_\omega=0.075<0.1$.
+
+\answer{(iii)} The ex post policy is less ambitious ($\tau<\tau^*$), because part of its benefit accrues to foreigners; anticipating it, investors lend less ($I(\tau)$ is increasing).
+
+\intuition A policy that raises the probability of success also raises pledgeable income and therefore borrowing capacity. Ex post, investment is sunk and that benefit is gone, so the government equates marginal cost only to the marginal output gain $R$. Commitment lets it internalise the investment response. When the gains of investors do not count fully (foreign lenders), the ex post temptation to under-provide is even stronger.
+
+\pitfalls
+\begin{itemize}
+  \item Putting $\tau$ into the incentive constraint: it raises both success probabilities and cancels.
+  \item Forgetting $I'(\tau)$ in the ex ante first-order condition, which makes $\tau^c=\tau^*$.
+  \item Maximising the entrepreneur's payoff only: here welfare includes investors (all domestic).
+\end{itemize}
+
+\bookans Matches the book's answer (p.~622): $\gamma'(\tau^*)=R$, condition \eqref{r10e2-tauc}, and $\tau<\tau^*$ in (iii). The sign argument and the example are additions.
+\refbib{Tirole \S16.3.2 ``Basics of Time Inconsistency in Corporate Finance'', pp.~546--549; \S3.4.}
+
+% =============================================================================
+\exsec{3. Imperfectly correlated liquidity shocks --- Tirole 15.3, p.~532}
+
+\asked Show that inside liquidity (claims on the firms themselves) is enough to implement the efficient allocation exactly when the correlated fraction $\theta$ of firms is at most $\theta^*$, with $\theta^*$ given by the stated equation.
+
+\approach The efficient allocation of Tirole \S15.2.1 continues all firms ($x=1$) and invests $I=A/(1+\bar\rho-\rho_0)$, independent of $\theta$. Inside liquidity is the value of healthy firms at date 1; it must cover the net refinancing need of distressed firms in \emph{every} aggregate state. Only the state in which the correlated block is hit is binding.
+
+\notation
+\begin{itemize}
+  \item $\rho_L<\rho_0<\rho_H<\rho_1$: low / high liquidity shock, pledgeable and total income per unit; $\lambda$: probability of the high shock; $\bar\rho=(1-\lambda)\rho_L+\lambda\rho_H$.
+  \item $\theta$: fraction of firms with a common shock; $1-\theta$: fraction with independent shocks.
+\end{itemize}
+
+\step{1}{Efficient allocation} From the context (\S15.2.1.2), the breakeven with $x=1$ is
+\begin{align}
+  [(1-\lambda)(\rho_0-\rho_L)-\lambda(\rho_H-\rho_0)]I &= I-A, \label{r10e3-be}\\
+  I &= \frac{A}{1+\bar\rho-\rho_0}, \label{r10e3-I}
+\end{align}
+which does not involve $\theta$. ($x=1$ is optimal by (15.2), $(1-\lambda)(\rho_H-\rho_L)<1$; we take the section's allocation as the target.)
+
+\step{2}{State where the common shock is high} The correlated block (mass $\theta$) and a fraction $\lambda$ of the independent block are distressed; each needs $(\rho_H-\rho_0)I$ beyond what it can raise by issuing claims:
+\begin{align}
+  \text{Need} &= [\theta+(1-\theta)\lambda](\rho_H-\rho_0)I. \label{r10e3-need}
+\end{align}
+Healthy firms are only in the independent block, mass $(1-\theta)(1-\lambda)$, each worth $(\rho_0-\rho_L)I$ net of its own shock:
+\begin{align}
+  \text{Supply} &= (1-\theta)(1-\lambda)(\rho_0-\rho_L)I. \label{r10e3-supply}
+\end{align}
+
+\step{3}{Use the breakeven} From \eqref{r10e3-be}, $(1-\lambda)(\rho_0-\rho_L)I=(I-A)+\lambda(\rho_H-\rho_0)I$. Substituting into \eqref{r10e3-supply}, Supply $\geq$ Need becomes
+\begin{align}
+  (1-\theta)\bigl[(I-A)+\lambda(\rho_H-\rho_0)I\bigr] &\geq [\theta+(1-\theta)\lambda](\rho_H-\rho_0)I \nonumber\\
+  (1-\theta)(I-A)+(1-\theta)\lambda(\rho_H-\rho_0)I &\geq \theta(\rho_H-\rho_0)I+(1-\theta)\lambda(\rho_H-\rho_0)I \nonumber\\
+  (1-\theta)(I-A) &\geq \theta(\rho_H-\rho_0)I. \label{r10e3-cond}
+\end{align}
+
+\step{4}{Threshold} The left side of \eqref{r10e3-cond} decreases in $\theta$ and the right side increases (with $I$ fixed by \eqref{r10e3-I}), so \eqref{r10e3-cond} holds iff $\theta\leq\theta^*$ with
+\begin{align}
+  (1-\theta^*)(I-A) = \theta^*(\rho_H-\rho_0)I \iff \theta^*=\frac{I-A}{(I-A)+(\rho_H-\rho_0)I}. \label{r10e3-thstar}
+\end{align}
+
+\step{5}{The other aggregate state} If the common shock is low, the need is $(1-\theta)\lambda(\rho_H-\rho_0)I$ and the supply $[\theta+(1-\theta)(1-\lambda)](\rho_0-\rho_L)I\geq(1-\theta)(1-\lambda)(\rho_0-\rho_L)I$. By (15.3), $(1-\lambda)(\rho_0-\rho_L)>\lambda(\rho_H-\rho_0)$ (net borrowing), so supply exceeds need for every $\theta$: no shortage there.
+
+\step{6}{Example} $\lambda=0.3$, $\rho_L=0.2$, $\rho_0=0.6$, $\rho_H=1$, $\rho_1=1.8$, $A=1$: $\bar\rho=0.44$, $I=1/0.84=1.190476$, $\theta^*=0.190476/(0.190476+0.476190)=2/7=0.285714$; at $\theta^*$ supply = need $=0.238095$. Here $(1-\lambda)(\rho_H-\rho_L)=0.56<1$.
+
+\answer{} Self-sufficiency iff $(1-\theta)(I-A)\geq\theta(\rho_H-\rho_0)I$, i.e.\ $\theta\leq\theta^*=(I-A)/[(I-A)+(\rho_H-\rho_0)I]$, with $I=A/(1+\bar\rho-\rho_0)$. (Liquidity must be pooled, e.g.\ via credit lines, as in \S15.2.2.)
+
+\intuition Inside liquidity works by moving value from healthy to distressed firms. Independent shocks diversify away; a common shock cannot be diversified, because the firms that would provide liquidity are hit at the same time. The more of the economy is exposed to the common shock (higher $\theta$), the thinner the pool of healthy firms in the bad state, until it cannot cover the refinancing need.
+
+\pitfalls
+\begin{itemize}
+  \item Checking only the average state: the binding constraint is the state in which the correlated block is hit.
+  \item Letting $I$ depend on $\theta$: the efficient allocation is the same for every $\theta$.
+  \item Counting the gross value $\rho_0 I$ of healthy firms instead of the net $(\rho_0-\rho_L)I$ after their own shock.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~621), which writes the same need, supply and breakeven and arrives at $(1-\theta)(I-A)\geq\theta(\rho_H-\rho_0)I$. Note: the statement assumes $(1-\lambda)(\rho_H-\rho_0)<1$, while $x=1$ in \S15.2.1 rests on (15.2), $(1-\lambda)(\rho_H-\rho_L)<1$; the solution uses the section's allocation.
+\refbib{Tirole \S15.2.1, pp.~518--521; \S15.3.1, p.~523.}
+
+% =============================================================================
+\exsec{4. Property-rights institutions and international finance --- Tirole Review Problem 5, pp.~628--629}
+
+\asked (i) The rational-expectations equilibrium: investment $I^*$, the tax rate $t^*$ the government sets after financing, and the domestic share $\theta^*$ of external finance. (ii) How entrepreneurs' welfare moves with domestic savings $S_D$. (iii) The tax rate under commitment. (iv) The equilibrium when the government can tax foreign and domestic investors differently.
+
+\approach The firm is the variable-investment model (Tirole \S3.4): investors receive the pledgeable income $\rho_0I$. Taxing investor income ex post is a hold-up: it is a transfer from foreigners (not counted) and a costly transfer from domestic investors. Anticipated, it lowers what investors expect and thus borrowing capacity (the property-rights problem of Tirole \S16.3).
+
+\notation
+\begin{itemize}
+  \item $\rho_0=p_H(R-B/\Delta p)<1<\rho_1=p_HR$; $A$: wealth; $I$: investment; $t$: tax rate on investor income.
+  \item $\mathcal I=\rho_0I$: investor income; $B_0(t)\mathcal I$: benefit returned to entrepreneurs, $B_0'>0$, $B_0''<0$, $B_0'(0)=1$, and $B_0(0)=0$ (no tax, no benefit), so $B_0(t)<t$ for $t>0$.
+  \item $S_D$: domestic savings; $\theta=S_D/(I-A)$: domestic share of investor claims.
+\end{itemize}
+
+\step{1}{Borrowing capacity for an expected tax $t$} The entrepreneur's incentive constraint $(\Delta p)R_b\geq BI$ is untouched (the tax hits investors only), so investors' pre-tax income is $\rho_0I$ and their after-tax income $(1-t)\rho_0I$. Breakeven at rate 0:
+\begin{align}
+  (1-t)\rho_0I &= I-A \nonumber\\
+  I(t) &= \frac{A}{1-(1-t)\rho_0}, \qquad I(t)-A=\frac{(1-t)\rho_0A}{1-(1-t)\rho_0}. \label{r10e4-I}
+\end{align}
+$I(t)$ decreases in $t$.
+
+\step{2}{Ex post tax} With $I$ and $\theta$ fixed, domestic surplus is entrepreneurs' payoff $(\rho_1-\rho_0)I+B_0(t)\rho_0I$ plus domestic investors' $\theta(1-t)\rho_0I$ (minus constants):
+\begin{align}
+  \frac{\partial}{\partial t}\Bigl[B_0(t)\rho_0I+\theta(1-t)\rho_0I\Bigr] &= [B_0'(t)-\theta]\rho_0I=0 \;\Longrightarrow\; B_0'(t^*)=\theta^*. \label{r10e4-foc}
+\end{align}
+The second-order condition is $B_0''<0$.
+
+\step{3}{Fixed point} Rational expectations require \eqref{r10e4-foc} with $\theta^*=S_D/(I(t^*)-A)$:
+\begin{align}
+  B_0'(t^*) = \frac{S_D}{I(t^*)-A} = \frac{S_D[1-(1-t^*)\rho_0]}{(1-t^*)\rho_0A}, \qquad I^*=\frac{A}{1-(1-t^*)\rho_0}. \label{r10e4-fp}
+\end{align}
+At $t=0$ the left side is $1$ and the right side is $S_D(1-\rho_0)/(\rho_0A)<1$ by the assumption $S_D<\rho_0A/(1-\rho_0)$; the right side increases in $t$ (to $\infty$ as $t\to1$) and the left side decreases. Hence a unique $t^*\in(0,1)$: the government taxes, because foreigners hold part of the claims.
+
+\step{4}{Example} $B_0(t)=\ln(1+t)$ (so $B_0'(t)=1/(1+t)$), $\rho_0=0.6$, $\rho_1=1.5$, $A=1$, $S_D=0.5$. At $t=1/3$: $I-A=(\tfrac23)(0.6)/(1-0.4)=\tfrac23$, $\theta=0.5/\tfrac23=0.75=1/(1+\tfrac13)$, so $t^*=0.333333$, $\theta^*=0.75$, $I^*=1.666667$. Entrepreneurs' NPV (statement): $[(\rho_1-1)-(t^*-B_0(t^*))\rho_0]I^*=[0.5-(0.333333-0.287682)(0.6)](1.666667)=0.787682$.
+
+\answer{(i)} $B_0'(t^*)=\theta^*=S_D/(I^*-A)$ and $I^*=A/[1-(1-t^*)\rho_0]$, with $t^*\in(0,1)$.
+
+\step{5}{More domestic savings} Raising $S_D$ shifts the right side of \eqref{r10e4-fp} up, so $t^*$ falls; then $I^*$ rises by \eqref{r10e4-I} and $\theta^*=B_0'(t^*)$ rises. Welfare
+\begin{align}
+  U_b(t) = \bigl[(\rho_1-1)-(t-B_0(t))\rho_0\bigr]\,I(t) \label{r10e4-Ub}
+\end{align}
+decreases in $t$: the bracket falls ($\frac{d}{dt}(t-B_0)=1-B_0'\geq0$) and $I(t)$ falls. So $U_b$ rises with $S_D$. Example with $S_D=0.6$: $t^*=0.276984$, $\theta^*=0.783095$, $I^*=1.766190$, $U_b=0.848673>0.787682$.
+
+\answer{(ii)} Higher $S_D$ lowers $t^*$, raises $\theta^*$ and $I^*$, and raises entrepreneurs' welfare.
+
+\step{6}{Commitment} Choosing $t$ before financing, the government maximises \eqref{r10e4-Ub}. Its derivative is $-(1-B_0'(t))\rho_0I(t)+[\cdots]I'(t)<0$ for all $t\geq0$ (the first term is $\leq0$, the second $<0$), so $t=0$ and $U_b=(\rho_1-1)A/(1-\rho_0)=0.5/0.4=1.25$ in the example.
+
+\answer{(iii)} $t=0$.
+
+\step{7}{Discrimination} Ex post the government taxes foreign income at $t_F$ and domestic at $t_D$. Foreign income does not count: maximise $B_0(t_F)$, so $t_F$ is as high as possible ($t_F=1$, full expropriation). Domestic: maximise $B_0(t_D)-t_D$, derivative $B_0'(t_D)-1\leq0$, so $t_D=0$. Foreigners anticipate and do not lend; only domestic savings finance firms:
+\begin{align}
+  I^*-A = S_D. \label{r10e4-disc}
+\end{align}
+Domestic investors receive the untaxed $\rho_0I^*=\rho_0(A+S_D)>S_D$ (equivalent to $S_D<\rho_0A/(1-\rho_0)$): a positive return. Example: $I^*=1.5$, domestic investors get $0.9$ for $0.5$ lent.
+
+\answer{(iv)} Foreigners would be fully taxed, so none lend: $I^*=A+S_D$, domestic investors untaxed and earning a positive return.
+
+\intuition Weak property-rights institutions let the government expropriate investors once the money is in. Since foreigners carry part of the tax and do not vote, the temptation grows with foreign financing; investors see it coming and lend less. Domestic savings act as a commitment device: the more domestic residents hold the claims, the more the government hurts its own constituents by taxing.
+
+\pitfalls
+\begin{itemize}
+  \item Letting the tax enter the entrepreneur's incentive constraint: it applies to investors only.
+  \item Solving the government's problem with $I$ variable in (i): ex post, $I$ is sunk.
+  \item In (iv), keeping foreign lending: rational foreigners anticipate full expropriation.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~635): $B_0'(t^*)=\theta^*=S_D/(I^*-A)$, $I^*=A/[1-(1-t^*)\rho_0]$; $S_D$ raises $\theta^*$ and $I^*$ and lowers $t^*$; commit to $t=0$; with discrimination $I^*-A=S_D$. Existence/uniqueness and the example are additions.
+\refbib{Tirole \S3.4, pp.~127--128; \S16.3 ``Property Rights Institutions'', pp.~544--551.}
+
+% =============================================================================
+\exsec{5. Borrowing abroad --- Tirole 16.1, pp.~563--564}
+
+\asked (i) Borrowing capacity and utility when the entrepreneur can divert funds abroad, and why this is the basic model with $B=\mu$. (ii) Whether a balanced tax-plus-guarantee scheme changes anything, and the effect of inherited public debt $D$ financed by taxing successful projects. (iii) The utility when the government chooses $\mu$ before vs.\ after foreign investors lend. (iv) Borrowing capacity and the exchange rate when output is nontradable.
+
+\approach The diversion option is an incentive constraint: the entrepreneur must earn at home at least $\mu I$. Everything follows from that constraint and the investors' breakeven, i.e.\ from pledgeable income $(pR-\mu)I$ (Gertler and Rogoff 1990, cited in Tirole \S16.7). In (iv) the country can pay foreigners only with tradables, so export revenue becomes international collateral.
+
+\notation
+\begin{itemize}
+  \item $p$: success probability; $R$: return per unit; $\mu<1$: private return of funds invested abroad; $A$: wealth; $I$: investment.
+  \item $R_l$: payment to investors if success; $\tau$, $\sigma$: tax rate on successful income and guarantee rate on debt; $D$: public debt per entrepreneur.
+  \item $\Rc$: export sector's tradable income; $e\geq1$: price of tradables in nontradables.
+\end{itemize}
+
+\step{1}{Constraints} Diverting yields $\mu I$ and nothing at home (investors seize nothing abroad); investing yields $p(RI-R_l)$. Incentive compatibility and breakeven:
+\begin{align}
+  p(RI-R_l) &\geq \mu I, \label{r10e5-ic}\\
+  pR_l &= I-A. \label{r10e5-be}
+\end{align}
+Substituting \eqref{r10e5-be} into \eqref{r10e5-ic}:
+\begin{align}
+  pRI-(I-A) &\geq \mu I \nonumber\\
+  I[1-(pR-\mu)] &\leq A \nonumber\\
+  I &\leq \frac{A}{1-(pR-\mu)}. \label{r10e5-I}
+\end{align}
+The denominator is positive since $pR-\mu<1$. Investors break even, so $U_b$ is the NPV $(pR-1)I$, positive since $pR>1$, so $I$ is at its maximum:
+\begin{align}
+  U_b = \frac{pR-1}{1-(pR-\mu)}A. \label{r10e5-Ub}
+\end{align}
+
+\step{2}{Equivalence} In the basic model the pledgeable income per unit is $p_H(R-B/\Delta p)$. With $p_H=p$, $p_L=0$ (diversion kills the domestic project) and $B=\mu$, $\Delta p=p$ and $p(R-\mu/p)=pR-\mu$, the same as in \eqref{r10e5-I}.
+
+\answer{(i)} $I=A/[1-(pR-\mu)]$, $U_b=(pR-1)A/[1-(pR-\mu)]$. Diversion is a private benefit $\mu$ per unit with $p_L=0$: investors get nothing from the diverted funds.
+
+\step{3}{Balanced tax and guarantee} The constraints become
+\begin{align}
+  p[(1-\tau)RI-R_l] &\geq \mu I, \label{r10e5-ic2}\\
+  pR_l+(1-p)\sigma R_l &= I-A, \label{r10e5-be2}\\
+  p\tau RI &= (1-p)\sigma R_l \quad\text{(government budget)}. \label{r10e5-gb}
+\end{align}
+Using \eqref{r10e5-gb} in \eqref{r10e5-be2}: $pR_l+p\tau RI=I-A$. From \eqref{r10e5-ic2}, $pR_l+p\tau RI\leq pRI-\mu I$. So $I-A\leq(pR-\mu)I$: the same bound \eqref{r10e5-I}, and the same NPV. (In the example of Step~7, with $\tau=0.1$: $R_l=15$, $\sigma=0.2$, and investors get $pR_l+(1-p)\sigma R_l=7.5+1.5=9=I-A$.)
+
+\step{4}{Inherited debt} Now $p\tau RI=D$ leaves the country. With \eqref{r10e5-ic2} binding and \eqref{r10e5-be}:
+\begin{align}
+  p(1-\tau)RI-(I-A) &\geq \mu I \nonumber\\
+  pRI-D-I+A &\geq \mu I \nonumber\\
+  I &= \frac{A-D}{1-(pR-\mu)}. \label{r10e5-ID}
+\end{align}
+The entrepreneur consumes $\mu I=\mu(A-D)/[1-(pR-\mu)]$; her gain over the net-of-debt wealth $A-D$ is $(pR-1)(A-D)/[1-(pR-\mu)]$, and relative to (i) her consumption falls by $\mu D/[1-(pR-\mu)]>D$ (since $pR>1$).
+
+\answer{(ii)} The balanced scheme leaves $I$ and $U_b$ unchanged. Public debt $D$ acts like a fall of net worth to $A-D$: $I=(A-D)/[1-(pR-\mu)]$ and each unit of debt costs entrepreneurs $\mu/[1-(pR-\mu)]>1$ units.
+
+\step{5}{Choosing $\mu$} By \eqref{r10e5-Ub}, $U_b$ falls with $\mu$. (a) With commitment the government picks $\mu_L$. (b) Without commitment, suppose investors lend expecting $\mu_L$, with $p(RI-R_l)=\mu_LI$. Ex post, $\mu_H$ gives the entrepreneur $\max\{p(RI-R_l),\mu_HI\}=\mu_HI>\mu_LI$; foreign investors' loss does not count, so the government picks $\mu_H$. Investors anticipate it and lend as if $\mu=\mu_H$.
+
+\answer{(iii)} (a) $U_b=(pR-1)A/[1-(pR-\mu_L)]$; (b) $U_b=(pR-1)A/[1-(pR-\mu_H)]$, lower.
+
+\step{6}{Nontradable output} Investors are paid in nontradables $pR_l$ (aggregate, independent projects), which must be turned into tradables. The only date-2 tradables are the export sector's $\Rc$; domestic residents value both goods equally, so at $e>1$ they sell all their tradables. Tradable market and breakeven in tradables:
+\begin{align}
+  e\Rc &= pR_l, \label{r10e5-fx}\\
+  \frac{pR_l}{e} &= I-A, \label{r10e5-be3}\\
+  p(RI-R_l) &\geq \mu I. \label{r10e5-ic3}
+\end{align}
+From \eqref{r10e5-fx}--\eqref{r10e5-be3}, $I-A=\Rc$. From \eqref{r10e5-be3} and \eqref{r10e5-ic3}: $pRI-e(I-A)\geq\mu I$, i.e.\ $I\leq A/[1-(pR-\mu)/e]$. Equating the two,
+\begin{align}
+  I &= \Rc+A = \frac{A}{1-(pR-\mu)/e}, \label{r10e5-I4}\\
+  1-\frac{pR-\mu}{e} &= \frac{A}{A+\Rc} \;\Longrightarrow\; e=\left(1+\frac{A}{\Rc}\right)(pR-\mu). \label{r10e5-e}
+\end{align}
+This is valid iff $e\geq1$, i.e.\ $(1+A/\Rc)(pR-\mu)\geq1$; otherwise $e=1$ and $I$ is as in (i) (tradables are in excess supply).
+
+\step{7}{Example} $p=0.5$, $R=3$, $\mu=0.6$, $A=1$: $pR-\mu=0.9$, $I=1/0.1=10$, $U_b=0.5(10)=5$. With $D=0.2$: $I=8$, book's gain $0.5(8)=4$, consumption loss $0.6(0.2)/0.1=1.2$. With $\mu_H=0.8$: $U_b=0.5/0.3=1.666667$. With $\Rc=2$: $e=1.5(0.9)=1.35$, $I=3=1/(1-0.9/1.35)$, $pR_l=e(I-A)=2.7=e\Rc$.
+
+\answer{(iv)} $I=A+\Rc$ and $e=(1+A/\Rc)(pR-\mu)$ when this is $\geq1$; otherwise $e=1$ and $I=A/[1-(pR-\mu)]$.
+
+\intuition The country can borrow only against what it can credibly hand over. Funds that can be spirited abroad behave like a private benefit; public debt owed abroad eats into net worth with a multiplier; a government that cannot commit to good institutions erodes pledgeable income; and when output is nontradable, export earnings are the binding collateral --- borrowing capacity is fixed by $\Rc$ and the exchange rate adjusts.
+
+\pitfalls
+\begin{itemize}
+  \item Treating the guarantee scheme as a subsidy: the government budget \eqref{r10e5-gb} makes it a pure transfer between investors and taxpayers.
+  \item Reading the book's $(pR-1)(A-D)/[\cdot]$ as consumption: it is the gain over $A-D$; consumption is $\mu I$.
+  \item In (iv), valuing diverted funds at $e\mu$: the statement says they are consumed abroad and yield $\mu$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~622) in every part: $I=A/[1-(pR-\mu)]$, the same pledgeable income in (ii), $I=(A-D)/[1-(pR-\mu)]$ and $U_b=(pR-1)(A-D)/[1-(pR-\mu)]$ (gain measured over $A-D$, see Step~4), $\mu=\mu_H$ without commitment, $e\Rc=pR_l$, $I=\Rc+A$, $e\geq1\iff(1+A/\Rc)(pR-\mu)\geq1$.
+\refbib{Tirole \S3.4; \S16.3 (property rights, time inconsistency), pp.~544--551; \S15.2.2 (international collateral, Caballero--Krishnamurthy), p.~522; Gertler and Rogoff (1990).}
+
+% =============================================================================
+\exsec{6. Shleifer--Vishny with decreasing returns --- Tirole 14.1, p.~515}
+
+\asked Redo the two-firm resale model of \S14.2.2 with success income $R(I)$ concave, and find the sign of the effect of one firm's investment on the other firm's utility (the investment externality).
+
+\approach Keep every step of \S14.2.2: the seller's lender makes a take-it-or-leave-it offer, so the price equals the buyer's increase in \emph{pledgeable income}; the buyer's entrepreneur pockets the extra agency rent. With concave $R$, the buyer's increase in pledgeable income from extra assets depends on how much she already runs: the resale price now falls with the buyer's own investment.
+
+\notation
+\begin{itemize}
+  \item $I_i$, $A_i$: investment and wealth of firm $i\in\{1,2\}$; $R(\cdot)$: success income, $R'>0>R''$.
+  \item $x$: probability of being productive; $\mu$, $\nu$: conditional probabilities of Table 14.1; $\pi_s\equiv x(1-\mu)=(1-x)(1-\nu)$ by (14.3): probability that a given firm is productive and the other in distress.
+  \item $b\equiv p_HB/\Delta p$: agency rent per unit of assets; $\Pc(I)\equiv p_HR(I)-bI$: pledgeable income of a firm running $I$.
+\end{itemize}
+
+\step{1}{Transfer price} Let $j$ be in distress and $i$ productive. With $(\Delta p)R_{bi}=BI_i$ binding, running $I_i+I_j$ requires $(\Delta p)(R_{bi}+\delta R_{bi})\geq B(I_i+I_j)$, i.e.\ $\delta R_{bi}=BI_j/\Delta p$; the rent rises by $bI_j$. Lender $i$'s willingness to pay is the increase in income net of that rent:
+\begin{align}
+  P_jI_j = p_H[R(I_i+I_j)-R(I_i)]-bI_j. \label{r10e6-price}
+\end{align}
+With $R(I)=RI$ this is $\rho_0I_j$ (the book's $P=\rho_0$). Now $\partial(P_jI_j)/\partial I_i=p_H[R'(I_i+I_j)-R'(I_i)]<0$.
+
+\step{2}{Entrepreneur $j$'s utility} Lenders break even, so $U_{bj}$ is the NPV of firm $j$: output when both productive ($x\mu$), output plus the acquisition when $i$ is in distress ($\pi_s$), sale revenue when $j$ is in distress and $i$ productive ($\pi_s$), minus $I_j$. When $j$ buys, it pays $P_iI_i=p_H[R(I_j+I_i)-R(I_j)]-bI_i$, so its net gain is $p_HR(I_j+I_i)-P_iI_i=p_HR(I_j)+bI_i$:
+\begin{align}
+  U_{bj} &= x\mu\,p_HR(I_j)+\pi_s\bigl[p_HR(I_j)+bI_i\bigr]+\pi_s\bigl\{p_H[R(I_i+I_j)-R(I_i)]-bI_j\bigr\}-I_j \nonumber\\
+         &= xp_HR(I_j)-I_j+\pi_s\,bI_i+\pi_s\bigl\{p_H[R(I_i+I_j)-R(I_i)]-bI_j\bigr\}, \label{r10e6-Ub}
+\end{align}
+using $x\mu+\pi_s=x$. Check: with $R(I)=RI$, \eqref{r10e6-Ub} gives $[x\rho_1+(1-x)(1-\nu)\rho_0-1]I_j+x(1-\mu)(\rho_1-\rho_0)I_i=\alpha I_j+\kappa I_i$, which is (14.5).
+
+\step{3}{The externality} Differentiate \eqref{r10e6-Ub} with respect to $I_i$:
+\begin{align}
+  \frac{\partial U_{bj}}{\partial I_i} &= \pi_s b+\pi_s p_H[R'(I_i+I_j)-R'(I_i)] \nonumber\\
+  &= \pi_s\,p_H\left[\frac{B}{\Delta p}-\bigl(R'(I_i)-R'(I_i+I_j)\bigr)\right]. \label{r10e6-ext}
+\end{align}
+Two effects: the \emph{windfall} $\pi_sb>0$ (as in the CRS model, $\kappa$) and the \emph{price effect} $\pi_sp_H[R'(I_i+I_j)-R'(I_i)]<0$ (new): a bigger potential buyer pays less for $j$'s assets.
+
+\step{4}{Borrowing capacity} Lender $j$'s breakeven, with $j$ selling at \eqref{r10e6-price} when in distress:
+\begin{align}
+  x\,\Pc(I_j)+\pi_s\bigl\{p_H[R(I_i+I_j)-R(I_i)]-bI_j\bigr\} = I_j-A_j. \label{r10e6-bc}
+\end{align}
+The left side falls with $I_i$ (derivative $\pi_sp_H[R'(I_i+I_j)-R'(I_i)]<0$): firm $i$'s investment lowers $j$'s collateral value and borrowing capacity. In the CRS model it did not (multiplier (14.7) independent of $I_i$).
+
+\step{5}{Example} $R(I)=2\sqrt I$, nonconcurrent risks $\nu=0$, $x=0.8$ (so $\mu=0.75$, $\pi_s=0.2$), $p_H=0.8$, $B/\Delta p=0.5$. At $I_i=I_j=1$: $R'(1)-R'(2)=1-0.707107=0.292893$ and \eqref{r10e6-ext} $=0.16(0.5-0.292893)=0.033137>0$; the price revenue is $0.8(2\sqrt2-2)-0.4=0.262742>0$. At $I_i=I_j=0.25$: $R'(0.25)-R'(0.5)=2-1.414214=0.585786$ and \eqref{r10e6-ext} $=0.16(0.5-0.585786)=-0.013726<0$.
+
+\answer{} $\partial U_{bj}/\partial I_i=\pi_sp_H\{B/\Delta p-[R'(I_i)-R'(I_i+I_j)]\}$: ambiguous. Positive when returns decrease slowly (the CRS limit gives $\kappa>0$), negative when concavity is strong ($R'(I_i)-R'(I_i+I_j)>B/\Delta p$). Through borrowing capacity, $I_i$ always hurts firm $j$.
+
+\intuition A firm's investment makes it a ready buyer for its rival's assets, which helps the rival only through the agency rent the buyer earns on acquired assets. With decreasing returns, a firm that already runs a lot gains little from extra assets, so the rival in distress fetches a lower price. The more concave the technology, the more this ``less eager buyer'' effect dominates and investment becomes a negative externality.
+
+\pitfalls
+\begin{itemize}
+  \item Keeping $P=\rho_0$: with concave $R$ the price depends on both investment levels.
+  \item Forgetting that the buyer's private benefit scales with all assets run, $B(I_i+I_j)$, which is what generates the rent $bI_j$.
+  \item Mixing the two probabilities: by (14.3) the windfall and the sale states have the same probability $\pi_s$.
+\end{itemize}
+
+\bookans The book gives no answer to this exercise. The result agrees with the text's remark on decreasing returns (p.~503): ``investment externalities could become negative \ldots{} the transfer price a firm in distress can get for its assets is lower, the higher the level of existing investment by the other firm.''
+\refbib{Tirole \S14.2.2, pp.~500--503; Exercise 3.5 (decreasing returns).}
+
+% =============================================================================
+\exsec{7. Inefficiently low volume of asset reallocations --- Tirole 14.4, p.~516}
+
+\asked Show that firm 1's optimal contract resells its assets to firm 2 exactly when the realized pledgeable income $\rho_0$ falls below a cutoff $\rho_0^*$ that is strictly below firm 2's pledgeable income $\hat\rho_0$, and explain why that is too few resales.
+
+\approach This is the continuation-vs-liquidation trade-off of Chapter 5 (risk management) with resale as the alternative to continuation. Firm 1's investors get $\hat\rho_0$ per unit if they sell (take-it-or-leave-it price = firm 2's pledgeable income, \S14.2.2) and $\rho_0$ if they continue; the entrepreneur gets the extra rent $\Delta\rho$ only if the firm continues. The cutoff maximizes the NPV subject to breakeven.
+
+\notation
+\begin{itemize}
+  \item $\rho_0\sim F$ on $[\underline\rho_0,\bar\rho_0]$, density $f$: firm 1's pledgeable income per unit; $\rho_1=\rho_0+\Delta\rho$: its NPV per unit.
+  \item $\hat\rho_0$: firm 2's pledgeable income per unit (= resale price); $\hat\rho_1\geq\hat\rho_0$: firm 2's NPV per unit.
+  \item $c$: resale cutoff (resell iff $\rho_0<c$); $\pi(c)$, $v(c)$: pledgeable income and value per unit of investment.
+\end{itemize}
+
+\step{1}{Contract} Assets are resold iff $\rho_0<c$ (a cutoff is optimal since continuation becomes more valuable as $\rho_0$ rises). Resale proceeds $\hat\rho_0I$ go to the investors: after a resale there is no moral hazard in firm 1, so paying the entrepreneur would only lower pledgeable income. Per unit of $I$:
+\begin{align}
+  \pi(c) &= F(c)\hat\rho_0+\int_c^{\bar\rho_0}\rho_0\,dF(\rho_0), \label{r10e7-pi}\\
+  v(c) &= F(c)\hat\rho_0+\int_c^{\bar\rho_0}(\rho_0+\Delta\rho)\,dF(\rho_0) = \pi(c)+\Delta\rho[1-F(c)]. \label{r10e7-v}
+\end{align}
+
+\step{2}{Investment and utility} Breakeven: $\pi(c)I=I-A$, so
+\begin{align}
+  I(c) = \frac{A}{1-\pi(c)}. \label{r10e7-I}
+\end{align}
+The entrepreneur receives the NPV:
+\begin{align}
+  U_b(c) = [v(c)-1]\,I(c) = \frac{v(c)-1}{1-\pi(c)}A. \label{r10e7-Ub}
+\end{align}
+
+\step{3}{First-order condition} Differentiating \eqref{r10e7-pi}--\eqref{r10e7-v} (Leibniz rule): $\pi'(c)=f(c)(\hat\rho_0-c)$ and $v'(c)=f(c)(\hat\rho_0-c-\Delta\rho)$. Setting $dU_b/dc=0$ in \eqref{r10e7-Ub}:
+\begin{align}
+  v'(c)[1-\pi(c)]+[v(c)-1]\pi'(c) &= 0 \nonumber\\
+  (\hat\rho_0-c-\Delta\rho)[1-\pi]+[v-1](\hat\rho_0-c) &= 0 \nonumber\\
+  (\hat\rho_0-c)[1-\pi+v-1] &= \Delta\rho[1-\pi] \nonumber\\
+  (\hat\rho_0-c)\,\Delta\rho[1-F(c)] &= \Delta\rho[1-\pi] \nonumber\\
+  \rho_0^* &= \hat\rho_0-\frac{1-\pi(\rho_0^*)}{1-F(\rho_0^*)}, \label{r10e7-foc}
+\end{align}
+using $v-\pi=\Delta\rho(1-F)$ from \eqref{r10e7-v}.
+
+\step{4}{Bounds} Since $\pi<1$ (finite investment), the fraction in \eqref{r10e7-foc} is positive: $\rho_0^*<\hat\rho_0$. And $(1-\pi)/(1-F)<\Delta\rho\iff1-\pi<\Delta\rho(1-F)=v-\pi\iff v>1$, which holds because the project has positive NPV. Hence
+\begin{align}
+  \hat\rho_0-\Delta\rho<\rho_0^*<\hat\rho_0. \label{r10e7-bounds}
+\end{align}
+
+\step{5}{Why ``inefficiently low''} Moving a unit to firm 2 creates $\hat\rho_1-\rho_1=\hat\rho_1-\rho_0-\Delta\rho$. If firm 2's agency rent is at least firm 1's, $\hat\rho_1-\hat\rho_0\geq\Delta\rho$ (e.g.\ equal per-unit agency costs), reallocation is efficient whenever $\rho_0<\hat\rho_0$; firm 1 resells only below $\rho_0^*<\hat\rho_0$. It ignores the rent $\hat\rho_1-\hat\rho_0$ it leaves to firm 2's insiders, and it keeps assets in some states to protect its own entrepreneur's rent.
+
+\step{6}{Example} $\rho_0\sim U[0,1]$, $\hat\rho_0=0.7$, $\Delta\rho=0.5$: $\pi(c)=0.7c+(1-c^2)/2$, so \eqref{r10e7-foc} becomes $(0.7-c)(1-c)=0.5-0.7c+0.5c^2$, i.e.\ $c^2-2c+0.4=0$, and $\rho_0^*=1-\sqrt{0.6}=0.225403\in(0.2,0.7)$; $v=1.019677$, $I/A=2.720193$, $U_b/A=0.053526$.
+
+\answer{} Resell iff $\rho_0<\rho_0^*$ with $\rho_0^*=\hat\rho_0-[1-\pi(\rho_0^*)]/[1-F(\rho_0^*)]$, so $\hat\rho_0-\Delta\rho<\rho_0^*<\hat\rho_0$: assets with $\rho_0^*<\rho_0<\hat\rho_0$ stay with firm 1 though they are worth more in firm 2.
+
+\intuition Reselling raises pledgeable income (investors get $\hat\rho_0>\rho_0$) but destroys the entrepreneur's continuation rent; as in Chapter 5's liquidity choice, the cutoff sits between the pure pledgeable-income rule ($\hat\rho_0$) and the pure NPV rule ($\hat\rho_0-\Delta\rho$). Because the buyer pays only its pledgeable income, part of the gain from trade is invisible to the seller, so even a frictionless resale market sees too little reallocation.
+
+\pitfalls
+\begin{itemize}
+  \item Taking the resale price to be firm 2's NPV: under take-it-or-leave-it with a financially constrained buyer it is $\hat\rho_0$.
+  \item Giving resale proceeds to the entrepreneur: it lowers pledgeable income for no incentive gain.
+  \item Maximising gross value $v(c)I(c)$ instead of the NPV $[v(c)-1]I(c)$ (see the book answer).
+\end{itemize}
+
+\bookans Matches the book's answer (p.~619) on the structure (resale iff $\rho_0<\rho_0^*$, proceeds to investors, breakeven $[F(\rho_0^*)\hat\rho_0+\int_{\rho_0^*}\rho_0\,dF]I=I-A$) and on the bounds $\hat\rho_0-\Delta\rho<\rho_0^*<\hat\rho_0$. The book writes $U_b=[F\hat\rho_0+\int(\rho_0+\Delta\rho)dF]\,I(\rho_0^*)$, which omits $-I$; maximising that gross expression gives a different cutoff (0.591681 instead of 0.225403 in the example), still inside the bounds. The correct objective is the NPV \eqref{r10e7-Ub}.
+\refbib{Tirole \S14.2.2--14.2.3, pp.~500--505; Ch.~5 (liquidity and risk management).}
+
+% =============================================================================
+\exsec{8. Inside liquidity --- Tirole Review Problem 6, pp.~629--630}
+
+\asked (i) Borrowing capacity for a given salvaged fraction $x$. (ii) The borrower's utility and the optimal $x$. (iii) Whether inside liquidity suffices under perfectly correlated shocks, and the size of the shortage. (iv) Why holding the stock index may fail under independent shocks, and the remedy.
+
+\approach Chapter 5's liquidity model: the cost of continuing distressed firms is weighed against scale through the \emph{unit cost of preserved investment} $c(x)$. Chapter 15 then asks whether claims issued by the firms themselves can fund the reinvestment: never under a common shock; in principle yes under independent shocks, but only if liquidity is pooled.
+
+\notation
+\begin{itemize}
+  \item $\lambda$: probability of distress; $\rho$: reinvestment per salvaged unit; $x\in[0,1]$: fraction salvaged in distress.
+  \item $\rho_0=p_H(R-B/\Delta p)$, $\rho_1=p_HR$: pledgeable income and value per salvaged unit; $c(x)$: average cost per unit of preserved investment.
+\end{itemize}
+
+\step{1}{Borrowing capacity} Investors pay $I-A$ at date 0 and $\lambda\rho xI$ expected at date 1 (via the free store of value); they receive $\rho_0$ per salvaged unit, of which there are $(1-\lambda)I+\lambda xI$:
+\begin{align}
+  (1+\lambda\rho x)I-A &= [1-\lambda+\lambda x]\rho_0I \nonumber\\
+  I &= \frac{A}{(1+\lambda\rho x)-[1-\lambda+\lambda x]\rho_0}. \label{r10e8-I}
+\end{align}
+
+\answer{(i)} $I=A/\{(1+\lambda\rho x)-[1-\lambda+\lambda x]\rho_0\}$.
+
+\step{2}{Utility} $U_b$ = value of preserved units minus total cost:
+\begin{align}
+  U_b &= [(1-\lambda+\lambda x)\rho_1-(1+\lambda\rho x)]I. \label{r10e8-Ub0}
+\end{align}
+Define $c(x)=(1+\lambda\rho x)/(1-\lambda+\lambda x)$, so $1+\lambda\rho x=(1-\lambda+\lambda x)c(x)$. Then \eqref{r10e8-I} reads $I=A/[(1-\lambda+\lambda x)(c(x)-\rho_0)]$ and
+\begin{align}
+  U_b = (1-\lambda+\lambda x)[\rho_1-c(x)]\cdot\frac{A}{(1-\lambda+\lambda x)[c(x)-\rho_0]} = \frac{\rho_1-c(x)}{c(x)-\rho_0}A. \label{r10e8-Ub}
+\end{align}
+
+\step{3}{Optimal $x$} $\frac{d}{dc}\frac{\rho_1-c}{c-\rho_0}=-\frac{\rho_1-\rho_0}{(c-\rho_0)^2}<0$, so minimise $c(x)$:
+\begin{align}
+  c'(x) &= \frac{\lambda\rho(1-\lambda+\lambda x)-\lambda(1+\lambda\rho x)}{(1-\lambda+\lambda x)^2} = \frac{\lambda[(1-\lambda)\rho-1]}{(1-\lambda+\lambda x)^2}. \label{r10e8-cprime}
+\end{align}
+The sign does not depend on $x$: $c$ is decreasing iff $(1-\lambda)\rho<1$. Hence $x=1$ iff $(1-\lambda)\rho\leq1$ (indifference at equality), $x=0$ otherwise. The assumption $\rho_0<c=\min\{1+\lambda\rho,1/(1-\lambda)\}<\rho_1$ says that at the chosen corner, $c(1)=1+\lambda\rho$ or $c(0)=1/(1-\lambda)$, investment is finite ($c>\rho_0$) and profitable ($c<\rho_1$).
+
+\answer{(ii)} $U_b=\dfrac{\rho_1-c(x)}{c(x)-\rho_0}A$ with $c(x)=\dfrac{1+\lambda\rho x}{1-\lambda+\lambda x}$; $x=1$ iff $(1-\lambda)\rho\leq1$.
+
+\step{4}{Correlated shocks} With $\rho<1/(1-\lambda)$, $x=1$ is desired. Under a common shock all firms are distressed together; each can raise $\rho_0I$ by issuing new claims on its own date-2 income, and claims on other firms are worth nothing more than what those firms are themselves issuing. The need is $\rho I$, so
+\begin{align}
+  \text{shortage} = (\rho-\rho_0)I > 0, \qquad I=\frac{A}{1+\lambda\rho-\rho_0}. \label{r10e8-short}
+\end{align}
+
+\answer{(iii)} No: the shortage is $(\rho-\rho_0)I$.
+
+\step{5}{Independent shocks and the index} A fraction $\lambda$ is distressed. After distressed firms dilute their old shareholders completely (they raise $\rho_0I<\rho I$), only intact firms have value for old holders, so a share of the index is worth $(1-\lambda)\rho_0I$ at date 1. A distressed firm that holds the index can raise $\rho_0I+(1-\lambda)\rho_0I$, and needs $\rho I$:
+\begin{align}
+  \text{index suffices} \iff \rho-\rho_0\leq(1-\lambda)\rho_0. \label{r10e8-index}
+\end{align}
+In aggregate, though, liquidity is ample: the net-borrower breakeven $(1+\lambda\rho)I-A=\rho_0I$ gives $I-A=[(1-\lambda)\rho_0-\lambda(\rho-\rho_0)]I>0$, i.e.\ intact firms' value exceeds distressed firms' net need. The index fails because healthy firms keep their excess liquidity.
+
+\step{6}{Example} $\lambda=0.4$, $\rho=1.2$, $\rho_0=0.5$, $\rho_1=2$, $A=1$: $(1-\lambda)\rho=0.72\leq1$ so $x=1$; $c(1)=1.48$; $I=1/0.98=1.020408$; $U_b=0.52/0.98=0.530612$. Shortage under correlation: $0.7(1.020408)=0.714286$. Under independence: $\rho-\rho_0=0.7>(1-\lambda)\rho_0=0.3$, so the index is not enough, although $(1-\lambda)\rho_0=0.3>\lambda(\rho-\rho_0)=0.28$ in aggregate.
+
+\answer{(iv)} If $\rho-\rho_0>(1-\lambda)\rho_0$ the index leaves distressed firms short even though aggregate inside liquidity suffices; firms should pool liquidity (credit lines from an intermediary that holds the shares and resells them at date 1).
+
+\intuition Liquidity is about moving resources across firms and states. A common shock leaves no one to move them from. Independent shocks do, but a passive portfolio spreads the healthy firms' value thinly across everyone, including firms that do not need it; a credit line concentrates it where the shock hits.
+
+\pitfalls
+\begin{itemize}
+  \item Optimising $x$ inside $(0,1)$: $c(x)$ is monotone, so the solution is a corner.
+  \item Counting distressed firms' old shares in the index value at date 1: they are diluted to zero.
+  \item Concluding from (iv) that there is an aggregate shortage: the problem is allocation, not quantity.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~635): the breakeven and $I$, $U_b=(\rho_1-c)/(c-\rho_0)A$, $x=1\iff(1-\lambda)\rho\leq1$, shortage $(\rho-\rho_0)I$, index worth $(1-\lambda)\rho_0I$ and insufficient if $\rho-\rho_0>(1-\lambda)\rho_0$, remedy a liquidity pool.
+\refbib{Tirole Ch.~5 (liquidity needs); \S15.2--15.3, pp.~518--525.}
+
+% =============================================================================
+\exsec{9. Time consistency and the soft budget constraint --- Tirole 16.4, p.~566}
+
+\asked (i) The firm's NPV with and without continuation in the low state, why continuing is optimal, and how much liquidity the firm must hoard on top of date-1 refinancing. (ii) The liquidity chosen at date 0 when a welfare-maximising government decides on a subsidy at date 1, and how a government that commits at date 0 would behave.
+
+\approach The project is the fixed-size version of Chapter 5's liquidity model: continuation costs the wage $w$, of which the capital market will fund only the pledgeable part $y-\Rc$. The government's date-1 problem is a bailout decision with sunk liquidity choices; anticipating a bailout, private parties under-hoard --- the \emph{soft budget constraint} (Tirole \S5.5, from p.~220; time inconsistency, \S16.3.2).
+
+\notation
+\begin{itemize}
+  \item $y\in\{y_L,y_H\}$, $\Pr(y_H)=\rho$; $w$: wage if continuation; $w_u<w$: unemployment benefit; $x\in\{0,1\}$: continuation in the low state.
+  \item $\Rc=B/(1-p_L)$: minimum stake that makes the entrepreneur behave; $L$: liquidity hoarded at date 0; $s$: subsidy; $\lambda$: shadow cost of public funds.
+\end{itemize}
+
+\step{1}{Incentives and pledgeable income at date 1} Behaving gives $y$ for sure; misbehaving gives $y$ w.p.\ $p_L$ plus $B$. With stake $R_b$ in $y$: $R_b\geq p_LR_b+B\iff R_b\geq B/(1-p_L)=\Rc$. Continuing at productivity $y$ yields income $y$, of which $y-\Rc$ is pledgeable, and costs $w$.
+
+\step{2}{NPV and $x^*$} In the high state the firm always continues ($y_H>y_L>w$):
+\begin{align}
+  \text{NPV}(x) = \rho(y_H-w)+(1-\rho)\,x\,(y_L-w)-I. \label{r10e9-npv}
+\end{align}
+$\text{NPV}(1)-\text{NPV}(0)=(1-\rho)(y_L-w)>0$. Financing with $x=1$ requires pledgeable income $\geq I-A$:
+\begin{align}
+  \rho(y_H-w-\Rc)+(1-\rho)(y_L-w-\Rc)\geq I-A, \label{r10e9-fin}
+\end{align}
+which is the second assumption. So $x^*=1$.
+
+\step{3}{Liquidity} At date 1 the firm can raise $y-\Rc$ from new investors. In the low state, $y_L-\Rc<w$ (first assumption), so the shortfall
+\begin{align}
+  L^* = w+\Rc-y_L>0 \label{r10e9-L}
+\end{align}
+must be secured at date 0 (hoarded or a credit line). In the high state no liquidity is needed: with $I>A$, \eqref{r10e9-fin} and $y_L-w-\Rc<0$ imply $y_H-w-\Rc>0$. With a costless store of value, unused liquidity is returned to investors, so \eqref{r10e9-fin} remains the breakeven.
+
+\answer{(i)} $\text{NPV}(1)=\rho(y_H-w)+(1-\rho)(y_L-w)-I>\text{NPV}(0)=\rho(y_H-w)-I$, financeable, so $x^*=1$; liquidity $L^*=w+\Rc-y_L$ for the low state.
+
+\step{4}{Date-1 bailout} In the low state with hoarded $L<L^*$, continuation needs $s=w+\Rc-y_L-L$. Welfare (entrepreneur + investors + worker + taxpayers), counting the wage and the subsidy as transfers:
+\begin{align}
+  W_{\text{continue}} &= (y_L-w+s)+w-(1+\lambda)s = y_L-\lambda s, \label{r10e9-Wc}\\
+  W_{\text{stop}} &= w_u-(1+\lambda)w_u = -\lambda w_u. \label{r10e9-Ws}
+\end{align}
+The government bails out iff $y_L-\lambda s\geq-\lambda w_u\iff\lambda(s-w_u)\leq y_L$. The largest possible subsidy, with $L=0$, is $s=w+\Rc-y_L$, and then the condition reads
+\begin{align}
+  \lambda(w+\Rc-y_L-w_u)\leq y_L \iff \lambda[(w-w_u)+\Rc]\leq(1+\lambda)y_L, \label{r10e9-bail}
+\end{align}
+exactly the assumption. So the government bails out whatever $L$ is, with $s=\max\{0,L^*-L\}$.
+
+\step{5}{Private choice of $L$} Every unit of liquidity not hoarded is replaced one-for-one by a subsidy, a gift to the entrepreneur and investors. They choose
+\begin{align}
+  L = 0, \qquad s = w+\Rc-y_L \text{ in the low state}. \label{r10e9-L0}
+\end{align}
+
+\step{6}{Commitment} If the government commits at date 0, it compares a subsidy (cost $\lambda s$ in deadweight) with private liquidity (free at $q=1$, and the firm can afford it by \eqref{r10e9-fin}). It commits to $s=0$ in both states; firms then hoard $L^*$ and still continue. Without commitment, the expected deadweight loss is $(1-\rho)\lambda(w+\Rc-y_L)$.
+
+\step{7}{Example} $y_H=3$, $y_L=1$, $w=0.8$, $\Rc=0.5$, $\rho=0.5$, $I=1$, $A=0.5$, $\lambda=0.3$, $w_u=0.4$: pledgeable income $0.7\geq0.5$; $\text{NPV}(1)=0.2>\text{NPV}(0)=0.1$; $L^*=0.3$; \eqref{r10e9-bail}: $0.27\leq1.3$; with $L=0$, $W_{\text{continue}}-W_{\text{stop}}=(1-0.09)+0.12=1.03>0$; expected deadweight $0.5(0.3)(0.3)=0.045$.
+
+\answer{(ii)} Without commitment: $L=0$ and the government pays $s=w+\Rc-y_L$ when $y=y_L$ (soft budget constraint). With commitment: $s=0$ in every state, and firms hoard $L^*=w+\Rc-y_L$.
+
+\intuition The government cannot stand idle when a viable firm is about to lay off a worker, because shutting down costs output and unemployment benefits. Knowing this, the firm and its investors stop insuring themselves and let taxpayers provide the liquidity at a cost $1+\lambda$ per unit. A government that can tie its hands avoids the deadweight loss without losing a single job.
+
+\pitfalls
+\begin{itemize}
+  \item Counting the wage or the subsidy as a social cost: both are transfers; only $\lambda s$ and $\lambda w_u$ are deadweight.
+  \item Taking the liquidity need to be $w$: the firm can raise $y_L-\Rc$ from the market at date 1.
+  \item Concluding that the bailout destroys value ex post: given $L=0$ it is optimal ex post; the inefficiency is ex ante.
+\end{itemize}
+
+\bookans The book gives no answer to this exercise. The result is the soft-budget-constraint logic of Tirole \S5.5 applied to a government (\S16.3.2): ex post rescue is optimal, so ex ante self-insurance is crowded out.
+\refbib{Tirole \S5.5 ``Endogenous Liquidity Needs, the Sensitivity of Investment to Cash Flow, and the Soft Budget Constraint'', from p.~220; \S16.3.2, pp.~546--549; Exercise 15.2 (same technology).}
+
+% =============================================================================
+\exsec{10. News about prospects and aggregate liquidity --- Tirole 15.2, pp.~531--532}
+
+\asked (i) NPV and investors' net income as functions of the continuation threshold $y^*$. (ii) The investment decision and threshold for each wealth level, and why firms with $A>A_1^*$ need liquidity arranged at date 0. (iii) Whether firms' own claims provide enough liquidity with independent productivities. (iv) With a macro shock: the financing constraint, why the optimal threshold is the same in every state, how much outside liquidity is needed, and what happens if it is scarce.
+
+\approach Fixed investment with a date-1 reinvestment $J$ (Chapter 5): continuing has NPV $y-J$ but pledgeable income $y-J-\Rc$. Weak firms must promise continuation only in high-$y$ states (raise $y^*$) to pledge more. Then Chapter 15's question: who supplies the date-1 cash, the firms themselves (inside liquidity) or outside stores of value?
+
+\notation
+\begin{itemize}
+  \item $y\in[0,1]$, c.d.f.\ $G$, density $g$; $J$: reinvestment; $\Rc=B/(1-p_L)$: minimum stake; $y^*$: continue iff $y\geq y^*$.
+  \item $A_0^*$, $A_1^*$: wealth cutoffs defined in the statement; $\theta$: macro shock, $G(\cdot\mid\theta)$; $\mu$: multiplier of the financing constraint.
+\end{itemize}
+
+\step{1}{NPV and investors' income} The incentive stake is $\Rc$ (as in exercise 9). With threshold $y^*$:
+\begin{align}
+  \text{NPV}(y^*) &= \int_{y^*}^1y\,dG(y)-[1-G(y^*)]J-I, \label{r10e10-npv}\\
+  \text{Investors' net income} &= \int_{y^*}^1y\,dG(y)-[1-G(y^*)][J+\Rc]-(I-A). \label{r10e10-inv}
+\end{align}
+
+\answer{(i)} Equations \eqref{r10e10-npv} and \eqref{r10e10-inv}.
+
+\step{2}{Maximisers} Differentiating, $d\,\text{NPV}/dy^*=-y^*g(y^*)+Jg(y^*)=(J-y^*)g(y^*)$: the NPV peaks at $y_0^*=J$. The investors' income derivative is $(J+\Rc-y^*)g(y^*)$: it peaks at $y_1^*=J+\Rc$. By the definitions, $I-A_k^*$ is the investors' gross income at $y_k^*$.
+
+\step{3}{Policy by region}
+(a) $A\geq A_0^*$: financing at $y^*=J$ is feasible; invest, $y^*=J$ (first best).
+(b) $A_1^*<A<A_0^*$: the NPV falls in $y^*$ on $(J,J+\Rc)$ and investors' income rises there, so pick the smallest $y^*\in(J,J+\Rc)$ with
+\begin{align}
+  \int_{y^*}^1y\,dG(y)-[1-G(y^*)][J+\Rc] = I-A. \label{r10e10-bind}
+\end{align}
+(c) $A<A_1^*$: even $y^*=J+\Rc$ does not pledge enough: no investment ($A=A_1^*$: invest with $y^*=J+\Rc$).
+
+\step{4}{Date-1 liquidity} For $A>A_1^*$, $y^*<J+\Rc$. In states $y\in[y^*,J+\Rc)$ the firm must spend $J$ but new investors would get at most $y-\Rc<J$: the market alone will not refinance. The firm needs up to $J+\Rc-y^*$ arranged at date 0 (credit line or reserves).
+
+\step{5}{Example} $G$ uniform, $J=0.3$, $\Rc=0.2$, $I=0.5$: investors' gross income at $y^*$ is $(1-y^{*2})/2-(1-y^*)(0.5)$, so $A_0^*=0.5-0.105=0.395$ and $A_1^*=0.5-0.125=0.375$. For $A=0.385$, \eqref{r10e10-bind} is $y^*(1-y^*)/2=0.115$, i.e.\ $y^{*2}-y^*+0.23=0$, so $y^*=(1-\sqrt{0.08})/2=0.358579$; the largest liquidity need is $0.5-0.358579=0.141421$.
+
+\answer{(ii)} Invest with $y^*=J$ if $A\geq A_0^*$; invest with $y^*\in(J,J+\Rc)$ solving \eqref{r10e10-bind} if $A_1^*<A<A_0^*$; do not invest if $A<A_1^*$. For $A>A_1^*$, liquidity of up to $J+\Rc-y^*$ must be arranged at date 0.
+
+\step{6}{Independent productivities} With a continuum of independent firms, the realised distribution is $G$. The aggregate net pledgeable income at date 1 is, by \eqref{r10e10-bind},
+\begin{align}
+  \int_{y^*}^1(y-J-\Rc)\,dG(y) = I-A>0, \label{r10e10-agg}
+\end{align}
+so high-$y$ firms' excess pledgeable income covers low-$y$ firms' shortfalls. In the example: shortfall $\int_{y^*}^{0.5}(0.5-y)dy=(0.141421)^2/2=0.01$, surplus $\int_{0.5}^1(y-0.5)dy=0.125$, net $0.115=I-A$.
+
+\answer{(iii)} Yes, provided liquidity is pooled: the corporate sector is a net borrower, so its aggregate date-1 pledgeable income is positive.
+
+\step{7}{Macro shock: constraint and threshold} With $q=1$ (abundant stores of value), the date-0 financing constraint is
+\begin{align}
+  E_\theta\left[\int_{y^*(\theta)}^1(y-J-\Rc)\,dG(y\mid\theta)\right]\geq I-A. \label{r10e10-fc}
+\end{align}
+Maximise $E_\theta[\int_{y^*(\theta)}^1(y-J)\,dG(y\mid\theta)]-I$ subject to \eqref{r10e10-fc} with multiplier $\mu$. The derivative of the Lagrangian with respect to $y^*(\theta)$, state by state, is
+\begin{align}
+  -[y^*(\theta)-J]g(y^*\mid\theta)-\mu[y^*(\theta)-J-\Rc]g(y^*\mid\theta) &= 0 \nonumber\\
+  (1+\mu)y^*(\theta) &= (1+\mu)J+\mu\Rc \nonumber\\
+  y^*(\theta) &= J+\frac{\mu}{1+\mu}\Rc, \label{r10e10-ystar}
+\end{align}
+the same in every state.
+
+\step{8}{Outside liquidity} In state $\theta$ the firms' aggregate net pledgeable income is $\int_{y^*}^1(y-J-\Rc)\,dG(y\mid\theta)$; if negative, the gap must be filled with outside stores of value. The plan is implementable with
+\begin{align}
+  L\geq\max\Bigl\{0,\,-\min_\theta\int_{y^*}^1(y-J-\Rc)\,dG(y\mid\theta)\Bigr\} \label{r10e10-L}
+\end{align}
+units (the book writes the minimum itself, meaning its absolute value when negative). Example: two equally likely states, $y\sim U[0,1]$ or $U[0,0.6]$, $A=0.45$: \eqref{r10e10-fc} with a common threshold gives $y^{*2}-y^*+0.225=0$, $y^*=(1-\sqrt{0.1})/2=0.341886$ (so $\mu/(1+\mu)=0.209431$); state-by-state net income $0.1125$ (good) and $-0.0125$ (bad), so $L\geq0.0125$. (Perturbing the thresholds across states while keeping \eqref{r10e10-fc} lowers the objective, as the script checks.)
+
+\step{9}{Scarce liquidity} If fewer stores exist, they trade at $q>1$; the premium $(q-1)$ times the liquidity held enters the cost and the constraint (as in \S15.3.1). Firms then economise on liquidity: thresholds rise in the bad states (more interruption) and/or investment falls.
+
+\answer{(iv)} \eqref{r10e10-fc}; $y^*(\theta)=J+\frac{\mu}{1+\mu}\Rc$ for all $\theta$; outside liquidity of at least the worst-state shortfall \eqref{r10e10-L}; with few stores, a liquidity premium $q>1$, more interruption and lower investment.
+
+\intuition The entrepreneur trades NPV for pledgeability by interrupting moderately productive projects. Whether the date-1 cash can come from the firms themselves depends on diversification: idiosyncratic news washes out, a macro shock does not. The optimal continuation rule does not react to the macro state because the marginal trade-off between NPV and pledgeable income is the same in every state once liquidity is priced at par.
+
+\pitfalls
+\begin{itemize}
+  \item Using $y^*=J$ for every $A$: it is optimal only when financing at $J$ is feasible.
+  \item Assuming the market will refinance any $y\geq J$: investors need $y-\Rc\geq J$.
+  \item Reading the book's $\min_\theta\int(\cdots)$ literally as a positive quantity of stores.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~620--621) in every part, including $y^*(\theta)=J+\mu\Rc/(1+\mu)$. The sign remark in Step~8 and the examples are additions.
+\refbib{Tirole Ch.~5 (liquidity needs); \S15.2--15.3, pp.~518--525.}
+
+% =============================================================================
+\exsec{11. Market conditions with and without credit rationing --- Tirole 13.3, p.~494}
+
+\asked (i) First-best and second-best investment as functions of the output price $P$, and the price $P_0$ above which they coincide. (ii) That for some prices the second-best investment responds more to $P$ than the first-best. (iii) How an installed base $I_0$ (which lowers $P$) would be analysed.
+
+\approach Variable investment with decreasing returns and a fixed cost $K\geq A$. First best: maximise NPV. Second best: maximise NPV subject to pledgeable income $\geq$ investors' outlay (Tirole \S13.5.1). Comparing slopes $dI/dP$ at the point where the constraint starts to bind settles (ii) analytically.
+
+\notation
+\begin{itemize}
+  \item $R(I)=I^\alpha$, $0<\alpha<1$; $P$: output price; $K$: fixed cost; $A\leq K$: wealth.
+  \item $b\equiv p_HB/\Delta p<(1-\alpha)/\alpha$; $I^{\text{FB}}(P)$, $I^{\text{SB}}(P)$: first- and second-best investment.
+  \item $\Pc(I)\equiv p_H[PR(I)-BI/\Delta p]$: pledgeable income.
+\end{itemize}
+
+\step{1}{First best} $U_b=p_HPR(I)-I-K$; first-order condition
+\begin{align}
+  p_HP\alpha I^{\alpha-1} &= 1 \;\Longrightarrow\; I^{\text{FB}}(P)=(\alpha p_HP)^{1/(1-\alpha)}, \label{r10e11-FB}
+\end{align}
+provided $K\leq p_HPR(I^{\text{FB}})-I^{\text{FB}}$. By \eqref{r10e11-FB}, $p_HP(I^{\text{FB}})^\alpha=I^{\text{FB}}/\alpha$, so the gross NPV is $I^{\text{FB}}/\alpha-I^{\text{FB}}=\frac{1-\alpha}{\alpha}I^{\text{FB}}$.
+
+\step{2}{Financing condition at the first best} The incentive constraint $(\Delta p)R_b\geq BI$ leaves $\Pc(I)$ to investors, who need $I+K-A$. At $I^{\text{FB}}$:
+\begin{align}
+  \Pc(I^{\text{FB}})-I^{\text{FB}} &= p_HP(I^{\text{FB}})^\alpha-bI^{\text{FB}}-I^{\text{FB}} = \frac{I^{\text{FB}}}{\alpha}-bI^{\text{FB}}-I^{\text{FB}} = \left[\frac{1-\alpha}{\alpha}-b\right]I^{\text{FB}}, \label{r10e11-gap}
+\end{align}
+positive by assumption and increasing in $P$. The first best is financeable iff $\Pc(I^{\text{FB}})-I^{\text{FB}}\geq K-A$, i.e.\ iff $P\geq P_0$ with
+\begin{align}
+  I^{\text{FB}}(P_0) = \frac{K-A}{(1-\alpha)/\alpha-b}, \qquad P_0=\frac{[I^{\text{FB}}(P_0)]^{1-\alpha}}{\alpha p_H}. \label{r10e11-P0}
+\end{align}
+
+\step{3}{Second best below $P_0$} For $P<P_0$ the constraint binds; NPV is concave and increasing below $I^{\text{FB}}$, so $I^{\text{SB}}$ is the largest root below $I^{\text{FB}}$ of
+\begin{align}
+  p_H\left[PI^\alpha-\frac{B}{\Delta p}I\right] = I+K-A. \label{r10e11-SB}
+\end{align}
+(If $\max_I[\Pc(I)-I]<K-A$, there is no investment.)
+
+\answer{(i)} $I^{\text{FB}}=(\alpha p_HP)^{1/(1-\alpha)}$; $I^{\text{SB}}=I^{\text{FB}}$ for $P\geq P_0$ defined by \eqref{r10e11-P0}, and $I^{\text{SB}}<I^{\text{FB}}$ solves \eqref{r10e11-SB} for $P<P_0$.
+
+\step{4}{Slopes} From \eqref{r10e11-FB}: $dI^{\text{FB}}/dP=I^{\text{FB}}/[(1-\alpha)P]$. Differentiating \eqref{r10e11-SB} totally:
+\begin{align}
+  p_HI^\alpha\,dP+\bigl[p_HP\alpha I^{\alpha-1}-b-1\bigr]dI &= 0 \nonumber\\
+  \frac{dI^{\text{SB}}}{dP} &= \frac{p_HI^\alpha}{1+b-\alpha p_HPI^{\alpha-1}}, \label{r10e11-dSB}
+\end{align}
+with a positive denominator at the largest root. At $P=P_0$, $\alpha p_HPI^{\alpha-1}=1$ and $p_HI^\alpha=I/(\alpha P)$, so
+\begin{align}
+  \frac{dI^{\text{SB}}}{dP}\Big|_{P_0^-} = \frac{I}{\alpha Pb}, \qquad \frac{dI^{\text{SB}}/dP}{dI^{\text{FB}}/dP}\Big|_{P_0} = \frac{1-\alpha}{\alpha b}>1, \label{r10e11-ratio}
+\end{align}
+by the assumption $b<(1-\alpha)/\alpha$. By continuity the second best is steeper on an interval of prices just below $P_0$; the diagram is the book's Figure~7: $I^{\text{SB}}$ lies below $I^{\text{FB}}$ for $P<P_0$ and joins it at $P_0$ from below, hence with a steeper slope.
+
+\step{5}{Example} $\alpha=0.5$, $p_H=0.8$, $B/\Delta p=0.5$ ($b=0.4<1$), $K=0.5$, $A=0.1$: $I^{\text{FB}}=(0.4P)^2$; $I^{\text{FB}}(P_0)=0.4/0.6=2/3$ and $P_0=\sqrt{2/3}/0.4=2.041241$ (gross NPV $2/3\geq K$). Slopes at $P_0$: FB $0.653197$, SB $1.632993$ (ratio $2.5$). At $P=1.9$: $I^{\text{FB}}=0.5776$, $I^{\text{SB}}=0.406557$, slopes $0.608$ vs.\ $2.451628$.
+
+\answer{(ii)} Just below $P_0$, $dI^{\text{SB}}/dP=\frac{1-\alpha}{\alpha b}\,dI^{\text{FB}}/dP>dI^{\text{FB}}/dP$.
+
+\step{6}{Installed base} Let $P=P(p_H[R(I)+R(I_0)])$, $P'<0$, and $I=h(P)$ with $h=I^{\text{FB}}$ or $I^{\text{SB}}$, $h'>0$. Differentiating $I=h(P(p_H[R(I)+R(I_0)]))$:
+\begin{align}
+  \frac{dI}{dI_0} = \frac{h'P'p_HR'(I_0)}{1-h'P'p_HR'(I)} = -\frac{h'|P'|p_HR'(I_0)}{1+h'|P'|p_HR'(I)}<0, \label{r10e11-crowd}
+\end{align}
+and total output rises: $\frac{d}{dI_0}p_H[R(I)+R(I_0)]=\frac{p_HR'(I_0)}{1+h'|P'|p_HR'(I)}>0$. The crowding-out $|dI/dI_0|$ increases with $h'$, so it is stronger under credit rationing exactly where $I^{\text{SB}}$ is steeper (prices just below $P_0$).
+
+\answer{(iii)} Endogenise $P=P(p_H[R(I)+R(I_0)])$: past investment crowds out current investment partially (\eqref{r10e11-crowd}), total output still rises, and crowding out is stronger where the second best is more price-sensitive.
+
+\intuition A higher price raises both NPV and pledgeable income. Without rationing only the NPV effect matters. With rationing the price also relaxes the financing constraint --- the net-worth effect --- which near the point where the constraint stops binding makes investment more responsive. The book's \S13.5.1 also shows the opposite ``hindering'' effect under constant returns; decreasing returns let both appear.
+
+\pitfalls
+\begin{itemize}
+  \item Claiming the second best is always more responsive: the result holds in a region (below $P_0$), not everywhere.
+  \item Using the smaller root of \eqref{r10e11-SB}: the entrepreneur wants the largest feasible scale below $I^{\text{FB}}$.
+  \item Forgetting the fixed cost $K$ in the investors' outlay.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~617--618): same FB condition, same expression $[\Pc(I^{\text{FB}})-I^{\text{FB}}]=(1-\alpha)[\frac1\alpha-\frac{b}{1-\alpha}]I^{\text{FB}}$, the region to the left of $P_0$ in Figure~7, and the crowding-out argument with $P=P(p_H[R(I)+R(I_0)])$. The slope ratio \eqref{r10e11-ratio} is an addition that makes the diagram argument exact.
+\refbib{Tirole \S13.5.1, pp.~489--491.}
+
+% =============================================================================
+\exsec{12. Downsizing and aggregate liquidity --- Tirole 15.1, pp.~530--531}
+
+\asked (i) With abundant liquidity, show that distressed firms are downsized ($J^*<I^*$) iff $\rho>1/(1-\lambda)$. (ii) Under perfectly correlated shocks: the outside liquidity $L^*$ needed, why scarcer liquidity means $q>1$ and more downsizing, and the equations for the premium. (iii) Under independent shocks: why inside liquidity suffices, when holding the index suffices, and how to avoid wasting liquidity.
+
+\approach Chapter 5's liquidity model with decreasing returns: maximise NPV subject to investors' breakeven, with state-contingent incentive pay. The comparison of the two first-order conditions is all of (i). (ii) prices liquidity as in \S15.3.1; (iii) uses \S15.2's sufficiency result and the stock-index argument of \S15.2.2.
+
+\notation
+\begin{itemize}
+  \item $I$: investment (kept intact w.p.\ $1-\lambda$); $J\leq I$: amount salvaged after a shock (w.p.\ $\lambda$), cost $\rho J$.
+  \item $R(\cdot)$: profit if success; $b\equiv p_HB/\Delta p$; $\Pc(X)\equiv p_H[R(X)-BX/\Delta p]$: pledgeable income of $X$ units.
+  \item $\mu$: multiplier of the breakeven constraint, $m\equiv\mu/(1+\mu)$; $q$: price of a store of value; $N(J)\equiv\rho J-\Pc(J)$: net date-1 need in the shock state.
+\end{itemize}
+
+\step{1}{Incentives and breakeven} Pay can depend on the (verifiable) shock: $(\Delta p)R_b^0\geq BI$ without shock, $(\Delta p)R_b^\rho\geq BJ$ with shock. Pledgeable incomes are $\Pc(I)$ and $\Pc(J)$. Investors' breakeven and the entrepreneur's utility (= NPV):
+\begin{align}
+  (1-\lambda)\Pc(I)+\lambda[\Pc(J)-\rho J] &\geq I-A, \label{r10e12-be}\\
+  U_b &= (1-\lambda)p_HR(I)+\lambda[p_HR(J)-\rho J]-I. \label{r10e12-Ub}
+\end{align}
+
+\step{2}{First-order conditions} The Lagrangian is $\mathcal L=U_b+\mu\{(1-\lambda)\Pc(I)+\lambda[\Pc(J)-\rho J]-I+A\}$. With respect to $I$:
+\begin{align}
+  (1-\lambda)p_HR'(I)-1+\mu\Bigl[(1-\lambda)p_H\Bigl(R'(I)-\frac{B}{\Delta p}\Bigr)-1\Bigr] &= 0 \nonumber\\
+  (1+\mu)[(1-\lambda)p_HR'(I)-1] &= \mu(1-\lambda)b \nonumber\\
+  p_HR'(I) &= \frac{1}{1-\lambda}+m\,b. \label{r10e12-focI}
+\end{align}
+With respect to $J$ (ignoring $J\leq I$):
+\begin{align}
+  \lambda[p_HR'(J)-\rho]+\mu\lambda\Bigl[p_H\Bigl(R'(J)-\frac{B}{\Delta p}\Bigr)-\rho\Bigr] &= 0 \nonumber\\
+  (1+\mu)[p_HR'(J)-\rho] &= \mu b \nonumber\\
+  p_HR'(J) &= \rho+m\,b. \label{r10e12-focJ}
+\end{align}
+
+\step{3}{Comparison} $R'$ is decreasing, so $J<I\iff R'(J)>R'(I)\iff\rho+mb>\frac1{1-\lambda}+mb\iff\rho>\frac1{1-\lambda}$. If $\rho\leq1/(1-\lambda)$ the unconstrained $J$ would exceed $I$, so $J=I$. The agency term $mb$ is the same in both states and cancels.
+
+\answer{(i)} $J^*<I^*$ iff $\rho>1/(1-\lambda)$: continuing a unit after the shock costs $\rho$, while a unit of initial investment costs $1/(1-\lambda)$ per unit that survives intact.
+
+\step{4}{Correlated shocks: $L^*$} In the shock state every firm is hit; no healthy firm can supply liquidity. Each firm can still raise $\Pc(J)$ by issuing new claims to date-1 investors, so it needs outside stores for the rest:
+\begin{align}
+  L^* = N(J^*) = \rho J^*-\Pc(J^*) \quad\text{(if positive; } L^*=0 \text{ otherwise)}. \label{r10e12-L}
+\end{align}
+The book's answer counts the whole reinvestment, $L^*=\rho J^*$, which corresponds to firms unable to raise anything at date 1.
+
+\step{5}{Scarce liquidity} If $L^S<L^*$, firms compete for stores and $q>1$ (otherwise all firms could buy $L^*$). Buying $N(J)$ stores costs a premium $(q-1)N(J)$ at date 0, subtracted from $U_b$ and added to investors' outlay. The new Lagrangian derivative in $J$, using $\Pc'(J)-\rho=-N'(J)$:
+\begin{align}
+  \lambda[p_HR'(J)-\rho]-(1+\mu)(q-1)N'(J)-\mu\lambda N'(J) &= 0. \nonumber
+\end{align}
+Substituting $p_HR'(J)-\rho=b-N'(J)$ and solving for $N'(J)$:
+\begin{align}
+  \lambda b &= N'(J)[\lambda(1+\mu)+(1+\mu)(q-1)] \nonumber\\
+  p_HR'(J) &= \rho+b\left[1-\frac{\lambda}{(1+\mu)(\lambda+q-1)}\right], \tag{4$''$}\label{r10e12-focJq}
+\end{align}
+which reduces to \eqref{r10e12-focJ} at $q=1$ and has a larger right side for $q>1$: $J$ falls. \eqref{r10e12-focI} is unchanged given $\mu$, so $J<I$ \emph{a fortiori} when $\rho>1/(1-\lambda)$. The equations for the premium are: the modified breakeven $(1-\lambda)\Pc(I)+\lambda[\Pc(J)-\rho J]-(q-1)N(J)=I-A$, \eqref{r10e12-focI}, \eqref{r10e12-focJq}, and market clearing $N(J)=L^S$; four equations in $I,J,\mu,q$. (Book convention $L=\rho J$: $p_HR'(J)=\rho[1+(q-1)/\lambda]+mb$ and $\rho J=L^S$.)
+
+\step{6}{Independent shocks} Exactly a fraction $\lambda$ is hit. At $q=1$, \eqref{r10e12-be} with $I>A$ gives
+\begin{align}
+  V\equiv(1-\lambda)\Pc(I)+\lambda\Pc(J) > \lambda\rho J, \label{r10e12-V}
+\end{align}
+so the date-1 value of the corporate sector covers the average reinvestment: no outside liquidity is needed if it is pooled.
+
+\step{7}{Holding the index} A distressed firm raises $\Pc(J)$ on its own and sells its index share, worth $V-\lambda\rho J$ after the reinvestments are financed by dilution. It needs $\rho J$:
+\begin{align}
+  \Pc(J)+V-\lambda\rho J &\geq \rho J \nonumber\\
+  (1-\lambda)\Pc(I)+(1+\lambda)\Pc(J) &\geq (1+\lambda)\rho J \nonumber\\
+  (1-\lambda)\Pc(I) &\geq (1+\lambda)[\rho J-\Pc(J)], \label{r10e12-index}
+\end{align}
+which is not guaranteed. Remedy: pool liquidity through an intermediary and credit lines (\S15.2.2).
+
+\step{8}{Example} $R(X)=2X^{0.8}$, $p_H=0.9$, $B/\Delta p=1$ ($b=0.9$), $\lambda=0.3$, $A=0.2$, $\rho=1.6>1/0.7$: solving \eqref{r10e12-be}, \eqref{r10e12-focI}, \eqref{r10e12-focJ} gives $m=0.160310$, $I^*=0.643244$, $J^*=0.383471<I^*$. With $\rho=1.3<1/0.7$ the unconstrained solution would be $J=0.834348>I=0.552051$, so $J=I$. $L^*=N(J^*)=0.122577$ (book convention $\rho J^*=0.613554$). At $q=1.1$, \eqref{r10e12-focJq} gives $J=0.239918$ (a brute-force maximisation in the script agrees). Index condition \eqref{r10e12-index}: $0.480017\geq0.159350$, satisfied here.
+
+\answer{(ii)--(iii)} $L^*=\rho J^*-\Pc(J^*)$ (book: $\rho J^*$); if $L^S<L^*$, $q>1$ and $J$ falls further, with the premium given by the four equations of Step~5. Independent shocks: enough inside liquidity by \eqref{r10e12-V}; the index suffices iff \eqref{r10e12-index}; otherwise pool via credit lines.
+
+\intuition Downsizing is the decreasing-returns version of Chapter 5's ``do not continue at any cost'': a unit rescued after the shock is worth it only if it is cheaper than a unit of initial scale. Aggregate correlation turns the rescue into a demand for outside liquidity, whose price rises when it is scarce and makes rescues smaller still.
+
+\pitfalls
+\begin{itemize}
+  \item Using the same incentive pay in both states: pay can be adjusted to the verifiable shock.
+  \item Forgetting that the agency term is identical in \eqref{r10e12-focI} and \eqref{r10e12-focJ}, which is why it cancels.
+  \item Treating the premium as paid only in the shock state: stores are bought at date 0, so $(q-1)N(J)$ is not multiplied by $\lambda$.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~619--620) for (i) [conditions (3)--(4) and $\rho>1/(1-\lambda)$] and (iii) [inequality (6) and the index condition]. For (ii) the book takes $L^*=\rho J^*$ and $p_HR'(J)=\rho(1+\frac{q-1}{\lambda})+\frac{\mu}{1+\mu}p_HB/\Delta p$; this counts the entire reinvestment as outside liquidity. Allowing distressed firms to issue claims on $\Pc(J)$ at date 1, as \S15.3.1 does, gives \eqref{r10e12-L} and \eqref{r10e12-focJq}; both versions give $q>1$ and $J<I$ \emph{a fortiori}.
+\refbib{Tirole Ch.~5 (liquidity needs); \S15.2--15.3, pp.~518--525.}
+
+% =============================================================================
+\exsec{13. Complementarity between liquid and illiquid assets --- Tirole 15.4, p.~532}
+
+\asked Redo the liquidity-pricing analysis of \S15.3.1 when investing without the option to continue in the bad state is unprofitable, and show that more outside liquidity $L^S$ raises investment $I$.
+
+\approach Liquidity asset pricing (LAPM): under an aggregate shock, firms buy stores of value at price $q$ to continue in the bad state. The unit cost $c(x,q)$ drives everything. Here $x=0$ is not viable, so firms either invest with $x=1$ and buy liquidity, or do not invest: liquidity becomes a necessary complementary input.
+
+\notation
+\begin{itemize}
+  \item As in exercise 3: $\rho_L<\rho_0<\rho_H<\rho_1$, $\lambda$, $\bar\rho$; $q\geq1$: price of a store yielding 1 at date 1; $L^S$: supply.
+  \item $\bar{\bar q}$: price at which entrepreneurs are indifferent about investing; $\bar I=A/(\rho_1-\rho_0)$; $\underline L^S$, $\bar L^S$: region boundaries.
+\end{itemize}
+
+\step{1}{NPV per unit} From (15.5), per unit of investment,
+\begin{align}
+  n(x,q) = (1-\lambda+\lambda x)\rho_1-\bigl[1+(1-\lambda)\rho_L+[\lambda\rho_H+(q-1)(\rho_H-\rho_0)]x\bigr]. \label{r10e13-npv}
+\end{align}
+At $x=0$, $n=(1-\lambda)\rho_1-1-(1-\lambda)\rho_L<0$ by assumption.
+
+\step{2}{$x=1$} $n$ is linear in $x$ with slope $\partial n/\partial x=\lambda\rho_1-\lambda\rho_H-(q-1)(\rho_H-\rho_0)$. If the slope were $\leq0$, $n<0$ for all $x$: no investment, no demand for liquidity, so $q=1$; but then the slope is $\lambda(\rho_1-\rho_H)>0$, a contradiction. Hence in equilibrium
+\begin{align}
+  \lambda\rho_1>\lambda\rho_H+(q-1)(\rho_H-\rho_0) \quad\text{and}\quad x=1. \label{r10e13-x1}
+\end{align}
+
+\step{3}{Investment and demand for liquidity at $x=1$} With $x=1$, $c(1,q)=1+\bar\rho+(q-1)(\rho_H-\rho_0)$ and, from (15.6) binding,
+\begin{align}
+  I = \frac{A}{c(1,q)-\rho_0} = \frac{A}{1+\bar\rho+(q-1)(\rho_H-\rho_0)-\rho_0}, \qquad L^D=(\rho_H-\rho_0)I, \label{r10e13-I}
+\end{align}
+when $c(1,q)<\rho_1$ (strictly positive NPV, so firms borrow to capacity). When $c(1,q)=\rho_1$, entrepreneurs are indifferent and any $I\in[0,\bar I]$ is optimal, where $\bar I$ solves $\rho_0\bar I=\rho_1\bar I-A$:
+\begin{align}
+  1+\bar\rho+(\bar{\bar q}-1)(\rho_H-\rho_0)=\rho_1 \iff \bar{\bar q}=1+\frac{\rho_1-1-\bar\rho}{\rho_H-\rho_0}, \qquad \bar I=\frac{A}{\rho_1-\rho_0}. \label{r10e13-qq}
+\end{align}
+At $\bar{\bar q}$, \eqref{r10e13-x1} holds: $\lambda(\rho_1-\rho_H)-(\rho_1-1-\bar\rho)=1+(1-\lambda)\rho_L-(1-\lambda)\rho_1>0$.
+
+\step{4}{Market clearing, three regions} Market clearing $L^D=L^S$ (with $q>1$) gives:
+\begin{align}
+  L^S\leq\underline L^S\equiv\frac{(\rho_H-\rho_0)A}{\rho_1-\rho_0}&: \quad q=\bar{\bar q},\quad I=\frac{L^S}{\rho_H-\rho_0}, \label{r10e13-r1}\\
+  \underline L^S\leq L^S\leq\bar L^S\equiv\frac{(\rho_H-\rho_0)A}{1+\bar\rho-\rho_0}&: \quad I=\frac{L^S}{\rho_H-\rho_0},\quad q \text{ from } \frac{(\rho_H-\rho_0)A}{1+\bar\rho+(q-1)(\rho_H-\rho_0)-\rho_0}=L^S, \label{r10e13-r2}\\
+  L^S\geq\bar L^S&: \quad q=1,\quad I=\frac{A}{1+\bar\rho-\rho_0}. \label{r10e13-r3}
+\end{align}
+In the first region liquidity limits investment and entrepreneurs, indifferent at $\bar{\bar q}$, invest less than their capacity. In the second, $q$ falls as $L^S$ rises, raising borrowing capacity. In the third, liquidity is in excess and $q=1$.
+
+\step{5}{Monotonicity} $I$ is continuous in $L^S$ (at $\underline L^S$, $I=\bar I$ from both sides; at $\bar L^S$, $I=A/(1+\bar\rho-\rho_0)$), strictly increasing up to $\bar L^S$ and constant afterwards.
+
+\step{6}{Example} $\lambda=0.5$, $\rho_L=0.2$, $\rho_0=0.6$, $\rho_H=1$, $\rho_1=2$, $A=1$: $(1-\lambda)\rho_1=1<1.1$, $\rho_1>1+\bar\rho=1.6$. $\bar{\bar q}=1+0.4/0.4=2$, $\underline L^S=0.4/1.4=0.285714$, $\bar L^S=0.4/1=0.4$, $\bar I=0.714286$. $L^S=0.2$: $q=2$, $I=0.5$. $L^S=0.35$: $I=0.875$, $q=1.357143$. $L^S\geq0.4$: $q=1$, $I=1$.
+
+\answer{} $x=1$ in any equilibrium with investment; $I=L^S/(\rho_H-\rho_0)$ for $L^S\leq\bar L^S$ (at $q=\bar{\bar q}$ up to $\underline L^S$, then with $q$ falling) and $I=A/(1+\bar\rho-\rho_0)$ beyond: investment is nondecreasing, strictly increasing until $\bar L^S$ --- liquid and illiquid assets are complements.
+
+\intuition When a project is worthless unless it can be carried through the bad state, a store of value is a required input, like a spare part. More stores directly allow more projects, then make the remaining ones cheaper through a lower liquidity premium. The crowding-out region of \S15.3.1 disappears because firms never trade continuation for scale.
+
+\pitfalls
+\begin{itemize}
+  \item Allowing $x<1$: with $n(0,q)<0$ and $n$ linear, any investing firm sets $x=1$.
+  \item Assuming firms always borrow to capacity: at $q=\bar{\bar q}$ they are indifferent and investment is pinned by $L^S$.
+  \item Confusing $\bar q$ of \S15.3.1 (indifference about $x$) with $\bar{\bar q}$ (indifference about investing).
+\end{itemize}
+
+\bookans Matches the book's answer (p.~621): $x=1$ by the same contradiction, $L^S=(\rho_H-\rho_0)I$, $\rho_1=1+\bar\rho+(\bar{\bar q}-1)(\rho_H-\rho_0)$, $\underline L^S=(\rho_H-\rho_0)A/(\rho_1-\rho_0)$, $q$ falling and $I=L^S/(\rho_H-\rho_0)$ rising until $\bar L^S$.
+\refbib{Tirole \S15.3.1, pp.~523--525; \S15.3.2 (liquidity asset pricing).}
+
+% =============================================================================
+\exsec{14. Dynamics of income inequality --- Tirole 13.2, pp.~493--494}
+
+\asked (i) The indirect utility of income in the warm-glow model. (ii) Wealth dynamics of a dynasty of entrepreneurs with variable investment at rate $r$, and convergence to $A_\infty$. (iii) With a minimum scale $\underline I$: the wealth below which a dynasty stays a lender forever, and its limit wealth. (iv) Closing the loan market: show that an equal-wealth steady state with $\rho_1=1+r$ and unequal steady states with $\rho_1>1+r$ can coexist.
+
+\approach Warm-glow bequests make utility linear in income (Tirole \S13.4.2.1), so each generation maximises income. Borrowing capacity is the equity multiplier of \S3.4 at rate $r$; income is the entrepreneur's rent $(\rho_1-\rho_0)I$. A minimum scale creates a poverty trap; general equilibrium in the loan market endogenises $r$ (Matsuyama 2000).
+
+\notation
+\begin{itemize}
+  \item $a\in(0,1)$: bequest share; $c_t$, $\mathcal L_t$, $y_t$: consumption, bequest, income of generation $t$; $\hat A$: endowment; $A_t=\hat A+\mathcal L_{t-1}$.
+  \item $\rho_1=R$, $\rho_0=R-B/\Delta p$ ($p_H=1$); $r$: interest rate; $\beta\equiv a(\rho_1-\rho_0)/(1-\rho_0/(1+r))$.
+  \item $\underline I$: minimum scale; $A_0^*$: entry threshold; $\kappa$: fraction of lenders.
+\end{itemize}
+
+\step{1}{Warm glow} Maximise $(1-a)\log c+a\log\mathcal L$ s.t.\ $c+\mathcal L=y$. The first-order conditions $(1-a)/c=a/\mathcal L$ and the budget give $c=(1-a)y$, $\mathcal L=ay$, so
+\begin{align}
+  U = \left(\frac{(1-a)y}{1-a}\right)^{1-a}\left(\frac{ay}{a}\right)^a = y^{1-a}y^a = y. \label{r10e14-U}
+\end{align}
+
+\answer{(i)} $U_t(y_t)=y_t$.
+
+\step{2}{Borrowing capacity} With $p_H=1$, the incentive constraint $(\Delta p)R_b\geq BI$ leaves investors $(R-B/\Delta p)I=\rho_0I$; they require $(1+r)(I-A_t)$:
+\begin{align}
+  \rho_0I_t = (1+r)(I_t-A_t) \;\Longrightarrow\; I_t = \frac{A_t}{1-\rho_0/(1+r)}. \label{r10e14-I}
+\end{align}
+The NPV $[\rho_1-(1+r)]I_t\geq0$, so investing to capacity beats lending.
+
+\step{3}{Income and bequest} Income after repaying investors, using \eqref{r10e14-I}:
+\begin{align}
+  y_t = \rho_1I_t-\rho_0I_t = (\rho_1-\rho_0)I_t, \qquad A_{t+1} = \hat A+ay_t = \hat A+\beta A_t. \label{r10e14-dyn}
+\end{align}
+The assumption $a(\rho_1-\rho_0)<1-\rho_0/(1+r)$ is $\beta<1$, so \eqref{r10e14-dyn} is a contraction: $A_t\to\hat A/(1-\beta)=A_\infty$ from any $A_0$.
+
+\answer{(ii)} $A_{t+1}=\hat A+\beta A_t$ with $\beta<1$, so $A_t\to A_\infty=\hat A/[1-a(\rho_1-\rho_0)/(1-\rho_0/(1+r))]$ for every $A_0$.
+
+\step{4}{Minimum scale} Entrepreneurship needs $I_t\geq\underline I$, i.e.\ by \eqref{r10e14-I},
+\begin{align}
+  A_t\geq A_0^*\equiv\left(1-\frac{\rho_0}{1+r}\right)\underline I. \label{r10e14-A0}
+\end{align}
+A lender earns $y_t=(1+r)A_t$, so $A_{t+1}=\hat A+a(1+r)A_t$, which converges (if $a(1+r)<1$) to
+\begin{align}
+  A_\infty^L = \frac{\hat A}{1-a(1+r)}. \label{r10e14-AL}
+\end{align}
+If $A_\infty^L<A_0^*$, the lenders' map lies below the 45$^\circ$ line at $A_0^*$, so a dynasty starting below $A_0^*$ stays below forever: $A_0^*$ is the threshold. (If $A_\infty^L\geq A_0^*$, every dynasty eventually becomes entrepreneurial.)
+
+\answer{(iii)} $A_0^*=(1-\rho_0/(1+r))\underline I$; poor dynasties converge to $A_\infty^L=\hat A/[1-a(1+r)]$ (a trap when $A_\infty^L<A_0^*\leq A_\infty$).
+
+\step{5}{Equal-wealth steady state} If $\rho_1=1+r$, lending and investing pay the same, so everyone has the same wealth. Then $\beta=a\rho_1(\rho_1-\rho_0)/(\rho_1-\rho_0)=a\rho_1$ and
+\begin{align}
+  A_\infty = \frac{\hat A}{1-a\rho_1}, \qquad I_\infty=\frac{A_\infty}{1-\rho_0/\rho_1}=\frac{\rho_1\hat A}{(1-a\rho_1)(\rho_1-\rho_0)}. \label{r10e14-eq}
+\end{align}
+The fraction $\kappa$ of lenders clears the loan market:
+\begin{align}
+  \kappa A_\infty &= (1-\kappa)(I_\infty-A_\infty) \nonumber\\
+  \kappa &= (1-\kappa)\left(\frac{\rho_1}{\rho_1-\rho_0}-1\right) = (1-\kappa)\frac{\rho_0}{\rho_1-\rho_0} \nonumber\\
+  \kappa(\rho_1-\rho_0) &= (1-\kappa)\rho_0 \iff \kappa=\frac{\rho_0}{\rho_1}. \label{r10e14-keq}
+\end{align}
+It is a steady state if $I_\infty\geq\underline I$.
+
+\step{6}{Unequal steady states} If $\rho_1>1+r$ everyone wants to invest, so lenders must be unable to: their wealth is $A_\infty^L<A_0^*$, while the rich have $A_\infty\geq A_0^*$. Loan-market clearing:
+\begin{align}
+  \kappa A_\infty^L = (1-\kappa)(I_\infty-A_\infty), \qquad I_\infty=\frac{A_\infty}{1-\rho_0/(1+r)} \;\Longrightarrow\; \kappa=\frac{I_\infty-A_\infty}{A_\infty^L+I_\infty-A_\infty}. \label{r10e14-kun}
+\end{align}
+Each $r$ satisfying $A_\infty^L(r)<A_0^*(r)\leq A_\infty(r)$ and $\beta(r)<1$ supports such a steady state, with $\kappa$ from \eqref{r10e14-kun}.
+
+\step{7}{Example of coexistence} $a=0.4$, $\hat A=1$, $\rho_1=1.5$, $\rho_0=0.5$, $\underline I=3.5$. Equal: $r=0.5$, $A_\infty=1/(1-0.6)=2.5$, $I_\infty=1.5/(0.4\cdot1)=3.75\geq3.5$, $A_0^*=(1-1/3)(3.5)=2.333333\leq2.5$, $\kappa=1/3$. Unequal at $r=0.05$: $\beta=0.4/(1-0.5/1.05)=0.763636$, $A_\infty=1/(1-0.763636)=4.230769$, $I_\infty=8.076923$, $A_0^*=1.833333$, $A_\infty^L=1/(1-0.42)=1.724138<A_0^*$, $\kappa=3.846154/(1.724138+3.846154)=0.690476$. Both are steady states for the same primitives.
+
+\answer{(iv)} Equal steady state: $\rho_1=1+r$, common wealth $\hat A/(1-a\rho_1)$, $\kappa=\rho_0/\rho_1$. Unequal ones: $\rho_1>1+r$, poor wealth $A_\infty^L<A_0^*$, rich wealth $A_\infty$, $\kappa$ from \eqref{r10e14-kun}; several can coexist (example).
+
+\intuition Without a minimum scale, credit constraints slow but do not stop convergence: every dynasty invests proportionally to its wealth. With a minimum scale, being poor means lending at $r$ rather than earning the entrepreneurial rent, and low wealth perpetuates itself. Closing the model makes inequality self-sustaining: many poor lenders keep $r$ low, which is what keeps them from saving enough to enter.
+
+\pitfalls
+\begin{itemize}
+  \item Using $y_t=(1+r)A_t+$NPV and then forgetting that, with binding borrowing, it equals $(\rho_1-\rho_0)I_t$ --- both are right, mixing them double counts.
+  \item Writing the poor dynasty's dynamics with storage at 0 instead of lending at $r$.
+  \item Forgetting $a(1+r)<1$ for convergence of poor dynasties.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~617): $U_t=y_t$; $I=A_t/(1-\rho_0/(1+r))$, $y_t=(\rho_1-\rho_0)I_t$, convergence to $A_\infty$; $A_0^*/(1-\rho_0/(1+r))=\underline I$, $A_\infty^L=\hat A/[1-a(1+r)]$; the equal-wealth steady state with $\kappa(\rho_1-\rho_0)=(1-\kappa)\rho_0$ and the unequal one with $\kappa A_\infty^L=(1-\kappa)(I_\infty-A_\infty)$. The example of coexistence is an addition.
+\refbib{Tirole \S13.4.2, pp.~484--487; \S13.4.3; Matsuyama (2000).}
+
+% =============================================================================
+\exsec{15. Political economy of exchange-rate policies --- Tirole 16.3, pp.~565--566}
+
+\asked (i) Express average debt in tradables $d^*$ and nontradables $d$ in terms of the contract. (ii) For a given expected exchange rate $e$, investment and the optimal nontradable claim in failure. (iii) Compare public spending, the exchange rate and welfare with and without commitment: underspending ($v'>e$) vs.\ overspending ($v'<e$). (iv) The externality among borrowers without commitment.
+
+\approach Variable-investment model with two goods. Pledgeable income now includes the certain nontradable output $SI$, worth $SI/e$ to foreign investors. The government spends reserves; spending depreciates the currency ($e\uparrow$), which reduces the tradable value of nontradable debt --- a transfer from foreigners that a government without commitment exploits (Tirole \S16.3; Caballero--Krishnamurthy, discussed in \S15.2.2).
+
+\notation
+\begin{itemize}
+  \item $e$: price of tradables in nontradables; $R_l^*$, $R_l^S$, $R_l^F$: investors' tradable claim if success and nontradable claims in success/failure; $R_b^*=RI-R_l^*$, $R_b^S=SI-R_l^S$, $R_b^F=SI-R_l^F$.
+  \item $d^*$, $d$: average repaid debt in tradables / nontradables; $\Rc^*$: reserves; $g^*$: public good; $u$, $v$: concave utilities; $c_1^*(e)$: tradable consumption with $u'(c_1^*)=e$.
+  \item $\rho_0=p_H(R-B/\Delta p)$.
+\end{itemize}
+
+\step{1}{Average debts} Outcomes are independent, so averages equal expectations:
+\begin{align}
+  d^* = p_HR_l^*, \qquad d = p_HR_l^S+(1-p_H)R_l^F. \label{r10e15-d}
+\end{align}
+
+\answer{(i)} $d^*=p_HR_l^*$, $d=p_HR_l^S+(1-p_H)R_l^F$.
+
+\step{2}{Constraints in tradable units} Nontradables are worth $1/e$ tradables. Incentive constraint and foreign investors' breakeven:
+\begin{align}
+  (\Delta p)\left[R_b^*+\frac{R_b^S-R_b^F}{e}\right] &\geq BI, \label{r10e15-ic}\\
+  d^*+\frac de = p_H(RI-R_b^*)+\frac{p_H(SI-R_b^S)+(1-p_H)(SI-R_b^F)}{e} &\geq I-A. \label{r10e15-be}
+\end{align}
+From \eqref{r10e15-ic}, $p_HR_b^*\geq p_HBI/\Delta p-p_H(R_b^S-R_b^F)/e$. Substituting into the middle of \eqref{r10e15-be}:
+\begin{align}
+  d^*+\frac de &\leq p_HRI-\frac{p_HBI}{\Delta p}+\frac{p_H(R_b^S-R_b^F)}{e}+\frac{SI-p_HR_b^S-(1-p_H)R_b^F}{e} \nonumber\\
+  &= \rho_0I+\frac{SI-R_b^F}{e} = \rho_0I+\frac{R_l^F}{e}. \label{r10e15-pl}
+\end{align}
+Pledgeable income is maximised by $R_l^F=SI$ ($R_b^F=0$): rewarding failure only tightens incentives. Breakeven binding:
+\begin{align}
+  \left(\rho_0+\frac Se\right)I = I-A \;\Longrightarrow\; I(e) = \frac{A}{1-[(S/e)+\rho_0]}, \label{r10e15-I}
+\end{align}
+positive by $\rho_0<1-S/e$; $I(e)$ falls as $e$ rises (depreciation).
+
+\answer{(ii)} $R_l^F=SI$ and $I=A/\{1-[(S/e)+\rho_0]\}$.
+
+\step{3}{Commitment} With $g^*$ chosen first, investment is $I(e)$ and the breakeven gives $d^*+d/e=I-A$. Entrepreneurs consume (on average) the nontradables $SI$ net of transfers and the tradables left after paying foreigners; from market clearing,
+\begin{align}
+  c_1^* = p_HRI(e)+\Rc^*-g^*-[I(e)-A] = \Rc^*-g^*+(p_HR-1)I(e)+A. \label{r10e15-mc}
+\end{align}
+The government maximises $W=SI(e)+u(c_1^*)+v(g^*)$ subject to \eqref{r10e15-I} and \eqref{r10e15-mc}, with $e=e(g^*)$, $e'>0$. Differentiating, with $u'=e$:
+\begin{align}
+  S\,I'(e)e'(g^*)+e\bigl[-1+(p_HR-1)I'(e)e'(g^*)\bigr]+v'(g^*) &= 0 \nonumber\\
+  v'(g^*) &= e\left[1-\left(\frac Se+p_HR-1\right)I'(e)\frac{de}{dg^*}\right]>e, \label{r10e15-c}
+\end{align}
+since $S/e+p_HR-1>0$ (positive NPV per unit in tradables), $I'(e)<0$ and $de/dg^*>0$: \emph{underspending}. The government holds back because spending depreciates the currency and shrinks borrowing capacity.
+
+\step{4}{Noncommitment} Now $\bar I$, $d^*$, $d$ are fixed when $g^*$ is chosen; the ex post clearing condition determines $e$ and
+\begin{align}
+  W^{\text{nc}} &= S\bar I+u\Bigl(\Rc^*-g^*+p_HR\bar I-d^*-\frac{d}{e(g^*)}\Bigr)+v(g^*), \nonumber\\
+  v'(g^*) &= e\left[1-\frac{d}{e^2}\frac{de}{dg^*}\right]<e, \label{r10e15-nc}
+\end{align}
+\emph{overspending}: depreciation lowers $d/e$, the tradable value of debt owed to foreigners, a gain the government counts while ignoring foreigners' loss. Investors anticipate it, so in equilibrium $e$ is higher and $I(e)$ lower.
+
+\step{5}{Example} $u(c)=6\log c$ (so $c_1^*=6/e$), $v(g)=\log g$, $p_H=0.8$, $R=2$, $\rho_0=0.4$, $S=0.3$, $A=1$, $\Rc^*=2$; contracts with $d^*=\rho_0I$, $d=SI$. Commitment: $g^*=0.508893$, $e=1.504114$, $I=2.496585$, $v'=1.965050>e$. Noncommitment (rational-expectations fixed point): $g^*=0.701486$, $e=1.598417$, $I=2.425335$, $v'=1.425545<e$. Welfare $8.374789$ vs.\ $8.309522$. Both first-order conditions \eqref{r10e15-c}--\eqref{r10e15-nc} hold numerically.
+
+\answer{(iii)} Commitment: $v'(g^*)>e$, lower spending, stronger currency, higher investment. Noncommitment: $v'(g^*)<e$, more spending, depreciation, lower investment and welfare.
+
+\step{6}{Externality} Under noncommitment, \eqref{r10e15-nc} shows that $g^*$ rises with aggregate nontradable debt $d$ (the gain from depreciating is $d\,e'/e^2$). Each borrower, by pledging $SI$ in nontradables, raises $d$, hence $g^*$ and $e$; the depreciation lowers the value of every foreigner's nontradable claims, which foreigners price in, reducing all borrowers' capacity $I(e)$. Individually, though, pledging nontradables maximises one's own borrowing capacity (Step~2).
+
+\answer{(iv)} Without commitment, each borrower's nontradable debt invites overspending and depreciation that hurts all borrowers: every one would gain if the others issued fewer nontradable claims, yet each has an individual incentive to issue them.
+
+\intuition A government that cannot commit treats debt owed to foreigners in domestic goods as a tax base it can inflate away. Lenders understand this and charge for it, so the country as a whole borrows less. Commitment makes the government internalise that its spending feeds back into the exchange rate and the country's borrowing capacity, so it spends less than the static optimum $v'=e$.
+
+\pitfalls
+\begin{itemize}
+  \item Valuing nontradable claims at face value in tradables: they are worth $1/e$.
+  \item Keeping $I$ variable under noncommitment: it is fixed when $g^*$ is chosen.
+  \item Reading ``underspending'' as $v'<e$: underspending means the marginal value of the public good exceeds its cost $e$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~623): $d^*=p_HR_l^*$, $d=p_HR_l^S+(1-p_H)R_l^F$; $R_b^F=0$, $R_l^F=SI$, $I(e)=A/(1-[(S/e)+\rho_0])$; $v'(g^*)=e[1-(S/e+p_HR-1)\frac{dI}{de}\frac{de}{dg^*}]>e$ under commitment and $v'(g^*)=e[1-\frac{d}{e^2}\frac{de}{dg^*}]<e$ under noncommitment; the externality through nontradable debt. The example is an addition.
+\refbib{Tirole \S16.3 (property rights, time inconsistency), pp.~544--551; \S15.2.2 (Caballero--Krishnamurthy discussion), p.~522.}
+
+\end{document}

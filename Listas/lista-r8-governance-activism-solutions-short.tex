@@ -1,0 +1,133 @@
+% Short answer key for Listas/lista-r8-governance-activism.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r8-governance-activism-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R8 --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\dpp}{\Delta p}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R8 --- Corporate governance, control rights and investor activism}\\[4pt]{\large Answer key (full derivations in \url{lista-r8-governance-activism-solutions.pdf})}\end{center}
+
+\section*{1. Management opposes a hostile offer (Ross CQ 1.14)}
+Premium $35/25-1=40\%$, \$10 per share lost if the bid fails. Resisting serves shareholders only if
+management credibly expects a stand-alone value above \$35 or uses resistance to extract a higher bid;
+an immediate rejection fits the agency explanation (jobs and control benefits). Not necessarily in the
+shareholders' interest.
+
+\section*{2. Ownership structure and institutional investors (Ross CQ 1.15)}
+Germany/Japan: large bank and corporate blocks monitor managers, so the manager--shareholder problem
+is \emph{less} serious, but controlling-vs-minority conflicts and creditor-oriented (low-risk)
+decisions are more serious. Active institutions reduce free riding and strengthen shareholder control,
+adding the agency problem of the funds' own managers.
+
+\section*{3. Determinants of ownership concentration (G\&T 18.2)}
+More concentration with large monitoring gains (hard-to-monitor, uncertain firms), large private
+control benefits (intangibles), founder incentives/signalling/taxes, weak legal protection of minorities
+and permissive rules for institutions; less with high costs of undiversified risk (large, risky firms).
+Example~18.1: \$60m buys 20\% of a \$300m firm; a \$60m gain is 20\% over five years,
+$(1.2)^{1/5}-1=3.71\%$ a year --- not worth the lost diversification.
+
+\section*{4. A law against blockholders' private benefits (G\&T 18.5)}
+Blockholder monitors iff $\alpha\Delta V+b_p\ge c$. With $\alpha=0.1$, $\Delta V=50$, $c=8$: $5<8$
+without private benefits; $5+4=9\ge8$ with $b_p=4$ (minimum $3$); others gain $45-4=41$. The law cuts
+$b_p$, so monitoring falls; minorities face less diversion but less monitoring: effect on value ambiguous.
+
+\section*{5. Board control and debt ratios (G\&T 18.4)}
+Debt: firm 2 $>$ firm 1 $>$ firm 3. Firm 2's board uses leverage to discipline investment it cannot
+watch (Example~18.3: senior debt $F\in(25,75]$ funds the project in the good/medium states,
+$175-F\ge100$, and blocks it in the bad state, $125-F<100$); firm 1 sets debt by the tax/distress
+trade-off; firm 3's managers avoid debt (Result~18.6).
+
+\section*{6. Proxy contests (Amaro de Matos 8.2.6 \#10)}
+With $E_2+K_2\ge E_1$: worst in control minus best out of control
+$=K_2-\alpha_j(E_1-E_2)\ge(1-\alpha_j)(E_1-E_2)>0$, so self-voting is dominant for any signal.
+Example $0.3(80)+25=49>0.3(100)=30$; with $K_2=5$, $29<30$ and it fails. Matches p.~278.
+
+\section*{7. The large shareholder (Amaro de Matos 8.1.5 \#5)}
+\textbf{(a)} $\pi^*=\min\{\pi:\pi\ge E[Z\mid Z\ge(1-2\alpha)\pi+2c]\}$ falls with $\alpha$.
+\textbf{(b)} $Z^c=(1-2\alpha)\pi^*+2c$ falls. \textbf{(c)} $V=q+I^*\int_{Z^c}Z\,dF$ rises: lower
+$Z^c$ and higher $I^*$ ($c'(I^*)=\tfrac12\int_{Z^c}(Z-Z^c)dF$).
+Uniform, $c=0$: $\pi^*=(1+Z^c)/2$ and $Z^c=(1-2\alpha)\pi^*$ give $Z^c=(0.5-\alpha)/(0.5+\alpha)$,
+$\pi^*=1/(1+2\alpha)$; $d\pi^*/d\alpha=-2/(1+2\alpha)^2$, $dZ^c/d\alpha=-1/(0.5+\alpha)^2$.
+$\alpha=0.1$: $Z^c=2/3$, $\pi^*=0.833$; $\alpha=0.2$: $Z^c=3/7$, $\pi^*=0.714$. Matches pp.~271--272.
+
+\section*{8. Investor control can hurt financing (Tirole 10.5)}
+\textbf{(i)} $p_H(R-B/\dpp)\ge I-A$.
+\textbf{(ii)} $p_HR_b\ge p_LR_b+B$ and $p_HR_b\ge(p_L+\nu)R_b+B-\gamma$; at $R_b=B/\dpp$ the second has
+slack $\gamma-\nu B/\dpp$: unchanged income if $\nu B/\dpp\le\gamma$, else $R_b=(B-\gamma)/(\dpp-\nu)$
+and income falls.
+\textbf{(iii)} $(\dpp-\nu)R_b\ge B$: $p_H[R-B/(\dpp-\nu)]\ge I-A$; NPV also falls by $\gamma$.
+Example ($p_H=0.8$, $\dpp=0.3$, $B=0.6$, $R=5$, $\nu=0.1$): $2.4$ (or $2.2$ if $\gamma=0.15$) vs.\ $1.6$.
+
+\section*{9. Limited vs.\ extended investor control (Tirole 10.7)}
+Limited iff $(p_H+\tau_A)(R-B/\dpp)\ge I-A$; extended iff only $(p_H+\tau_B)(R-B/\dpp)\ge I-A$;
+otherwise no financing. $\tau_AR\ge\gamma_A$ rules out entrepreneur control. Example: $A\ge1.4$
+limited, $0.6\le A<1.4$ extended (NPVs $0.9$, $0.8$).
+
+\section*{10. Control and incentives (Tirole 10.6)}
+\textbf{(i)} $p_H(R-B/\dpp)\ge I-A$.
+\textbf{(ii)} $\mathcal P_{EC}=p_H(R-B/\dpp)$ (she never takes the action);
+$\mathcal P_{IC}=(p_H+\tau_H)[R-B/(\dpp+\Delta\tau)]$. Investor control helps always if
+$\Delta\tau\ge0$; if $\Delta\tau<0$ only when $\dpp+\Delta\tau>B(p_H+\tau_H)/(\tau_HR+p_HB/\dpp)$.
+Example: threshold $\Delta\tau^*=-0.026$; $\Delta\tau=-0.05$ gives $3.25<3.6$.
+
+\section*{11. Public debt, bank debt, junk bonds (Tirole 9.1)}
+$A_3=I-p_H(R-B/\dpp)$, $A_2=I+c-p_H(R-b/\dpp)$, $A_1=I-p_LR$;
+$A_3-A_2=p_H(B-b)/\dpp-c>0$, $A_2-A_1=c-[\dpp R-p_Hb/\dpp]>0$. Utilities
+$p_HR-I>p_HR-I-c>p_LR+B-I>0$ (second gap $=\dpp R-c-B$). Example: $A_1=0.5<A_2=0.6<A_3=0.8$.
+Matches pp.~606--607.
+
+\section*{12. Large minority blockholder (Tirole 10.3)}
+Aligned blockholder ($\xi\le(\tau+\mu)s_2R$): friendly action in all states. Biased: agreement
+(state 2) $\Rightarrow$ friendly; disagreement (states 1, 3) $\Rightarrow$ majority takes
+$\max\{V_E,V_L,0\}$ with $V_E=-\beta\mu+(1-\beta)(1-\kappa)\tau$, $V_L=\beta\tau-(1-\beta)(1-\kappa)\mu$
+(the book drops $(1-\beta)$ in $V_E$). If both are negative, both informed parties prefer to agree on the
+friendly action: friendly everywhere. (ii) In the collusive state both push the hostile action;
+agreement is adopted only if $\pi_2\tau\ge\pi_4\mu$.
+
+\section*{13. Uncertain managerial horizon (Tirole 10.8)}
+$U_b=(1-\lambda)[(p_H+\tau x)R-\gamma x]+\lambda(p_H+\tau y)(R-B/\dpp)-I$ = social value minus the
+new manager's rent $\lambda[(p_H+\tau y)B/\dpp-\gamma y]$; breakeven
+$(1-\lambda)(p_H+\tau x)(R-B/\dpp)+\lambda(p_H+\tau y)(R-B/\dpp)\ge I-A$. $y=1$; $x=0$ if
+$(1-\lambda)\rho_0+\lambda\rho_0^+\ge I-A$ (then invest iff $(1-\lambda)\rho_1+\lambda\rho_0^+\ge I$), else
+the smallest $x$ meeting breakeven, if $\rho_0^+\ge I-A$ and $U_b\ge0$. Example: $x=0.531$,
+$U_b=0.035$.
+
+\section*{14. Continuum of control rights (Tirole 10.9)}
+\textbf{(i)} $x=1$ iff $g\le[R+\mu(R-B/\dpp)]\,t$, $R_b=B/\dpp$.
+\textbf{(ii)} Lower $A$ $\Rightarrow$ higher $\mu$ $\Rightarrow$ steeper line: $\tau$, $\gamma$ rise.
+\textbf{(iii)} $t>0$: investors if $x=1$, entrepreneur if $x=0$; $t<0$: entrepreneur if $x=1$,
+investors if $x=0$; no renegotiation.
+\textbf{(iv)} $t^*=g/k$, $d\gamma/d\tau=g/t^*$, $d^2\gamma/d\tau^2=g/[t^{*3}h(t^*)]>0$
+(example: $13$ and $878.8$).
+
+\section*{15. Control over liquidation (Tirole 10.2)}
+\textbf{(i)} Continue iff $\rho_1-U_b^0\ge\mu L-(\mu-1)\rho_0$, $\mu\ge1$; $R_b=B/\dpp$, $L$ to investors.
+\textbf{(ii)} $\Omega^{SB}\subseteq\Omega^{FB}$ (lines pivot at $(\rho_0,\rho_1-\rho_0)$); shrinks as
+$A$ falls. \textbf{(iii)} Investors bribe efficiently: $\Omega^{EN}=\Omega^{FB}$, income below $I-A$,
+not financed. \textbf{(iv)} $\Omega^{IN}=\{L\le\rho_0\}\subset\Omega^{SB}$, financed, too much
+liquidation. \textbf{(v)} Small $r_b>0$ lets the entrepreneur ``buy'' efficient continuation for $L$ just
+above $\rho_0$ while investors still break even. Example ($L\sim U[0,4]$, $U_b^0=1$, $\rho_1=4$,
+$\rho_0=2.4$, $I-A=2.7$): cutoffs FB $3$, SB $2.8$ ($\mu=1.5$), IN $2.4$, IN with $r_b=0.05$: $2.45$;
+NPV $0.125$, $0.12$, $0.08$, $0.0872$; EN income $2.525<2.7$.
+
+\end{document}

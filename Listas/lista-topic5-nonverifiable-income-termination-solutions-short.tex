@@ -1,0 +1,138 @@
+% Short answer key for Listas/lista-topic5-nonverifiable-income-termination.md (13 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-topic5-nonverifiable-income-termination-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Topic 5 list --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list --- Topic 5: Nonverifiable income, strategic default, termination, debt structure}\\[4pt]{\large Answer key (full derivations in \url{lista-topic5-nonverifiable-income-termination-solutions.pdf})}\end{center}
+
+% =============================================================================
+\section*{1. Control passing to creditors}
+Equity $=\max(V-F,0)$ is convex (a call), debt $=\min(V,F)$ is concave. In control, shareholders
+gamble (asset substitution), underinvest (debt overhang), favour quick payoffs and resist
+liquidation; after bankruptcy, creditors cut risk, sell assets and liquidate --- sometimes too early,
+since they ignore the upside above $F$. Eastern Airlines ($F=500$; continue $600/200$, liquidate $480$):
+equity $50$ vs.\ $0$ (continue), debt $350$ vs.\ $480$ (liquidate), firm $400$ vs.\ $480$.
+Own example ($F=V_L=500$; continue $800/300$, worth $550$): creditors get $400<500$ and liquidate.
+Conversion of debt into equity in Chapter~11 realigns incentives with total value.
+
+\section*{2. Proving (5.11)}
+$P_u=f(1-e)$ (only good, non-downgraded projects are upgraded), $V_s^u=r_1$; break-even
+$f(1-e)r_1+[1-(1-e)f]V_s^d=R$ gives
+$$r_1=\frac{R-[1-(1-e)f]V_s^d}{(1-e)f}.$$
+Fixed point: $r_1=R$ if $R\leq\max(L,q^dX/R)$; otherwise $V_s^d=\max(L,q^dX/R)<R<r_1$. Matches the book (p.~268).
+
+\section*{3. $\beta_\circ$ decreases in $q$}
+$$\frac{\partial\beta_\circ}{\partial q}=\frac{-K\left(\frac y2-\frac{\alpha^2y^2}{4\bar c}\right)}{\left[q\frac y2+(1-q)\frac{\alpha^2y^2}{4\bar c}\right]^2}\leq0,$$
+since $\frac y2-\frac{\alpha^2y^2}{4\bar c}=\frac y2\bigl[1-\alpha\frac{\alpha y}{2\bar c}\bigr]\geq0$ by
+$\alpha\leq1$ and $\alpha y/2\leq\bar c$ (zero only if $\alpha=1$, $y/2=\bar c$). The strategic-default
+recovery $y/2$ exceeds the liquidity-default recovery $L_\circ$. Matches the book (p.~267).
+
+\section*{4. Renegotiation under entrepreneur control}
+Without renegotiation: $\pi^E_{wt}=ql^g_g+(1-q)l^b_g$. In $\theta_b$ the entrepreneur sells the switch to
+$a_b$ for $T=y^b_b-y^b_g$, so $\pi^E_w=ql^g_g+(1-q)(l^b_b+y^b_b-y^b_g)$ and
+$$\pi^E_w-\pi^E_{wt}=(1-q)\bigl[(y^b_b+l^b_b)-(y^b_g+l^b_g)\bigr]>0,$$
+while the investor stays at $\pi_2$. Matches the book (p.~266), whose middle lines have sign typos.
+
+\section*{5. Diamond (1991), no liquidation}
+$q=\tfrac34$, $q^d=\tfrac23$. (a) $\rho=R^2/q=\tfrac43$; $r_1=1$ (riskless, $V_s^d=r_1$, since
+$q^dX/R=\tfrac76\geq1$). (b) Long-term: nothing due at $t=1$; short-term: rollover at face $1$
+(upgrade) or $\tfrac32\leq X$ (downgrade), lenders break even ($\tfrac23\cdot\tfrac32=1$): no default, no
+liquidation. (c) $U_l=X-\rho=\tfrac5{12}$. (d) $e=f^d(1-f)/[f(1-f^d)]=\tfrac12$.
+(e) $U_s=\tfrac12(\tfrac74-\tfrac32)+\tfrac12(\tfrac74-1)=\tfrac12>\tfrac5{12}$: short-term debt preferred
+($V_s^d=1>V_l^d=\tfrac89$, Lemma 5.2.1). No worked answer in the book (cites Diamond 1991).
+
+\section*{6. Bolton--Scharfstein with general contracts}
+(PD) unchanged: $D\geq(z^S-z^F)(M-D)$. (IC$'$): $(\Delta p)[z^SR_b^{SS}+(1-z^S)r_b^S-z^FR_b^{FS}]\geq B_0$.
+(IR$'$): $D+z^S(D-I-R_b^{SS})-(1-z^S)r_b^S\geq I-A$. $r_b^S$ and $R_b^{SS}$ enter only via
+$W^S=z^SR_b^{SS}+(1-z^S)r_b^S$, so shift all of it into $R_b^{SS}$: $r_b^S=0$. $R_b^{FS}$ only hurts
+(IC$'$), so $R_b^{FS}=B/\Delta p\leq R_b^{SS}$. With (PD) binding:
+$z^S(R_b^{SS}-R_b^{FS})+\frac{D}{M-D}R_b^{FS}=\frac{B_0}{\Delta p}$. Matches the book (pp.~603--604).
+
+\section*{7. Liquidation with a private signal}
+(i) $\gamma$ is a sufficient statistic: pay $B/\Delta p$ after $\bar\gamma$, $0$ after $\underline\gamma$;
+liquidate iff $\underline\gamma$; $\mathcal P=p_H\bar\gamma R+(1-p_H)L-p_HB/\Delta p\geq I-A\iff A\geq\bar A$.
+(ii) Truth-telling $\bar\gamma R_b\geq L_b\geq\underline\gamma R_b$ and effort $(\Delta p)(\bar\gamma R_b-L_b)\geq B$
+bind at $R_b=B/[(\Delta p)(\Delta\gamma)]$, $L_b=\underline\gamma R_b$; the rent rises by
+$\underline\gamma B/[(\Delta p)(\Delta\gamma)]$, so $A\geq\bar A+\underline\gamma B/[(\Delta p)(\Delta\gamma)]$.
+Matches the book (pp.~577--578).
+
+\section*{8. Decreasing returns and debt maturity (Tirole 5.7)}
+
+\textbf{(i)} Maximise $U_b=rI+F(\rho^*)p_HR(I)-[1+\int_0^{\rho^*}\rho f]I$ s.t.\ $rI+F(\rho^*)p_H[R(I)-BI/\Delta p]\ge I-A+[\int_0^{\rho^*}\rho f]I$ (binding).
+FOC in $\rho^*$: $\rho^*=\frac{\rho_1(I)+\mu\rho_0(I)}{1+\mu}$, with $\rho_1=p_HR(I)/I$, $\rho_0=p_H[R(I)/I-B/\Delta p]$. Eliminating $\mu$ with the FOC in $I$:
+$$p_H\Big[R'(I)-\frac{R(I)}{I}\Big]=\frac{1-r-\int_0^{\rho^*}F(\rho)\,d\rho}{F(\rho^*)}\qquad\big(\text{CRS: }\textstyle\int_0^{\rho^*}F=1-r\big).$$
+\textbf{(ii)} Left side decreasing in $I$ (assumption); right side decreasing in $\rho^*$ (needs $f[\int_0^{\rho^*}F-(1-r)]<F^2$, true for the uniform), so $I$ and $\rho^*$ comove.
+In the binding breakeven, $\partial A/\partial I=F p_HB/[(1+\mu)\Delta p]>0$ and $\partial A/\partial\rho^*=If(\rho^*)(\rho^*-\rho_0)>0$, so lower $A$ $\Rightarrow$ lower $I$ and $\rho^*$.
+Short-term debt per unit, $r-\rho^*$, rises: weaker firms borrow shorter.
+
+\section*{9. The priority game (Tirole 5.9)}
+
+\textbf{(i)} $\max_{I_1}\{r-I_1+[p+\tau(I_1)]R\}$ $\Rightarrow$ $\tau'(I_1^*)R=1$, $0<I_1^*<r$. Any $(r_b,r_l,R_b,R_l)\ge0$ with $r_b+r_l+I_1^*=r$, $R_b+R_l=R$,
+$I=r_l+[p+\tau(I_1^*)]R_l$ implements it: one degree of freedom (e.g.\ $r_l=r-I_1^*$, or $r_l=0$).
+
+\textbf{(ii)} $r-I_1^*<I$ forces $R_l>0$, $R_b<R$. Secret deal $+\delta r_l$ for $\delta R_l=\delta r_l/[p+\tau(I_1)]$, $\delta I_1=-\delta r_l$:
+$\delta U_b=[1-\tau'(I_1)R_b]\delta r_l=(R_l/R)\delta r_l>0$ at $I_1^*$ --- paid by the other lenders.
+Collusion-proofness: $\tau'(I_1)R_b=1$ $\Rightarrow$ $I_1<I_1^*$; the entrepreneur maximises $R_b$, so $r_b=0$, $r_l=r-I_1$, and $I=r-I_1+[p+\tau(I_1)](R-R_b)$.
+Yes, the indeterminacy is resolved, with a short-term bias.
+
+\section*{10. One vs.\ two creditors (Amaro de Matos 5.2.5 \#2)}
+
+Shapley bargaining (manager/buyer, creditor $A$, creditor $B$; worths $y$, $y^A$, $y^B$, $\Delta=y-y^A-y^B>0$):
+strategic default: $S=\frac{2y+y^A+y^B}{6}=\frac y2-\frac\Delta6$, so creditors get $y-S=\frac y2+\frac\Delta6>\frac y2$ (paid more).
+Liquidity default: buyer gets $\alpha(\frac y2-\frac\Delta6)$, buys with probability $\frac{\alpha(3y-\Delta)}{6\bar c}$; creditors get $\frac{\alpha(3y+\Delta)}{6}$:
+$\overline L_\circ=\frac{\alpha^2y^2}{4\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}<L_\circ$ (paid less).
+The $\beta_\circ$ denominator is $q(\frac y2+\frac\Delta6)+(1-q)\overline L_\circ$: the book's $q(\frac y2-\frac\Delta6)$ (p.~138) is a sign error.
+Two creditors liquidate less iff $q>\alpha^2\Delta/(6\bar c+\alpha^2\Delta)$.
+Example $y=10$, $\Delta=3$, $\alpha=0.8$, $\bar c=6$, $q=0.6$, $K=2$: $y-S=5.5$ vs $5$; $\overline L_\circ=2.64$ vs $2.666667$; $\beta_\circ=0.459137$ vs $0.491803$.
+
+\section*{11. Liquidating debt preferred (Amaro de Matos 5.2.5 \#4)}
+
+Bayes: $P_d=1-(1-e)f$, $f^d=fe/P_d$. Then $U^N=X+C-\frac{R^2}{f}+eRV^d(\frac1{f^d}-\frac1{q^d})$, $U^L=(1-e)(X+C)-\frac{R^2}{f}+\frac{eRL}{f^d}$,
+so $U^L-U^N=e(\widehat C-C)$. Non-liquidating debt has $V^d\le q^dX/R$, hence $\widehat C\ge\frac{LR-q^dX}{f^d}$; and (5.12) $\iff C\le\frac{LR-q^dX}{f^d}$.
+So (5.12) $\Rightarrow C\le\widehat C\Rightarrow U^L\ge U^N$ (strict except at a knife-edge). Also $\widehat C\ge0$ needs $LR\ge q^dX$ (credible liquidation).
+
+\section*{12. Diamond (1991) examples (Amaro de Matos 5.2.5 \#5--\#6)}
+
+\textbf{Part 0 (\#5).} $q=\frac34$, $\rho=\frac43$; $e=\frac12$, $P_d=\frac34$, $q^d=\frac23$; $r_1=1$ (riskless). (b) $q^dX/R=\frac76>r_1$ and $>L$: refinance at $F^d=\frac32\le X$, no liquidation.
+(c) $U_{LT}=\frac74-\frac43=\frac5{12}$. (d) $e=\frac12$. (e) $U_{ST}=\frac12(\frac74-\frac32)+\frac12(\frac74-1)=\frac12>\frac5{12}$: short-term preferred.
+
+\textbf{\#6, $f=\frac12$} ($X=1.4$, $C=0.35$): $q^dX/R=\frac{14}{15}=0.933333<L=1$ $\Rightarrow$ downgraded short-term borrowers are liquidated; $r_1=1$.
+$U_{ST}=\frac12(1.75-1)=0.375<U_{LT}=1.75-\frac43=0.416667$: long-term preferred ($\widehat C=0.266667<C$).
+
+\textbf{\#6, $f=\frac34$} ($f^d=\frac13$ kept): $e=\frac16$, $q=\frac78$, $\rho=\frac87$, still liquidation, $r_1=1$.
+$U_{ST}=\frac56(0.75)=0.625>U_{LT}=1.75-\frac87=0.607143$: reversed ($\widehat C=0.457143>C$; Prop.\ 5.2.1 bound $0.6$ lies between $\frac12$ and $\frac34$).
+
+\section*{13. Borrower-friendly court (Tirole 4.9)}
+
+\textbf{(i)} $r$, $L$ to investors (no incentive cost; raises pledgeable income); $R_b=B/\Delta p$ (any excess is a transfer that forces more liquidation).
+(1): continuation always efficient; (2): always liquidating finances the project, always continuing does not.
+\textbf{(ii)} $\max_{r^*}E[r]+\int_{r^*}^{\bar r}\rho_1f+F(r^*)L-I$ s.t.\ $E[r]+\int_{r^*}^{\bar r}\rho_0f+F(r^*)L\ge I-A$; NPV falls in $r^*$, so $r^*$ is the lowest root of
+$E[r]+\int_{r^*}^{\bar r}\rho_0(r)f(r)dr+F(r^*)L=I-A$, $r^*\in(0,\bar r)$, $\rho_0(r^*)\le L$.
+\textbf{(iii)} Short-term debt $d=r^*$: default iff $r<r^*$, creditors liquidate (no renegotiation, $\rho_0(r)<L$). $dr^*/dA=-1/\{f(r^*)[L-\rho_0(r^*)]\}<0$.
+\textbf{(iv)} $r^*>\hat r$: investors get at most $\max\{L/2,\rho_0(r)\}$ in each state, below the old contract on $[0,r^*)$ $\Rightarrow$ cannot break even: no financing.
+\textbf{(v)} $r^*<\hat r$: $\mathcal P^c(r^*)=I-A-F(r^*)L/2$; financing needs a higher cutoff $r^{**}\in(r^*,\hat r]$, or fails. Lenders still break even; the borrower loses $\text{NPV}(r^*)-\text{NPV}(r^{**})>0$.
+Example ($r\sim U[0,1]$, $\rho_0=0.12+0.2r$, $\rho_1=0.6+r$, $L=0.5$, $I-A=0.75$): $r^*=0.080659$, $r^{**}=0.3$, loss $0.063681$.
+
+\end{document}

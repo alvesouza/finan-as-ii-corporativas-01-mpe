@@ -1,0 +1,120 @@
+% Short answer key for Listas/lista-r10-macro-implications.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r10-macro-implications-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R10 --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\Rc}{\mathcal{R}}
+\newcommand{\Pc}{\mathcal{P}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R10 --- Macroeconomic implications of corporate-finance frictions}\\[4pt]{\large Answer key (full derivations in \url{lista-r10-macro-implications-solutions.pdf})}\end{center}
+
+% =============================================================================
+\section*{1. Investor protection and the interest rate (Tirole 13.1)}
+\textbf{(i)} IC $(\Delta p)R_b\geq B$ $\Rightarrow$ pledgeable income $p_H(R-B/\Delta p)$; financing iff $(1+r)(I-A)\leq p_H(R-B/\Delta p)$, i.e.\ $A\geq A^*(r)=I-p_H(R-B/\Delta p)/(1+r)$.
+\textbf{(ii)} Savings = investment: $S(r)+\int_0^IA\,g(A)\,dA=[1-G(A^*(r))]I$. Left side rises with $r$, right side falls ($\partial A^*/\partial r>0$); $\partial A^*/\partial B>0$, so $dr/dB<0$: better protection (lower $B$) raises $r$.
+Example ($G$ uniform on $[0,1]$, $S=2r$, $p_H=0.8$, $R=1.5$, $\Delta p=0.4$): $B=0.3\Rightarrow r=0.038795$; $B=0.2\Rightarrow r=0.110272$. Matches the book (pp.~616--617).
+
+\section*{2. Time-consistent government policy (Tirole 16.2)}
+\textbf{(i)} $\tau$ cancels from the IC $\Rightarrow$ $(p_H+\tau)(R-B/\Delta p)I=I-A$, $I(\tau)=A/[1-(p_H+\tau)(R-B/\Delta p)]$. Ex post ($I$ sunk): $\max_\tau(p_H+\tau)RI-\gamma(\tau)I$ $\Rightarrow$ $\gamma'(\tau^*)=R$.
+\textbf{(ii)} $\max_\tau[(p_H+\tau)R-1-\gamma(\tau)]I(\tau)$ $\Rightarrow$ $[\gamma'(\tau^c)-R]I=[(p_H+\tau^c)R-1-\gamma(\tau^c)]\,dI/d\tau>0$, so $\tau^c>\tau^*$.
+\textbf{(iii)} Weight $\omega<1$ on foreign investors: $\gamma'(\tau)=R-(1-\omega)(R-B/\Delta p)<R$, so $\tau<\tau^*$ and less lending.
+Example ($\gamma=10\tau^2$, $p_H=0.5$, $R=2$, $B/\Delta p=1$, $A=1$): $\tau^*=0.1$, $\tau^c=(10-\sqrt{60})/20=0.112702$; $\omega=0.5$: $\tau=0.075$. Matches the book (p.~622).
+
+\section*{3. Imperfectly correlated shocks (Tirole 15.3)}
+Efficient allocation $x=1$, $I=A/(1+\bar\rho-\rho_0)$ (independent of $\theta$). Binding state (common shock high): need $[\theta+(1-\theta)\lambda](\rho_H-\rho_0)I$, supply $(1-\theta)(1-\lambda)(\rho_0-\rho_L)I$. With the breakeven $(1-\lambda)(\rho_0-\rho_L)I=(I-A)+\lambda(\rho_H-\rho_0)I$, supply $\geq$ need iff $(1-\theta)(I-A)\geq\theta(\rho_H-\rho_0)I$, i.e.\ $\theta\leq\theta^*$. The other state never binds (net borrowing).
+Example ($\lambda=0.3$, $\rho_L=0.2$, $\rho_0=0.6$, $\rho_H=1$, $A=1$): $I=1.190476$, $\theta^*=2/7=0.285714$. Matches the book (p.~621).
+
+\section*{4. Property rights and international finance (Tirole Review Problem 5)}
+\textbf{(i)} Breakeven $(1-t)\rho_0I=I-A$ $\Rightarrow$ $I^*=A/[1-(1-t^*)\rho_0]$. Ex post: $\max_t[B_0(t)-\theta t]\rho_0I$ $\Rightarrow$ $B_0'(t^*)=\theta^*=S_D/(I^*-A)$; unique $t^*\in(0,1)$ because $S_D<\rho_0A/(1-\rho_0)$.
+\textbf{(ii)} Higher $S_D$ $\Rightarrow$ $t^*\downarrow$, $\theta^*\uparrow$, $I^*\uparrow$, and $U_b=[(\rho_1-1)-(t-B_0(t))\rho_0]I$ rises.
+\textbf{(iii)} Commitment: $t=0$.
+\textbf{(iv)} Discrimination: foreigners fully taxed, domestic untaxed; no foreign lending, $I^*-A=S_D$, domestic investors earn $\rho_0(A+S_D)>S_D$.
+Example ($B_0=\ln(1+t)$, $\rho_0=0.6$, $\rho_1=1.5$, $A=1$, $S_D=0.5$): $t^*=1/3$, $\theta^*=0.75$, $I^*=1.666667$, $U_b=0.787682$ (commitment: $1.25$); $S_D=0.6$: $t^*=0.276984$, $U_b=0.848673$. Matches the book (p.~635).
+
+\section*{5. Borrowing abroad (Tirole 16.1)}
+\textbf{(i)} IC $p(RI-R_l)\geq\mu I$, breakeven $pR_l=I-A$ $\Rightarrow$ $I=A/[1-(pR-\mu)]$, $U_b=(pR-1)A/[1-(pR-\mu)]$: basic model with $p_H=p$, $p_L=0$, $B=\mu$.
+\textbf{(ii)} Balanced tax/guarantee: same pledgeable income, same $I$. Public debt $D$: $I=(A-D)/[1-(pR-\mu)]$; consumption $\mu I$ falls by $\mu D/[1-(pR-\mu)]>D$ (book: gain $(pR-1)(A-D)/[1-(pR-\mu)]$ over $A-D$).
+\textbf{(iii)} Commitment: $\mu_L$; no commitment: $\mu_H$ ex post, $U_b=(pR-1)A/[1-(pR-\mu_H)]$.
+\textbf{(iv)} $e\Rc=pR_l$, $pR_l/e=I-A$ $\Rightarrow$ $I=A+\Rc$, $e=(1+A/\Rc)(pR-\mu)$ if $\geq1$ (else $e=1$).
+Example ($p=0.5$, $R=3$, $\mu=0.6$, $A=1$): $I=10$, $U_b=5$; $D=0.2$: $I=8$, loss $1.2$; $\mu_H=0.8$: $U_b=1.666667$; $\Rc=2$: $e=1.35$, $I=3$. Matches the book (p.~622).
+
+\section*{6. Shleifer--Vishny with decreasing returns (Tirole 14.1)}
+Price (seller's take-it-or-leave-it) = buyer's extra pledgeable income: $P_jI_j=p_H[R(I_i+I_j)-R(I_i)]-bI_j$, $b=p_HB/\Delta p$, decreasing in $I_i$. With $\pi_s=x(1-\mu)=(1-x)(1-\nu)$,
+$$\frac{\partial U_{bj}}{\partial I_i}=\pi_sp_H\Bigl[\frac{B}{\Delta p}-\bigl(R'(I_i)-R'(I_i+I_j)\bigr)\Bigr],$$
+windfall ($+$) vs.\ lower resale price ($-$): negative when concavity is strong. $I_i$ also lowers $j$'s borrowing capacity.
+Example ($R=2\sqrt I$, $x=0.8$, $\nu=0$, $p_H=0.8$, $B/\Delta p=0.5$): $+0.033137$ at $I=1$, $-0.013726$ at $I=0.25$. No answer in the book.
+
+\section*{7. Too few asset reallocations (Tirole 14.4)}
+Resell iff $\rho_0<c$, proceeds to investors; $\pi(c)=F(c)\hat\rho_0+\int_c\rho_0dF$, $I=A/(1-\pi)$, $U_b=[\pi+\Delta\rho(1-F)-1]I$. FOC: $\rho_0^*=\hat\rho_0-[1-\pi(\rho_0^*)]/[1-F(\rho_0^*)]$, so $\hat\rho_0-\Delta\rho<\rho_0^*<\hat\rho_0$ ($\pi<1$, NPV$>0$): states $\rho_0\in(\rho_0^*,\hat\rho_0)$ are not reallocated.
+Example ($\rho_0\sim U[0,1]$, $\hat\rho_0=0.7$, $\Delta\rho=0.5$): $\rho_0^*=1-\sqrt{0.6}=0.225403$. Matches the book (p.~619), whose $U_b$ display omits $-I$.
+
+\section*{8. Inside liquidity (Tirole Review Problem 6)}
+\textbf{(i)} $(1+\lambda\rho x)I-A=(1-\lambda+\lambda x)\rho_0I$ $\Rightarrow$ $I=A/\{(1+\lambda\rho x)-[1-\lambda+\lambda x]\rho_0\}$.
+\textbf{(ii)} $U_b=\frac{\rho_1-c(x)}{c(x)-\rho_0}A$, $c(x)=\frac{1+\lambda\rho x}{1-\lambda+\lambda x}$, $c'\propto(1-\lambda)\rho-1$ $\Rightarrow$ $x=1$ iff $(1-\lambda)\rho\leq1$.
+\textbf{(iii)} Shortage $(\rho-\rho_0)I$.
+\textbf{(iv)} Index worth $(1-\lambda)\rho_0I$; insufficient iff $\rho-\rho_0>(1-\lambda)\rho_0$, though aggregate liquidity suffices; pool via credit lines.
+Example ($\lambda=0.4$, $\rho=1.2$, $\rho_0=0.5$, $\rho_1=2$, $A=1$): $I=1.020408$, $U_b=0.530612$, shortage $0.714286$. Matches the book (p.~635).
+
+\section*{9. Soft budget constraint (Tirole 16.4)}
+\textbf{(i)} $\text{NPV}(x)=\rho(y_H-w)+(1-\rho)x(y_L-w)-I$; $x^*=1$ (higher NPV, financeable by assumption). Market refinances $y_L-\Rc<w$: liquidity $L^*=w+\Rc-y_L$.
+\textbf{(ii)} Ex post: continue iff $y_L-\lambda s\geq-\lambda w_u$; with $s=w+\Rc-y_L$ this is the assumption, so the government always bails out $\Rightarrow$ $L=0$, $s=w+\Rc-y_L$. With commitment: $s=0$, firms hoard $L^*$.
+Example ($y_L=1$, $w=0.8$, $\Rc=0.5$, $\lambda=0.3$, $\rho=0.5$): $L^*=0.3$, expected deadweight $0.045$. No answer in the book.
+
+\section*{10. News about prospects (Tirole 15.2)}
+\textbf{(i)} NPV $=\int_{y^*}^1y\,dG-[1-G(y^*)]J-I$; investors' net $=\int_{y^*}^1y\,dG-[1-G(y^*)](J+\Rc)-(I-A)$.
+\textbf{(ii)} $A\geq A_0^*$: $y^*=J$; $A_1^*<A<A_0^*$: smallest $y^*\in(J,J+\Rc)$ with zero net income; $A<A_1^*$: no investment. For $A>A_1^*$, $y\in[y^*,J+\Rc)$ cannot be refinanced on the market: arrange liquidity at date 0.
+\textbf{(iii)} Yes: aggregate net pledgeable income $=I-A>0$ (if pooled).
+\textbf{(iv)} $E_\theta[\int_{y^*(\theta)}^1(y-J-\Rc)dG(y\mid\theta)]\geq I-A$; FOC $y^*(\theta)=J+\frac{\mu}{1+\mu}\Rc$ for all $\theta$; outside liquidity $\geq$ the worst-state shortfall $-\min_\theta\int_{y^*}^1(y-J-\Rc)dG$; if scarce, $q>1$, more interruption, less investment.
+Example (uniform, $J=0.3$, $\Rc=0.2$, $I=0.5$, $A=0.385$): $y^*=0.358579$; two states ($U[0,1]$, $U[0,0.6]$, $A=0.45$): $y^*=0.341886$, $L\geq0.0125$. Matches the book (pp.~620--621).
+
+\section*{11. Market conditions and credit rationing (Tirole 13.3)}
+\textbf{(i)} $I^{\text{FB}}=(\alpha p_HP)^{1/(1-\alpha)}$; $\Pc(I^{\text{FB}})-I^{\text{FB}}=[\frac{1-\alpha}{\alpha}-\frac{p_HB}{\Delta p}]I^{\text{FB}}$, so $I^{\text{SB}}=I^{\text{FB}}$ iff $P\geq P_0$, $I^{\text{FB}}(P_0)=(K-A)/[\frac{1-\alpha}\alpha-\frac{p_HB}{\Delta p}]$; below, $p_H(PI^\alpha-BI/\Delta p)=I+K-A$.
+\textbf{(ii)} At $P_0^-$: $\frac{dI^{\text{SB}}/dP}{dI^{\text{FB}}/dP}=\frac{1-\alpha}{\alpha\,p_HB/\Delta p}>1$.
+\textbf{(iii)} $P=P(p_H[R(I)+R(I_0)])$: partial crowding out, stronger where $I^{\text{SB}}$ is steeper; total output rises.
+Example ($\alpha=0.5$, $p_H=0.8$, $B/\Delta p=0.5$, $K=0.5$, $A=0.1$): $P_0=2.041241$, slopes $1.632993$ vs.\ $0.653197$. Matches the book (pp.~617--618).
+
+\section*{12. Downsizing and aggregate liquidity (Tirole 15.1)}
+\textbf{(i)} $p_HR'(I)=\frac{1}{1-\lambda}+\frac{\mu}{1+\mu}\frac{p_HB}{\Delta p}$, $p_HR'(J)=\rho+\frac{\mu}{1+\mu}\frac{p_HB}{\Delta p}$ $\Rightarrow$ $J<I$ iff $\rho>1/(1-\lambda)$.
+\textbf{(ii)} $L^*=\rho J^*-p_H[R(J^*)-BJ^*/\Delta p]$ (book: $\rho J^*$). If $L^S<L^*$: $q>1$, $p_HR'(J)=\rho+\frac{p_HB}{\Delta p}[1-\frac{\lambda}{(1+\mu)(\lambda+q-1)}]$, so $J$ falls; premium from breakeven with $-(q-1)L$, the two FOCs and $L=L^S$.
+\textbf{(iii)} $V=(1-\lambda)\Pc(I)+\lambda\Pc(J)>\lambda\rho J$: enough if pooled. Index suffices iff $(1-\lambda)\Pc(I)\geq(1+\lambda)[\rho J-\Pc(J)]$; otherwise credit lines.
+Example ($R=2X^{0.8}$, $p_H=0.9$, $B/\Delta p=1$, $\lambda=0.3$, $A=0.2$, $\rho=1.6$): $I^*=0.643244$, $J^*=0.383471$, $L^*=0.122577$. Matches the book (pp.~619--620) except the $L^*$ convention.
+
+\section*{13. Liquid and illiquid assets are complements (Tirole 15.4)}
+$x=0$ unprofitable $\Rightarrow$ investing firms set $x=1$. $\bar{\bar q}=1+\frac{\rho_1-1-\bar\rho}{\rho_H-\rho_0}$. $L^S\leq\underline L^S=\frac{(\rho_H-\rho_0)A}{\rho_1-\rho_0}$: $q=\bar{\bar q}$, $I=L^S/(\rho_H-\rho_0)$; up to $\bar L^S=\frac{(\rho_H-\rho_0)A}{1+\bar\rho-\rho_0}$: $I=L^S/(\rho_H-\rho_0)$, $q\downarrow$; beyond: $q=1$, $I=A/(1+\bar\rho-\rho_0)$. $I$ nondecreasing in $L^S$.
+Example ($\lambda=0.5$, $\rho_L=0.2$, $\rho_0=0.6$, $\rho_H=1$, $\rho_1=2$, $A=1$): $\bar{\bar q}=2$, $\underline L^S=0.285714$, $\bar L^S=0.4$; $L^S=0.35$: $I=0.875$, $q=1.357143$. Matches the book (p.~621).
+
+\section*{14. Dynamics of income inequality (Tirole 13.2)}
+\textbf{(i)} $c=(1-a)y$, $\mathcal L=ay$, $U=y$.
+\textbf{(ii)} $I_t=A_t/(1-\rho_0/(1+r))$, $y_t=(\rho_1-\rho_0)I_t$, $A_{t+1}=\hat A+\beta A_t$, $\beta<1$ $\Rightarrow$ $A_t\to A_\infty$.
+\textbf{(iii)} $A_0^*=(1-\rho_0/(1+r))\underline I$; lenders: $A_{t+1}=\hat A+a(1+r)A_t\to A_\infty^L=\hat A/[1-a(1+r)]$.
+\textbf{(iv)} Equal: $\rho_1=1+r$, $A_\infty=\hat A/(1-a\rho_1)$, $\kappa=\rho_0/\rho_1$. Unequal: $\rho_1>1+r$, $A_\infty^L<A_0^*\leq A_\infty$, $\kappa A_\infty^L=(1-\kappa)(I_\infty-A_\infty)$.
+Example ($a=0.4$, $\hat A=1$, $\rho_1=1.5$, $\rho_0=0.5$, $\underline I=3.5$): equal ($r=0.5$, $\kappa=1/3$) and unequal ($r=0.05$, $A_\infty=4.230769$, $A_\infty^L=1.724138<A_0^*=1.833333$, $\kappa=0.690476$) coexist. Matches the book (p.~617).
+
+\section*{15. Exchange-rate policy (Tirole 16.3)}
+\textbf{(i)} $d^*=p_HR_l^*$, $d=p_HR_l^S+(1-p_H)R_l^F$.
+\textbf{(ii)} Pledgeable $=\rho_0I+R_l^F/e$ $\Rightarrow$ $R_l^F=SI$, $I=A/\{1-[(S/e)+\rho_0]\}$.
+\textbf{(iii)} Commitment: $v'(g^*)=e[1-(\frac Se+p_HR-1)\frac{dI}{de}\frac{de}{dg^*}]>e$ (underspending). Noncommitment: $v'(g^*)=e[1-\frac{d}{e^2}\frac{de}{dg^*}]<e$ (overspending), more depreciation, less investment.
+\textbf{(iv)} $g^*$ rises with nontradable debt $d$: each borrower's nontradable claims depreciate everyone's, lowering all borrowing capacities.
+Example ($u=6\log c$, $v=\log g$, $p_H=0.8$, $R=2$, $\rho_0=0.4$, $S=0.3$, $A=1$, $\Rc^*=2$): commitment $g^*=0.508893$, $e=1.504114$; noncommitment $g^*=0.701486$, $e=1.598417$. Matches the book (p.~623).
+
+\end{document}

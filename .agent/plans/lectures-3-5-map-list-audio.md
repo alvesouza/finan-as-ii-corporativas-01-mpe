@@ -66,5 +66,14 @@ Update `NotebookLM/README.md` table.
     5.2.5 #3–#6, Tirole 7.7, 3.14 + R7 13, R7 15, R7 18, R6 10, R6 11. No sovereign-debt exercise exists.
 - Gate: check_lists on each file → 0 failures.
 
+## Round 3 (2026-11-10): list PDFs + short and detailed solutions
+- List PDFs: pandoc + LuaLaTeX (vector OpenType fonts, Unicode; global rule's alternative to
+  pdflatex+lmodern+cmap); wiki links → labels, superscript digits → ^n^, weighted table columns.
+  `Listas/lista-topic{3,4,5}-*.pdf`.
+- Solutions, per list (spec `.agent/notes/solutions-and-roadmap-spec.md` part B): 6 agents write
+  fragments (detailed.tex, short.tex, check.py) to scratchpad `sol/t3a…t5b`; main loop assembles
+  `Listas/<list>-solutions.tex/.pdf`, `<list>-solutions-short.tex/.pdf`, `<list>-solutions_check.py`.
+- Gates: check script PASS; pdflatex twice, no errors/undefined refs; pdffonts Type 1 + uni.
+
 ## Verify
 check_lists gate; `wc -m` per prompt (< 5,000); grep prompts for "language"; git status.

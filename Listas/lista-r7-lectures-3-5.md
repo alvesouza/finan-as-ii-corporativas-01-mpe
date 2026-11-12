@@ -270,7 +270,7 @@ $$p_H R_b \geqslant p_L R_b + B \quad \text{or} \quad (\Delta p) R_b \geqslant B
 ---
 
 ### 12. Random private benefits
-**Source:** Tirole, Ch. 3, Exercise 3.3, p. 144 (PDF 157) · Answer in book: yes, p. 571
+**Source:** Tirole, Ch. 3, Exercise 3.3, pp. 144–145 (PDF 157) · Answer in book: yes, p. 571
 
 **Exercise 3.3 (random private benefits).** Consider the variable-investment model: an entrepreneur initially has cash $A$. For investment $I$, the project yields $RI$ in the case of success and 0 in the case of failure.
 

@@ -1,0 +1,2236 @@
+% Worked solutions for Listas/lista-r7-lectures-3-5.md (20 exercises).
+% This file writes exercises 3, 9, 10, 12; the other sixteen are already solved in the
+% Topic 3/4/5 solution files and are spliced in at the "%% INSERT-FROM" lines
+% (one per exercise, in list order).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r7-lectures-3-5-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R7 --- Lectures 3--5}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\assume}{\par\smallskip\noindent\textbf{Assumption.}~}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+% Section C (deeper solutions) macros
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries List R7 --- Lectures 3--5}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent\sloppy Statements are in \url{Listas/lista-r7-lectures-3-5.md}; each exercise is cited by number and printed page and is not restated. Sixteen of the twenty exercises are also in the Topic~3, 4 and 5 lists and are solved in \url{lista-topic3-asymmetric-information-solutions.tex}, \url{lista-topic4-moral-hazard-overhang-solutions.tex} and \url{lista-topic5-nonverifiable-income-termination-solutions.tex}; their solutions are inserted at their positions below. This file writes exercises 3, 9, 10 and 12. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002).\par\fussy
+
+\tableofcontents
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 1 AS 1
+\exsec{1. Winner's curse in IPO allocations --- Ross Cap.~15, Quest\~ao 3, p.~537}
+
+\asked (a) Your profit if both orders of 1{,}000 shares were filled in full. (b) The profit you should actually expect, given that only the underpriced issue is rationed (you get half of it) and you cannot tell the two issues apart. (c) The name of the principle the gap between (a) and (b) illustrates.
+
+\approach This is the uninformed investor's problem in Rock's IPO model (lecture block 3.10). The allocation you receive is correlated with the quality of the issue: good issues are oversubscribed and rationed, bad ones are filled in full. So the expected gain must weight each issue by the fraction you are actually allocated, not by the fraction you ordered. Setting that expected gain to zero gives the underpricing the issuer must offer to keep you in the market.
+
+\notation
+\begin{itemize}
+  \item $P_0=40$: offer price per share of both IPOs (\$).
+  \item $u=7$: underpricing of the undervalued issue (true value $P_0+u=47$); $o=5$: overpricing of the overvalued one (true value $P_0-o=35$).
+  \item $Q=1{,}000$: shares ordered in each issue; $\pi$: fraction of the order filled in the underpriced issue ($\pi=1/2$); $\pi'$: fraction filled in the overpriced issue ($\pi'=1$).
+  \item $G^{\text{full}}$: gain with both orders filled; $E[G]$: gain you actually expect.
+\end{itemize}
+
+\step{1}{Gain if both orders were filled} You make $u$ per share on one issue and lose $o$ per share on the other:
+\begin{align}
+  G^{\text{full}} &= Q\,u - Q\,o \label{t3e1-full}\\
+                  &= (1{,}000)(7)-(1{,}000)(5) \nonumber\\
+                  &= 7{,}000-5{,}000 \nonumber\\
+                  &= 2{,}000. \nonumber
+\end{align}
+
+\answer{(a)} A gain of \$2{,}000 (\$7{,}000 on the underpriced issue minus \$5{,}000 on the overpriced one).
+
+\step{2}{Gain you actually expect} Whichever issue is the underpriced one is oversubscribed (informed buyers also want it) and fills only $\pi Q$; the overpriced one fills $\pi' Q$. Since you cannot tell which is which, this holds whatever the labels are. The shares you receive in each issue are
+\begin{align}
+  \pi Q &= (0.5)(1{,}000) = 500 \text{ shares of the underpriced issue}, \nonumber\\
+  \pi' Q &= (1)(1{,}000) = 1{,}000 \text{ shares of the overpriced issue}, \nonumber
+\end{align}
+so the gain is
+\begin{align}
+  E[G] &= \pi Q\,u - \pi' Q\,o \label{t3e1-exp}\\
+       &= (0.5)(1{,}000)(7)-(1)(1{,}000)(5) \nonumber\\
+       &= 3{,}500-5{,}000 \nonumber\\
+       &= -1{,}500. \nonumber
+\end{align}
+The full-allocation gain of \$2{,}000 becomes an expected loss of \$1{,}500. (The outcome is in fact certain here: whatever the labels, you get 500 shares of the good issue and 1{,}000 of the bad one.)
+
+\answer{(b)} An expected (and certain) loss of \$1{,}500.
+
+\step{3}{Principle, and the underpricing that would make you participate} This is the \emph{winner's curse} (\pt{``maldi\c{c}\~ao do vencedor''}): an uninformed buyer receives a full allocation exactly when informed buyers stay away, that is, when the issue is overpriced. To break even, \eqref{t3e1-exp} must be zero, which requires an underpricing $u^{*}$ with
+\begin{align}
+  \pi Q\,u^{*} - \pi' Q\,o &= 0 \nonumber\\
+  \pi Q\,u^{*} &= \pi' Q\,o \nonumber\\
+  u^{*} &= \frac{\pi'}{\pi}\,o \label{t3e1-ustar}\\
+        &= \frac{(1)}{(0.5)}\,(5) \nonumber\\
+        &= 10. \nonumber
+\end{align}
+The average initial return per share across the two issues would then be
+\begin{align}
+  \frac{u^{*}+(-o)}{2} = \frac{(10)-(5)}{2} = \frac{5}{2} = 2.5, \nonumber
+\end{align}
+positive on average, yet zero for the uninformed buyer.
+
+\answer{(c)} The winner's curse: an uninformed investor is allocated more of the bad (overpriced) issues than of the good ones, so average underpricing is needed just for her to break even.
+
+\intuition Informed investors skim the underpriced issues, so what an uninformed investor actually receives is tilted towards the bad issues. Issuers must underprice on average just to keep uninformed investors in the market (Rock's model, Amaro de Matos \S6.2.2; lecture block 3.10: $P_0<E[P_1]$ even though the uninformed only break even).
+
+\pitfalls
+\begin{itemize}
+  \item Computing the expected gain with the ordered quantities ($1{,}000\times7-1{,}000\times5$), i.e.\ ignoring that the allocation depends on the quality of the issue.
+  \item Using a 50\% probability that \emph{each} issue is rationed: only the underpriced issue is rationed, and that is the whole point.
+  \item Concluding that IPOs are ``overpriced on average'': the average issue is underpriced (+2.5 per share in Step~3); it is the uninformed investor's \emph{allocation-weighted} return that is zero.
+\end{itemize}
+\refbib{Ross Cap.~15, \S15.5 ``IPOs e subprecifica\c{c}\~ao'', subsection ``Por que existe subprecifica\c{c}\~ao?'', pp.~507--508; lecture Topic~3, ``IPO underpricing''.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 1 AS 2
+\exsec{2. DIP financing and existing creditors --- Grinblatt \& Titman 16.14, p.~593}
+
+\asked A single conceptual question. Chapter~11 lets a bankrupt firm borrow new money that is
+paid \emph{before} the old debt. On its face this hurts the old creditors, who move down the
+queue. Explain the mechanism by which they can nevertheless end up better off.
+
+\approach This is the lecture's \emph{debt overhang} problem (Myers 1977). Write every claim as
+a state-by-state payoff, debt $=\min\{\text{assets},F\}$ and equity $=\max\{\text{assets}-F,0\}$,
+and compare the old creditors' payoff with and without the new project. Junior money cannot be
+raised when the old debt is under water, because the old creditors capture the project's value;
+seniority for the new money removes that obstacle. The old creditors lose priority but gain the
+project's cash flows, so the comparison is ``smaller share of a larger pie'' versus ``larger share
+of a smaller pie''.
+
+\notation
+\begin{itemize}
+  \item $s$: state of the world at the payoff date; $V_s\ge 0$: value of the assets in place in state $s$.
+  \item $F>0$: face value of the existing debt, protected by a covenant that forbids issuing debt senior to it.
+  \item $I>0$: cost of a new project that must be carried out inside the firm; $X_s\ge 0$: its payoff in state $s$; risk-neutral investors, zero riskless rate (as in the book's and the lecture's examples).
+  \item $N$: face value of the new debtor-in-possession (DIP) debt, senior to $F$; $D$, $E$: market values of the existing debt and of equity.
+\end{itemize}
+
+\step{1}{Why the project is not funded outside bankruptcy} We first show that, without a
+seniority exception, a good project is passed up; this is the status quo the old creditors
+compare against. Without DIP financing, new money can only be junior to $F$. In state $s$ a junior claimant receives at most what is left after the
+senior debt,
+\begin{align}
+  \text{junior payoff}_s &\le \max\{V_s+X_s-F,\,0\}. \label{t4e1-junior}
+\end{align}
+In the book's Lily Pharmaceuticals example (pp.~564--566), in the unfavourable state the
+assets in place are worth nothing without further development ($V_s=0$), development costs
+$I=100$ and yields $X_s=150$, and the senior obligation is $F=110$. Substituting into
+\eqref{t4e1-junior},
+\begin{align}
+  \text{junior payoff} &\le \max\{(0)+(150)-(110),\,0\} \nonumber\\
+                       &= \max\{40,\,0\} \nonumber\\
+                       &= 40 < 100 = I, \nonumber
+\end{align}
+so no one lends: junior lenders would pay $100$ for a claim worth at most $40$. Yet the project
+is worth doing,
+\begin{align}
+  \mathit{NPV} &= X_s-I \nonumber\\
+               &= (150)-(100) \nonumber\\
+               &= 50>0, \nonumber
+\end{align}
+so it is passed up, the firm defaults, and the existing lenders receive
+$\min\{V_s,F\}=\min\{0,110\}=0$ in that state.
+
+\step{2}{DIP debt makes it fundable} We now let the new money jump the queue and recompute the
+old creditors' payoff. In Chapter~11 the firm may issue debt senior to $F$. A DIP
+loan of $I=100$ at the zero riskless rate has face $N=100$ and is riskless because
+$150\ge 100$. The existing lenders now receive
+\begin{align}
+  \text{existing debt payoff} &= \min\{V_s+X_s-N,\,F\} \label{t4e1-old}\\
+                              &= \min\{(0)+(150)-(100),\,(110)\} \nonumber\\
+                              &= \min\{50,\,110\} \nonumber\\
+                              &= 50, \nonumber
+\end{align}
+instead of $0$: they gain $50-0=50$, the whole NPV, even though they lost their priority.
+
+\step{3}{The general argument} The example is not special; we show the old creditors never lose
+when the DIP money funds a project that pays back at least its cost. With a riskless DIP loan ($N=I\le X_s$ in every state), the
+existing debt's payoff with the project is $\min\{V_s+X_s-I,\,F\}$, and without it
+$\min\{V_s,\,F\}$. Since $X_s-I\ge 0$, the first argument of the minimum is larger with the
+project, $V_s+X_s-I\ge V_s$, and $\min\{\cdot,F\}$ is nondecreasing in its first argument, so
+\begin{align}
+  \min\{V_s+X_s-I,\,F\} &\ge \min\{V_s,\,F\} \qquad\text{for every } s, \label{t4e1-dom}
+\end{align}
+with strict inequality in every state where the old debt was impaired ($V_s<F$). Seniority is
+diluted, but the asset pool the old creditors are paid from grows by more than the new claim.
+
+\step{4}{The lecture's numbers} Topic~4B (slides 22--31): assets in place worth $500$ (boom)
+or $200$ (slump), each with probability $0.5$; $F=300$; a project costs $I=60$ and adds $100$
+in both states. We value both claims without the project, then with it. Without the project,
+\begin{align}
+  D &= (0.5)\min\{500,300\}+(0.5)\min\{200,300\} \nonumber\\
+    &= (0.5)(300)+(0.5)(200) = 150+100 = 250, \nonumber\\
+  E &= (0.5)\max\{500-300,0\}+(0.5)\max\{200-300,0\} \nonumber\\
+    &= (0.5)(200)+(0.5)(0) = 100. \nonumber
+\end{align}
+Financing the $60$ with senior DIP debt ($N=60$, riskless since the slump assets $200+100=300\ge 60$),
+the assets become $500+100=600$ (boom) and $200+100=300$ (slump), and the old debt
+receives, by \eqref{t4e1-old},
+\begin{align}
+  \text{boom: } & \min\{(600)-(60),\,(300)\} = \min\{540,300\} = 300, \nonumber\\
+  \text{slump: } & \min\{(300)-(60),\,(300)\} = \min\{240,300\} = 240, \nonumber\\
+  D &= (0.5)(300)+(0.5)(240) \label{t4e1-D}\\
+    &= 150+120 = 270, \nonumber
+\end{align}
+and equity receives $\max\{600-60-300,0\}=240$ (boom) and $\max\{300-60-300,0\}=0$ (slump), so
+$E=(0.5)(240)+(0.5)(0)=120$. Both claims rise by $20$ ($270-250$ and $120-100$), and
+$20+20=40=100-60$ is the project's NPV.
+
+\answer{(16.14)} The old creditors benefit because, without senior new money, a positive-NPV project
+cannot be financed (debt overhang) and they are paid out of the assets in place only. With DIP
+financing the project is done; the DIP lender is repaid first, but the project adds more to the
+pool than the DIP claim takes out ($X_s\ge I$), so the old creditors' payoff rises in every
+impaired state (\$0 to \$50 in the Lily example; \$250 to \$270 in the lecture's example).
+
+\step{5}{The limit} \eqref{t4e1-dom} needs $X_s\ge I$: a good, safe project. The same provision
+lets a distressed firm borrow to keep operating when it would be worth more liquidated; then
+$X_s<I$ in some state and the old creditors lose (Result~16.11).
+
+\intuition Debt overhang means the old creditors capture part of the value of new investment
+while the new money bears its full cost, so junior money cannot be raised. Letting new money
+jump the queue removes the overhang. The old creditors, who would otherwise get little or
+nothing, take a smaller slice of a larger pie. A covenant that blocks this hurts them, and a
+diffuse group of bondholders cannot easily agree to lend the money themselves (free-rider
+problem). Chapter~11 unlocks senior financing only in distress, which keeps most of the
+protection the covenant gives in normal times.
+\pitfalls
+\begin{itemize}
+  \item Comparing the old creditors' payoff with the project under DIP financing against their payoff
+        with the project under \emph{junior} financing. The relevant status quo is no project at all,
+        because junior money cannot be raised.
+  \item Crediting the old creditors with the project's gross payoff $X_s$ and forgetting that the DIP
+        lender is repaid $N=I$ first; their gain is bounded by $X_s-I$, the project's NPV.
+  \item Stating that DIP financing always helps creditors. It helps only when the funded project pays
+        back at least its cost ($X_s\ge I$); financing a value-destroying continuation hurts them.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~16, \S~16.2 ``Underinvestment as a Consequence of Debt Overhang'' (Lily example), pp.~564--566; \S~16.3 ``How Chapter 11 Bankruptcy Mitigates Debt Holder--Equity Holder Incentive Problems'', Result~16.11, p.~580. Lecture Topic~4B, slides 22--31.}
+%% END-FROM
+
+% =============================================================================
+\exsec{3. Convertibles, warrants and call provisions --- Amaro de Matos 3.1.5 \#7, p.~77}
+
+\asked (a) How convertible debt and warrants reduce the agency costs between shareholders and bondholders. (b) What call provisions in debt contracts do for the same problem.
+
+\approach With debt of face value $F$ outstanding, equity is a call option on firm value with strike $F$ (Amaro \S3.1.3): its value rises with risk, which creates the \emph{asset-substitution} (overinvestment) cost, and gains from new safe investment accrue largely to the debt, which creates the \emph{underinvestment} cost (Myers 1977). Convertibles and warrants give bondholders a share of the upside, so risk-shifting no longer transfers value to shareholders; a call provision lets the firm retire the debt at a fixed price, so the firm can capture the gains from investment instead of leaving them to bondholders. Two numerical examples show each mechanism.
+
+\notation
+\begin{itemize}
+  \item $F$: face value of zero-coupon debt due next period; $V$: firm value at maturity; risk neutrality, zero interest rate.
+  \item $\gamma\in(0,1)$: fraction of the (all-equity) firm bondholders receive if they convert.
+  \item Part (b): $X$: value of assets in place at maturity; $J$: cost of a new safe project, $Y$: what it adds to firm value; $K$: call price of the debt.
+\end{itemize}
+
+\step{1}{(a) The problem with straight debt} Let $F=100$ and let the firm choose between a safe project, $V=120$ for sure, and a risky one, $V=200$ or $V=20$ with probability $\tfrac12$ each (mean $110<120$). Equity receives $\max(V-F,0)$:
+\begin{align}
+  E^{\text{safe}} &= (120)-(100) = 20, \nonumber\\
+  E^{\text{risky}} &= \tfrac12\bigl[(200)-(100)\bigr] + \tfrac12(0) = 50. \nonumber
+\end{align}
+Equity picks the risky project; debt falls from $100$ to $\tfrac12(100)+\tfrac12(20)=60$, a transfer of $40$ that pays for a loss of $10$ in firm value. This is the cost of overinvestment.
+
+\step{2}{(a) Convertible debt} Let bondholders convert into a fraction $\gamma$ of the firm when that beats the face value, $\gamma V>F$. In the risky project's good state they convert if $200\gamma>100$, i.e.\ $\gamma>0.5$, and equity keeps $(1-\gamma)200$. With the safe project they convert only if $120\gamma>100$, i.e.\ $\gamma>0.8333$. For $0.5<\gamma\le 0.8333$:
+\begin{align}
+  E^{\text{risky}}(\gamma) &= \tfrac12(1-\gamma)(200) + \tfrac12(0) = 100(1-\gamma), \qquad E^{\text{safe}}(\gamma) = 20, \nonumber
+\end{align}
+so equity prefers the safe project iff
+\begin{align}
+  20 &\ge 100(1-\gamma) \iff \gamma \ge 0.8. \label{r7e3-gamma}
+\end{align}
+With, say, $\gamma=0.82$: $E^{\text{risky}}=100(0.18)=18<20$, and with the safe project bondholders do not convert ($0.82\times120=98.4<100$). The upside that made risk attractive now goes mostly to the convertible holders.
+
+\step{3}{(a) Warrants} A warrant attached to the debt is a call on the firm's equity. Its value rises with volatility exactly as equity's does, so a rise in risk raises the bondholders' warrant value and dilutes the gain shareholders get from it. Like the conversion option in Step~2, it turns bondholders into partial residual claimants on the upside, and so lowers the incentive to substitute risky assets (the book cites Green 1984).
+\answer{(a)} Convertibles and warrants give bondholders a call-like share of the upside; risk-shifting then transfers value to them rather than away from them, and for a large enough conversion share (here $\gamma\ge0.8$) the value-reducing risky project is no longer chosen.
+
+\step{4}{(b) The underinvestment problem} Let assets in place be worth $X=90$ at maturity, with $F=100$. A safe project costs $J=20$ (new equity) and adds $Y=28$ (NPV $8$). Without a call provision, if the firm invests, the firm is worth $118$, debt gets $100$ and equity gets $18$ for its $20$:
+\begin{align}
+  \text{equity's NPV} &= \bigl[(X+Y)-F\bigr] - J = \bigl[(90+28)-(100)\bigr] - (20) = -2 < 0. \nonumber
+\end{align}
+The project is rejected (debt overhang): $10$ of its value of $28$ would go to the bondholders, who are worth $90$ otherwise.
+
+\step{5}{(b) A call provision} If the firm may call the debt at price $K$ before investing, shareholders pay $K+J$ and own the whole firm:
+\begin{align}
+  \text{equity's NPV} &= (X+Y) - K - J \ge 0 \iff K \le X+Y-J = (90)+(28)-(20) = 98. \nonumber
+\end{align}
+Bondholders accept being called at any $K\ge X=90$, their value without investment. With $K=95$: equity's NPV is $118-95-20=3>0$ and bondholders get $95>90$; the NPV of $8$ is split $3$ and $5$. A call price in $[90,98]$ restores investment.
+\answer{(b)} A call provision lets shareholders buy out the debt at a fixed price and take profitable low-risk projects whose gains would otherwise go mainly to bondholders; it is a (costly, priced ex ante) cure for underinvestment, and because the call is worth less to equity when firm value falls, it also weakens the incentive to shift risk (Galai and Masulis 1976).
+
+\intuition Agency costs of debt come from the shape of the claims: equity is convex (a call), so it likes risk and dislikes investing for the benefit of a debt overhang. Convertibles and warrants make the bondholders' claim convex too, so shareholders cannot win by adding variance at their expense. Call provisions fix the other margin by letting shareholders repurchase the debt at a known price before they invest, so the gains from investing stay with them.
+
+\pitfalls
+\begin{itemize}
+  \item Saying convertibles ``reduce risk'': they do not change the projects; they change who gains from risk.
+  \item Ignoring that bondholders convert only when it pays ($\gamma V>F$): at $\gamma=0.82$ they do not convert under the safe project.
+  \item Treating the call provision as free: bondholders anticipate it and demand a higher coupon; it raises firm value only because it removes a deadweight loss.
+\end{itemize}
+
+\bookans Amaro de Matos App.~C, pp.~257--258: convertibles control asset substitution because ``risk-increasing activities raise the value of the conversion option and thus reduce the gain to stockholders from taking high-risk projects''; Green (1984) shows the same for warrants; call provisions realign shareholder incentives towards total firm value and, since their value to equity ``declines as the value of the firm decreases'', reduce the incentive to shift to high-variance projects (Galai and Masulis 1976). The text, p.~75, adds that callability lets stockholders take ``low-risk but profitable projects that otherwise would not be taken''. Matches the book's answer (pp.~257--258); the numbers are our illustration.
+\refbib{Amaro de Matos \S3.1.3 ``Agency Costs of Debt'', pp.~71--75 (overinvestment p.~73, underinvestment pp.~73--74, covenants p.~75); lecture Topic~4B, ``Asset substitution and debt overhang''.}
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 2 AS 4
+\exsec{4. Asset substitution: project A or B --- Grinblatt \& Titman 16.1, p.~591}
+
+\asked (a) The net present value of each project for the firm as a whole. (b) Which project the
+shareholders, who control the firm, would pick, and the reason for their choice.
+
+\approach With risk-neutral investors and a zero riskless rate, a claim's value is its expected
+payoff. Debt and equity split each state's payoff: debt gets $\min\{X,F\}$, equity gets
+$\max\{X-F,0\}$ (limited liability). Because the cash on hand exactly equals the face value, equity
+is an at-the-money call option on the project payoff, so it values variance. This is the lecture's
+\emph{asset substitution} (risk-shifting) problem: comparing firm value (a) with equity value (b)
+shows the gap between what is efficient and what shareholders choose.
+
+\notation
+\begin{itemize}
+  \item $j\in\{A,B\}$: project; $X_{j,s}$: its payoff in state $s\in\{\text{fav},\text{unf}\}$, each with probability $\pi=0.5$.
+  \item $C=100$: cash on hand, all spent on the project; $F=100$: debt due next period; $r_f=0$; risk-neutral investors.
+  \item $V_j=\mathbb{E}[X_j]$: firm value under $j$; $E_j$, $D_j$: values of equity and debt under $j$.
+\end{itemize}
+
+\step{1}{(a) NPVs} We value each project's payoff and subtract the \$100 it costs. With $r_f=0$
+and risk neutrality the present value is the expected payoff:
+\begin{align}
+  V_A &= \pi X_{A,\text{fav}}+(1-\pi)X_{A,\text{unf}} \label{t4e2-VA}\\
+      &= (0.5)(120)+(0.5)(60) \nonumber\\
+      &= 60+30 = 90, \nonumber\\
+  \mathit{NPV}_A &= V_A-C \label{t4e2-NA}\\
+      &= (90)-(100) \nonumber\\
+      &= -10, \nonumber\\
+  V_B &= \pi X_{B,\text{fav}}+(1-\pi)X_{B,\text{unf}} \label{t4e2-VB}\\
+      &= (0.5)(101)+(0.5)(101) \nonumber\\
+      &= 50.5+50.5 = 101, \nonumber\\
+  \mathit{NPV}_B &= V_B-C \nonumber\\
+      &= (101)-(100) \nonumber\\
+      &= 1. \nonumber
+\end{align}
+
+\answer{(a)} $\mathit{NPV}_A=-\$10$ million, $\mathit{NPV}_B=+\$1$ million: only B creates value.
+
+\step{2}{(b) Payoffs to each claim, state by state} The shareholders care about their own claim,
+not about firm value, so we split each project's payoff between the claims. Equity receives
+$\max\{X-F,0\}$ and debt $\min\{X,F\}$:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+ & \multicolumn{2}{c}{Equity} & \multicolumn{2}{c}{Debt}\\
+ & Favourable & Unfavourable & Favourable & Unfavourable\\
+\midrule
+A & $120-100=20$ & $0$ & $100$ & $60$\\
+B & $101-100=1$ & $101-100=1$ & $100$ & $100$\\
+\bottomrule
+\end{tabular}
+\end{center}
+(In A's unfavourable state $\max\{60-100,0\}=0$ and $\min\{60,100\}=60$.) Taking expectations,
+\begin{align}
+  E_A &= (0.5)(20)+(0.5)(0) = 10+0 = 10, & D_A &= (0.5)(100)+(0.5)(60) = 50+30 = 80, \label{t4e2-A}\\
+  E_B &= (0.5)(1)+(0.5)(1) = 0.5+0.5 = 1, & D_B &= (0.5)(100)+(0.5)(100) = 100. \label{t4e2-B}
+\end{align}
+Check: $E_A+D_A=10+80=90=V_A$ and $E_B+D_B=1+100=101=V_B$.
+
+\step{3}{(b) The choice} We compare the shareholders' payoffs and decompose the difference into a
+value effect and a transfer. Equity holders, who control the firm, want project A: $E_A=10>E_B=1$,
+although A destroys value. Writing $E_j=V_j-D_j$ and using \eqref{t4e2-A}--\eqref{t4e2-B},
+\begin{align}
+  E_A-E_B &= (V_A-V_B)-(D_A-D_B) \label{t4e2-split}\\
+          &= (90-101)-(80-100) \nonumber\\
+          &= (-11)-(-20) \nonumber\\
+          &= 9: \nonumber
+\end{align}
+switching to A lowers firm value by $11$ but moves $20$ from the creditors to the shareholders.
+
+\answer{(b)} The shareholders want project A ($E_A=\$10$ million $>E_B=\$1$ million), because
+limited liability lets them keep A's upside while the creditors bear its downside: the \$20 million
+transferred from debt exceeds the \$11 million of value destroyed.
+
+\intuition With \$100 due and \$100 in cash, the equity is an at-the-money call on the firm's
+assets. The safe project leaves it almost worthless ($1$); the risky one gives it the whole
+upside ($20$) while the creditors absorb the downside ($60$ instead of $100$). This is the
+lecture's asset-substitution (risk-shifting) problem: limited liability makes levered equity
+prefer variance, even at negative NPV.
+\pitfalls
+\begin{itemize}
+  \item Writing equity's payoff as $X-F$ in every state. In A's unfavourable state that gives $-40$;
+        limited liability caps the loss at $0$, and that cap is exactly what makes A attractive.
+  \item Answering (b) with the NPVs of (a). Firm value and equity value rank the projects in opposite
+        orders; (b) asks about the shareholders' claim.
+  \item Forgetting that the \$100 of cash is spent on the project: the NPV subtracts it, but the
+        payoff split in (b) uses only the project payoff and the \$100 face value.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~16, \S~16.2 ``The Asset Substitution Problem'', pp.~569--572 (Results~16.7--16.8). Lecture Topic~4B, slides 2--8.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 4 AS 5
+\exsec{5. Issuing undervalued equity --- Grinblatt \& Titman 19.6, p.~687}
+
+\asked (a) How many new shares ABC must sell to raise the \$100 the project costs, given that outsiders value the firm at \$600. (b) The share price once the true value is known if ABC issues and invests. (c) The share price once the true value is known if ABC passes up the project.
+
+\approach This is the Myers--Majluf underinvestment problem (lecture block 3.5; GT \S19.5). New shares are sold at the outsiders' (too low) valuation, so the new shareholders buy a claim on the undervalued assets in place as well as on the project. Comparing the post-revelation price per old share with and without the project shows whether the transfer to new shareholders exceeds the project's NPV; if it does, managers acting for old shareholders pass up a positive-NPV project.
+
+\notation
+\begin{itemize}
+  \item $N_0=100$ shares; $V_{\text{in}}=1{,}000$: management's value of the firm without the project; $V_{\text{out}}=600$: outside investors' value without the project.
+  \item $K=100$: cost of the project (raised with new equity); $V_P=120$: PV the project adds to the firm, so $\text{NPV}=V_P-K=20$.
+  \item $P_{\text{issue}}$: issue price; $n$: new shares; $P_{\text{take}}$, $P_{\text{pass}}$: share price once the truth is known, with and without the project.
+\end{itemize}
+
+\assume The shares are sold at the outsiders' current value per share, $P_{\text{issue}}=V_{\text{out}}/N_0$, as in GT's own illustration (p.~676), where new shares are sold at the current market price. (The alternative is in Step~5.)
+
+\step{1}{New shares} The issue price and the number of shares needed to raise $K$:
+\begin{align}
+  P_{\text{issue}} &= \frac{V_{\text{out}}}{N_0} = \frac{(600)}{(100)} = 6.00, \label{t3e4-Pi}\\
+  n &= \frac{K}{P_{\text{issue}}} = \frac{(100)}{(6.00)} = 16.67. \label{t3e4-n}
+\end{align}
+
+\answer{(a)} 16.67 new shares at \$6.00 each.
+
+\step{2}{Price if the project is taken} Once the truth is known the firm is worth $V_{\text{in}}+V_P$, split over $N_0+n$ shares (GT's ``share value taking the project''):
+\begin{align}
+  P_{\text{take}} &= \frac{V_{\text{in}}+V_P}{N_0+n} \label{t3e4-take}\\
+                  &= \frac{(1{,}000)+(120)}{(100)+(16.67)} \nonumber\\
+                  &= \frac{1{,}120}{116.67} = 9.60. \nonumber
+\end{align}
+
+\answer{(b)} \$9.60 per share if ABC issues and invests.
+
+\step{3}{Price if the project is passed up} No shares are issued and the firm is worth $V_{\text{in}}$ once the truth is known:
+\begin{align}
+  P_{\text{pass}} &= \frac{V_{\text{in}}}{N_0} = \frac{(1{,}000)}{(100)} = 10.00. \label{t3e4-pass}
+\end{align}
+Since $9.60<10.00$, old shareholders are better off if the firm \textbf{passes up} the positive-NPV project.
+
+\answer{(c)} \$10.00 per share if ABC passes up the project, so the old shareholders prefer to pass it up.
+
+\step{4}{Where the \$0.40 goes} New shareholders pay 100 for a fraction of the firm
+\begin{align}
+  \frac{n}{N_0+n} = \frac{(16.67)}{(116.67)} = 0.142857 \quad(=1/7), \nonumber
+\end{align}
+of a firm worth 1{,}120, that is, for a stake worth $(0.142857)(1{,}120)=160$. The transfer to them is $160-100=60$, larger than the NPV of $120-100=20$, so old shareholders lose $60-20=40$ in total, or $40/100=0.40$ per share ($=10.00-9.60$). The firm takes the project only if \eqref{t3e4-take} with $n=K/P_{\text{issue}}$ is at least \eqref{t3e4-pass}. Cross-multiplying (both denominators are positive) and cancelling $N_0V_{\text{in}}$:
+\begin{align}
+  \frac{V_{\text{in}}+V_P}{N_0+K/P_{\text{issue}}} &\ge \frac{V_{\text{in}}}{N_0} \nonumber\\
+  N_0(V_{\text{in}}+V_P) &\ge V_{\text{in}}\Bigl(N_0+\frac{K}{P_{\text{issue}}}\Bigr) \nonumber\\
+  N_0V_{\text{in}}+N_0 V_P &\ge N_0V_{\text{in}}+\frac{V_{\text{in}}K}{P_{\text{issue}}} \nonumber\\
+  N_0 V_P &\ge \frac{V_{\text{in}}K}{P_{\text{issue}}} \nonumber\\
+  P_{\text{issue}} &\ge \frac{V_{\text{in}}K}{N_0 V_P}= \frac{(1{,}000)(100)}{(100)(120)} = \frac{100{,}000}{12{,}000} = 8.33, \label{t3e4-thr}
+\end{align}
+so the market's undervaluation (6 against 10) is far beyond what the project can absorb: the project is taken only if outsiders' price is at least \$8.33.
+
+\step{5}{If the market prices the project in} If outsiders value the firm with the project at $V_{\text{out}}+V_P=600+120=720$ after the issue, the issue price must satisfy $N_0P_{\text{issue}}+K=720$:
+\begin{align}
+  P_{\text{issue}} &= \frac{720-K}{N_0} = \frac{(720)-(100)}{(100)} = 6.20, \nonumber\\
+  n &= \frac{(100)}{(6.20)} = 16.13, \nonumber\\
+  P_{\text{take}} &= \frac{(1{,}120)}{(100)+(16.13)} = \frac{1{,}120}{116.13} = 9.64 < 10. \nonumber
+\end{align}
+The conclusion does not change.
+
+\intuition Equity is a claim on the assets in place too. When outsiders undervalue those assets, selling equity hands part of their hidden value to the new shareholders; if that transfer exceeds the project's NPV, the managers acting for the old shareholders forgo the project (Myers--Majluf underinvestment). Internal cash or safe debt would avoid the transfer.
+
+\pitfalls
+\begin{itemize}
+  \item Using management's value (\$10 per share) as the issue price: the shares are sold at what outsiders will pay, \$6.
+  \item Forgetting to add the project's \$120 (or adding only its NPV of \$20 while also counting the \$100 of cash, which is spent on the project) when computing the firm's value after investing.
+  \item Concluding that the project should be rejected on its merits: its NPV is $+20$; it is rejected only because of the \$60 transfer to new shareholders.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~19, \S19.5, ``Adverse Selection and the Pecking Order'' discussion and Example~19.8, pp.~676--677, Result~19.10, p.~677; Amaro de Matos \S3.2.3 pp.~86--88 (rule (3.20)).}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 7 AS 6
+\exsec{6. Rock's winner's curse model --- Amaro de Matos 6.2.7 \#4 and \#6, p.~175}
+
+\asked (\#4) Prove that an uninformed investor's order is filled with a probability $\pi$ on an underpriced issue that is no larger than the probability $\pi'$ on an overpriced one. (\#6) Explain why, in equilibrium, the offer price $p_0$ must fall when the fraction $\alpha$ of the shares that goes to informed investors rises.
+
+\approach Both parts are Rock's (1986) IPO model as set out in Amaro de Matos \S6.2.2 (lecture block 3.10). For \#4, write the fill probability under pro-rata rationing as a function of total demand and note that informed investors add demand only to underpriced issues. For \#6, the equilibrium condition is the uninformed investors' break-even (6.7); treat it as an implicit equation $G(p_0,\alpha)=0$ and sign $dp_0/d\alpha$ with the implicit function theorem.
+
+\notation
+\begin{itemize}
+  \item $n$: shares offered; $v\ge0$: true value per share, density $f$, c.d.f.\ $F$; $p_0$ ($=p^\circ$ in \S6.2.2): offer price.
+  \item $D_U$, $D_I$: uninformed and informed demand (shares); informed demand only underpriced issues ($v>p_0$).
+  \item $\pi$, $\pi'$: probability that an uninformed order is filled in an underpriced / overpriced issue.
+  \item $\alpha\in[0,1)$: fraction of the shares of an underpriced issue that goes to informed investors; $N$, $c$: number of informed investors and cost of information each.
+\end{itemize}
+
+\assume Rationing as in Rock (Amaro's answer to \#5): when an issue is oversubscribed every order has the same chance of being filled, so the fill probability of an order is $\min\{1,\,n/D\}$, where $D$ is total demand.
+
+\step{1}{(\#4) $\pi\le\pi'$} An overpriced issue attracts only uninformed demand; an underpriced one attracts both:
+\begin{align}
+  \pi' &= \min\left\{1,\frac{n}{D_U}\right\}, \label{t3e7-pip}\\
+  \pi  &= \min\left\{1,\frac{n}{D_U+D_I}\right\}. \label{t3e7-pi}
+\end{align}
+The map $D\mapsto\min\{1,n/D\}$ is non-increasing and $D_U+D_I\ge D_U$, so
+\begin{align}
+  \pi \le \pi', \label{t3e7-ineq}
+\end{align}
+with equality only when even the underpriced issue is not oversubscribed ($D_U+D_I\le n$), and strict inequality whenever informed demand causes rationing. $\blacksquare$
+
+\answer{(\#4)} Under pro-rata rationing the fill probability is $\min\{1,n/D\}$, non-increasing in total demand $D$; underpriced issues carry the extra informed demand, so $\pi=\min\{1,n/(D_U+D_I)\}\le\min\{1,n/D_U\}=\pi'$.
+
+\step{2}{Link to (6.7)} The uninformed hold the whole overpriced issue but only a fraction $1-\alpha$ of an underpriced one. With uninformed orders of exactly $D_U=n$, \eqref{t3e7-pip} gives $\pi'=\min\{1,n/n\}=1$, and the uninformed get $\pi n=(1-\alpha)n$ shares of an underpriced issue, so $\pi=1-\alpha$: the weight $1-\alpha$ on the right of (6.7) is $\pi/\pi'$. In the Ross IPO question (Cap.~15, Quest\~ao~3), $\pi=1/2$ and $\pi'=1$.
+
+\step{3}{(\#6) The uninformed break-even condition} Let $L(p_0)\equiv\int_0^{p_0}(p_0-v)f(v)\,dv$ (expected loss per share on overpriced issues) and $U(p_0)\equiv\int_{p_0}^{\infty}(v-p_0)f(v)\,dv$ (expected gain on underpriced issues). Dividing both sides of (6.7) by $n$ gives $L(p_0)=(1-\alpha)U(p_0)$, so equilibrium requires
+\begin{align}
+  G(p_0,\alpha) \equiv (1-\alpha)U(p_0) - L(p_0) = 0. \label{t3e7-G}
+\end{align}
+By Leibniz's rule (the integrand vanishes at the moving limit $v=p_0$, so only the derivative inside the integral is left),
+\begin{align}
+  U'(p_0) &= -(p_0-p_0)f(p_0)+\int_{p_0}^{\infty}(-1)f(v)\,dv = -[1-F(p_0)], \nonumber\\
+  L'(p_0) &= (p_0-p_0)f(p_0)+\int_0^{p_0}(1)f(v)\,dv = F(p_0). \nonumber
+\end{align}
+Differentiating \eqref{t3e7-G}:
+\begin{align}
+  \frac{\partial G}{\partial\alpha} &= -U(p_0) < 0, \label{t3e7-Ga}\\
+  \frac{\partial G}{\partial p_0} &= -(1-\alpha)[1-F(p_0)] - F(p_0) < 0. \label{t3e7-Gp}
+\end{align}
+
+\step{4}{Comparative statics} By the implicit function theorem applied to \eqref{t3e7-G}, using \eqref{t3e7-Ga} and \eqref{t3e7-Gp},
+\begin{align}
+  \frac{dp_0}{d\alpha} &= -\frac{\partial G/\partial\alpha}{\partial G/\partial p_0} \nonumber\\
+   &= -\frac{(-U(p_0))}{(-(1-\alpha)[1-F(p_0)]-F(p_0))} \nonumber\\
+   &= -\frac{U(p_0)}{F(p_0)+(1-\alpha)[1-F(p_0)]} < 0. \label{t3e7-dp}
+\end{align}
+Equivalently $\partial\alpha/\partial p_0<0$, the form of the book's answer. A higher $\alpha$ shrinks the uninformed share of the good issues, so at the old price \eqref{t3e7-G} is negative (they lose on average); only a lower $p_0$, which raises $U$ and lowers $L$, restores zero expected profit.
+
+\step{5}{Numerical illustration} Let $v$ be uniform on $[0,2]$ ($f=1/2$, $E(v)=1$). Then
+\begin{align}
+  L(p_0) &= \int_0^{p_0}(p_0-v)\tfrac12\,dv = \tfrac12\Bigl[p_0v-\tfrac{v^2}{2}\Bigr]_0^{p_0} = \tfrac12\cdot\frac{p_0^2}{2} = \frac{p_0^2}{4}, \nonumber\\
+  U(p_0) &= \int_{p_0}^{2}(v-p_0)\tfrac12\,dv = \tfrac12\cdot\frac{(2-p_0)^2}{2} = \frac{(2-p_0)^2}{4}. \nonumber
+\end{align}
+Substituting into \eqref{t3e7-G}, multiplying by 4 and taking positive square roots (both sides are nonnegative for $p_0\in[0,2]$):
+\begin{align}
+  (1-\alpha)(2-p_0)^2 &= p_0^2 \nonumber\\
+  \sqrt{1-\alpha}\,(2-p_0) &= p_0 \nonumber\\
+  2\sqrt{1-\alpha} &= p_0\bigl(1+\sqrt{1-\alpha}\bigr) \nonumber\\
+  p_0 &= \frac{2\sqrt{1-\alpha}}{1+\sqrt{1-\alpha}}. \nonumber
+\end{align}
+$\alpha=0$: $p_0=2/2=1=E(v)$; $\alpha=0.36$: $\sqrt{0.64}=0.8$, $p_0=1.6/1.8=0.8889$; $\alpha=0.64$: $\sqrt{0.36}=0.6$, $p_0=1.2/1.6=0.75$. At $\alpha=0.36$: $U=(2-0.8889)^2/4=0.308642$, $F(p_0)=p_0/2=0.444444$ and $1-F=0.555556$, so \eqref{t3e7-dp} gives
+\begin{align}
+  \frac{dp_0}{d\alpha} = -\frac{0.308642}{0.444444+(0.64)(0.555556)} = -\frac{0.308642}{0.8} = -0.3858, \nonumber
+\end{align}
+and the underpricing $E(v)-p_0=1-0.8889=0.1111$ equals $\alpha U(p_0)=(0.36)(0.308642)=0.1111$, which by (6.8) is $Nc/n$, as (6.9) requires.
+
+\answer{(\#6)} The uninformed get only $1-\alpha$ of each good issue but all of each bad one; a higher $\alpha$ makes their break-even (6.7) negative at the old price, and only a lower $p_0$ restores it: $dp_0/d\alpha=-U(p_0)/\{F(p_0)+(1-\alpha)[1-F(p_0)]\}<0$.
+
+\intuition The informed crowd the uninformed out of exactly the issues worth having, so the more of them there are, the worse the uninformed's average allocation (the winner's curse). The uninformed are needed to absorb the issue, and they stay only if they break even, which needs a lower offer price. In the lecture's version, $P_0=(\hat V-\lambda\alpha V_G)/(1-\lambda\alpha)$ falls as the informed capital share $\lambda$ rises.
+
+\pitfalls
+\begin{itemize}
+  \item Claiming $\pi<\pi'$ always: equality holds when even the underpriced issue is not oversubscribed.
+  \item Arguing that a higher $\alpha$ lowers $p_0$ ``because informed investors want cheap shares'': informed investors take the price as given; the price falls to keep the \emph{uninformed} willing to participate.
+  \item Forgetting that $p_0$ moves both integrals: a lower price raises the gain on good issues \emph{and} cuts the loss on bad ones.
+\end{itemize}
+\bookans \#6 matches the book's answer (p.~269), which argues verbally from (6.7) that $\partial\alpha/\partial p_0<0$; \eqref{t3e7-dp} makes the sign explicit. For \#4 the book only refers to Rock (1986), p.~192, and gives no derivation.
+\refbib{Amaro de Matos Ch.~6, \S6.2.2 ``Asymmetry between Investors'', pp.~163--164, eqs.~(6.7)--(6.9); \S6.2.3, p.~166; Appendix C.6.2, p.~269; lecture Topic~3, ``IPO underpricing''.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 6 AS 7
+\exsec{7. Zymase: leverage and strategy choice --- Berk 16.26, p.~495}
+
+\asked (a) Which strategy gives the largest expected payoff to the firm as a whole. (b) and (c)
+Which strategy gives the shareholders the largest expected payoff when \$40 million, respectively
+\$110 million, of debt is due at the payoff date. (d) How much expected firm value is lost, in each
+case, when management follows the shareholders' preference instead of the value-maximising strategy
+(the expected agency cost of debt).
+
+\approach Split each strategy's payoff state by state into debt, $\min\{X,F\}$, and equity,
+$\max\{X-F,0\}$, and take expectations. Equity is a call option on the firm, so as $F$ rises it
+favours strategies whose payoff lies above $F$ with some probability, even if their mean is lower:
+the lecture's \emph{asset substitution} (excessive risk-taking). The agency cost is the drop in
+expected \emph{firm} payoff caused by that choice, which is the loss the shareholders bear ex ante
+when creditors price the debt.
+
+\notation
+\begin{itemize}
+  \item $j\in\{A,B,C\}$: research strategy; $X_j$: its after-tax payoff (\$ million), with the probabilities in the table.
+  \item $F\in\{40,110\}$: face value of the debt, due when the payoff arrives; equity gets $\max\{X_j-F,0\}$, debt $\min\{X_j,F\}$.
+  \item Agency cost: expected firm payoff of the value-maximizing strategy minus that of the strategy equity chooses.
+\end{itemize}
+
+\assume Risk is diversifiable, so every claim is discounted at the riskless rate, which is not
+given. All comparisons are in expected payoffs at the payoff date; present values are these
+divided by the same factor $1+r_f$, so the rankings do not change.
+
+\step{1}{(a) Expected firm payoffs} We weight each payoff by its probability:
+\begin{align}
+  \mathbb{E}[X_A] &= (1.0)(75) = 75, \label{t4e6-XA}\\
+  \mathbb{E}[X_B] &= (0.5)(140)+(0.5)(0) = 70+0 = 70, \label{t4e6-XB}\\
+  \mathbb{E}[X_C] &= (0.1)(300)+(0.9)(40) = 30+36 = 66. \label{t4e6-XC}
+\end{align}
+Strategy A has the highest expected payoff (and the lowest risk).
+
+\answer{(a)} Strategy A, with an expected payoff of \$75 million (B: \$70 million; C: \$66 million).
+
+\step{2}{(b) Debt of \$40 million} We split each state's payoff with $F=40$: equity
+$\max\{X-40,0\}$ (e.g.\ $140-40=100$; $\max\{40-40,0\}=0$), debt $\min\{X,40\}$:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Strategy, state (prob.) & Firm & Equity $\max\{X-40,0\}$ & Debt $\min\{X,40\}$\\
+\midrule
+A (1.0) & 75 & 35 & 40\\
+B, high (0.5) & 140 & 100 & 40\\
+B, low (0.5) & 0 & 0 & 0\\
+C, high (0.1) & 300 & 260 & 40\\
+C, low (0.9) & 40 & 0 & 40\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{align}
+  \mathbb{E}[E_A] &= (1.0)(35) = 35, \nonumber\\
+  \mathbb{E}[E_B] &= (0.5)(100)+(0.5)(0) = 50+0 = 50, \label{t4e6-EB40}\\
+  \mathbb{E}[E_C] &= (0.1)(260)+(0.9)(0) = 26+0 = 26. \nonumber
+\end{align}
+Equity prefers B. Debt then expects $(0.5)(40)+(0.5)(0)=20$, against $40$ under A or C.
+
+\answer{(b)} Strategy B (expected equity payoff \$50 million, against \$35 million for A and
+\$26 million for C).
+
+\step{3}{(c) Debt of \$110 million} Same split with $F=110$: equity $\max\{X-110,0\}$ (e.g.\
+$\max\{75-110,0\}=0$, $140-110=30$, $300-110=190$), debt $\min\{X,110\}$:
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+Strategy, state (prob.) & Firm & Equity $\max\{X-110,0\}$ & Debt $\min\{X,110\}$\\
+\midrule
+A (1.0) & 75 & 0 & 75\\
+B, high (0.5) & 140 & 30 & 110\\
+B, low (0.5) & 0 & 0 & 0\\
+C, high (0.1) & 300 & 190 & 110\\
+C, low (0.9) & 40 & 0 & 40\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{align}
+  \mathbb{E}[E_A] &= (1.0)(0) = 0, \nonumber\\
+  \mathbb{E}[E_B] &= (0.5)(30)+(0.5)(0) = 15+0 = 15, \nonumber\\
+  \mathbb{E}[E_C] &= (0.1)(190)+(0.9)(0) = 19+0 = 19. \label{t4e6-EC110}
+\end{align}
+Equity prefers C. Debt then expects $(0.1)(110)+(0.9)(40)=11+36=47$, against $75$ under A and
+$(0.5)(110)+(0.5)(0)=55$ under B.
+
+\answer{(c)} Strategy C (expected equity payoff \$19 million, against \$15 million for B and
+\$0 for A).
+
+\step{4}{(d) Expected agency costs} The agency cost is the expected firm payoff of the efficient
+strategy minus that of the strategy equity picks. The value-maximizing strategy is A \eqref{t4e6-XA}. With
+$F=40$ equity picks B \eqref{t4e6-XB}; with $F=110$ it picks C \eqref{t4e6-XC}:
+\begin{align}
+  \text{cost}(40) &= \mathbb{E}[X_A]-\mathbb{E}[X_B] = (75)-(70) = 5, \label{t4e6-c40}\\
+  \text{cost}(110) &= \mathbb{E}[X_A]-\mathbb{E}[X_C] = (75)-(66) = 9. \label{t4e6-c110}
+\end{align}
+The expected agency cost is \$5 million with \$40 million of debt and \$9 million with
+\$110 million (in payoff-date dollars; divide by $1+r_f$ for today's value).
+
+\answer{(d)} \$5 million with \$40 million of debt; \$9 million with \$110 million of debt (expected
+payoff-date values).
+
+\intuition With \$40 million due, A leaves equity a safe \$35 million, but B's 50\% chance of
+\$100 million is worth more to equity because the creditors bear the zero-payoff state. With
+\$110 million due, A leaves equity nothing and only the long shot C pays off above the face
+value often enough. More debt pushes equity towards riskier, lower-value strategies, and the
+agency cost grows with leverage. Creditors who anticipate the choice price it in, so the
+shareholders bear the cost ex ante.
+\pitfalls
+\begin{itemize}
+  \item Measuring the agency cost as the creditors' loss (e.g.\ $40-20=20$ with $F=40$). That is a
+        transfer; the agency cost is the loss in \emph{total} expected payoff, $75-70=5$.
+  \item Giving equity $X-F$ in states where $X<F$ (C's low state with $F=110$ gives $-70$, not $0$),
+        which makes the risky strategies look worse to equity than they are.
+  \item Comparing equity's payoffs across debt levels instead of across strategies at a given debt
+        level; each of (b) and (c) is a choice among A, B, C with $F$ fixed.
+\end{itemize}
+\refbib{Berk Ch.~16, \S~16.6 ``Agency Costs and Information'', ``Equity-Debt Holder Conflicts'' (excessive risk-taking), pp.~483--484. Lecture Topic~4B, slides 2--13.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 7 AS 8
+\exsec{8. Ajax Manufacturing: debt overhang --- Grinblatt \& Titman 16.12--16.13, p.~593}
+
+\asked (16.12) The NPV of the widget project, and whether Ajax can raise the \$75 million when
+the existing \$70 million senior bond forbids new debt (so only new equity is possible).
+(16.13) Whether Ajax can raise the \$75 million in equity if it uses the riskier, capital-intensive
+process instead.
+
+\approach Risk neutrality and $r_f=0$ make every value an expected payoff. New equity is junior to
+the bond, so the most new shareholders can be offered is the whole residual claim
+$\mathbb{E}[\max\{X-70,0\}]$; the project is fundable iff that is at least \$75 million. This is the
+lecture's \emph{debt overhang}: the bond captures part of the project's value. In 16.13 a riskier
+payoff shrinks the bond's share (\emph{asset substitution}), which can make the equity issue
+feasible.
+
+\notation
+\begin{itemize}
+  \item $F=70$: existing senior bond obligation, with a covenant forbidding additional debt; $I=75$: investment cost.
+  \item States: recession (probability $\pi=0.2$) and favourable (probability $0.8$); $X_s$: project cash flow in state $s$; risk-neutral investors, $r_f=0$, no taxes or bankruptcy costs.
+  \item $V$: project value; $E^{\max}$: value of the whole residual claim after the bond, the most new shareholders can be offered; $D$: bond value.
+\end{itemize}
+
+\assume The firm has no other assets: without the project, the bond receives nothing. In 16.13
+the investment still costs $I=75$ (the statement changes only the cash flows).
+
+\step{1}{(16.12) NPV of the project} We value the project's cash flows and subtract their cost:
+\begin{align}
+  V &= \pi X_{\text{rec}}+(1-\pi)X_{\text{fav}} \label{t4e7-V}\\
+    &= (0.2)(85)+(0.8)(150) \nonumber\\
+    &= 17+120 = 137, \nonumber\\
+  \mathit{NPV} &= V-I = (137)-(75) = 62. \label{t4e7-NPV}
+\end{align}
+
+\step{2}{(16.12) Can it be funded?} We value the largest claim new shareholders can buy and
+compare it with the \$75 million they must pay. New debt is forbidden, so the money must come from
+equity, which is junior to the \$70 bond. Equity receives $\max\{85-70,0\}=15$ in a recession and
+$\max\{150-70,0\}=80$ in the favourable state:
+\begin{align}
+  E^{\max} &= (0.2)(15)+(0.8)(80) \label{t4e7-E1}\\
+           &= 3+64 = 67 < 75 = I. \nonumber
+\end{align}
+Even 100\% of the equity is worth less than the \$75 million it must raise: \textbf{no}. The
+bond, which would be paid in full ($85\ge 70$), would be worth $D=70$ instead of $0$; the
+split $70+(67-75)=62$ is the NPV. The creditors capture more than the whole NPV, which is why
+the shareholders cannot pay for it.
+
+\answer{(16.12)} $\mathit{NPV}=\$62$ million, but the firm \textbf{cannot} fund the project: all of
+the equity is worth \$67 million $<\$75$ million.
+
+\step{3}{(16.13) The capital-intensive variant} We repeat Steps 1--2 with the new cash flows,
+$5$ (recession) and $170$ (favourable):
+\begin{align}
+  V' &= (0.2)(5)+(0.8)(170) \nonumber\\
+     &= 1+136 = 137, \nonumber\\
+  \mathit{NPV}' &= (137)-(75) = 62, \nonumber
+\end{align}
+the same NPV but riskier. Equity receives $\max\{5-70,0\}=0$ and $170-70=100$:
+\begin{align}
+  E'^{\max} &= (0.2)(0)+(0.8)(100) \label{t4e7-E2}\\
+            &= 80 \ge 75 = I. \nonumber
+\end{align}
+\textbf{Yes}: new shareholders pay \$75 million for a fraction $75/80=0.9375$ of the equity and
+the old shareholders keep $1-0.9375=6.25\%$, worth $0.0625(80)=80-75=5$. The bond now receives
+$\min\{5,70\}=5$ and $\min\{170,70\}=70$, worth
+\begin{align}
+  D' &= (0.2)(5)+(0.8)(70) \nonumber\\
+     &= 1+56 = 57, \nonumber
+\end{align}
+and $57+80=137=V'$.
+
+\answer{(16.13)} \textbf{Yes}: under the capital-intensive process the equity is worth
+\$80 million $\ge\$75$ million, so new shareholders buy $93.75\%$ of it for \$75 million.
+
+\step{4}{Comparison} The two processes create the same value, $62$. The risky one moves
+$70-57=13$ from the bondholders to the equity, which is exactly what lifts the equity's
+value from $67$ to $80$, above the \$75 million cost. The bondholders prefer the safe process,
+but under it nothing is built and they get $0$, so they are better off with the risky one
+($57>0$).
+
+\intuition Debt overhang: with a senior bond that cannot be diluted, new equity must pay for
+the whole project but receives only the value left after the bond, and here the bond absorbs
+too much of it. Raising risk shrinks the bond's share (asset substitution), and that makes the
+equity issue possible. Of the two distortions, the risk shift is the lesser here. A cleaner
+fix is to renegotiate the bond: under the safe process equity covers \$75 million whenever
+the face is cut to at most $137-75=62$, which the bondholders should accept since $62>57$
+(the lecture's renegotiation argument).
+\pitfalls
+\begin{itemize}
+  \item Answering ``NPV $>0$, so yes'' in 16.12. Fundability depends on what the junior claim is
+        worth to the new money, not on total value.
+  \item Valuing equity as $V-F$. That gives $137-70=67$ for \emph{both} processes and the wrong answer
+        in 16.13; limited liability makes the recession payoff $\max\{5-70,0\}=0$, not $-65$.
+  \item Forgetting that without the project the bond gets nothing here; that is why the bondholders
+        prefer the risky process ($57$) to no project ($0$).
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~16, \S~16.2 ``The Debt Overhang Problem'' and ``How the Seniority Structure of Debt Affects the Debt Overhang Problem'', pp.~563--566 (Results~16.3--16.4); ``The Asset Substitution Problem'', pp.~569--572. Lecture Topic~4B, slides 19--31.}
+%% END-FROM
+
+% =============================================================================
+\exsec{9. Senior bond, subordinated loan and project choice --- Grinblatt \& Titman 16.3, p.~592}
+
+\asked (a) Rank liquidation, project A and project B by present value. (b) Whether Jack and Jill should lend the \$20 the firm needs to avoid liquidation in exchange for a subordinated bond with face value \$20.50. (c) Which project managers acting for shareholders choose once the loan is made.
+
+\approach Total value is ranked by expected cash flows (risk neutrality, zero rate). Each claimant's payoff follows the priority order: senior bond first, then subordinated debt, then equity. Jack and Jill hold both subordinated claims, so their lending decision compares what they get under liquidation with what they get under continuation, given the project that equity will pick. Equity, holding a call on firm value, can prefer the riskier, lower-value project: \emph{asset substitution}.
+
+\notation
+\begin{itemize}
+  \item Senior bond: $S_0=20$ due now, $S_1=100$ due next period; subordinated loan $J_1=40$ (Jack and Jill) due next period.
+  \item $L=120$: liquidation value now; project A pays $X_A=135$ for sure; project B pays $X_B\in\{161,69\}$ with probability $\tfrac12$ each.
+  \item New loan: $20$ now for a subordinated bond with face value $N_1=20.50$, held by Jack and Jill.
+\end{itemize}
+
+\step{1}{(a) Present values} With a zero rate the PV of each option is its expected cash flow (the \$20 loan and the \$20 payment to the senior bond cancel, so they do not change total value):
+\begin{align}
+  PV_{\text{liq}} &= 120, \nonumber\\
+  PV_A &= 135, \nonumber\\
+  PV_B &= \tfrac12(161)+\tfrac12(69) = 80.5+34.5 = 115. \nonumber
+\end{align}
+\answer{(a)} Project A (135) $>$ liquidation (120) $>$ project B (115).
+
+\step{2}{Who gets what under liquidation} The senior bond is owed $S_0+S_1=120$ in total, exactly the liquidation value, so it is paid in full and nothing is left:
+\begin{align}
+  \text{senior} = 120, \qquad \text{Jack and Jill} = 0, \qquad \text{equity} = 0. \nonumber
+\end{align}
+
+\step{3}{(c) Equity's project choice after the loan} Next period the debt ahead of equity is $S_1+J_1+N_1=100+40+20.50=160.50$. Equity receives $\max(X-160.50,0)$:
+\begin{align}
+  E_A &= \max\bigl((135)-(160.50),\,0\bigr) = 0, \nonumber\\
+  E_B &= \tfrac12\max\bigl((161)-(160.50),\,0\bigr) + \tfrac12\max\bigl((69)-(160.50),\,0\bigr) = \tfrac12(0.50) = 0.25. \nonumber
+\end{align}
+Equity strictly prefers B, the value-destroying gamble: only B's good state leaves anything above the debt.
+\answer{(c)} Project B (equity gets 0.25 under B and 0 under A).
+
+\step{4}{(b) Jack and Jill's payoff if they lend} They anticipate B. In B's good state the senior bond takes 100 and they take all subordinated claims, $40+20.50=60.50$, leaving $0.50$ to equity; in the bad state the senior bond takes all 69:
+\begin{align}
+  \text{J\&J}^{B} &= \tfrac12(60.50) + \tfrac12(0) - 20 = 30.25 - 20 = 10.25 > 0. \nonumber
+\end{align}
+For comparison, under A (which equity will not choose) they would get $135-100=35$ next period, a net $35-20=15$. Lending beats the $0$ they receive under liquidation in either case.
+\answer{(b)} Yes: lending gives Jack and Jill an expected net gain of \$10.25 (even though equity will choose B), against \$0 under liquidation.
+
+\step{5}{Check: the claims add up} Under B: senior $20+\tfrac12(100)+\tfrac12(69)=20+50+34.5=104.5$; Jack and Jill $10.25$ net; equity $0.25$. Sum $104.5+10.25+0.25=115=PV_B$. Under A: senior $20+100=120$, Jack and Jill $15$, equity $0$, sum $135=PV_A$. The senior bondholders lose $120-104.5=15.5$ when the firm continues with B: the subordinated lenders and equity gain at their expense, and $120-115=5$ of value is destroyed.
+
+\intuition Jack and Jill are out of the money under liquidation, so keeping the firm alive is an option for them: any continuation gives them a chance of being paid, and the senior bond bears the downside of the gamble. Equity, with even more debt ahead of it, is a deep out-of-the-money call and picks the riskiest project. The efficient choice (A) would need someone to commit equity to the safe project, for example a covenant or a loan conditioned on A.
+
+\pitfalls
+\begin{itemize}
+  \item Ranking projects by what equity gets instead of by total value in (a).
+  \item Forgetting that the new \$20.50 bond is also junior to the senior bond: in B's bad state Jack and Jill get nothing on either loan.
+  \item Answering (b) as if equity chose A: Jack and Jill must anticipate the project equity will pick after they lend.
+\end{itemize}
+
+\refbib{Grinblatt \& Titman Ch.~16, \S16.2 ``Debt Holder--Equity Holder Conflicts: An Indirect Bankruptcy Cost'', subsections ``How the Seniority Structure of Debt Affects the Debt Overhang Problem'', pp.~563--566, and ``The Asset Substitution Problem'', pp.~569--572; lecture Topic~4B, ``Asset substitution''. No book answer.}
+
+% =============================================================================
+\exsec{10. Myers (1977): underinvestment with risky debt --- Amaro de Matos 3.1.5 \#9, p.~77}
+
+\asked Using Myers' (1977) setting, show that when the firm has risky debt outstanding that matures after its investment decision, management (acting for shareholders) passes up some positive-NPV investments, and that this lowers the value of the firm (an ``opportunity wealth loss'').
+
+\approach Myers' model: the firm's value is a growth option, an investment $I$ taken at date 1 after the state $s$ is observed, worth $V(s)$. Shareholders pay for the investment but, with debt of promised payment $P$ outstanding, receive only what is left after the bondholders: the \emph{debt overhang}. Comparing the all-equity investment rule with the levered one gives the set of forgone positive-NPV states and the loss in value.
+
+\notation
+\begin{itemize}
+  \item $s\in[0,s']$: state of the world at date 1, density $q(s)$ (uniform: $q=1/s'$); $V(s)$: value of the investment if made, increasing in $s$; $I$: investment outlay, paid by shareholders at date 1.
+  \item $P$: promised payment to bondholders, due after the investment decision; if the firm does not invest it is worth 0 (the growth option lapses).
+  \item $s_a$: break-even state with $V(s_a)=I$; $s_b$: state with $V(s_b)=I+P$.
+\end{itemize}
+
+\step{1}{All-equity rule} Shareholders own all of $V(s)$, so they invest iff $V(s)\ge I$, i.e.\ $s\ge s_a$, and the firm is worth
+\begin{align}
+  V^{E} &= \int_{s_a}^{s'} q(s)\,[V(s)-I]\,ds. \label{r7e10-VE}
+\end{align}
+
+\step{2}{Levered rule} If the firm invests, bondholders receive $\min(V(s),P)$ and shareholders $\max(V(s)-P,0)$, having paid $I$. Shareholders invest iff
+\begin{align}
+  V(s) - P - I &\ge 0 \iff V(s) \ge I+P \iff s \ge s_b. \nonumber
+\end{align}
+Since $P>0$ and $V$ is increasing, $s_b>s_a$. In states $s\in[s_a,s_b)$ the project has $V(s)-I\ge0$ but shareholders would get $V(s)-P-I<0$, so they do not invest.
+
+\step{3}{Value of the levered firm and the loss} Firm value counts the NPV only in states where investment happens:
+\begin{align}
+  V^{D}(P) &= \int_{s_b}^{s'} q(s)\,[V(s)-I]\,ds, \label{r7e10-VD}\\
+  V^{E}-V^{D}(P) &= \int_{s_a}^{s_b} q(s)\,[V(s)-I]\,ds > 0. \label{r7e10-loss}
+\end{align}
+The loss rises with $P$. Differentiating \eqref{r7e10-VD} (Leibniz rule, lower limit $s_b(P)$) and using $V(s_b)=I+P$, so $ds_b/dP = 1/V'(s_b)$:
+\begin{align}
+  \frac{dV^{D}}{dP} &= -q(s_b)\,[V(s_b)-I]\,\frac{ds_b}{dP} = -q(s_b)\,\frac{P}{V'(s_b)} < 0. \nonumber
+\end{align}
+
+\step{4}{Example} Let $V(s)=s$, $s'=100$ (uniform, $q=1/100$), $I=40$, so $s_a=40$. All-equity value, from \eqref{r7e10-VE}:
+\begin{align}
+  V^{E} &= \frac{1}{100}\int_{40}^{100}(s-40)\,ds = \frac{1}{100}\Bigl[\frac{(s-40)^2}{2}\Bigr]_{40}^{100} = \frac{1}{100}\cdot\frac{(60)^2}{2} = 18. \nonumber
+\end{align}
+With $P=20$, $s_b=I+P=60$, and from \eqref{r7e10-VD}--\eqref{r7e10-loss}:
+\begin{align}
+  V^{D}(20) &= \frac{1}{100}\Bigl[\frac{(s-40)^2}{2}\Bigr]_{60}^{100} = \frac{(60)^2-(20)^2}{200} = \frac{3{,}200}{200} = 16, \nonumber\\
+  V^{E}-V^{D}(20) &= \frac{1}{100}\Bigl[\frac{(s-40)^2}{2}\Bigr]_{40}^{60} = \frac{(20)^2}{200} = 2. \nonumber
+\end{align}
+In general $V^D(P)=[(60)^2-P^2]/200$, decreasing in $P$. The value is split between debt and equity:
+\begin{align}
+  D(P) &= \frac{1}{100}\int_{40+P}^{100} P\,ds = \frac{P\,(60-P)}{100}, \qquad D(20) = \frac{(20)(40)}{100} = 8, \nonumber\\
+  E(20) &= \frac{1}{100}\int_{60}^{100}(s-60)\,ds = \frac{(40)^2}{200} = 8, \qquad D(20)+E(20) = 16 = V^{D}(20). \nonumber
+\end{align}
+The debt value is hump-shaped in $P$ (the book's note 11):
+\begin{align}
+  D'(P) &= \frac{60-2P}{100} = 0 \iff P^* = 30, \qquad D(30) = \frac{(30)(30)}{100} = 9, \nonumber
+\end{align}
+with loss $(30)^2/200=4.5$ at $P^*$.
+\answer{\unskip} With risky debt, shareholders invest only if $V(s)\ge I+P$ instead of $V(s)\ge I$; projects in states $s\in[s_a,s_b)$, with positive NPV, are forgone, and the firm loses $\int_{s_a}^{s_b}q(s)[V(s)-I]\,ds$, which grows with $P$ (2 out of 18 in the example with $P=20$).
+
+\intuition Shareholders pay the whole investment but, when the firm is near default, much of the payoff goes to bondholders, whose claim becomes safer. In states where the NPV is positive but smaller than the debt, investing is a gift to the bondholders, so shareholders decline. Since the debt is priced ex ante, the shareholders who issue it bear this loss: firms whose value is mostly growth options should borrow little.
+
+\pitfalls
+\begin{itemize}
+  \item Letting the debt mature before the investment decision: then there is no overhang (Myers' result needs debt still outstanding when the investment is decided).
+  \item Treating $V(s)-I>0$ as enough for shareholders: their relevant payoff is $V(s)-P-I$.
+  \item Concluding that the loss falls on bondholders: with fair pricing the bondholders pay $D(P)$, so the loss in total value is borne by the original shareholders.
+\end{itemize}
+
+\bookans Amaro de Matos App.~C, p.~259: all-equity rule $V(s)\ge I$, value $\int_{s_a} q(s)[V(s)-I]\,ds$; with risky debt the firm invests only if $V(s)\ge P+I$, and the loss is $\int_{s_a}^{s_b} q(s)[V(s)-I]\,ds$: ``positive net present values are thereby forgone in states $s\in[s_a,s_b]$''. Matches the book's answer (p.~259); the derivative and the example are ours.
+\refbib{Amaro de Matos \S3.1.3 ``Agency Costs of Debt'', subsection ``The Cost of Underinvestment'', pp.~73--74, and note 11 to Ch.~3, p.~279; lecture Topic~4B, ``Debt overhang''.}
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 8 AS 11
+\exsec{11. Pooling in credit markets with a continuum of types --- Tirole 6.2, p.~274}
+
+\asked (0) Derive the lender's expected profit $U_l$ for a loan that pays the borrower $R_b$ in success. Then show: (1) the share of borrowers who behave is endogenous and rises with $R_b$; (2) adverse selection lowers the quality of lending; (3) high-$B$ types impose an externality, forcing a strictly positive profit on low-$B$ types; (4) with $p_L=0$ and $B$ uniform on $[0,\bar B]$, if $p_H^2R^2/(4\bar B)<I$ no loan lets the lender break even, although some borrowers are creditworthy.
+
+\approach The model is Tirole's fixed-investment model (\S3.2) with the private benefit privately known (Part~0, Tirole Exercise~6.1), now drawn from a continuous distribution $H$, and a monopoly lender. A single contract $R_b$ applies to all types; (IC$_b$), $(\Delta p)R_b\ge B$, sorts them into behaving (low $B$) and shirking (high $B$). Everything follows from writing the lender's profit as a mixture of the two groups. The breakdown result is a bound: maximise expected repayment over $R_b$ and compare it with $I$ (lecture block 3.2, market breakdown).
+
+\notation
+\begin{itemize}
+  \item $I$, $A=0$, $R$, $p_H>p_L$, $\Delta p$: as in Part~0 (Tirole Exercise~6.1): investment, borrower's cash, income in success, success probabilities when working/shirking, $\Delta p=p_H-p_L$.
+  \item $B\in[0,\bar B]$: borrower's private benefit, c.d.f.\ $H$ ($H(0)=0$, $H(\bar B)=1$), density $h$ where it exists.
+  \item $R_b\in[0,R]$: borrower's reward on success; the lender is a monopolist and receives $R-R_b$ on success.
+  \item $U_l(R_b)$: lender's expected profit; $\mu(R_b)\equiv p_L+\Delta p\,H((\Delta p)R_b)$: success probability of the funded pool.
+\end{itemize}
+
+\assume As in Part~0, $p_LR<I$ (condition (2) of Exercise~6.1) and $p_HR>I$ (implied by its condition (1)): low-$B$ types are creditworthy. Ties ($B=(\Delta p)R_b$) behave; with a continuous $H$ they have zero mass.
+
+\step{1}{The lender's profit} With $A=0$ every type accepts any $R_b\ge0$ (she gets $\max\{p_HR_b,\;p_LR_b+B\}\ge0$, her outside option). Type $B$ works iff $p_HR_b\ge p_LR_b+B$, i.e.\ by (IC$_b$) iff $B\le(\Delta p)R_b$. Those types form the mass $\Pr[B\le(\Delta p)R_b]=H((\Delta p)R_b)$, and their projects succeed with probability $p_H$; the rest, mass $1-H((\Delta p)R_b)$, shirk and succeed with $p_L$. The lender collects $R-R_b$ on success and lends $I$:
+\begin{align}
+  U_l = H((\Delta p)R_b)\,p_H(R-R_b) + [1-H((\Delta p)R_b)]\,p_L(R-R_b) - I. \label{t3e8-Ul}
+\end{align}
+
+\answer{(0)} $U_l=H((\Delta p)R_b)\,p_H(R-R_b)+[1-H((\Delta p)R_b)]\,p_L(R-R_b)-I$, as stated.
+
+\step{2}{Endogenous quality rises with $R_b$} The share of borrowers who behave, $H((\Delta p)R_b)$, is a c.d.f.\ evaluated at an increasing function of $R_b$, so it is non-decreasing in $R_b$; where the density exists, by the chain rule
+\begin{align}
+  \frac{d}{dR_b}H((\Delta p)R_b) = (\Delta p)\,h((\Delta p)R_b) \ge 0, \nonumber
+\end{align}
+strictly where $h>0$. Note that every type is funded whatever $R_b$: the reward changes \emph{behaviour}, not who applies (Tirole's footnote 78).
+
+\answer{(1)} The behaving share is $H((\Delta p)R_b)$, chosen implicitly through $R_b$ and increasing in it (slope $(\Delta p)h\ge0$).
+
+\step{3}{Adverse selection lowers the quality of lending} The success probability of funded loans is $\mu(R_b)=p_L+\Delta p\,H((\Delta p)R_b)\le p_H$, strictly below $p_H$ unless $R_b\ge\bar B/\Delta p$. Under symmetric information the lender would offer each type $R_b=B/\Delta p$, fund only types with $p_H(R-B/\Delta p)\ge I$, and every funded borrower would behave, so funded loans succeed with $p_H$ and no loan is made to a shirker, whose loan loses money by (2). Under asymmetric information a single $R_b$ applies to all, and any $R_b<\bar B/\Delta p$ funds a mass $1-H>0$ of shirkers; avoiding them requires $R_b\ge\bar B/\Delta p$, whose profit $p_H(R-\bar B/\Delta p)-I$ is negative when $\bar B$ is large.
+
+\answer{(2)} Funded loans succeed with $\mu(R_b)=p_L+\Delta p\,H((\Delta p)R_b)<p_H$ whenever some types shirk, against $p_H$ for every funded loan under symmetric information: shirkers (whose loans lose money) are financed alongside behaving types.
+
+\step{4}{Externality across types} Splitting \eqref{t3e8-Ul} by type (write $I=HI+(1-H)I$):
+\begin{align}
+  U_l = H\,[p_H(R-R_b)-I] + (1-H)\,[p_L(R-R_b)-I]. \label{t3e8-split}
+\end{align}
+If the lender lends, $U_l\ge0$; moving the second term to the right of the inequality,
+\begin{align}
+  H\,[p_H(R-R_b)-I] \ge (1-H)\,[I-p_L(R-R_b)] > 0 \quad\text{when } H<1, \label{t3e8-ext}
+\end{align}
+because $p_L(R-R_b)\le p_LR<I$ by (2). So the lender earns a strictly positive profit on each high-quality (behaving) borrower. Equivalently, $U_l\ge0$ means $\mu(R_b)(R-R_b)\ge I$, so the repayment $R-R_b\ge I/\mu(R_b)>I/p_H$ exceeds the one that would break even on that borrower alone. The losses on the high-$B$ types are recovered from the low-$B$ types: this is the externality.
+
+\answer{(3)} Whenever the lender lends and some types shirk, $H\,[p_H(R-R_b)-I]\ge(1-H)\,[I-p_L(R-R_b)]>0$: the low-$B$ types pay a repayment above their own break-even level ($R-R_b>I/p_H$) to cover the losses on high-$B$ types.
+
+\step{5}{Market breakdown with $p_L=0$ and uniform $H$} Now $\Delta p=p_H-0=p_H$ and, for the uniform distribution, $H((\Delta p)R_b)=\min\{p_HR_b/\bar B,\,1\}\le p_HR_b/\bar B$. With $p_L=0$ the second term of \eqref{t3e8-Ul} vanishes. Substituting, for every $R_b\in[0,R]$:
+\begin{align}
+  U_l + I &= H(p_HR_b)\,p_H(R-R_b) \nonumber\\
+          &\le \left(\frac{p_HR_b}{\bar B}\right)p_H(R-R_b) \nonumber\\
+          &= \frac{p_H^2}{\bar B}\,R_b(R-R_b) \nonumber\\
+          &\le \frac{p_H^2}{\bar B}\,\frac{R^2}{4}, \label{t3e8-bound}
+\end{align}
+the last line because $g(R_b)\equiv R_b(R-R_b)=RR_b-R_b^2$ has $g'(R_b)=R-2R_b=0$ at $R_b=R/2$ and $g''=-2<0$, so its maximum is $g(R/2)=(R/2)(R/2)=R^2/4$. Hence if $\dfrac{p_H^2}{\bar B}\dfrac{R^2}{4}<I$, then $U_l<0$ for every $R_b$: no loan agreement lets the lender recoup $I$ on average. The left side falls with $\bar B$, so the condition holds for $\bar B>p_H^2R^2/(4I)$. Yet the types with $B\le p_HR-I$ have pledgeable income $p_H(R-B/p_H)=p_HR-B\ge I$ and would be funded under symmetric information; they are a mass $(p_HR-I)/\bar B>0$. When $R/2\le\bar B/p_H$ the bound in \eqref{t3e8-bound} is attained at $R_b=R/2$, the book's optimum.
+
+\answer{(4)} With $p_L=0$ and uniform $H$, expected repayment is at most $p_H^2R^2/(4\bar B)$ (at $R_b=R/2$), so if this is below $I$ every loan loses money and credit is not extended, even though the types $B\le p_HR-I$ (a positive mass) would be funded under symmetric information.
+
+\step{6}{Numerical illustration} $p_H=0.8$, $p_L=0$, $R=100$, $I=50$, $\bar B=50$: the maximum expected repayment is
+\begin{align}
+  \frac{p_H^2}{\bar B}\,\frac{R^2}{4} = \frac{(0.64)(10{,}000)}{(4)(50)} = \frac{6{,}400}{200} = 32 < 50, \nonumber
+\end{align}
+reached at $R_b=R/2=50\le\bar B/p_H=50/0.8=62.5$. Breakdown occurs for any $\bar B>p_H^2R^2/(4I)=6{,}400/200=32$, although the types $B\le p_HR-I=0.8(100)-50=30$, a mass $30/50=0.6$ of borrowers, are creditworthy. At $R_b=50$, $H=\min\{0.8\cdot50/50,1\}=0.8$ and the split \eqref{t3e8-split} gives $U_l=(0.8)[(0.8)(50)-50]+(0.2)[(0)(50)-50]=(0.8)(-10)+(0.2)(-50)=-8-10=-18$, that is, $32-50$.
+
+\intuition A single price for all types cannot keep everyone honest without giving away most of the income: raising $R_b$ makes more types behave but leaves less for the lender. With many high-$B$ types, the best trade-off still does not cover $I$, and the market shuts even for borrowers who would be good risks under symmetric information, the lecture's market breakdown with a continuum of types. When it does lend, the honest types pay for the shirkers.
+
+\pitfalls
+\begin{itemize}
+  \item Thinking a higher $R_b$ attracts better applicants: here every type always applies; $R_b$ only changes who \emph{behaves} (footnote 78).
+  \item Maximising $p_H(R-R_b)H$ without the cap $H\le1$: for $R_b>\bar B/p_H$ the share of behaving types stops rising, so the interior first-order condition $R_b=R/2$ is valid only when $R/2\le\bar B/p_H$.
+  \item Reading ``breakdown'' as ``no creditworthy borrower'': the types with $B\le p_HR-I$ are creditworthy; they are shut out by the pool.
+\end{itemize}
+\bookans Matches the book's answer (pp.~596--597): the proportion $H(R_b\Delta p)$ is endogenous and rising in $R_b$, the externality, and, with $p_L=0$ and uniform $H$, $R_b=R/2$ and maximal pledgeable income $p_H^2R^2/(4\bar B)$, below $I$ for $\bar B$ large. Two small differences: the book's displayed $U_l$ omits the ``$-I$'' (it is the expected repayment), and its first-order condition covers only the interior case $R/2\le\bar B/p_H$; the bound \eqref{t3e8-bound} covers every $R_b$. The book gives no argument for the ``quality of lending'' bullet; Step~3 supplies one.
+\refbib{Tirole \S3.2.2 p.~116 (IC$_b$); \S6.2.1 pp.~241--244; Exercise~6.1; answer pp.~596--597.}
+
+% =============================================================================
+% Topic 3 list, exercises 9--15 (detailed). Label prefix t3e<n>-.
+%% END-FROM
+
+% =============================================================================
+\exsec{12. Random private benefits --- Tirole 3.3, pp.~144--145}
+
+\asked (i) The private benefit $B^*$ above which the entrepreneur shirks, for a given contract $(I,r_l)$. (ii) The debt capacity for a given $B^*$, and the $B^*$ (or $r_l$) that maximizes it. (iii) The entrepreneur's expected utility as a function of $B^*$, and a proof that the optimal contract has $\tfrac12p_HR<B^*<p_HR$, with an interpretation. (iv) The optimal contract when $B$ is observable and verifiable.
+
+\approach The variable-investment model of Tirole \S3.4 with a twist: the per-unit private benefit $B$ is drawn after contracting, so the repayment $r_l$ determines a \emph{shirking threshold} rather than whether incentives hold for sure. A higher $r_l$ raises income per success but lowers the probability that the entrepreneur works; pledgeable income per unit of investment is therefore hump-shaped in $r_l$, which sets debt capacity through the lenders' breakeven condition. The entrepreneur trades borrowing capacity (best at $B^*=\tfrac12p_HR$) against value per unit invested (best at $B^*=p_HR$).
+
+\notation
+\begin{itemize}
+  \item $I$: investment; $A$: cash; $RI$: income on success; $p_H\in(0,1)$, $p_L=0$; $BI$: private benefit from shirking, $B\sim U[0,R]$, learned after contracting.
+  \item $r_l$: repayment per unit of investment on success ($R_l=r_lI$); the entrepreneur keeps $(R-r_l)I$.
+  \item $B^*$: shirking threshold; $\mathcal D(B^*)$: investors' expected income per unit of investment; $k$: equity multiplier ($I=kA$); $V(B^*)$: expected total value per unit of investment.
+\end{itemize}
+
+\assume As in \S3.4, $p_HR>1$; for finite investment, $p_H^2R<4$ in (ii)--(iii) and $p_H^2R<2$ in (iv). Example values: $p_H=0.8$, $R=2$, $A=1$ ($p_HR=1.6$, $p_H^2R=1.28$).
+
+\step{1}{(i) Threshold} Working yields $p_H(R-r_l)I$; shirking yields $BI$ (and success probability 0). She works iff
+\begin{align}
+  p_H(R-r_l)I &\ge BI \iff B \le p_H(R-r_l) \equiv B^*. \label{r7e12-Bs}
+\end{align}
+\answer{(i)} $B^*=p_H(R-r_l)$; equivalently $r_l=R-B^*/p_H$.
+
+\step{2}{(ii) Investors' income per unit} Investors are repaid only if she works and succeeds, probability $F(B^*)p_H=(B^*/R)p_H$:
+\begin{align}
+  \mathcal D(B^*) &= \frac{B^*}{R}\,p_H\,r_l = \frac{B^*}{R}\,p_H\Bigl(R-\frac{B^*}{p_H}\Bigr) = \frac{B^*\,(p_HR-B^*)}{R}, \label{r7e12-D}
+\end{align}
+substituting $r_l$ from \eqref{r7e12-Bs}. Breakeven, $\mathcal D(B^*)I=I-A$, gives
+\begin{align}
+  I\bigl[1-\mathcal D(B^*)\bigr] &= A \quad\Longrightarrow\quad I = kA, \qquad k = \frac{1}{1-B^*(p_HR-B^*)/R}, \label{r7e12-k}
+\end{align}
+and debt capacity $I-A=(k-1)A$. Maximizing $\mathcal D$:
+\begin{align}
+  \frac{d}{dB^*}\bigl[B^*(p_HR-B^*)\bigr] &= p_HR-2B^* = 0 \iff B^* = \tfrac12p_HR, \nonumber
+\end{align}
+a maximum (second derivative $-2$), with $r_l=R-\tfrac12p_HR/p_H=\tfrac12R$. Example: $B^*=0.8$, $\mathcal D=(0.8)(1.6-0.8)/2=0.32$, $k=1/(1-0.32)=1.4706$, debt capacity $0.4706A$. The finiteness condition is $\max\mathcal D=p_H^2R/4<1$.
+\answer{(ii)} $I=kA$ with $k=1/[1-B^*(p_HR-B^*)/R]$; debt capacity is highest at $B^*=\tfrac12p_HR$, i.e.\ $r_l=\tfrac12R$.
+
+\step{3}{(iii) Entrepreneur's utility} Her payoff per unit of investment is $p_H(R-r_l)=B^*$ when she works ($B\le B^*$) and $B$ when she shirks:
+\begin{align}
+  \frac{E_b}{I} &= \int_0^{B^*}\frac{B^*}{R}\,dB + \int_{B^*}^{R}\frac{B}{R}\,dB = \frac{(B^*)^2}{R} + \frac{R^2-(B^*)^2}{2R} = \frac{(B^*)^2}{2R}+\frac{R}{2} \equiv N(B^*). \nonumber
+\end{align}
+With $I=kA$ from \eqref{r7e12-k}, her net utility is
+\begin{align}
+  U_b(B^*) &= N(B^*)\,k\,A - A = \Bigl[\frac{(B^*)^2/2R+R/2}{1-p_HB^*+(B^*)^2/R}-1\Bigr]A, \label{r7e12-U}
+\end{align}
+using $1-\mathcal D = 1-p_HB^*+(B^*)^2/R$. Equivalently $U_b=(V-1)I$, where $V(B^*)=N+\mathcal D=p_HB^*+\tfrac12R-(B^*)^2/2R$ is total expected value per unit invested.
+
+\step{4}{(iii) First-order condition} Write $x=B^*$, $N(x)=x^2/2R+R/2$, $Q(x)=1-p_Hx+x^2/R$, so $N'=x/R$, $Q'=2x/R-p_H$. The sign of $dU_b/dx$ is that of $N'Q-NQ'$; multiplying by $R$:
+\begin{align}
+  R(N'Q-NQ') &= x\Bigl(1-p_Hx+\frac{x^2}{R}\Bigr) - \Bigl(\frac{x^2}{2R}+\frac R2\Bigr)(2x-p_HR) \nonumber\\
+  &= x - p_Hx^2 + \frac{x^3}{R} - \frac{x^3}{R} + \frac{p_Hx^2}{2} - Rx + \frac{p_HR^2}{2} \nonumber\\
+  &= -\frac{p_H}{2}x^2 + (1-R)x + \frac{p_HR^2}{2} \equiv g(x). \label{r7e12-g}
+\end{align}
+$g$ is a concave parabola with $g(0)=p_HR^2/2>0$, so $U_b$ rises up to the positive root of $g$ and falls after it:
+\begin{align}
+  p_Hx^2 - 2(1-R)x - p_HR^2 &= 0 \quad\Longrightarrow\quad B^* = \frac{(1-R)+\sqrt{(1-R)^2+p_H^2R^2}}{p_H}. \label{r7e12-opt}
+\end{align}
+
+\step{5}{(iii) The bounds} At $x=\tfrac12p_HR$, $Q'=0$, so $N'Q-NQ'=N'Q>0$: utility still rises, hence $B^*>\tfrac12p_HR$. At $x=p_HR$, $Q=1$ and $Q'=p_H$:
+\begin{align}
+  N'Q-NQ' &= p_H - \Bigl(\frac{p_H^2R}{2}+\frac R2\Bigr)p_H = p_H\Bigl[1-\frac{R(1+p_H^2)}{2}\Bigr] < 0, \nonumber
+\end{align}
+because $R(1+p_H^2)/2>(1+p_H^2)/(2p_H)\ge1$ (from $p_HR>1$ and $1+p_H^2\ge 2p_H$). So $B^*<p_HR$. Example: \eqref{r7e12-opt} gives
+\begin{align}
+  B^* &= \frac{(1-2)+\sqrt{(1-2)^2+(0.8)^2(2)^2}}{0.8} = \frac{-1+\sqrt{3.56}}{0.8} = 1.1085 \in (0.8,\,1.6), \nonumber
+\end{align}
+with $r_l=2-1.1085/0.8=0.6144$, $\mathcal D=0.2724$, $k=1.3744$, and $U_b=0.7966A$, against $0.7059A$ at $B^*=0.8$ and $0.64A$ at $B^*=1.6$.
+\answer{(iii)} $U_b$ is \eqref{r7e12-U}; the optimum \eqref{r7e12-opt} lies strictly between $\tfrac12p_HR$ (maximum leverage) and $p_HR$ (no shirking at all, $r_l=0$, no borrowing): the entrepreneur gives up some borrowing capacity to make shirking rarer.
+
+\step{6}{(iv) Verifiable $B$} The repayment can now depend on $B$. For a given threshold $B^*$, make her work for $B\le B^*$ at the least reward that does it (binding IC), and accept shirking (no income, $p_L=0$) above it:
+\begin{align}
+  p_H\bigl(R-r_l(B)\bigr) &= B \iff r_l(B) = R-\frac{B}{p_H} \quad (B\le B^*), \qquad r_l(B) > R-\frac{B}{p_H} \quad (B>B^*). \nonumber
+\end{align}
+Investors' income per unit and the investment become
+\begin{align}
+  \int_0^{B^*}\frac{p_HR-B}{R}\,dB &= p_HB^* - \frac{(B^*)^2}{2R}, \qquad I = \frac{A}{1-p_HB^*+(B^*)^2/2R}. \label{r7e12-iv}
+\end{align}
+The derivative of the investors' income, $p_H-B^*/R$, vanishes at $B^*=p_HR$, which also maximizes $V(B^*)$ ($V'=p_H-B^*/R$): it is the first-best threshold, since shirking is efficient only if $B>p_HR$. Example: $I=A/(1-1.28+0.64)=2.7778A$, $V=0.64+1=1.64$, $U_b=(1.64-1)(2.7778)A=1.7778A$.
+\answer{(iv)} $r_l(B)=R-B/p_H$ for $B<p_HR$ (shirking accepted above $p_HR$); this threshold maximizes both borrowing capacity and value per unit, with $I=A/(1-\tfrac12p_H^2R)$.
+
+\intuition When the private benefit is drawn after the contract, a single repayment cannot be tailored to each draw: raising $r_l$ raises income when she works but makes her shirk more often, so pledgeable income is hump-shaped. The entrepreneur, who keeps the surplus, wants more investment (lower $B^*$) and more diligence (higher $B^*$), and settles in between. Once $B$ is verifiable, the repayment extracts each type's rent exactly, so there is no trade-off left and the first-best threshold also maximizes borrowing.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting that investors are paid only when she works \emph{and} succeeds: income per unit is $F(B^*)p_Hr_l$, not $p_Hr_l$.
+  \item Maximizing borrowing capacity instead of the entrepreneur's utility in (iii): capacity peaks at $\tfrac12p_HR$, utility does not.
+  \item Maximizing total value $VI$ instead of the net utility $(V-1)I$: the investment cost must be subtracted (see the book comparison below).
+\end{itemize}
+
+\bookans Tirole pp.~571--572: (i) $B^*=p_H(R-r_l)$; (ii) $I=kA$, $k=1/[1-B^*(p_HR-B^*)/R]$, highest at $B^*=\tfrac12p_HR$ or $r_l=\tfrac12R$; (iii) the book writes the expected utility as $[p_HB^*+\tfrac12R-(B^*)^2/2R]A/[1-B^*(p_HR-B^*)/R]$ and states $\tfrac12p_HR<B^*<p_HR$; (iv) $r_l(B)=R-B/p_H$ for $B<B^*$, $I=A/[1-p_HB^*+(B^*)^2/2R]$, maximized at $B^*=p_HR$, ``clearly optimal overall''. Parts (i), (ii), (iv) match. In (iii) the book's displayed expression is $V\,I$, total expected value, which exceeds the entrepreneur's net utility \eqref{r7e12-U} by $I$; its maximizer differs (about $0.947$ in our example instead of $1.1085$), but both lie in $(\tfrac12p_HR,p_HR)$, so the stated bounds hold either way.
+\refbib{Tirole \S3.4 ``The Continuous-Investment Model'', pp.~127--129; lecture Topic~4A, ``Variable investment and the equity multiplier''.}
+
+%% BEGIN-FROM lista-topic5-nonverifiable-income-termination-solutions.tex EX 3 AS 13
+\exsec{13. Threat of termination: continuation probability --- Amaro de Matos 5.2.5 \#1, p.~148}
+
+\asked Show that the optimal liquidation probability $\beta_\circ$ after a declared zero cash flow,
+given by (5.8), falls when the probability $q$ of the good cash flow rises (i.e.\ sign the derivative
+$\partial\beta_\circ/\partial q$).
+
+\approach With nonverifiable income, repayment is enforced only by the \emph{threat of termination}:
+after a zero report the investor liquidates with probability $\beta_\circ$, set at the lowest level that
+lets her break even. The denominator of (5.8) is her expected recovery per unit of $\beta_\circ$, a
+$q$-weighted average of the recovery after a \emph{strategic default} ($y/2$) and after a \emph{liquidity
+default} ($L_\circ$). Differentiating the ratio and signing $y/2-L_\circ$ answers the question.
+
+\notation
+\begin{itemize}
+  \item $q\in(0,1)$: probability of the cash flow $x$ at $t=1$; $y>0$: second-period cash flow; $K>0$: investment.
+  \item $\beta_\circ\in[0,1]$: probability of liquidation after a declared zero cash flow (the continuation probability is $1-\beta_\circ$).
+  \item $S=y/2$: entrepreneur's share in a strategic-default buyback, so the investor gets $y-S=y/2$.
+  \item $\alpha\in[0,1]$: efficiency of an outside buyer; $c\sim U[0,\bar c]$: buyer's information cost, with $\alpha y/2\leq\bar c$; $L_\circ=\alpha^2y^2/(4\bar c)$: expected liquidation payoff.
+  \item $\Pi(q)$: investor's expected recovery per unit of $\beta_\circ$, the denominator of (5.8).
+\end{itemize}
+
+\step{1}{Write $\beta_\circ$ as a ratio} From (5.8),
+\begin{align}
+  \beta_\circ(q) &= \frac{K}{\Pi(q)}, \label{t5e3-beta}\\
+  \Pi(q) &= q\,\frac{y}{2}+(1-q)\frac{\alpha^2y^2}{4\bar c}. \label{t5e3-Pi}
+\end{align}
+
+\step{2}{Differentiate} The sign of the comparative static is the sign of a derivative, so we compute
+it. Writing \eqref{t5e3-beta} as $\beta_\circ=K\,\Pi(q)^{-1}$ and applying the chain rule ($K$, $y$,
+$\alpha$, $\bar c$ do not depend on $q$):
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q} &= K\cdot(-1)\,\Pi(q)^{-2}\cdot\Pi'(q) \nonumber\\
+  &= -\frac{K\,\Pi'(q)}{\Pi(q)^2}. \label{t5e3-dbeta}
+\end{align}
+\eqref{t5e3-Pi} is linear in $q$; $\frac{d}{dq}\bigl[q\,\tfrac y2\bigr]=\tfrac y2$ and
+$\frac{d}{dq}\bigl[(1-q)\tfrac{\alpha^2y^2}{4\bar c}\bigr]=-\tfrac{\alpha^2y^2}{4\bar c}$, so
+\begin{align}
+  \Pi'(q) &= \frac{y}{2}-\frac{\alpha^2y^2}{4\bar c}. \label{t5e3-dPi}
+\end{align}
+Substituting \eqref{t5e3-dPi} and \eqref{t5e3-Pi} into \eqref{t5e3-dbeta}:
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q} &= \frac{-K\left(\dfrac{y}{2}-\dfrac{\alpha^2y^2}{4\bar c}\right)}{\left[q\,\dfrac{y}{2}+(1-q)\dfrac{\alpha^2y^2}{4\bar c}\right]^2}. \label{t5e3-final}
+\end{align}
+
+\step{3}{Sign} The denominator of \eqref{t5e3-final} is positive and $K>0$, so the sign is the
+opposite of that of $\Pi'(q)$. Factor $y/2$ out of \eqref{t5e3-dPi}:
+\begin{align}
+  \Pi'(q) &= \frac{y}{2}\left[1-\frac{\alpha^2y^2}{4\bar c}\cdot\frac{2}{y}\right] \nonumber\\
+          &= \frac{y}{2}\left[1-\frac{\alpha^2y}{2\bar c}\right] \nonumber\\
+          &= \frac{y}{2}\left[1-\alpha\cdot\frac{\alpha y}{2\bar c}\right]. \label{t5e3-factor}
+\end{align}
+The assumption $\alpha y/2\leq\bar c$ gives $\alpha y/(2\bar c)\leq 1$, and $\alpha\leq1$, so the
+bracket is $\geq0$; it is $>0$ unless $\alpha=1$ and $y/2=\bar c$. Hence $\Pi'(q)\geq0$ and
+\begin{align}
+  \frac{\partial\beta_\circ}{\partial q}\leq 0, \label{t5e3-sign}
+\end{align}
+strictly except in that knife-edge case, where $L_\circ=y/2$ and $\beta_\circ=K/(y/2)$ does not
+depend on $q$. $\blacksquare$ (Interior solution assumed: $\Pi(q)\geq K$, so that $\beta_\circ\leq1$.)
+The inefficiency $(1-q)\beta_\circ(y-L_\circ)$ in (5.7) is then also decreasing in $q$. By the
+product rule, with $L_\circ$ independent of $q$ and $y-L_\circ>0$ (because $L_\circ\le y/2$),
+\begin{align}
+  \frac{\partial}{\partial q}\Bigl[(1-q)\beta_\circ(y-L_\circ)\Bigr]
+  &= (y-L_\circ)\Bigl[-\beta_\circ+(1-q)\frac{\partial\beta_\circ}{\partial q}\Bigr]<0, \label{t5e3-ineff}
+\end{align}
+since $\beta_\circ>0$ and $\partial\beta_\circ/\partial q\le0$ by \eqref{t5e3-sign}.
+
+\answer{(sign)} $\dfrac{\partial\beta_\circ}{\partial q}
+=-\dfrac{K\left(\frac y2-\frac{\alpha^2y^2}{4\bar c}\right)}{\left[q\frac y2+(1-q)\frac{\alpha^2y^2}{4\bar c}\right]^2}\le0$
+(strictly negative unless $\alpha=1$ and $y/2=\bar c$); the incompleteness cost $(1-q)\beta_\circ(y-L_\circ)$
+also falls with $q$.
+
+\intuition The investor recovers $y/2$ when she threatens a firm that defaulted strategically
+(it had $x$ and buys itself back) but only $L_\circ\leq y/2$ when the default is a genuine liquidity
+default (an outside buyer has to be found). A higher $q$ puts more weight on the first, richer
+recovery, so a smaller liquidation probability suffices to break even --- as in the lecture's
+$1-\gamma_0=(I-A)/[pE(\tilde R_2)+(1-p)L]$ (slide 11).
+\pitfalls
+\begin{itemize}
+  \item Letting $L_\circ$ depend on $q$: it is fixed by the buyer's bargaining and information cost,
+        $L_\circ=\alpha^2y^2/(4\bar c)$, so only the weights $q$ and $1-q$ move.
+  \item Signing the derivative without the assumption $\alpha y/2\le\bar c$: it is what makes
+        $\Pr(c\le\alpha y/2)=\alpha y/(2\bar c)$ a probability and gives $L_\circ\le y/2$.
+  \item Claiming a strict decrease always: at $\alpha=1$, $y/2=\bar c$ the two recoveries coincide and
+        $\beta_\circ$ does not depend on $q$.
+\end{itemize}
+\bookans Matches the book's answer (p.~267), which gives \eqref{t5e3-final} with ``$\leq0$''. The
+book's argument assumes $\alpha y/2<\bar c$ (strict) and writes the step as ``$\alpha^2y/2<\bar c$'';
+with the text's weak inequality $\alpha y/2\leq\bar c$ the derivative can be zero in the knife-edge
+case of Step~3.
+\refbib{Amaro de Matos Ch.~5, \S 5.2.1 ``Extending the Model'', pp.~134--137, eq.~(5.8); Appendix C.5.2, p.~267.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 12 AS 14
+\exsec{14. Renegotiation and debt forgiveness --- Tirole Exercise 3.6, p.~146}
+
+\asked In the variable-investment model, suppose the initial loan leaves the borrower too small a
+stake to work, $R_b<BI/\Delta p$, but can be renegotiated after the investment and before effort.
+(i) Show that a mutually beneficial renegotiation exists exactly when the stated inequality holds.
+(ii) Explain that inequality, and derive it as the financing condition of a fictitious
+fixed-investment project. (iii) If the borrower makes a take-it-or-leave-it renegotiation offer,
+find how much she can invest (her borrowing capacity) with such an initial contract. (iv) Argue
+directly that writing $R_b\ge BI/\Delta p$ from the start loses nothing.
+
+\approach Lecture Topic~4B, renegotiation. Without renegotiation the borrower shirks; renegotiation
+can only help if it restores (IC$_b$), and it happens iff both sides gain relative to the shirking
+status quo. The lender gives up part of his claim (\emph{debt forgiveness}) and is paid back out of
+the extra \emph{pledgeable income} that effort creates, so the condition has the form ``pledgeable
+income $\ge$ investment $-$ cash'' of the fixed-investment model. For (iii) the lender's ex ante
+breakeven uses his renegotiated payoff; for (iv) rational expectations make the renegotiated contract
+one that could have been signed directly.
+
+\notation
+\begin{itemize}
+  \item $I$: (sunk) investment; income $RI$ in success, $0$ in failure; $A$: borrower's cash.
+  \item $p_H$, $p_L=p_H-\Delta p$; private benefit $BI$ from shirking; (3.7) $p_HR>1$, (3.8)
+        $1>p_LR+B$, (3.9) $p_HR<1+p_HB/\Delta p$; these imply $(\Delta p)R>B$.
+  \item $R_b<BI/\Delta p$: borrower's stake in the initial contract; $\hat R_b$: renegotiated stake.
+  \item $k=1/[1-p_H(R-B/\Delta p)]$: equity multiplier (3.12).
+\end{itemize}
+
+\step{1}{(i) Status quo} We compute each party's payoff if nothing is renegotiated; these are the
+outside options in the renegotiation. With $R_b<BI/\Delta p$, $(\Delta p)R_b<BI$: (IC$_b$) fails and
+the borrower shirks (success probability $p_L$, private benefit $BI$). Payoffs if the contract is not
+renegotiated:
+\begin{align}
+  U_b^0 &= p_LR_b+BI, \label{t4e12-ub0}\\
+  U_l^0 &= p_L(RI-R_b). \label{t4e12-ul0}
+\end{align}
+
+\step{2}{(i) Renegotiation must restore incentives} A new stake $\hat R_b<BI/\Delta p$ still induces
+shirking, so total surplus $p_LRI+BI$ is unchanged and the change is a pure transfer: one side loses.
+A mutually advantageous renegotiation therefore needs $\hat R_b\ge BI/\Delta p$, and both parties must
+gain relative to \eqref{t4e12-ub0}--\eqref{t4e12-ul0}:
+\begin{align}
+  p_H\hat R_b &\ge p_LR_b+BI, \label{t4e12-pb}\\
+  p_H(RI-\hat R_b) &\ge p_L(RI-R_b). \label{t4e12-pl}
+\end{align}
+
+\step{3}{(i) The condition} For any $\hat R_b\ge BI/\Delta p$, \eqref{t4e12-pb} holds automatically, since
+$R_b<BI/\Delta p$:
+\begin{align}
+  p_H\hat R_b \ge p_H\frac{BI}{\Delta p}=BI+p_L\frac{BI}{\Delta p} > BI+p_LR_b. \nonumber
+\end{align}
+The lender prefers the smallest admissible stake, $\hat R_b=BI/\Delta p$. So a mutually advantageous
+$\hat R_b$ exists iff \eqref{t4e12-pl} holds at $\hat R_b=BI/\Delta p$:
+\begin{align}
+  p_H\Big(RI-\frac{BI}{\Delta p}\Big) &\ge p_L(RI-R_b) \nonumber\\
+  p_HRI-\frac{p_HBI}{\Delta p} &\ge p_LRI-p_LR_b \nonumber\\
+  (p_H-p_L)RI-\frac{p_HBI}{\Delta p}+p_LR_b &\ge 0 \nonumber\\
+  (\Delta p)RI-\frac{p_HBI}{\Delta p}+p_LR_b &\ge 0. \label{t4e12-cond}
+\end{align}
+Necessity: any renegotiated contract has $\hat R_b\ge BI/\Delta p$, and \eqref{t4e12-pl} is hardest to
+meet at larger $\hat R_b$. Sufficiency: if \eqref{t4e12-cond} holds, $\hat R_b=BI/\Delta p$ makes the
+lender weakly and the borrower strictly better off. The renegotiation is \emph{debt forgiveness}: the
+lender's claim in success falls from $RI-R_b$ to $RI-\hat R_b$.
+
+\answer{(i)} Renegotiation (to $\hat R_b\ge BI/\Delta p$) takes place iff
+$(\Delta p)RI-p_HBI/\Delta p+p_LR_b\ge0$.
+
+\step{4}{(ii) Interpretation via the general theory} Treat ``inducing effort'' as a fictitious
+fixed-investment project. Its income is the increase in expected output, $(\Delta p)RI$; it needs no
+new investment ($I_f=0$); the borrower's minimum stake in it is $p_H\,BI/\Delta p$ (her expected rent
+under (IC$_b$)), and she brings as ``cash'' the expected income she gives up, $A_f\equiv p_LR_b$. Its
+pledgeable income is $(\Delta p)RI-p_HBI/\Delta p$, and the financing condition (IR$_l$),
+``pledgeable income $\ge$ investment $-$ cash'', reads
+\begin{align}
+  (\Delta p)RI-\frac{p_HBI}{\Delta p} \ \ge\ 0-p_LR_b, \label{t4e12-fict}
+\end{align}
+which is \eqref{t4e12-cond}. The total gain from restoring effort, $(\Delta p)RI-BI$, is always positive,
+yet renegotiation may fail: the lender can only be paid out of pledgeable income, and the borrower's
+initial stake $p_LR_b$ plays the role of net worth. A larger $R_b$ makes forgiveness easier.
+
+\answer{(ii)} The condition says the pledgeable part of the effort gain, $(\Delta p)RI-p_HBI/\Delta p$,
+must cover the lender's ``outlay'' $0-p_LR_b$: it is (IR$_l$) for a fictitious project with income
+$(\Delta p)RI$, investment $0$ and cash $p_LR_b$.
+
+\step{5}{(iii) Borrowing capacity under renegotiation, borrower has all bargaining power} When
+\eqref{t4e12-cond} holds, the borrower offers the $\hat R_b$ that leaves the lender indifferent:
+\begin{align}
+  p_H(RI-\hat R_b) = p_L(RI-R_b), \quad\text{i.e.}\quad \hat R_b=RI-\frac{p_L}{p_H}(RI-R_b). \label{t4e12-tioli}
+\end{align}
+The lender therefore anticipates exactly \eqref{t4e12-ul0}, and his ex ante breakeven constraint is
+\begin{align}
+  p_L(RI-R_b) \ \ge\ I-A. \label{t4e12-irl}
+\end{align}
+The borrower's utility is total surplus with effort minus the lender's payoff:
+$p_HRI-p_L(RI-R_b)-A$, which by the binding \eqref{t4e12-irl} equals $p_HRI-(I-A)-A=(p_HR-1)I$, the
+NPV with effort. Since $p_HR>1$ (3.7), she maximises $I$ subject to
+\eqref{t4e12-cond}, \eqref{t4e12-irl} and $0\le R_b<BI/\Delta p$. \eqref{t4e12-cond} bounds $p_LR_b$
+from below and \eqref{t4e12-irl} (expanded: $p_LRI-p_LR_b\ge I-A$) bounds it from above:
+\begin{align}
+  \frac{p_HBI}{\Delta p}-(\Delta p)RI\ \le\ p_LR_b\ \le\ p_LRI-(I-A). \label{t4e12-band}
+\end{align}
+An $R_b$ exists iff the lower bound is below the upper bound:
+\begin{align}
+  \frac{p_HBI}{\Delta p}-(\Delta p)RI &\le p_LRI-I+A \nonumber\\
+  I-(\Delta p)RI-p_LRI+\frac{p_HBI}{\Delta p} &\le A \nonumber\\
+  I-p_HRI+\frac{p_HBI}{\Delta p} &\le A \qquad (\Delta p+p_L=p_H) \nonumber\\
+  I\Big[1-p_H\Big(R-\frac{B}{\Delta p}\Big)\Big] &\le A \nonumber\\
+  I &\le kA. \label{t4e12-kA}
+\end{align}
+If $p_HB/\Delta p\ge(\Delta p)R$, the lower bound in \eqref{t4e12-band} is nonnegative and the capacity
+is exactly $kA$: at $I=kA$ both \eqref{t4e12-cond} and \eqref{t4e12-irl} bind, $R_b<BI/\Delta p$ (by
+$(\Delta p)R>B$) and \eqref{t4e12-tioli} gives $\hat R_b=BI/\Delta p$. If $p_HB/\Delta p<(\Delta p)R$, the
+constraint $R_b\ge0$ binds first, and \eqref{t4e12-irl} with $R_b=0$ gives $I\le A/(1-p_LR)<kA$.
+Either way the capacity is at most $kA$, the capacity without renegotiation.
+
+\answer{(iii)} The borrowing capacity is $I=kA$, $k=1/[1-p_H(R-B/\Delta p)]$, when
+$p_HB/\Delta p\ge(\Delta p)R$ (then $p_LR_b=kA[p_HB/\Delta p-(\Delta p)R]$ and $\hat R_b=BI/\Delta p$),
+and $I=A/(1-p_LR)<kA$ otherwise; it never exceeds the capacity $kA$ of an incentive-compatible
+initial contract.
+
+\step{6}{(iv) Rational expectations} Take any initial contract $(I,R_b)$ with $R_b<BI/\Delta p$. If it is
+not renegotiated, the borrower shirks; the NPV is $(p_LR+B-1)I<0$ by (3.8), and since the lender
+breaks even the borrower's utility is that negative NPV: worse than not investing. If it is
+renegotiated to $\hat R_b\ge BI/\Delta p$, the final contract $(I,\hat R_b)$ satisfies (IC$_b$), and by
+rational expectations the lender's ex ante breakeven uses his final payoff,
+$p_H(RI-\hat R_b)\ge I-A$, which is (IR$_l$). So $(I,\hat R_b)$ could have been signed directly, with the
+same effort and the same payoffs. Nothing is lost by restricting attention to $R_b\ge BI/\Delta p$,
+which is renegotiation-proof.
+
+\answer{(iv)} Any initial contract with $R_b<BI/\Delta p$ either is not renegotiated (negative NPV,
+worse than not investing) or ends as an incentive-compatible contract that satisfies (IR$_l$) and
+could have been signed at the outset; so restricting to $R_b\ge BI/\Delta p$ loses nothing.
+
+\intuition A lender facing a borrower who is about to shirk is willing to forgive debt, because the
+higher stake raises the success probability and the lender keeps part of that gain. He forgives only
+if his remaining claim after forgiveness, the pledgeable part of the effort gain, beats what he gets
+from a shirking borrower. Anticipating this, an initial contract that relies on forgiveness can at
+best reproduce the incentive-compatible contract: the multiplier $k$ is the right one.
+
+\pitfalls
+\begin{itemize}
+  \item Arguing that renegotiation always happens because restoring effort raises total surplus
+        ($(\Delta p)RI>BI$). The lender gains only the \emph{pledgeable} part of that surplus.
+  \item Writing the lender's ex ante breakeven in (iii) as $p_H(RI-R_b)\ge I-A$, i.e.\ his initial
+        claim with effort. He anticipates the renegotiation and values his final payoff, which with a
+        take-it-or-leave-it offer by the borrower is $p_L(RI-R_b)$.
+  \item Mixing the fixed- and variable-investment notation: here the private benefit is $BI$ and the
+        minimum stake is $BI/\Delta p$, not $B/\Delta p$.
+\end{itemize}
+
+\bookans Matches the book's answer to (i)--(ii) (pp.~573--574), including the fictitious-project reading
+with cash $\hat A=p_LR_b$. The book gives no answer to (iii)--(iv); Steps 5--6 are this solution's.
+
+\refbib Tirole \S3.4.1--3.4.2, pp.~127--128; \S3.2.2, pp.~116--117; answer pp.~573--574.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic5-nonverifiable-income-termination-solutions.tex EX 10 AS 15
+\exsec{15. One vs.\ two creditors: strategic and liquidity default --- Amaro de Matos 5.2.5 \#2, p.~148}
+
+\asked \emph{(strategic)}: show that when the manager defaults strategically and buys the firm back,
+the creditors collect more if the assets are split between two creditors than if one creditor holds
+them all. \emph{(liquidity)}: show that when the default is a genuine liquidity default and the assets are
+sold to an outside buyer, two creditors collect less in expectation than one.
+
+\approach This is Bolton and Scharfstein (1996) inside the strategic-default model of \S5.2.1: the
+investor's recovery is $y-S$ after a strategic default and $L_\circ$ after a liquidity default, and both
+come from bargaining. With two creditors each holds an asset the other party needs to realise the
+synergy $\Delta$, so each has hold-up power. Splitting the surplus by the Shapley value (the three-player
+version of the equal split $S=y/2$) gives both formulas on p.~138; comparing them with $y/2$ and
+$\alpha^2y^2/(4\bar c)$ answers the two parts.
+
+\notation
+\begin{itemize}
+  \item $K$: investment; $q$: probability of cash flow $x$ at $t=1$ (else 0); $y$: $t=2$ cash flow if the manager continues.
+  \item $S$: the manager's payoff when she strategically defaults and buys the firm back; $y-S$: what the creditor(s) get.
+  \item $\alpha\in[0,1]$: efficiency of an outside buyer ($\alpha y$); $c\sim U[0,\bar c]$: buyer's information cost.
+  \item $L_\circ$ / $\overline L_\circ$: expected liquidation payoff to creditors after a zero cash flow, with one / two creditors.
+  \item $y^A,y^B\ge0$: cash flows of assets $A$ and $B$ run separately; $\Delta=y-y^A-y^B\in(0,y]$: synergy.
+  \item $\beta_\circ$: liquidation probability after a zero report, $\beta_\circ=K/[q(y-S)+(1-q)L_\circ]$ from (5.6).
+\end{itemize}
+\assume With two creditors, creditor 1 holds asset $A$ and creditor 2 asset $B$. Multilateral bargaining follows the
+Shapley value, the three-player version of the equal split used for one creditor; disagreement payoffs are 0
+(as behind $S=y/2$ in the one-creditor case). The book only cites Bolton and Scharfstein (1996), pp.~10--13;
+the derivation below is ours, and it reproduces both formulas printed on p.~138.
+
+\step{1}{One creditor (benchmark)} We first record the one-creditor recoveries the comparison is made
+against. Manager and creditor split $y$ equally: $S=y/2$, so in a strategic default the creditor gets
+\begin{align}
+  y-S &= \frac{y}{2}. \label{t5e10-s1}
+\end{align}
+After a zero cash flow the buyer gets $\alpha y/2$, buys iff $c\le\alpha y/2$ (probability $\alpha y/(2\bar c)$), and the creditor gets $\alpha y/2$:
+\begin{align}
+  L_\circ &= \Big(\frac{\alpha y}{2\bar c}\Big)\Big(\frac{\alpha y}{2}\Big) = \frac{\alpha^2y^2}{4\bar c}. \label{t5e10-L1}
+\end{align}
+
+\step{2}{Two creditors, strategic default} Players: manager $M$, creditors 1 and 2. Worth of a coalition: $y$ if it contains $M$ and both assets,
+$y^A$ ($y^B$) if it contains $M$ and only asset $A$ ($B$), and 0 without $M$. Over the $3!=6$ orderings, $M$'s marginal contribution is 0
+when she comes first (orderings $M12$, $M21$), $y^A$ in ordering $1M2$ and $y^B$ in $2M1$ (she joins a
+coalition holding one asset, worth 0 without her), and $y$ when last ($12M$, $21M$). Averaging over the six
+orderings and using $y^A+y^B=y-\Delta$:
+\begin{align}
+  S &= \frac{0+0+y^A+y^B+y+y}{6} = \frac{2y+y^A+y^B}{6} \nonumber\\
+    &= \frac{2y+(y-\Delta)}{6} = \frac{3y-\Delta}{6} \nonumber\\
+    &= \frac{y}{2}-\frac{\Delta}{6}, \label{t5e10-S2}
+\end{align}
+which is the book's $S$. The two creditors together get
+\begin{align}
+  y-S &= y-\Big(\frac{y}{2}-\frac{\Delta}{6}\Big) \nonumber\\
+      &= \frac{y}{2}+\frac{\Delta}{6} \;>\; \frac{y}{2}. \label{t5e10-s2}
+\end{align}
+Comparing with \eqref{t5e10-s1}: two creditors are paid more in a strategic default, by $\Delta/6$. Each creditor can hold up the synergy $\Delta$,
+so the manager keeps less when she buys the firm back.
+
+\answer{(strategic)} Two creditors get $y-S=\dfrac y2+\dfrac\Delta6>\dfrac y2$ (one creditor): more, by
+$\Delta/6$.
+
+\step{3}{Two creditors, liquidity default} Replace $M$ by the outside buyer, whose coalition worths are $\alpha y$, $\alpha y^A$, $\alpha y^B$
+(the cost $c$ is sunk and not bargained over, as in Step 1). By \eqref{t5e10-S2} the buyer gets $\alpha(y/2-\Delta/6)$, buys iff
+$c\le\alpha(y/2-\Delta/6)$, which for $c\sim U[0,\bar c]$ has probability $\alpha(y/2-\Delta/6)/\bar c$
+(assume $\alpha(y/2-\Delta/6)\le\bar c$), and the creditors share $\alpha y-\alpha(y/2-\Delta/6)=\alpha(y/2+\Delta/6)$.
+Expected liquidation payoff = probability of a sale times the creditors' share:
+\begin{align}
+  \overline L_\circ &= \Big(\frac{\alpha(3y-\Delta)}{6\bar c}\Big)\Big(\frac{\alpha(3y+\Delta)}{6}\Big) \nonumber\\
+                    &= \frac{\alpha^2(3y-\Delta)(3y+\Delta)}{36\bar c} = \frac{\alpha^2(9y^2-\Delta^2)}{36\bar c} \nonumber\\
+                    &= \frac{9\alpha^2y^2}{36\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}
+                     = \frac{\alpha^2y^2}{4\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}, \label{t5e10-L2}
+\end{align}
+the book's formula. By \eqref{t5e10-L1}, $\overline L_\circ=L_\circ-\alpha^2\Delta^2/(36\bar c)<L_\circ$: two creditors are paid less in a liquidity
+default. The creditors' extra share does not compensate the lower probability that a buyer shows up, which falls
+from $\alpha y/(2\bar c)$ to $\alpha(y/2-\Delta/6)/\bar c$.
+
+\answer{(liquidity)} Two creditors expect $\overline L_\circ=\dfrac{\alpha^2y^2}{4\bar c}-\dfrac{\alpha^2\Delta^2}{36\bar c}
+<L_\circ=\dfrac{\alpha^2y^2}{4\bar c}$: less, by $\alpha^2\Delta^2/(36\bar c)$.
+
+\step{4}{The $\beta_\circ$ denominator and the printed sign} By (5.6) the denominator of $\beta_\circ$ is $q(y-S)+(1-q)L$. With two creditors,
+substituting \eqref{t5e10-s2} and \eqref{t5e10-L2},
+\begin{align}
+  D_2 &= q\Big(\frac{y}{2}+\frac{\Delta}{6}\Big) + (1-q)\Big(\frac{\alpha^2y^2}{4\bar c}-\frac{\alpha^2\Delta^2}{36\bar c}\Big). \label{t5e10-D2}
+\end{align}
+The book prints $q(\frac y2-\frac\Delta6)$ in the first term (p.~138), i.e.\ $qS$ instead of $q(y-S)$ (the two coincide only when
+$S=y/2$, the one-creditor case). That is a sign error: with the printed term the two-creditor denominator would be below the one-creditor
+one for every $q$, contradicting the same page's remarks that it ``can be greater or less'' and that two creditors are paid more in strategic default.
+With \eqref{t5e10-D2} and $D_1=q\frac y2+(1-q)L_\circ$,
+\begin{align}
+  D_2-D_1 &= q\Big(\frac y2+\frac\Delta6-\frac y2\Big)+(1-q)\big(\overline L_\circ-L_\circ\big) \nonumber\\
+          &= q\,\frac{\Delta}{6}-(1-q)\,\frac{\alpha^2\Delta^2}{36\bar c}. \label{t5e10-dD}
+\end{align}
+It is positive (two creditors liquidate less often) iff, multiplying by $36\bar c/\Delta>0$,
+$6\bar c\,q>(1-q)\alpha^2\Delta$, i.e.\ $q(6\bar c+\alpha^2\Delta)>\alpha^2\Delta$, i.e.\
+$q>\bar q\equiv\frac{\alpha^2\Delta}{6\bar c+\alpha^2\Delta}$: when bankruptcy risk is low, as the book concludes.
+
+\step{5}{Numerical illustration (ours)} Take $y=10$, $y^A=4$, $y^B=3$ ($\Delta=10-4-3=3$), $\alpha=0.8$, $\bar c=6$, $q=0.6$, $K=2$. Then
+$S=10/2-3/6=5-0.5=4.5$ and $y-S=5.5$ versus $5$ with one creditor. In liquidity default the buyer gets $0.8(4.5)=3.6$, buys with probability
+$3.6/6=0.6$ (versus $4/6=0.666667$), and the creditors get $0.8(5.5)=4.4$:
+\begin{align}
+  \overline L_\circ &= (0.6)(4.4) = 2.64 \;<\; L_\circ=\frac{(0.64)(100)}{24}=2.666667. \nonumber
+\end{align}
+Denominators: $D_1=(0.6)(5)+(0.4)(2.666667)=4.066667$ and $D_2=(0.6)(5.5)+(0.4)(2.64)=4.356$, so $\beta_\circ$ falls from
+$2/4.066667=0.491803$ to $2/4.356=0.459137$. The misprinted term would give $(0.6)(4.5)+(0.4)(2.64)=3.756$ and $\beta_\circ=0.532481$.
+Here $\bar q=1.92/37.92=0.050633$; at $q=0.02$, \eqref{t5e10-dD} gives $-0.016133<0$ and one creditor is better.
+
+\intuition Splitting the assets among creditors gives each a veto over the synergy $\Delta$. This hold-up power makes strategic default
+costly for the manager, so more can be credibly repaid (good when default is mostly strategic, high $q$). The same hold-up power scares
+off outside buyers when the firm genuinely fails, lowering the liquidation value (bad when default is mostly for liquidity, low $q$).
+
+\pitfalls
+\begin{itemize}
+  \item Comparing $S$ instead of $y-S$: $S$ is what the \emph{manager} keeps; the creditors' recovery is
+        $y-S$, which rises with two creditors.
+  \item Keeping the buyer's probability of purchase fixed at $\alpha y/(2\bar c)$: the buyer's share
+        falls to $\alpha(y/2-\Delta/6)$, so fewer buyers show up, and that loss dominates.
+  \item Copying the printed two-creditor denominator $q(y/2-\Delta/6)+\dots$: its first term must be
+        $q(y-S)=q(y/2+\Delta/6)$.
+\end{itemize}
+
+\bookans The book (p.~268) only cites Bolton and Scharfstein (1996), pp.~10--13; derived here. Our $S$ and $\overline L_\circ$ match p.~138.
+The printed two-creditor denominator on p.~138 has a sign error: its first term should be $q(y/2+\Delta/6)=q(y-S)$, not $q(y/2-\Delta/6)$.
+
+\refbib Amaro de Matos \S5.2.1 ``Extending the Model'', pp.~134--137; \S5.2.2 ``The Case of Many Creditholders'', pp.~137--138; exercise p.~148.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 13 AS 16
+\exsec{16. Loan size and collateral requirements --- Tirole Exercise 4.17, p.~195}
+
+\asked The project has decreasing returns, $R(I)$ concave, and the entrepreneur can pledge costly
+collateral $C$ that investors seize on failure. Assuming the first best cannot be financed, show
+that a poorer entrepreneur (lower $A$) or a worse agency problem (higher $B$, or higher $p_H/\Delta p$
+with $p_H$ fixed) leads to a smaller optimal investment and to more collateral.
+
+\approach This combines the variable-investment model (\S3.4) with collateral pledging (\S4.3.5);
+lecture Topic~4A, collateral reading. Collateral raises \emph{pledgeable income} twice: investors get
+$\phi(C)$ on failure, and the borrower's stake grows, so her cash reward can shrink by $C$ ($p_HC$).
+It costs a deadweight loss $C-\phi(C)$ on failure. We eliminate $R_b$ with the binding (IC$_b$),
+write the Lagrangian with multiplier $\mu$ on (IR$_l$), derive the first-order conditions, and do
+comparative statics on the resulting system with the implicit-function theorem.
+
+\notation
+\begin{itemize}
+  \item $I\ge0$: investment; $R(I)$: income in success ($R(0)=0$, $R'>0$, $R''<0$, Inada).
+  \item $p_H$, $p_L=p_H-\Delta p$; private benefit $BI$; $b\equiv p_HB/\Delta p$: per-unit agency cost
+        (rises with $B$ and, with $p_H$ fixed, with $p_H/\Delta p$).
+  \item $C\ge0$: collateral pledged in failure, cost $C$ to the entrepreneur, value $\phi(C)$ to
+        investors ($\phi(0)=0$, $\phi'>0$, $\phi''<0$, $\phi'(0)=1$, $\phi'(\infty)=0$).
+  \item $R_b\ge0$: reward in success; $A$: cash; $I^*$: first-best size, $p_HR'(I^*)=1$.
+  \item $\mu\ge0$: multiplier of the breakeven constraint; $\theta\equiv\mu/(1+\mu)\in[0,1)$;
+        $\varepsilon(I)\equiv -IR''(I)/R'(I)>0$: curvature of $R$.
+\end{itemize}
+\assume The limited-liability constraint $R_b\ge0$, i.e.\ $C\le BI/\Delta p$, does not bind (as in
+footnote 24 of \S4.3.5).
+
+\step{1}{Programme} We set up the problem and eliminate $R_b$. The entrepreneur gets $R_b$ on
+success and $-C$ on failure, so (IC$_b$) is
+$p_HR_b-(1-p_H)C\ge p_LR_b-(1-p_L)C+BI$, i.e.\ $(\Delta p)R_b+(\Delta p)C\ge BI$, i.e.\
+$(\Delta p)(R_b+C)\ge BI$. Investors get $R(I)-R_b$ in success and $\phi(C)$ in failure. Collateral
+destroys $C-\phi(C)\ge0$ in failure, so with binding breakeven her utility is the NPV:
+\begin{align}
+  \max_{I,C,R_b}\; & U_b=p_HR(I)-I-(1-p_H)\big[C-\phi(C)\big] \label{t4e13-obj}\\
+  \text{s.t. }\; & (\Delta p)(R_b+C)\ \ge\ BI, \tag{IC$_b$}\label{t4e13-ic}\\
+  & p_H\big[R(I)-R_b\big]+(1-p_H)\phi(C)\ \ge\ I-A. \tag{IR$_l$}\label{t4e13-irl}
+\end{align}
+$R_b$ does not enter \eqref{t4e13-obj} and lowers \eqref{t4e13-irl}, so \eqref{t4e13-ic} binds:
+$R_b=BI/\Delta p-C$. Substituting into \eqref{t4e13-irl},
+\begin{align}
+  p_H\Big[R(I)-\frac{BI}{\Delta p}+C\Big]+(1-p_H)\phi(C) &\ge I-A \nonumber\\
+  p_HR(I)-\frac{p_HB}{\Delta p}\,I+p_HC+(1-p_H)\phi(C)-I+A &\ge 0 \nonumber\\
+  G(I,C)\equiv p_HR(I)-bI+p_HC+(1-p_H)\phi(C)-I+A\ &\ge\ 0. \label{t4e13-G}
+\end{align}
+Collateral raises pledgeable income directly ($\phi$) and by replacing reward ($p_HC$).
+The objective is concave and $G$ is concave in $(I,C)$, so the Kuhn--Tucker conditions are sufficient.
+
+\step{2}{First-order conditions} We derive the conditions that characterise the optimum. With
+multiplier $\mu\ge0$ on \eqref{t4e13-G}, the Lagrangian is
+\begin{align}
+  \mathcal L(I,C,\mu) &= p_HR(I)-I-(1-p_H)\big[C-\phi(C)\big] \nonumber\\
+     &\quad+\mu\big[p_HR(I)-bI+p_HC+(1-p_H)\phi(C)-I+A\big]. \nonumber
+\end{align}
+Differentiating with respect to $I$ and $C$ and setting the derivatives to zero,
+\begin{align}
+  \frac{\partial\mathcal L}{\partial I}&=p_HR'(I)-1+\mu\big[p_HR'(I)-b-1\big]=0, \nonumber\\
+  \frac{\partial\mathcal L}{\partial C}&=-(1-p_H)\big[1-\phi'(C)\big]+\mu\big[p_H+(1-p_H)\phi'(C)\big]=0. \nonumber
+\end{align}
+\emph{The $I$-condition.} Collect the terms in $p_HR'(I)-1$:
+\begin{align}
+  (1+\mu)\big[p_HR'(I)-1\big]-\mu b &= 0 \nonumber\\
+  p_HR'(I)-1 &= \frac{\mu}{1+\mu}\,b. \nonumber
+\end{align}
+\emph{The $C$-condition.} Expand and collect the terms in $\phi'(C)$:
+\begin{align}
+  -(1-p_H)+(1-p_H)\phi'(C)+\mu p_H+\mu(1-p_H)\phi'(C) &= 0 \nonumber\\
+  (1+\mu)(1-p_H)\phi'(C) &= (1-p_H)-\mu p_H \nonumber\\
+  \phi'(C) &= \frac{1}{1+\mu}-\frac{\mu}{1+\mu}\,\frac{p_H}{1-p_H}. \nonumber
+\end{align}
+Writing $\theta=\mu/(1+\mu)$, so that $1/(1+\mu)=1-\theta$,
+\begin{align}
+  p_HR'(I)-1 &= \theta\,b, \label{t4e13-focI}\\
+  \phi'(C) &= 1-\theta-\theta\frac{p_H}{1-p_H}=1-\theta\,\frac{(1-p_H)+p_H}{1-p_H}=1-\frac{\theta}{1-p_H}. \label{t4e13-focC}
+\end{align}
+If $\mu=0$, \eqref{t4e13-focI}--\eqref{t4e13-focC} give $I=I^*$, $C=0$, which violates \eqref{t4e13-G}
+by the assumption $p_H[R(I^*)-BI^*/\Delta p]<I^*-A$. So $\theta>0$: \eqref{t4e13-focI} gives $I<I^*$ and
+\eqref{t4e13-focC} gives $\phi'(C)<1=\phi'(0)$, i.e.\ $C>0$; finiteness of $C$ needs
+$\theta<1-p_H$. These are the book's conditions, since $\theta=\mu/(1+\mu)$.
+
+\step{3}{Monotonicity in $\theta$} The FOCs define $I$ and $C$ as functions of $\theta$ (and $b$);
+we find how they move and then pin $\theta$ down with the binding breakeven. Totally differentiating
+\eqref{t4e13-focI}, $p_HR''(I)\,dI=b\,d\theta+\theta\,db$; and \eqref{t4e13-focC},
+$\phi''(C)\,dC=-d\theta/(1-p_H)$. With $R''<0$, $\phi''<0$ and $Q\equiv1/(p_H|R''(I)|)>0$, dividing by
+$p_HR''=-1/Q$ and by $\phi''$:
+\begin{align}
+  \frac{\partial I}{\partial\theta} &= -bQ<0,\qquad \frac{\partial I}{\partial b}=-\theta Q<0, \label{t4e13-Ith}\\
+  C'(\theta) &= -\frac{1}{(1-p_H)\phi''(C)}>0. \label{t4e13-Cth}
+\end{align}
+Let $g(\theta;A,b)\equiv G(I(\theta,b),C(\theta))$, the slack of \eqref{t4e13-G} along the FOCs; the
+optimum is the root $g=0$. Using \eqref{t4e13-focI}, $p_HR'=1+\theta b$, so
+$G_I=p_HR'-b-1=(1+\theta b)-b-1=-(1-\theta)b<0$; also $G_C=p_H+(1-p_H)\phi'>0$. Then, by the chain
+rule and \eqref{t4e13-Ith}--\eqref{t4e13-Cth},
+\begin{align}
+  g_\theta &= G_I\frac{\partial I}{\partial\theta}+G_CC'(\theta) \nonumber\\
+           &= \big(-(1-\theta)b\big)\big(-bQ\big)+G_CC'(\theta) \nonumber\\
+           &= (1-\theta)b^2Q+G_CC'(\theta)\ >0. \label{t4e13-gth}
+\end{align}
+$g$ is $<0$ at $\theta=0$ (first best not pledgeable) and $\to+\infty$ as $\theta\to1-p_H$ ($C\to\infty$),
+so the root $\theta^*\in(0,1-p_H)$ is unique.
+
+\step{4}{Comparative statics in $A$} $g_A=1$, so by the implicit-function theorem and \eqref{t4e13-gth}
+\begin{align}
+  \frac{d\theta^*}{dA} = -\frac{g_A}{g_\theta} = -\frac{1}{g_\theta}<0. \label{t4e13-thA}
+\end{align}
+Combining with \eqref{t4e13-Ith}--\eqref{t4e13-Cth} by the chain rule:
+\begin{align}
+  \frac{dI}{dA} &= \frac{\partial I}{\partial\theta}\,\frac{d\theta^*}{dA}=(-bQ)\Big(-\frac{1}{g_\theta}\Big)=\frac{bQ}{g_\theta}>0, \nonumber\\
+  \frac{dC}{dA} &= C'(\theta)\,\frac{d\theta^*}{dA}=-\frac{C'(\theta)}{g_\theta}<0. \nonumber
+\end{align}
+As $A$ decreases, $\theta^*$ (hence $\mu=\theta/(1-\theta)$) rises, the investment size falls and the
+collateral rises, as claimed.
+
+\answer{(balance sheet)} As $A$ decreases, the shadow cost $\mu$ rises, investment $I$ falls and
+collateral $C$ rises: $dI/dA>0$, $dC/dA<0$.
+
+\step{5}{Comparative statics in the agency cost $b$} Both $B$ and $p_H/\Delta p$ (with $p_H$ fixed)
+enter only through $b=p_HB/\Delta p$, so it suffices to vary $b$. Now $b$ also enters $I(\theta,b)$; by
+\eqref{t4e13-G}, $G_b=-I$, so
+\begin{align}
+  g_b &= G_b+G_I\frac{\partial I}{\partial b} \nonumber\\
+      &= -I+\big(-(1-\theta)b\big)\big(-\theta Q\big) = -I+\theta(1-\theta)bQ, \label{t4e13-gb}
+\end{align}
+and by the implicit-function theorem $d\theta^*/db=-g_b/g_\theta$.
+\emph{Investment.} Using \eqref{t4e13-Ith}, \eqref{t4e13-gth} and \eqref{t4e13-gb} (with $D\equiv G_CC'>0$),
+\begin{align}
+  \frac{dI}{db} &= \frac{\partial I}{\partial\theta}\frac{d\theta^*}{db}+\frac{\partial I}{\partial b}
+               = (-bQ)\Big(-\frac{g_b}{g_\theta}\Big)+(-\theta Q)
+               = -Q\Big(\theta-b\,\frac{g_b}{g_\theta}\Big) \nonumber\\
+               &= -Q\,\frac{\theta g_\theta-bg_b}{g_\theta}
+               = -Q\,\frac{\theta D+bI}{g_\theta}\ <0, \label{t4e13-Ib}
+\end{align}
+where the numerator is
+$\theta g_\theta-bg_b=\theta(1-\theta)b^2Q+\theta D+bI-\theta(1-\theta)b^2Q=\theta D+bI>0$.
+So $I$ falls with $B$ and with $p_H/\Delta p$, as claimed. \emph{Collateral.} $dC/db=C'(\theta)\,d\theta^*/db
+=-C'(\theta)g_b/g_\theta$ has the sign of $-g_b$, and $-g_b>0$ iff $I>\theta(1-\theta)bQ$, i.e.\
+(multiplying by $1/Q=p_H|R''|$) iff $p_H|R''|I>\theta(1-\theta)b$. By the definition of $\varepsilon$
+and \eqref{t4e13-focI}, $p_H|R''|I=\varepsilon(I)\,p_HR'(I)=\varepsilon(I)(1+\theta b)$, so
+\begin{align}
+  \frac{dC}{db}>0 \iff \varepsilon(I)\,(1+\theta b)\ >\ \theta(1-\theta)\,b. \label{t4e13-cond}
+\end{align}
+This holds when $R$ is concave enough (for instance $\varepsilon\ge1$, since $\theta(1-\theta)b<1+\theta b$),
+but it can fail when $R$ is close to linear. Counterexample: $R(I)=3I^{0.95}$ ($\varepsilon=0.05$),
+$\phi(C)=\ln(1+C)$, $p_H=0.5$, $\Delta p=0.25$, $A=1$. For $B=0.5$ ($b=1$) the solution is
+$\theta^*=0.3276$, $I=4.1203$, $C=1.9003$; for $B=2$ ($b=4$) it is $\theta^*=0.1238$, $I=0.3815$,
+$C=0.3292$. Collateral \emph{falls} as the agency cost rises; at $b=1$, \eqref{t4e13-cond} reads
+$0.05(1+0.3276)=0.0664>0.3276(1-0.3276)(1)=0.2203$, false. (The first best is not pledgeable in both
+cases and $C\le BI/\Delta p$.)
+
+\answer{(agency cost)} Investment always falls with the agency cost, $dI/db<0$. Collateral rises with
+it iff $\varepsilon(I)(1+\theta b)>\theta(1-\theta)b$ (e.g.\ whenever $\varepsilon\ge1$); the statement's
+claim for $C$ is not general, as the counterexample shows.
+
+\intuition A weaker balance sheet tightens the financing constraint; the entrepreneur pays for funding
+on both margins she controls, investing less (which saves outside funds) and pledging more collateral
+(which adds pledgeable income at a deadweight cost). A higher agency cost also lowers investment, but
+it has a second effect: each unit of investment now absorbs more pledgeable income, so the downsizing
+itself releases funds. When output is nearly linear in $I$, downsizing is cheap and strong enough that
+less collateral is needed. Only the balance-sheet comparative static is unambiguous.
+
+\pitfalls
+\begin{itemize}
+  \item Dropping the indirect effect of collateral, the term $p_HC$: collateral also lets the cash
+        reward $R_b$ fall by $C$ without breaking (IC$_b$).
+  \item Treating $b$ as a pure shift of the constraint. It also enters the $I$-condition
+        \eqref{t4e13-focI}, which is why the sign of $dC/db$ is ambiguous.
+  \item Ignoring limited liability, $R_b=BI/\Delta p-C\ge0$: the substitution of collateral for
+        reward is valid only while it holds.
+\end{itemize}
+
+\bookans Agrees with the book's answer (p.~591): the FOCs \eqref{t4e13-focI}--\eqref{t4e13-focC} and
+``as the balance sheet deteriorates, $\mu$ increases, $I$ decreases, and $C$ increases''. The book's
+answer does not claim that collateral rises with the agency cost (it says only that borrowing rises
+when the agency cost falls). The statement's claim for $C$ holds only under \eqref{t4e13-cond}; the
+claim for $I$ holds in general \eqref{t4e13-Ib}.
+
+\refbib Tirole \S4.3.5, p.~170; \S3.4.2, pp.~127--128; answer p.~591.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 14 AS 17
+\exsec{17. Dealing with asset substitution --- Tirole Exercise 7.3, pp.~323--324}
+
+\asked (i) Without asset substitution: explain the threshold equation (1), give the
+entrepreneur's expected utility, and describe the optimal contracts (at least at $A=\bar A$).
+(ii) Now she can secretly run down maintenance (lower liquidation value $L$) to raise the success
+probability. Explain condition (2), find the smallest $A$ for which this threat does no harm, and
+describe the contract that achieves it.
+
+\approach The fixed-investment model with a verifiable liquidation value (lecture Topic~4B, asset
+substitution and remedies). Liquidation value is not subject to moral hazard, so all of it is
+pledgeable; continuation income is pledgeable only up to $R-B/\Delta p$. A debt-like claim pays the
+entrepreneur only in continuation, so she prefers to shift value from liquidation to continuation:
+\emph{asset substitution}. To prevent it she must be paid something in liquidation, conditional on
+good maintenance; that payment is a rent, which lowers \emph{pledgeable income} and raises the
+minimum equity. We write (IR$_l$), (IC$_b$) and a no-substitution constraint, and minimise her rent.
+
+\notation
+\begin{itemize}
+  \item $I>A$: fixed investment; $A$: cash; $x\in(0,1)$: probability of demand; with probability $1-x$
+        there is no demand and the assets are liquidated for $L$.
+  \item $R$: income in success; $p_H$, $p_L=p_H-\Delta p$, $B$: as in Section 3.2.
+  \item $L_0$: liquidation value without asset substitution; $\tau(L)$: change in success probability
+        when maintenance yields liquidation value $L$ ($\tau'<0$, $\tau''<0$, $\tau(L_0)=0$).
+  \item $r_b$: entrepreneur's payment on liquidation; $R_b$: payment on continuation and success.
+  \item $U_b^*$: entrepreneur's utility; $\bar A$: threshold (1); $A^*$: threshold with asset substitution.
+\end{itemize}
+\assume The statement's ``(hence, with probability $x$)'' for liquidation is read as probability $1-x$,
+the probability of no demand. $L\ge0$ is chosen from $[0,\infty)$.
+
+\step{1}{(i) Interpreting (1)} The liquidation value $L_0$ is verifiable and not subject to moral
+hazard, so all of it can go to investors. On continuation only $R-R_b$ with $R_b\ge B/\Delta p$ can.
+The left-hand side of (1) is the maximal expected pledgeable income,
+\begin{align}
+  \mathcal{P}_0=(1-x)L_0+xp_H\Big(R-\frac{B}{\Delta p}\Big), \label{t4e14-P0}
+\end{align}
+and (1) sets it equal to the investors' outlay at the threshold: financing is feasible iff
+$A\ge\bar A=I-\mathcal{P}_0$. The side condition $L_0\le p_H(R-B/\Delta p)$ says that, when there is
+demand, investors also prefer continuation (their maximal continuation claim beats $L_0$): there is
+no conflict over the continuation decision.
+
+\answer{(i), interpret (1)} The left side of (1) is the maximal expected pledgeable income (all of
+$L_0$ on liquidation, $R-B/\Delta p$ on success after continuation); (1) defines $\bar A$ as the cash at
+which it just covers the investors' outlay $I-A$.
+
+\step{2}{(i) Utility and optimal contracts} Competitive investors break even, so the entrepreneur
+receives the expected value created minus the investment, net of her own cash:
+$U_b^*=\big[(1-x)L_0+xp_HR\big]-(I-A)-A$, i.e.
+\begin{align}
+  U_b^* = (1-x)L_0+xp_HR-I. \label{t4e14-U}
+\end{align}
+A contract $(r_b,R_b)$, liquidating iff there is no demand, is optimal iff
+\begin{align}
+  (1-x)(L_0-r_b)+xp_H(R-R_b) &= I-A, \label{t4e14-irl}\\
+  R_b\ge\frac{B}{\Delta p},\quad r_b &\ge0. \label{t4e14-ic}
+\end{align}
+For $A>\bar A$ there is a continuum (the slack $A-\bar A$ can be paid as $r_b$ or as extra $R_b$). At
+$A=\bar A$, subtracting (1), $I-\bar A=(1-x)L_0+xp_H(R-B/\Delta p)$, from \eqref{t4e14-irl},
+\begin{align}
+  -(1-x)\,r_b-xp_H\Big(R_b-\frac{B}{\Delta p}\Big)=0, \nonumber
+\end{align}
+and both terms are $\le0$ by \eqref{t4e14-ic}, so each is zero: $r_b=0$ and $R_b=B/\Delta p$. This is a debt
+contract with face value $D=R-B/\Delta p\ge L_0$ (since $L_0\le p_H(R-B/\Delta p)\le D$). On liquidation
+the firm defaults and investors take $L_0$; on success they are repaid $D$.
+
+\answer{(i), utility and contracts} $U_b^*=(1-x)L_0+xp_HR-I$. Optimal contracts: any $(r_b,R_b)$ with
+$r_b\ge0$, $R_b\ge B/\Delta p$ and binding \eqref{t4e14-irl}; at $A=\bar A$ the unique one is debt with
+face $D=R-B/\Delta p$ ($r_b=0$, $R_b=B/\Delta p$).
+
+\step{3}{(ii) Interpreting (2)} With maintenance level $L$ (and effort), the NPV is
+\begin{align}
+  \mathit{NPV}(L)=(1-x)L+x\big[p_H+\tau(L)\big]R-I. \label{t4e14-npv}
+\end{align}
+Differentiating, $\mathit{NPV}'(L)=(1-x)+x\tau'(L)R$ and $\mathit{NPV}''(L)=x\tau''(L)R<0$, so it is
+strictly concave, and its first-order condition is $(1-x)+x\tau'(L)R=0$, i.e.\ (dividing by $x$)
+$\tau'(L)R=-(1-x)/x$, which (2) says holds at $L_0$. So $L_0$ is the unique efficient maintenance level:
+one more unit of liquidation value, worth $1-x$ in expectation, costs exactly $x|\tau'|R$ of expected
+continuation income. $\tau(L_0)=0$ normalises the success probabilities so that $\mathit{NPV}(L_0)=U_b^*$.
+
+\answer{(ii), interpret (2)} (2) says $L_0$ is the efficient maintenance level: it maximises the NPV,
+and at $L_0$ the success probabilities are those of part (i).
+
+\step{4}{(ii) The entrepreneur's maintenance choice} Under the step contract ($r_b(L)=r_b$ if $L\ge L_0$,
+$0$ otherwise) and anticipating effort at stage 4 (her (IC$_b$), $(\Delta p)R_b\ge B$, does not depend
+on $L$), she chooses $L$ to maximise
+\begin{align}
+  U(L)=(1-x)\,r_b(L)+x\big[p_H+\tau(L)\big]R_b. \label{t4e14-UL}
+\end{align}
+For $L<L_0$ she gets $0$ on liquidation and $\tau$ is decreasing, so the best deviation is $L=0$; any
+$L>L_0$ lowers $\tau$ for no gain. So $L_0$ is chosen iff $U(L_0)\ge U(0)$:
+\begin{align}
+  (1-x)r_b+x\big[p_H+\tau(L_0)\big]R_b &\ge (1-x)(0)+x\big[p_H+\tau(0)\big]R_b \nonumber\\
+  (1-x)r_b+xp_HR_b &\ge xp_HR_b+x\tau(0)R_b \qquad (\tau(L_0)=0) \nonumber\\
+  (1-x)\,r_b &\ge x\,\tau(0)\,R_b. \tag{NS}\label{t4e14-ns}
+\end{align}
+A debt contract ($r_b=0$) violates \eqref{t4e14-ns}: the entrepreneur would run the assets down to gamble on
+continuation.
+
+\step{5}{(ii) Minimum $A$} Financing at the efficient $L_0$ requires the investors' breakeven
+\eqref{t4e14-irl} with (IC$_b$) and \eqref{t4e14-ns}. The entrepreneur's expected rent
+$(1-x)r_b+xp_HR_b$ is minimised by \eqref{t4e14-ns} at equality (any larger $r_b$ is pure rent);
+substituting $(1-x)r_b=x\tau(0)R_b$, the rent is $x\tau(0)R_b+xp_HR_b=x\big[p_H+\tau(0)\big]R_b$,
+increasing in $R_b$, so $R_b=B/\Delta p$, the lowest value (IC$_b$) allows. Then
+\begin{align}
+  r_b=\frac{x\,\tau(0)}{1-x}\,\frac{B}{\Delta p}. \label{t4e14-rb}
+\end{align}
+Substituting $R_b=B/\Delta p$ and \eqref{t4e14-rb} into \eqref{t4e14-irl} at equality,
+\begin{align}
+  I-A^* &= (1-x)\big(L_0-r_b\big)+xp_H\Big(R-\frac{B}{\Delta p}\Big) \nonumber\\
+  A^* &= \Big[I-(1-x)L_0-xp_H\Big(R-\frac{B}{\Delta p}\Big)\Big]+(1-x)\,r_b \nonumber\\
+      &= \bar A+(1-x)\,r_b=\bar A+x\,\tau(0)\,\frac{B}{\Delta p}, \label{t4e14-Astar}
+\end{align}
+using (1) for the bracket and \eqref{t4e14-rb} for $(1-x)r_b$.
+For $A\ge A^*$, asset substitution is innocuous: the firm is financed, maintains $L_0$ and the
+entrepreneur gets $U_b^*$. For $A\in[\bar A,A^*)$ the efficient contract is not fundable. Illustration:
+$x=0.6$, $p_H=0.8$, $p_L=0.4$, $B=1$, $R=10$, $L_0=3$, $I=5.5$, $\tau(L)=(9-L^2)/90$ (which satisfies
+(2): $\tau'(3)R=-(6/90)(10)=-2/3=-(0.4/0.6)$): $U_b^*=0.4(3)+0.6(0.8)(10)-5.5=1.2+4.8-5.5=0.5$,
+$B/\Delta p=2.5$, $\bar A=5.5-1.2-0.6(0.8)(10-2.5)=5.5-1.2-3.6=0.7$, $\tau(0)=9/90=0.1$,
+$r_b=(0.6)(0.1)(2.5)/(0.4)=0.375$, $A^*=0.7+(0.4)(0.375)=0.85$.
+
+\step{6}{(ii) The optimal contract} It is debt plus a reward for good maintenance: the entrepreneur
+keeps $B/\Delta p$ on success and receives $r_b$ on liquidation, but only if the assets are in good
+condition (a severance payment conditional on $L\ge L_0$). Giving her a stake in the liquidation
+value counters her bias toward the continuation state, where her debt-like claim pays.
+
+\answer{(ii), minimum $A$ and contract} $A^*=\bar A+x\,\tau(0)\,B/\Delta p$. The contract is debt
+($R_b=B/\Delta p$ on success) plus a payment $r_b=x\tau(0)B/[(1-x)\Delta p]$ on liquidation, made only if
+the assets were maintained at $L_0$.
+
+\intuition A claim that pays only in success makes the entrepreneur care only about continuation
+profit, so she cuts maintenance to raise the success probability: risk shifting at the expense of
+investors, who own the liquidation value. To stop it, she must share in the liquidation value. That
+share is an extra rent, so it lowers pledgeable income and raises the equity needed, by the expected
+gain from the most aggressive substitution, $x\,\tau(0)B/\Delta p$.
+
+\pitfalls
+\begin{itemize}
+  \item Reading ``liquidation \ldots\ (hence, with probability $x$)'' literally; liquidation happens when
+        there is no demand, with probability $1-x$ (Figure~7.16).
+  \item Keeping the debt contract of part (i) in part (ii). With $r_b=0$ the no-substitution constraint
+        fails and she runs the assets down to $L=0$.
+  \item Paying $r_b$ on liquidation unconditionally. A payment that does not depend on $L$ leaves her
+        maintenance incentive unchanged; it must be conditional on $L\ge L_0$.
+\end{itemize}
+
+\bookans Matches the book's answer (p.~602): the same interpretation of (1), $U_b^*$, the debt contract
+at $A=\bar A$, the step-function contract with $R_b=B/\Delta p$, the no-substitution inequality
+$(1-x)r_b+xp_HB/\Delta p\ge x[p_H+\tau(0)]B/\Delta p$ and the threshold
+$I-A^*=(1-x)(L_0-r_b)+xp_H(R-B/\Delta p)$. The statement's ``with probability $x$'' for liquidation
+looks like a typo for $1-x$.
+
+\refbib Tirole \S3.2.2, pp.~116--117; \S7.2.3 ``Effort and Risk Taking'', p.~314; answer p.~602.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic4-moral-hazard-overhang-solutions.tex EX 15 AS 18
+\exsec{18. A borrower-friendly bankruptcy court --- Tirole Exercise 4.9, pp.~190--191}
+
+\asked (i) Argue that investors should get the short-term profit and the liquidation value, that
+the entrepreneur's continuation reward should be exactly $B/\Delta p$, and explain assumptions (1)
+and (2). (ii) Write the borrower's optimisation problem and the equation for the continuation cutoff
+$r^*$. (iii) Show that short-term debt $d=r^*$ implements the contract (default $=$ liquidation) and
+how $d$ depends on her cash $A$. (iv) A court splits the liquidation proceeds equally with the
+borrower; show that if $r^*>\hat r$ she loses access to financing. (v) If $r^*<\hat r$, show that the
+court either blocks financing or makes bankruptcy more likely, hurting the borrower but not lenders.
+
+\approach Lecture Topic~4B, bankruptcy design. The fixed-investment model with an intermediate
+verifiable profit $r$ and a liquidation option. Everything not subject to moral hazard ($r$, $L$) is
+\emph{pledgeable income} at no incentive cost; continuation income is pledgeable only up to
+$\rho_0(r)$. When the project cannot be financed with continuation in every state, the borrower buys
+funding by accepting inefficient liquidation where it raises pledgeable income most cheaply, which
+gives a cutoff rule. We write the Lagrangian, maximise it state by state, and use the investors'
+breakeven condition to find $r^*$; the court changes investors' payoff from liquidation from $L$ to
+$L/2$.
+
+\notation
+\begin{itemize}
+  \item $r\in[0,\bar r]$: verifiable short-term profit, density $f>0$, c.d.f.\ $F$; $L>0$: liquidation value.
+  \item $p_H(r)$, $p_L(r)=p_H(r)-\Delta p$: success probabilities ($p_H'>0$); $R$: final profit in success;
+        $B$: private benefit.
+  \item $\rho_1(r)=p_H(r)R$: continuation value; $\rho_0(r)=p_H(r)(R-B/\Delta p)$: pledgeable
+        continuation value; both increasing in $r$.
+  \item $\ell(r)\in\{0,1\}$: liquidation policy; $R_b(r)$: reward on continuation and success;
+        $r^*$: optimal cutoff; $d$: short-term debt.
+  \item $\hat r$: $\rho_0(\hat r)=L/2$; $r^{**}$: cutoff under the borrower-friendly court.
+  \item $P(c)$, $P_c(c)$: investors' expected income with cutoff $c$ under an enforcing / borrower-friendly court.
+\end{itemize}
+\assume The court's equal split of $L$ cannot be undone by contract.
+
+\step{1}{(i) What goes to investors; $R_b=B/\Delta p$; conditions (1)--(2)} $r$ and $L$ are not subject to
+moral hazard, so giving them to investors raises pledgeable income without hurting incentives. On
+continuation, (IC$_b$) is $[p_H(r)-p_L(r)]R_b\ge B$, i.e.\ $R_b\ge B/\Delta p$; any excess is wasted
+pledgeable income, which would force more liquidation (proved in Step 2). Condition (1), $\rho_1(r)>L$,
+says continuation is always efficient. Condition (2): always liquidating raises enough,
+$E[r]+L>I-A$, but always continuing does not, $E[r+\rho_0(r)]<I-A$. Financing therefore needs
+inefficient liquidation in some states.
+
+\answer{(i)} $r$ and $L$ go to investors because pledging them costs no incentives; $R_b=B/\Delta p$
+because any larger reward wastes pledgeable income. (1): continuation is always efficient. (2):
+liquidating always would raise enough funds, continuing always would not, so some inefficient
+liquidation is the price of financing.
+
+\step{2}{(ii) Programme and the cutoff} With binding breakeven the borrower's utility is the NPV:
+\begin{align}
+  \max_{\ell(\cdot),R_b(\cdot)}\; & E[r]+\int_0^{\bar r}\big[\ell(r)L+(1-\ell(r))\rho_1(r)\big]f(r)\,dr-I \label{t4e15-obj}\\
+  \text{s.t. }\; & E[r]+\int_0^{\bar r}\big[\ell(r)L+(1-\ell(r))p_H(r)(R-R_b(r))\big]f(r)\,dr\ \ge\ I-A, \label{t4e15-irl}\\
+  & R_b(r)\ge B/\Delta p. \label{t4e15-ic}
+\end{align}
+Let $\mu$ be the multiplier of \eqref{t4e15-irl}. $\mu>0$: the unconstrained optimum, $\ell\equiv0$ by (1),
+violates \eqref{t4e15-irl} by (2). $R_b$ does not enter \eqref{t4e15-obj} and lowers \eqref{t4e15-irl}, so
+$R_b(r)=B/\Delta p$ and the investors' continuation income is $p_H(r)(R-B/\Delta p)=\rho_0(r)$. The
+Lagrangian is then
+\begin{align}
+  \mathcal L &= (1+\mu)E[r]-I-\mu(I-A)+\int_0^{\bar r}\Big\{\ell(r)\,(1+\mu)L
+               +\big(1-\ell(r)\big)\big[\rho_1(r)+\mu\rho_0(r)\big]\Big\}f(r)\,dr, \nonumber
+\end{align}
+which is linear in $\ell(r)$ state by state. Maximising the integrand pointwise: liquidate iff
+$(1+\mu)L>\rho_1(r)+\mu\rho_0(r)$, i.e.
+\begin{align}
+  \mu\big[L-\rho_0(r)\big]\ >\ \rho_1(r)-L. \label{t4e15-point}
+\end{align}
+The left-hand side decreases and the right-hand side increases in $r$, so the policy is a cutoff:
+liquidate iff $r<r^*$. At the cutoff \eqref{t4e15-point} holds with equality and $\rho_1(r^*)>L$, so
+$\mu[L-\rho_0(r^*)]=\rho_1(r^*)-L>0$ and, with $\mu>0$, $\rho_0(r^*)<L$.
+
+\step{3}{(ii) The equation for $r^*$} With cutoff $c$, investors receive
+\begin{align}
+  P(c)=E[r]+L\,F(c)+\int_c^{\bar r}\rho_0(r)f(r)\,dr, \label{t4e15-P}
+\end{align}
+and the NPV, $E[r]+LF(c)+\int_c^{\bar r}\rho_1f\,dr-I$, falls with $c$ by (1). So $r^*$ is the smallest
+root of
+\begin{align}
+  E[r]+L\,F(r^*)+\int_{r^*}^{\bar r}\rho_0(r)f(r)\,dr = I-A. \label{t4e15-rstar}
+\end{align}
+By (2), $P(0)=E[r+\rho_0(r)]<I-A<E[r]+L=P(\bar r)$, so by continuity $r^*\in(0,\bar r)$ (the
+statement's ``$(0,r)$'' should read $(0,\bar r)$).
+
+\answer{(ii)} $\max_{\ell(\cdot),R_b(\cdot)}$ \eqref{t4e15-obj} s.t.\ \eqref{t4e15-irl}--\eqref{t4e15-ic};
+continue iff $r\ge r^*$, with $r^*$ the smallest root of
+$E[r]+LF(r^*)+\int_{r^*}^{\bar r}\rho_0(r)f(r)\,dr=I-A$.
+
+\step{4}{(iii) Short-term debt and the effect of $A$} Implementation: short-term debt $d=r^*$ due at
+date 1, any excess $r-d$ also paid to investors (for example as a payout to outside shareholders), and a
+long-term claim of $R-B/\Delta p$ on success. If $r\ge d$ the debt is paid and the firm continues; if
+$r<d$ it defaults, creditors take control and liquidate (``bankruptcy''). They do not renegotiate:
+for $r<r^*$, $\rho_0(r)<\rho_0(r^*)<L$, and the borrower has no cash to bribe them. By Leibniz's
+rule applied to \eqref{t4e15-P},
+\begin{align}
+  \frac{dP}{dc}=L\,f(c)-\rho_0(c)f(c)=\big[L-\rho_0(c)\big]f(c). \nonumber
+\end{align}
+Differentiating \eqref{t4e15-rstar}, $P(r^*)=I-A$, with respect to $A$:
+\begin{align}
+  \big[L-\rho_0(r^*)\big]f(r^*)\,dr^* &= -dA \nonumber\\
+  \frac{dr^*}{dA} &= -\frac{1}{[L-\rho_0(r^*)]f(r^*)}\ <0. \label{t4e15-drA}
+\end{align}
+Short-term debt falls with initial equity: a weaker balance sheet needs more pledgeable income, so the
+firm must accept bankruptcy in more states.
+
+\answer{(iii)} Short-term debt $d=r^*$ (default and liquidation iff $r<d$), plus a long-term claim
+$R-B/\Delta p$ on success, implements the optimum; $dd/dA=dr^*/dA=-1/\{[L-\rho_0(r^*)]f(r^*)\}<0$.
+
+\step{5}{(iv) Borrower-friendly court with $r^*>\hat r$} Liquidation now yields investors only $L/2$. For
+any policy, investors' income in state $r$ (besides $r$) is at most $\max\{L/2,\rho_0(r)\}$. Compare
+with the enforcing-court contract state by state. For $r<r^*$, $\max\{L/2,\rho_0(r)\}<L$, since
+$L/2<L$ and $\rho_0(r)<\rho_0(r^*)<L$. For $r\ge r^*>\hat r$, $\rho_0(r)>\rho_0(\hat r)=L/2$, so the
+maximum is $\rho_0(r)$, the same as before. Hence
+\begin{align}
+  E[r]+\int_0^{\bar r}\max\Big\{\frac L2,\rho_0(r)\Big\}f(r)\,dr\ <\ E[r]+LF(r^*)+\int_{r^*}^{\bar r}\rho_0f\,dr = I-A, \label{t4e15-iv}
+\end{align}
+using \eqref{t4e15-rstar}. No policy lets investors break even: the borrower loses access to financing.
+
+\answer{(iv)} With $r^*>\hat r$, the investors' maximal expected income under the court is below
+$I-A$: no contract is financed.
+
+\step{6}{(v) Court with $r^*<\hat r$} Cutoff policies are again optimal (same argument as
+\eqref{t4e15-point} with $L/2$ for investors). Investors' income with cutoff $c$ is
+\begin{align}
+  P_c(c)=E[r]+\frac L2F(c)+\int_c^{\bar r}\rho_0(r)f(r)\,dr, \qquad P_c'(c)=\Big[\frac L2-\rho_0(c)\Big]f(c), \label{t4e15-Pc}
+\end{align}
+which rises up to $\hat r$ and falls after it, so its maximum is $P_c(\hat r)$. If $P_c(\hat r)<I-A$, there
+is no financing. Otherwise the borrower picks the smallest root $r^{**}$ of $P_c(c)=I-A$. For
+$0<c\le r^*$, $P_c(c)<P(c)\le I-A$ by \eqref{t4e15-P} and \eqref{t4e15-rstar}, so $r^{**}\in(r^*,\hat r]$:
+bankruptcy is more likely. Lenders break even in either regime, so they are not hurt. The borrower gets
+the NPV, which falls with the cutoff (Step 3), so $\mathit{NPV}(r^{**})<\mathit{NPV}(r^*)$: she is hurt.
+More directly, with an enforcing court she could have written the $L/2$ split into her contract; the
+friendly court only removes options.
+
+\answer{(v)} If $P_c(\hat r)<I-A$ there is no financing; otherwise the cutoff rises to
+$r^{**}\in(r^*,\hat r]$ (more bankruptcy). Lenders still break even; the borrower's utility, the NPV,
+falls.
+
+\step{7}{Numerical illustration} $r\sim U[0,1]$, $p_H(r)=0.5+0.4r$, $\Delta p=0.2$, $R=10$, $B=1.2$
+($R-B/\Delta p=4$), $L=4.5$. Then $\rho_1(r)=5+4r>L$, $\rho_0(r)=2+1.6r$, $E[r]=0.5$,
+$P(0)=E[r+\rho_0]=3.3$, $P(1)=E[r]+L=5$, so (2) holds for $I-A\in(3.3,5)$; $\hat r=(2.25-2)/1.6=0.15625$,
+and the court's maximal income is $P_c(\hat r)=3.319531$. With $f=1$ on $[0,1]$, \eqref{t4e15-P} and
+\eqref{t4e15-Pc} integrate to
+\begin{align}
+  P(c) &= 0.5+4.5c+2(1-c)+0.8(1-c^2)=3.3+2.5c-0.8c^2, \nonumber\\
+  P_c(c) &= 0.5+2.25c+2(1-c)+0.8(1-c^2)=3.3+0.25c-0.8c^2, \nonumber
+\end{align}
+so $P_c(\hat r)=3.3+0.25(0.15625)-0.8(0.15625)^2=3.3+0.0390625-0.0195313=3.319531$.
+(iv) $I-A=4$: $P(r^*)=4$ gives $0.8r^{*2}-2.5r^*+0.7=0$, smallest root
+$r^*=(2.5-\sqrt{6.25-2.24})/1.6=0.3109>\hat r$; $\rho_0(r^*)=2+1.6(0.3109)=2.4975<L$; and $3.319531<4$:
+no financing. (v) $I-A=3.31$: $2.5r^*-0.8r^{*2}=0.01$ gives $r^*=0.0040<\hat r$; under the court
+$0.25r^{**}-0.8r^{**2}=0.01$ gives $r^{**}=(0.25-\sqrt{0.0625-0.032})/1.6=0.0471$, and the NPV loss is
+$\int_{r^*}^{r^{**}}(\rho_1-L)\,dr=\int_{r^*}^{r^{**}}(0.5+4r)\,dr=0.0260$.
+
+\intuition Liquidation is the investors' collateral: it is what they get when the firm cannot pay. A court
+that hands half of it to the borrower lowers the value of default to creditors. To keep them whole the
+contract must liquidate more often, which destroys value, or financing breaks down. Lenders still break
+even, so the whole cost of the borrower-friendly rule falls on the borrower it was meant to protect.
+
+\pitfalls
+\begin{itemize}
+  \item Liquidating whenever $\rho_0(r)<L$. Liquidation is always inefficient here (1); it is used only
+        as far as needed to break even, so the cutoff comes from the binding breakeven, not from
+        $\rho_0=L$.
+  \item Concluding that a court that hands the borrower half of $L$ helps her. Lenders must still
+        break even, so the borrower pays for the transfer through more liquidation or no financing.
+  \item Signing $dr^*/dA$ wrong: more cash means less pledgeable income is needed, so fewer
+        liquidations and \emph{less} short-term debt.
+\end{itemize}
+
+\bookans Matches the book's answer (pp.~586--587): the reasons for pledging $r$ and $L$, $R_b=B/\Delta p$,
+the programme and $r^*$ as the lowest root of breakeven with $L\ge\rho_0(r^*)$, the debt implementation
+$d=r^*$, $dr^*/dA<0$, and (iv)--(v) as read from the book's Figures 2--3 (bankruptcy on $[0,r^{**}]$ with
+$r^*<r^{**}\le\hat r$, lenders not hurt, borrower hurt). The statement's ``$(0,r)$'' is a typo for $(0,\bar r)$.
+
+\refbib Tirole \S3.2.2, pp.~116--117; Exercise 4.9, pp.~190--191; answer pp.~586--587.
+%% END-FROM
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 13 AS 19
+\exsec{19. Information sharing among lenders --- Tirole 6.7, pp.~276--278}
+
+\asked (i) With the probability of talent $\alpha$ fixed, compare banks' profits with and without sharing repayment data, and show that banks prefer not to share. (ii) When the borrower chooses $\alpha$ at a convex cost, show that banks prefer to share.
+
+\approach This is the Padilla--Pagano credit-bureau model (Tirole \S6.3; lecture block 3.4). Solve the two-period game backwards, case by case. At date 2 the incumbent bank knows the date-1 outcome; without sharing, foreign banks do not, so the incumbent holds the borrower up (an informational rent); with sharing, a success is public and Bertrand competition hands the surplus to the borrower. At date 1, the stated inequalities keep foreign banks out. Then compare banks' profits; in (ii) add the borrower's choice of $\alpha$, which depends on what she keeps at date 2.
+
+\notation
+\begin{itemize}
+  \item $t=1,2$: periods; $\delta\in(0,1]$: discount factor; $I$: investment per period; $R$ / $0$: income in success / failure; market rate 0.
+  \item $p$ / $q$: success probability of a talented / untalented borrower, $pR>I>qR$ (so $R>I$); $\alpha$: probability of talent; $m\equiv\alpha p+(1-\alpha)q$.
+  \item Projects of the two dates succeed or fail together. $R_b^t$: borrower's reward in success at date $t$.
+  \item $\pi^{ns}$, $\pi^s$: a bank's expected profit without / with information sharing; $U_b^{ns}$, $U_b^s$: borrower's utility.
+  \item $C(\alpha)$: borrower's cost of reaching talent probability $\alpha$; $C'>0$, $C''>0$, $C(0)=C'(0)=0$, $C'(1)=\infty$.
+\end{itemize}
+
+\step{1}{Foreign banks do not lend at date 1 (part (i))} A foreign bank knows only $\alpha$. Its best case
+is to win the borrower at date 1 and keep her at date 2 with no competition, setting $R_b=0$ both times
+and relending only after a success (which guarantees a date-2 success). From a borrower of
+type $\theta\in\{p,q\}$ it would earn
+\begin{align}
+  g(\theta) = \theta R-I+\delta\,\theta(R-I). \label{t3e13-g}
+\end{align}
+By the statement's assumptions, $g(q)=qR-I+\delta q(R-I)<0$ and, averaging \eqref{t3e13-g} over the prior,
+\begin{align}
+  \alpha g(p)+(1-\alpha)g(q) &= [\alpha p+(1-\alpha)q]R-I+\delta[\alpha p+(1-\alpha)q](R-I) \nonumber\\
+  &= mR-I+\delta m(R-I)<0. \nonumber
+\end{align}
+It wins
+every bad type (the local bank does not lend to them, Step~2) and at most a fraction $\theta\in[0,1]$
+of the good types, so its profit is at most
+\begin{align}
+  \theta\alpha g(p)+(1-\alpha)g(q) \le \alpha g(p)+(1-\alpha)g(q) < 0. \nonumber
+\end{align}
+So foreign banks make no date-1 offers.
+
+\step{2}{The local bank lends only to the good type, at $R_b^1=0$} The local bank knows the type. Even as a
+two-period monopolist it would earn $g(q)<0$ on a bad type, so it does not lend to her. With no foreign
+competition at date 1 it makes a take-it-or-leave-it offer to the good type: $R_b^1=0$, date-1 profit $pR-I$.
+
+\step{3}{Date 2 without information sharing} Foreign banks see only that the borrower was financed at
+date 1, which reveals a good type; they assign probability $p$ to success but do not know the date-1
+outcome. The incumbent knows it, hence knows the date-2 outcome. If a foreign bank offers $R_b<R-I$, the
+incumbent, moving last, outbids it ($R_b+\varepsilon$) after a success and stays out after a failure. The
+foreign bank wins only failing borrowers and loses $I$, so it does not bid. The incumbent then offers
+$R_b^2=0$ after a success and does not lend after a failure. Each bank's profit (banks earn nothing in
+other towns) and the borrower's utility are
+\begin{align}
+  \pi^{ns} &= \alpha[pR-I+\delta p(R-I)], \label{t3e13-pins}\\
+  U_b^{ns} &= 0. \label{t3e13-Uns}
+\end{align}
+
+\step{4}{Date 2 with information sharing} All banks now see the date-1 repayment, so after a success
+everyone knows the date-2 project succeeds. With $n\ge2$ banks this is Bertrand competition: the reward
+is bid up to $R_b^2=R-I$ and date-2 profit is $0$. After a failure nobody lends. At date 1 the foreign banks
+still do not lend: with no date-2 rent their best case is $mR-I$, and since $R>I$ makes $\delta m(R-I)>0$,
+\begin{align}
+  mR-I < mR-I+\delta m(R-I) < 0 \nonumber
+\end{align}
+by the first assumption. The local bank still lends
+to the good type only, at $R_b^1=0$. Hence
+\begin{align}
+  \pi^{s} &= \alpha(pR-I), \label{t3e13-pis}\\
+  U_b^{s} &= \delta\alpha p(R-I). \label{t3e13-Us}
+\end{align}
+
+\step{5}{Banks prefer not to share} Subtracting \eqref{t3e13-pis} from \eqref{t3e13-pins},
+\begin{align}
+  \pi^{ns}-\pi^{s} = \alpha\,\delta p(R-I) > 0. \qquad\blacksquare \label{t3e13-diff}
+\end{align}
+With $\alpha$ fixed, sharing only hands the incumbent's date-2 informational rent to the borrower.
+
+\answer{(i)} Without sharing $\pi^{ns}=\alpha[pR-I+\delta p(R-I)]$ and $U_b^{ns}=0$; with sharing $\pi^s=\alpha(pR-I)$ and $U_b^s=\delta\alpha p(R-I)$. Banks lose $\alpha\delta p(R-I)>0$ by sharing, so they do not share.
+
+\step{6}{Endogenous $\alpha$: banks share (part (ii))} The banks' decision is public and is made before
+the borrower chooses $\alpha$; her net utility is the gross utility of Steps~3--4 minus $C(\alpha)$.
+Without sharing, \eqref{t3e13-Uns} gives net utility $-C(\alpha)$, maximised at
+\begin{align}
+  \alpha^{ns} = 0 \quad\Rightarrow\quad \pi^{ns} = 0\cdot[pR-I+\delta p(R-I)] = 0. \label{t3e13-ans}
+\end{align}
+With sharing, by \eqref{t3e13-Us} she solves $\max_\alpha\{\delta\alpha p(R-I)-C(\alpha)\}$. The derivative of the objective is $\delta p(R-I)-C'(\alpha)$, which is strictly decreasing ($C''>0$), positive at $\alpha=0$ (since $C'(0)=0<\delta p(R-I)$) and negative near $\alpha=1$ (since $C'(1)=\infty$). So the objective is strictly concave and its maximum is the unique interior zero of the derivative:
+\begin{align}
+  C'(\alpha^s) = \delta p(R-I), \qquad \alpha^s\in(0,1). \label{t3e13-foc}
+\end{align}
+Assuming, as the statement allows, that the conditions of (i) hold at $\alpha^s$, \eqref{t3e13-pis} gives
+\begin{align}
+  \pi^s = \alpha^s(pR-I) > 0 = \pi^{ns}, \label{t3e13-share}
+\end{align}
+so the banks choose to share information. $\blacksquare$ The borrower gains too:
+$U_b^s=\delta\alpha^sp(R-I)-C(\alpha^s)>0$, because $C'(0)=0$ makes small $\alpha$ strictly profitable.
+
+\answer{(ii)} Without sharing the borrower expects no rent, invests nothing ($\alpha^{ns}=0$) and banks earn $0$; with sharing she invests $\alpha^s$ with $C'(\alpha^s)=\delta p(R-I)$, and banks earn $\alpha^s(pR-I)>0$. Banks choose to share.
+
+\step{7}{Numerical illustration} Take $p=0.8$, $q=0.2$, $R=10$, $I=6$, $\delta=0.9$, so
+\begin{align}
+  g(p) &= (0.8)(10)-6+(0.9)(0.8)(10-6) = 2+2.88 = 4.88, \nonumber\\
+  g(q) &= (0.2)(10)-6+(0.9)(0.2)(4) = 2-6+0.72 = -3.28<0. \nonumber
+\end{align}
+The first assumption reads $m[R+\delta(R-I)]<I$, i.e.\ $m(10+3.6)<6$, so $m<6/13.6=0.441176$; with $m=0.2+0.6\alpha$ this is $\alpha<(0.441176-0.2)/0.6=0.402$. With
+$\alpha=0.3$: $\pi^{ns}=0.3(4.88)=1.464$, $\pi^s=0.3(8-6)=0.6$, $U_b^s=0.9(0.3)(0.8)(4)=0.864$. For (ii) take
+$C(\alpha)=6[-\alpha-\ln(1-\alpha)]$, which satisfies the conditions ($C(0)=0$), with
+\begin{align}
+  C'(\alpha)=6\Bigl[-1+\frac{1}{1-\alpha}\Bigr]=\frac{6\alpha}{1-\alpha}, \qquad C''(\alpha)=\frac{6}{(1-\alpha)^2}>0, \nonumber
+\end{align}
+so $C'(0)=0$ and $C'(\alpha)\to\infty$ as $\alpha\to1$.
+Then \eqref{t3e13-foc} gives
+\begin{align}
+  \frac{6\alpha}{1-\alpha}&=\delta p(R-I)=(0.9)(0.8)(4)=2.88 \nonumber\
+  6\alpha&=2.88-2.88\alpha \nonumber\
+  \alpha^s&=\frac{2.88}{8.88}=0.324324<0.402, \nonumber
+\end{align}
+$\pi^s=0.324324(2)=0.648649>0$ and $U_b^s=2.88(0.324324)-6[-0.324324-\ln(0.675676)]=0.934054-0.406307=0.527747$.
+
+\intuition Sharing default data is a trade-off between the size of the banks' markup and the size of the
+market. With talent given, it only erodes the incumbent's hold-up rent (the markup falls, the base is
+fixed), so banks keep data private. When talent is an investment, a borrower who expects to be held up
+does not invest, and the base collapses to zero. Sharing commits banks to compete after a success,
+protects the borrower's return on investing, and creates borrowers worth lending to.
+
+\pitfalls
+\begin{itemize}
+  \item Letting a foreign bank compete at date 2 without sharing: it cannot tell successful from failed borrowers and, with the incumbent moving last, it wins only the failures (adverse selection against the outsider).
+  \item Forgetting the correlation of the two projects: after a date-1 success the date-2 project succeeds for sure, which is why the date-2 rent is $\delta p(R-I)$ per good borrower.
+  \item Comparing banks' profits in (ii) at the same $\alpha$: the point of (ii) is that $\alpha$ itself responds to the sharing decision ($\alpha^{ns}=0<\alpha^s$).
+\end{itemize}
+
+\bookans Matches the book's answer (p.~599): $\pi^{ns}=\alpha[pR-I+\delta p(R-I)]$, $U_b^{ns}=0$,
+$\pi^s=\alpha(pR-I)$, $U_b^s=\delta\alpha p(R-I)$; with endogenous $\alpha$, $\alpha^{ns}=0$ and
+$C'(\alpha^*)=\delta p(R-I)$, so sharing is chosen.
+
+\refbib{Tirole Ch.~6, \S6.3 Application 4 (disclosure of past repayments, Padilla--Pagano), pp.~249--250;
+Exercise 6.7, pp.~276--278; answer p.~599. Lecture Topic~3, credit-bureau slides.}
+%% END-FROM
+
+%% BEGIN-FROM lista-topic3-asymmetric-information-solutions.tex EX 14 AS 20
+\exsec{20. Leland--Pyle with mean-variance preferences --- Amaro de Matos 3.2.6 \#2, p.~95}
+
+\asked (a) In Leland and Pyle's model, with mean-variance utility $G[E(W_1)-\frac b2\sigma^2_{W_1}]$ and the CAPM risk adjustment $\lambda$ given in the statement, find the conditions under which the firm's debt $B$ rises with the fraction $\alpha$ of equity the managers retain.
+
+\approach This is Leland--Pyle signalling by retained ownership (Amaro de Matos \S3.2.2; lecture block 3.9). Retaining a stake is costly for a risk-averse manager because she cannot diversify, so the stake is a credible signal of $\overline X$. With mean-variance utility the two first-order conditions (3.18)--(3.19) can be solved explicitly: the CAPM term $\lambda$ cancels and only idiosyncratic risk is costly, giving a closed-form signalling schedule $X(\alpha)$. Debt does not enter the managers' wealth, so it moves with $\alpha$ only through the budget constraint with the managers' own investment held fixed (the book's ``all other factors being fixed''); differentiating $B(\alpha)$ gives the condition.
+
+\notation
+\begin{itemize}
+  \item $X=\overline X+\varepsilon$: project payoff at time 1, $E(\varepsilon)=0$, $\sigma_\varepsilon^2=\operatorname{var}(\varepsilon)$; $K$: capital required.
+  \item $\alpha\in[0,1)$: fraction retained by managers; $X(\alpha)$: payoff inferred by the market; $V(\alpha)=[X(\alpha)-\lambda]/(1+r)$: perceived value (3.15).
+  \item $B$: riskless debt (face $(1+r)B$); $r$: riskless rate; $\widetilde M$, $V_M$, $\sigma_M^2$: market payoff, value, variance; $\beta$: fraction of the market held.
+  \item $W_0$: initial wealth; $Y$: riskless holding; $\widetilde W_1$: time-1 wealth; $b>0$: risk-aversion coefficient.
+  \item $\lambda=\frac{E[M]-(1+r)V_M}{\sigma_M^2}\operatorname{cov}(\varepsilon,M)$: CAPM risk adjustment (statement).
+  \item $\sigma_u^2\equiv\sigma_\varepsilon^2-\operatorname{cov}(\varepsilon,M)^2/\sigma_M^2\ge0$: idiosyncratic variance of the project.
+  \item $E_m\equiv K-B-(1-\alpha)[V(\alpha)-B]$: managers' own money put into the firm's equity.
+\end{itemize}
+
+\assume The book gives no worked answer (it cites Leland and Pyle 1977, p.~377), so everything below is
+derived here from the \S3.2.2 excerpt. (a) $\sigma_u^2>0$ and interior $\alpha\in(0,1)$. (b) Debt is riskless,
+$(1+r)B\le X$ in every state. (c) ``All other factors being fixed, including the amount invested by the
+management in equity'' (\S3.2.2) is read from the budget constraint
+$W_0+B+(1-\alpha)[V(\alpha)-B]=K+Y+\beta V_M$: the managers' own money in the project,
+$E_m=W_0-Y-\beta V_M$, is held fixed across firms. A Remark covers the other reading.
+
+\step{1}{Debt drops out of the managers' wealth} The book's expression for $\widetilde W_1$, obtained by
+substituting (3.16), is
+\begin{align}
+  \widetilde W_1 = \alpha[\overline X+\varepsilon-X(\alpha)+\lambda]+\beta[\widetilde M-(1+r)V_M]+(W_0-K)(1+r)+X(\alpha)-\lambda, \label{t3e14-W1}
+\end{align}
+and $B$ does not appear: the $-\alpha(1+r)B$ on the firm's equity, the $(1+r)B$ of proceeds and the
+$-(1-\alpha)(1+r)B$ on the shares sold cancel. Debt is irrelevant to the managers (MM), so it is pinned
+down only by holding $E_m$ fixed (Step~6).
+
+\step{2}{Mean and variance of wealth} From \eqref{t3e14-W1}, the only random terms are $\alpha\varepsilon$ and $\beta\widetilde M$; taking expectations ($E\varepsilon=0$) and using $\operatorname{var}(\alpha\varepsilon+\beta\widetilde M)=\alpha^2\sigma_\varepsilon^2+\beta^2\sigma_M^2+2\alpha\beta\operatorname{cov}(\varepsilon,M)$,
+\begin{align}
+  E(\widetilde W_1) &= \alpha[\overline X-X(\alpha)+\lambda]+\beta[E(M)-(1+r)V_M]+(W_0-K)(1+r)+X(\alpha)-\lambda, \label{t3e14-EW}\\
+  \sigma^2_{W_1} &= \alpha^2\sigma_\varepsilon^2+\beta^2\sigma_M^2+2\alpha\beta\operatorname{cov}(\varepsilon,M). \label{t3e14-VW}
+\end{align}
+Since $G$ is increasing, the managers maximise $J\equiv E(\widetilde W_1)-\frac b2\sigma^2_{W_1}$.
+
+\step{3}{First-order condition in $\beta$ (the analogue of (3.19))} Differentiating \eqref{t3e14-EW}--\eqref{t3e14-VW} in $\beta$: $\partial E(\widetilde W_1)/\partial\beta=E(M)-(1+r)V_M$ and $\partial\sigma^2_{W_1}/\partial\beta=2\beta\sigma_M^2+2\alpha\operatorname{cov}(\varepsilon,M)$, so $\partial J/\partial\beta=0$ reads
+\begin{align}
+  E(M)-(1+r)V_M-b[\beta\sigma_M^2+\alpha\operatorname{cov}(\varepsilon,M)] &= 0, \nonumber\\
+  b\beta\operatorname{cov}(\varepsilon,M) &= \frac{E(M)-(1+r)V_M}{\sigma_M^2}\operatorname{cov}(\varepsilon,M)-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2} \nonumber\\
+  &= \lambda-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}, \label{t3e14-beta}
+\end{align}
+where the second line multiplies the first by $\operatorname{cov}(\varepsilon,M)/\sigma_M^2$ and rearranges, and the
+last uses the statement's $\lambda$.
+
+\step{4}{First-order condition in $\alpha$ (the analogue of (3.18))} Differentiating \eqref{t3e14-EW} in $\alpha$ (product rule on $\alpha[\cdot]$, plus the last term $X(\alpha)$),
+\begin{align}
+  \frac{\partial E(\widetilde W_1)}{\partial\alpha} = [\overline X-X(\alpha)+\lambda]-\alpha X'(\alpha)+X'(\alpha) = \overline X-X(\alpha)+\lambda+(1-\alpha)X'(\alpha), \nonumber
+\end{align}
+and $\partial\sigma^2_{W_1}/\partial\alpha=2\alpha\sigma_\varepsilon^2+2\beta\operatorname{cov}(\varepsilon,M)$, so $\partial J/\partial\alpha=0$ reads
+\begin{align}
+  \overline X-X(\alpha)+\lambda+(1-\alpha)X'(\alpha)-b[\alpha\sigma_\varepsilon^2+\beta\operatorname{cov}(\varepsilon,M)] = 0. \nonumber
+\end{align}
+Substituting \eqref{t3e14-beta} for $b\beta\operatorname{cov}(\varepsilon,M)$ and imposing the equilibrium condition $X(\alpha^*)=\overline X$ (so the first two terms cancel):
+\begin{align}
+  \lambda+(1-\alpha)X'(\alpha)-b\alpha\sigma_\varepsilon^2-\Bigl[\lambda-b\alpha\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}\Bigr] &= 0 \nonumber\\
+  (1-\alpha)X'(\alpha) &= b\alpha\Bigl[\sigma_\varepsilon^2-\frac{\operatorname{cov}(\varepsilon,M)^2}{\sigma_M^2}\Bigr] \nonumber\\
+  (1-\alpha)X'(\alpha) &= b\alpha\sigma_u^2. \label{t3e14-ode}
+\end{align}
+The CAPM $\lambda$ prices the systematic risk fairly, so it cancels; only idiosyncratic risk is costly to
+retain.
+
+\step{5}{The signalling schedule} Dividing \eqref{t3e14-ode} by $1-\alpha>0$ gives $X'$. To integrate it, note
+\begin{align}
+  \frac{d}{d\alpha}[\alpha+\ln(1-\alpha)] = 1-\frac{1}{1-\alpha} = \frac{(1-\alpha)-1}{1-\alpha} = -\frac{\alpha}{1-\alpha}, \nonumber
+\end{align}
+so integrating from 0 to $\alpha$ (where $\alpha+\ln(1-\alpha)=0$ at $\alpha=0$), and using (3.15) for $V'$:
+\begin{align}
+  X'(\alpha) &= b\sigma_u^2\frac{\alpha}{1-\alpha} > 0, \label{t3e14-Xp}\\
+  X(\alpha) &= X(0)-b\sigma_u^2[\alpha+\ln(1-\alpha)], \label{t3e14-X}\\
+  V'(\alpha) &= \frac{X'(\alpha)}{1+r} = \frac{b\sigma_u^2}{1+r}\,\frac{\alpha}{1-\alpha}. \label{t3e14-Vp}
+\end{align}
+Normal demand holds: without signalling (price $V$ given, so the term $(1-\alpha)X'$ is absent and the market's $X(\alpha)-\lambda$ is replaced by $(1+r)V$), the same steps give
+$\overline X-\lambda-(1+r)V=b\alpha\sigma_u^2$, so $\alpha=[\overline X-\lambda-(1+r)V]/(b\sigma_u^2)$ falls
+with the price. Proposition 3.2.1 then agrees with \eqref{t3e14-Xp}. With costless communication
+($X'\equiv0$), \eqref{t3e14-ode} gives $\alpha=0$, so every $\alpha>0$ is over-retention (Proposition 3.2.2).
+The integration constant is set by the lowest type, which does not signal: $X(0)=\overline X_{\min}$.
+
+\step{6}{Debt as a function of $\alpha$} Holding $E_m$ fixed in its definition and solving for $B$:
+\begin{align}
+  E_m &= K-B-(1-\alpha)[V(\alpha)-B] \nonumber\\
+      &= K-B-(1-\alpha)V(\alpha)+(1-\alpha)B = K-\alpha B-(1-\alpha)V(\alpha), \nonumber\\
+  \alpha B &= K-E_m-(1-\alpha)V(\alpha), \nonumber\\
+  B(\alpha) &= \frac{K-E_m-(1-\alpha)V(\alpha)}{\alpha}. \label{t3e14-B}
+\end{align}
+
+\step{7}{When does debt increase with $\alpha$?} Differentiating \eqref{t3e14-B} with the quotient rule (the numerator's derivative is $V(\alpha)-(1-\alpha)V'(\alpha)$, the denominator's is 1),
+\begin{align}
+  B'(\alpha) &= \frac{[V(\alpha)-(1-\alpha)V'(\alpha)]\alpha-[K-E_m-(1-\alpha)V(\alpha)]}{\alpha^2} \nonumber\\
+  &= \frac{\alpha V(\alpha)+(1-\alpha)V(\alpha)-(K-E_m)-\alpha(1-\alpha)V'(\alpha)}{\alpha^2} \nonumber\\
+  &= \frac{V(\alpha)-(K-E_m)-\alpha(1-\alpha)V'(\alpha)}{\alpha^2} \nonumber\\
+  &= \frac{1}{\alpha^2}\Bigl[V(\alpha)-K+E_m-\alpha(1-\alpha)\Bigl(\frac{b\sigma_u^2}{1+r}\frac{\alpha}{1-\alpha}\Bigr)\Bigr] && \text{(substituting \eqref{t3e14-Vp})} \nonumber\\
+  &= \frac{1}{\alpha^2}\Bigl[V(\alpha)-K+E_m-\frac{b\sigma_u^2\alpha^2}{1+r}\Bigr]. \label{t3e14-Bp}
+\end{align}
+So debt rises with managerial ownership iff
+\begin{align}
+  V(\alpha)-K+E_m > \frac{b\,\sigma_u^2\,\alpha^2}{1+r}
+  \iff V(\alpha)-B(\alpha) > (1-\alpha)V'(\alpha) = \frac{b\,\sigma_u^2\,\alpha}{1+r}, \label{t3e14-cond}
+\end{align}
+where the equivalence uses $V-B=(V-K+E_m)/\alpha$ from \eqref{t3e14-B} and \eqref{t3e14-Vp}. In words: the
+NPV $V-K$ plus the managers' own equity contribution must exceed $b\sigma_u^2\alpha^2/(1+r)$, the risk
+term from the idiosyncratic risk they keep. Equivalently, the market value of equity must exceed the
+marginal cost to the managers of retaining one more unit of the firm, $b\sigma_u^2\alpha/(1+r)$. This holds
+``in most cases'' (risk aversion, idiosyncratic risk or $\alpha$ small relative to the project's value). It
+fails when managers keep a large, very risky stake in a firm with little equity value. When
+\eqref{t3e14-cond} holds, $X(\alpha)$ and $V(\alpha)$ rise with $B$ along the schedule, as the book says.
+
+\answer{(a)} With the managers' own equity contribution $E_m$ fixed, $B'(\alpha)>0$ iff $V(\alpha)-K+E_m>b\sigma_u^2\alpha^2/(1+r)$, equivalently iff the market value of equity exceeds $b\sigma_u^2\alpha/(1+r)$, where $\sigma_u^2=\sigma_\varepsilon^2-\operatorname{cov}(\varepsilon,M)^2/\sigma_M^2$ and the schedule is $X(\alpha)=X(0)-b\sigma_u^2[\alpha+\ln(1-\alpha)]$. This holds unless managers keep a large, very risky (idiosyncratically) stake in a firm with little equity value. (If instead the value of the managers' stake is held fixed, debt always rises with $\alpha$.)
+
+\emph{Remark (other reading).} If what is held fixed is the market value of the managers' stake,
+$\alpha[V(\alpha)-B]=e>0$, then $B=V(\alpha)-e/\alpha$ and $B'(\alpha)=V'(\alpha)+e/\alpha^2>0$ for every
+$\alpha$ by \eqref{t3e14-Vp}: debt always rises with $\alpha$, and the only condition is
+normal demand, which holds under mean-variance preferences.
+
+\step{8}{Numerical check} Take $b=2$, $\sigma_\varepsilon^2=0.5$, $\sigma_M^2=0.04$,
+$\operatorname{cov}(\varepsilon,M)=0.06$, $E(M)-(1+r)V_M=0.1$, $r=0.05$, $X(0)=10$, $K=8$, $E_m=1$. Then
+$\lambda=(0.1/0.04)(0.06)=0.15$ and $\sigma_u^2=0.5-0.06^2/0.04=0.5-0.09=0.41$, so $b\sigma_u^2=0.82$. At $\alpha=0.5$: \eqref{t3e14-X} gives
+$X=10-0.82(0.5+\ln0.5)=10-0.82(0.5-0.693147)=10+0.158381=10.158381$ and $V=(10.158381-0.15)/1.05=10.008381/1.05=9.531791$; \eqref{t3e14-B} gives
+$B=(8-1-0.5\times9.531791)/0.5=(7-4.765896)/0.5=4.468209$; and \eqref{t3e14-Bp}, with $b\sigma_u^2\alpha^2/(1+r)=0.82(0.25)/1.05=0.195238$, gives
+$B'=(9.531791-7-0.195238)/0.25=(2.531791-0.195238)/0.25=9.346212>0$. A type with $\overline X=X(0.5)$ that faces the schedule
+\eqref{t3e14-X} has $\partial J/\partial\alpha=0$ at $\alpha=0.5$ (the check script verifies this by finite
+differences).
+
+\intuition Retaining shares is a credible signal because it is costly in risk, and more costly for a
+manager whose firm is worth less. Mean-variance utility with CAPM pricing makes the cost explicit:
+only idiosyncratic variance matters, and the signalling slope is $b\sigma_u^2\alpha/(1-\alpha)$. Debt does
+not create value here (it drops out of wealth). It moves with $\alpha$ only because, with the managers'
+own contribution fixed, a larger retained fraction has to be financed with less outside equity and more
+debt. This is ``in most cases'', not always, because a higher-$\alpha$ firm is also worth more, and the
+extra value lowers the debt needed.
+
+\pitfalls
+\begin{itemize}
+  \item Keeping total variance $\sigma_\varepsilon^2$ in the schedule: the CAPM adjustment $\lambda$ prices systematic risk fairly and cancels, so only the idiosyncratic part $\sigma_u^2$ is a signalling cost.
+  \item Treating debt as a value-creating signal here: $B$ drops out of the managers' wealth \eqref{t3e14-W1}; the link between $B$ and $\alpha$ comes only from what is held fixed in the budget constraint.
+  \item Forgetting the equilibrium condition $X(\alpha^*)=\overline X$ when simplifying the first-order condition in $\alpha$; without it the terms $\overline X-X(\alpha)$ do not cancel and no differential equation results.
+\end{itemize}
+
+\bookans No worked answer in the book: Appendix C.3.2 (p.~260) only refers to p.~377 of Leland and Pyle
+(1977). The schedule \eqref{t3e14-X} and the condition \eqref{t3e14-cond} are derived here and rest on reading
+(c) of what is held fixed; the Remark gives the result under the other reading.
+
+\refbib{Amaro de Matos Ch.~3, \S3.2.2 ``When Managers Are Also Investors'', pp.~82--85 (equations
+(3.15)--(3.19), Propositions 3.2.1--3.2.2); Appendix C.3.2, p.~260. Lecture Topic~3, Leland--Pyle slides.}
+%% END-FROM
+
+\end{document}
