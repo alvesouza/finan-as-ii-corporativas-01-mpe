@@ -42,10 +42,30 @@
 \author{Finan\c{c}as II --- Corporativas (MPE Insper)}
 \date{}
 
+%% STATEMENT-PREAMBLE BEGIN (tools/statements_into_solutions.py)
+\usepackage{longtable,array,calc}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\href}[2]{#2}
+\providecommand{\real}[1]{#1}
+\makeatletter\@ifundefined{c@none}{\newcounter{none}}{}\makeatother  % pandoc's \LTcaptype{none}
+\newcommand{\stmtbegin}{\par\medskip\noindent\textbf{Statement.}\par\nopagebreak\begingroup\small\setlength{\tabcolsep}{3pt}\sloppy}
+\newcommand{\stmtend}{\par\endgroup\nopagebreak\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{2022}{\textbullet{}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{2032}{\ensuremath{^{\prime}}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_{1}}}
+\DeclareUnicodeCharacter{03B8}{\ensuremath{\theta}}
+\DeclareUnicodeCharacter{03BB}{\ensuremath{\lambda}}
+\DeclareUnicodeCharacter{03C8}{\ensuremath{\psi}}
+\DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
+\DeclareUnicodeCharacter{25A0}{\rule{0.7em}{0.7em}}
+%% STATEMENT-PREAMBLE END
 \begin{document}
 \maketitle
 \noindent Statements are in \texttt{Listas/lista-r1-accounting-capital-structure.md}; each
-exercise is cited by number and printed page and is not restated. Editions are the local
+exercise is cited by number and printed page and its full text is reproduced right before its solution. Editions are the local
 copies: Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial Management}, 13th ed.
 (2023); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed.
 (2011); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao
@@ -56,6 +76,41 @@ written $196{,}000$. Money is in the units of each statement.
 
 % =====================================================================
 \exsec{1. Transactions and the balance sheet --- Higgins 1.4, p.~33}
+%% BEGIN-STATEMENT 1
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 1, Exercise 1.4, p.~33 (PDF 54) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Explain briefly how each of the following transactions would affect a company's balance sheet.
+  (Remember, assets must equal liabilities plus owners' equity before and after the transaction.)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Sale of used equipment with a book value of \$300,000 for \$500,000 cash.
+\item
+  Purchase of a new \$80 million building, financed 40 percent with cash and 60 percent with a bank
+  loan.
+\item
+  Purchase of a new building for \$60 million cash.
+\item
+  A \$40,000 payment to trade creditors.
+\item
+  A firm's repurchase of 10,000 shares of its own stock at a price of \$24 per share.
+\item
+  Sale of merchandise for \$80,000 in cash.
+\item
+  Sale of merchandise for \$120,000 on credit.
+\item
+  A dividend payment to shareholders of \$50,000.
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked For each of eight transactions, say which balance sheet accounts move, by how much and in
 which direction, and check that assets still equal liabilities plus equity afterwards.
@@ -185,6 +240,31 @@ pp.~9--11; \S\,``Measuring Earnings'', p.~12. No printed answer (even-numbered p
 
 % =====================================================================
 \exsec{2. Local Co.\ margins --- Berk 2.12, p.~54}
+%% BEGIN-STATEMENT 2
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise 2.12, p.~54 (PDF 85) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
+\item
+  Local Co.~has sales of \$10 million and cost of sales of \$6 million. Its selling, general and
+  administrative expenses are \$500,000 and its research and development is \$1 million. It has
+  annual depreciation charges of \$1 million and a tax rate of 35\%.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What is Local's gross margin?
+\item
+  What is Local's operating margin?
+\item
+  What is Local's net profit margin?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The share of each sales dollar left after the direct cost of the goods sold (gross
 margin). (b) The share left after also paying the costs of running the business, including
@@ -266,6 +346,29 @@ net margin here is only the 35\% tax, because Local has no debt: $15\% \times (1
 
 % =====================================================================
 \exsec{3. Nokela: earnings versus cash flow --- Berk 2.31, p.~57}
+%% BEGIN-STATEMENT 3
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise 2.31, p.~57 (PDF 88) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{30}
+\tightlist
+\item
+  Nokela Industries purchases a \$40 million cyclo-converter. The cyclo-converter will be
+  depreciated by \$10 million per year over four years, starting this year. Suppose Nokela's tax
+  rate is 40\%.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What impact will the cost of the purchase have on earnings for each of the next four years?
+\item
+  What impact will the cost of the purchase have on the firm's cash flow for the next four years?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) By how much the purchase changes reported net income in each of the four years.
 (b) By how much it changes the firm's cash flow in each of the four years.
@@ -338,6 +441,31 @@ of Cash Flows'', pp.~42--45.
 
 % =====================================================================
 \exsec{4. GE: book versus market --- Berk 2.8, p.~53}
+%% BEGIN-STATEMENT 4
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise 2.8, p.~53 (PDF 84) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{7}
+\tightlist
+\item
+  In June 2007, General Electric (GE) had a book value of equity of \$117 billion, 10.3 billion
+  shares outstanding, and a market price of \$38.00 per share. GE also had cash of \$16 billion, and
+  total debt of \$467 billion.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What was GE's market capitalization? What was GE's market-to-book ratio?
+\item
+  What was GE's book debt-equity ratio? What was GE's market debt-equity ratio?
+\item
+  What was GE's enterprise value?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The market value of GE's equity, and how many times book equity it is.
 (b) Debt relative to equity, once with book equity and once with market equity.
@@ -410,6 +538,38 @@ pp.~30--33.
 
 % =====================================================================
 \exsec{5. True or false on ratios --- Higgins 2.3, p.~71}
+%% BEGIN-STATEMENT 5
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 2, Exercise 2.3, p.~71 (PDF 92) · Answer in book: yes, p.~401
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Answer true or false to each of the following. Briefly explain your reasoning for each answer.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  A company's assets-to-equity ratio always equals one plus its liabilities-to-equity ratio.
+\item
+  A company's return on equity will always equal or exceed its return on assets.
+\item
+  A company's collection period should always be less than its payables period.
+\item
+  A company's current ratio must always equal or exceed its acid-test ratio.
+\item
+  All else equal, a firm would prefer to have a higher asset turnover ratio.
+\item
+  Two firms can have the same earnings yield but different price-to-earnings ratios.
+\item
+  Ignoring taxes and transactions costs, unrealized paper gains are less valuable than realized cash
+  earnings.
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked For each of seven claims about ratios, say whether it is true or false and give the reason.
 (a) assets/equity versus one plus liabilities/equity; (b) whether ROE is always at least ROA;
@@ -520,6 +680,45 @@ pp.~42--48; ``Financial Leverage'', pp.~48--53; ``The Value Problem'', pp.~56--5
 
 % =====================================================================
 \exsec{6. Book and market leverage of two firms --- Berk 2.21, p.~55}
+%% BEGIN-STATEMENT 6
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise 2.21, p.~55 (PDF 86) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  You are analyzing the leverage of two firms and you note the following (all values in millions of
+  dollars):
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+& Debt & Book Equity & Market Equity & Operating Income & Interest Expense \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Firm A & 500 & 300 & 400 & 100 & 50 \\
+Firm B & 80 & 35 & 40 & 8 & 7 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What is the market debt-to-equity ratio of each firm?
+\item
+  What is the book debt-to-equity ratio of each firm?
+\item
+  What is the interest coverage ratio of each firm?
+\item
+  Which firm will have more difficulty meeting its debt obligations?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Debt divided by market equity for each firm. (b) Debt divided by book equity for each
 firm. (c) How many times operating income covers interest for each firm. (d) Which firm is more
@@ -603,6 +802,31 @@ the two disagree, market values reflect what the claims are worth today.
 
 % =====================================================================
 \exsec{7. DuPont for a retail firm --- Berk 2.27, p.~56}
+%% BEGIN-STATEMENT 7
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise 2.27, p.~56 (PDF 87) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{26}
+\tightlist
+\item
+  Consider a retail firm with a net profit margin of 3.5\%, a total asset turnover of 1.8, total
+  assets of \$44 million, and a book value of equity of \$18 million.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What is the firm's current ROE?
+\item
+  If the firm increased its net profit margin to 4\%, what would its ROE be?
+\item
+  If, in addition, the firm increased its revenues by 20\% (while maintaining this higher profit
+  margin and without changing its assets or liabilities), what would its ROE be?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The firm's return on equity now. (b) The ROE if the net margin rises to 4\%, all else
 fixed. (c) The ROE if, in addition, revenue rises 20\% with assets and liabilities unchanged.
@@ -686,6 +910,48 @@ operations.
 
 % =====================================================================
 \exsec{8. Atlantic vs.\ Pacific: ROE, ROA, ROIC --- Higgins 2.7, p.~73}
+%% BEGIN-STATEMENT 8
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 2, Exercise 2.7, p.~73 (PDF 94) · Answer in book: yes, p.~402
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{6}
+\tightlist
+\item
+  Answer the following questions based on the information in the table. Assume a tax rate of 30
+  percent. For simplicity, assume that the companies have no other liabilities other than the debt
+  shown. (All dollars are in millions.)
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& Atlantic Corp. & Pacific Corp. \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Earnings before interest and taxes & \$450 & \$470 \\
+Debt (at 7\% interest) & \$290 & \$1,490 \\
+Equity & \$910 & \$370 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Calculate each company's ROE, ROA, and ROIC.
+\item
+  Why is Pacific's ROE so much higher than Atlantic's? Does this mean Pacific is a better company?
+  Why or why not?
+\item
+  Why is Atlantic's ROA higher than Pacific's? What does this tell you about the two companies?
+\item
+  How do the two companies' ROICs compare? What does this suggest about the two companies?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Return on equity, on assets and on invested capital for each company. (b) Why Pacific's
 ROE is much higher, and whether that makes it the better company. (c) Why Atlantic's ROA is
@@ -802,6 +1068,35 @@ ROIC 26.3\% / 17.7\%; same conclusions for (b)--(d).
 
 % =====================================================================
 \exsec{9. Nave Espacial Jetson: cash flows --- Ross 2.14, p.~48}
+%% BEGIN-STATEMENT 9
+\stmtbegin
+\textbf{Source:} Ross, Cap. 2, Exercise 2.14, p.~48 (PDF 72) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Cálculo dos fluxos de caixa totais {[}LO4{]} A Nave Espacial Jetson S/A apresentou as seguintes
+  informações em sua demonstração de resultados em 2009: vendas = \$196.000; custos = \$104.000;
+  outras despesas = \$6.800; despesas de depreciação = \$9.100; despesas com juros = \$14.800;
+  impostos = \$21.455; dividendos = \$10.400. Além disso, a empresa emitiu \$5.700 em novas ações em
+  2009 e resgatou \$7.300 em dívidas de longo prazo.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Qual foi o fluxo de caixa operacional em 2009?
+\item
+  Qual foi o fluxo de caixa para os credores?
+\item
+  Qual foi o fluxo de caixa para os acionistas?
+\item
+  Se o ativo imobilizado líquido aumentou em \$27.000 durante o ano, qual foi o acréscimo ao CCL?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The cash generated by operations in 2009 (\pt{fluxo de caixa operacional}). (b) The net
 cash paid to creditors. (c) The net cash paid to shareholders. (d) Given that net fixed assets rose
@@ -891,6 +1186,53 @@ debt repayment). The identity is just ``cash generated $=$ cash reinvested $+$ c
 
 % =====================================================================
 \exsec{10. Blake's Restaurant Supply: from statements to cash --- Higgins 1.11, p.~34}
+%% BEGIN-STATEMENT 10
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 1, Exercise 1.11, p.~34 (PDF 55) · Answer in book: yes, p.~399
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Selected information for Blake's Restaurant Supply follows.
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+(\$ millions) & 2020 & 2021 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Net sales & 694 & 782 \\
+Cost of goods sold & 450 & 502 \\
+Depreciation & 51 & 61 \\
+Net income & 130 & 142 \\
+Finished goods inventory & 39 & 29 \\
+Accounts receivable & 57 & 87 \\
+Accounts payable & 39 & 44 \\
+Net fixed assets & 404 & 482 \\
+Year-end cash balance & 86 & 135 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  During 2021, how much cash did Blake's collect from sales?
+\item
+  During 2021, what was the cost of goods produced by the company?
+\item
+  Assuming the company neither sold nor salvaged any assets during the year, what were the company's
+  capital expenditures during 2021?
+\item
+  Assuming there were no financing cash flows during 2021 and basing your answer solely on the
+  information provided, what was Blake's cash flow from operations in 2021?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The cash actually collected from customers in 2021. (b) The cost of the goods produced
 in 2021 (not of those sold). (c) Capital expenditures in 2021, with no assets sold. (d) Cash flow
@@ -984,6 +1326,38 @@ Statement'', pp.~18--22.
 
 % =====================================================================
 \exsec{11. Ind\'ustrias Dahlia: cash flow identity --- Ross 2.21, p.~49}
+%% BEGIN-STATEMENT 11
+\stmtbegin
+\textbf{Source:} Ross, Cap. 2, Exercise 2.21, p.~49 (PDF 73) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{20}
+\tightlist
+\item
+  Cálculo dos fluxos de caixa {[}OA2{]} As Indústrias Dahlia tiveram os seguintes resultados
+  operacionais em 2009: vendas = \$22.800; custo das mercadorias vendidas = \$16.050; despesas de
+  depreciação = \$4.050; despesas com juros = \$1.830; dividendos distribuídos = \$1.300. No início
+  do ano, o ativo imobilizado líquido era \$13.650, o ativo circulante \$4.800 e o passivo
+  circulante \$2.700. Ao final do ano, o ativo imobilizado líquido foi de \$16.800, o ativo
+  circulante \$5.930 e o passivo circulante \$3.150. A alíquota tributária foi 34\%.
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Qual é o lucro líquido em 2009?
+\item
+  Qual é o fluxo de caixa operacional em 2009?
+\item
+  Qual é o fluxo de caixa dos ativos em 2009? Isso é possível? Explique.
+\item
+  Se nenhuma dívida foi contraída durante o ano, qual foi o fluxo de caixa para os credores? Qual
+  foi o fluxo de caixa para os acionistas? Explique e interprete os sinais positivos e negativos de
+  suas respostas nas questões de (a) a (d).
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Net income for 2009. (b) Operating cash flow for 2009. (c) Cash flow from assets for
 2009, and whether a negative value is possible. (d) With no new debt, the cash flows to creditors
@@ -1087,6 +1461,79 @@ they received). A growing firm is a net user of investors' cash.
 
 % =====================================================================
 \exsec{12. Global's marketing campaign --- Berk *2.19, p.~54}
+%% BEGIN-STATEMENT 12
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise *2.19, p.~54 (PDF 85) · Answer in book: no
+
+*19. Suppose that in 2010, Global launched an aggressive marketing campaign that boosted sales by
+15\%. However, their operating margin fell from 5.57\% to 4.50\%. Suppose that they had no other
+income, interest expenses were unchanged, and taxes were the same percentage of pretax income as in
+2009.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What was Global's EBIT in 2010?
+\item
+  What was Global's income in 2010?
+\item
+  If Global's P/E ratio and number of shares outstanding remained unchanged, what was Global's share
+  price in 2010?
+\end{enumerate}
+
+\paragraph{Context needed to solve it}
+
+\emph{From Berk Ch. 2, Table 2.3 ``Global Corporation's Income Statement Sheet for 2010 and 2009'',
+p.~34 (PDF 65):}
+
+GLOBAL CORPORATION --- Income Statement --- Year ended December 31 (in \$ millions)
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 2010 & 2009 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Net sales & 186.7 & 176.1 \\
+Cost of sales & −153.4 & −147.3 \\
+\textbf{Gross Profit} & 33.3 & 28.8 \\
+Selling, general, and administrative expenses & −13.5 & −13 \\
+Research and development & −8.2 & −7.6 \\
+Depreciation and amortization & −1.2 & −1.1 \\
+\textbf{Operating Income} & 10.4 & 7.1 \\
+Other income & --- & --- \\
+\textbf{Earnings Before Interest and Taxes (EBIT)} & 10.4 & 7.1 \\
+Interest income (expense) & −7.7 & −4.6 \\
+\textbf{Pretax Income} & 2.7 & 2.5 \\
+Taxes & −0.7 & −0.6 \\
+\textbf{Net Income} & 2.0 & 1.9 \\
+Earnings per share: & \$0.56 & \$0.53 \\
+Diluted earnings per share: & \$0.53 & \$0.50 \\
+\end{longtable}
+}
+
+\emph{From Berk Ch. 2, Eq. 2.8, p.~34 (PDF 65):}
+
+Net income represents the total earnings of the firm's equity holders. It is often reported on a
+per-share basis as the firm's earnings per share (EPS), which we compute by dividing net income by
+the total number of shares outstanding:
+
+\[\text{EPS} = \frac{\text{Net Income}}{\text{Shares Outstanding}} = \frac{\$2.0 \text{ million}}{3.6 \text{ million shares}} = \$0.56 \text{ per share} \qquad (2.8)\]
+
+\emph{From Berk Ch. 2, ``Valuation Ratios'', Eq. 2.19, p.~39 (PDF 70):}
+
+Analysts and investors use a number of ratios to gauge the market value of the firm. The most
+important is the firm's price-earnings ratio (P/E):
+
+\[\text{P/E Ratio} = \frac{\text{Market Capitalization}}{\text{Net Income}} = \frac{\text{Share Price}}{\text{Earnings per Share}} \qquad (2.19)\]
+
+That is, the P/E ratio is the ratio of the value of equity to the firm's earnings, either on a total
+basis or on a per-share basis. Following Eq. 2.19, Global's P/E ratio in 2010 was
+\(36/2.0 = 10/0.56 = 18\).
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Global's EBIT in the campaign scenario (sales up 15\%, operating margin 4.50\%).
 (b) Its net income, with interest unchanged and the 2009 tax ratio. (c) Its share price if the
@@ -1178,6 +1625,34 @@ Ratios'' (Eqs.~2.10, 2.19), pp.~35--36, 39.
 
 % =====================================================================
 \exsec{13. Quisco: develop in house or acquire with stock --- Berk *2.23, p.~55}
+%% BEGIN-STATEMENT 13
+\stmtbegin
+\textbf{Source:} Berk, Ch. 2, Exercise *2.23, p.~55 (PDF 86) · Answer in book: no
+
+*23. Quisco Systems has 6.5 billion shares outstanding and a share price of \$18.00. Quisco is
+considering developing a new networking product in-house at a cost of \$500 million. Alternatively,
+Quisco can acquire a firm that already has the technology for \$900 million worth (at the current
+price) of Quisco stock. Suppose that absent the expense of the new technology, Quisco will have EPS
+of \$0.80.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Suppose Quisco develops the product in house. What impact would the development cost have on
+  Quisco's EPS? Assume all costs are incurred this year and are treated as an R\&D expense, Quisco's
+  tax rate is 35\%, and the number of shares outstanding is unchanged.
+\item
+  Suppose Quisco does not develop the product in house but instead acquires the technology. What
+  effect would the acquisition have on Quisco's EPS this year? (Note that acquisition expenses do
+  not appear directly on the income statement. Assume the acquired firm has no revenues or expenses
+  of its own, so that the only effect on EPS is due to the change in the number of shares
+  outstanding.)
+\item
+  Which method of acquiring the technology has a smaller impact on earnings? Is this method cheaper?
+  Explain.
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The change in EPS if Quisco spends \$500 million on in-house R\&D, expensed this year,
 at a 35\% tax rate. (b) The change in EPS if it instead pays \$900 million in its own shares for a
@@ -1266,6 +1741,63 @@ pp.~46--48.
 
 % =====================================================================
 \exsec{14. Complete the balance sheet --- Higgins 2.11, p.~74}
+%% BEGIN-STATEMENT 14
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 2, Exercise 2.11, p.~74 (PDF 95) · Answer in book: yes, p.~403
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{10}
+\tightlist
+\item
+  Given the following information, complete the balance sheet shown next.
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Collection period & 71 days \\
+Days' sales in cash & 34 days \\
+Current ratio & 2.6 \\
+Inventory turnover & 5 times \\
+Liabilities to assets & 75\% \\
+Payables period & 36 days \\
+\end{longtable}
+}
+
+(All sales are on credit. All calculations assume a 365-day year. The payables period is based on
+cost of goods sold.)
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Assets & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Current assets: & \\
+Cash & \$1,100,000 \\
+Accounts receivable & \\
+Inventory & 1,900,000 \\
+Total current assets & \\
+Net fixed assets & \\
+Total assets & 8,000,000 \\
+\textbf{Liabilities and shareholders' equity} & \\
+Current liabilities: & \\
+Accounts payable & \\
+Short-term debt & \\
+Total current liabilities & \\
+Long-term debt & \\
+Shareholders' equity & \\
+Total liabilities and equity & \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked Fill every blank line of the balance sheet (receivables, total current assets, net fixed
 assets, payables, short-term debt, total current liabilities, long-term debt, equity, total
@@ -1388,6 +1920,49 @@ assets), pp.~48--53.
 
 % =====================================================================
 \exsec{15. Taco Mel: statements and cash flows for two years --- Ross 2.25--2.26, pp.~50--51}
+%% BEGIN-STATEMENT 15
+\stmtbegin
+\textbf{Source:} Ross, Cap. 2, Exercises 2.25--2.26, pp.~50--51 (PDF 74) · Answer in book: no
+
+Use as seguintes informações para a Taco Mel S/A nos Problemas 25 e 26 (assuma que a alíquota
+tributária é 34\%):
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 2008 & 2009 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Vendas & \$7.233 & \$8.085 \\
+Depreciação & 1.038 & 1.085 \\
+Custos de mercadorias vendidas & 2.487 & 2.942 \\
+Outras despesas & 591 & 515 \\
+Juros & 485 & 579 \\
+Caixa & 3.792 & 4.041 \\
+Contas a receber & 5.021 & 5.892 \\
+Títulos de dívida de curto prazo & 732 & 717 \\
+Exigível a longo prazo & 12.700 & 15.435 \\
+Ativo imobilizado líquido & 31.805 & 33.921 \\
+Contas a pagar & 3.984 & 4.025 \\
+Estoques & 8.927 & 9.555 \\
+Dividendos & 882 & 1.011 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{24}
+\item
+  Demonstrações financeiras {[}OA1{]} Crie uma demonstração de resultados e um balanço patrimonial
+  para a empresa em 2008 e 2009.
+\item
+  Cálculo do fluxo de caixa {[}OA4{]} Calcule o fluxo de caixa dos ativos, o fluxo de caixa para os
+  credores e o fluxo de caixa para os acionistas em 2009.
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked Problem 25: build an income statement and a balance sheet for 2008 and 2009 from the list
 of accounts. Problem 26: for 2009, compute cash flow from assets, cash flow to creditors and cash

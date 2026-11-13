@@ -41,10 +41,30 @@
 \author{Finan\c{c}as II --- Corporativas (MPE Insper)}
 \date{}
 
+%% STATEMENT-PREAMBLE BEGIN (tools/statements_into_solutions.py)
+\usepackage{longtable,array,calc}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\href}[2]{#2}
+\providecommand{\real}[1]{#1}
+\makeatletter\@ifundefined{c@none}{\newcounter{none}}{}\makeatother  % pandoc's \LTcaptype{none}
+\newcommand{\stmtbegin}{\par\medskip\noindent\textbf{Statement.}\par\nopagebreak\begingroup\small\setlength{\tabcolsep}{3pt}\sloppy}
+\newcommand{\stmtend}{\par\endgroup\nopagebreak\noindent\rule{\linewidth}{0.4pt}\par\medskip}
+\DeclareUnicodeCharacter{2192}{\ensuremath{\rightarrow}}
+\DeclareUnicodeCharacter{2212}{\ensuremath{-}}
+\DeclareUnicodeCharacter{2022}{\textbullet{}}
+\DeclareUnicodeCharacter{2248}{\ensuremath{\approx}}
+\DeclareUnicodeCharacter{2032}{\ensuremath{^{\prime}}}
+\DeclareUnicodeCharacter{2081}{\ensuremath{_{1}}}
+\DeclareUnicodeCharacter{03B8}{\ensuremath{\theta}}
+\DeclareUnicodeCharacter{03BB}{\ensuremath{\lambda}}
+\DeclareUnicodeCharacter{03C8}{\ensuremath{\psi}}
+\DeclareUnicodeCharacter{03B1}{\ensuremath{\alpha}}
+\DeclareUnicodeCharacter{25A0}{\rule{0.7em}{0.7em}}
+%% STATEMENT-PREAMBLE END
 \begin{document}
 \maketitle
 \noindent Statements are in \texttt{Listas/lista-r5b-trade-credit-working-capital.md}; each
-exercise is cited by number and printed page and is not restated. Editions are the local
+exercise is cited by number and printed page and its full text is reproduced right before its solution. Editions are the local
 copies: Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed.
 (2011); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao
 Financeira}, 9th ed. (2013); Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial
@@ -62,6 +82,29 @@ p.~709).
 
 % =====================================================================
 \exsec{1. Westerly Industries: cash conversion cycle --- Berk 19.3, p.~586}
+%% BEGIN-STATEMENT 1
+\stmtbegin
+\textbf{Source:} Berk, Ch. 19, Exercise 3, p.~586 (PDF 617) · Answer in book: no
+
+Westerly Industries has the following financial information. What is its cash conversion cycle?
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}ll@{}}
+\toprule\noalign{}
+Item & Amount \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sales & 100,000 \\
+Cost of Goods Sold & 80,000 \\
+Accounts Receivable & 30,000 \\
+Inventory & 15,000 \\
+Accounts Payable & 40,000 \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked Compute the cash conversion cycle (CCC): the number of days between paying suppliers for
 inventory and collecting cash from customers, from one year of sales and COGS and the year-end
@@ -123,6 +166,32 @@ stretching beyond the due date, the ``free'' financing may be very expensive (Ex
 
 % =====================================================================
 \exsec{2. Mediadora: operating and cash cycles --- Ross 18.6, p.~654}
+%% BEGIN-STATEMENT 2
+\stmtbegin
+\textbf{Source:} Ross, Cap. 18, Exercise 18.6, p.~654 (PDF 678) · Answer in book: no
+
+\textbf{Cálculo dos ciclos} {[}OA1{]} Considere as seguintes informações da demonstração contábil da
+Mediadora S/A:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+Item & Inicial & Final \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Estoque & \$9.780 & \$11.380 \\
+Contas a receber & 4.108 & 4.938 \\
+Contas a pagar & 7.636 & 7.927 \\
+Vendas a prazo & \$89.804 & \\
+Custo das mercadorias vendidas & 56.384 & \\
+\end{longtable}
+}
+
+Calcule os ciclos operacional e financeiro. Como você interpreta sua resposta?
+\stmtend
+%% END-STATEMENT
 
 \asked Compute the operating cycle (days from buying inventory to collecting the sale) and the cash
 cycle (days from paying suppliers to collecting the sale) from beginning and ending balances,
@@ -191,6 +260,28 @@ example in the chapter review, 18.1, pp.~651--652). No printed answer.
 
 % =====================================================================
 \exsec{3. Cash discounts on a 400-unit order --- Ross 20.1, p.~733}
+%% BEGIN-STATEMENT 3
+\stmtbegin
+\textbf{Source:} Ross, Cap. 20, Exercise 20.1, p.~733 (PDF 757) · Answer in book: no
+
+\textbf{Descontos financeiros} {[}OA1{]} Você faz um pedido de 400 unidades para estoque a um preço
+unitário de \$125. O fornecedor oferece prazo de pagamento de 30 dias e desconto de 1\% para
+pagamento em até 10 dias.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Quanto tempo você tem para pagar até que a conta vença? Se você aceitar o período completo, quanto
+  deverá pagar?
+\item
+  Qual é o desconto oferecido? Em quanto tempo você deve pagar para obter o desconto? Se você
+  aceitar o desconto, quanto pagará?
+\item
+  Se você não aceitar o desconto, quanto de juros pagará implicitamente? Quantos dias de crédito
+  você está recebendo?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) How long until the bill is due and how much is paid on the due date. (b) The size of
 the discount, the deadline to get it, and the discounted payment. (c) How much interest is
@@ -249,6 +340,25 @@ which gives up the discount without using the credit.
 
 % =====================================================================
 \exsec{4. Kyoto Boy: collection period with a discount --- Ross 20.3, p.~733}
+%% BEGIN-STATEMENT 4
+\stmtbegin
+\textbf{Source:} Ross, Cap. 20, Exercise 20.3, p.~733 (PDF 757) · Answer in book: no
+
+\textbf{PMR e contas a receber} {[}OA1{]} A Kyoto Boy Ltda. vende previsões de rentabilidade de
+títulos mobiliários japoneses. Suas condições de crédito são de pagamento em 30 dias com opção de
+desconto de 2\% para pagamento até o 10º dia. Com base na experiência, 65\% de todos os clientes
+aceitarão o desconto.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Qual é o prazo médio de recebimento da empresa?
+\item
+  Se a empresa vender 1.300 previsões todos os meses, a \$1.700 cada uma, qual será o valor médio de
+  contas a receber no balanço patrimonial?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The average collection period (PMR) when 65\% of customers pay on day 10 (taking
 the 2\% discount) and the rest pay on day 30. (b) The average receivables balance for 1{,}300
@@ -308,6 +418,23 @@ e o PMR'', p.~710. No printed answer.
 
 % =====================================================================
 \exsec{5. Happy Valley Homecare: inventory days --- Berk 19.17, p.~589}
+%% BEGIN-STATEMENT 5
+\stmtbegin
+\textbf{Source:} Berk, Ch. 19, Exercise 17, p.~589 (PDF 620) · Answer in book: no
+
+Happy Valley Homecare Suppliers, Inc.~(HVHS), had \$20 million in sales in 2010. Its cost of goods
+sold was \$8 million, and its average inventory balance was \$2,000,000.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Calculate the average number of days inventory outstanding ratios for HVHS.
+\item
+  The average days of inventory in the industry is 73 days. By how much would HVHS reduce its
+  investment in inventory if it could improve its inventory days to meet the industry average?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) How many days of COGS HVHS holds in inventory. (b) How much less inventory it would
 carry at the industry's 73 days.
@@ -354,6 +481,47 @@ play no role: inventory is at cost.
 
 % =====================================================================
 \exsec{6. The Greek Connection: NWC and the CCC --- Berk 19.6, p.~587}
+%% BEGIN-STATEMENT 6
+\stmtbegin
+\textbf{Source:} Berk, Ch. 19, Exercise 6, p.~587 (PDF 618) · Answer in book: no
+
+The Greek Connection had sales of \$32 million in 2010, and a cost of goods sold of \$20 million. A
+simplified balance sheet for the firm appears below:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Calculate The Greek Connection's net working capital in 2010.
+\item
+  Calculate the cash conversion cycle of The Greek Connection in 2010.
+\item
+  The industry average accounts receivable days is 30 days. What would the cash conversion cycle for
+  The Greek Connection have been in 2010 had it matched the industry average for accounts receivable
+  days?
+\end{enumerate}
+
+\textbf{The Greek Connection --- Balance Sheet as of December 31, 2010 (thousands of dollars)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llll@{}}
+\toprule\noalign{}
+Assets & & Liabilities and Equity & \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cash & \$2,000 & Accounts payable & \$1,500 \\
+Accounts receivable & 3,950 & Notes payable & 1,000 \\
+Inventory & 1,300 & Accruals & 1,220 \\
+Total current assets & \$7,250 & Total current liabilities & \$3,720 \\
+Net plant, property, and equipment & 8,500 & Long-term debt & \$3,000 \\
+& & Total liabilities & \$6,720 \\
+Total assets & \$15,750 & Common equity & \$9,030 \\
+& & Total liabilities and equity & \$15,750 \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Net working capital from the balance sheet. (b) The cash conversion cycle. (c) The
 CCC if receivables days had been the industry's 30 days.
@@ -425,6 +593,23 @@ Management'', p.~576. No printed answer.
 
 % =====================================================================
 \exsec{7. Terms 3/15, net 40 --- Berk 19.14, p.~588}
+%% BEGIN-STATEMENT 7
+\stmtbegin
+\textbf{Source:} Berk, Ch. 19, Exercise 14, p.~588 (PDF 619) · Answer in book: no
+
+Your firm purchases goods from its supplier on terms of 3/15, net 40.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  What is the effective annual cost to your firm if it chooses not to take the discount and makes
+  its payment on day 40?
+\item
+  What is the effective annual cost to your firm if it chooses not to take the discount and makes
+  its payment on day 50?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked The effective annual cost of skipping a 3\% discount (a) when paying on the due date, day
 40, and (b) when stretching payment to day 50.
@@ -484,6 +669,42 @@ a damaged credit rating, suppliers that refuse future credit.
 
 % =====================================================================
 \exsec{8. Toyota vs.\ Apple: operating and cash conversion cycles --- Higgins 2.13, p.~75}
+%% BEGIN-STATEMENT 8
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 2, Exercise 13, p.~75 (PDF 96) · Answer in book: yes, p.~404
+
+The following table presents selected 2020 annual income statement items and balance sheet items for
+Toyota Motor and Apple. All figures are in millions. Use the information to answer the questions
+that follow.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& Toyota & Apple \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sales & ¥ 29,929,992 & \$ 274,515 \\
+Cost of goods sold & 24,522,364 & 169,559 \\
+Accounts receivable & 8,709,065 & 16,120 \\
+Inventory & 2,434,918 & 4,061 \\
+Accounts payable & 2,434,180 & 42,296 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Calculate and interpret the length of the operating cycle for Toyota and Apple.
+\item
+  Calculate and interpret the length of the cash conversion cycle for Toyota and Apple.
+\item
+  What are the advantages and disadvantages of Apple's way of running operations compared to
+  Toyota's way?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) The operating cycle of each firm (inventory days $+$ collection period) and what it
 means. (b) The cash conversion cycle (operating cycle $-$ payables period) and what it means. (c)
@@ -580,6 +801,31 @@ advantages and risks. Matches the book's answer; the book adds rounded component
 
 % =====================================================================
 \exsec{9. Hand-to-Mouth: forgone discount vs.\ two bank loans --- Berk 20.8, p.~613}
+%% BEGIN-STATEMENT 9
+\stmtbegin
+\textbf{Source:} Berk, Ch. 20, Exercise 8, p.~613 (PDF 644) · Answer in book: no
+
+The Hand-to-Mouth Company needs a \$10,000 loan for the next 30 days. It is trying to decide which
+of three alternatives to use:
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Alternative A:} Forgo the discount on its trade credit agreement that offers terms of
+  2/10, net 30.
+\item
+  \textbf{Alternative B:} Borrow the money from Bank A, which has offered to lend the firm \$10,000
+  for 30 days at an APR of 12\%. The bank will require a (no-interest) compensating balance of 5\%
+  of the face value of the loan and will charge a \$100 loan origination fee, which means
+  Hand-to-Mouth must borrow even more than the \$10,000.
+\item
+  \textbf{Alternative C:} Borrow the money from Bank B, which has offered to lend the firm \$10,000
+  for 30 days at an APR of 15\%. The loan has a 1\% loan origination fee.
+\end{itemize}
+
+Which alternative is the cheapest source of financing for Hand-to-Mouth?
+\stmtend
+%% END-STATEMENT
 
 \asked Which of three ways to get \$10{,}000 of usable funds for about 30 days is cheapest: (A)
 skipping a 2/10, net 30 discount; (B) a 12\% APR loan with a 5\% non-interest compensating
@@ -655,6 +901,88 @@ Fees, pp.~602--603; Ch.~19, \S19.2, pp.~571--572. No printed answer.
 
 % =====================================================================
 \exsec{10. Pe\c{c}as A\'ereas: one-off vs.\ repeat order --- Ross 20.9, pp.~733--734}
+%% BEGIN-STATEMENT 10
+\stmtbegin
+\textbf{Source:} Ross, Cap. 20, Exercise 20.9, pp.~733--734 (PDF 757) · Answer in book: no
+
+\textbf{Avaliação da política de crédito} {[}OA2{]} A Peças Aéreas é um atacadista que armazena
+componentes de motor e equipamento de testes para a indústria de aviões comerciais. Um novo cliente
+fez um pedido de oito motores à turbina de alta derivação que aumentam a economia de combustível. O
+custo variável é de \$1,6 milhão por unidade, e o preço a prazo é de \$1,87 milhão cada. O crédito é
+concedido por um período e, com base na experiência histórica, o pagamento de aproximadamente 1 de
+cada 200 pedidos nunca é recebido. O retorno exigido é de 2,9\% por período.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Assumindo que é um pedido único, ele deve ser atendido? O cliente não comprará se o crédito não
+  for concedido.
+\item
+  Qual é a probabilidade de inadimplência no ponto de equilíbrio da parte (a)?
+\item
+  Suponha que os clientes que paguem tornem-se clientes e façam o mesmo pedido a cada período, para
+  sempre. Assuma também que esses clientes nunca deixem de pagar. O pedido deve ser atendido? Qual é
+  a probabilidade de inadimplência no ponto de equilíbrio?
+\item
+  Descreva em termos gerais o motivo pelo qual as condições de crédito serão mais liberais quando
+  pedidos repetidos forem uma possibilidade.
+\end{enumerate}
+
+\paragraph{Context needed to solve it}
+
+\emph{From Ross, Cap. 20, ``Quando o crédito deve ser concedido?'' (Uma venda única; Negócios
+repetidos), pp.~717--718 (PDF 741--742) --- the one-period credit model and the NPV formulas behind
+parts (a)--(d):}
+
+\textbf{Uma venda única} Começaremos avaliando o caso mais simples. Um cliente novo deseja comprar
+uma unidade a prazo, a um preço \(P\) por unidade. Se o crédito for negado, o cliente não fará a
+compra.
+
+Além disso, assumimos que, se o crédito for concedido, em um mês o cliente fará ou não o pagamento.
+A probabilidade de o segundo evento ocorrer é \(\pi\). Nesse caso, a probabilidade (\(\pi\)) pode
+ser interpretada como a porcentagem dos novos clientes que não pagarão. Nossa empresa não tem
+clientes antigos. Portanto, a rigor, essa é uma venda única. Por fim, o retorno exigido sobre as
+contas a receber é \(R\) por mês, e o custo variável é \(v\) por unidade.
+
+A análise aqui é objetiva. Se a empresa negar o crédito, o fluxo de caixa incremental será zero. Se
+ela conceder o crédito, gastará \(v\) (o custo variável) neste mês e esperará receber \((1 - \pi)P\)
+no mês seguinte. O VPL da concessão de crédito será:
+
+\[\text{VPL} = -v + (1 - \pi)P/(1 + R) \qquad [20.8]\]
+
+{[}\ldots{]} Observe que dividimos por \((1 + R)\) aqui em vez de \(R\) porque, agora, assumimos que
+essa é uma transação única.
+
+Nosso exemplo ilustra um ponto importante. Ao conceder crédito a um novo cliente, uma empresa
+arrisca seu custo variável (\(v\)). Isso permite obter o preço total (\(P\)). Portanto, para um
+cliente novo, o crédito pode ser concedido mesmo que a probabilidade de inadimplência seja alta. Por
+exemplo, nesse caso, a probabilidade no ponto de equilíbrio pode ser determinada definindo o VPL
+como zero e calculando \(\pi\): {[}\ldots{]}
+
+\textbf{Negócios repetidos} Um segundo e importante fator a ser lembrado é a possibilidade de
+negócios repetidos. Podemos ilustrar isso ampliando nosso exemplo da venda única. Fazemos em
+pressuposto importante aqui: um cliente novo que paga na primeira vez permanecerá cliente para
+sempre e nunca deixará de pagar.
+
+Se a empresa conceder crédito, ela gastará \(v\) neste mês. No mês seguinte, ela nada terá se o
+cliente não pagar ou terá \(P\) se o cliente pagar. Se o cliente pagar, ele comprará outra unidade a
+prazo, e a empresa gastará \(v\) novamente. Portanto, a entrada de caixa líquida do mês será
+\(P - v\). A cada mês subsequente, esse mesmo \(P - v\) ocorrerá à medida que o cliente pagar o
+pedido do mês anterior e fizer outro pedido.
+
+Concluímos da nossa discussão que, em um mês, a empresa receberá \$0 com probabilidade \(\pi\). No
+entanto, com probabilidade \((1 - \pi)\), a empresa terá um cliente novo permanente. O valor do
+cliente novo é igual ao valor presente de \((P - v)\) a cada mês para sempre:
+
+\[VP = (P - v)/R\]
+
+Então, o VPL da concessão de crédito é:
+
+\[\text{VPL} = -v + (1 - \pi)(P - v)/R \qquad [20.9]\]
+
+{[}\ldots{]}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Whether to grant one period of credit on a one-off order of eight engines with a 0.5\%
 default chance. (b) The default probability that makes that NPV zero. (c) The same two questions
@@ -745,6 +1073,102 @@ concedido?'' (Uma venda \'unica; Neg\'ocios repetidos), pp.~717--718. No printed
 
 % =====================================================================
 \exsec{11. Lince S/A: seasonal cash budget and short-term plan --- Ross 18.15, p.~657}
+%% BEGIN-STATEMENT 11
+\stmtbegin
+\textbf{Source:} Ross, Cap. 18, Exercise 18.15, p.~657 (PDF 681) · Answer in book: no
+
+\textbf{Cálculo do orçamento de caixa} {[}OA3{]} A Lince S/A estimou as seguintes vendas (em
+milhões) para os próximos quatro trimestres:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& T1 & T2 & T3 & T4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Vendas & \$210 & \$180 & \$245 & \$280 \\
+\end{longtable}
+}
+
+As vendas do primeiro trimestre do ano seguinte são projetadas em \$240 milhões. As contas a receber
+no início do ano são de \$68 milhões. A empresa tem um prazo médio de recebimento de 45 dias.
+
+A Lince S/A compra dos fornecedores em um trimestre o equivalente a 45\% das vendas previstas para o
+próximo trimestre, e os fornecedores normalmente são pagos em 36 dias. Os salários, impostos e
+outras despesas custam cerca de 25\% das vendas. Os juros e dividendos são de \$12 milhões por
+trimestre.
+
+Para o segundo trimestre, está planejado um desembolso de capital de \$80 milhões. Por último, o
+saldo de caixa inicial é de \$64 milhões, e a empresa deseja manter um saldo mínimo de \$30 milhões.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Complete o orçamento de caixa para a Lince S/A:
+\end{enumerate}
+
+\textbf{LINCE S/A --- Orçamento de caixa (em milhões)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& T1 & T2 & T3 & T4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Meta para o saldo de caixa & \$30 & & & \\
+Entrada de caixa líquida & & & & \\
+Saldo de caixa final & & & & \\
+Saldo de caixa mínimo & 30 & & & \\
+Superávit (déficit) cumulativo & & & & \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Assuma que a Lince S/A possa financiar a curto prazo todos os fundos necessários à taxa de 3\% por
+  trimestre e possa investir todo o excedente de fundos em instrumentos financeiros de curto prazo a
+  uma taxa de 2\% por trimestre. Prepare um plano financeiro de curto prazo preenchendo a
+  programação a seguir. Qual é o custo de caixa líquido (juros totais pagos menos os lucros totais
+  de investimento) para o ano?
+\end{enumerate}
+
+\textbf{LINCE S/A --- Plano financeiro de curto prazo (em milhões)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& T1 & T2 & T3 & T4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Meta para o saldo de caixa & \$64 & & & \\
+Entrada de caixa líquida & & & & \\
+Novos investimentos de curto prazo & & & & \\
+Lucros dos investimentos de curto prazo & & & & \\
+Investimentos de curto prazo resgatados & & & & \\
+Novo empréstimo de curto prazo & & & & \\
+Juros sobre o empréstimo de curto prazo & & & & \\
+Amortização do empréstimo de curto prazo & & & & \\
+Saldo de caixa final & & & & \\
+Saldo de caixa mínimo & & & & \\
+Sobra (falta) acumulada & 30 & & & \\
+Investimentos de curto prazo inicial & & & & \\
+Investimentos de curto prazo final & & & & \\
+Dívida de curto prazo inicial & & & & \\
+Dívida de curto prazo final & & & & \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Fill in the quarterly cash budget: net cash inflow, ending cash and the cumulative
 surplus over the \$30 million minimum. (b) Build the short-term financial plan in which surpluses
@@ -885,6 +1309,18 @@ financeiro de curto prazo'', pp.~649--650. No printed answer.
 
 % =====================================================================
 \exsec{12. BCD Manufacturing: tax shield vs.\ lost supplier credit --- Grinblatt 17.5, p.~619}
+%% BEGIN-STATEMENT 12
+\stmtbegin
+\textbf{Source:} Grinblatt \& Titman, Ch. 17, Exercise 17.5, p.~619 (PDF 632) · Answer in book: no
+
+BCD Manufacturing is considering repurchasing 40 percent of its common stock. Management estimates
+the tax savings from such a move to be \$48 million, based on the addition of \$1 billion of debt at
+a rate of 12 percent with a 40 percent marginal tax rate. However, the company's suppliers are
+unhappy with the decision and are threatening to revoke the company's net-30 day credit terms, which
+will cost the firm an additional 2 percent on its \$1.5 billion inventory. Should management go
+ahead with the repurchase? Why or why not?
+\stmtend
+%% END-STATEMENT
 
 \asked Whether BCD should borrow \$1 billion to buy back 40\% of its stock, when the debt's tax
 saving is \$48 million a year but suppliers threaten to withdraw net-30 terms, which would cost an
@@ -959,6 +1395,71 @@ pp.~597--600. No printed answer.
 
 % =====================================================================
 \exsec{13. International Motor Corporation: CCC and payables --- Berk 19.15, p.~588}
+%% BEGIN-STATEMENT 13
+\stmtbegin
+\textbf{Source:} Berk, Ch. 19, Exercise *15, p.~588 (PDF 619) · Answer in book: no
+
+Use the financial statements supplied below and on the next page for International Motor Corporation
+(IMC) to answer the following questions:
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Calculate the cash conversion cycle for IMC for both 2009 and 2010. What change has occurred, if
+  any? All else being equal, how does this change affect IMC's need for cash?
+\item
+  IMC's suppliers offer terms of net 30. Does it appear that IMC is doing a good job of managing its
+  accounts payable?
+\end{enumerate}
+
+\textbf{International Motor Corporation --- Income Statement (in millions) for the Years Ending
+December 31}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& 2009 & 2010 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Sales & \$60,000 & \$75,000 \\
+Cost of goods sold & 52,000 & 61,000 \\
+Gross profit & \$8,000 & \$14,000 \\
+Selling, general, and administrative expenses & 6,000 & 8,000 \\
+Operating profit & \$2,000 & \$6,000 \\
+Interest expense & 1,400 & 1,300 \\
+Earnings before taxes & \$600 & \$4,700 \\
+Taxes & 300 & 2,350 \\
+Earnings after taxes & \$300 & \$2,350 \\
+\end{longtable}
+}
+
+\textbf{International Motor Corporation --- Balance Sheet (in millions) as of December 31}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}llllll@{}}
+\toprule\noalign{}
+Assets & 2009 & 2010 & Liabilities & 2009 & 2010 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Cash & \$3,080 & \$6,100 & Accounts payable & \$3,600 & \$4,600 \\
+Accounts Receivable & 2,800 & 6,900 & Notes payable & 1,180 & 1,250 \\
+Inventory & 6,200 & 6,600 & Accruals & 5,600 & 6,211 \\
+Total current assets & \$12,080 & \$19,600 & Total current liabilities & \$10,380 & \$12,061 \\
+Net plant, property, and equipment & \$23,087 & \$20,098 & Long-term debt & \$6,500 & \$7,000 \\
+& & & Total liabilities & \$16,880 & \$19,061 \\
+Total assets & \$35,167 & \$39,698 & \textbf{Equity} & & \\
+& & & Common stock & \$2,735 & \$2,735 \\
+& & & Retained earnings & \$15,552 & \$17,902 \\
+& & & Total equity & \$18,287 & \$20,637 \\
+& & & Total liabilities and equity & \$35,167 & \$39,698 \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) IMC's cash conversion cycle in 2009 and 2010, what changed, and what that implies for
 its cash needs. (b) Whether, with suppliers' terms of net 30, IMC manages its payables well.
@@ -1033,6 +1534,53 @@ working capital as a cheap source of the cash its growth needs.
 
 % =====================================================================
 \exsec{14. Senna S/A: switch-to-credit NPV and break-even price --- Ross 20.18 (with 20.14), pp.~734--735}
+%% BEGIN-STATEMENT 14
+\stmtbegin
+\textbf{Source:} Ross, Cap. 20, Exercise 20.18 (DESAFIO), p.~735 (PDF 759); Part 0 = Exercise 20.14,
+p.~734 (PDF 758) · Answer in book: no
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{17}
+\tightlist
+\item
+  \textbf{\emph{Markup} de crédito} {[}OA2{]} No Problema 14, qual é o preço por unidade no ponto de
+  equilíbrio que deve ser cobrado de acordo com a nova política de crédito? Assuma que, na nova
+  política, o número de vendas seja de 4.100 unidades e que todos os outros valores permaneçam
+  iguais.
+\end{enumerate}
+
+\paragraph{Context needed to solve it}
+
+\textbf{Part 0} --- \emph{Source: Ross, Cap. 20, Exercise 20.14, p.~734 (PDF 758) · Answer in book:
+no}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  \textbf{Avaliação da política de crédito} {[}OA2{]} A Senna S/A está pensando em mudar sua
+  política atual de vendas somente à vista. A nova condição seria para vendas com pagamento em um
+  período pelo valor integral da compra. Com base nas seguintes informações, determine se a empresa
+  deve ou não continuar com a proposta. O retorno exigido é de 2,5\% por período.
+\end{enumerate}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lll@{}}
+\toprule\noalign{}
+& Política atual & Nova política \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Preço por unidade & \$91 & \$94 \\
+Custo por unidade & \$47 & \$47 \\
+Vendas unitárias por mês & 3.850 & 3.940 \\
+\end{longtable}
+}
+\stmtend
+%% END-STATEMENT
 
 \asked Part 0 (Problem 14): whether to switch from cash-only sales at \$91 to one-period credit
 at \$94 with sales rising from 3{,}850 to 3{,}940 units. Problem 18: the price per unit under the
@@ -1101,6 +1649,118 @@ The credit ``markup'' needed is negative: the volume effect does the work.
 
 % =====================================================================
 \exsec{15. Toys-4-Kids: seasonal vs.\ level production --- Higgins 3.14 (with 3.13), pp.~107--109}
+%% BEGIN-STATEMENT 15
+\stmtbegin
+\textbf{Source:} Higgins, Ch. 3, Exercise 14, pp.~108--109 (PDF 129--130); Part 0 = Exercise 13,
+pp.~107--108 (PDF 128--129) · Answer in book: no for 14; yes for 13 (Part 0), p.~408
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{13}
+\tightlist
+\item
+  Continuing with Toys-4-Kids, introduced in the preceding problem, the company's production manager
+  has argued for years that it is inefficient to produce on a seasonal basis. She believes the
+  company should switch to level production throughout the year, building up finished goods
+  inventory in the first two quarters to meet the peak selling needs in the last two. She believes
+  the company can reduce its cost of goods sold from 70 percent to 65 percent with level production.
+  (Keep in mind that production managers typically want to restrict production to left shoes only so
+  as to reduce costs.)
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Prepare a revised pro forma forecast assuming level production. In your forecast, assume that
+  quarterly accounts payable under level production equal 10 percent of \emph{average} quarterly
+  sales for the year. To estimate quarterly inventory, use the following two formulas:
+\end{enumerate}
+
+\[\text{Inventory}_{eoq} = \text{Inventory}_{boq} + \text{Quarterly production} - \text{Quarterly cost of sales}\]
+
+\[\text{Quarterly production} = \text{Annual cost of sales}/4\]
+
+where eoq and boq refer to end of quarter and beginning of quarter, respectively. Please ignore the
+effect of increased external financing required on interest expense.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  What is the effect of the switch from seasonal to level production on annual profits?
+\item
+  What effect does the switch have on the company's quarterly ending inventory? On the company's
+  quarterly need for external financing?
+\item
+  Do you think the company will be able to borrow the amount of money required by level production?
+  What obsolescence risks does the company incur by building up inventory in anticipation of future
+  sales? Might this be a concern to lenders?
+\end{enumerate}
+
+\paragraph{Context needed to solve it}
+
+\textbf{Part 0} --- \emph{Source: Higgins, Ch. 3, Exercise 13, pp.~107--108 (PDF 128--129) · Answer
+in book: yes, p.~408}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{12}
+\tightlist
+\item
+  Toys-4-Kids manufactures plastic toys. Sales and production are highly seasonal. The following is
+  a quarterly pro forma forecast indicating external financing needs for 2022. Assumptions are in
+  parentheses.
+\end{enumerate}
+
+\textbf{Toys-4-Kids --- 2022 Quarterly Pro Forma Forecast (\$ thousands)}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lllll@{}}
+\toprule\noalign{}
+& Qtr 1 & Qtr 2 & Qtr 3 & Qtr 4 \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Net sales & 300 & 375 & 3,200 & 5,000 \\
+Cost of sales (70 percent of sales) & 210 & 263 & 2,240 & 3,500 \\
+Gross profit & 90 & 113 & 960 & 1,500 \\
+Operating expenses & 560 & 560 & 560 & 560 \\
+Profit before tax & (470) & (448) & 400 & 940 \\
+Income taxes & (188) & (179) & 160 & 376 \\
+Profit after tax & (282) & (269) & 240 & 564 \\
+Cash (minimum balance = \$200,000) & 1,235 & 927 & 200 & 200 \\
+Accounts receivable (75 percent of quarterly sales) & 225 & 281 & 2,400 & 3,750 \\
+Inventory (12/31/21 balance = \$500,000) & 500 & 500 & 500 & 500 \\
+Current assets & 1,960 & 1,708 & 3,100 & 4,450 \\
+Net plant \& equipment & 1,000 & 1,000 & 1,000 & 1,000 \\
+Total assets & 2,960 & 2,708 & 4,100 & 5,450 \\
+Accounts payable (10 percent of quarterly sales) & 30 & 38 & 320 & 500 \\
+Accrued taxes (payments quarterly in arrears) & (188) & (179) & 160 & 376 \\
+Current liabilities & (158) & (142) & 480 & 876 \\
+Long-term debt & 400 & 400 & 400 & 400 \\
+Equity (12/31/21 balance = \$3,000,000) & 2,718 & 2,450 & 2,690 & 3,254 \\
+Total liabilities and equity & 2,960 & 2,708 & 3,570 & 4,530 \\
+External financing required & 0 & 0 & 530 & 920 \\
+\end{longtable}
+}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  How do you interpret the negative numbers for income taxes in the first two quarters?
+\item
+  Why are cash balances in the first two quarters greater than the minimum required \$200,000? How
+  were these numbers determined?
+\item
+  How was ``external financing required'' (appearing at the bottom of the forecast) determined?
+\item
+  Do you think Toys-4-Kids will be able to borrow the external financing required as indicated by
+  the forecast?
+\end{enumerate}
+\stmtend
+%% END-STATEMENT
 
 \asked (a) Redo the quarterly pro forma with level production (COGS 65\% of sales, production
 $=$ annual COGS$/4$, payables $=$ 10\% of average quarterly sales). (b) The effect on annual

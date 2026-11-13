@@ -581,7 +581,9 @@ Usualmente, a taxa de crescimento sustentável é calculada utilizando apenas o 
 
 *"A equação no texto": Ross §4.4, p. 109 (PDF 133), and Tabela 4.9, p. 111 (PDF 135):*
 
-$$\text{Taxa de crescimento interna} = \frac{\text{ROA} \times b}{1 - \text{ROA} \times b} \qquad [4.2] \qquad\qquad \text{Taxa de crescimento sustentável} = \frac{\text{ROE} \times b}{1 - \text{ROE} \times b} \qquad [4.3]$$
+$$\text{Taxa de crescimento interna} = \frac{\text{ROA} \times b}{1 - \text{ROA} \times b} \qquad [4.2]$$
+
+$$\text{Taxa de crescimento sustentável} = \frac{\text{ROE} \times b}{1 - \text{ROE} \times b} \qquad [4.3]$$
 
 onde ROA = Lucro líquido / Total do ativo; ROE = Lucro líquido/Total do patrimônio líquido; $b$ = Taxa de retenção = Acréscimo aos lucros retidos/Lucro líquido.
 
