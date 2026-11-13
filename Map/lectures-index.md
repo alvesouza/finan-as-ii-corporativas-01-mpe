@@ -39,6 +39,9 @@ from [[Map/books-index|books-index]], printed pages).
 > [[Listas/lista-topic5-nonverifiable-income-termination|Topic 5]] (13; no book exercise on sovereign debt).
 > **Ementário topics not yet lectured (2026-11-12):** [[Listas/lista-r8-governance-activism|R8 governance & activism]],
 > [[Listas/lista-r9-mergers-acquisitions|R9 M&A]], [[Listas/lista-r10-macro-implications|R10 macro implications]].
+> Gap lists (2026-11-12): [[Listas/lista-r2b-bond-valuation|R2b bonds]] (2A.1, 2A.10),
+> [[Listas/lista-r2c-financial-planning-forecasting|R2c forecasting]], [[Listas/lista-r8b-executive-compensation|R8b executive pay]];
+> original exercises for slide topics no book covers are appended to the Topic 3/4/5 lists and R3 (`**Origin:**` blocks).
 > Every list has a worked-solutions PDF (`Listas/<list>-solutions.pdf`).
 > **Narrations (TTS, > 2 h each):** `Leituras/topic3-…`, `topic4a-…`, `topic4b-…`, `topic5-…-narrated.txt`.
 

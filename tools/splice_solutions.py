@@ -19,7 +19,8 @@ MARK = re.compile(r"^%% (?:INSERT|BEGIN)-FROM (\S+) EX (\d+) AS (\d+)$")
 
 
 def section(src_text, ex):
-    """Body of `\\exsec{<ex>. ...}` up to the next \\exsec or \\end{document}, trailing rules dropped."""
+    """Body of `\\exsec{<ex>. ...}` up to the next \\exsec or \\end{document}; trailing blank and
+    comment lines dropped (they head the *next* section in the source)."""
     lines = src_text.splitlines()
     start = next((i for i, l in enumerate(lines) if l.startswith(f"\\exsec{{{ex}.")), None)
     if start is None:
@@ -27,7 +28,7 @@ def section(src_text, ex):
     end = next((j for j in range(start + 1, len(lines))
                 if lines[j].startswith("\\exsec{") or lines[j].startswith("\\end{document}")), len(lines))
     body = lines[start:end]
-    while body and (not body[-1].strip() or re.fullmatch(r"%\s*=+\s*", body[-1].strip())):
+    while body and (not body[-1].strip() or body[-1].lstrip().startswith("%")):
         body.pop()
     return body
 

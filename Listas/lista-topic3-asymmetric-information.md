@@ -5,14 +5,15 @@ date: 2026-11-10
 
 # Exercise list — Topic 3: Asymmetric information (adverse selection, signalling, IPO underpricing)
 
-One list for Prof. Ricca's Topic 3 lecture (`Aula/Topic_3.pdf`, mapped in [[Map/lectures-index|lectures-index]]): lemons in credit markets, pooling and market breakdown, credit bureaux, the pecking order, signalling (ratings, maturity, payout, retained ownership), Leland–Pyle and Rock's IPO underpricing. 15 real exercises ordered easy → really hard, copied verbatim from the course books for personal study (Ross statements stay in Portuguese); pages are printed, with the PDF page in brackets. Every block is taken unchanged from lists R5 and R7, where it already passed `tools/check_lists.py`; the last column says where. No book exercise covers the Stiglitz–Weiss numbers or the costly-collateral separating contract of the slides. Links: [[Map/exercises-index|exercise index]] · [[rules/06_assimetria_informacao|rules]] · [[Listas/lista-r5-asymmetric-information|R5]] · [[Listas/lista-r7-lectures-3-5|R7]].
+One list for Prof. Ricca's Topic 3 lecture (`Aula/Topic_3.pdf`, mapped in [[Map/lectures-index|lectures-index]]): lemons in credit markets, pooling and market breakdown, credit bureaux, the pecking order, signalling (ratings, maturity, payout, retained ownership), Leland–Pyle and Rock's IPO underpricing. 15 real exercises ordered easy → really hard, copied verbatim from the course books for personal study (Ross statements stay in Portuguese); pages are printed, with the PDF page in brackets. Every block is taken unchanged from lists R5 and R7, where it already passed `tools/check_lists.py`; the last column says where. No book exercise covers the Stiglitz–Weiss model (block 3.6) or the costly-collateral separating contract (block 3.7) of the slides, so exercises 16–19 are **original exercises** written for those two blocks, with the user's agreement (2026-11-12): they open with an **Origin:** line instead of **Source:**, follow the slides' notation, have no book answer, and are solved in the solutions files. Links: [[Map/exercises-index|exercise index]] · [[rules/06_assimetria_informacao|rules]] · [[Listas/lista-r5-asymmetric-information|R5]] · [[Listas/lista-r7-lectures-3-5|R7]].
 
 | Lecture block | Exercises |
 |---|---|
 | 3.2–3.3 Lemons, pooling, breakdown | 3, 6, 8 |
 | 3.4 Credit bureau | 13 |
 | 3.5 Pecking order (and Myers–Majluf) | 2, 4, 11, 12, 15 |
-| 3.7 Signalling (ratings, maturity, payout) | 5, 9, 10 |
+| 3.6 Stiglitz–Weiss credit rationing (original) | 16, 17 |
+| 3.7 Signalling (ratings, maturity, payout; collateral, original) | 5, 9, 10, 18, 19 |
 | 3.9 Leland–Pyle | 14 |
 | 3.10 IPO underpricing (Rock) | 1, 7 |
 
@@ -35,6 +36,10 @@ One list for Prof. Ricca's Topic 3 lecture (`Aula/Topic_3.pdf`, mapped in [[Map/
 | 13 | Really hard | Tirole | Ch. 6 | 6.7 | 276–278 (289) | yes, p. 599 | Padilla–Pagano: banks' ex ante choice to share default data, informational rents vs. borrower investment in $\alpha$ | R7 ex. 19 |
 | 14 | Really hard | Amaro de Matos | Ch. 3 | 3.2.6 #2 | 95 (113) | no (p. 260 only cites Leland and Pyle 1977, p. 377) | Leland–Pyle signalling with mean-variance utility: when debt rises with insider ownership $\alpha$ | R7 ex. 20 |
 | 15 | Really hard | Tirole | Ch. 6 | 6.5 | 275 (288) | yes, p. 597 | Continuum of types: issue cutoff, negative price reaction, comparative statics | R5 ex. 13 |
+| 16 | Easy | Original | Topic 3 slides 47–55 | — | — | no (solutions file) | Stiglitz–Weiss: mean-preserving spread, $r^*$ and $r_{max}$, non-monotone lender return, equity removes the selection | new |
+| 17 | Exam | Original | Topic 3 slides 47–55 | — | — | no (solutions file) | Why a higher rate does not clear the loan market: excess demand at $r^*$, non-clearing rate, comparative statics, two-rate outcome | new |
+| 18 | Exam | Original | Topic 3 slides 56–67; Tirole §6.3 | — | — | no (solutions file) | Collateral as a signal: symmetric benchmark $C = 0$, pooling, least-cost separating contract | new |
+| 19 | Really hard | Original | Topic 3 slides 56–67; Tirole §6.3 | — | — | no (solutions file) | Separating vs. pooling threshold $\hat\alpha$, deadweight cost $(1-\delta)C$, comparative statics in $\delta$ and $q$, welfare | new |
 
 ## Tier 1 — Easy
 
@@ -848,3 +853,132 @@ and so *a fortiori* $V_0 > V_1$.
 >
 > 26. As in the previous footnote, note that we assume that the investment opportunity is perfectly anticipated by the capital market. Otherwise, the issue of new securities could convey good news about the firm’s opportunity set and the concomitant boost in share price might dominate the effect unveiled here.
 
+## Original exercises (no book exercise exists)
+
+None of the six course books has an exercise on the Stiglitz–Weiss model (lecture block 3.6) or on collateral as a separating signal (block 3.7). The four exercises below are original, written for this list with the user's agreement (2026-11-12). They use the notation of Prof. Ricca's slides and have no book answer; the worked solutions are sections 16–19 of the solutions files.
+
+### 16. Stiglitz–Weiss with two types: the lender's return is not monotone in the rate (Easy)
+**Origin:** original exercise on Stiglitz–Weiss (1981) credit rationing with mean-preserving spreads, built on Prof. Ricca's Topic 3 slides 47–55 (Aula/Topic_3.pdf) and Tirole §3.1 Introduction, p. 113 (PDF 126), and §6.1 Introduction, footnote 5, p. 240 (PDF 253) · Answer: in the solutions file
+
+A lender finances projects that cost $I = 100$ each. Borrowers have no money of their own and there are two types, which the lender cannot tell apart. A low-risk (safe) borrower's project yields $R_L = 150$ with probability $p_L = 0.8$ and 0 otherwise. A high-risk (risky) borrower's project yields $R_H = 300$ with probability $p_H = 0.4$ and 0 otherwise. A share $\alpha = 0.75$ of the borrowers is low-risk. Borrowers and the lender are risk neutral. The lender offers only a standard debt contract: the borrower receives $I$ and repays $(1 + r)I$ if the project succeeds and nothing if it fails (limited liability; a failed project is worth 0). A borrower applies for a loan if and only if her expected payoff is non-negative.
+
+(a) Show that both projects have the same expected return $\bar R$ and compute it. Compute the variance of each project's return. Show that the high-risk return is a mean-preserving spread of the low-risk return, i.e. that it can be obtained by adding to each realisation of the low-risk return a random variable with zero mean conditional on that realisation.
+
+(b) Write each type's expected payoff from borrowing at rate $r$ as a function of $r$, and evaluate both at $r = 20\%$. Which type is hurt more by a rise in $r$, and why?
+
+(c) Compute the rate $r^*$ above which the low-risk borrowers stop applying and the rate $r_{max}$ above which nobody applies. Who applies for $r \le r^*$, for $r^* < r \le r_{max}$ and for $r > r_{max}$?
+
+(d) Let $\rho(r)$ be the lender's expected gross return per unit lent (expected repayment divided by $I$). Write $\rho(r)$ for $r \le r^*$ and for $r^* < r \le r_{max}$. Evaluate it at $r = 20\%$, $r = r^*$, $r = 60\%$, $r = 100\%$ and $r = r_{max}$. Compute the drop in $\rho$ when $r$ crosses $r^*$ and show that it equals $\alpha(p_L - p_H)(1 + r^*)$. Is $\rho$ monotone in $r$?
+
+(e) Find the rate $\tilde r > r^*$ at which the lender's return first gets back to $\rho(r^*)$. Explain why a lender that faces more applicants than it can fund at $r^*$ would never raise its rate to any value in $(r^*, \tilde r)$, and why this makes the supply of loans "backward-bending".
+
+(f) Suppose instead that the lender finances the project with equity: it takes a share $s$ of the project's return, in both success and failure. Find the share $s$ that gives the lender the same expected gross return per unit lent as the debt contract at $r^*$. Which types apply, and what is each type's expected payoff? Explain why the adverse selection of parts (c)–(e) disappears.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 3 slides 47–55 (block 3.6, Stiglitz and Weiss 1981):*
+
+- Notion of risk: mean-preserving spreads. Projects have the same mean; a mean-preserving spread of a random variable $X$ is obtained by adding a zero-mean random variable to each possible realisation of $X$ (slide 47).
+- Asymmetric information and adverse selection may make the supply curve backward-bending at high interest rates: the pool of borrowers gets worse when rates rise, because the payoff in the default state does not depend on the rate, so a rise in the rate hurts the borrowers who default more often less (slide 48). Supply and demand may then not intersect, and demand can exceed supply at the prevailing rate: credit rationing.
+- Two-type example (slides 50–54). Low risk: $R_L$ with probability $p_L$, 0 otherwise; high risk: $R_H$ with probability $p_H$, 0 otherwise; $p_L > p_H$ and $p_L R_L = p_H R_H = \bar R$ (the high-risk project is a mean-preserving spread of the low-risk one). Borrowers and lenders are risk neutral; types are private information; the project requires $I$. At rate $r$ the expected payoffs are $p_L[R_L - (1 + r)I] = \bar R - p_L(1 + r)I$ and $p_H[R_H - (1 + r)I] = \bar R - p_H(1 + r)I$.
+- $r_{max}$ solves $\bar R - p_H(1 + r_{max})I = 0$, i.e. $r_{max} = \bar R/(p_H I) - 1$; $r^*$ solves $\bar R - p_L(1 + r^*)I = 0$, i.e. $r^* = \bar R/(p_L I) - 1$. For $r < r^*$ both types apply; for $r^* < r < r_{max}$ only high-risk borrowers apply.
+- With $\alpha$ the proportion of low-risk types, the lender's expected payoff is $m(1 + r)$ with $m = \alpha p_L + (1 - \alpha)p_H$ when $r < r^*$, and $p_H(1 + r)$ when $r^* < r < r_{max}$. The expected return drops sharply around $r^*$ as the good types leave the market; it is not a monotonic function of the rate (slides 53–54).
+
+*From Tirole §6.1 Introduction, footnote 5, p. 240 (PDF 253):* "Stiglitz and Weiss assume that lenders can offer only debt contracts, and show that the repayment probability decreases with the rate of interest offered by lenders, and that the loan market is characterized by credit rationing. However, the assumptions of the model predict that investors should instead offer equity contracts, in which case there would be no adverse selection (all firms have the same mean income) and no credit rationing (Hart 1985)."
+
+### 17. Why raising the rate does not clear the loan market (Exam level)
+**Origin:** original exercise on Stiglitz–Weiss (1981) credit rationing in a competitive loan market, built on Prof. Ricca's Topic 3 slides 47–55 (Aula/Topic_3.pdf) and Tirole §3.1 Introduction, p. 113 (PDF 126) · Answer: in the solutions file
+
+There are $N = 1{,}000$ borrowers. Each needs $I = 100$ for a project and has no money of her own. A share $\alpha = 0.75$ of them is low-risk: the project yields $R_L = 130$ with probability $p_L = 0.9$ and 0 otherwise. The rest are high-risk: the project yields $R_H = 234$ with probability $p_H = 0.5$ and 0 otherwise. Types are private information. Banks are competitive and risk neutral, offer only standard debt contracts (repay $(1 + r)I$ on success, nothing on failure), make zero profit and pass to depositors the expected gross return per unit lent, $\rho$. Depositors supply funds
+
+$$L^s(\rho) = \max\{0,\ 1{,}000{,}000\,(\rho - 0.96)\}.$$
+
+A borrower applies if her expected payoff is non-negative (an indifferent borrower applies). When applicants exceed funds, the banks choose the borrowers who get a loan at random among the applicants.
+
+(a) Compute $\bar R$, the rates $r^*$ (above which the low-risk borrowers stop applying) and $r_{max}$ (above which nobody applies), the banks' expected gross return $\rho(r)$ on each interval, $\rho^* \equiv \rho(r^*)$, and the rate $\tilde r > r^*$ at which $\rho$ is back to $\rho^*$.
+
+(b) Compute loan demand and the supply of funds at $r = r^*$. How many applicants are turned down, and how many of them are low-risk and high-risk?
+
+(c) One bank, facing excess demand, raises its rate to $r = 40\%$. Who applies at that rate, what is $\rho(40\%)$, and how much would depositors supply if all banks charged $40\%$? Explain why raising the rate does not clear the market.
+
+(d) Show that no rate $r \le r^*$ equates supply and demand. Find the rate $r_W \in (r^*, r_{max}]$ at which supply equals demand, and the return $\rho(r_W)$. Show that $r_W$ is not an equilibrium: a bank that offers $r^*$ instead can pay its depositors more and still find borrowers. Conclude what the market interest rate is and whether there is credit rationing.
+
+(e) Comparative statics; change one parameter at a time and keep the others at their initial values.
+  (i) The share of low-risk borrowers rises to $\alpha = 0.9$. Compute $\rho^*$ and $L^s(\rho^*)$. Is there still rationing? If not, find the market-clearing rate.
+  (ii) The high-risk project becomes riskier with the same mean: $p_H = 0.4$, $R_H = 292.5$ ($\alpha = 0.75$). Compute $r^*$, $r_{max}$, $\rho^*$, $L^s(\rho^*)$, the share of applicants turned down, the drop in $\rho$ at $r^*$, and check whether the rate that clears the market among high-risk borrowers only is an equilibrium.
+
+(f) Go back to the initial parameters and the outcome of (b) and (d). A bank offers loans only to applicants who were turned down at $r^*$, at a rate $r' \in (\tilde r, r_{max}]$. Who accepts, and what is the bank's expected gross return? What will competition among such banks do to $r'$? Which borrowers remain without credit, and why can no rate above $r^*$ serve them?
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 3 slides 47–55 (block 3.6, Stiglitz and Weiss 1981):* same model as exercise 16, restated here.
+
+- Mean-preserving spreads: $p_L > p_H$ and $p_L R_L = p_H R_H = \bar R$; risk-neutral borrowers and lenders; types are private information; investment $I$. At rate $r$ the expected payoffs are $\bar R - p_L(1 + r)I$ (low risk) and $\bar R - p_H(1 + r)I$ (high risk), so a rise in $r$ hurts the high-risk borrowers less (slide 51).
+- $r_{max} = \bar R/(p_H I) - 1$ (neither type applies when $r > r_{max}$); $r^* = \bar R/(p_L I) - 1$ (only high-risk borrowers apply when $r^* < r < r_{max}$; both types apply when $r < r^*$) (slide 52).
+- Lender's expected payoff per unit: $m(1 + r)$, $m = \alpha p_L + (1 - \alpha)p_H$, for $r < r^*$; $p_H(1 + r)$ for $r^* < r < r_{max}$; it drops sharply around $r^*$ and is not monotone in $r$ (slides 53–54).
+- The pool of borrowers gets worse when rates rise; the supply curve can be backward-bending at high rates; supply and demand may not intersect, so demand can exceed supply at the prevailing rate: credit rationing (slides 47–48).
+
+*From Tirole §3.1 Introduction, p. 113 (PDF 126):* "Why are lenders not willing to raise interest rates if the demand for loans exceeds their supply at the prevailing rates? […] The adverse selection explanation is that, in a situation where lenders cannot directly tell good and bad borrowers apart, higher interest rates tend to attract low-quality borrowers; for, low-quality borrowers are more likely to default on their loan and therefore are less affected by a rise in the interest rate than high-quality borrowers. Lenders may then want to keep interest rates low in order to face a better sample of borrowers."
+
+### 18. Collateral as a separating signal (Exam level)
+**Origin:** original exercise on costly collateral as a signal (Bester 1985), built on Prof. Ricca's Topic 3 slides 56–67 (Aula/Topic_3.pdf) and Tirole §6.3, Application 5, pp. 251–253 (PDF 264–266) · Answer: in the solutions file
+
+An entrepreneur needs $I = 60$ for a project that yields $R = 120$ if it succeeds and 0 if it fails. She has no cash, but she owns an illiquid asset worth 60 to her that she can pledge as collateral: collateral worth $C$ to her is worth only $\delta C$ to a lender, with $\delta = 0.5$. A good type succeeds with probability $p = 0.9$, a bad type with probability $q = 0.6$; the share of good types is $\alpha = 0.5$. Everybody is risk neutral, the riskless rate is 0, and lenders are competitive (zero expected profit). A contract $\{R_u, C\}$ says that the lender receives $R_u$ if the project succeeds and seizes the collateral $C$ if it fails; the entrepreneur keeps $R - R_u$ on success and loses $C$ on failure.
+
+(a) Symmetric information. Compute each type's zero-profit repayment with no collateral, $R_u^G$ and $R_u^B$, and each type's utility. Then let the good type pledge $C = 20$: compute her zero-profit repayment and her utility, and show that her utility falls by $(1 - p)(1 - \delta)C$. Why is $C = 0$ optimal under symmetric information?
+
+(b) Asymmetric information without collateral. Compute the prior $m$ and the pooling repayment $R_u = I/m$, and each type's utility. Show that if the good type asked for her symmetric-information contract $\{I/p, 0\}$, the bad type would mimic her.
+
+(c) Separating equilibrium. In it the bad type pledges no collateral and repays $R_u^B = I/q$. The good type chooses $\{\tilde R, \tilde C\}$ to maximise her utility subject to the no-mimicking condition of the bad type and the lender's break-even condition. Write the program, explain why both constraints bind, and solve for $C_G$ and $R_u^G$ (give the general formulas and the numbers). Verify both constraints numerically and check that the good type can afford the collateral.
+
+(d) Compute the good type's utility in the separating equilibrium and the expected deadweight cost of collateral, $(1 - p)(1 - \delta)C_G$. Compare it with her utility in (a) and in (b). Which regime does the good type prefer, and by how much?
+
+(e) Check that neither type wants the other type's contract in the separating equilibrium. Explain why collateral can separate the types here (which type finds it more costly, and why).
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 3 slides 56–67 (block 3.7, signalling with costly collateral):*
+
+- To be a successful separating mechanism, the cost of the signalling device has to differ sufficiently among the types (slide 56).
+- Projects require $I$ and yield $R$ on success and 0 otherwise; the good type succeeds with probability $p$, the bad type with $q$; the share of good types is $\alpha$ and the prior is $m = \alpha p + (1 - \alpha)q$; both types have positive NPV, $pR > I$, $qR > I$ (slide 57).
+- Borrowers have no cash on hand but can pledge an illiquid asset as collateral. Assets worth $C$ in the hands of borrowers are worth only $\delta C$ in the lenders' hands, $0 < \delta < 1$; collateral is inefficient: $(1 - \delta)C$ is lost in case of default (slide 58). (Tirole writes $\beta$ for $\delta$.)
+- Symmetric information: with collateral $C$ the good type's zero-profit repayment satisfies $pR_u + (1 - p)\delta C = I$, i.e. $R_u = I/p - (1 - p)\delta C/p$, and her utility is $p(R - R_u) + (1 - p)(-C) = pR - I - (1 - p)(1 - \delta)C$, so the best choice is $C = 0$; same for the bad type (slides 59–60).
+- Asymmetric information without collateral: both types repay $R_u = I/m > I/p = R_u^G$ (slide 61).
+- Separating equilibrium: good type $\{R_u^G, C_G\}$, bad type $\{R_u^B, C_B\}$; lenders infer the type from the contract. The bad type must not want to mimic, so $C_B = 0$ and $R_u^B = I/q$. The good type's contract $\{\tilde R, \tilde C\}$ solves
+  $$\max_{\tilde R, \tilde C}\ p(R - \tilde R) + (1 - p)(-\tilde C)$$
+  subject to $q(R - \tilde R) + (1 - q)(-\tilde C) \le qR - I$ (no-mimicking) and $p\tilde R + (1 - p)\delta\tilde C \ge I$ (lender's break-even) (slides 62–65).
+- Both constraints bind at the solution (slide 66). Signalling is worth it for the good type when the adverse-selection cost is large: $p(R - R_u^G) + (1 - p)(-C_G) \ge p(R - I/m)$ (slide 67).
+
+*From Tirole §6.3, Application 5 "Costly Collateral Pledging", pp. 251–253 (PDF 264–266):* the same program written with the borrower's reward $R_b = R - R_u$; Assumption 6.1, $0 < qR - I < pR - I$; the borrower has "a sizeable amount of assets" to pledge; signalling works because pledging collateral is relatively more costly for a bad borrower, while a higher reward in success is valued more by a good one (the sorting condition).
+
+### 19. When does signalling with collateral pay? (Really hard)
+**Origin:** original exercise on costly collateral as a signal (Bester 1985): separating versus pooling and comparative statics, built on Prof. Ricca's Topic 3 slides 56–67 (Aula/Topic_3.pdf) and Tirole §6.3, Application 5, pp. 251–253 (PDF 264–266) · Answer: in the solutions file
+
+Same model as exercise 18 (restated in the context below) with $I = 50$, $R = 100$, $p = 0.8$, $q = 0.7$ and, unless stated otherwise, $\delta = 0.2$. The entrepreneur owns illiquid assets worth 50 to her. The share of good types $\alpha$ varies across parts.
+
+(a) Compute the good type's least-cost separating contract $\{R_u^G, C_G\}$ (both constraints binding), check both constraints, and compute her utility $U^{sep}$ and the expected deadweight cost $(1 - p)(1 - \delta)C_G$. Does $U^{sep}$ depend on $\alpha$?
+
+(b) For $\alpha = 0.3$ and for $\alpha = 0.6$, compute $m$, the pooling repayment $I/m$ and the good type's pooling utility $U^{pool} = p(R - I/m)$. In which case does she prefer to signal?
+
+(c) Show, for general parameters, that $U^{sep} \ge U^{pool}$ if and only if
+$$\alpha\,p\,(1 - p)(1 - \delta) \le (1 - \alpha)(p - q),$$
+and write the threshold $\hat\alpha$ below which the good type prefers to signal. Compute $\hat\alpha$ and check that at $\hat\alpha$ the two utilities coincide.
+
+(d) Comparative statics in $\delta$. Show that $C_G$ increases with $\delta$ while the expected deadweight cost $(1 - p)(1 - \delta)C_G$ decreases with $\delta$; evaluate both derivatives at $\delta = 0.2$. Compute $C_G$, $R_u^G$, the deadweight cost and $U^{sep}$ for $\delta = 0$ and $\delta = 0.6$, and the limits as $\delta \to 1$. For $\alpha = 0.6$, find the threshold $\hat\delta$ above which the good type prefers to signal, and check it with the numbers for $\delta = 0.6$.
+
+(e) Comparative statics in $q$ ($\delta = 0.2$). Show that $C_G$ falls as $q$ rises toward $p$, and compute $C_G$ and the deadweight cost for $q = 0.6$ and $q = 0.75$. Interpret.
+
+(f) Welfare at $\alpha = 0.3$. Compute total expected surplus per borrower (both types together) under pooling and under separation, the bad type's utility in each, and the surplus lost to separation. Which outcome is efficient, and why does the good type still choose to signal?
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 3 slides 56–67 (block 3.7, signalling with costly collateral):* the model of exercise 18, restated.
+
+- Project: cost $I$, return $R$ on success, 0 on failure; good type succeeds with probability $p$, bad type with $q < p$; share of good types $\alpha$, prior $m = \alpha p + (1 - \alpha)q$; $pR > I$ and $qR > I$; no cash on hand; risk neutrality, riskless rate 0, competitive lenders (slide 57).
+- Collateral worth $C$ to the borrower is worth $\delta C$ to the lender, $0 < \delta < 1$ (Tirole: $\beta$, $0 \le \beta < 1$); $(1 - \delta)C$ is lost in default (slide 58). Under symmetric information the good type's utility with collateral is $pR - I - (1 - p)(1 - \delta)C$, so $C = 0$ (slides 59–60).
+- Pooling without collateral: $R_u = I/m$, good type's utility $p(R - I/m)$ (slides 61, 67).
+- Separating: bad type $C_B = 0$, $R_u^B = I/q$, utility $qR - I$. Good type: $\max_{\tilde R, \tilde C} p(R - \tilde R) - (1 - p)\tilde C$ subject to $q(R - \tilde R) - (1 - q)\tilde C \le qR - I$ and $p\tilde R + (1 - p)\delta\tilde C \ge I$; both bind (slides 63–66), giving
+  $$R_u^G = \frac{(1 - q) - \delta(1 - p)}{p(1 - q) - \delta q(1 - p)}\,I, \qquad C_G = \frac{I}{1 + \dfrac{q(1 - p)(1 - \delta)}{p - q}}.$$
+- If the adverse-selection cost is very large (large share of bad borrowers $1 - \alpha$, or large distance between $p$ and $q$), the good type is better off with the possibility of signalling: $p(R - R_u^G) + (1 - p)(-C_G) \ge p(R - I/m)$ (slide 67).
+
+*From Tirole §6.3, Application 5, p. 253 (PDF 266):* "The good borrower must pledge more collateral when collateral pledging becomes cheaper for the borrower ($\partial C^*/\partial\beta > 0$)" and "the stronger the asymmetry of information ($\partial C^*/\partial q < 0$) […] $C^*$ tends to 0 […] when $q$ tends to $p$, as we would expect."

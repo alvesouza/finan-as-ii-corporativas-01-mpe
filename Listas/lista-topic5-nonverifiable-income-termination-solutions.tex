@@ -1,4 +1,4 @@
-% Worked solutions for Listas/lista-topic5-nonverifiable-income-termination.md (13 exercises).
+% Worked solutions for Listas/lista-topic5-nonverifiable-income-termination.md (13 book exercises + originals 14-17).
 % Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
 % Every number is asserted in lista-topic5-nonverifiable-income-termination-solutions_check.py.
 \documentclass[11pt,a4paper]{article}
@@ -40,7 +40,7 @@
 \begin{document}
 \begin{center}{\Large\bfseries Exercise list --- Topic 5: Nonverifiable income, strategic default, termination, debt structure}\\[4pt]{\large Worked solutions}\end{center}
 
-\noindent Statements are in \url{Listas/lista-topic5-nonverifiable-income-termination.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-topic5-nonverifiable-income-termination-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
+\noindent Statements are in \url{Listas/lista-topic5-nonverifiable-income-termination.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Exercises 14--17 are original exercises on the sovereign-debt model (Topic~5 slides 13--29), for which no course book has an exercise; they are marked ``Original exercise''. Short answers: \url{lista-topic5-nonverifiable-income-termination-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
 
 \tableofcontents
 
@@ -1688,5 +1688,476 @@ $r^*>\hat r$, and when $r^*<\hat r$ either no financing or bankruptcy over a lar
 (The book's wording ``no bankruptcy occurs on some interval $[0,r^{**}]$'' must mean bankruptcy occurs there.)
 
 \refbib Tirole \S3.2.1 ``The Fixed-Investment Model'' and \S3.2.2 ``The Lenders' Credit Analysis'', pp.~115--117; Exercise 4.9, pp.~190--191; answer pp.~586--587.
+
+% =============================================================================
+% Original exercises 14--17 (sovereign debt; no book exercise exists; user agreed 2026-11-12)
+% =============================================================================
+\exsec{14. A two-period sovereign bond: default set, price and spread --- Original exercise}
+
+\noindent\emph{Original exercise} (no course book has one on this model), built on Prof.\ Ricca's Topic~5 slides 13--18, 21 and 28--29.
+Notation as on the slides: $B'$ are the \emph{assets} bought for $t=1$, so $B'<0$ is a debt of face value $b=-B'$.
+
+\asked (a) Write the two values at the last date and find the rule that tells when the government defaults on a debt $b$.
+(b) List, for every bond position, the output states in which it defaults. (c) Turn those sets into default probabilities and
+the price a competitive lender pays per unit of face value, at six given positions. (d) Turn prices into interest rates and
+spreads over the risk-free rate, and check the lender's break-even at $B'=-0.10$. (e) Find the position that raises the most
+cash at $t=0$, show a band of risky positions is beaten by a risk-free bond, and explain why borrowing beyond $B^*$ never pays.
+
+\approach At the last date there is no future, so $V^d$ and $V^c$ are single-period utilities and the comparison
+reduces to consumption: default is a \emph{strategic} choice (nonverifiable repayment, slide 14), disciplined here only by the
+output cost $h(y)\le y$. Lenders price the bond by zero profit, $q=(1-\delta)/(1+r)$ (slide 18), which turns the default set
+(slide 21) into a step-shaped price schedule; the amount raised, $-q(B')B'$, then has a maximum $B^*$ (slides 28--29).
+
+\notation
+\begin{itemize}
+  \item $B'$: assets bought at $t=0$ (face value due at $t=1$); $b=-B'$: debt; $y\in\{y_L,y_H\}=\{0.8,1.2\}$ with $\Pr(y_H)=0.8$, $\Pr(y_L)=0.2$.
+  \item $h(y)=(1-\lambda)y$, $\lambda=0.1$: consumption after default; $\lambda y$: output lost by defaulting.
+  \item $V^c(B',y)$, $V^d(y)$: values of repaying and of defaulting at $t=1$; $D(B')$: default set; $\delta(B')$: default probability.
+  \item $r=0.05$: risk-free rate; $q(B')$: unit bond price; $1+r(B')=1/q(B')$: gross interest rate; $r(B')-r$: spread.
+\end{itemize}
+
+\step{1}{(a) The default rule} At $t=1$ nothing can be borrowed, so repaying leaves $c_1=y+B'$ and defaulting leaves $h(y)$:
+\begin{align}
+  V^c(B',y) &= u(y+B') = u(y-b), \label{t5e14-vc}\\
+  V^d(y)    &= u\big(h(y)\big) = u\big((1-\lambda)y\big). \label{t5e14-vd}
+\end{align}
+Default happens iff $V^d(y)>V^c(B',y)$. Since $u$ is strictly increasing, $u(x_1)>u(x_2)\iff x_1>x_2$, so
+\begin{align}
+  V^d(y)>V^c(B',y) &\iff (1-\lambda)y > y-b \nonumber\\
+                   &\iff b > y-(1-\lambda)y \nonumber\\
+                   &\iff b > \lambda y. \label{t5e14-rule}
+\end{align}
+
+\answer{(a)} $V^c(B',y)=u(y+B')$, $V^d(y)=u((1-\lambda)y)$; default iff $b=-B'>\lambda y$ (the debt exceeds the output lost by
+defaulting). The rule does not depend on $u$ (only on $u'>0$): at the last date default compares consumption levels.
+
+\step{2}{(b) Default sets} The two thresholds of \eqref{t5e14-rule} are
+\begin{align}
+  \lambda y_L &= (0.1)(0.8) = 0.08, & \lambda y_H &= (0.1)(1.2) = 0.12. \nonumber
+\end{align}
+For $B'\ge0$ we have $b\le0<\lambda y$ in both states (the country is owed money and gains nothing by defaulting). Ties go to repayment:
+at $b=0.08$, $y_L$, repaying leaves $0.8-0.08=0.72=(0.9)(0.8)$; at $b=0.12$, $y_H$, repaying leaves $1.2-0.12=1.08=(0.9)(1.2)$. Hence
+\begin{align}
+  D(B') = \begin{cases} \emptyset & B'\ge-0.08,\\ \{y_L\} & -0.12\le B'<-0.08,\\ \{y_L,y_H\} & B'<-0.12. \end{cases} \label{t5e14-D}
+\end{align}
+
+\answer{(b)} $D(B')=\emptyset$ for $B'\ge-0.08$ (all lending positions included); $D(B')=\{y_L\}$ for $-0.12\le B'<-0.08$; $D(B')=\{y_L,y_H\}$ for $B'<-0.12$.
+
+\step{3}{(c) Default probability and price} $\delta(B')=\Pr[y\in D(B')]$ adds the probabilities of the default states in \eqref{t5e14-D}: $0$, $0.2$
+or $0.2+0.8=1$. Zero profit for a lender buying face value $B'$ at $q(B')B'$ (slide 18) gives
+\begin{align}
+  q(B')B'(1+r) &= B'[1-\delta(B')] \nonumber\\
+  q(B') &= \frac{1-\delta(B')}{1+r}
+   = \begin{cases} \dfrac{1}{1.05} = 0.952381 & B'\ge-0.08,\\[6pt] \dfrac{1-0.2}{1.05}=\dfrac{0.8}{1.05} = 0.761905 & -0.12\le B'<-0.08,\\[6pt] \dfrac{1-1}{1.05}=0 & B'<-0.12. \end{cases} \label{t5e14-q}
+\end{align}
+At the six positions: $q(0.05)=q(-0.05)=q(-0.08)=0.952381$; $q(-0.10)=q(-0.12)=0.761905$; $q(-0.15)=0$.
+
+\answer{(c)} $\delta(B')\in\{0,\,0.2,\,1\}$ on the three regions of \eqref{t5e14-D}; $q=0.952381$ at $0.05,-0.05,-0.08$; $q=0.761905$ at $-0.10,-0.12$; $q=0$ at $-0.15$.
+
+\step{4}{(d) Interest rates and spreads} By slide 15, $1+r(B')=1/q(B')$. On the risk-free region,
+\begin{align}
+  1+r(B') &= \frac{1}{1/1.05} = 1.05, & r(B')-r &= 0.05-0.05 = 0. \nonumber
+\end{align}
+On the region where only $y_L$ defaults ($B'=-0.10,-0.12$),
+\begin{align}
+  1+r(B') &= \frac{1}{0.8/1.05} = \frac{1.05}{0.8} = 1.3125, & r(B')-r &= 0.3125-0.05 = 0.2625. \nonumber
+\end{align}
+At $B'=-0.15$, $q=0$: no lender pays anything for a bond that is never repaid, so no interest rate clears the market.
+Lender check at $B'=-0.10$: the issue costs $q\,b=(0.761905)(0.10)=0.0761905$ and pays $0.10$ with probability $0.8$ and nothing
+in default (the output loss $\lambda y_L$ is destroyed, not transferred), so
+\begin{align}
+  \frac{E[\text{payoff}]}{\text{price}} &= \frac{(0.8)(0.10)+(0.2)(0)}{0.0761905} = \frac{0.08}{0.0761905} = 1.05 = 1+r. \nonumber
+\end{align}
+
+\answer{(d)} Risk-free positions: $1+r(B')=1.05$, spread $0$. $B'=-0.10,-0.12$: $1+r(B')=1.3125$, spread $0.2625$ (26.25 percentage points).
+$B'=-0.15$: no market. The lender earns exactly $1.05$ per unit at $B'=-0.10$.
+
+\step{5}{(e)(i) Maximum amount raised} With $b=-B'$, the cash raised is $X(b)=-q(B')B'=q\,b$. By \eqref{t5e14-q}:
+\begin{align}
+  X(b) = \begin{cases} b/1.05, & 0<b\le0.08,\\ 0.8\,b/1.05, & 0.08<b\le0.12,\\ 0, & b>0.12. \end{cases} \nonumber
+\end{align}
+On the first step $X$ rises to $0.08/1.05=0.076190$; on the second it drops to just above $0.8(0.08)/1.05=0.060952$ and rises to $0.8(0.12)/1.05=0.091429$.
+The largest value is at $b=0.12$: $B^*=-0.12$, raising $0.091429$.
+
+\step{6}{(e)(ii) A dominated band} Take $b\in(0.08,0.10]$; it raises $0.8b/1.05$. A bond of face value $b_s=0.8b$ raises $b_s/1.05=0.8b/1.05$, the same
+amount, and is risk-free because $b_s=0.8b\le0.8(0.10)=0.08$. What each costs at $t=1$:
+\begin{align}
+  y_H:&\quad \text{risky pays } b, \quad \text{safe pays } 0.8b < b; \nonumber\\
+  y_L:&\quad \text{risky defaults and loses } \lambda y_L = 0.08, \quad \text{safe pays } 0.8b \le 0.08. \nonumber
+\end{align}
+So $t=1$ consumption is at least as high in both states with the safe bond, and strictly higher in $y_H$: every $B'\in[-0.10,-0.08)$ is dominated.
+(For $b\in(0.10,0.12]$ the amount $0.8b/1.05>0.076190$ exceeds anything risk-free debt can raise, so no such comparison exists.)
+
+\step{7}{(e)(iii) Never beyond $B^*$} For $B'<B^*=-0.12$ the price is $0$: the country raises nothing at $t=0$, and at $t=1$ defaults in both states, losing
+$\lambda y$ of output. $B'=0$ gives the same $t=0$ consumption and no loss, so $B'<B^*$ is strictly dominated. Slide 29's general argument: any amount
+raised with $B'<B^*$ can also be raised with some $B'\ge B^*$ at a higher price, hence with a smaller repayment.
+
+\answer{(e)} (i) $B^*=-0.12$, maximum $0.091429$. (ii) For $B'\in[-0.10,-0.08)$ the risk-free bond $b_s=0.8b$ raises the same cash and costs $0.8b$ in both
+states, against $b$ in $y_H$ and $0.08$ of output in $y_L$. (iii) Beyond $B^*$ the price is zero: nothing is raised and default costs output in every state.
+
+\intuition A sovereign repays only because default destroys output: debt up to $\lambda y$ is credible in state $y$. Debt that exceeds the cost in
+bad times but not in good times is repaid only in good times, so lenders charge a default premium. The price schedule is a staircase, and the cash
+raised is a ``debt Laffer curve'': more face value raises more cash until the next default state is crossed, where cash drops. Default is pure
+waste (lenders get nothing, the country loses $\lambda y$), which is why risky debt that a safe bond can replicate is never chosen.
+
+\pitfalls
+\begin{itemize}
+  \item Sign of $B'$: on the slides $B'$ is \emph{assets}; debt is $B'<0$ and the cash raised is $-q(B')B'>0$.
+  \item Writing the spread as $1/q-1=0.3125$: that is the risky rate $r(B')$; the spread subtracts $r=0.05$.
+  \item Treating ties as defaults: $D(B)$ uses a strict inequality, so $b=\lambda y$ is repaid (this keeps $q(-0.12)>0$).
+\end{itemize}
+
+\refbib Prof.\ Ricca, Topic~5 slides 13--18 (setup, prices, interest rate, zero profit), 21 (default set), 28--29 (borrowing limit $B^*$). Original exercise; numbers in the check script.
+
+% =============================================================================
+\exsec{15. The price schedule $q(B',y)$ with persistent output --- Original exercise}
+
+\noindent\emph{Original exercise}, built on Prof.\ Ricca's Topic~5 slides 15, 17--18, 21, 23--24 and 27--29.
+
+\asked (a) Prove, in this two-period economy, that more assets (less debt) shrink the default set, so the bond price falls with debt for any current
+output; say what depends on current output. (b) Find the default set at every position. (c) Fill the price table for seven positions and three current
+outputs. (d) Compute interest rates and spreads on a small debt for each current output, explain the recession premium, and price the same bond under
+i.i.d.\ output. (e) For each current output, find the debt that raises the most cash.
+
+\approach Claims 1--2 (slides 23--24) in their simplest form: at the last date $V^c=u(y'+B')$ rises with $B'$ while $V^d=u(h(y'))$ does not, so default
+sets are nested. Prices follow from zero profit with Markov probabilities, $q=(1-\sum_{y'\in D(B')}\pi(y'\mid y))/(1+r)$ (slides 18, 21): the default
+\emph{set} depends only on tomorrow's state, the default \emph{probability} on today's. The Arellano cost $h(y)=\min\{y,\hat y\}$ makes default cheap in
+recessions.
+
+\notation
+\begin{itemize}
+  \item $y$: output at $t=0$ (current); $y'$: output at $t=1$; $\pi(y'\mid y)$: transition probabilities (table in the statement).
+  \item $h(y')=\min\{y',0.9\}$; $\kappa(y')\equiv y'-h(y')$: output lost by defaulting in state $y'$.
+  \item $B'$, $b=-B'$, $D(B')$, $\delta(B',y)$, $q(B',y)$, $1+r(B',y)=1/q(B',y)$, $r=0.04$; $B^*(y)$: cash-maximising position at current $y$.
+\end{itemize}
+
+\step{1}{(a) Nested default sets and a monotone price} At $t=1$ (last date) $V^c(B',y')=u(y'+B')$ and $V^d(y')=u(h(y'))$. Let $B'_2\ge B'_1$ and
+$y'\in D(B'_2)$. Then
+\begin{align}
+  u\big(h(y')\big) &> u(y'+B'_2) && (y'\in D(B'_2)) \nonumber\\
+                   &\ge u(y'+B'_1) && (B'_2\ge B'_1,\ u'>0), \nonumber
+\end{align}
+so $y'\in D(B'_1)$: $D(B'_2)\subseteq D(B'_1)$. Since probabilities are nonnegative, summing over a smaller set gives a smaller number:
+\begin{align}
+  \delta(B'_2,y) = \sum_{y'\in D(B'_2)}\pi(y'\mid y) &\le \sum_{y'\in D(B'_1)}\pi(y'\mid y) = \delta(B'_1,y) \nonumber\\
+  q(B'_2,y) = \frac{1-\delta(B'_2,y)}{1+r} &\ge \frac{1-\delta(B'_1,y)}{1+r} = q(B'_1,y). \label{t5e15-mono}
+\end{align}
+
+\answer{(a)} $D(B'_2)\subseteq D(B'_1)$ for $B'_2\ge B'_1$, hence $q(B',y)$ is nondecreasing in $B'$ (nonincreasing in debt) for every $y$. $D(B')$ depends only
+on $B'$ and $y'$, not on current $y$; $\delta(B',y)$ and $q(B',y)$ depend on $y$ through $\pi(\cdot\mid y)$.
+
+\step{2}{(b) Default sets} As in Exercise 14, default iff $h(y')>y'-b$, i.e.\ iff $b>\kappa(y')$. The costs are
+\begin{align}
+  \kappa(0.8) &= 0.8-\min\{0.8,0.9\} = 0, & \kappa(1.0) &= 1.0-0.9 = 0.1, & \kappa(1.2) &= 1.2-0.9 = 0.3. \nonumber
+\end{align}
+With ties going to repayment,
+\begin{align}
+  D(B') = \begin{cases} \emptyset & B'\ge0,\\ \{0.8\} & -0.1\le B'<0,\\ \{0.8,\,1.0\} & -0.3\le B'<-0.1,\\ \{0.8,\,1.0,\,1.2\} & B'<-0.3. \end{cases} \label{t5e15-D}
+\end{align}
+
+\answer{(b)} \eqref{t5e15-D}: any debt is defaulted on in the recession state $0.8$ (default costs nothing there); debt above $0.1$ also in state $1.0$; above $0.3$ always.
+
+\step{3}{(c) The price table} $\delta(B',y)$ adds the row-$y$ probabilities of the states in \eqref{t5e15-D}, and $q=(1-\delta)/1.04$.
+\begin{align}
+  -0.1\le B'<0:&\quad \delta = \pi(0.8\mid y) = 0.6,\ 0.2,\ 0.1, \nonumber\\
+               &\quad q = \tfrac{0.4}{1.04},\ \tfrac{0.8}{1.04},\ \tfrac{0.9}{1.04} = 0.384615,\ 0.769231,\ 0.865385; \nonumber\\
+  -0.3\le B'<-0.1:&\quad \delta = \pi(0.8\mid y)+\pi(1.0\mid y) = 0.9,\ 0.8,\ 0.4, \nonumber\\
+                  &\quad q = \tfrac{0.1}{1.04},\ \tfrac{0.2}{1.04},\ \tfrac{0.6}{1.04} = 0.096154,\ 0.192308,\ 0.576923; \nonumber
+\end{align}
+for $y=0.8,1.0,1.2$ respectively; $q=1/1.04=0.961538$ for $B'\ge0$ and $q=0$ for $B'<-0.3$.
+
+\begin{center}
+\begin{tabular}{lccccccc}
+\toprule
+$B'$ & $0.10$ & $0$ & $-0.05$ & $-0.10$ & $-0.20$ & $-0.30$ & $-0.40$\\
+\midrule
+$q(B',0.8)$ & $0.961538$ & $0.961538$ & $0.384615$ & $0.384615$ & $0.096154$ & $0.096154$ & $0$\\
+$q(B',1.0)$ & $0.961538$ & $0.961538$ & $0.769231$ & $0.769231$ & $0.192308$ & $0.192308$ & $0$\\
+$q(B',1.2)$ & $0.961538$ & $0.961538$ & $0.865385$ & $0.865385$ & $0.576923$ & $0.576923$ & $0$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\answer{(c)} The table above: each row is a nonincreasing staircase in debt, and each column (for $B'<0$) rises with current $y$.
+
+\step{4}{(d) Spreads and the recession premium} At $B'=-0.05$, $1+r(B',y)=1/q=1.04/(1-\delta)$:
+\begin{align}
+  y=0.8:&\quad 1+r(B',y)=\tfrac{1.04}{0.4}=2.6, & r(B',y)-r&=1.6-0.04=1.56; \nonumber\\
+  y=1.0:&\quad 1+r(B',y)=\tfrac{1.04}{0.8}=1.3, & r(B',y)-r&=0.3-0.04=0.26; \nonumber\\
+  y=1.2:&\quad 1+r(B',y)=\tfrac{1.04}{0.9}=1.155556, & r(B',y)-r&=0.155556-0.04=0.115556. \nonumber
+\end{align}
+The bond is defaulted on exactly when $y'=0.8$; with persistent output a recession today makes a recession tomorrow likelier ($0.6$ against $0.2$ or
+$0.1$), so lenders demand more. With i.i.d.\ output $\delta(-0.05)=\Pr(y'=0.8)=0.3$ whatever $y$ is, and
+\begin{align}
+  q(-0.05,y) &= \frac{1-0.3}{1.04} = \frac{0.7}{1.04} = 0.673077 \quad\text{for every } y, \nonumber
+\end{align}
+as slide 27 says: the i.i.d.\ price function does not depend on current output.
+
+\answer{(d)} Spreads at $B'=-0.05$: $1.56$ ($y=0.8$), $0.26$ ($y=1.0$), $0.115556$ ($y=1.2$). Persistence raises the default probability after a bad
+shock. Under i.i.d.\ $(0.3,0.4,0.3)$: $q(-0.05,y)=0.673077$ for all $y$.
+
+\step{5}{(e) Borrowing limit by current state} Within each price step, $q(B',y)b$ rises with $b$, so the maximum is at a right end of a step,
+$b=0.1$ or $b=0.3$ (beyond $0.3$ the price is $0$):
+\begin{align}
+  y=0.8:&\quad (0.1)(0.384615)=0.038462 \;>\; (0.3)(0.096154)=0.028846 &&\Rightarrow B^*(0.8)=-0.1; \nonumber\\
+  y=1.0:&\quad (0.1)(0.769231)=0.076923 \;>\; (0.3)(0.192308)=0.057692 &&\Rightarrow B^*(1.0)=-0.1; \nonumber\\
+  y=1.2:&\quad (0.1)(0.865385)=0.086538 \;<\; (0.3)(0.576923)=0.173077 &&\Rightarrow B^*(1.2)=-0.3. \nonumber
+\end{align}
+
+\answer{(e)} $B^*(0.8)=-0.1$ (raises $0.038462$), $B^*(1.0)=-0.1$ ($0.076923$), $B^*(1.2)=-0.3$ ($0.173077$). The most the country can raise is
+smallest in the recession, exactly when it would like to borrow to smooth consumption: an endogenous, procyclical borrowing limit (slide 28).
+
+\intuition The default decision belongs to tomorrow's state, the price to today's information about it. Output costs that are small in recessions
+(Arellano's $\min\{y,\hat y\}$) put the default states at the bottom of the distribution, and persistence makes a bad state today a signal of
+default tomorrow. So credit is dearest and scarcest when the country needs it most --- the countercyclical spreads of emerging markets.
+
+\pitfalls
+\begin{itemize}
+  \item Letting $D(B')$ depend on current $y$: the default decision is taken at $t=1$ and depends on $y'$ only; current $y$ enters through $\pi(\cdot\mid y)$.
+  \item Using the stationary or unconditional probabilities with Markov output: lenders condition on current $y$.
+  \item Looking for the maximum of $q\,b$ by calculus: $q$ jumps, so the candidates are the right ends of the steps.
+\end{itemize}
+
+\refbib Prof.\ Ricca, Topic~5 slides 15, 17--18, 21 (prices, default set), 23--24 (Claims 1--2, monotone $q$), 27 (i.i.d.\ price), 28--29 (borrowing limit). Original exercise.
+
+% =============================================================================
+\exsec{16. No capital inflows when default is possible (Claim 3) --- Original exercise}
+
+\noindent\emph{Original exercise}, built on Prof.\ Ricca's Topic~5 slides 17--22 and 25.
+
+\asked (a) Solve the autarky value with permanent exclusion and no output cost, and evaluate it in a two-state log example. (b) Prove slide 25's Claim 3: if the
+country would default in some state at debt $B$, no bond on offer can give it a net inflow at $B$. (c) Apply the argument to a concrete offer. (d) Show a debt-free
+country never defaults, and say what Claim 3 does \emph{not} say. (e) Find which assumptions the proof needs and extend it to output costs and Markov output.
+(f) Show where re-entry breaks the proof.
+
+\approach Revealed preference on the Bellman equations of slides 19--20: $V^c$ is a maximum, so any feasible bond gives a lower bound, and $V^o=\max\{V^d,V^c\}\ge V^d$
+everywhere. With permanent exclusion the continuation of default is $V^d$ itself, so ``roll over now, keep the option to default later'' is always at least as good
+tomorrow as defaulting today (slide 25's remark); a positive inflow makes it strictly better today.
+
+\notation
+\begin{itemize}
+  \item $B$: assets entering the period ($B<0$ debt); $\hat B$: a candidate bond position; $B-q(\hat B)\hat B$: net capital inflow (consumption minus output).
+  \item $V^o,V^c,V^d$: value with the option, of repaying, of defaulting; $D(B)$: default set; $\theta$: re-entry probability; $h(y)\le y$: output after default.
+  \item $E[\cdot]$: expectation over next period's i.i.d.\ output $\tilde y'$; numerical example: $u=\ln$, $y\in\{0.9,1.1\}$ equally likely, $\beta=0.9$, $r=0.05$.
+\end{itemize}
+
+\step{1}{(a) Autarky value} With $\theta=0$ and $h(y)=y$, $V^d(y)=u(y)+\beta E[V^d(\tilde y')]$. With i.i.d.\ output, $m\equiv E[V^d(\tilde y')]$ is the same number
+whatever today's $y$; taking expectations of both sides,
+\begin{align}
+  m &= E[u(\tilde y)] + \beta m \nonumber\\
+  m &= \frac{E[u(\tilde y)]}{1-\beta}, \nonumber\\
+  V^d(y) &= u(y) + \beta m = u(y) + \frac{\beta}{1-\beta}E[u(\tilde y)]. \label{t5e16-vd}
+\end{align}
+Numbers: $\ln0.9=-0.1053605$, $\ln1.1=0.0953102$, so $E[\ln\tilde y]=\tfrac12(-0.1053605+0.0953102)=-0.0050252$ and, with $\beta/(1-\beta)=0.9/0.1=9$,
+$9E[\ln\tilde y]=-0.0452265$ (products from unrounded logarithms):
+\begin{align}
+  V^d(0.9) &= -0.1053605-0.0452265 = -0.1505870, & V^d(1.1) &= 0.0953102-0.0452265 = 0.0500837. \nonumber
+\end{align}
+
+\answer{(a)} $V^d(y)=u(y)+\frac{\beta}{1-\beta}E[u(\tilde y)]$; $V^d(0.9)=-0.150587$, $V^d(1.1)=0.050084$.
+
+\step{2}{(b) Proof of Claim 3} Suppose $D(B)\neq\emptyset$; pick $y\in D(B)$, and suppose, to reach a contradiction, that some $\hat B\ge Z$ has $B-q(\hat B)\hat B>0$. Three facts:
+\begin{align}
+  V^d(y) &> V^c(B,y) && (y\in D(B)) \label{t5e16-f1}\\
+  V^c(B,y) &\ge u\big(y+B-q(\hat B)\hat B\big)+\beta E\big[V^o(\hat B,\tilde y')\big] && (\hat B \text{ feasible; } V^c \text{ is a max}) \label{t5e16-f2}\\
+  V^d(y) &= u(y)+\beta E\big[V^d(\tilde y')\big] && (\theta=0,\ h(y)=y) \label{t5e16-f3}
+\end{align}
+Substituting \eqref{t5e16-f3} and \eqref{t5e16-f2} into \eqref{t5e16-f1},
+\begin{align}
+  u(y)+\beta E\big[V^d(\tilde y')\big] &> u\big(y+B-q(\hat B)\hat B\big)+\beta E\big[V^o(\hat B,\tilde y')\big] \nonumber\\
+  u(y)-u\big(y+B-q(\hat B)\hat B\big) &> \beta E\big[V^o(\hat B,\tilde y')-V^d(\tilde y')\big] \;\ge\; 0, \label{t5e16-key}
+\end{align}
+the last step because $V^o(\hat B,y')=\max\{V^d(y'),V^c(\hat B,y')\}\ge V^d(y')$ in every state. So $u(y)>u(y+B-q(\hat B)\hat B)$, and since $u$ is increasing,
+$y>y+B-q(\hat B)\hat B$, i.e.\ $B-q(\hat B)\hat B<0$ --- contradicting the inflow. With i.i.d.\ output the menu $\{q(\hat B),\hat B\}$ is the same in every state, so
+no contract with an inflow is available at $B$ at all.
+
+\answer{(b)} If $D(B)\neq\emptyset$, then $B-q(\hat B)\hat B\le0$ for every available $\hat B$: at debt levels where default is possible, the country can only make net repayments.
+
+\step{3}{(c) The commentator's example} Taking the offer at $B=-0.2$, $y=0.9$:
+\begin{align}
+  c &= y+B-q(\hat B)\hat B = 0.9-0.2-\tfrac{1}{1.05}(-0.25) = 0.7+0.238095 = 0.938095, \nonumber\\
+  B-q(\hat B)\hat B &= -0.2+0.238095 = 0.038095 > 0. \nonumber
+\end{align}
+By \eqref{t5e16-f2}, $V^o\ge V^d$ and \eqref{t5e16-f3},
+\begin{align}
+  V^c(-0.2,0.9) &\ge \ln0.938095+\beta E\big[V^o(-0.25,\tilde y')\big] \nonumber\\
+                &\ge \ln0.938095+\beta E\big[V^d(\tilde y')\big] \nonumber\\
+                &= V^d(0.9)+\ln\frac{0.938095}{0.9} = V^d(0.9)+0.041457 > V^d(0.9). \nonumber
+\end{align}
+So $0.9\notin D(-0.2)$; the same steps at $y=1.1$ give $1.1\notin D(-0.2)$. If such an offer exists, $D(-0.2)=\emptyset$: the claim is inconsistent.
+
+\answer{(c)} $c=0.938095$, inflow $0.038095>0$; repaying and rolling over beats default by at least $0.041457$ utils, so default at $y=0.9$ is not optimal.
+
+\step{4}{(d) A debt-free country never defaults} At $B=0$ the choice $B'=0$ is feasible and gives $c=y$. Then
+\begin{align}
+  V^c(0,y) &\ge u(y)+\beta E\big[V^o(0,\tilde y')\big] && (B'=0 \text{ feasible}) \nonumber\\
+           &\ge u(y)+\beta E\big[V^d(\tilde y')\big] && (V^o\ge V^d) \nonumber\\
+           &= V^d(y), && \text{by \eqref{t5e16-f3}} \nonumber
+\end{align}
+so $V^d(y)>V^c(0,y)$ never holds: $D(0)=\emptyset$. Claim 3 therefore does not apply at $B=0$, and a debt-free country can borrow ($-q(B')B'>0$ for any $B'<0$ with $q(B')>0$).
+Claim 3 says something narrower: once debt is high enough that default is possible in some state, the market offers only net repayment --- default happens when the
+country ``cannot roll over its debt'' (slides 25, 27). How much debt is sustained comes only from the value of keeping access to smoothing: with the numbers of (a),
+a grid solution (check script; Exercise 17(e)) finds a risk-free limit of only $0.01$, one percent of mean output.
+
+\answer{(d)} $V^c(0,y)\ge V^d(y)$, so $D(0)=\emptyset$. No: Claim 3 restricts net inflows only at debt levels where default is possible; positive (if small) borrowing is sustained.
+
+\step{5}{(e) Which assumptions matter} The proof used: $\theta=0$ in \eqref{t5e16-f3} (the continuation of default is $V^d$, which is below $V^o$); $h(y)=y$ in \eqref{t5e16-f3}; and
+i.i.d.\ output only to make the menu of contracts the same in every state.
+(i) With $h(y)\le y$ and $\theta=0$, \eqref{t5e16-f3} becomes $V^d(y)=u(h(y))+\beta E[V^d(\tilde y')]$ and \eqref{t5e16-key} becomes
+\begin{align}
+  u\big(h(y)\big)-u\big(y+B-q(\hat B)\hat B\big) &> \beta E\big[V^o(\hat B,\tilde y')-V^d(\tilde y')\big] \ge 0 \nonumber\\
+  \Rightarrow\quad h(y) &> y+B-q(\hat B)\hat B \nonumber\\
+  \Rightarrow\quad B-q(\hat B)\hat B &< -\big[y-h(y)\big] \le 0, \nonumber
+\end{align}
+which is even stronger: in a default state, the net repayment demanded exceeds the output cost $y-h(y)$.
+(ii) With Markov output, replace $E$ by $E[\cdot\mid y]$ and $q(\hat B)$ by $q(\hat B,y)$; every step holds state by state, so for each $y\in D(B)$ no contract offered
+\emph{at that $y$} has an inflow (the menu may differ across states).
+
+\answer{(e)} Only $\theta=0$ is essential. The result holds for any $h(y)\le y$ (with the stronger bound $B-q\hat B<-(y-h(y))$) and, state by state, with Markov output.
+
+\step{6}{(f) Re-entry breaks the proof} With $\theta>0$, $V^d(y)=u(h(y))+\beta E[\theta V^o(0,\tilde y')+(1-\theta)V^d(\tilde y')]$, and the right side of \eqref{t5e16-key} becomes
+\begin{align}
+  &\beta E\big[V^o(\hat B,\tilde y')-\theta V^o(0,\tilde y')-(1-\theta)V^d(\tilde y')\big] \nonumber\\
+  &\quad= \beta\theta E\big[V^o(\hat B,\tilde y')-V^o(0,\tilde y')\big] + \beta(1-\theta)E\big[V^o(\hat B,\tilde y')-V^d(\tilde y')\big]. \nonumber
+\end{align}
+The second term is still $\ge0$, but the first is $\le0$ for $\hat B<0$: $V^c$ rises with $B$ (Claim 1, slide 23) and $V^d$ does not depend on $B$, so $V^o=\max\{V^d,V^c\}$
+is nondecreasing in $B$ and $V^o(\hat B,\cdot)\le V^o(0,\cdot)$. The right side can be negative, so a small inflow no longer contradicts default.
+
+\answer{(f)} The step ``right side $\ge0$'' fails: with re-entry, defaulting can lead back to the market with $B=0$, worth more than returning with debt $\hat B$.
+
+\intuition Rolling over debt is a way of postponing the default decision; with permanent exclusion, postponing is free (the option is kept) and an inflow makes it
+strictly better today. So a country defaults only when markets demand net repayment. Re-entry turns default into a fresh start: it wipes out the debt, which
+rolling over does not, and that can be worth more than a small inflow today.
+
+\pitfalls
+\begin{itemize}
+  \item Reading Claim 3 as ``no borrowing'': it concerns debt levels with $D(B)\neq\emptyset$; at $B=0$ the default set is empty and the country can borrow.
+  \item Writing \eqref{t5e16-f2} as an equality: $\hat B$ need not be optimal; the proof only needs the lower bound.
+  \item Thinking output costs break the result: they strengthen it; only re-entry ($\theta>0$) does.
+\end{itemize}
+
+\refbib Prof.\ Ricca, Topic~5 slides 17--22 (setup, value functions, default set, equilibrium), 23 (Claim 1), 25 (Claim 3 and the roll-over remark). Original exercise.
+
+% =============================================================================
+\exsec{17. Infinite horizon with log utility: certifying risk-free debt --- Original exercise}
+
+\noindent\emph{Original exercise}, built on Prof.\ Ricca's Topic~5 slides 17--24 and 29, with Tirole \S3.8, pp.~143--144, for part (e)(iii).
+
+\asked (a) Compute the autarky values with a 2\% output cost. (b) Show that, if a debt is priced as risk-free, the value of repaying is at least the value of
+servicing the debt forever, and that this makes a risk-free price self-confirming. (c) Show the test binds in the low state and fails for every debt without
+output costs. (d) Solve the test's threshold by Newton's method and convert it into a debt level. (e) Compare with a grid solution of the full model, derive
+the threshold's sensitivity to the cost, and explain how the cost and re-entry drive borrowing capacity.
+
+\approach A full equilibrium (slides 19--22) needs a computer, but a lower bound on $V^c$ is available by hand: $V^c$ is a maximum, so any feasible plan
+--- here ``repay and keep the same debt forever'' --- bounds it from below. If that plan beats autarky in every state, default never happens at that debt,
+the debt is risk-free (slide 29: $q=1/(1+r)$ above $\bar B$), and the risk-free price used to compute the plan's value is confirmed. The threshold is a
+one-dimensional equation in $s$, solved by Newton's method; implicit differentiation gives its comparative statics.
+
+\notation
+\begin{itemize}
+  \item $y\in\{y_L,y_H\}=\{0.9,1.1\}$ i.i.d., probability $\tfrac12$ each; $\beta=0.9$, $K\equiv\beta/(1-\beta)=9$; $r=0.05$; $h(y)=(1-\lambda)y$, $\lambda=0.02$; $\theta=0$.
+  \item $b>0$: debt (assets $B=-b$); $s\equiv rb/(1+r)$: per-period net debt service when $b$ is rolled over at the risk-free price.
+  \item $W(b,y)$: value of servicing $b$ forever; $\Delta(s,y)=W-V^d$; $G(s)\equiv\Delta(s,y_L)$; $\bar s$, $\bar b=\bar s(1+r)/r$: certified threshold.
+  \item $\bar B=\inf\{B:D(B)=\emptyset\}$: true risk-free limit (slide 24).
+\end{itemize}
+
+\step{1}{(a) Autarky values} Exactly as in \eqref{t5e16-vd}, with $h(y)$ in place of $y$: $V^d(y)=\ln[(1-\lambda)y]+K\,E\{\ln[(1-\lambda)\tilde y]\}$. With $(0.98)(0.9)=0.882$ and
+$(0.98)(1.1)=1.078$: $\ln0.882=-0.1255632$, $\ln1.078=0.0751075$, $E=\tfrac12(-0.1255632+0.0751075)=-0.0252279$, $9E=-0.2270509$ (from unrounded logarithms), so
+\begin{align}
+  V^d(0.9) &= -0.1255632-0.2270509 = -0.3526141, \nonumber\\
+  V^d(1.1) &= 0.0751075-0.2270509 = -0.1519434. \nonumber
+\end{align}
+
+\answer{(a)} $V^d(y_L)=-0.352614$, $V^d(y_H)=-0.151943$.
+
+\step{2}{(b) Servicing the debt forever} Enter with $B=-b$, repay, and buy $B'=-b$ at $q(-b)=1/(1+r)$:
+\begin{align}
+  c &= y+B-q(B')B' = y-b+\frac{b}{1+r} = y-\frac{(1+r)b-b}{1+r} = y-\frac{rb}{1+r} = y-s. \nonumber
+\end{align}
+Since this choice is feasible and $V^o\ge V^c$,
+\begin{align}
+  V^c(-b,y) &\ge \ln(y-s)+\beta E\big[V^o(-b,\tilde y')\big] \;\ge\; \ln(y-s)+\beta E\big[V^c(-b,\tilde y')\big]. \label{t5e17-iter}
+\end{align}
+Apply \eqref{t5e17-iter} to $V^c(-b,\tilde y')$ inside the expectation, and again $T$ times (i.i.d.: each future period has the same distribution):
+\begin{align}
+  V^c(-b,y) &\ge \ln(y-s)+\sum_{t=1}^{T}\beta^t E[\ln(\tilde y-s)] + \beta^{T+1}E\big[V^c(-b,\tilde y_{T+1})\big]. \nonumber
+\end{align}
+Values are bounded (consumption lies in a bounded set), so the last term vanishes as $T\to\infty$, and $\sum_{t\ge1}\beta^t=\beta/(1-\beta)$:
+\begin{align}
+  V^c(-b,y) &\ge \ln(y-s)+\frac{\beta}{1-\beta}E[\ln(\tilde y-s)] = W(b,y). \label{t5e17-W}
+\end{align}
+If $W(b,y)\ge V^d(y)$ for $y=y_L,y_H$, then $V^c(-b,y)\ge V^d(y)$, so $V^d>V^c$ never holds: $D(-b)=\emptyset$, $\delta(-b)=0$, and slide 18 gives $q(-b)=1/(1+r)$ --- the price assumed.
+
+\answer{(b)} $c=y-rb/(1+r)$; $V^c(-b,y)\ge W(b,y)$; $W\ge V^d$ in both states $\Rightarrow D(-b)=\emptyset\Rightarrow q(-b)=1/(1+r)$: the conjecture confirms itself.
+
+\step{3}{(c) Only $y_L$ matters; nothing is certified without output costs} Subtract $V^d$ term by term, writing $\ln(y-s)-\ln[(1-\lambda)y]=\ln(1-s/y)-\ln(1-\lambda)$:
+\begin{align}
+  \Delta(s,y) &= \ln\!\Big(1-\frac sy\Big)-\ln(1-\lambda) + K\,E\Big[\ln\!\Big(1-\frac s{\tilde y}\Big)-\ln(1-\lambda)\Big]. \label{t5e17-Delta}
+\end{align}
+Only the first term depends on current $y$, and
+\begin{align}
+  \frac{\partial}{\partial y}\ln\!\Big(1-\frac sy\Big) &= \frac{s/y^2}{1-s/y} = \frac{s}{y(y-s)} > 0 \quad (0<s<y), \nonumber
+\end{align}
+so $\Delta(s,y_H)>\Delta(s,y_L)$: if the test passes at $y_L$ it passes at $y_H$. With $\lambda=0$ the $\ln(1-\lambda)$ terms vanish and, for $s>0$, $\ln(1-s/y)<0$ in every
+state, so $\Delta(s,y)<0$: servicing any debt forever is worse than autarky. Link to Exercise 16: with $h(y)=y$, a constant net outflow $s$ buys nothing that autarky
+lacks; whatever debt is sustained must rest on the value of smoothing (varying $B'$ with $y$), which this bound ignores.
+
+\answer{(c)} $\partial\Delta/\partial y=s/[y(y-s)]>0$, so test only at $y_L$. With $\lambda=0$, $\Delta(s,y)<0$ for all $s>0$: the bound certifies no debt.
+
+\step{4}{(d) The threshold by Newton's method} At $y_L$, \eqref{t5e17-Delta} with $K=9$ and probabilities $\tfrac12$ collects to $(1+\tfrac K2)\ln(1-s/0.9)+\tfrac K2\ln(1-s/1.1)-(1+K)\ln(0.98)$:
+\begin{align}
+  G(s) &= 5.5\ln\!\Big(1-\frac{s}{0.9}\Big)+4.5\ln\!\Big(1-\frac{s}{1.1}\Big)-10\ln0.98, \label{t5e17-G}\\
+  G'(s) &= -\frac{5.5}{0.9-s}-\frac{4.5}{1.1-s} < 0. \nonumber
+\end{align}
+$G$ is decreasing, so $\{s:G(s)\ge0\}=[0,\bar s]$ with $G(\bar s)=0$. From $s_0=0$: $G(0)=-10\ln0.98=-10(-0.0202027)=0.202027$ and
+$G'(0)=-5.5/0.9-4.5/1.1=-6.111111-4.090909=-10.202020$, so
+\begin{align}
+  s_1 &= 0-\frac{0.202027}{-10.202020} = 0.019803, \nonumber\\
+  s_2 &= s_1-\frac{G(s_1)}{G'(s_1)} = 0.019803-\frac{-0.002089}{-10.414504} = 0.019803-0.000201 = 0.019602, \nonumber\\
+  s_3 &= s_2-\frac{G(s_2)}{G'(s_2)} = 0.019602-\frac{-0.0000002}{-10.412307} = 0.019602. \nonumber
+\end{align}
+Six decimals are stable: $\bar s=0.019602$. Signs: $G(0.019)=5.5(-0.0213371)+4.5(-0.0174236)+0.202027=0.006266>0$ and $G(0.020)=-0.004145<0$, bracketing $\bar s$. Then
+\begin{align}
+  \bar b &= \bar s\,\frac{1+r}{r} = 0.019602\times\frac{1.05}{0.05} = 0.019602\times21 = 0.411642, \nonumber
+\end{align}
+about 41\% of mean output ($E[y]=1$).
+
+\answer{(d)} $\bar s=0.019602$ (Newton: $0.019803\to0.019602\to0.019602$); $G(0.019)>0>G(0.020)$; $\bar b=0.411642\approx41\%$ of mean output.
+
+\step{5}{(e)(i) A lower bound} \eqref{t5e17-W} is an inequality: the country can do better than constant service (borrow more after $y_L$, repay after $y_H$), so
+$V^c(-b,y)$ may exceed $V^d(y)$ even when $W<V^d$. Every $b\le\bar b$ passes the test, so $D(-b)=\emptyset$ for all $b\le\bar b$ and $\bar B\le-\bar b$, i.e.\ $-\bar B\ge\bar b$.
+Grid: $-\bar B=0.42\ge0.411642$, a gap of $0.42-0.411642=0.008358$: the bound is within 2\% of the grid value.
+
+\step{6}{(e)(ii) Sensitivity to the output cost} Write \eqref{t5e17-G} with general $\lambda$: $G(s,\lambda)=5.5\ln(1-s/0.9)+4.5\ln(1-s/1.1)-10\ln(1-\lambda)$. Then
+$G_\lambda=10/(1-\lambda)=10/0.98=10.204082$ and $G_s=G'(\bar s)=-10.412307$, so
+\begin{align}
+  \frac{d\bar s}{d\lambda} &= -\frac{G_\lambda}{G_s} = \frac{10.204082}{10.412307} = 0.980002, &
+  \frac{d\bar b}{d\lambda} &= 21\times0.980002 = 20.580043. \nonumber
+\end{align}
+One more percentage point of output cost raises the certified debt by about $0.21$, a fifth of mean output.
+
+\step{7}{(e)(iii) Output costs and re-entry} Output cost: moving $\lambda$ from $0$ to $0.02$ moves the grid limit $-\bar B$ from $0.01$ to $0.42$. Exclusion alone
+sustains almost nothing here, because losing access to one-period non-contingent bonds costs little when shocks are $\pm10\%$; a permanent output loss is a large,
+certain punishment and sustains most of the debt. Re-entry: moving $\theta$ from $0$ to $0.5$ (with $\lambda=0.02$) moves $-\bar B$ from $0.42$ to $0.0375$. With
+$\theta>0$, $V^d$ puts weight $\theta$ on $V^o(0,\cdot)\ge V^d(\cdot)$, so (holding $V^o(0,\cdot)$ fixed) $V^d$ rises with $\theta$; the punishment lasts $1/\theta=2$ periods on
+average instead of forever, default sets grow (Exercise 16(f)), and risk-free capacity collapses. This matches Tirole's summary (\S3.8, pp.~143--144): if a defaulter
+could also save, Bulow--Rogoff show no lending is feasible; outright exclusion, under which the defaulter cannot save (autarky here), is what makes some debt
+possible --- and costs of default beyond exclusion make it larger.
+
+\answer{(e)} (i) $\bar b=0.411642\le-\bar B=0.42$: the bound holds and is nearly tight. (ii) $d\bar s/d\lambda=0.980002$, $d\bar b/d\lambda=20.580043$. (iii) Output costs
+raise capacity ($0.01\to0.42$ as $\lambda$ goes $0\to0.02$); re-entry lowers it ($0.42\to0.0375$ as $\theta$ goes $0\to0.5$), because default becomes cheaper.
+
+\intuition A sovereign's debt is worth only what it would lose by walking away. Here that loss has two parts: the output cost, paid every period of autarky, and the
+lost ability to smooth. ``Service the debt forever'' prices the first part exactly and ignores the second, which is why it is a lower bound --- and a close one, since
+smoothing is worth little with small i.i.d.\ shocks. Anything that shortens or softens the punishment (re-entry, saving abroad) shrinks the debt the country can credibly owe.
+
+\pitfalls
+\begin{itemize}
+  \item Using $s=rb$: rolling over raises only $b/(1+r)$ against $b$ repaid, so the net service is $b-b/(1+r)=rb/(1+r)$.
+  \item Testing only $y_H$, or averaging: the default incentive is strongest at $y_L$ (concavity), so that is where the test binds.
+  \item Reading $\bar b$ as the exact risk-free limit: it is a sufficient condition; the full model's limit is weakly larger.
+\end{itemize}
+
+\refbib Prof.\ Ricca, Topic~5 slides 17--22 (model), 23--24 (Claims 1--2, $\underline B$, $\bar B$), 29 (risk-free region). Tirole \S3.8 ``Nonverifiable Income'', pp.~143--144 (PDF 156--157). Original exercise; grid solution in the check script (\texttt{e17solve}).
 
 \end{document}

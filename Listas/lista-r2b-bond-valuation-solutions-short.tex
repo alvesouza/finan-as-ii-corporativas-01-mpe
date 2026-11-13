@@ -1,0 +1,98 @@
+% Short answer key for Listas/lista-r2b-bond-valuation.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r2b-bond-valuation-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R2b (Bond valuation) --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\E}{\mathbb{E}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R2b --- Bond valuation, the term structure and the cost of debt}\\[4pt]{\large Answer key (full derivations in \url{lista-r2b-bond-valuation-solutions.pdf})}\end{center}
+
+Notation: $A(y,n)=[1-(1+y)^{-n}]/y$; price $P=C\,A(y,n)+F/(1+y)^n$ with per-period $C$ and $y$.
+
+\section*{1. Zero-coupon yields (Berk 6.4)}
+$YTM_n=(100/P_n)^{1/n}-1$: e.g.\ $n=2$: $(100/91.05)^{1/2}-1=1.098298^{1/2}-1=4.80\%$.
+\textbf{(a)} 4.70\%, 4.80\%, 5.00\%, 5.20\%, 5.50\% for 1--5 years. \textbf{(b)} Rising line through those points.
+\textbf{(c)} Upward sloping.
+
+\section*{2. Holding-period return (Higgins 5.5)}
+\textbf{(a)} $HPR=[60+(940-1{,}050)]/1{,}050=-50/1{,}050=-4.76\%$ (coupon $0.06\times1{,}000=60$).
+\textbf{(b)} Interest rates rose, or the issuer's perceived default risk rose; both raise the yield. Matches p.~410.
+
+\section*{3. Seasoned semiannual bond (Ross 7.6)}
+20 half-years remain; $C=34.5$, $y=3.7\%$: $A(0.037,20)=13.958605$, $(1.037)^{-20}=0.483532$.
+$P=34.5(13.958605)+1{,}000(0.483532)=481.57+483.53=\$965.10$ per \$1,000 face.
+
+\section*{4. Callable vs.\ noncallable (Higgins 5.4)}
+$P^{\text{callable}}=P^{\text{straight}}-V^{\text{call}}$: lower price for the same promised flows, so the callable bond's
+YTM is \textbf{higher}; investors are paid for the option they sell to the issuer (exercised when rates fall).
+
+\section*{5. Expected return vs.\ yield (Berk CT 8)}
+$1+y=F/P$ uses promised payments; $1+r_D=[F(1-p)+Cp]/P$ uses expected ones, which are lower when $p>0$ and $C<F$, so $r_D<y$.
+Illustration $F=100$, $P=90$, $p=5\%$, $C=40$: $y=11.11\%$, $r_D=97/90-1=7.78\%$.
+
+\section*{6. Credit spreads (Berk 6.24)}
+\textbf{(a)} $100/1.032=96.90\%$ of face. \textbf{(b)} $3.2-3.1=0.1\%$. \textbf{(c)} $4.9-3.1=1.8\%$.
+\textbf{(d)} Spreads widen as the rating falls (0.1, 1.1, 1.8\%): higher default probability and lower recovery.
+
+\section*{7. GMAC bond over time (Berk 6.16--6.18)}
+\textbf{(16)} $70(7.360087)+1{,}000(0.558395)=515.21+558.39=\$1{,}073.60$.
+\textbf{(17)} $1{,}073.60\times1.06=\$1{,}138.02$. \textbf{(18)} 9-year bond: $70(6.801692)+1{,}000(0.591898)=\$1{,}068.02$ ($=1{,}138.02-70$).
+
+\section*{8. Spot-rate pricing (Berk 6.10)}
+$P=20/1.005+20/1.0055^2+1{,}020/1.0065^3=19.90+19.78+1{,}000.37=\$1{,}040.05$ (YTM 1.295\% APR).
+
+\section*{9. Coupon for a new par issue (Ross 7.19)}
+Solve $930=40\,A(y,40)+1{,}000/(1+y)^{40}$: $y=4.3736\%$ per half-year, APR $8.75\%$ (EAR 8.94\%).
+Set the new coupon at \textbf{8.75\%} (not the old 8\%).
+
+\section*{10. HMK ratings (Berk 6.26)}
+\textbf{(a)} At 6.3\%: $65(4.178207)+1{,}000(0.736773)=\$1{,}008.36$.
+\textbf{(b)} $10{,}000{,}000/1{,}008.36=9{,}917.13\to9{,}917$ bonds: \$9,917,000 face.
+\textbf{(c)} A (yield 6.5\% = coupon). \textbf{(d)} At 7.5\%: $65(4.045885)+1{,}000(0.696559)=959.54$, so BB: junk.
+
+\section*{11. Interest-rate sensitivity (Berk 6.21--6.22)}
+\textbf{(21)} A $417.27\to481.02$: $+15.28\%$; B $558.39\to613.91$: $+9.94\%$; C $805.76\to896.20$: $+11.23\%$;
+D $1{,}147.20\to1{,}231.65$: $+7.36\%$. \textbf{(22)} Most sensitive A, least D; order A $>$ C $>$ B $>$ D follows
+duration (15, 11.11, 10, 7.45 years): value received later is discounted more times.
+
+\section*{12. Bonds M and N (Ross 7.31)}
+$r=3.5\%$: $PV_1=1{,}100(12.094117)/1.511069=8{,}804.05$; $PV_2=1{,}400(9.663334)/2.620172=5{,}163.27$;
+$PV_F=20{,}000/3.959260=5{,}051.45$. $P_M=\$19{,}018.78$; $P_N=\$5{,}051.45$.
+
+\section*{13. Bootstrapping (G\&T 10A.3)}
+$d_t=(100-c_t\sum_{k<t}d_k)/(100+c_t)$: $d=0.956938,\,0.906812,\,0.857153,\,0.814397$.
+Spot yields 4.50\%, 5.01\%, 5.27\%, 5.27\% (5.2723\%, then 5.2667\%).
+Annuity prices 0.956938, 1.863750, 2.720903, 3.535300; annuity yields 4.50\%, 4.84\%, 5.05\%, 5.13\%.
+
+\section*{14. Implied call value (Ross 7.32)}
+Weights $w=3.75/5.5=0.681818$ on the 6.5\% bond, $0.318182$ on the 12\% bond give an 8.25\% coupon.
+Ask: $0.681818(106.375)+0.318182(134.96875)=115.4730$; call $=115.4730-103.5=11.9730\%$ of face $\approx$ \textbf{\$119.73} per
+\$1,000 (bid prices: \$119.33).
+
+\section*{15. Defaultable bond on a tree (G\&T 7.3)}
+$\pi_0=14/30=0.466667$, $\pi_U=14.8/190=0.077895$, $\pi_D=43.6/60=0.726667$; $V_U=105/1.04=100.9615$,
+$V_D=89.9667/1.04=86.5064$; $V_0=5/1.04+93.2521/1.04=4.8077+89.6655=\$94.47$.
+Promised yield 8.10\% per half-year vs.\ risk-neutral expected return 4\%; gap to the default-free twin
+$101.89-94.47=7.4129=55(0.145778)/1.0816$.
+
+\end{document}

@@ -1,0 +1,821 @@
+% Worked solutions for Listas/lista-r8b-executive-compensation.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r8b-executive-compensation-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R8b --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\pt}{\foreignlanguage{brazilian}}
+\newcommand{\dpp}{\Delta p}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R8b --- Executive compensation and managerial incentives}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r8b-executive-compensation.md}; each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-r8b-executive-compensation-solutions-short.pdf}. Editions are the local copies: Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman (G\&T), \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial Management}, 13th ed. (2022); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Tirole, \emph{The Theory of Corporate Finance} (2005). In the Tirole exercises everyone is risk neutral, the rate of interest is $0$, the entrepreneur is protected by limited liability and $\dpp\equiv p_H-p_L$. Amounts are in millions of dollars unless stated. Where a book gives no numbers, an illustrative parameter point is chosen and labelled as such; the conclusions do not depend on it.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Is CEO pay too high? --- Ross CQ 1.16, p.~23}
+
+\asked Ray Irani (Occidental Petroleum) earned about \$54.4m in 2007 and \$550m over 2003--2007. Are such amounts excessive, given that sports stars and celebrities earn as much or more?
+
+\approach The manager--shareholder agency problem (Ross Cap.~1, \S1.4, ``\pt{Remunera\c{c}\~ao dos administradores}'') says pay is a tool for aligning managers with shareholders. The right test is not the \emph{level} of pay but (i) whether it was set at arm's length in a competitive market and (ii) how strongly it moves with the value the CEO creates (pay-for-performance sensitivity, G\&T \S18.5), net of luck the CEO does not control (Result~18.9).
+
+\notation
+\begin{itemize}
+  \item $W$: CEO pay in a year; $\Delta V$: change in shareholder value attributable to the CEO.
+  \item $s$: pay-for-performance sensitivity, dollars of CEO wealth per \$1{,}000 of shareholder value.
+\end{itemize}
+
+\step{1}{Put the numbers on a common scale} The five-year total is spread over five years:
+\begin{align}
+  \frac{550}{5} &= 110 \text{ per year}, \label{r8be1-avg}\\
+  \frac{54.4}{110} &= 0.4945, \nonumber
+\end{align}
+so 2007 was about half of the period average. A level of pay means little without the size of the firm: \$54.4m is 1\% of a value increase of
+\begin{align}
+  \frac{54.4}{0.01} &= 5{,}440, \label{r8be1-scale}
+\end{align}
+i.e.\ \$5.44bn, a modest fraction of the value of a large oil company.
+
+\step{2}{The superstar argument} Ross's own examples (p.~14) put CEO pay beside other stars: Ellison (\$193m), Rowling (\$300m), Winfrey (\$275m), Woods (\$115m). Where a scarce talent is applied to a very large base (a global audience, or a firm worth tens of billions), small differences in ability are worth a lot, so competition for that talent pushes pay up. On this view large CEO pay is a market price, not excess.
+
+\step{3}{Where the analogy breaks} Three differences matter for the agency view:
+\begin{itemize}
+  \item \emph{Who sets the pay.} A sponsor or studio pays a star with its own money at arm's length. A CEO's pay is set by a board that the CEO often influences --- the agency problem itself (G\&T \S18.1; Tirole \S7.2.1.2 on boards ``in cahoots'' with management).
+  \item \emph{Whose output is measured.} A golfer's score is his own. Occidental's value moves with the oil price, which no CEO controls; pay tied to the raw stock price rewards luck (G\&T Result~18.9).
+  \item \emph{Sensitivity, not level.} Jensen and Murphy (G\&T p.~645) found that a CEO who buys a \$10m jet loses only about \$30{,}000:
+  \begin{align}
+    s &= \frac{30{,}000}{10{,}000{,}000}\times 1{,}000 = 3 \text{ per \$1{,}000}. \label{r8be1-jm}
+  \end{align}
+  Their complaint was that pay was \emph{too insensitive} to performance, not too high.
+\end{itemize}
+
+\step{4}{The test} Pay is excessive when it is not explained by value created relative to peers: when it rises with the industry tide (oil prices) as much as with relative performance, when it is protected on the downside (repriced options, large severance after failure), or when the board is not independent. It is not excessive merely because the number is large.
+
+\answer{} Not necessarily. \$54.4m (and \$110m a year on average over 2003--2007) can be a fair price for scarce talent in a very large firm, as with sports and entertainment stars. It is excessive if it was not set at arm's length or if it pays for industry-wide luck (the oil price) rather than value created relative to peers; the evidence (Jensen--Murphy, \$3 per \$1{,}000) points to weak sensitivity rather than to levels as the main problem.
+
+\intuition Shareholders should care about the slope of pay with respect to value created, not the intercept. A high level with a steep, luck-filtered slope can be cheap; a modest level with no slope buys nothing.
+
+\pitfalls
+\begin{itemize}
+  \item Judging pay by its level alone, without the firm's size or the value created.
+  \item Accepting the superstar analogy uncritically: stars' pay is set at arm's length, CEOs' pay by boards they influence.
+  \item Ignoring that an oil company's value is driven largely by the oil price, outside the CEO's control.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Ross Cap.~1, \S1.4 ``\pt{O problema de ag\^encia e o controle da empresa}'', ``\pt{Remunera\c{c}\~ao dos administradores}'', pp.~13--14; G\&T \S18.5 ``Is Executive Pay Closely Tied to Performance?'', pp.~645--647, Result~18.9, p.~645.}
+
+% =============================================================================
+\exsec{2. A small CEO stake and a value-destroying acquisition --- Berk Ch.~22 Problem 3, p.~677}
+
+\asked The CEO owns 3\% of GreenFrame. An acquisition destroys \$50m of value but raises the present value of his pay by \$5m. Is he better or worse off?
+
+\approach Berk's ``Conflicts of Interest'' passage (\S22.3, p.~659): the CEO bears only his ownership share of value lost but keeps 100\% of the pay increase. Compare the two.
+
+\notation
+\begin{itemize}
+  \item $\alpha=0.03$: CEO's ownership fraction; $\Delta V=-50$: change in firm value; $\Delta W=5$: change in PV of his pay.
+\end{itemize}
+
+\step{1}{His share of the value destroyed} His shares lose
+\begin{align}
+  \alpha\,|\Delta V| &= (0.03)(50) = 1.5. \label{r8be2-loss}
+\end{align}
+
+\step{2}{Net effect on his wealth}
+\begin{align}
+  \Delta W - \alpha|\Delta V| &= (5) - (1.5) = 3.5 > 0. \label{r8be2-net}
+\end{align}
+He is \$3.5m better off.
+
+\step{3}{When would he refuse?} He refuses only if $\alpha|\Delta V|>\Delta W$, i.e.\ if his stake exceeded
+\begin{align}
+  \alpha^* &= \frac{\Delta W}{|\Delta V|} = \frac{(5)}{(50)} = 0.10, \label{r8be2-alpha}
+\end{align}
+or, at 3\%, if the acquisition destroyed more than $5/0.03=166.7$ of value. Berk's own example has the same structure: at 1\% ownership a \$100m loss costs her $0.01\times100=1$, less than a pay rise of more than \$1m.
+
+\answer{} Better off by $5-0.03\times50=\$3.5$m. With a 3\% stake he would accept any deal destroying up to \$166.7m of value for a \$5m pay rise.
+
+\intuition Size-linked pay is a private benefit of growth. With a small stake the CEO internalizes almost none of the cost, so pay that rises with firm size, not with value, rewards empire building.
+
+\pitfalls
+\begin{itemize}
+  \item Comparing \$5m with the whole \$50m: he bears only 3\% of it.
+  \item Forgetting that the pay increase is itself a cost to shareholders: their total loss is larger than \$50m unless it is already included.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{Berk \S22.3 ``Reasons to Acquire'', ``Managerial Motives to Merge --- Conflicts of Interest'', p.~659.}
+
+% =============================================================================
+\exsec{3. Why managers want growth --- Grinblatt \& Titman 18.1, p.~653}
+
+\asked List and explain the reasons why managers may push their firms to grow, even beyond the value-maximizing size.
+
+\approach G\&T \S18.1 and \S18.3 (Result~18.4): managers bias investment toward size, diversification and their own expertise because their pay, prestige, job security and private benefits rise with size while they bear only a small fraction of the cost (Jensen--Meckling; compare Exercise~2).
+
+\notation
+\begin{itemize}
+  \item $\alpha$: manager's ownership share; $\mathrm{NPV}<0$: value lost on an expansion; $\Delta W$: increase in pay; $b$: private benefits (prestige, perquisites, security).
+\end{itemize}
+
+\step{1}{The decision rule of a self-interested manager} He expands iff
+\begin{align}
+  \Delta W + b &> \alpha\,|\mathrm{NPV}|. \label{r8be3-rule}
+\end{align}
+With $\alpha$ small the right side is small, so even clearly negative-NPV growth passes. Jensen--Meckling's example (G\&T p.~630): at 5\% ownership a \$1m jet costs the manager $0.05\times1{,}000{,}000=50{,}000$.
+
+\step{2}{Why the left side grows with size}
+\begin{itemize}
+  \item \emph{Pay}: compensation consultants use the size of the organization as a key input (p.~638); larger firms justify higher salaries.
+  \item \emph{Prestige and power}: running a larger company carries status and more perquisites.
+  \item \emph{Job security}: a larger, more diversified firm is less likely to get into financial trouble. Only 43\% of CEOs keep their jobs after bankruptcy (Gilson, p.~637). Managers cannot diversify their human capital, so they value diversifiable risk reduction that shareholders do not.
+  \item \emph{Careers and loyalty}: growth creates promotion opportunities for the managers and for employees they feel loyal to (stakeholder view, p.~628).
+  \item \emph{Entrenchment}: investing in assets that fit the manager's expertise makes him harder to replace (Shleifer--Vishny, p.~637).
+\end{itemize}
+
+\step{3}{Free cash flow makes it possible} Growth financed from retained earnings avoids the scrutiny of the capital market. RJR Nabisco's baking unit planned to spend \$2.8bn for \$148m of annual savings (p.~638):
+\begin{align}
+  \frac{148}{2{,}800} &= 0.0529, \label{r8be3-rjr}
+\end{align}
+a pretax return of about 5\%, scaled back after the LBO cut the cash available.
+
+\step{4}{Remedies} Tie pay to value rather than size (stock-based pay, or earnings net of a capital charge: G\&T p.~649 warns that pay on total earnings ``will provide an incentive to increase the scale of the corporation's operations''); raise managerial ownership; use debt to drain free cash flow (Result~18.7); a monitoring board or blockholder.
+
+\answer{} Managers want growth because pay, prestige, perquisites, career opportunities and job security all increase with size and diversification, while their small ownership stake makes them bear little of the cost of negative-NPV expansion; free cash flow lets them finance it without outside scrutiny.
+
+\intuition Growth is a private good for managers and a public bad for diffuse shareholders whenever it has negative NPV; pay linked to size subsidizes it.
+
+\pitfalls
+\begin{itemize}
+  \item Treating all growth as bad: the problem is growth with negative NPV.
+  \item Forgetting the risk motive: managers value diversification that shareholders can get for free.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T Ch.~18, introduction and \S18.1, pp.~628--630; \S18.3 ``The Investment Choices Managers Prefer'', pp.~636--638, Result~18.4, p.~638; p.~649.}
+
+% =============================================================================
+\exsec{4. A bonus after a boom year --- Higgins 1.2, p.~32}
+
+\asked Braintree has \$7bn of assets, \$5bn of equity and earned \$100m in a boom year. Management asks for a large cash bonus. How should a director respond?
+
+\approach Higgins's ``Imputed Costs'' (pp.~27--29): accounting profit ignores the cost of equity, so a positive profit is not evidence of good performance. Add the agency lesson that pay should not reward luck (G\&T Result~18.9).
+
+\notation
+\begin{itemize}
+  \item $NI=100$: net income; $E=5{,}000$: book equity; $TA=7{,}000$: assets; $k_E$: cost of equity (Higgins's illustrative 10\%).
+\end{itemize}
+
+\step{1}{Returns}
+\begin{align}
+  \mathrm{ROE} &= \frac{NI}{E} = \frac{(100)}{(5{,}000)} = 0.02, \label{r8be4-roe}\\
+  \mathrm{ROA} &= \frac{NI}{TA} = \frac{(100)}{(7{,}000)} = 0.0143. \label{r8be4-roa}
+\end{align}
+
+\step{2}{Economic profit} Charge equity at Higgins's illustrative $k_E=10\%$:
+\begin{align}
+  k_E E &= (0.10)(5{,}000) = 500, \label{r8be4-charge}\\
+  NI - k_E E &= (100) - (500) = -400. \label{r8be4-ep}
+\end{align}
+Shareholders earned \$400m less than their capital could have earned elsewhere; break-even would need a profit of \$500m, five times what was earned.
+
+\step{3}{Luck versus performance} The profit came ``as the economy boomed''. A common shock that lifts all firms is extraneous risk; rewarding it pays for luck. Performance should be measured relative to peers in the same boom (relative performance, Result~18.10). In biotechnology, annual accounting profit is also a poor measure of value created (R\&D is expensed, payoffs are lumpy), another reason not to pay on it.
+
+\step{4}{The board's response} Decline the bonus as proposed. Offer instead a plan that (i) pays on economic profit (net of the cost of equity) or on stock-price performance, (ii) relative to industry peers, (iii) deferred or in restricted stock, so that pay follows value created over several years.
+
+\answer{} Reject it. ROE is only 2\% (ROA 1.4\%); with a 10\% cost of equity the economic profit is $100-500=-\$400$m, and the profit reflects a booming economy rather than management's contribution. Any bonus should be tied to economic profit relative to peers.
+
+\intuition Equity is not free. A company ``is not shooting par unless its economic profits are zero or greater'' (Higgins, p.~29), and a boom that lifts everyone is not managerial performance.
+
+\pitfalls
+\begin{itemize}
+  \item Treating any positive accounting profit as success.
+  \item Comparing ROE with zero instead of with the cost of equity.
+  \item Rewarding the economy's performance instead of the managers'.
+\end{itemize}
+\bookans No answer in the book (even-numbered problem).
+\refbib{Higgins Ch.~1, ``Economic Income vs. Accounting Income --- Imputed Costs'', pp.~27--29; G\&T Results~18.9--18.10, pp.~645--649.}
+
+% =============================================================================
+\exsec{5. Stock-based pay and market-to-book --- Grinblatt \& Titman 18.7, p.~653}
+
+\asked Give two explanations for why firms with higher market-to-book ratios use more stock-based compensation.
+
+\approach A correlation has two directions of causality. Either stock-based pay \emph{raises} value (incentives), or high market-to-book firms \emph{choose} stock-based pay because of what they are (growth options, discretion, poor accounting measures) or because their managers know something (signalling). G\&T \S18.5.
+
+\step{1}{Explanation 1: incentives raise value} Pay tied to the stock price aligns managers with shareholders, so they cut waste and pick positive-NPV projects; market value rises relative to book. Evidence: stock prices rose about 20\% around the adoption of performance plans (Tehranian--Waegelein); Mehran (1995) finds market-to-book positively related to performance-based pay (p.~647).
+
+\step{2}{Explanation 2: growth firms optimally choose stock pay} A high market-to-book ratio signals intangible assets and growth options (p.~636). In such firms (i) managers need discretion and are hard to monitor (Result~18.5: discretion is more valuable in uncertain environments); (ii) current accounting earnings say little about the value being created by growth options, so the stock price is the best available performance measure (Result~18.11); (iii) cash-constrained growth firms substitute equity for cash salary. Equity and options are used more in growth firms (Clinch; Smith--Watts; Gaver--Gaver, footnote~17).
+
+\step{3}{A third channel: information} Managers accept stock-based pay more readily when they know the stock is undervalued (Example~18.5). With options struck at \$20, Jack, who believes his stock is worth \$30, values each option at
+\begin{align}
+  \max(0,\,30-20) &= 10, \label{r8be5-jack}
+\end{align}
+while Peggy, who believes \$15, values it at $\max(0,15-20)=0$. Adoption reveals good news and the price rises even with no change in effort. Managers are also more willing to adopt such plans after prices have risen.
+
+\answer{} (1) Causation from pay to value: stock-based pay improves incentives and raises market value relative to book. (2) Reverse causation through firm type: high market-to-book firms are growth firms with intangible assets, high managerial discretion and poor accounting performance measures, for which stock-based pay is the efficient contract. (A third: managers with favourable private information accept stock-based pay, so adoption signals good news.)
+
+\intuition The stock price is the best measure of performance exactly where the book value is the worst measure of the firm, so the two go together even without any incentive effect.
+
+\pitfalls
+\begin{itemize}
+  \item Reading the correlation as proof that stock pay creates value.
+  \item Giving two versions of the same incentive story instead of two distinct mechanisms.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T \S18.2, p.~636; \S18.5 ``How Does Firm Value Relate to the Use of Performance-Based Pay?'', pp.~646--648, Example~18.5; Results~18.5 and 18.11, pp.~639, 650.}
+
+% =============================================================================
+\exsec{6. Paying the Chicago Bulls' coach --- Grinblatt \& Titman 18.9, p.~654}
+
+\asked Compare a bonus on wins and playoff success (output) with pay based on experts' assessment of the coach's decisions (input), giving the advantages and disadvantages of each.
+
+\approach G\&T \S18.5 ``Measuring Inputs versus Measuring Outputs'' and the tenant-farmer trade-off: output pay aligns the agent with the principal's goal but loads him with risk he cannot control; input measures filter out luck but are costly, subjective and hard to contract on. Tirole's incentive constraint makes the cost of a noisy measure precise: the bonus must be at least $B/\Delta$, where $\Delta$ is how much the measure responds to the agent's behaviour.
+
+\notation
+\begin{itemize}
+  \item Coach behaves (good decisions) or shirks (saves effort, favours players he likes): private benefit $B$ if he shirks.
+  \item Signal $s\in\{$wins, expert rating$\}$; $\pi^s_H$, $\pi^s_L$: probability of a good signal if he behaves / shirks; $\Delta_s=\pi^s_H-\pi^s_L$.
+  \item $b_s$: bonus paid on a good signal; the coach is protected by limited liability (no negative pay).
+\end{itemize}
+
+\step{1}{Incentive constraint} He behaves iff $\pi^s_H b_s\ge \pi^s_L b_s + B$, i.e.
+\begin{align}
+  b_s &\ge \frac{B}{\Delta_s}, \label{r8be6-ic}
+\end{align}
+and the expected bonus paid is $\pi^s_H B/\Delta_s$.
+
+\step{2}{Illustration (numbers chosen for illustration)} Let $B=1$. Wins depend heavily on the roster, injuries and luck: $\pi_H=0.6$, $\pi_L=0.4$. A careful expert review is more responsive to the coach's choices: $\pi_H=0.9$, $\pi_L=0.3$.
+\begin{align}
+  \text{wins:}\quad b &= \frac{(1)}{(0.6-0.4)} = 5, & \text{expected pay} &= (0.6)(5) = 3, \label{r8be6-wins}\\
+  \text{experts:}\quad b &= \frac{(1)}{(0.9-0.3)} = 1.667, & \text{expected pay} &= (0.9)(1.667) = 1.5. \label{r8be6-exp}
+\end{align}
+The more informative measure buys the same behaviour for half the cost. With a risk-averse coach the gap is larger still, because the noisy contract also needs a risk premium.
+
+\step{3}{(a) Bonus on wins and playoffs}
+Advantages: it rewards exactly what the owner wants (wins, playoff revenue); it is objective, verifiable and cheap to administer; it lets the coach use his own expertise without second-guessing; it attracts coaches confident in their ability.
+Disadvantages: wins depend on factors the coach does not control (the roster he inherits, injuries, opponents, luck), so he bears extraneous risk (Result~18.9) and must be paid a premium, or is paid for luck; it invites short-termism (playing injured stars, neglecting young players' development, trading the future for this season); a rebuilding team gives a weak link between effort and wins.
+
+\step{4}{(b) Pay on the quality of decisions}
+Advantages: it filters out luck and roster quality, so risk and the required bonus fall (Step~2); it can reward long-term decisions (player development) that wins this season do not show.
+Disadvantages: evaluation is costly and subjective, hence hard to enforce (non-verifiable); experts lack the coach's information about players and opponents, so the scheme rewards conventional, easily defended decisions and discourages good unconventional ones; the coach may spend effort pleasing the evaluators (influence activities); and it ignores the outcome the owner ultimately cares about.
+
+\step{5}{A better design} Combine the two: a bonus on wins \emph{relative to expectations or to comparable teams} (relative performance, Result~18.10) plus a discretionary component for decisions; weight (b) more for a rebuilding team, (a) more for a contender.
+
+\answer{} (a) Output-based: aligned with the owner's goal, objective and cheap, respects the coach's information; but exposes him to luck and roster risk and encourages short-termism. (b) Input-based: filters luck and can reward long-term decisions, needing a smaller bonus for the same incentives; but costly, subjective, non-verifiable and biased toward conventional decisions. A mix with wins measured relative to a benchmark is best.
+
+\intuition Pay should load on the measure that best separates good from bad behaviour, $\Delta_s$ in \eqref{r8be6-ic}; outcomes are the principal's true objective but often a noisy signal of the agent's choices.
+
+\pitfalls
+\begin{itemize}
+  \item Calling output pay ``obviously right'' because it targets what the owner wants: its cost is the risk the coach cannot control.
+  \item Ignoring that input measures are not verifiable and can be gamed by pleasing the evaluators.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T \S18.5 ``The Agency Problem'', ``Measuring Inputs versus Measuring Outputs'', ``Designing Optimal Incentive Contracts'', pp.~643--645, Results~18.9--18.10; Tirole \S3.2.2, (IC$_b$), pp.~116--117; Amaro de Matos \S3.1.2, p.~70.}
+
+% =============================================================================
+\exsec{7. CEO contracts at Chrysler and Chevron --- Grinblatt \& Titman 18.6, p.~653}
+
+\asked As a compensation committee member of both boards, explain how the CEO contracts at an automaker (Chrysler) and an oil company (Chevron) should differ.
+
+\approach Three pieces of G\&T \S18.5: remove extraneous risk (Result~18.9), relative performance has an advantage and a competitive side effect (Result~18.10), and stock- versus cash-flow-based pay (Result~18.11); plus the free-cash-flow overinvestment problem of mature, cash-rich firms (\S18.3, the oil industry example).
+
+\step{1}{Chevron: filter the oil price} Chevron's value is driven to a large extent by the oil price, which is observable, common to all oil producers and outside the CEO's control. Pay on the raw stock price loads the CEO with that risk. Indexing options or bonuses to the oil price or to a peer group of oil companies removes it. Illustration (assumed numbers): if the oil factor explains $R^2=0.7$ of the variance of Chevron's return, the residual variance is $1-0.7=0.3$, so with pay risk proportional to slope times standard deviation the slope can rise by
+\begin{align}
+  \frac{1}{\sqrt{0.3}} &= 1.826 \label{r8be7-slope}
+\end{align}
+for the same risk borne by the CEO.
+
+\step{2}{Chevron: free cash flow} A mature, cash-rich oil company is prone to overinvest (G\&T p.~637: oil firms kept exploring in the early 1980s despite falling prices). The contract should not reward size or reserves added; it should charge for capital employed (economic profit, EVA-type measures) and reward payouts, possibly together with debt that drains free cash.
+
+\step{3}{Chrysler: more CEO-specific value, more distress risk} An automaker's value depends more on the CEO's own strategic choices (product design, cost cutting, labour relations), so a higher pay-for-performance sensitivity on the stock price is worth having. The industry cycle is also common to GM and Ford and could be filtered by relative performance, but Result~18.10's disadvantage bites here: in a concentrated oligopoly of three domestic producers, pay for beating rivals encourages aggressive market-share wars that lower industry profits. Chevron sells into a world market at a price it does not set, so relative performance there has little competitive side effect. Chrysler's history of financial distress also means a CEO with undiversified wealth may be too conservative; some option convexity helps, but near distress options can encourage asset substitution against creditors.
+
+\step{4}{Summary}
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+ & Chrysler (autos) & Chevron (oil) \\
+\midrule
+Main extraneous risk & industry demand cycle & oil price \\
+Relative/indexed pay & limited (competitive side effects) & strongly indicated \\
+Main agency problem & strategy, cost control; distress & free cash flow, overinvestment \\
+Performance measure & stock-based, high sensitivity & indexed stock; capital charge \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\answer{} Chevron's CEO should be paid on performance net of the oil price (indexed options or peer-relative bonuses) with measures that charge for capital, to curb overinvestment of free cash flow. Chrysler's CEO should have a high stock-based sensitivity because value depends more on his decisions, with less reliance on explicit relative performance (it would fuel aggressive competition among the three automakers) and attention to risk-taking incentives near distress.
+
+\intuition Good contracts pay for what the CEO controls and target each firm's own agency problem: luck and free cash flow at Chevron, strategy and distress at Chrysler.
+
+\pitfalls
+\begin{itemize}
+  \item Giving both CEOs the same plain stock options.
+  \item Recommending relative performance everywhere without its competitive side effect.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T \S18.3, pp.~637--638; \S18.5, pp.~643--650, Results~18.9--18.11.}
+
+% =============================================================================
+\exsec{8. High Tech: new equity or a partially owned subsidiary? --- Grinblatt \& Titman 18.3, p.~653}
+
+\asked Jacobs owns 51\% of High Tech (\$50m). A \$25m project can be financed (1) by a High Tech equity issue or (2) through a subsidiary, Super Tech, 55\% owned by High Tech and 45\% by new investors. How do the two choices affect the incentives of Jacobs and of the new business's managers?
+
+\approach Jensen--Meckling (an owner-manager with a smaller stake consumes more perks; Amaro Prop.~3.1.2), control and the market for corporate control (G\&T \S18.1), and the use of a subsidiary's own stock to pay divisional managers (Result~18.12, carve-outs and partial takeovers).
+
+\notation
+\begin{itemize}
+  \item $\alpha_1$: Jacobs's share of High Tech after option (1); $\alpha_2^{ST}$: his look-through share of Super Tech under (2).
+  \item Assumption: shares are sold at fair prices and the project has zero NPV, so High Tech is worth \$75m after option (1).
+\end{itemize}
+
+\step{1}{Option (1): Jacobs's stake} His shares are worth $0.51\times50=25.5$. After the issue,
+\begin{align}
+  \alpha_1 &= \frac{25.5}{50+25} = \frac{(25.5)}{(75)} = 0.34. \label{r8be8-a1}
+\end{align}
+He loses his majority: he can now be outvoted, removed or taken over. His cash-flow stake in everything High Tech does falls from 51\% to 34\%, so each \$1 of perks or slack costs him 34 cents instead of 51 (Jensen--Meckling: perks rise, value falls).
+
+\step{2}{Option (1): the new business's managers} If paid in High Tech stock, their project is only $25/75=1/3$ of the firm, and the stock price mixes their performance with the existing business. The link between their effort and their pay is weak (Result~18.11).
+
+\step{3}{Option (2): Jacobs's stakes} He keeps 51\% of High Tech and therefore control and his incentives in the existing business. His look-through share of the new business is
+\begin{align}
+  \alpha_2^{ST} &= (0.51)(0.55) = 0.2805, \label{r8be8-a2}
+\end{align}
+lower than the 34\% of option (1).
+
+\step{4}{Option (2): the new business's managers} Super Tech has its own traded stock. Its managers can be paid in Super Tech shares or options whose price reflects their own decisions, and the market price monitors the unit (Fisher-Price after its spin-off from Quaker Oats, p.~651; partial takeovers, Result~18.12).
+
+\step{5}{Option (2): a new conflict} Jacobs controls both firms but owns different shares of each. Shifting \$1 from Super Tech to High Tech (transfer prices, allocation of opportunities, overhead charges) changes his wealth by
+\begin{align}
+  0.51 - 0.2805 &= 0.2295 > 0, \label{r8be8-tunnel}
+\end{align}
+so he gains 23 cents per dollar taken from Super Tech's minority. New investors anticipate this and pay less. (At a fair price, \$25m for 45\% values Super Tech at $25/0.45=55.6$ post-money, so High Tech's contribution must be worth $0.55\times55.6=30.6$.)
+
+\answer{} Option (1) dilutes Jacobs to 34\% (losing control and weakening his incentives) and gives the new unit's managers only High Tech stock, a weak measure of their own performance. Option (2) keeps Jacobs at 51\% of High Tech and lets Super Tech's managers be paid in their own unit's stock (stronger incentives and market monitoring), but cuts his look-through share of the new business to 28\% and gives him an incentive (23 cents per dollar) to shift value from Super Tech to High Tech at the expense of its minority shareholders.
+
+\intuition A subsidiary with its own stock creates a performance measure for the unit; the price is a controlling owner whose cash-flow rights differ across the two firms.
+
+\pitfalls
+\begin{itemize}
+  \item Ignoring the control consequence: 34\% is no longer a majority.
+  \item Forgetting the parent--subsidiary conflict that the second structure creates.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T \S18.1, pp.~629--630; \S18.5 ``Compensation Issues, Mergers, and Divestitures'', pp.~650--651, Results~18.11--18.12; Amaro de Matos \S3.1.1, pp.~64--66.}
+
+% =============================================================================
+\exsec{9. Cybertex's leveraged recapitalization --- Grinblatt \& Titman 18.8, pp.~653--654}
+
+\asked Leverage rises from 50\% to 80\% debt through a buyback in which managers do not sell. How do their incentives change toward (i) negative-NPV projects with private benefits, (ii) risky projects, (iii) long-term projects?
+
+\approach Three tools: ownership and perks (Jensen--Meckling), debt as discipline (Result~18.7) and equity as a call option on the firm (risk shifting, Amaro \S3.1.3), and debt overhang plus distress fear for long horizons (G\&T Ch.~16; managers' fear of bankruptcy, \S18.3).
+
+\notation
+\begin{itemize}
+  \item Firm value normalized to $V=100$, unchanged by the recap; buyback at a fair price.
+  \item $E_0=50$, $E_1=20$: equity before and after; managers' stake value $0.01\times50=0.5$.
+\end{itemize}
+
+\step{1}{Managers' ownership after the recap} The firm borrows $80-50=30$ and buys back 30 of equity; managers keep their shares, so
+\begin{align}
+  \frac{0.5}{E_1} &= \frac{(0.5)}{(20)} = 0.025. \label{r8be9-own}
+\end{align}
+Ownership rises from 1\% to 2.5\%, a 2.5-fold increase in skin in the game.
+
+\step{2}{(i) Negative-NPV projects with private benefits} Each \$1 wasted now costs managers 2.5 cents instead of 1, so by \eqref{r8be3-rule} fewer such projects pass. In addition, interest and principal drain free cash flow and the bankruptcy threat disciplines (Result~18.7). Both effects reduce value-destroying investment.
+
+\step{3}{(ii) Risky projects} Two opposing forces. (a) Equity is now a more levered claim, a call option on firm value with a higher strike: risk raises its value at the creditors' expense, and managers own more of it, so the asset-substitution incentive grows. (b) Managers' human capital and undiversified wealth are tied to the firm, and with 80\% debt the probability of distress, and of losing their jobs (only 43\% of CEOs keep them, Gilson), is much higher. If most of their wealth is human capital, (b) dominates and they become more conservative; if their pay is option-heavy, (a) dominates.
+
+\step{4}{(iii) Long-term projects} Fewer. Fixed debt payments leave less internal cash; with high leverage part of a project's value goes to creditors (debt overhang); and managers who fear distress before a 10-year payoff arrives prefer projects that pay off quickly (Result~18.4). The larger ownership stake partly offsets this, but only to the extent the long-run value accrues to equity.
+
+\answer{} Ownership rises from 1\% to 2.5\%. (i) Fewer negative-NPV pet projects: managers bear 2.5 times more of the cost and debt service removes free cash. (ii) Ambiguous: levered equity rewards risk, but higher distress risk and undiversified human capital make managers more conservative; the latter likely dominates unless pay is option-based. (iii) Fewer long-term projects: debt overhang, cash commitments and fear of distress shorten managers' horizons.
+
+\intuition A recap concentrates ownership and removes slack; it fixes the overinvestment problem and creates short-horizon and risk-shifting problems in exchange.
+
+\pitfalls
+\begin{itemize}
+  \item Stating that the recap only adds risk-taking: managers' own distress costs push the other way.
+  \item Forgetting that the ownership increase comes from shrinking equity, not from managers buying.
+\end{itemize}
+\bookans No answer in the book.
+\refbib{G\&T \S18.3, pp.~637--638 (Result~18.4); \S18.4, pp.~639--641 (Results~18.6--18.7); Amaro de Matos \S3.1.3, p.~71.}
+
+% =============================================================================
+\exsec{10. Stock options in the Jensen--Meckling model --- Amaro de Matos 3.1.5 \#3, p.~77}
+
+\asked Use the \S3.1.1 owner-manager model to explain why stock options can reduce manager--shareholder conflicts, and list what else the analysis should include.
+
+\approach In \S3.1.1 the manager chooses perks $F$ trading off his share $\alpha$ of firm value against private benefits; Proposition~3.1.2 shows that $F$ falls (value rises) when $\alpha$ rises. An option grant raises the manager's marginal share of value, which acts like a higher $\alpha$.
+
+\notation
+\begin{itemize}
+  \item $\overline V$: firm value without perks; $F$: market value of perks; $V=\overline V-F$: effective value.
+  \item $\alpha\in(0,1]$: manager's ownership share; $U(\alpha V, F)$: his utility, increasing and concave, $U_1,U_2$ partial derivatives.
+  \item $n$: options granted as a fraction of shares; $\Delta\in(0,1)$: option delta (change in option value per unit change in share value).
+\end{itemize}
+
+\step{1}{The manager's problem and first-order condition} He solves $\max_F U[\alpha(\overline V-F),F]$. Differentiating with respect to $F$:
+\begin{align}
+  g(F,\alpha) \equiv \frac{\partial}{\partial F}U[\alpha(\overline V-F),F] &= U_1\cdot(-\alpha) + U_2 = 0, \label{r8be10-foc}
+\end{align}
+which is (3.1). The second-order condition is $g_F=\alpha^2U_{11}-2\alpha U_{12}+U_{22}<0$.
+
+\step{2}{How perks respond to $\alpha$} Differentiate \eqref{r8be10-foc} with respect to $\alpha$ at $F^*(\alpha)$:
+\begin{align}
+  g_F\,\frac{dF^*}{d\alpha} + g_\alpha &= 0, \nonumber\\
+  g_\alpha &= -U_1 - \alpha U_{11}(\overline V-F) + U_{21}(\overline V-F), \nonumber\\
+  \frac{dF^*}{d\alpha} &= \frac{U_1 - (\overline V-F)(U_{12}-\alpha U_{11})}{g_F}. \label{r8be10-dF}
+\end{align}
+Without wealth effects ($U_{11}=U_{12}=0$, e.g.\ $U=\alpha V+h(F)$ with $h$ concave) this reduces to $g_F\,dF^*/d\alpha=U_1$, the book's expression, and since $U_1>0$ and $g_F<0$,
+\begin{align}
+  \frac{dF^*}{d\alpha} = \frac{U_1}{g_F} &< 0, \qquad \frac{dV}{d\alpha} = -\frac{dF^*}{d\alpha} > 0. \label{r8be10-sign}
+\end{align}
+(With strong wealth effects the second term in \eqref{r8be10-dF} could in principle offset $U_1$; the book's argument neglects it.)
+
+\step{3}{Options act like a higher $\alpha$} The manager's pecuniary claim becomes $\alpha V + n\cdot(\text{option payoff})$. Near the current price an option's value moves by $\Delta$ per unit of share value, so his marginal share of $V$ is
+\begin{align}
+  \alpha_{\text{eff}} &= \alpha + n\Delta > \alpha, \label{r8be10-aeff}
+\end{align}
+and by \eqref{r8be10-sign} perks fall and value rises. This is the book's statement that giving options ``is equivalent to an increase in $\alpha$''.
+
+\step{4}{Illustration (assumed functional form)} Let $U=\alpha(\overline V-F)+2c\sqrt F$ with $c=0.5$, $\overline V=100$. The first-order condition $-\alpha+c/\sqrt F=0$ gives
+\begin{align}
+  F^*(\alpha) &= \left(\frac{c}{\alpha}\right)^2. \label{r8be10-Fstar}
+\end{align}
+At $\alpha=0.10$: $F^*=(0.5/0.10)^2=25$, $V=100-25=75$. Grant at-the-money options on $n=0.10$ of the shares with $\Delta=0.5$:
+\begin{align}
+  \alpha_{\text{eff}} &= (0.10)+(0.10)(0.5) = 0.15, \nonumber\\
+  F^* &= \left(\frac{0.5}{0.15}\right)^2 = 11.11, \qquad V = 100-11.11 = 88.89, \label{r8be10-num}
+\end{align}
+a gain of $25-11.11=13.89$. Here $dF^*/d\alpha=1/h''(F)<0$ with $h''(F)=-\tfrac{c}{2}F^{-3/2}$.
+
+\step{5}{What else must enter the analysis}
+\begin{itemize}
+  \item \emph{Convexity and risk}: option value rises with volatility. This counters managers' excessive risk aversion (and under-leverage) but can induce excessive risk and wealth transfers from bondholders (asset substitution, \S3.1.3).
+  \item \emph{Cost and dilution}: options are paid by existing shareholders; exercise issues new shares.
+  \item \emph{Delta is not constant}: deep out of the money, $\Delta\to0$ and the incentive vanishes (pressure to reprice).
+  \item \emph{Manager risk aversion}: an undiversified manager values options below their cost; the stock moves for reasons outside his control (G\&T Result~18.9), so indexing helps.
+  \item \emph{Short-termism and manipulation}: pay tied to the price at a date invites managing that price (Tirole \S7.2.1).
+  \item \emph{Effort}: \S3.1.1 fixes $\overline V$; with an effort choice, options also raise $\overline V$.
+\end{itemize}
+
+\answer{} In \S3.1.1 perks fall and value rises with the manager's share $\alpha$ ($dF/d\alpha=U_1/g_F<0$). Stock options raise his marginal share of value to $\alpha+n\Delta$, so they act like an increase in $\alpha$ and reduce perk consumption (e.g.\ $V$ from 75 to 88.9). The analysis should add the risk-taking effect of convex payoffs (including wealth transfers from bondholders), dilution and cost, the instability of delta, the manager's risk aversion and the noise in stock prices, and manipulation of short-term prices.
+
+\intuition Options make the manager a larger residual claimant at the margin without requiring him to buy shares.
+
+\pitfalls
+\begin{itemize}
+  \item Treating an option like a share: its delta is below 1 and changes with the price.
+  \item Ignoring that the extra incentive is paid for by existing shareholders and creditors.
+\end{itemize}
+\bookans Matches the book (p.~256): giving options ``is equivalent to an increase in $\alpha$, leading to an increase in the firm's value''; the book lists the same other factors (risk-taking and underleverage, dilution on exercise, transfer from bondholders). Note the text's $d\xi=V\,d\alpha$ should read $U_1V\,d\alpha$; the sign is unaffected.
+\refbib{Amaro de Matos \S3.1.1, pp.~64--66; \S3.1.2 ``Executive Stock Options'', pp.~70--71; \S3.1.3, p.~71.}
+
+% =============================================================================
+\exsec{11. The Pareto-efficient fee schedule --- Amaro de Matos 3.1.5 \#4, p.~77}
+
+\asked Interpret condition (3.4), $U'[\theta-f]=\lambda G'[f]$, and find how the optimal fee $f^*$ changes across states, i.e.\ when the payoff changes.
+
+\approach (3.4) is the first-order condition of maximizing a weighted sum of the two parties' expected utilities state by state: Pareto-efficient (first-best) risk sharing, valid when the manager's action is observable. Differentiating it across states gives the sharing slope in terms of absolute risk aversions.
+
+\notation (The exercise writes the payoff as $w(a^\circ,\theta)$ with state $\theta$; the text writes $\theta(a,w)$ with state $w$. We follow the exercise.)
+\begin{itemize}
+  \item $w$: firm payoff in state $\theta$, $w_\theta\equiv dw/d\theta$; $f(w)$: manager's fee, $f_\theta\equiv df/d\theta$.
+  \item $U$: shareholders' (principal's) utility of $w-f$; $G$: manager's (agent's) utility of $f$; both increasing and concave.
+  \item $\lambda>0$: weight on the manager's utility; $R^P=-U''/U'$, $R^A=-G''/G'$: absolute risk aversions.
+\end{itemize}
+
+\step{1}{Where (3.4) comes from} Pareto efficiency maximizes $E\{U[w-f]+\lambda G[f]\}$. Since $f$ can be chosen separately in each state, maximize the integrand pointwise:
+\begin{align}
+  \frac{\partial}{\partial f}\big(U[w-f]+\lambda G[f]\big) &= -U'[w-f]+\lambda G'[f] = 0 \;\Longrightarrow\; U'[w-f]=\lambda G'[f], \label{r8be11-34}
+\end{align}
+with second-order condition $U''+\lambda G''<0$, true by concavity.
+
+\step{2}{Interpretation} Writing \eqref{r8be11-34} for two states $w$ and $w'$ and dividing,
+\begin{align}
+  \frac{U'[w-f(w)]}{U'[w'-f(w')]} &= \frac{G'[f(w)]}{G'[f(w')]}: \label{r8be11-mrs}
+\end{align}
+both parties have the same marginal rate of substitution between income in any two states, so no reallocation of risk can make one better off without hurting the other. $\lambda=U'/G'$ is the same in every state; its value picks the point on the Pareto frontier (it is pinned down by the manager's reservation utility $k$). This is first best: it presumes the desired action is enforced directly.
+
+\step{3}{Differentiate across states} Differentiate \eqref{r8be11-34} with respect to $\theta$:
+\begin{align}
+  U''[w-f]\,(w_\theta - f_\theta) &= \lambda G''[f]\,f_\theta. \nonumber
+\end{align}
+Substitute $\lambda=U'/G'$ from \eqref{r8be11-34}:
+\begin{align}
+  U''\,(w_\theta - f_\theta) &= \frac{U'}{G'}\,G''\,f_\theta. \nonumber
+\end{align}
+Divide both sides by $U'$:
+\begin{align}
+  \frac{U''}{U'}(w_\theta - f_\theta) &= \frac{G''}{G'}f_\theta
+  \;\Longleftrightarrow\; -R^P(w_\theta-f_\theta) = -R^A f_\theta. \nonumber
+\end{align}
+Collect the $f_\theta$ terms:
+\begin{align}
+  R^P w_\theta &= (R^P+R^A)\,f_\theta, \nonumber\\
+  f_\theta &= \frac{R^P}{R^P+R^A}\,w_\theta. \label{r8be11-slope}
+\end{align}
+
+\step{4}{Reading the slope} The fee moves in the same direction as the payoff, absorbing a share $R^P/(R^P+R^A)\in[0,1]$ (equivalently $\tau^A/(\tau^A+\tau^P)$ with risk tolerances $\tau=1/R$) of every change. Example: $R^P=1$, $R^A=3$ gives a share of $1/(1+3)=0.25$.
+\begin{itemize}
+  \item Risk-neutral shareholders ($R^P=0$): $f_\theta=0$, a constant fee; shareholders bear all risk.
+  \item Risk-neutral manager ($R^A=0$): $f_\theta=w_\theta$; the manager bears all risk and shareholders get a fixed rent.
+  \item Constant $R^P,R^A$ (CARA): the slope is constant and $f$ is linear (Exercise~12).
+\end{itemize}
+The check script also verifies \eqref{r8be11-slope} numerically for $U=-e^{-x}$ and $G=\ln f$, where $R^A=1/f$ varies.
+
+\answer{} (3.4) is Pareto-efficient risk sharing: equal marginal rates of substitution across states, $\lambda=U'/G'$ constant. Across states the fee changes by $df/d\theta=\dfrac{R^P}{R^P+R^A}\,dw/d\theta$: a constant fee if shareholders are risk neutral, the whole payoff (minus a fixed rent) if the manager is risk neutral.
+
+\intuition Risk is shared in proportion to risk tolerance: the less risk-averse party absorbs more of each shock.
+
+\pitfalls
+\begin{itemize}
+  \item Reading (3.4) as an incentive condition: it is pure risk sharing with observable actions.
+  \item Inverting the ratio: the manager's share uses the \emph{principal's} risk aversion in the numerator.
+\end{itemize}
+\bookans Matches the book (pp.~256--257): $df/d\theta = \dfrac{R^P_a}{R^P_a+R^A_a}\dfrac{dw}{d\theta}$, with the same two limiting cases (Shavell 1979).
+\refbib{Amaro de Matos \S3.1.2 ``Determining Optimal Fee Schedules'', pp.~66--68.}
+
+% =============================================================================
+\exsec{12. CARA utilities and a linear fee schedule --- Amaro de Matos 3.1.5 \#6, p.~77}
+
+\asked Prove that if both parties have constant absolute risk aversion, the optimal (Pareto-efficient) fee schedule is linear in the payoff. (The statement's ``$V$'' is the shareholders' utility $U$ of the text.)
+
+\approach Apply (3.4) with exponential utilities; the exponentials turn the condition into a linear equation in $f$ after taking logs. Consistent with Exercise~11: constant $R^P,R^A$ make the slope constant.
+
+\notation
+\begin{itemize}
+  \item $U(x)=-\frac{1}{\delta}e^{-\delta x}$ (shareholders, $x=w-f$), $G(f)=-\frac{1}{\alpha}e^{-\alpha f}$ (manager); $\delta,\alpha>0$.
+  \item $\lambda>0$: Pareto weight; $w$: payoff.
+\end{itemize}
+
+\step{1}{Check the risk aversions} $U'(x)=e^{-\delta x}$, $U''(x)=-\delta e^{-\delta x}$, so $-U''/U'=\delta$; likewise $G'(f)=e^{-\alpha f}$, $-G''/G'=\alpha$. Both constant.
+
+\step{2}{Write (3.4)}
+\begin{align}
+  U'[w-f] = \lambda G'[f] \;\Longleftrightarrow\; e^{-\delta(w-f)} &= \lambda e^{-\alpha f}. \label{r8be12-34}
+\end{align}
+
+\step{3}{Take logs and solve for $f$}
+\begin{align}
+  -\delta(w-f) &= \ln\lambda - \alpha f, \nonumber\\
+  -\delta w + \delta f + \alpha f &= \ln\lambda, \nonumber\\
+  (\alpha+\delta) f &= \delta w + \ln\lambda, \nonumber\\
+  f(w) &= \frac{\delta}{\alpha+\delta}\,w + \frac{\ln\lambda}{\alpha+\delta}. \label{r8be12-f}
+\end{align}
+This is linear in $w$: the slope $\delta/(\alpha+\delta)=R^P/(R^P+R^A)$ is Exercise~11's share, now constant; $\lambda$ only moves the intercept (it is set by the manager's reservation utility $k$).
+
+\step{4}{Similarity also holds} Substitute \eqref{r8be12-f}: $w-f=\frac{\alpha}{\alpha+\delta}w-\frac{\ln\lambda}{\alpha+\delta}$, so
+\begin{align}
+  U(w-f) &= -\tfrac{1}{\delta}\exp\!\Big(-\tfrac{\alpha\delta}{\alpha+\delta}w + \tfrac{\delta\ln\lambda}{\alpha+\delta}\Big), &
+  G(f) &= -\tfrac{1}{\alpha}\exp\!\Big(-\tfrac{\alpha\delta}{\alpha+\delta}w - \tfrac{\alpha\ln\lambda}{\alpha+\delta}\Big), \nonumber
+\end{align}
+and the ratio is
+\begin{align}
+  \frac{U(w-f)}{G(f)} &= \frac{\alpha}{\delta}\exp\!\Big(\tfrac{(\delta+\alpha)\ln\lambda}{\alpha+\delta}\Big) = \frac{\alpha\lambda}{\delta}, \label{r8be12-sim}
+\end{align}
+a positive constant: (3.5) holds with $c=\alpha\lambda/\delta>0$, $b=0$. Pareto efficiency, similarity and linearity hold together, as Ross's result says (CARA is in the linear-risk-tolerance class).
+
+\step{5}{Numbers (illustration)} $\delta=2$, $\alpha=6$: slope $2/8=0.25$; with $\lambda=1$ the intercept is 0, with $\lambda=e$ it is $1/8=0.125$. The script checks \eqref{r8be12-34} and \eqref{r8be12-sim} at several $w$.
+
+\answer{} With $U=-\frac1\delta e^{-\delta(w-f)}$ and $G=-\frac1\alpha e^{-\alpha f}$, condition (3.4) gives $f=\dfrac{\delta}{\alpha+\delta}w+\dfrac{\ln\lambda}{\alpha+\delta}$, linear in the payoff with slope $R^P/(R^P+R^A)$; it also satisfies similarity with $c=\alpha\lambda/\delta$.
+
+\intuition With constant risk aversion the efficient share of each extra dollar does not depend on how rich either party already is, so the same share applies at every payoff.
+
+\pitfalls
+\begin{itemize}
+  \item Swapping $\delta$ and $\alpha$ in the slope.
+  \item Claiming this proves linear contracts are optimal under hidden action: it concerns the Pareto-efficient (first-best) schedule (3.4).
+\end{itemize}
+\bookans Matches the book (p.~257): $f=\dfrac{\delta}{\alpha+\delta}w+\dfrac{\ln\lambda}{\alpha+\delta}$.
+\refbib{Amaro de Matos \S3.1.2, pp.~67--68, conditions (3.4)--(3.5).}
+
+% =============================================================================
+\exsec{13. Congruence and the power of the incentive scheme --- Tirole 3.10, p.~148}
+
+\asked (i) With probability $x$ the entrepreneur's interests conflict with the investors' (misbehaving gives $B$ and $p_L$); with probability $1-x$ they are aligned (she gets $B$ and success probability $p_H$ anyway). Show that a low-powered scheme ($R_b$ below $B/\dpp$) can be optimal when $x$ is low and that the scheme must be high-powered when $x$ is high. (ii) Show that a menu of two schemes, chosen after she learns the state, cannot do better than a simple scheme.
+
+\approach Tirole's fixed-investment model (\S3.2): the incentive constraint (IC$_b$) $\dpp R_b\ge B$, pledgeable income and the investors' break-even. A high-powered scheme buys good behaviour in the dissonant state at the cost of a rent $p_HB/\dpp$; a low-powered one keeps the whole of $R$ pledgeable but accepts misbehaviour when interests diverge.
+
+\notation
+\begin{itemize}
+  \item $I$, $A$, $R$, $p_H$, $p_L$, $B$, $\dpp$ as in \S3.2; $x\in(0,1)$: probability of dissonance.
+  \item $R_b$: entrepreneur's reward on success (power of the scheme); 0 on failure.
+  \item $\mathcal P$: expected pledgeable income; NPV$^1$, NPV$^2$: NPV under the high- and low-powered scheme.
+\end{itemize}
+
+\step{1}{High-powered scheme, $R_b\ge B/\dpp$} She behaves in both states (in the congruent state she also collects $B$). NPV and pledgeable income (with the smallest incentive-compatible $R_b=B/\dpp$):
+\begin{align}
+  \mathrm{NPV}^1 &= p_HR - I + (1-x)B, \label{r8be13-npv1}\\
+  \mathcal P^1 &= p_H\Big(R-\frac{B}{\dpp}\Big) \ge I-A. \label{r8be13-p1}
+\end{align}
+
+\step{2}{Low-powered scheme, $R_b<B/\dpp$} In the dissonant state she misbehaves ($p_L$, $B$); in the congruent state she behaves and gets $B$. $R_b=0$ maximizes pledgeable income:
+\begin{align}
+  \mathrm{NPV}^2 &= x(p_LR+B) + (1-x)(p_HR+B) - I, \label{r8be13-npv2}\\
+  \mathcal P^2 &= [xp_L+(1-x)p_H]R = p_HR - x\,\dpp R \ge I-A. \label{r8be13-p2}
+\end{align}
+
+\step{3}{Compare NPVs} Subtract \eqref{r8be13-npv2} from \eqref{r8be13-npv1}:
+\begin{align}
+  \mathrm{NPV}^1-\mathrm{NPV}^2 &= p_HR + (1-x)B - xp_LR - xB - (1-x)p_HR - (1-x)B \nonumber\\
+  &= xp_HR - xp_LR - xB = x(\dpp R - B) > 0, \label{r8be13-gap}
+\end{align}
+since (3.1) and (3.2) give $p_HR-I>0>p_LR-I+B$, hence $\dpp R>B$. The entrepreneur, who receives the NPV, prefers the high-powered scheme whenever it can be financed.
+
+\step{4}{Compare pledgeable incomes} From \eqref{r8be13-p1}--\eqref{r8be13-p2},
+\begin{align}
+  \mathcal P^2>\mathcal P^1 &\iff p_HR - x\dpp R > p_HR - \frac{p_HB}{\dpp} \iff x < \hat x \equiv \frac{p_HB}{(\dpp)^2R}. \label{r8be13-xhat}
+\end{align}
+
+\step{5}{Optimal power} If \eqref{r8be13-p1} holds: high-powered. If it fails but \eqref{r8be13-p2} holds (possible only for $x<\hat x$): low-powered, sacrificing $x(\dpp R-B)$ of NPV to obtain funding. If $x\ge\hat x$, $\mathcal P^2\le\mathcal P^1$: whenever the project is financed at all, \eqref{r8be13-p1} holds and the scheme is high-powered.
+
+\step{6}{Illustration (parameter point)} $p_H=0.9$, $p_L=0.5$, $R=10$, $B=0.8$, $I=8$: (3.1) $9-8>0$, (3.2) $5-8+0.8<0$; $B/\dpp=2$, $\mathcal P^1=0.9(10-2)=7.2$, $\hat x=0.72/1.6=0.45$.
+\begin{itemize}
+  \item $x=0.2$, $A=0.4$ ($I-A=7.6$): $\mathcal P^1=7.2<7.6$ but $\mathcal P^2=9-0.8=8.2\ge7.6$: low-powered, NPV$^2=0.2(5.8)+0.8(9.8)-8=1.0$ versus the unattainable NPV$^1=1.64$; the gap is $0.2(4-0.8)=0.64$.
+  \item $x=0.6$, $A=1$ ($I-A=7$): $\mathcal P^2=9-2.4=6.6<7\le7.2$: high-powered.
+\end{itemize}
+
+\step{7}{(ii) Menus do not help} Let the menu offer $(R^S_b,R^F_b)$ for the dissonant state and $(\hat R^S_b,\hat R^F_b)$ for the congruent one, all $\ge0$; neither state is observed by investors, so she picks the scheme she likes. NPV depends only on behaviour, so compare pledgeable incomes for each behaviour pattern.
+\begin{itemize}
+  \item \emph{Dissonant type behaves.} Her scheme must satisfy $\dpp(R^S_b-R^F_b)\ge B$, so her expected pay is $p_HR^S_b+(1-p_H)R^F_b\ge R^F_b+p_HB/\dpp\ge p_HB/\dpp$. The congruent type behaves under any scheme and must not prefer the dissonant one: $p_H\hat R^S_b+(1-p_H)\hat R^F_b\ge p_HR^S_b+(1-p_H)R^F_b\ge p_HB/\dpp$. Expected pay is at least $p_HB/\dpp$ in both states, so pledgeable income is at most $p_H(R-B/\dpp)=\mathcal P^1$: the simple high-powered scheme (take $\hat R=R$, $R^S_b=B/\dpp$, $R^F_b=0$) attains it.
+  \item \emph{Dissonant type misbehaves.} Pay is non-negative, so pledgeable income is at most $[xp_L+(1-x)p_H]R=\mathcal P^2$, attained by the simple scheme $R_b=0$.
+\end{itemize}
+For example, a congruent-state scheme $(1,0)$ beside a dissonant-state $(2,0)$ fails: the congruent type would take $(2,0)$, worth $0.9\times2=1.8>0.9$.
+
+\answer{(i)} High-powered ($R_b=B/\dpp$) maximizes NPV, $\mathrm{NPV}^1-\mathrm{NPV}^2=x(\dpp R-B)>0$, and is used whenever $p_H(R-B/\dpp)\ge I-A$. Low-powered ($R_b=0$) raises pledgeable income to $p_HR-x\dpp R$, above $p_H(R-B/\dpp)$ iff $x<\hat x=p_HB/[(\dpp)^2R]$, so it is optimal when $x$ is low and the high-powered scheme cannot be financed. For $x\ge\hat x$ any financed scheme is high-powered.
+\answer{(ii)} The congruent type can always take the dissonant-state scheme, so a menu cannot lower the rent below $p_HB/\dpp$ (when the dissonant type behaves) or below 0 (when she does not); simple schemes already achieve these bounds.
+
+\intuition Incentive pay is costly only when interests diverge. When they rarely do, it can pay to forgo incentives, accept occasional misbehaviour and pledge the whole return; when they often do, incentives are indispensable.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting the private benefit $B$ in the congruent state when computing NPV.
+  \item Comparing NPVs only: the choice is driven by pledgeable income whenever the high-powered scheme cannot be financed.
+  \item In (ii), ignoring the congruent type's option to take the dissonant-state scheme.
+\end{itemize}
+\bookans Matches the book (p.~575): NPV$^1=p_HR-I+(1-x)B$ with financing condition $p_H(R-B/\dpp)\ge I-A$; NPV$^2<$ NPV$^1$ with condition $[xp_L+(1-x)p_H]R\ge I-A$; low-powered only if $x$ is low; in (ii) the congruent type must not pretend, so one may as well take $\hat R=R$.
+\refbib{Tirole \S3.2.1--3.2.2, pp.~115--117.}
+
+% =============================================================================
+\exsec{14. Incentives versus efficient risk sharing --- Amaro de Matos 3.1.5 \#5, p.~77}
+
+\asked Show that the second-best rule $U'/G'=\lambda-\psi\,\frac{d}{d\theta}(\theta_a/\theta_w)$ is not Pareto-efficient when the manager is risk averse, and say whether it is when he is risk neutral. (The statement's $w_a/w_b$ is the text's $\theta_a/\theta_w$.)
+
+\approach Compare with (3.4): Pareto efficiency requires $U'/G'$ constant across states. When the incentive constraint binds ($\psi>0$) the extra term varies across states, so the ratio does too. Following the Shavell paragraph of the text, the manager is averse to effort; with risk-neutral shareholders Pareto efficiency means a constant fee, which kills incentives. A two-outcome version makes every step explicit.
+
+\notation
+\begin{itemize}
+  \item Shareholders risk neutral ($U'=1$); manager's utility $G(f)-c(a)$ with $G'>0$, $G''<0$, effort cost $c'(a)>0$.
+  \item $\lambda$, $\psi$: multipliers on the participation and incentive constraints.
+  \item Two-outcome version: payoff $\theta_H$ or $\theta_L$; effort raises $\Pr(\theta_H)$ from $p_L$ to $p_H$; fees $f_H$, $f_L$; reservation utility $k$.
+\end{itemize}
+
+\step{1}{Pareto efficiency means full insurance} With $U'=1$, (3.4) reads $1=\lambda G'(f)$ in every state, so $G'(f)$ and hence $f$ are constant: the manager is fully insured.
+
+\step{2}{A constant fee gives no incentive} With effort cost, the manager's incentive constraint (the analogue of (3.6)) is $E\{G'(f)f'(\theta)\theta_a\}=c'(a)>0$. A constant fee has $f'=0$, the left side is 0, and he chooses the least effort. To implement more effort the fee must vary with the payoff ($f'\ne0$), so $G'(f)$ varies across states, $U'/G'=1/G'$ is not constant and (3.4) fails: the multiplier $\psi$ on the incentive constraint is positive and the rule is second best.
+
+\step{3}{Two-outcome example: the second-best contract} Take $G=\sqrt f$, $c=1$, $k=4$, $p_H=0.8$, $p_L=0.4$ (illustrative). Write $u_s=\sqrt{f_s}$. The binding constraints are
+\begin{align}
+  \text{(IC)}\quad (p_H-p_L)(u_H-u_L) &= c \;\Rightarrow\; u_H-u_L = \frac{(1)}{(0.4)} = 2.5, \label{r8be14-ic}\\
+  \text{(IR)}\quad p_Hu_H+(1-p_H)u_L - c &= k \;\Rightarrow\; u_L + p_H(2.5) = 5 \;\Rightarrow\; u_L = 5-(0.8)(2.5) = 3, \label{r8be14-ir}
+\end{align}
+so $u_H=5.5$, $f_L=3^2=9$, $f_H=5.5^2=30.25$, expected pay $0.8(30.25)+0.2(9)=26$. With observable effort the first best pays a constant $f=(k+c)^2=25$; the agency cost is $26-25=1$.
+
+\step{4}{The second-best rule and its multipliers} The shareholders maximize $\sum_s p^s_H(\theta_s-f_s)$ subject to (IR) with multiplier $\lambda$ and (IC) with multiplier $\psi$. The first-order condition in $f_s$ is
+\begin{align}
+  -p^s_H + \lambda p^s_H G'(f_s) + \psi(p^s_H-p^s_L)G'(f_s) &= 0
+  \;\Longrightarrow\; \frac{1}{G'(f_s)} = \lambda + \psi\,\frac{p^s_H-p^s_L}{p^s_H}, \label{r8be14-rule}
+\end{align}
+the discrete analogue of $U'/G'=\lambda-\psi\,d(\theta_a/\theta_w)/d\theta$: the likelihood-ratio term plays the role of $d(\theta_a/\theta_w)/d\theta$. Here $1/G'(f)=2\sqrt f$, so $1/G'(f_H)=2(5.5)=11$, $1/G'(f_L)=2(3)=6$; the likelihood terms are $(0.8-0.4)/0.8=0.5$ and $(0.2-0.6)/0.2=-2$. Solving $\lambda+0.5\psi=11$, $\lambda-2\psi=6$:
+\begin{align}
+  2.5\psi &= 5 \;\Rightarrow\; \psi = 2, \qquad \lambda = 11-0.5(2) = 10. \label{r8be14-mult}
+\end{align}
+$\psi>0$ and $U'/G'$ takes the values 11 and 6: the marginal rates of substitution differ across states, so the sharing rule is not Pareto-efficient. (Check: $\lambda=E_H[1/G']=0.8(11)+0.2(6)=10$.)
+
+\step{5}{Risk-neutral manager} With $G(f)=f$, (3.4) gives $U'(\theta-f)=\lambda$, i.e.\ $\theta-f$ constant: sell the firm to the manager, $f=\theta-K$. He is the residual claimant, so his privately optimal effort is the efficient one; the incentive constraint does not bind ($\psi=0$) and the rule \emph{is} Pareto-efficient (and first best). With $\theta_H=40$, $\theta_L=10$: expected output $0.8(40)+0.2(10)=34$, $K=34-c-k=29$, $f_H=11$, $f_L=-19$; he exerts effort since $0.4(40-10)=12\ge1$; shareholders get 29, the first-best surplus. This requires the manager to absorb losses ($f_L<0$); with limited liability (Tirole \S3.2) a risk-neutral agent still earns a rent and pledgeable income falls short of NPV.
+
+\answer{} With a risk-averse manager, incentives require the fee to vary with the payoff, so $U'/G'$ varies across states ($\psi>0$; e.g.\ 11 vs 6, $\psi=2$, $\lambda=10$), violating (3.4): risk sharing is sacrificed for incentives, at an agency cost (1 in the example). With a risk-neutral manager the optimum sells him the firm ($f=\theta-K$), $\psi=0$ and the rule is Pareto-efficient.
+
+\intuition Insurance and incentives pull in opposite directions when the agent is risk averse; when he is risk neutral, making him residual claimant delivers both.
+
+\pitfalls
+\begin{itemize}
+  \item Forgetting that without effort aversion (as in the text's $G[f]$) there is nothing to motivate.
+  \item Reading $\psi=0$ as ``no incentive problem'' in general: it holds when the agent is risk neutral and unconstrained in wealth.
+\end{itemize}
+\bookans Matches the book (p.~257): with a risk-neutral principal, Pareto efficiency means full insurance, a fixed fee gives zero effort, so the fee must depend on the payoff and the rule is not an optimal risk sharing; with a risk-neutral agent the optimum gives him the payoff minus a fixed income to the principal (Shavell 1979).
+\refbib{Amaro de Matos \S3.1.2, pp.~66--70, (3.4), (3.6) and the Euler--Lagrange condition.}
+
+% =============================================================================
+\exsec{15. Optimality of golden parachutes --- Tirole 7.9, p.~326}
+
+\asked Under informed manipulation, allow general contracts (signal-contingent rewards that may exceed $B/\dpp$, payments on termination in both states, lenders' termination returns $L_l^s\le L$) and check formally the heuristic of \S7.2.1.2: no golden parachute when $q_HR>L$; fire the low type and pay a golden parachute $T=z^r(q_H-\tau)B/\dpp$ when $q_HR<L$.
+
+\approach Write the contract, the moral-hazard and no-manipulation constraints and the investors' break-even, and note that NPV does not depend on transfers. The key simplification: all that matters for the no-manipulation constraint and for investors is the low type's \emph{expected rent}, whatever its mix of continuation pay and termination pay. Then compare the two ``currencies'' (continuation versus cash).
+
+\notation
+\begin{itemize}
+  \item Signals $s\in\{r,q\}$ with prior $(\alpha,1-\alpha)$; continuation probabilities $z^r,z^q$; reward on continuation and success $R_b^s$; payment on termination $T^s\ge0$, so lenders get $L_l^s=L-T^s\le L$.
+  \item $b\equiv B/\dpp$; $X\equiv R-b$; $\tau$: fall in success probability from manipulation; $\theta\equiv(q_H-\tau)/q_H$.
+  \item $\Pi\equiv z^qq_HR_b^q+(1-z^q)T^q$: the $q$-type's expected payoff when she reports truthfully.
+\end{itemize}
+
+\step{1}{Constraints and objective} Moral hazard after continuation: $R_b^s\ge b$. A $q$-type who manipulates obtains signal $r$, continues with probability $z^r$ and succeeds with probability $q_H-\tau$:
+\begin{align}
+  \text{(NM$'$)}\quad z^r(q_H-\tau)R_b^r + (1-z^r)T^r &\le z^qq_HR_b^q + (1-z^q)T^q = \Pi. \label{r8be15-nm}
+\end{align}
+Investors' break-even:
+\begin{align}
+  \alpha[z^rr_H(R-R_b^r)+(1-z^r)(L-T^r)] + (1-\alpha)[z^qq_H(R-R_b^q)+(1-z^q)(L-T^q)] &\ge I-A. \label{r8be15-ir}
+\end{align}
+NPV, which the entrepreneur receives, does not depend on transfers:
+\begin{align}
+  \mathrm{NPV} &= \alpha[L+z^r(r_HR-L)] + (1-\alpha)[L+z^q(q_HR-L)] - I. \label{r8be15-npv}
+\end{align}
+
+\step{2}{The $r$-state terms} $R_b^r$ and $T^r$ appear with a plus sign on the left of \eqref{r8be15-nm} and with a minus sign in \eqref{r8be15-ir}, and not in \eqref{r8be15-npv}. Lowering them to their floors relaxes both constraints at no cost:
+\begin{align}
+  R_b^r &= b, \qquad T^r = 0. \label{r8be15-r}
+\end{align}
+
+\step{3}{Rewrite in terms of the rent $\Pi$} The $q$-state part of \eqref{r8be15-ir} is $z^qq_HR+(1-z^q)L-\Pi$. The constraints on $\Pi$ are (NM$'$), $\Pi\ge z^r(q_H-\tau)b$, and $R_b^q\ge b$, $T^q\ge0$, which give $\Pi\ge z^qq_Hb$. Investors want the smallest rent:
+\begin{align}
+  \Pi^* &= \max\{z^r(q_H-\tau)b,\; z^qq_Hb\}, \label{r8be15-pi}\\
+  \mathcal P(z^r,z^q) &= \alpha[L+z^r(r_HX-L)] + (1-\alpha)[L+z^q(q_HR-L)-\Pi^*]. \label{r8be15-P}
+\end{align}
+If $z^q\ge\theta z^r$, $\Pi^*=z^qq_Hb$ is delivered with $R_b^q=b$, $T^q=0$. If $z^q<\theta z^r$, the gap $z^r(q_H-\tau)b-z^qq_Hb$ must be paid by $T^q>0$ (a golden parachute) or $R_b^q>b$; for investors the two cost the same. The program is: maximize \eqref{r8be15-npv} subject to $\mathcal P\ge I-A$.
+
+\step{4}{Case $q_HR>L$: no golden parachute} In the region $z^q<\theta z^r$, $\Pi^*$ does not depend on $z^q$, so
+\begin{align}
+  \frac{\partial\mathcal P}{\partial z^q} &= (1-\alpha)(q_HR-L) > 0, \qquad \frac{\partial\,\mathrm{NPV}}{\partial z^q} = (1-\alpha)(q_HR-L) > 0: \label{r8be15-c1}
+\end{align}
+raising $z^q$ (and cutting $T^q$) raises both NPV and pledgeable income. Hence the optimum has $z^q\ge\theta z^r$, $T^{q*}=0$, $R_b^q=b$. This is the book's marginal argument: holding investor income fixed, $dT=[q_H(R-R_b)-L]\,dz^q$, and the net relaxation of (NM) is
+\begin{align}
+  q_HR_b + \frac{dT}{dz^q} &= q_HR_b + q_H(R-R_b) - L = q_HR - L > 0. \label{r8be15-curr}
+\end{align}
+In the region $z^q\ge\theta z^r$, $\mathcal P$ is the no-manipulation pledgeable income, so the program is the \S7.2.1.1 program plus (NM): $z^q\ge\theta z^r$. If $\theta\le z^*$ the solution $(1,z^*)$ of (7.12) already satisfies (NM). If $\theta>z^*$, (NM) binds, $z^q=\theta z^r$, and $\mathcal P$ is linear in $z^r$ between $\mathcal P=L$ at $z^r=0$ and $\mathcal P(1,\theta)<\mathcal P(1,z^*)=I-A$ at $z^r=1$; since $L<I-A$ by (7.10), no contract is funded --- the formal version of ``the ability to cook the books ex post may jeopardize funding ex ante''.
+
+\emph{Numbers (parameter point satisfying (7.9)--(7.11)):} $\alpha=0.5$, $r_H=0.9$, $q_H=0.5$, $\dpp=0.3$, $B=1.5$ ($b=5$, $X=5$), $R=10$, $L=4$, $I-A=4.1$. Then $q_HR=5>L$, $q_HX=2.5<4<4.5=r_HX$, $p_HX=3.5$, $4.1>\max\{3.5,4\}$, $4.1<0.5(4.5)+0.5(4)=4.25$. From (7.12): $2.25+0.5[2.5z^*+4(1-z^*)]=4.1\Rightarrow z^*=0.2$. With $\tau=0.45$, $\theta=0.1\le0.2$: funded at $(1,0.2)$, no parachute. With $\tau=0.1$, $\theta=0.8$: $\mathcal P(1,0.8)=2.25+0.5[0.8(2.5)+0.2(4)]=3.65<4.1$ and $L=4<4.1$: not funded; a parachute at $(1,0.2)$ would give $\mathcal P=2.25+0.5[0.2(5)+0.8(4)-0.4(5)]=3.35$, worse. In \eqref{r8be15-curr}: $2.5+(2.5-4)=1=q_HR-L$.
+
+\step{5}{Case $q_HR<L$: fire and pay a golden parachute} Now continuation of the low type destroys value: $\partial\,\mathrm{NPV}/\partial z^q=(1-\alpha)(q_HR-L)<0$, and $\partial\mathcal P/\partial z^q$ equals $(1-\alpha)(q_HR-L)<0$ below $\theta z^r$ and $(1-\alpha)(q_HX-L)<0$ above it. So $z^{q*}=0$, and with $z^q=0$ the whole rent is the termination payment:
+\begin{align}
+  T^{q*} &= \Pi^* = z^r(q_H-\tau)\frac{B}{\dpp} > 0. \label{r8be15-T}
+\end{align}
+Then $\mathcal P(z^r)=L+z^r[\alpha(r_HX-L)-(1-\alpha)(q_H-\tau)b]$ and NPV rises with $z^r$ (since $r_HR>L$): $z^r$ is the largest value in $[0,1]$ with $\mathcal P\ge I-A$.
+
+\emph{Numbers:} $\alpha=0.5$, $r_H=0.95$, $q_H=0.3$, $\dpp=0.2$, $B=0.6$ ($b=3$, $X=7$), $R=10$, $L=3.5$, $\tau=0.1$, $I=5$, $A=0.5$. Checks: $q_HR=3<L$; $q_HX=2.1<3.5<6.65=r_HX$; $p_HX=4.375$, $4.5>\max\{4.375,3.5\}$, $4.5<0.5(6.65)+0.5(3.5)=5.075$. With $z^r=1$:
+\begin{align}
+  T^* &= (1)(0.3-0.1)(3) = 0.6, \nonumber\\
+  \mathcal P &= 3.5 + [0.5(6.65-3.5) - 0.5(0.2)(3)] = 3.5+1.275 = 4.775 \ge 4.5, \nonumber\\
+  \mathrm{NPV} &= 0.5(9.5) + 0.5(3.5) - 5 = 1.5. \nonumber
+\end{align}
+Without a parachute, (NM) needs $z^q\ge\theta=2/3$: $\mathcal P=4.608$ and NPV $=1.333$, lower by $(1-\alpha)\theta(L-q_HR)=0.5(2/3)(0.5)=0.167$. Without any manipulation threat $\mathcal P$ would be $5.075$: the threat costs investors $0.5\times0.6=0.3$ but no NPV once the parachute is used.
+
+\step{6}{The $r$-type does not mimic} Truthful, she gets $z^rr_Hb$; claiming poor prospects yields at most $T^q=z^r(q_H-\tau)b<z^rr_Hb$ when $q_HR<L$ ($0.6<2.85$ in the example), and $z^qr_Hb\le z^rr_Hb$ when $q_HR>L$ ($z^q\le1=z^r$). Her constraint is slack.
+
+\answer{} Optimal general contract: $R_b^r=B/\dpp$, $T^r=0$, $L_l^r=L$. If $q_HR>L$: no golden parachute, $T^{q*}=0$ (continuation is the cheaper currency; $q_HR_b+dT/dz^q=q_HR-L>0$); (NM) is met by raising $z^q$ to $\theta z^r$, and under (7.10) funding fails whenever $(1,z^*)$ violates (NM). If $q_HR<L$: fire the low type, $z^{q*}=0$, and pay $T^{q*}=z^r(q_H-\tau)B/\dpp>0$ (e.g.\ 0.6, raising NPV from 1.333 to 1.5). This confirms the heuristic of \S7.2.1.2.
+
+\intuition Two currencies can buy honesty from a manager with bad news: keeping her job or paying her to leave. Keeping her is the cheaper currency when her continuation still creates value; when it destroys value, cash is cheaper, and the golden parachute is the price of truthful reporting.
+
+\pitfalls
+\begin{itemize}
+  \item Calling golden parachutes pure waste: they buy incentive compatibility when continuation is inefficient.
+  \item Treating the composition of the rent as important: investors care only about the expected rent $\Pi$; the parachute is needed only because continuation pay requires continuation.
+  \item Forgetting that NPV is unaffected by transfers: only $z^r$, $z^q$ change it.
+\end{itemize}
+\bookans Matches the book (pp.~604--605): $R_b^r=B/\dpp$, $T^r=0$; when $q_HR>L$, $T^q=0$; when $q_HR<L$, $z^{q*}=0$ and $T^{q*}=z^r(q_H-\tau)B/\dpp$; the $r$-type's (NM) does not bind. The book states (NM$'$) is binding; here it binds whenever the no-manipulation contract violates it (in case $q_HR>L$ with $\theta\le z^*$ it is slack). The infeasibility result in Step~4 is an implication of (7.10) derived here, not stated in the book.
+\refbib{Tirole \S7.2.1.1 ``Managerial Myopia: The Incentive for Posturing'' and \S7.2.1.2 ``Golden Parachutes'', pp.~301--305; \S3.2, pp.~115--117.}
+
+\end{document}

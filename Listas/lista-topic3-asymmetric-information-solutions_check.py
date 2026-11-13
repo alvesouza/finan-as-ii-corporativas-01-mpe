@@ -489,4 +489,241 @@ chk("d14 (1-a)V", 0.5 * e14V(0.5), 4.765896, 1e-6)
 chk("d15 p* solve", 0.12 / 0.4, 0.3)
 chk("d15 cut lhs", 1.2 * ((0.3 + 0.1) / 2 + 0.3), 0.3 + 0.3)
 
+# ======================================================================
+# Original exercises 16-19 (Stiglitz-Weiss; collateral as a signal).
+
+# --- Ex 16: Stiglitz-Weiss two types ----------------------------------
+o16_pL, o16_RL, o16_pH, o16_RH, o16_I, o16_a = 0.8, 150, 0.4, 300, 100, 0.75
+o16_Rb = o16_pL * o16_RL
+chk("o16 Rbar", o16_Rb, 120)
+chk("o16 Rbar H", o16_pH * o16_RH, 120)
+chk("o16 var L", o16_pL * (1 - o16_pL) * o16_RL**2, 3600)
+chk("o16 var H", o16_pH * (1 - o16_pH) * o16_RH**2, 21600)
+chk("o16 MPS P(300)", o16_pL * 0.5, o16_pH)
+chk("o16 MPS P(0)", 0.2 + o16_pL * 0.5, 1 - o16_pH)
+chk("o16 MPS var add", 3600 + o16_pL * 150**2, 21600)
+chk("o16 UL(.2)", o16_Rb - o16_pL * 1.2 * o16_I, 24)
+chk("o16 UH(.2)", o16_Rb - o16_pH * 1.2 * o16_I, 72)
+o16_rs = o16_Rb / (o16_pL * o16_I) - 1
+o16_rm = o16_Rb / (o16_pH * o16_I) - 1
+chk("o16 r*", o16_rs, 0.5)
+chk("o16 rmax", o16_rm, 2.0)
+o16_m = o16_a * o16_pL + (1 - o16_a) * o16_pH
+chk("o16 m", o16_m, 0.7)
+chk("o16 rho .2", o16_m * 1.2, 0.84)
+chk("o16 rho r*", o16_m * (1 + o16_rs), 1.05)
+chk("o16 rho .6", o16_pH * 1.6, 0.64)
+chk("o16 rho 1", o16_pH * 2.0, 0.80)
+chk("o16 rho rmax", o16_pH * (1 + o16_rm), 1.20)
+chk("o16 rho rmax = Rbar/I", o16_pH * (1 + o16_rm), o16_Rb / o16_I)
+chk("o16 rho just above r*", o16_pH * (1 + o16_rs), 0.60)
+chk("o16 drop", (o16_m - o16_pH) * (1 + o16_rs), 0.45)
+chk("o16 drop alt", o16_a * (o16_pL - o16_pH) * (1 + o16_rs), 0.45)
+o16_rt = o16_m * (1 + o16_rs) / o16_pH - 1
+chk("o16 1+rtilde", 1 + o16_rt, 2.625)
+chk("o16 rtilde", o16_rt, 1.625)
+o16_s = o16_m * (1 + o16_rs) * o16_I / o16_Rb
+chk("o16 s", o16_s, 0.875)
+chk("o16 equity payoff", (1 - o16_s) * o16_Rb, 15)
+
+# --- Ex 17: Stiglitz-Weiss market ------------------------------------
+o17_pL, o17_RL, o17_pH, o17_RH, o17_I, o17_a, o17_N = 0.9, 130, 0.5, 234, 100, 0.75, 1000
+def o17_Ls(rho):
+    """Deposit supply L^s(rho) = max(0, 1e6 (rho - 0.96))."""
+    return max(0.0, 1e6 * (rho - 0.96))
+o17_Rb = o17_pL * o17_RL
+chk("o17 Rbar", o17_Rb, 117)
+chk("o17 Rbar H", o17_pH * o17_RH, 117)
+o17_rs = o17_Rb / (o17_pL * o17_I) - 1
+o17_rm = o17_Rb / (o17_pH * o17_I) - 1
+chk("o17 r*", o17_rs, 0.30)
+chk("o17 rmax", o17_rm, 1.34)
+o17_m = o17_a * o17_pL + (1 - o17_a) * o17_pH
+chk("o17 m", o17_m, 0.80)
+o17_rhos = o17_m * (1 + o17_rs)
+chk("o17 rho*", o17_rhos, 1.04)
+chk("o17 1+rtilde", o17_rhos / o17_pH, 2.08)
+chk("o17 rtilde", o17_rhos / o17_pH - 1, 1.08)
+chk("o17 D(r*)", o17_N * o17_I, 100000)
+chk("o17 Ls(rho*)", o17_Ls(o17_rhos), 80000, 1e-6)
+o17_rej = (o17_N * o17_I - o17_Ls(o17_rhos)) / o17_I
+chk("o17 rejected", o17_rej, 200, 1e-6)
+chk("o17 rejected safe", o17_a * o17_rej, 150, 1e-6)
+chk("o17 rejected risky", (1 - o17_a) * o17_rej, 50, 1e-6)
+chk("o17 UL(.4)", o17_Rb - o17_pL * 140, -9)
+chk("o17 UH(.4)", o17_Rb - o17_pH * 140, 47)
+chk("o17 rho(.4)", o17_pH * 1.4, 0.70)
+chk("o17 Ls(.70)", o17_Ls(0.70), 0)
+chk("o17 D(.4)", (1 - o17_a) * o17_N * o17_I, 25000)
+o17_rhoW = 0.96 + 25000 / 1e6
+chk("o17 rhoW", o17_rhoW, 0.985)
+chk("o17 1+rW", o17_rhoW / o17_pH, 1.97)
+o17_rW = o17_rhoW / o17_pH - 1
+chk("o17 rW", o17_rW, 0.97)
+assert o17_rs < o17_rW <= o17_rm and o17_rhoW < o17_rhos
+o17_m2 = 0.9 * o17_pL + 0.1 * o17_pH
+chk("o17 m(a=.9)", o17_m2, 0.86)
+chk("o17 rho*(a=.9)", o17_m2 * (1 + o17_rs), 1.118)
+chk("o17 Ls(a=.9)", o17_Ls(o17_m2 * (1 + o17_rs)), 158000, 1e-6)
+chk("o17 clearing rho", 0.96 + 100000 / 1e6, 1.06)
+chk("o17 1+r clear", 1.06 / o17_m2, 1.232558, 1e-6)
+chk("o17 r clear", 1.06 / o17_m2 - 1, 0.232558, 1e-6)
+assert 1.06 / o17_m2 - 1 < o17_rs
+o17_pH3 = 0.4
+chk("o17 RH3 mean", o17_pH3 * 292.5, 117)
+chk("o17 rmax3", o17_Rb / (o17_pH3 * o17_I) - 1, 1.925)
+o17_m3 = o17_a * o17_pL + (1 - o17_a) * o17_pH3
+chk("o17 m3", o17_m3, 0.775)
+o17_rho3 = o17_m3 * (1 + o17_rs)
+chk("o17 rho*3", o17_rho3, 1.0075)
+chk("o17 Ls3", o17_Ls(o17_rho3), 47500, 1e-6)
+chk("o17 unmet3", 100000 - o17_Ls(o17_rho3), 52500, 1e-6)
+chk("o17 share rejected3", (100000 - o17_Ls(o17_rho3)) / 100000, 0.525)
+chk("o17 drop base", (o17_m - o17_pH) * (1 + o17_rs), 0.39)
+chk("o17 drop3", (o17_m3 - o17_pH3) * (1 + o17_rs), 0.4875)
+chk("o17 drop3 alt", o17_a * (o17_pL - o17_pH3) * (1 + o17_rs), 0.4875)
+chk("o17 1+rW3", 0.985 / o17_pH3, 2.4625)
+chk("o17 rW3", 0.985 / o17_pH3 - 1, 1.4625)
+assert o17_rs < 0.985 / o17_pH3 - 1 <= o17_Rb / (o17_pH3 * o17_I) - 1 and 0.985 < o17_rho3
+chk("o17 safe payoff at r*", o17_Rb - o17_pL * (1 + o17_rs) * o17_I, 0)
+
+# --- Collateral model helpers -----------------------------------------
+def col_sep(p, q, I, d):
+    """Least-cost separating contract: returns (D, C_G, R_u^G)."""
+    D = p * (1 - q) - d * q * (1 - p)
+    return D, (p - q) * I / D, I * ((1 - q) - d * (1 - p)) / D
+
+# --- Ex 18: collateral as a separating signal --------------------------
+o18_p, o18_q, o18_I, o18_R, o18_a, o18_d = 0.9, 0.6, 60, 120, 0.5, 0.5
+chk("o18 RuG sym", o18_I / o18_p, 66.667, 5e-4)
+chk("o18 RuB sym", o18_I / o18_q, 100)
+chk("o18 UG sym", o18_p * o18_R - o18_I, 48)
+chk("o18 UB sym", o18_q * o18_R - o18_I, 12)
+o18_Ru20 = (o18_I - (1 - o18_p) * o18_d * 20) / o18_p
+chk("o18 Ru C=20", o18_Ru20, 65.556, 5e-4)
+chk("o18 0.9Ru = 59", o18_p * o18_Ru20, 59)
+chk("o18 U C=20", o18_p * (o18_R - o18_Ru20) - (1 - o18_p) * 20, 47)
+chk("o18 U C=20 formula", 48 - (1 - o18_p) * (1 - o18_d) * 20, 47)
+o18_m = o18_a * o18_p + (1 - o18_a) * o18_q
+chk("o18 m", o18_m, 0.75)
+chk("o18 pool Ru", o18_I / o18_m, 80)
+chk("o18 pool UG", o18_p * (o18_R - 80), 36)
+chk("o18 pool UB", o18_q * (o18_R - 80), 24)
+chk("o18 mimic sym", o18_q * (o18_R - o18_I / o18_p), 32)
+chk("o18 R - I/p", o18_R - o18_I / o18_p, 53.333, 5e-4)
+chk("o18 lender loss", o18_m * o18_I / o18_p, 50)
+o18_D, o18_C, o18_Ru = col_sep(o18_p, o18_q, o18_I, o18_d)
+chk("o18 D", o18_D, 0.33)
+chk("o18 D alt", (o18_p - o18_q) + o18_q * (1 - o18_p) * (1 - o18_d), 0.33)
+chk("o18 CG", o18_C, 54.545, 5e-4)
+chk("o18 CG slide form", o18_I / (1 + o18_q * (1 - o18_p) * (1 - o18_d) / (o18_p - o18_q)), o18_C)
+chk("o18 RuG", o18_Ru, 63.636, 5e-4)
+chk("o18 BE parts", o18_p * o18_Ru, 57.273, 5e-4)
+chk("o18 BE parts 2", (1 - o18_p) * o18_d * o18_C, 2.727, 5e-4)
+chk("o18 BE", o18_p * o18_Ru + (1 - o18_p) * o18_d * o18_C, o18_I)
+chk("o18 NM part", o18_q * (o18_R - o18_Ru), 33.818, 5e-4)
+chk("o18 NM part 2", (1 - o18_q) * o18_C, 21.818, 5e-4)
+chk("o18 NM", o18_q * (o18_R - o18_Ru) - (1 - o18_q) * o18_C, 12)
+o18_Us = o18_p * (o18_R - o18_Ru) - (1 - o18_p) * o18_C
+chk("o18 R - RuG", o18_R - o18_Ru, 56.364, 5e-4)
+chk("o18 0.9(R-RuG)", o18_p * (o18_R - o18_Ru), 50.727, 5e-4)
+chk("o18 0.1 CG", (1 - o18_p) * o18_C, 5.455, 5e-4)
+chk("o18 Usep", o18_Us, 45.273, 5e-4)
+chk("o18 DW", (1 - o18_p) * (1 - o18_d) * o18_C, 2.727, 5e-4)
+chk("o18 Usep formula", 48 - (1 - o18_p) * (1 - o18_d) * o18_C, o18_Us)
+chk("o18 gain vs pool", o18_Us - 36, 9.273, 5e-4)
+chk("o18 good takes bad", o18_p * (o18_R - o18_I / o18_q), 18)
+chk("o18 MRS good", (1 - o18_p) / o18_p, 0.111, 5e-4)
+chk("o18 MRS bad", (1 - o18_q) / o18_q, 0.667, 5e-4)
+assert o18_C <= 60 and o18_Ru < o18_R
+
+# --- Ex 19: separating vs pooling --------------------------------------
+o19_p, o19_q, o19_I, o19_R, o19_d = 0.8, 0.7, 50, 100, 0.2
+chk("o19 mimic sym", o19_q * (o19_R - o19_I / o19_p), 26.25)
+o19_D, o19_C, o19_Ru = col_sep(o19_p, o19_q, o19_I, o19_d)
+chk("o19 D", o19_D, 0.212)
+chk("o19 CG", o19_C, 23.585, 5e-4)
+chk("o19 RuG", o19_Ru, 61.321, 5e-4)
+chk("o19 BE p1", o19_p * o19_Ru, 49.057, 5e-4)
+chk("o19 BE p2", (1 - o19_p) * o19_d * o19_C, 0.943, 5e-4)
+chk("o19 BE", o19_p * o19_Ru + (1 - o19_p) * o19_d * o19_C, o19_I)
+chk("o19 NM p1", o19_q * (o19_R - o19_Ru), 27.075, 5e-4)
+chk("o19 NM p2", (1 - o19_q) * o19_C, 7.075, 5e-4)
+chk("o19 NM", o19_q * (o19_R - o19_Ru) - (1 - o19_q) * o19_C, 20)
+o19_DW = (1 - o19_p) * (1 - o19_d) * o19_C
+chk("o19 DW", o19_DW, 3.774, 5e-4)
+o19_Us = o19_p * o19_R - o19_I - o19_DW
+chk("o19 Usep", o19_Us, 26.226, 5e-4)
+chk("o19 Usep direct", o19_p * (o19_R - o19_Ru) - (1 - o19_p) * o19_C, o19_Us)
+def o19_Up(a):
+    """Good type's pooling utility p(R - I/m)."""
+    return o19_p * (o19_R - o19_I / (a * o19_p + (1 - a) * o19_q))
+chk("o19 m .3", 0.3 * o19_p + 0.7 * o19_q, 0.73)
+chk("o19 I/m .3", o19_I / 0.73, 68.493, 5e-4)
+chk("o19 R-I/m .3", o19_R - o19_I / 0.73, 31.507, 5e-4)
+chk("o19 Upool .3", o19_Up(0.3), 25.205, 5e-4)
+chk("o19 m .6", 0.6 * o19_p + 0.4 * o19_q, 0.76)
+chk("o19 I/m .6", o19_I / 0.76, 65.789, 5e-4)
+chk("o19 R-I/m .6", o19_R - o19_I / 0.76, 34.211, 5e-4)
+chk("o19 Upool .6", o19_Up(0.6), 27.368, 5e-4)
+assert o19_Up(0.3) < o19_Us < o19_Up(0.6)
+o19_x = (1 - o19_p) * (1 - o19_d)
+chk("o19 px", o19_p * o19_x, 0.128)
+o19_ah = (o19_p - o19_q) / ((o19_p - o19_q) + o19_p * o19_x)
+chk("o19 alpha hat", o19_ah, 0.438596, 1e-6)
+chk("o19 m(ah)", o19_ah * o19_p + (1 - o19_ah) * o19_q, 0.743860, 1e-6)
+chk("o19 I/m(ah)", o19_I / (o19_ah * o19_p + (1 - o19_ah) * o19_q), 67.217, 5e-4)
+chk("o19 Upool(ah)", o19_Up(o19_ah), o19_Us)
+chk("o19 cond lhs .3", 0.3 * o19_p * o19_x, 0.0384)
+chk("o19 cond rhs .3", 0.7 * (o19_p - o19_q), 0.07)
+chk("o19 cond lhs .6", 0.6 * o19_p * o19_x, 0.0768)
+chk("o19 cond rhs .6", 0.4 * (o19_p - o19_q), 0.04)
+chk("o19 D^2", o19_D**2, 0.044944)
+chk("o19 dC/dd", (o19_p - o19_q) * o19_I * o19_q * (1 - o19_p) / o19_D**2, 15.575, 5e-4)
+chk("o19 dDW/dd", -(1 - o19_p) * (o19_p - o19_q)**2 * o19_I / o19_D**2, -2.225, 5e-4)
+o19_h = 1e-7  # finite-difference check of both derivatives
+chk("o19 dC/dd numeric", (col_sep(o19_p, o19_q, o19_I, o19_d + o19_h)[1] - o19_C) / o19_h, 15.575, 1e-3)
+chk("o19 dDW/dd numeric", ((1 - o19_p) * (1 - o19_d - o19_h) * col_sep(o19_p, o19_q, o19_I, o19_d + o19_h)[1] - o19_DW) / o19_h, -2.225, 1e-3)
+for dd, wD, wC, wR, wDW, wU in [(0, 0.24, 20.833, 62.5, 4.167, 25.833),
+                                (0.2, 0.212, 23.585, 61.321, 3.774, 26.226),
+                                (0.6, 0.156, 32.051, 57.692, 2.564, 27.436)]:
+    D_, C_, R_ = col_sep(o19_p, o19_q, o19_I, dd)
+    chk(f"o19 D d={dd}", D_, wD)
+    chk(f"o19 D lin d={dd}", 0.24 - 0.14 * dd, wD)
+    chk(f"o19 C d={dd}", C_, wC, 5e-4)
+    chk(f"o19 Ru d={dd}", R_, wR, 5e-4)
+    chk(f"o19 Ru num d={dd}", 50 * (0.3 - 0.2 * dd), {0: 15, 0.2: 13, 0.6: 9}[dd])
+    chk(f"o19 DW d={dd}", 0.2 * (1 - dd) * C_, wDW, 5e-4)
+    chk(f"o19 U d={dd}", 30 - 0.2 * (1 - dd) * C_, wU, 5e-4)
+chk("o19 0.24-0.084", 0.24 - 0.084, 0.156)
+D1, C1, R1 = col_sep(o19_p, o19_q, o19_I, 1 - 1e-9)
+chk("o19 C d->1", C1, 50, 1e-6)
+chk("o19 Ru d->1", R1, 50, 1e-6)
+o19_dh = 1 - 0.4 * (o19_p - o19_q) / (0.6 * o19_p * (1 - o19_p))
+chk("o19 0.04/0.096", 0.04 / 0.096, 0.416667, 1e-6)
+chk("o19 delta hat", o19_dh, 0.583333, 1e-6)
+chk("o19 Usep(dhat) = Upool(.6)", 30 - (1 - o19_p) * (1 - o19_dh) * col_sep(o19_p, o19_q, o19_I, o19_dh)[1], o19_Up(0.6))
+assert 30 - 0.08 * col_sep(o19_p, o19_q, o19_I, 0.6)[1] > o19_Up(0.6)
+chk("o19 Ipx", o19_I * o19_p * o19_x, 6.4)
+chk("o19 dC/dq", -o19_I * o19_p * o19_x / o19_D**2, -142.40, 5e-3)
+chk("o19 dC/dq numeric", (col_sep(o19_p, o19_q + o19_h, o19_I, o19_d)[1] - o19_C) / o19_h, -142.40, 1e-2)
+for qq, wD, wC, wDW in [(0.6, 0.296, 33.784, 5.405), (0.75, 0.17, 14.706, 2.353)]:
+    D_, C_, _ = col_sep(o19_p, qq, o19_I, o19_d)
+    chk(f"o19 D q={qq}", D_, wD)
+    chk(f"o19 D alt q={qq}", (o19_p - qq) + qq * o19_x, wD)
+    chk(f"o19 C q={qq}", C_, wC, 5e-4)
+    chk(f"o19 DW q={qq}", o19_x * C_, wDW, 5e-4)
+chk("o19 qR-I q=.6", 0.6 * o19_R - o19_I, 10)
+o19_UBp = o19_q * (o19_R - o19_I / 0.73)
+chk("o19 UB pool .3", o19_UBp, 22.055, 5e-4)
+chk("o19 surplus pool", 0.3 * (o19_p * o19_R - o19_I) + 0.7 * (o19_q * o19_R - o19_I), 23)
+chk("o19 surplus pool check", 0.3 * o19_Up(0.3) + 0.7 * o19_UBp, 23)
+chk("o19 0.3 Upool", 0.3 * o19_Up(0.3), 7.562, 5e-4)
+chk("o19 0.7 UBpool", 0.7 * o19_UBp, 15.438, 5e-4)
+chk("o19 loss", 0.3 * o19_DW, 1.132, 5e-4)
+chk("o19 surplus sep", 23 - 0.3 * o19_DW, 21.868, 5e-4)
+chk("o19 surplus sep check", 0.3 * o19_Us + 0.7 * 20, 23 - 0.3 * o19_DW)
+chk("o19 0.3 Usep", 0.3 * o19_Us, 7.868, 5e-4)
+chk("o19 good gain", o19_Us - o19_Up(0.3), 1.021, 5e-4)
+
 print(f"PASS {N} checks")

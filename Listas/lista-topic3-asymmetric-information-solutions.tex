@@ -1,4 +1,4 @@
-% Worked solutions for Listas/lista-topic3-asymmetric-information.md (15 exercises).
+% Worked solutions for Listas/lista-topic3-asymmetric-information.md (19 exercises: 15 from the books, 16-19 original).
 % Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
 % Every number is asserted in lista-topic3-asymmetric-information-solutions_check.py.
 \documentclass[11pt,a4paper]{article}
@@ -40,7 +40,7 @@
 \begin{document}
 \begin{center}{\Large\bfseries Exercise list --- Topic 3: Asymmetric information}\\[4pt]{\large Worked solutions}\end{center}
 
-\noindent Statements are in \url{Listas/lista-topic3-asymmetric-information.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-topic3-asymmetric-information-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
+\noindent Statements are in \url{Listas/lista-topic3-asymmetric-information.md} (and its PDF); each exercise is cited by number and printed page and is not restated. Exercises 16--19 are original exercises (no course book has one on the Stiglitz--Weiss model or on collateral as a signal), written with the user's agreement on 2026-11-12 from the lecture slides and Tirole \S6.3; they have no book answer. Short answers: \url{lista-topic3-asymmetric-information-solutions-short.pdf}. Editions are the local copies: Tirole, \emph{The Theory of Corporate Finance} (2005); Amaro de Matos, \emph{Theoretical Foundations of Corporate Finance} (2001); Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013).
 
 \tableofcontents
 
@@ -1688,5 +1688,521 @@ book: its stock-price item is labelled ``(ii)'' instead of (iii), and it gives t
 \refbib{Tirole Ch.~6, \S6.2.2 Application 2 ``Assets in Place, the Negative Stock Price Reaction, and the
 Going-Public Decision'', pp.~244--245; Exercise 6.5, p.~275; answer pp.~597--598. Lecture Topic~3,
 pecking-order block.}
+
+% =============================================================================
+% Topic 3 list, original exercises 16--19 (Stiglitz--Weiss; collateral as a signal).
+% No book exercise exists; written with the user's agreement (2026-11-12).
+% =============================================================================
+\exsec{16. Stiglitz--Weiss with two types: the lender's return is not monotone in the rate --- Original exercise}
+
+\asked (a) Check that the two projects have the same mean, compute their variances, and show that the risky return is the safe return plus zero-mean noise. (b) Write each type's expected payoff from a loan at rate $r$, evaluate it at $20\%$, and say which type a rate rise hurts more. (c) Find the rate $r^*$ at which the safe types stop applying and the rate $r_{max}$ at which everybody stops, and who applies on each interval. (d) Write the lender's expected gross return per unit lent, $\rho(r)$, evaluate it at five rates, measure the drop at $r^*$, and say whether $\rho$ is monotone. (e) Find the rate $\tilde r$ at which $\rho$ recovers its value at $r^*$ and explain why rates in $(r^*,\tilde r)$ are never charged. (f) Replace debt with an equity share $s$ and show that the selection problem disappears.
+
+\approach This is the two-type Stiglitz--Weiss example of lecture block 3.6. Under a debt contract with limited liability the borrower repays only on success, so the rate is paid with probability $p_i$: the borrower who fails more often is hurt less by a higher rate. The quoted rate therefore selects the pool of applicants, and the lender's return combines a price effect (higher $r$) with a composition effect (safe types leave at $r^*$). Equity pays a share of the return in every state, so its value depends only on the mean, which mean-preserving spreads hold fixed (Hart's point quoted by Tirole).
+
+\notation
+\begin{itemize}
+  \item $I=100$: loan size; $R_L=150$, $p_L=0.8$: success payoff and probability of the low-risk (safe) project; $R_H=300$, $p_H=0.4$: same for the high-risk project; payoff 0 on failure.
+  \item $\alpha=0.75$: share of low-risk borrowers; $m=\alpha p_L+(1-\alpha)p_H$: success probability of the pooled applicant.
+  \item $\bar R=p_LR_L=p_HR_H$: common expected return; $X_L$, $X_H$: random project returns.
+  \item $r$: quoted rate (repay $(1+r)I$ on success); $U_L(r)$, $U_H(r)$: borrowers' expected payoffs.
+  \item $r^*$, $r_{max}$: exit rates of the safe and the risky type; $\rho(r)$: lender's expected gross return per unit lent; $\tilde r$: rate above $r^*$ with $\rho(\tilde r)=\rho(r^*)$.
+  \item $s$: lender's equity share of the project return (part (f)).
+\end{itemize}
+
+\step{1}{Same mean, different risk (part (a))} We compute the means and the variances, then build the spread explicitly. The means are
+\begin{align}
+  \bar R = p_LR_L &= (0.8)(150) = 120, \nonumber\\
+  p_HR_H &= (0.4)(300) = 120. \label{t3e16-mean}
+\end{align}
+For a return equal to $R_i$ with probability $p_i$ and 0 otherwise, $E[X_i^2]=p_iR_i^2$, so
+\begin{align}
+  \operatorname{Var}(X_i) = p_iR_i^2-(p_iR_i)^2 = p_i(1-p_i)R_i^2. \label{t3e16-var}
+\end{align}
+Substituting each type's numbers,
+\begin{align}
+  \operatorname{Var}(X_L) &= (0.8)(0.2)(150^2) = (0.16)(22{,}500) = 3{,}600, \nonumber\\
+  \operatorname{Var}(X_H) &= (0.4)(0.6)(300^2) = (0.24)(90{,}000) = 21{,}600. \nonumber
+\end{align}
+To show the spread, define $Z=0$ when $X_L=0$, and $Z=+150$ or $Z=-150$ with probability $\tfrac12$ each when $X_L=150$. Then $E[Z\mid X_L]=0$ in both states, and $X_L+Z$ takes the values $150+150=300$ and $150-150=0$ after a success and $0$ after a failure, with
+\begin{align}
+  P(X_L+Z=300) &= P(X_L=150)\cdot\tfrac12 = (0.8)(0.5) = 0.4 = p_H, \nonumber\\
+  P(X_L+Z=0) &= 0.2+(0.8)(0.5) = 0.6 = 1-p_H. \nonumber
+\end{align}
+So $X_L+Z$ has exactly the distribution of $X_H$. Because $E[Z\mid X_L]=0$, $Z$ is uncorrelated with $X_L$ and the variance adds up: $3{,}600+E[Z^2]=3{,}600+(0.8)(150^2)=3{,}600+18{,}000=21{,}600$, as computed above.
+
+\answer{(a)} $\bar R=120$ for both; $\operatorname{Var}(X_L)=3{,}600$, $\operatorname{Var}(X_H)=21{,}600$; $X_H$ has the distribution of $X_L+Z$ with $Z=\pm150$ (probability $\tfrac12$ each) after a success and $Z=0$ after a failure, $E[Z\mid X_L]=0$: a mean-preserving spread.
+
+\step{2}{Borrowers' payoffs (part (b))} A borrower keeps $R_i-(1+r)I$ on success and 0 on failure (limited liability). Multiplying out and using $p_iR_i=\bar R$,
+\begin{align}
+  U_i(r) = p_i\bigl[R_i-(1+r)I\bigr] = \bar R-p_i(1+r)I. \label{t3e16-U}
+\end{align}
+At $r=0.2$, so that $(1+r)I=120$,
+\begin{align}
+  U_L(0.2) &= 120-(0.8)(120) = 120-96 = 24, \nonumber\\
+  U_H(0.2) &= 120-(0.4)(120) = 120-48 = 72. \nonumber
+\end{align}
+Differentiating \eqref{t3e16-U}, $U_i'(r)=-p_iI$: $-80$ for the safe type and $-40$ for the risky type, so one more percentage point of interest costs the safe borrower $0.8$ and the risky borrower $0.4$.
+
+\answer{(b)} $U_L(r)=120-80(1+r)$, $U_H(r)=120-40(1+r)$; at $20\%$, $U_L=24$ and $U_H=72$. A rate rise hurts the safe type twice as much ($-80$ vs.\ $-40$ per unit of $r$): she repays with probability $0.8$, the risky type only with $0.4$.
+
+\step{3}{Exit rates (part (c))} A type applies while $U_i(r)\ge0$. Setting \eqref{t3e16-U} to zero and solving for $r$,
+\begin{align}
+  \bar R-p_i(1+r)I = 0 \iff 1+r = \frac{\bar R}{p_iI}. \nonumber
+\end{align}
+For the safe type and for the risky type,
+\begin{align}
+  r^* &= \frac{\bar R}{p_LI}-1 = \frac{120}{(0.8)(100)}-1 = 1.5-1 = 0.5, \label{t3e16-rstar}\\
+  r_{max} &= \frac{\bar R}{p_HI}-1 = \frac{120}{(0.4)(100)}-1 = 3-1 = 2.0. \label{t3e16-rmax}
+\end{align}
+
+\answer{(c)} $r^*=50\%$, $r_{max}=200\%$. Both types apply for $r\le50\%$, only risky borrowers for $50\%<r\le200\%$, nobody above $200\%$.
+
+\step{4}{The lender's return (part (d))} The lender receives $(1+r)I$ when the project succeeds and 0 otherwise, so per unit lent it expects $(1+r)$ times the success probability of the average applicant. For $r\le r^*$ both types apply in proportions $\alpha$ and $1-\alpha$:
+\begin{align}
+  m &= \alpha p_L+(1-\alpha)p_H = (0.75)(0.8)+(0.25)(0.4) = 0.6+0.1 = 0.7, \nonumber\\
+  \rho(r) &= m(1+r) = 0.7(1+r), \qquad r\le r^*. \label{t3e16-rho1}
+\end{align}
+For $r^*<r\le r_{max}$ only risky borrowers apply:
+\begin{align}
+  \rho(r) = p_H(1+r) = 0.4(1+r), \qquad r^*<r\le r_{max}. \label{t3e16-rho2}
+\end{align}
+Evaluating \eqref{t3e16-rho1} and \eqref{t3e16-rho2},
+\begin{align}
+  \rho(0.2) &= (0.7)(1.2) = 0.84, & \rho(r^*) &= (0.7)(1.5) = 1.05, \nonumber\\
+  \rho(0.6) &= (0.4)(1.6) = 0.64, & \rho(1.0) &= (0.4)(2.0) = 0.80, \nonumber\\
+  \rho(r_{max}) &= (0.4)(3.0) = 1.20. \nonumber
+\end{align}
+Just above $r^*$ the return is $p_H(1+r^*)=(0.4)(1.5)=0.60$, so the drop at $r^*$ is
+\begin{align}
+  \rho(r^*)-p_H(1+r^*) = (m-p_H)(1+r^*) = (0.7-0.4)(1.5) = 0.45. \label{t3e16-drop}
+\end{align}
+Since $m-p_H=\alpha p_L+(1-\alpha)p_H-p_H=\alpha(p_L-p_H)$, the drop is also $\alpha(p_L-p_H)(1+r^*)=(0.75)(0.4)(1.5)=0.45$. Note also $\rho(r_{max})=p_H\cdot\bar R/(p_HI)=\bar R/I=1.2$: at $r_{max}$ the lender takes the risky project's whole expected return.
+
+\answer{(d)} $\rho(r)=0.7(1+r)$ for $r\le50\%$ and $0.4(1+r)$ for $50\%<r\le200\%$; $\rho=0.84,\ 1.05,\ 0.64,\ 0.80,\ 1.20$ at $20\%,\ 50\%,\ 60\%,\ 100\%,\ 200\%$; the drop at $r^*$ is $0.45=\alpha(p_L-p_H)(1+r^*)$. $\rho$ is not monotone: it rises, falls by $0.45$ at $r^*$, then rises again.
+
+\step{5}{The dead zone above $r^*$ (part (e))} Set the risky-only return \eqref{t3e16-rho2} equal to $\rho(r^*)$ and solve:
+\begin{align}
+  p_H(1+\tilde r) &= m(1+r^*) \nonumber\\
+  1+\tilde r &= \frac{1.05}{0.4} = 2.625 \nonumber\\
+  \tilde r &= 1.625. \label{t3e16-rtilde}
+\end{align}
+For every $r\in(r^*,\tilde r)$, $\rho(r)=0.4(1+r)<0.4(2.625)=1.05=\rho(r^*)$. A lender with more applicants than funds at $r^*$ that raises its rate a little loses all its safe applicants and earns less per unit, not more. Since what lenders can pay their depositors is $\rho$, the funds offered to borrowers, as a function of the quoted rate, fall when $r$ passes $r^*$: the loan supply curve bends backward, and excess demand at $r^*$ is not removed by a higher rate.
+
+\answer{(e)} $\tilde r=162.5\%$. On $(50\%,162.5\%)$ the return is below $1.05$: raising the rate past $r^*$ lowers the lender's return, so the loan supply bends backward at $r^*$.
+
+\step{6}{Equity instead of debt (part (f))} With equity the lender receives $sX_i$ in every state, so its expected receipt is $sE[X_i]=s\bar R$ for both types. Matching the debt contract's return at $r^*$, $\rho(r^*)I=(1.05)(100)=105$:
+\begin{align}
+  s\bar R &= 105 \nonumber\\
+  s &= \frac{105}{120} = 0.875. \label{t3e16-s}
+\end{align}
+Each type's expected payoff is $(1-s)\bar R=(0.125)(120)=15>0$, so both apply, and the lender's return $s\bar R/I$ does not depend on who applies.
+
+\answer{(f)} $s=0.875$; both types apply and each expects $15$. Equity pays in proportion to the return, so its value depends only on the mean $\bar R$, which the two types share; the rate no longer selects the pool.
+
+\intuition Under debt, the borrower's payoff is convex in the project return (she gets nothing below the repayment, everything above it), so riskier borrowers value a loan more and stay longer when the rate rises. The quoted rate then does two things: it raises what each success pays, and it changes who applies. At $r^*$ the second effect dominates and the return falls by $\alpha(p_L-p_H)(1+r^*)$, which is the source of the backward-bending supply. In this two-type example the return at $r_{max}$ ($1.2$) is above the return at $r^*$ ($1.05$), because at $r_{max}$ the lender takes the risky project's whole surplus; what that means for the market is the subject of exercise 17. Equity removes the selection altogether, which is why the Stiglitz--Weiss result needs the restriction to debt contracts.
+
+\pitfalls
+\begin{itemize}
+  \item Using $m(1+r)$ above $r^*$: once the safe types leave, the applicant pool is all risky and the return is $p_H(1+r)$.
+  \item Thinking that a riskier project means a lower mean: under a mean-preserving spread the mean is the same ($120$); only the dispersion rises.
+  \item Calling $r^*$ the lender's global optimum here: in the two-type example $\rho(r_{max})=\bar R/I=1.2>1.05$; what is true is that $\rho$ falls when $r$ crosses $r^*$ and stays below $\rho(r^*)$ until $\tilde r$.
+\end{itemize}
+
+\refbib{Lecture Topic~3, block 3.6, slides 47--55 (Stiglitz and Weiss 1981, two-type example and numerical example). Tirole \S3.1 Introduction, p.~113 (adverse-selection explanation of rationing); \S6.1 Introduction, footnote~5, p.~240 (Hart's equity critique). Original exercise: no book answer.}
+
+\exsec{17. Why raising the rate does not clear the loan market --- Original exercise}
+
+\asked (a) Compute the exit rates $r^*$ and $r_{max}$, the banks' return $\rho(r)$ on each interval, its value $\rho^*$ at $r^*$ and the rate $\tilde r$ at which it recovers. (b) Compare loan demand with deposit supply at $r^*$ and count the rejected applicants by type. (c) Show what happens if a bank raises its rate to $40\%$ and explain why that does not clear the market. (d) Show that no rate up to $r^*$ clears the market, find the clearing rate among risky borrowers only, and show that it is not an equilibrium; conclude. (e) Redo the analysis with more safe borrowers (i) and with a riskier risky project (ii). (f) Ask whether rejected applicants can borrow at a higher rate, who can and who cannot.
+
+\approach This is the Stiglitz--Weiss model of lecture block 3.6 embedded in a market. Banks pay depositors the expected return $\rho(r)$ they earn on loans, so the supply of funds is $L^s(\rho(r))$; because $\rho$ is not monotone in $r$ (adverse selection at $r^*$), the supply of loans bends backward and may never meet demand. An equilibrium needs supply equal to demand and, in addition, no bank able to offer a different rate that pays depositors more; checking that second condition is what rules out the clearing rate. Credit rationing is excess demand that persists at the equilibrium rate.
+
+\notation
+\begin{itemize}
+  \item $N=1{,}000$ borrowers, $\alpha=0.75$ low-risk; $I=100$ per loan; $R_L=130$, $p_L=0.9$ (low risk), $R_H=234$, $p_H=0.5$ (high risk); payoff 0 on failure; $\bar R=p_LR_L=p_HR_H$.
+  \item $r$: loan rate; $r^*=\bar R/(p_LI)-1$, $r_{max}=\bar R/(p_HI)-1$: exit rates; $m=\alpha p_L+(1-\alpha)p_H$.
+  \item $\rho(r)$: banks' expected gross return per unit lent, paid to depositors; $\rho^*=\rho(r^*)$; $\tilde r$: rate above $r^*$ with $\rho(\tilde r)=\rho^*$.
+  \item $L^s(\rho)=\max\{0,\,10^6(\rho-0.96)\}$: deposits supplied; $D(r)$: loan demand; $r_W$: rate clearing the market among risky borrowers.
+\end{itemize}
+
+\step{1}{Exit rates and the return function (part (a))} We restate the borrower's payoff and solve for the rates at which each type leaves. The means coincide:
+\begin{align}
+  \bar R = p_LR_L = (0.9)(130) = 117 = (0.5)(234) = p_HR_H. \nonumber
+\end{align}
+Type $i$ expects $p_i[R_i-(1+r)I]=\bar R-p_i(1+r)I$ and applies while this is non-negative. Setting it to zero,
+\begin{align}
+  r^* &= \frac{\bar R}{p_LI}-1 = \frac{117}{90}-1 = 1.3-1 = 0.30, \label{t3e17-rstar}\\
+  r_{max} &= \frac{\bar R}{p_HI}-1 = \frac{117}{50}-1 = 2.34-1 = 1.34. \label{t3e17-rmax}
+\end{align}
+For $r\le r^*$ both types apply and the average success probability is
+\begin{align}
+  m = \alpha p_L+(1-\alpha)p_H = (0.75)(0.9)+(0.25)(0.5) = 0.675+0.125 = 0.80, \nonumber
+\end{align}
+so the return per unit lent is
+\begin{align}
+  \rho(r) = \begin{cases} m(1+r) = 0.8(1+r), & r\le0.30,\\ p_H(1+r) = 0.5(1+r), & 0.30<r\le1.34.\end{cases} \label{t3e17-rho}
+\end{align}
+At $r^*$, $\rho^*=(0.8)(1.3)=1.04$. The rate $\tilde r$ solves $0.5(1+\tilde r)=1.04$:
+\begin{align}
+  1+\tilde r = \frac{1.04}{0.5} = 2.08 \quad\Longrightarrow\quad \tilde r = 1.08. \label{t3e17-rtilde}
+\end{align}
+
+\answer{(a)} $\bar R=117$, $r^*=30\%$, $r_{max}=134\%$; $\rho(r)=0.8(1+r)$ up to $30\%$ and $0.5(1+r)$ above; $\rho^*=1.04$; $\tilde r=108\%$.
+
+\step{2}{Excess demand at $r^*$ (part (b))} At $r^*$ the safe borrowers are just indifferent and apply, so every borrower asks for $I$:
+\begin{align}
+  D(r^*) &= NI = (1{,}000)(100) = 100{,}000, \nonumber\\
+  L^s(\rho^*) &= 10^6(1.04-0.96) = 10^6(0.08) = 80{,}000. \nonumber
+\end{align}
+Excess demand is $100{,}000-80{,}000=20{,}000$, that is $20{,}000/100=200$ applicants turned down. With random selection each type is turned down in its population share: $(0.75)(200)=150$ low-risk and $(0.25)(200)=50$ high-risk.
+
+\answer{(b)} Demand $100{,}000$, supply $80{,}000$: 800 loans, 200 applicants turned down (150 low-risk, 50 high-risk).
+
+\step{3}{A higher rate (part (c))} At $r=0.40$, $(1+r)I=140$. The two payoffs are
+\begin{align}
+  U_L &= 117-(0.9)(140) = 117-126 = -9 < 0, \nonumber\\
+  U_H &= 117-(0.5)(140) = 117-70 = 47 \ge 0, \nonumber
+\end{align}
+so only the 250 high-risk borrowers apply, and from \eqref{t3e17-rho}
+\begin{align}
+  \rho(0.40) &= (0.5)(1.4) = 0.70, \nonumber\\
+  L^s(0.70) &= \max\{0,\,10^6(0.70-0.96)\} = \max\{0,-260{,}000\} = 0, \nonumber\\
+  D(0.40) &= (250)(100) = 25{,}000. \nonumber
+\end{align}
+
+\answer{(c)} At $40\%$ only high-risk borrowers apply; $\rho=0.70<1.04$, deposits fall to 0 against a demand of $25{,}000$. The higher rate worsens the pool so much that the return per unit, and hence the supply of funds, falls: the market moves further from clearing, and the bank that raises its rate earns less.
+
+\step{4}{No clearing rate survives (part (d))} \emph{Rates $r\le r^*$.} Demand is $100{,}000$ throughout, and $\rho(r)=0.8(1+r)\le1.04$ with $L^s$ increasing in $\rho$, so
+\begin{align}
+  L^s(\rho(r)) \le L^s(1.04) = 80{,}000 < 100{,}000 = D(r), \qquad r\le r^*. \nonumber
+\end{align}
+\emph{Rates $r^*<r\le r_{max}$.} Demand is $25{,}000$. Supply equals demand when
+\begin{align}
+  10^6\bigl[0.5(1+r_W)-0.96\bigr] &= 25{,}000 \nonumber\\
+  0.5(1+r_W) &= 0.96+0.025 = 0.985 \nonumber\\
+  1+r_W &= \frac{0.985}{0.5} = 1.97 \nonumber\\
+  r_W &= 0.97, \label{t3e17-rW}
+\end{align}
+which lies in $(0.30,1.34]$, with $\rho(r_W)=0.985$. \emph{Deviation.} Suppose all banks charge $r_W$. A bank that offers $r^*=30\%$ instead attracts every borrower: the 750 safe ones are unserved at $97\%$ and accept $30\%$, and the risky ones prefer $30\%$ to $97\%$. Its pool is the population mix, so it earns $\rho^*=1.04>0.985$ per unit and can pay depositors more than the other banks: it attracts funds and makes a profit. So $r_W$ is not an equilibrium. Above $r_{max}$ nobody borrows. Hence no rate clears the market. With excess demand at every rate up to $r^*$, competition for deposits pushes banks to the rate with the highest return among those that keep the safe borrowers, $r^*$ (a lower rate pays depositors less and loses funds; a slightly higher one loses the safe borrowers, Step~3).
+
+\answer{(d)} For $r\le30\%$ supply is at most $80{,}000<100{,}000$; among risky borrowers the clearing rate is $r_W=97\%$ with $\rho=0.985$, but a bank offering $30\%$ earns $1.04>0.985$, so $r_W$ is not an equilibrium. The loan rate is $r^*=30\%$ with $20{,}000$ of unmet demand: credit rationing.
+
+\step{5}{Comparative statics (part (e))} \emph{(i) $\alpha=0.9$.} The pool improves:
+\begin{align}
+  m &= (0.9)(0.9)+(0.1)(0.5) = 0.81+0.05 = 0.86, \nonumber\\
+  \rho^* &= (0.86)(1.3) = 1.118, \nonumber\\
+  L^s(\rho^*) &= 10^6(1.118-0.96) = 158{,}000 > 100{,}000. \nonumber
+\end{align}
+There is excess supply at $r^*$, so the market clears below $r^*$ where $L^s(0.86(1+r))=100{,}000$:
+\begin{align}
+  10^6\bigl[0.86(1+r)-0.96\bigr] &= 100{,}000 \nonumber\\
+  0.86(1+r) &= 1.06 \nonumber\\
+  1+r &= \frac{1.06}{0.86} = 1.232558 \nonumber\\
+  r &= 0.232558. \nonumber
+\end{align}
+Every borrower is served at $23.26\%$, so no bank can find unserved borrowers at another rate: this is an equilibrium without rationing.
+
+\emph{(ii) $p_H=0.4$, $R_H=292.5$.} The mean is unchanged, $(0.4)(292.5)=117$, and $r^*=117/90-1=0.30$ does not change (it involves only the safe type). The other values change:
+\begin{align}
+  r_{max} &= \frac{117}{(0.4)(100)}-1 = 2.925-1 = 1.925, \nonumber\\
+  m &= (0.75)(0.9)+(0.25)(0.4) = 0.675+0.1 = 0.775, \nonumber\\
+  \rho^* &= (0.775)(1.3) = 1.0075, \nonumber\\
+  L^s(\rho^*) &= 10^6(1.0075-0.96) = 47{,}500. \nonumber
+\end{align}
+Unmet demand is $100{,}000-47{,}500=52{,}500$, i.e.\ 525 of 1{,}000 applicants ($52.5\%$, up from $20\%$). The drop at $r^*$ is
+\begin{align}
+  (m-p_H)(1+r^*) = (0.775-0.4)(1.3) = 0.4875 = \alpha(p_L-p_H)(1+r^*) = (0.75)(0.5)(1.3), \nonumber
+\end{align}
+up from $(0.8-0.5)(1.3)=0.39$. The risky-only clearing rate solves $10^6[0.4(1+r)-0.96]=25{,}000$, so $0.4(1+r)=0.985$, $1+r=2.4625$, $r=1.4625\in(0.30,1.925]$, with return $0.985<1.0075$: a bank offering $r^*$ again does better, so it is not an equilibrium either.
+
+\answer{(e)} (i) $\rho^*=1.118$, $L^s=158{,}000>100{,}000$: no rationing; the market clears at $23.26\%$. (ii) $r^*=30\%$, $r_{max}=192.5\%$, $\rho^*=1.0075$, $L^s=47{,}500$: $52.5\%$ of applicants turned down; the drop at $r^*$ rises from $0.39$ to $0.4875$; the risky-only clearing rate $146.25\%$ (return $0.985$) is again not an equilibrium.
+
+\step{6}{A second, higher rate (part (f))} Of the 200 applicants turned down in (b), 150 are low-risk and 50 high-risk. At a rate $r'>r^*$ a low-risk borrower expects $117-90(1+r')<117-90(1.3)=0$ and declines; a high-risk borrower expects $117-50(1+r')\ge0$ as long as $r'\le r_{max}$ and accepts. Only the 50 high-risk borrowers accept, and the bank's return is
+\begin{align}
+  \rho = p_H(1+r') = 0.5(1+r') > 0.5(2.08) = 1.04 \qquad\text{for } r'>\tilde r. \nonumber
+\end{align}
+The offer is profitable, so other banks make it too, and competition bids $r'$ down to the rate at which the return equals what depositors earn elsewhere, $\rho^*$: $r'=\tilde r=108\%$. The deposits supplied at $\rho^*=1.04$ are then shared between the two rates, $30\%$ for the pool and $108\%$ for rejected high-risk applicants. The rejected low-risk borrowers get nothing: any rate above $r^*$ gives them a negative payoff, and at $r^*$ banks already lend all the funds depositors supply at that return.
+
+\answer{(f)} Only the 50 rejected high-risk borrowers accept; the return $0.5(1+r')$ exceeds $1.04$ for $r'>108\%$, and competition pushes $r'$ to $\tilde r=108\%$. In this two-type example the market can have two rates; the rejected low-risk borrowers remain rationed, because no rate above $30\%$ is acceptable to them.
+
+\intuition Raising the rate is the textbook way to clear excess demand, but here it changes who borrows. Past $r^*$ the safe borrowers leave, the return to lending falls, depositors supply less, and the gap between demand and supply widens instead of closing. Even the rate that does clear the market among risky borrowers fails, because a bank that goes back to $r^*$ gets the better pool and pays more. Rationing is therefore an equilibrium outcome, and it is worse when the pool is worse (fewer safe types, or a riskier risky project). With enough safe types the supply at $r^*$ covers demand and the market clears at a lower rate. In this two-type example the safe borrowers are exactly indifferent at $r^*$, so their exclusion costs them nothing; what the example isolates is the mechanism, why the rate does not rise to clear the market.
+
+\pitfalls
+\begin{itemize}
+  \item Calling the risky-only clearing rate $r_W$ an equilibrium: supply equals demand there, but a bank offering $r^*$ earns $1.04>0.985$ and breaks it.
+  \item Holding $\rho$ fixed when the rate changes: depositors are paid $\rho(r)$, which depends on who borrows, so the supply of funds moves with the composition of the pool.
+  \item Forgetting that $r^*$ depends only on the safe type: a riskier risky project with the same mean changes $r_{max}$, $m$ and $\rho^*$, not $r^*$.
+\end{itemize}
+
+\refbib{Lecture Topic~3, block 3.6, slides 47--55 (backward-bending supply, two-type example). Tirole \S3.1 Introduction, p.~113 (why lenders do not raise rates when demand exceeds supply). Original exercise: no book answer.}
+
+\exsec{18. Collateral as a separating signal --- Original exercise}
+
+\asked (a) Under symmetric information, find each type's zero-profit repayment and utility, and show that pledging collateral only lowers the good type's utility. (b) Without collateral and with asymmetric information, find the pooled repayment and the utilities, and show that the bad type would copy the good type's symmetric-information contract. (c) Solve the good type's least-cost separating contract (repayment and collateral), explain why both constraints bind, and verify them. (d) Compute the good type's utility under separation, the deadweight cost of collateral, and compare with (a) and (b). (e) Check that neither type wants the other's contract and explain why collateral sorts the types.
+
+\approach This is the costly-collateral signalling model of lecture block 3.7 (Bester 1985; Tirole \S6.3, Application 5). Collateral is a dissipative signal: the lender values it at $\delta C<C$, so it destroys value in default and is never used under symmetric information. Under asymmetric information it is cheaper for the good type, who defaults less often, so a contract with collateral and a lower repayment can be made unattractive to the bad type. The good type's best separating contract maximises her utility subject to the bad type's no-mimicking constraint and the lender's break-even constraint.
+
+\notation
+\begin{itemize}
+  \item $I=60$: investment; $R=120$: return on success (0 on failure); $p=0.9$, $q=0.6$: success probabilities of the good and the bad type; $\alpha=0.5$: share of good types; $m=\alpha p+(1-\alpha)q$.
+  \item $C$: collateral, worth $C$ to the borrower and $\delta C$ to the lender, $\delta=0.5$; the borrower owns assets worth 60.
+  \item $R_u$: repayment to the lender on success; $R_u^G=I/p$, $R_u^B=I/q$: symmetric-information repayments; $\{\tilde R,\tilde C\}$: the good type's contract in the separating program, with solution $\{R_u^G,C_G\}$ (written $R_u^{G,sep}$ when it must be told apart from $I/p$).
+  \item $U_G$, $U_B$: expected utilities of the good and the bad type; $D\equiv p(1-q)-\delta q(1-p)$.
+\end{itemize}
+
+\step{1}{Symmetric information (part (a))} A lender who knows the type breaks even when expected repayment equals $I$. Without collateral,
+\begin{align}
+  R_u^G &= \frac Ip = \frac{60}{0.9} = 66.667, & R_u^B &= \frac Iq = \frac{60}{0.6} = 100, \nonumber\\
+  U_G &= p(R-R_u^G) = pR-I = 108-60 = 48, & U_B &= qR-I = 72-60 = 12. \nonumber
+\end{align}
+With collateral $C=20$ for the good type, break-even requires $pR_u+(1-p)\delta C=I$:
+\begin{align}
+  0.9R_u+(0.1)(0.5)(20) &= 60 \nonumber\\
+  0.9R_u &= 60-1 = 59 \nonumber\\
+  R_u &= \frac{59}{0.9} = 65.556, \nonumber
+\end{align}
+and her utility is
+\begin{align}
+  p(R-R_u)-(1-p)C = 0.9(120-65.556)-(0.1)(20) = 49-2 = 47. \nonumber
+\end{align}
+In general, substituting $pR_u=I-(1-p)\delta C$ from the break-even condition,
+\begin{align}
+  p(R-R_u)-(1-p)C &= pR-\bigl[I-(1-p)\delta C\bigr]-(1-p)C \nonumber\\
+  &= pR-I-(1-p)(1-\delta)C, \label{t3e18-symC}
+\end{align}
+which here is $48-(0.1)(0.5)(20)=48-1=47$.
+
+\answer{(a)} $R_u^G=66.667$, $R_u^B=100$, $U_G=48$, $U_B=12$. With $C=20$: $R_u=65.556$, $U_G=47=48-(1-p)(1-\delta)C$. Utility falls one for one with the expected collateral loss $(1-p)(1-\delta)C$, so $C=0$ is optimal; the same argument holds for the bad type.
+
+\step{2}{Pooling without collateral (part (b))} Lenders who cannot tell the types apart price the loan on the prior:
+\begin{align}
+  m &= \alpha p+(1-\alpha)q = (0.5)(0.9)+(0.5)(0.6) = 0.45+0.30 = 0.75, \nonumber\\
+  R_u &= \frac Im = \frac{60}{0.75} = 80, \nonumber\\
+  U_G &= p(R-R_u) = 0.9(120-80) = 36, \nonumber\\
+  U_B &= q(R-R_u) = 0.6(120-80) = 24. \nonumber
+\end{align}
+The good type loses $48-36=12$ and the bad type gains $24-12=12$ relative to symmetric information (with equal shares the transfers offset: $(0.5)(12)=(0.5)(12)$). If the good type asked for $\{I/p,0\}$, the bad type would get
+\begin{align}
+  q(R-I/p) = 0.6(120-66.667) = 0.6(53.333) = 32 > 12, \nonumber
+\end{align}
+so she would mimic, and the lender, facing both types, would receive $m(66.667)=(0.75)(66.667)=50<60$.
+
+\answer{(b)} $m=0.75$, $R_u=80$, $U_G=36$, $U_B=24$ (a cross-subsidy of 12 from good to bad). The bad type gets $32>12$ by copying $\{66.667,0\}$, so the symmetric-information contract cannot be offered to the good type alone.
+
+\step{3}{The separating program and why both constraints bind (part (c))} The bad type, recognised, pledges nothing and repays $I/q=100$, getting $qR-I=12$. The good type solves
+\begin{align}
+  \max_{\tilde R,\tilde C}\ & p(R-\tilde R)-(1-p)\tilde C \nonumber\\
+  \text{s.t. }\ & q(R-\tilde R)-(1-q)\tilde C \le qR-I \qquad\text{(no-mimicking)}, \label{t3e18-NM}\\
+  & p\tilde R+(1-p)\delta\tilde C \ge I \qquad\text{(break-even)}. \label{t3e18-BE}
+\end{align}
+\emph{No-mimicking binds.} Without \eqref{t3e18-NM} the problem is the symmetric-information one, whose solution is $\{I/p,0\}$ by \eqref{t3e18-symC}; Step~2 showed that this violates \eqref{t3e18-NM} ($32>12$). So \eqref{t3e18-NM} binds. \emph{Break-even binds.} Expanding \eqref{t3e18-NM} at equality, $qR-q\tilde R-(1-q)\tilde C=qR-I$, i.e.\ $q\tilde R+(1-q)\tilde C=I$. Along this line $d\tilde C=-\frac{q}{1-q}\,d\tilde R$, and the good type's utility changes by
+\begin{align}
+  -p\,d\tilde R-(1-p)\,d\tilde C &= -p\,d\tilde R+\frac{q(1-p)}{1-q}\,d\tilde R \nonumber\\
+  &= -\frac{p(1-q)-q(1-p)}{1-q}\,d\tilde R = -\frac{p-q}{1-q}\,d\tilde R, \nonumber
+\end{align}
+so she gains by lowering $\tilde R$ and raising $\tilde C$ along the line. The lender's receipts change by
+\begin{align}
+  p\,d\tilde R+(1-p)\delta\,d\tilde C = p\,d\tilde R-\frac{\delta q(1-p)}{1-q}\,d\tilde R = \frac{p(1-q)-\delta q(1-p)}{1-q}\,d\tilde R, \nonumber
+\end{align}
+which falls as $\tilde R$ falls (the coefficient is positive because $p(1-q)>q(1-p)>\delta q(1-p)$). The good type therefore moves along the line until the lender just breaks even: \eqref{t3e18-BE} binds.
+
+\step{4}{Solving the two equations} The binding constraints are
+\begin{align}
+  q\tilde R+(1-q)\tilde C &= I, \label{t3e18-NMb}\\
+  p\tilde R+(1-p)\delta\tilde C &= I. \label{t3e18-BEb}
+\end{align}
+From \eqref{t3e18-NMb}, $\tilde R=[I-(1-q)\tilde C]/q$. Substituting into \eqref{t3e18-BEb} and multiplying by $q$,
+\begin{align}
+  \frac pq\bigl[I-(1-q)\tilde C\bigr]+(1-p)\delta\tilde C &= I \nonumber\\
+  pI-p(1-q)\tilde C+\delta q(1-p)\tilde C &= qI \nonumber\\
+  (p-q)I &= \bigl[p(1-q)-\delta q(1-p)\bigr]\tilde C \nonumber\\
+  C_G &= \frac{(p-q)I}{p(1-q)-\delta q(1-p)} = \frac{(p-q)I}{D}. \label{t3e18-C}
+\end{align}
+Since $p(1-q)=(p-q)+q(1-p)$, $D=(p-q)+q(1-p)(1-\delta)$ and $C_G=I/[1+q(1-p)(1-\delta)/(p-q)]$, the slides' form. Back in \eqref{t3e18-NMb},
+\begin{align}
+  R_u^G = \frac{I-(1-q)C_G}{q} = \frac Iq\cdot\frac{D-(1-q)(p-q)}{D}, \nonumber
+\end{align}
+and $D-(1-q)(p-q)=p(1-q)-\delta q(1-p)-p(1-q)+q(1-q)=q[(1-q)-\delta(1-p)]$, so
+\begin{align}
+  R_u^G = \frac{(1-q)-\delta(1-p)}{p(1-q)-\delta q(1-p)}\,I. \label{t3e18-R}
+\end{align}
+Numbers:
+\begin{align}
+  D &= (0.9)(0.4)-(0.5)(0.6)(0.1) = 0.36-0.03 = 0.33, \nonumber\\
+  C_G &= \frac{(0.3)(60)}{0.33} = \frac{18}{0.33} = 54.545, \nonumber\\
+  R_u^G &= \frac{0.4-(0.5)(0.1)}{0.33}(60) = \frac{(0.35)(60)}{0.33} = \frac{21}{0.33} = 63.636. \nonumber
+\end{align}
+Checks: break-even, $(0.9)(63.636)+(0.1)(0.5)(54.545)=57.273+2.727=60$; no-mimicking, $0.6(120-63.636)-(0.4)(54.545)=33.818-21.818=12=qR-I$; the collateral $54.545$ is below the assets of 60, and $R_u^G<R$.
+
+\answer{(c)} Both constraints bind; $C_G=(p-q)I/[p(1-q)-\delta q(1-p)]=54.545$ and $R_u^G=[(1-q)-\delta(1-p)]I/[p(1-q)-\delta q(1-p)]=63.636$ (below $I/p=66.667$, because the collateral pays the lender something in default).
+
+\step{5}{Utility and deadweight cost (part (d))} Directly,
+\begin{align}
+  U_G^{sep} = p(R-R_u^G)-(1-p)C_G = 0.9(56.364)-(0.1)(54.545) = 50.727-5.455 = 45.273. \nonumber
+\end{align}
+By \eqref{t3e18-symC}, with the break-even condition binding, this equals $pR-I-(1-p)(1-\delta)C_G$, where
+\begin{align}
+  (1-p)(1-\delta)C_G = (0.1)(0.5)(54.545) = 2.727, \qquad 48-2.727 = 45.273. \nonumber
+\end{align}
+
+\answer{(d)} $U_G^{sep}=45.273$; deadweight cost $2.727$. The good type is $2.727$ below her symmetric-information utility of 48 but $45.273-36=9.273$ above pooling: she prefers to signal.
+
+\step{6}{Incentives and sorting (part (e))} The bad type gets $qR-I=12$ from her own contract and, by the binding \eqref{t3e18-NM}, also 12 from the good type's contract: she is indifferent and takes her own (any tiny extra collateral would make the preference strict). The good type taking the bad contract would get $p(R-I/q)=0.9(120-100)=18<45.273$. Collateral costs type $i$ its failure probability times $C$ ($0.1C$ for the good type, $0.4C$ for the bad), while a lower repayment benefits type $i$ by its success probability ($0.9$ vs.\ $0.6$). Along an indifference curve, the repayment cut needed to compensate one unit of collateral is $0.1/0.9=0.111$ for the good type and $0.4/0.6=0.667$ for the bad type: the curves cross once, so a contract with more collateral and a lower repayment attracts only the good type.
+
+\answer{(e)} Bad type: 12 from either contract (indifferent, takes her own); good type: $18<45.273$ from the bad contract. Collateral separates because it is relatively more costly to the type that defaults more often (single crossing).
+
+\intuition Collateral is a pure cost in this model: the lender values it at half its worth to the borrower, so it is never used when types are known. When they are not, the good type is willing to burn part of its value, because the burning is cheap for her (she rarely fails) and expensive for the bad type (who fails 40\% of the time). The least-cost contract piles on just enough collateral to make the bad type indifferent and lowers the repayment until the lender only breaks even. The good type pays $2.727$ in expected deadweight cost instead of a cross-subsidy of $12$.
+
+\pitfalls
+\begin{itemize}
+  \item Writing the break-even condition with $C$ instead of $\delta C$: the lender recovers only $\delta C$ in default.
+  \item Letting the bad type pledge collateral too: in the separating equilibrium she is recognised, and pledging only destroys value for her, so $C_B=0$, $R_u^B=I/q$.
+  \item Comparing the separating repayment with the pooling one without counting the collateral: the right comparison is utilities, $45.273$ vs.\ $36$.
+\end{itemize}
+
+\refbib{Lecture Topic~3, block 3.7, slides 56--67 (costly collateral pledging). Tirole \S6.3, Application 5 ``Costly Collateral Pledging'', pp.~251--253 (equations (6.3)--(6.5); Tirole writes $\beta$ for $\delta$ and $R_b=R-R_u$). Original exercise: no book answer.}
+
+\exsec{19. When does signalling with collateral pay? --- Original exercise}
+
+\asked (a) Find the good type's least-cost separating contract, her utility and the deadweight cost, and say whether they depend on the share of good types. (b) Compute her pooling utility for $\alpha=0.3$ and $\alpha=0.6$ and pick the better regime in each case. (c) Derive, in general, the condition under which separation beats pooling, its threshold $\hat\alpha$, and check it numerically. (d) Show how the collateral and the deadweight cost move with $\delta$, compute the contract for $\delta=0$ and $\delta=0.6$ and as $\delta\to1$, and find the threshold $\hat\delta$ for $\alpha=0.6$. (e) Show how the collateral moves with $q$ and compute it for $q=0.6$ and $0.75$. (f) Compare total surplus and the bad type's utility under the two regimes at $\alpha=0.3$.
+
+\approach Same costly-collateral model as in lecture block 3.7 (Bester 1985; Tirole \S6.3, Application 5). The separating contract does not depend on $\alpha$ (lenders know the type once contracts separate), while the pooling utility $p(R-I/m)$ rises with $\alpha$. Comparing the two (slide 67) gives a threshold; comparative statics use derivatives of the closed-form $C_G$. Welfare compares total surplus, where pooling has no deadweight cost because both types have positive NPV and are financed either way.
+
+\notation
+\begin{itemize}
+  \item $I=50$, $R=100$ (0 on failure), $p=0.8$, $q=0.7$; $\delta=0.2$ unless stated (collateral worth $C$ to the borrower is worth $\delta C$ to the lender); assets worth 50.
+  \item $\alpha$: share of good types; $m=\alpha p+(1-\alpha)q$; $U^{pool}=p(R-I/m)$, $U^{sep}$: good type's utility in each regime.
+  \item $\{R_u^G,C_G\}$: good type's separating repayment and collateral; the bad type repays $I/q$ with no collateral and gets $qR-I$.
+  \item $x\equiv(1-p)(1-\delta)$: expected deadweight loss per unit of collateral; $D\equiv p(1-q)-\delta q(1-p)=(p-q)+qx$; $DW\equiv xC_G$: expected deadweight cost; $\hat\alpha$, $\hat\delta$: thresholds.
+\end{itemize}
+
+\step{1}{The separating contract (part (a))} The good type maximises $p(R-\tilde R)-(1-p)\tilde C$ subject to the bad type's no-mimicking constraint $q(R-\tilde R)-(1-q)\tilde C\le qR-I$ and the lender's break-even $p\tilde R+(1-p)\delta\tilde C\ge I$. No-mimicking binds because the solution without it, $\{I/p,0\}$, gives the bad type $q(R-I/p)=0.7(100-62.5)=26.25>20=qR-I$. Break-even binds because along the binding no-mimicking line ($d\tilde C=-\frac q{1-q}d\tilde R$) the good type's utility changes by $-\frac{p-q}{1-q}d\tilde R$, so she lowers $\tilde R$ and raises $\tilde C$ until the lender's receipts, which change by $\frac{D}{1-q}d\tilde R$ with $D>0$, fall to $I$. The two equalities are
+\begin{align}
+  q\tilde R+(1-q)\tilde C &= I, \label{t3e19-NM}\\
+  p\tilde R+(1-p)\delta\tilde C &= I. \label{t3e19-BE}
+\end{align}
+Substituting $\tilde R=[I-(1-q)\tilde C]/q$ from \eqref{t3e19-NM} into \eqref{t3e19-BE} and multiplying by $q$: $pI-p(1-q)\tilde C+\delta q(1-p)\tilde C=qI$, so $(p-q)I=D\tilde C$ and
+\begin{align}
+  C_G = \frac{(p-q)I}{D}, \qquad R_u^G = \frac{I-(1-q)C_G}{q} = \frac{(1-q)-\delta(1-p)}{D}\,I \label{t3e19-sol}
+\end{align}
+(the last step uses $D-(1-q)(p-q)=q[(1-q)-\delta(1-p)]$). Numbers:
+\begin{align}
+  D &= (0.8)(0.3)-(0.2)(0.7)(0.2) = 0.24-0.028 = 0.212, \nonumber\\
+  C_G &= \frac{(0.1)(50)}{0.212} = \frac5{0.212} = 23.585, \nonumber\\
+  R_u^G &= \frac{0.3-(0.2)(0.2)}{0.212}(50) = \frac{(0.26)(50)}{0.212} = \frac{13}{0.212} = 61.321. \nonumber
+\end{align}
+Checks: $(0.8)(61.321)+(0.2)(0.2)(23.585)=49.057+0.943=50$; $0.7(100-61.321)-(0.3)(23.585)=27.075-7.075=20=qR-I$. Using the binding break-even, the good type's utility is
+\begin{align}
+  U^{sep} &= p(R-R_u^G)-(1-p)C_G = pR-I-(1-p)(1-\delta)C_G, \label{t3e19-Usep}\\
+  DW &= (0.2)(0.8)(23.585) = 3.774, \qquad U^{sep} = 80-50-3.774 = 26.226. \nonumber
+\end{align}
+
+\answer{(a)} $C_G=23.585$, $R_u^G=61.321$, $DW=3.774$, $U^{sep}=26.226$. None depends on $\alpha$: once contracts separate, lenders know each borrower's type.
+
+\step{2}{Pooling utilities (part (b))} The pooled repayment is $I/m$ and the good type gets $p(R-I/m)$:
+\begin{align}
+  \alpha=0.3:\quad m &= (0.3)(0.8)+(0.7)(0.7) = 0.24+0.49 = 0.73, \nonumber\\
+  I/m &= 50/0.73 = 68.493, \qquad U^{pool} = 0.8(100-68.493) = 0.8(31.507) = 25.205; \nonumber\\
+  \alpha=0.6:\quad m &= (0.6)(0.8)+(0.4)(0.7) = 0.48+0.28 = 0.76, \nonumber\\
+  I/m &= 50/0.76 = 65.789, \qquad U^{pool} = 0.8(100-65.789) = 0.8(34.211) = 27.368. \nonumber
+\end{align}
+Both pools are financeable ($mR=73$ and $76$ exceed $I=50$).
+
+\answer{(b)} $\alpha=0.3$: $U^{pool}=25.205<26.226$, she signals. $\alpha=0.6$: $U^{pool}=27.368>26.226$, she prefers pooling.
+
+\step{3}{The general condition (part (c))} Using \eqref{t3e19-Usep}, separation is at least as good as pooling iff
+\begin{align}
+  pR-I-xC_G &\ge pR-\frac{pI}{m} \nonumber\\
+  xC_G &\le \frac{pI}m-I = \frac{(p-m)I}{m}. \label{t3e19-cmp}
+\end{align}
+Since $p-m=p-\alpha p-(1-\alpha)q=(1-\alpha)(p-q)$ and $C_G=(p-q)I/D$, \eqref{t3e19-cmp} reads
+\begin{align}
+  \frac{x(p-q)I}{D} \le \frac{(1-\alpha)(p-q)I}{m}. \nonumber
+\end{align}
+Dividing by $(p-q)I>0$ and multiplying by $mD>0$,
+\begin{align}
+  xm &\le (1-\alpha)D = (1-\alpha)(p-q)+(1-\alpha)qx \nonumber\\
+  x\bigl[m-(1-\alpha)q\bigr] &\le (1-\alpha)(p-q). \nonumber
+\end{align}
+Because $m-(1-\alpha)q=\alpha p$, this is
+\begin{align}
+  \alpha p(1-p)(1-\delta) \le (1-\alpha)(p-q). \label{t3e19-cond}
+\end{align}
+Collecting the terms in $\alpha$, $\alpha[p(1-p)(1-\delta)+(p-q)]\le p-q$, so
+\begin{align}
+  \hat\alpha = \frac{p-q}{(p-q)+p(1-p)(1-\delta)} = \frac{0.1}{0.1+(0.8)(0.2)(0.8)} = \frac{0.1}{0.228} = 0.438596. \label{t3e19-ahat}
+\end{align}
+Check: at $\hat\alpha$, $m=0.7+0.1\hat\alpha=0.743860$, $I/m=67.217$, and $U^{pool}=0.8(100-67.217)=0.8(32.783)=26.226=U^{sep}$. Also, for $\alpha=0.3$ the two sides of \eqref{t3e19-cond} are $(0.3)(0.128)=0.0384\le0.07$, and for $\alpha=0.6$ they are $0.0768>0.04$, consistent with (b).
+
+\answer{(c)} $U^{sep}\ge U^{pool}\iff\alpha p(1-p)(1-\delta)\le(1-\alpha)(p-q)\iff\alpha\le\hat\alpha=(p-q)/[(p-q)+p(1-p)(1-\delta)]=0.4386$. The good type signals when bad types are numerous (pooling is expensive) or collateral is cheap to burn.
+
+\step{4}{Comparative statics in $\delta$ (part (d))} With $D(\delta)=(p-q)+q(1-p)(1-\delta)$, $D'(\delta)=-q(1-p)$, so
+\begin{align}
+  \frac{dC_G}{d\delta} &= -\frac{(p-q)I\,D'(\delta)}{D^2} = \frac{(p-q)I\,q(1-p)}{D^2} > 0, \nonumber\\
+  \left.\frac{dC_G}{d\delta}\right|_{\delta=0.2} &= \frac{(0.1)(50)(0.7)(0.2)}{0.212^2} = \frac{0.7}{0.044944} = 15.575. \nonumber
+\end{align}
+For the deadweight cost write $DW=xC_G=(p-q)Ix/[(p-q)+qx]$. Differentiating in $x$ (quotient rule),
+\begin{align}
+  \frac{dDW}{dx} = (p-q)I\,\frac{(p-q)+qx-qx}{D^2} = \frac{(p-q)^2I}{D^2} > 0, \nonumber
+\end{align}
+and $dx/d\delta=-(1-p)$, so
+\begin{align}
+  \frac{dDW}{d\delta} &= -\frac{(1-p)(p-q)^2I}{D^2} < 0, \nonumber\\
+  \left.\frac{dDW}{d\delta}\right|_{\delta=0.2} &= -\frac{(0.2)(0.01)(50)}{0.044944} = -\frac{0.1}{0.044944} = -2.225. \nonumber
+\end{align}
+Evaluating \eqref{t3e19-sol} and \eqref{t3e19-Usep} (with $D=0.24-0.14\delta$, $x=0.2(1-\delta)$ and $U^{sep}=30-DW$):
+\begin{center}\small
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+$\delta$ & $D$ & $C_G=5/D$ & $R_u^G=50[0.3-0.2\delta]/D$ & $DW=xC_G$ & $U^{sep}$\\
+\midrule
+0 & $0.24$ & $5/0.24=20.833$ & $15/0.24=62.5$ & $(0.2)(20.833)=4.167$ & $25.833$\\
+0.2 & $0.212$ & $5/0.212=23.585$ & $13/0.212=61.321$ & $(0.16)(23.585)=3.774$ & $26.226$\\
+0.6 & $0.24-0.084=0.156$ & $5/0.156=32.051$ & $9/0.156=57.692$ & $(0.08)(32.051)=2.564$ & $27.436$\\
+\bottomrule
+\end{tabular}
+\end{center}
+At $\delta=0$, $R_u^G=I/p=62.5$: collateral worth nothing to the lender cannot lower the repayment, it only deters the bad type.
+As $\delta\to1$: $D\to p-q$, so $C_G\to I=50$, $R_u^G\to I(p-q)/(p-q)=I=50$, $DW\to0$ and $U^{sep}\to pR-I=30$ (the loan is repaid in full in both states). For $\alpha=0.6$, solve \eqref{t3e19-cond} for $\delta$:
+\begin{align}
+  1-\delta \le \frac{(1-\alpha)(p-q)}{\alpha p(1-p)} = \frac{(0.4)(0.1)}{(0.6)(0.8)(0.2)} = \frac{0.04}{0.096} = 0.416667 \iff \delta \ge \hat\delta = 0.583333. \nonumber
+\end{align}
+At $\delta=0.6>\hat\delta$, $U^{sep}=27.436>27.368=U^{pool}$, as predicted.
+
+\answer{(d)} $dC_G/d\delta=15.575>0$ and $dDW/d\delta=-2.225<0$ at $\delta=0.2$. $\delta=0$: $C_G=20.833$, $R_u^G=62.5$, $DW=4.167$, $U^{sep}=25.833$. $\delta=0.6$: $C_G=32.051$, $R_u^G=57.692$, $DW=2.564$, $U^{sep}=27.436$. $\delta\to1$: $C_G\to50$, $R_u^G\to50$, $DW\to0$, $U^{sep}\to30$. For $\alpha=0.6$: $\hat\delta=0.5833$.
+
+\step{5}{Comparative statics in $q$ (part (e))} Here $x$ does not depend on $q$ and $dD/dq=-1+x$. By the quotient rule,
+\begin{align}
+  \frac{dC_G}{dq} &= \frac{-I\cdot D-(p-q)I(-1+x)}{D^2} = \frac{I\bigl[-(p-q)-qx+(p-q)-(p-q)x\bigr]}{D^2} \nonumber\\
+  &= -\frac{Ipx}{D^2} < 0, \nonumber\\
+  \left.\frac{dC_G}{dq}\right|_{q=0.7} &= -\frac{(50)(0.8)(0.16)}{0.044944} = -\frac{6.4}{0.044944} = -142.40. \nonumber
+\end{align}
+At $q=0.6$: $D=0.2+(0.6)(0.16)=0.296$, $C_G=(0.2)(50)/0.296=33.784$, $DW=(0.16)(33.784)=5.405$ (and $qR-I=10>0$, so the bad type is still creditworthy). At $q=0.75$: $D=0.05+(0.75)(0.16)=0.17$, $C_G=(0.05)(50)/0.17=14.706$, $DW=(0.16)(14.706)=2.353$. As $q\to p$, $C_G\to0$.
+
+\answer{(e)} $dC_G/dq=-Ipx/D^2<0$; $C_G=33.784$ ($DW=5.405$) at $q=0.6$ and $14.706$ ($DW=2.353$) at $q=0.75$. A wider gap between the types gives the bad type more to gain from mimicking, so more collateral is needed to deter her; the result assumes both types stay creditworthy ($qR>I$).
+
+\step{6}{Welfare at $\alpha=0.3$ (part (f))} Lenders break even in both regimes, so total surplus per borrower is the average of the two types' utilities. Under pooling nothing is destroyed:
+\begin{align}
+  \alpha(pR-I)+(1-\alpha)(qR-I) &= (0.3)(30)+(0.7)(20) = 9+14 = 23, \nonumber\\
+  \text{check: } \alpha U^{pool}+(1-\alpha)q(R-I/m) &= (0.3)(25.205)+(0.7)(0.7)(31.507) = 7.562+15.438 = 23. \nonumber
+\end{align}
+Under separation the good types burn $DW$ each:
+\begin{align}
+  23-\alpha DW &= 23-(0.3)(3.774) = 23-1.132 = 21.868, \nonumber\\
+  \text{check: } \alpha U^{sep}+(1-\alpha)(qR-I) &= (0.3)(26.226)+(0.7)(20) = 7.868+14 = 21.868. \nonumber
+\end{align}
+The bad type gets $q(R-I/m)=22.055$ under pooling and $qR-I=20$ under separation.
+
+\answer{(f)} Surplus $23$ (pooling) vs.\ $21.868$ (separation): $1.132$ is lost. The bad type falls from $22.055$ to $20$, the good type rises from $25.205$ to $26.226$. Pooling is efficient (both projects have positive NPV and are financed, nothing is destroyed); the good type still signals because she gains $1.021$ by ending her cross-subsidy, while the cost falls on the bad type and on the collateral destroyed.
+
+\intuition Signalling with collateral is a private fix for adverse selection, not a social one. The good type compares two ways of paying for the bad type's presence: the cross-subsidy in the pool, which grows with the share of bad types and with $p-q$, and the expected collateral loss $(1-p)(1-\delta)C_G$, which does not depend on $\alpha$. When bad types are many, the cross-subsidy is the bigger bill and she signals. Cheaper collateral (higher $\delta$) requires more of it but wastes less, so signalling becomes more attractive; a smaller gap between types requires less of it. When both types are worth financing, every unit of collateral destroyed is a social loss: pooling would be efficient.
+
+\pitfalls
+\begin{itemize}
+  \item Letting $C_G$ depend on $\alpha$: in a separating equilibrium lenders know the type, so the prior plays no role in the contract; $\alpha$ enters only through the pooling alternative.
+  \item Reading ``more collateral'' as ``more waste'': as $\delta$ rises, $C_G$ rises but $DW=(1-p)(1-\delta)C_G$ falls.
+  \item Concluding that separation is efficient because the good type prefers it: total surplus is lower by $\alpha(1-p)(1-\delta)C_G$, paid for by the bad type's lost cross-subsidy.
+\end{itemize}
+
+\refbib{Lecture Topic~3, block 3.7, slides 56--67 (costly collateral pledging; slide 67 compares signalling with pooling). Tirole \S6.3, Application 5 ``Costly Collateral Pledging'', pp.~251--253 (equation (6.4) and the determinants of collateralization, $\partial C^*/\partial\beta>0$, $\partial C^*/\partial q<0$, p.~253). Original exercise: no book answer.}
 
 \end{document}

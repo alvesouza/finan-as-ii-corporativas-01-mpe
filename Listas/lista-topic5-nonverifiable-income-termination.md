@@ -5,7 +5,7 @@ date: 2026-11-10
 
 # Exercise list — Topic 5: Nonverifiable income, strategic default, the threat of termination, and debt structure
 
-One list for Prof. Ricca's Topic 5 lecture (`Aula/Topic_5.pdf`, mapped in [[Map/lectures-index|lectures-index]]): income the lender cannot verify, strategic versus liquidity default, the termination threat that makes repayment credible, and — from the book sections the lecture's model comes from (Amaro de Matos §5.1–5.2, Tirole §3.8 and §7.1.2) — renegotiation, the number of creditors and debt maturity. 13 real exercises ordered easy → really hard, copied verbatim from the course books for personal study; pages are printed, with the PDF page in brackets. The course books have fewer than 15 exercises on this material, and **none on the sovereign-debt model** (Eaton–Gersovitz, Arellano; slides 13–29). Blocks 3, 8, 9, 10 and 13 are taken unchanged from lists R6 and R7; the others are new; all pass `tools/check_lists.py`. Links: [[Map/exercises-index|exercise index]] · [[rules/04_agencia_estrutura_governanca|rules]] · [[Listas/lista-r7-lectures-3-5|R7]] · [[Listas/lista-r6-liquidity-risk-management|R6]].
+One list for Prof. Ricca's Topic 5 lecture (`Aula/Topic_5.pdf`, mapped in [[Map/lectures-index|lectures-index]]): income the lender cannot verify, strategic versus liquidity default, the termination threat that makes repayment credible, and — from the book sections the lecture's model comes from (Amaro de Matos §5.1–5.2, Tirole §3.8 and §7.1.2) — renegotiation, the number of creditors and debt maturity. 13 real exercises ordered easy → really hard, copied verbatim from the course books for personal study; pages are printed, with the PDF page in brackets. The course books have fewer than 15 exercises on this material, and **none on the sovereign-debt model** (Eaton–Gersovitz, Arellano; slides 13–29). For that gap, exercises 14–17 are **original exercises** built on the slides (lecture blocks 5.3–5.5), added because the user agreed on 2026-11-12 to have original practice where no book exercise exists; they open with an `**Origin:**` line instead of `**Source:**`, carry their own model summary, and are solved in the solutions files. Blocks 3, 8, 9, 10 and 13 are taken unchanged from lists R6 and R7; the other book blocks are new; the 13 book blocks pass `tools/check_lists.py` (which skips the original blocks by design). Links: [[Map/exercises-index|exercise index]] · [[rules/04_agencia_estrutura_governanca|rules]] · [[Listas/lista-r7-lectures-3-5|R7]] · [[Listas/lista-r6-liquidity-risk-management|R6]].
 
 | Lecture block or book complement | Exercises |
 |---|---|
@@ -14,6 +14,7 @@ One list for Prof. Ricca's Topic 5 lecture (`Aula/Topic_5.pdf`, mapped in [[Map/
 | Renegotiation and bankruptcy design (slide 12; Amaro de Matos §5.1) | 4, 13 |
 | One vs. many creditors (Amaro de Matos §5.2.2) | 10 |
 | Debt maturity (Amaro de Matos §5.2.3, Diamond 1991; Tirole Ch. 5) | 2, 5, 8, 9, 11, 12 |
+| 5.3–5.5 Sovereign debt: default sets, price schedule, Claim 3, risk-free debt (slides 13–29; original exercises) | 14, 15, 16, 17 |
 
 ## References
 
@@ -32,6 +33,10 @@ One list for Prof. Ricca's Topic 5 lecture (`Aula/Topic_5.pdf`, mapped in [[Map/
 | 11 | Really hard | Amaro de Matos | Ch. 5 | 5.2.5 #4 | 148 (166) | no (p. 268 only cites the appendix of Diamond 1991, pp. 732–733) | Diamond (1991): proving that $(q^dX + f^dC)/R \le L$ makes the good entrepreneur prefer the liquidating debt structure | new |
 | 12 | Really hard | Amaro de Matos | Ch. 5 | 5.2.5 #6 (with #5 as Part 0) | 148 (166) | no (p. 268 only cites examples 2 and 3 of Diamond 1991, pp. 717–719) | Diamond (1991) with control rents: liquidation after a downgrade, preference for long-term debt, reversal at $f = 3/4$ | new |
 | 13 | Really hard | Tirole | Ch. 4 | 4.9 | 190–191 (203) | yes, p. 586 | Optimal continuation cutoff $r^*$ as short-term debt; why a borrower-friendly court hurts the borrower | R7 ex. 18 |
+| 14 | Easy | Original | Topic 5 slides | — | slides 13–18, 21, 28–29 | n/a (solutions file) | Two-period sovereign bond: default iff $-B' > \lambda y$, default set, $q(B') = [1-\delta(B')]/(1+r)$, spread, maximum amount raised $B^*$ | new (original) |
+| 15 | Exam | Original | Topic 5 slides | — | slides 15, 18, 21, 23–24, 27–29 | n/a (solutions file) | Price schedule $q(B', y)$ with a Markov endowment and $h(y) = \min\{y, \hat y\}$: monotone in $B'$, lower in recessions, borrowing limit $B^*(y)$ | new (original) |
+| 16 | Exam | Original | Topic 5 slides | — | slides 17–22, 25 | n/a (solutions file) | Claim 3 (i.i.d., $\theta = 0$, $h(y) = y$): no capital inflows when default is possible; $D(0) = \emptyset$; which assumptions the proof needs; why re-entry $\theta > 0$ breaks it | new (original) |
+| 17 | Really hard | Original | Topic 5 slides | — | slides 17–24, 29 | n/a (solutions file) | Infinite horizon, log utility: certifying risk-free debt by "service it forever", threshold $\bar s$ by Newton steps, comparative statics in $\lambda$ and $\theta$ against a grid solution | new (original) |
 
 ## Tier 1 — Easy
 
@@ -1062,3 +1067,136 @@ The *(expected) pledgeable income* is then
 
 $$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
 
+---
+
+## Original exercises (no book exercise exists)
+
+None of the course books has an exercise on the sovereign-debt model of lecture blocks 5.3–5.5 (Eaton–Gersovitz 1981, Arellano 2008; slides 13–29). The four exercises below are original, written with the user's agreement (2026-11-12), and use the slides' notation: $B$ are the country's **assets** at the start of a period (so $B < 0$ is debt), $B'$ the assets it buys for next period, and $q(B', y)$ the unit price of a bond with face value $B'$. They are ordered easy → really hard.
+
+### 14. A two-period sovereign bond: default set, price and spread
+**Origin:** original exercise on sovereign default and bond pricing, built on Prof. Ricca's Topic 5 slides 13–18, 21 and 28–29 (Aula/Topic_5.pdf) · Answer: in the solutions file
+
+A small open economy lives for two periods, $t = 0, 1$. Its government maximizes $u(c_0) + \beta E_0[u(c_1)]$, with $\beta \in (0, 1)$, $u' > 0$ and $u'' < 0$. At $t = 0$ it has no assets ($B = 0$), observes output $y_0 = 1$, and chooses the face value $B'$ of the one-period, non-state-contingent bonds it buys: a position $B' < 0$ is a debt of face value $b \equiv -B' > 0$ due at $t = 1$, and it raises $-q(B')B'$ units of the good at $t = 0$, where $q(B')$ is the unit price. At $t = 1$ output is $y_H = 1.2$ with probability $0.8$ or $y_L = 0.8$ with probability $0.2$. Period $t = 1$ is the last one: nothing can be borrowed or saved at $t = 1$, and nothing happens afterwards. After observing $y$, the government either repays, consuming $c_1 = y + B'$, or defaults, consuming $h(y) = (1 - \lambda)y$ with $\lambda = 0.1$ (the output cost of default; exclusion from credit markets costs nothing more, because the economy ends). Debt contracts cannot be enforced: the government defaults whenever default gives strictly higher utility than repaying, and repays when indifferent. Foreign lenders are risk-neutral and competitive, can invest at the risk-free rate $r = 0.05$, and know the distribution of $y$.
+
+(a) Write the value of repaying, $V^c(B', y)$, and the value of defaulting, $V^d(y)$, at $t = 1$. Show that the government defaults if and only if $b > \lambda y$. Does the answer depend on the utility function $u$?
+
+(b) Find the default set $D(B') = \{y \in \{y_L, y_H\} : V^d(y) > V^c(B', y)\}$ for every $B'$, including $B' \ge 0$ (the country lends).
+
+(c) Derive the default probability $\delta(B')$ and the bond price $q(B')$ implied by the lenders' zero-profit condition. Evaluate $q$ at $B' = 0.05$, $-0.05$, $-0.08$, $-0.10$, $-0.12$ and $-0.15$.
+
+(d) For each $B'$ in (c) with $q(B') > 0$, compute the gross interest rate $1 + r(B') = 1/q(B')$ and the spread $r(B') - r$. At $B' = -0.10$, check that a lender who buys the issue earns, in expectation, exactly the risk-free return.
+
+(e) The country raises $-q(B')B'$ at $t = 0$. (i) Find the bond position $B^*$ that maximizes the amount raised, and that maximum amount. (ii) Show that any $B'$ with $-0.10 \le B' < -0.08$ is dominated: a risk-free bond raises the same amount at $t = 0$ and costs the country no more at $t = 1$ in either state (strictly less in at least one). (iii) Explain why the country never chooses $B' < B^*$.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 5 slides 13–18, 21 and 28–29 (Aula/Topic_5.pdf), restated for this exercise's two-period setting:*
+
+- Small open economy with a non-storable, stochastic endowment $\tilde y_t$; preferences $E_0\sum_t \beta^t u(c_t)$ with $\beta \in (0,1)$, $u' > 0$, $u'' < 0$ (slide 13). It smooths consumption by borrowing from or lending to competitive, risk-neutral foreign investors; bonds have a one-period maturity and are not state-contingent; debt contracts are not enforceable, so the country can renege even when it has the means to repay; default costs an output loss and exclusion from capital markets; the country defaults whenever this option is more valuable than repaying (slide 14).
+- A bond with face value $B'$ costs $q(B', y)B'$ today; the interest rate is $1 + r(B', y) = B'/[q(B', y)B'] = 1/q(B', y)$ (slide 15). $B' > 0$: the country pays $qB'$ today and receives $B'$ next period (it lends); $B' < 0$: it receives $-qB'$ today and pays $-B'$ next period (it borrows) (slide 16).
+- When the country repays, its resource constraint is $c = y + B - q(B', y)B'$; when it defaults it is excluded from foreign credit, re-enters with probability $\theta$ each period, and consumes $y^{def} = h(y) \le y$ while excluded (slide 17). In this exercise $t = 1$ is the last period, so $B' = 0$ is forced at $t = 1$ and $\theta$ plays no role.
+- Competition and risk neutrality: $q(B', y)B'(1 + r) = B'[1 - \delta(B', y)]$, i.e. $q(B', y) = [1 - \delta(B', y)]/(1 + r)$; for $B' > 0$ the default probability is zero (slide 18).
+- Default set $D(B) = \{y \in Y : V^d(y) > V^c(B, y)\}$; the probability of default next period on debt $B'$ is $\delta(B', y) = \Pr[y' \in D(B') \mid y]$ (slide 21).
+- The amount raised is $-q(B')B'$; the maximum increase in consumption is given by the $B^*$ that solves $\min_{B'} q(B')B'$, and it is never optimal to choose $B' < B^*$ because the country can raise the same amount at a higher price, i.e. with a smaller repayment next period (slides 28–29).
+
+---
+
+### 15. The price schedule $q(B', y)$ with persistent output
+**Origin:** original exercise on the sovereign bond price schedule, built on Prof. Ricca's Topic 5 slides 15, 17–18, 21, 23–24 and 27–29 (Aula/Topic_5.pdf) · Answer: in the solutions file
+
+A small open economy lives for two periods, $t = 0, 1$, with preferences $u(c_0) + \beta E_0[u(c_1)]$, $\beta \in (0,1)$, $u' > 0$, $u'' < 0$. Output takes three values, $y \in \{0.8, 1.0, 1.2\}$, and follows a Markov chain: given output $y$ at $t = 0$, output $y'$ at $t = 1$ has the probabilities $\pi(y' \mid y)$ below.
+
+| current $y$ \ next $y'$ | $0.8$ | $1.0$ | $1.2$ |
+|---|---|---|---|
+| $0.8$ | $0.6$ | $0.3$ | $0.1$ |
+| $1.0$ | $0.2$ | $0.6$ | $0.2$ |
+| $1.2$ | $0.1$ | $0.3$ | $0.6$ |
+
+At $t = 0$ the government has no assets, observes $y$, and chooses the face value $B'$ of one-period, non-state-contingent bonds ($B' < 0$ is a debt of face value $b = -B'$ due at $t = 1$), raising $-q(B', y)B'$ at $t = 0$. Period $t = 1$ is the last one (no borrowing or saving at $t = 1$). After observing $y'$, the government either repays, consuming $y' + B'$, or defaults, consuming $h(y') = \min\{y', \hat y\}$ with $\hat y = 0.9$ (the output-cost form used by Arellano 2008: default costs nothing when output is already below $\hat y$ and costs $y' - \hat y$ when it is above). The government defaults whenever default gives strictly higher utility, and repays when indifferent. Lenders are risk-neutral and competitive, can invest at $r = 0.04$, observe $y$ and know the transition probabilities.
+
+(a) Let $D(B') = \{y' : V^d(y') > V^c(B', y')\}$. Show that $B'_2 \ge B'_1$ implies $D(B'_2) \subseteq D(B'_1)$, and conclude that for every current $y$ the price $q(B', y)$ is nondecreasing in $B'$ (nonincreasing in the debt $b$). Does $D(B')$ depend on current output $y$? Does $q(B', y)$?
+
+(b) Find $D(B')$ for every $B'$.
+
+(c) Compute $q(B', y)$ for $B' \in \{0.10,\ 0,\ -0.05,\ -0.10,\ -0.20,\ -0.30,\ -0.40\}$ and $y \in \{0.8, 1.0, 1.2\}$; present the results as a table.
+
+(d) At $B' = -0.05$, compute the gross interest rate $1 + r(B', y) = 1/q(B', y)$ and the spread $r(B', y) - r$ for each current $y$. Explain why the same bond pays a higher interest rate when current output is low. What would $q(-0.05, y)$ be, for every current $y$, if instead $y'$ were i.i.d. with probabilities $(0.3, 0.4, 0.3)$ on $(0.8, 1.0, 1.2)$?
+
+(e) For each current $y$, find the bond position $B^*(y) \in [-0.5, 0)$ that maximizes the amount raised, $-q(B', y)B'$, and the maximum amount. Interpret the result as an endogenous borrowing limit.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 5 slides 15, 17–18, 21, 23–24 and 27–29 (Aula/Topic_5.pdf), restated for this exercise's two-period setting:*
+
+- A bond with face value $B'$ costs $q(B', y)B'$; the interest rate is $1 + r(B', y) = 1/q(B', y)$ (slide 15). Repaying, the country consumes $c = y + B - q(B', y)B'$; defaulting, it consumes $y^{def} = h(y) \le y$ while excluded (slide 17).
+- Lenders' zero profit: $q(B', y) = [1 - \delta(B', y)]/(1 + r)$, with $\delta(B', y) = 0$ for $B' > 0$ (slide 18). Default set $D(B) = \{y \in Y : V^d(y) > V^c(B, y)\}$; $\delta(B', y) = \Pr[y' \in D(B') \mid y] = \sum_{y' \in D(B')} \pi(y' \mid y)$ (slide 21, with the integral over the density $f(y', y)$ written as a sum for a finite state space).
+- Claim 1: for given $y$, $V^c(B, y)$ is increasing in $B$. Claim 2: if $B_2 \ge B_1$ then $D(B_2) \subseteq D(B_1)$, since $V^c$ increases with $B$ while $V^d(y)$ stays constant. Hence the equilibrium price function $q(B', y)$ is increasing in $B'$ and the interest rate decreasing (slides 23–24).
+- In the i.i.d. case the price function $q(B') = [1 - F(y^*(B'))]/(1 + r)$ does not depend on current $y$; equilibrium prices still depend on $y$ because the chosen $B'$ does (slide 27).
+- The maximum increase in consumption in a period is given by the $B^*$ that solves $\min_{B'} q(B')B'$; this endogenous borrowing limit means that, after a bad shock, the country would like to borrow more but such a contract is not available; choosing $B' < B^*$ is never optimal (slides 28–29).
+
+---
+
+### 16. No capital inflows when default is possible (Claim 3)
+**Origin:** original exercise on the i.i.d. case with permanent exclusion of the Eaton–Gersovitz model, built on Prof. Ricca's Topic 5 slides 17–22 and 25 (Aula/Topic_5.pdf) · Answer: in the solutions file
+
+Consider the infinite-horizon small open economy with preferences $E_0\sum_{t=0}^{\infty}\beta^t u(c_t)$, $\beta \in (0,1)$, $u' > 0$, $u'' < 0$. Output $y_t$ is i.i.d. over time. Each period the government enters with assets $B$ ($B < 0$ is debt), observes $y$, and either repays — choosing next period's assets $B' \ge Z$ ($Z < 0$ is a no-Ponzi bound) and consuming $c = y + B - q(B')B'$ — or defaults. After a default the country is excluded from credit markets and re-enters each period with probability $\theta$; while excluded it consumes $h(y) \le y$. Lenders are risk-neutral and competitive, with risk-free rate $r > 0$, so $q(B') = [1 - \delta(B')]/(1 + r)$, where $\delta(B') = \Pr[\tilde y \in D(B')]$ and $D(B) = \{y : V^d(y) > V^c(B, y)\}$. The value functions are
+$$V^o(B, y) = \max\{V^d(y), V^c(B, y)\},$$
+$$V^d(y) = u(h(y)) + \beta E\big[\theta V^o(0, \tilde y') + (1 - \theta)V^d(\tilde y')\big],$$
+$$V^c(B, y) = \max_{B' \ge Z}\Big\{u\big(y + B - q(B')B'\big) + \beta E\big[V^o(B', \tilde y')\big]\Big\}.$$
+In parts (a)–(d), $\theta = 0$ (permanent exclusion) and $h(y) = y$ (no output cost).
+
+(a) Show that $V^d(y) = u(y) + \dfrac{\beta}{1 - \beta}E[u(\tilde y)]$. Evaluate $V^d$ in both states when $u(c) = \ln c$, $y \in \{0.9, 1.1\}$ with probability $1/2$ each, and $\beta = 0.9$.
+
+(b) Prove: if, for some $B$, the default set is non-empty, $D(B) \ne \emptyset$, then there is no bond position $\hat B$ available with $B - q(\hat B)\hat B > 0$ (no capital inflow at $B$).
+
+(c) A commentator claims that, with the numbers in (a), a country holding $B = -0.2$ defaults when $y = 0.9$ even though lenders offer to buy bonds $\hat B = -0.25$ at the risk-free price $q(\hat B) = 1/(1 + r)$, with $r = 0.05$. Compute the consumption and the net capital inflow that taking this offer would give, and show — using only $V^o \ge V^d$ — that default at $y = 0.9$ cannot then be optimal.
+
+(d) Show that $D(0) = \emptyset$: a country with no debt never defaults. Does the result in (b) say that the country can never borrow?
+
+(e) Which assumptions does the proof in (b) use? Show that the result still holds (i) for any output cost $h(y) \le y$, with $\theta = 0$, and (ii) with Markov output, where prices are $q(\hat B, y)$.
+
+(f) Now let $\theta > 0$. Show at which step the proof in (b) breaks, and explain the economics.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 5 slides 17–22 and 25 (Aula/Topic_5.pdf):*
+
+- Repaying, the country's resource constraint is $c = y + B - q(B', y)B'$. Defaulting, it loses access to foreign credit for a stochastic number of periods, regains access next period with probability $\theta$, and consumes $y^{def} = h(y) \le y$ until it re-enters (slide 17). Lenders: $q(B', y) = [1 - \delta(B', y)]/(1 + r)$, with zero default probability when $B' > 0$ (slide 18).
+- $V^o(B, y) = \max\{V^d(B, y), V^c(B, y)\}$ (slide 19); $V^d(y) = u(y^{def}) + \beta\int_{y'}[\theta V^o(0, y') + (1 - \theta)V^d(y')]f(y', y)\,dy'$ and $V^c(B, y) = \max_{B' \ge Z}\{u(y + B - q(B', y)B') + \beta\int_{y'}V^o(B', y')f(y', y)\,dy'\}$, where $Z < 0$ is a lower bound on debt that prevents Ponzi schemes (slide 20). In the i.i.d. case the integrals are expectations over $\tilde y'$ and $q$ does not depend on current $y$.
+- Default is optimal if $V^d(y) > V^c(B, y)$; $D(B) = \{y \in Y : V^d(y) > V^c(B, y)\}$; $\delta(B', y) = \Pr[y' \in D(B') \mid y]$ (slide 21). An equilibrium is a set of policy functions $c(s)$, $B'(s)$, default sets $D(B)$ and prices $q(B', y)$ such that consumption satisfies the resource constraint, choices are optimal given prices, and prices reflect default probabilities with zero profits (slide 22).
+- Slide 25 states the result of part (b) for the i.i.d. case with $\theta = 0$ and $h(y) = y$ ("Claim 3") and adds: if the country could roll over the debt, that is, borrow an amount large enough to repay the previous debt, it would choose to do so, given that it can still exercise the option to default in the next period.
+
+---
+
+### 17. Infinite horizon with log utility: certifying risk-free debt
+**Origin:** original exercise on the risk-free region and the borrowing capacity of the Eaton–Gersovitz model, built on Prof. Ricca's Topic 5 slides 17–24 and 29 (Aula/Topic_5.pdf) · Answer: in the solutions file
+
+Consider the infinite-horizon small open economy of slides 17–22: preferences $E_0\sum_{t=0}^{\infty}\beta^t\ln c_t$ with $\beta = 0.9$; output i.i.d., $y \in \{y_L, y_H\} = \{0.9, 1.1\}$ with probability $1/2$ each; one-period non-state-contingent bonds priced by risk-neutral competitive lenders at $q(B') = [1 - \delta(B')]/(1 + r)$ with $r = 0.05$; no enforcement. A defaulting country is excluded forever ($\theta = 0$) and consumes $h(y) = (1 - \lambda)y$ every period, with $\lambda = 0.02$. The value functions are
+$$V^o(B, y) = \max\{V^d(y), V^c(B, y)\},\qquad V^d(y) = \ln h(y) + \beta E[V^d(\tilde y')],$$
+$$V^c(B, y) = \max_{B' \ge Z}\Big\{\ln\big(y + B - q(B')B'\big) + \beta E\big[V^o(B', \tilde y')\big]\Big\},$$
+with $Z < 0$ a no-Ponzi bound, and $D(B) = \{y : V^d(y) > V^c(B, y)\}$. Fix a debt level $b > 0$ (assets $B = -b$) and consider the conjecture that bonds with face value $b$ are risk-free: $q(-b) = 1/(1 + r)$.
+
+(a) Compute $V^d(y_L)$ and $V^d(y_H)$.
+
+(b) Under the conjecture, show that servicing the debt forever — repaying and choosing $B' = -b$ every period — gives consumption $y - s$ each period, with $s \equiv rb/(1 + r)$, and that
+$$V^c(-b, y) \ge W(b, y) \equiv \ln(y - s) + \frac{\beta}{1 - \beta}E[\ln(\tilde y - s)].$$
+Conclude that if $W(b, y) \ge V^d(y)$ in both states, then $D(-b) = \emptyset$, so the conjecture $q(-b) = 1/(1 + r)$ confirms itself.
+
+(c) Let $\Delta(s, y) \equiv W(b, y) - V^d(y)$. Show that $\Delta$ is increasing in $y$, so the condition of (b) only needs to be checked at $y_L$. Show also that with no output cost ($\lambda = 0$) $\Delta(s, y) < 0$ for every $s > 0$, and relate this to Exercise 16.
+
+(d) Find the largest $\bar s$ with $\Delta(\bar s, y_L) \ge 0$: write the equation that defines it, apply Newton's method from $s_0 = 0$ until six decimals are stable, and verify the sign of $\Delta(s, y_L)$ at $s = 0.019$ and $s = 0.020$. Convert $\bar s$ into the certified debt level $\bar b = \bar s(1 + r)/r$ and compare it with mean output.
+
+(e) A grid solution of the full model (slides 19–22: value iteration on an asset grid of step $0.00375$ on $[-0.6, 0.3]$, with prices updated from the default sets until they converge) gives the lowest asset level with an empty default set, $\bar B = \inf\{B : D(B) = \emptyset\}$: $\bar B = -0.42$ for $(\lambda, \theta) = (0.02, 0)$; $\bar B = -0.0375$ for $(\lambda, \theta) = (0.02, 0.5)$; and, on a grid of step $0.0005$ on $[-0.05, 0.05]$, $\bar B = -0.01$ for $(\lambda, \theta) = (0, 0)$. (i) Explain why $\bar b$ from (d) is a lower bound on $-\bar B$, and check it against the grid value. (ii) Compute $d\bar s/d\lambda$ and $d\bar b/d\lambda$ at $\lambda = 0.02$ by implicit differentiation. (iii) Use the grid results to explain how the output cost $\lambda$ and the re-entry probability $\theta$ shape the country's borrowing capacity.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 5 slides 17–24 and 29 (Aula/Topic_5.pdf):*
+
+- Repaying: $c = y + B - q(B', y)B'$. Defaulting: exclusion from foreign credit, re-entry next period with probability $\theta$, consumption $y^{def} = h(y) \le y$ until re-entry (slide 17). Lenders: $q(B', y) = [1 - \delta(B', y)]/(1 + r)$ (slide 18).
+- $V^o(B, y) = \max\{V^d(B, y), V^c(B, y)\}$ (slide 19); $V^d(y) = u(y^{def}) + \beta\int_{y'}[\theta V^o(0, y') + (1 - \theta)V^d(y')]f(y', y)\,dy'$; $V^c(B, y) = \max_{B' \ge Z}\{u(y + B - q(B', y)B') + \beta\int_{y'}V^o(B', y')f(y', y)\,dy'\}$ with $Z < 0$ a no-Ponzi bound (slide 20); $D(B) = \{y \in Y : V^d(y) > V^c(B, y)\}$, $\delta(B', y) = \Pr[y' \in D(B') \mid y]$ (slide 21); equilibrium: resource constraint, optimal choices given prices, zero-profit prices (slide 22).
+- Claim 1: $V^c(y, B)$ is increasing in $B$; Claim 2: $B_2 \ge B_1 \Rightarrow D(B_2) \subseteq D(B_1)$ (slide 23). $\underline B = \sup\{B : D(B) = Y\}$ and $\bar B = \inf\{B : D(B) = \emptyset\}$, with $\underline B \le \bar B \le 0$ (slide 24). When $B > \bar B$, debt is risk-free and $q(B) = 1/(1 + r)$ (slide 29).
+- Newton's method for $G(s) = 0$: $s_{k+1} = s_k - G(s_k)/G'(s_k)$. Implicit differentiation of $G(\bar s, \lambda) = 0$: $d\bar s/d\lambda = -G_\lambda/G_s$.
+
+*From Tirole §3.8 "Nonverifiable Income", "Relation to the sovereign debt literature", pp. 143–144 (PDF 156–157), for part (e)(iii):*
+
+> Repayment of debt by the sovereign responds to two incentives: international sanctions and the future cost of being shut down from the international capital market after default. A subliterature, starting with Bulow and Rogoff (1989a,b), assumes away sanctions and focuses on the incentives provided by exclusion. […] Bulow and Rogoff consider an infinite-horizon, symmetric-information model in which (a) the sovereign can decide not to reimburse and (b) the sovereign can save, and (c) the rate of growth of the economy is smaller than the rate of interest. They show that no lending is feasible as the borrower always prefers to default (and save some of the concomitant extra income). […] Second, an outright exclusion, in which the defaulting sovereign cannot even save, makes it particularly costly for the sovereign to repudiate its debt. Again, some sovereign debt may then be issued in equilibrium (Kehoe and Levine 1993; Kocherlakota 1996).

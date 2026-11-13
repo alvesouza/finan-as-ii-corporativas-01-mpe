@@ -1,4 +1,4 @@
-% Short answer key for Listas/lista-topic5-nonverifiable-income-termination.md (13 exercises).
+% Short answer key for Listas/lista-topic5-nonverifiable-income-termination.md (13 book exercises + originals 14-17).
 % Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
 % Every number is asserted in lista-topic5-nonverifiable-income-termination-solutions_check.py.
 \documentclass[11pt,a4paper]{article}
@@ -134,5 +134,38 @@ $E[r]+\int_{r^*}^{\bar r}\rho_0(r)f(r)dr+F(r^*)L=I-A$, $r^*\in(0,\bar r)$, $\rho
 \textbf{(iv)} $r^*>\hat r$: investors get at most $\max\{L/2,\rho_0(r)\}$ in each state, below the old contract on $[0,r^*)$ $\Rightarrow$ cannot break even: no financing.
 \textbf{(v)} $r^*<\hat r$: $\mathcal P^c(r^*)=I-A-F(r^*)L/2$; financing needs a higher cutoff $r^{**}\in(r^*,\hat r]$, or fails. Lenders still break even; the borrower loses $\text{NPV}(r^*)-\text{NPV}(r^{**})>0$.
 Example ($r\sim U[0,1]$, $\rho_0=0.12+0.2r$, $\rho_1=0.6+r$, $L=0.5$, $I-A=0.75$): $r^*=0.080659$, $r^{**}=0.3$, loss $0.063681$.
+
+% =============================================================================
+% Original exercises 14--17 (sovereign debt; no book exercise exists)
+\section*{14. Two-period sovereign bond (original)}
+
+At $t=1$: $V^c=u(y+B')$, $V^d=u((1-\lambda)y)$, so default iff $b=-B'>\lambda y$ (independent of $u$). Thresholds $\lambda y_L=0.08$, $\lambda y_H=0.12$:
+$D=\emptyset$ for $B'\ge-0.08$, $\{y_L\}$ for $-0.12\le B'<-0.08$, both states below $-0.12$ (ties repay).
+$q=(1-\delta)/1.05$: $0.952381$ at $0.05,-0.05,-0.08$; $0.761905$ at $-0.10,-0.12$; $0$ at $-0.15$.
+Risky region: $1+r(B')=1.3125$, spread $0.2625$; lender gets $0.08/0.0761905=1.05$.
+$B^*=-0.12$ raises $0.091429$ (safe maximum $0.076190$); $B'\in[-0.10,-0.08)$ is dominated by the safe bond $b_s=0.8b$; beyond $B^*$, $q=0$.
+
+\section*{15. Price schedule with persistent output (original)}
+
+Default iff $b>\kappa(y')=y'-\min\{y',0.9\}=0,\,0.1,\,0.3$. $D(B'_2)\subseteq D(B'_1)$ for $B'_2\ge B'_1$ ($u(y'+B')$ rises in $B'$, $u(h(y'))$ fixed) $\Rightarrow q$ nondecreasing in $B'$;
+$D$ depends on $y'$ only, $q$ on current $y$.
+$q(B',y)$ for $y=0.8,1.0,1.2$: $B'\ge0$: $0.961538$; $-0.1\le B'<0$: $0.384615,\,0.769231,\,0.865385$; $-0.3\le B'<-0.1$: $0.096154,\,0.192308,\,0.576923$; $B'<-0.3$: $0$.
+Spreads at $B'=-0.05$: $1.56$, $0.26$, $0.115556$ (persistence). I.i.d.\ $(0.3,0.4,0.3)$: $q=0.673077$ for all $y$.
+$B^*(0.8)=B^*(1.0)=-0.1$ (raise $0.038462$, $0.076923$), $B^*(1.2)=-0.3$ ($0.173077$): procyclical borrowing limit.
+
+\section*{16. Claim 3: no inflows when default is possible (original)}
+
+(a) $V^d(y)=u(y)+\frac{\beta}{1-\beta}E[u]$: $V^d(0.9)=-0.150587$, $V^d(1.1)=0.050084$.
+(b) $y\in D(B)$ and $V^c\ge u(y+B-q(\hat B)\hat B)+\beta E V^o(\hat B,\cdot)$ give $u(y)-u(y+B-q(\hat B)\hat B)>\beta E[V^o(\hat B,\cdot)-V^d]\ge0$, so $B-q(\hat B)\hat B<0$.
+(c) $c=0.938095$, inflow $0.038095$; $V^c\ge V^d(0.9)+0.041457$: no default. (d) $V^c(0,y)\ge u(y)+\beta EV^d=V^d(y)$, so $D(0)=\emptyset$: borrowing from $B=0$ is possible.
+(e) Holds for any $h(y)\le y$ (indeed $B-q(\hat B)\hat B<-(y-h(y))$) and state by state with Markov output; only $\theta=0$ matters.
+(f) With $\theta>0$ the right side gains $\beta\theta E[V^o(\hat B)-V^o(0)]\le0$: default as a fresh start can beat a small inflow.
+
+\section*{17. Certifying risk-free debt (original)}
+
+(a) $V^d(0.9)=-0.352614$, $V^d(1.1)=-0.151943$. (b) Rolling $b$ over at $1/(1+r)$: $c=y-s$, $s=rb/(1+r)$; $V^c(-b,y)\ge W=\ln(y-s)+9E\ln(\tilde y-s)$; $W\ge V^d$ $\Rightarrow D(-b)=\emptyset$.
+(c) $\partial\Delta/\partial y=s/[y(y-s)]>0$: test at $y_L$; with $\lambda=0$, $\Delta<0$ for all $s>0$.
+(d) $G(s)=5.5\ln(1-s/0.9)+4.5\ln(1-s/1.1)-10\ln0.98$; Newton $0\to0.019803\to0.019602$; $\bar s=0.019602$, $\bar b=21\bar s=0.411642$.
+(e) $\bar b\le-\bar B=0.42$ (lower bound); $d\bar s/d\lambda=0.980002$, $d\bar b/d\lambda=20.580043$; capacity $0.01\to0.42$ as $\lambda:0\to0.02$, $0.42\to0.0375$ as $\theta:0\to0.5$.
 
 \end{document}

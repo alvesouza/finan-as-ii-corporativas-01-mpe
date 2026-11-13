@@ -5,7 +5,7 @@ date: 2026-10-24
 
 # Exercise list R3 — A frictionless benchmark, taxes, distress and static trade-off theory
 
-Ricca topic 3: complete markets and arbitrage, MM I (homemade leverage, risky debt), MM II and the WACC, the interest tax shield, APV vs. WACC, personal taxes (Miller), bankruptcy costs and the static trade-off, payout irrelevance. 15 exercises from easy to really hard, copied verbatim from the course books for personal study; pages are printed page numbers (PDF page in brackets). Links: [[Map/exercises-index|exercise index]] · [[rules/03_benchmark_mm|rules]].
+Ricca topic 3: complete markets and arbitrage, MM I (homemade leverage, risky debt), MM II and the WACC, the interest tax shield, APV vs. WACC, personal taxes (Miller), bankruptcy costs and the static trade-off, payout irrelevance, and the bank capital debate. 18 exercises. Exercises 1–15 run from easy to really hard and are copied verbatim from the course books for personal study; pages are printed page numbers (PDF page in brackets). Exercises 16–18 (easy → really hard) are **original exercises**, not book exercises: they cover the bank capital debate (Admati et al. 2013, "bank equity is not socially expensive", Prof. Ricca's Topic 2B slides 46–47), which has no exercise in any of the six course books. The user agreed on 2026-11-12 to original exercises for this topic; each one opens with an `**Origin:**` line instead of a `**Source:**` line, and its answer is in the solutions file. Links: [[Map/exercises-index|exercise index]] · [[rules/03_benchmark_mm|rules]].
 
 ## References
 | # | Tier | Book | Ch. | Exercise | Printed p. | Answer in book | Trains |
@@ -25,6 +25,9 @@ Ricca topic 3: complete markets and arbitrage, MM I (homemade leverage, risky de
 | 13 | 3 Really hard | Ross | 16 | 16.19 (DESAFIO) | 578 (PDF 602) | no (selected answers in the web-only Apêndice C) | Derive the MM adjusted cost of capital $R_U[1 - T_C(D/V)]$ |
 | 14 | 3 Really hard | Amaro de Matos | 2 | 2.2.7 #1 | 58 (PDF 76) | yes, p. 255 | Proof of Miller's gain from leverage with corporate and personal taxes |
 | 15 | 3 Really hard | Amaro de Matos | 2 | 2.1.5 #3–#4 | 48 (PDF 66) | yes, pp. 252–254 | MM I with perpetual debt (with and without taxes) and its breakdown with unequal borrowing/lending rates |
+| 16 | 1 Easy | Original | — | — | Topic 2B slides 46–47; Topic 2A slides 97–102 | no (solutions file) | Bank capital without taxes: ROE and its risk at 4% and 20% equity, MM II, constant WACC; Statements 1 and 2 |
+| 17 | 2 Exam | Original | — | — | Topic 2B slides 7–18, 47 | no (solutions file) | Bank capital with corporate taxes: lost interest tax shield, after-tax WACC, private cost vs. transfer from taxpayers; Statement 3 |
+| 18 | 3 Really hard | Original | — | — | Topic 2B slides 44–47 | no (solutions file) | Failure externality: socially optimal capital ratio, the bank's private choice, how the fallacies bias the requirement |
 
 ## Tier 1 — Easy
 
@@ -432,3 +435,140 @@ $$V_l^\tau = V_u^\tau + \tau B. \qquad (2.7)$$
 *From Amaro de Matos §1.2.5 "Beta Values", p. 26 (PDF 44) — the symbol $R$ in (2.1):*
 
 […] The return on the preceding portfolio will be denoted by $R$ and is given by $R = 1 + r$. Such a portfolio is risk-free by construction and, as one would expect, for each unit invested at time 0 it gives back $(1 + r)$ units at $t = 1$.
+
+---
+
+## Original exercises (no book exercise exists)
+
+None of the six course books has an exercise on the bank capital debate of Topic 2B, block 2B.8 (slides 46–47). The three exercises below are original, written with the user's agreement (2026-11-12), and are numbered after the book exercises. They go from easy (16) to really hard (18). Answers: `Listas/lista-r3-mm-taxes-tradeoff-solutions.pdf`, sections 16–18.
+
+### 16. Bank capital without taxes: does more equity lower ROE and raise funding costs?
+**Origin:** original exercise on the bank capital debate (Statements 1 and 2) and MM I/II without taxes, built on Prof. Ricca's Topic 2B slides 46–47 (Aula/Topic2B.pdf) and Topic 2A slides 89 and 97–102 (Aula/Topic2A.pdf) · Answer: in the solutions file
+
+A bank holds loans with a market value of $A = 100$ (\$ billion) at $t = 0$. One year later the loans pay $A(1 + \tilde r_A)$, where the return on assets $\tilde r_A$ is $9\%$ in a good state and $3\%$ in a bad state, each with probability $\tfrac12$. The loans are fairly priced: their required (expected) return is $r_A = 6\%$. The bank funds the loans with deposits $D$ and equity $E$, $D + E = A$. Deposits pay the risk-free rate $r_D = r_f = 4\%$ and are repaid at $t = 1$ before shareholders receive anything. There are no taxes, no bankruptcy costs and no other frictions, and investors can borrow and lend at $r_f$. The equity ratio is $e = E/A$, and the bank's return on equity is
+
+$$ROE = \frac{(\text{payoff to shareholders at } t = 1) - E}{E}.$$
+
+The regulator considers raising the minimum equity ratio from $e = 4\%$ to $e = 20\%$; the bank keeps the same loans.
+
+a. For $e = 4\%$ and $e = 20\%$, find $E$, $D$ and the amount owed to depositors at $t = 1$, and show that deposits are repaid in full in both states, so they are indeed risk-free.
+
+b. For each equity ratio, compute the payoff to shareholders and the ROE in each state, the expected ROE $\mathbb{E}[ROE]$, and the standard deviation $\sigma(ROE)$. Compute also the ratio $(\mathbb{E}[ROE] - r_f)/\sigma(ROE)$ at each equity ratio.
+
+c. Use MM II to compute the required return on equity $r_E$ at each equity ratio, compare it with the expected ROE of part (b), and compute the weighted average cost of capital $r_{WACC} = e\,r_E + (1 - e)\,r_D$ at each ratio. Does the higher requirement change the value of the bank?
+
+d. A shareholder who liked the ROE of the $e = 4\%$ bank holds shares of the bank after it moves to $e = 20\%$. Per \$1 of her own money, how much of the $20\%$ bank's equity must she buy and how much must she borrow at $r_f$ to receive exactly the ROE of the $e = 4\%$ bank in each state? Verify state by state.
+
+e. Statement 1 (slide 47): "Increased equity requirements will hurt bank shareholders since it would lower the banks' return on equity (ROE)." True or false? Justify with your answers to (b)–(d).
+
+f. Statement 2 (slide 47): "Increased equity requirements increase the funding costs for banks because they must use more equity, which has a higher required return." A bank executive supports it with this computation: "At $e = 4\%$ our equity costs $r_E^{4\%}$ (the value you found in (c)) and our deposits $4\%$; at $20\%$ equity our funding cost becomes $0.20\,r_E^{4\%} + 0.80 \times 4\%$, against $6\%$ today." Compute the executive's number, find the error, and say whether Statement 2 is true or false.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 2B slide 46 (Aula/Topic2B.pdf):*
+
+Admati et al. (2013): no! Bank equity is not socially expensive. They use many of the arguments discussed in this lecture. They call for larger capital requirements, that is, less leverage in the banking industry.
+
+*From Prof. Ricca's Topic 2A slides 98–99 and 101–102 (Aula/Topic2A.pdf) — MM I and MM II:*
+
+MM I implies that the market value of the firm, $V$, or equivalently, the market value of the assets of the firm, $A$, is independent of the choices of $D$ and $E$. As the expected return on assets is defined by $A = \mathbb{E}[\tilde C_A]/(1 + r_A)$ and $A$ and $\tilde C_A$, the cash flows generated by the assets, are independent of $D$ and $E$, $r_A$ is independent of $D$ and $E$. Recall the identity
+
+$$r_A = \frac{E}{E + D}\,r_E + \frac{D}{E + D}\,r_D.$$
+
+Rearranging, we have that
+
+$$r_E = r_A + \frac{D}{E}\,(r_A - r_D).$$
+
+As $r_A$ is fixed (independent of $E$ and $D$) and $r_A > r_D$, $r_E$ increases with $D/E$, the market debt to equity ratio. For small values of $D$, that is, when debt is risk-free, $r_D$ is fixed and equal to $r_f$, and $r_E$ is linear in $D/E$. […] We refer to $r_A$ as the weighted average cost of capital, $r_{WACC}$. MM I implies that $r_{WACC}$ does not depend on how the firm finances its assets (on the choices of $D$ and $E$). […] Conservation of value principle: With perfect capital markets, financial transactions neither add nor destroy value, but instead represent a repackaging of risk (and therefore return).
+
+*From Prof. Ricca's Topic 2A slide 89 (Aula/Topic2A.pdf) — homemade leverage:*
+
+The arbitrageur can "lever up" firm 2 by borrowing on individual accounts (homemade leverage). Absence of arbitrage implies that $V_1 = V_2$.
+
+---
+
+### 17. Bank capital with corporate taxes: the lost interest tax shield
+**Origin:** original exercise on the bank capital debate (Statement 3) and MM I with corporate taxes, built on Prof. Ricca's Topic 2B slides 7–18 and 47 (Aula/Topic2B.pdf) · Answer: in the solutions file
+
+A bank's assets generate a perpetual expected pre-tax cash flow of $X = 7.5$ (\$ billion per year). The corporate tax rate is $\tau = 20\%$, so the all-equity (unlevered) bank would pay $\tau X$ in taxes every year and its owners would receive $(1 - \tau)X = 6$ per year. The unlevered cost of capital is $r_U = 6\%$, so the unlevered bank is worth $V_U = (1 - \tau)X/r_U = 100$. The bank's debt is perpetual, risk-free and kept at a constant amount $D$; it pays $r_D = 4\%$, and interest is deductible from taxable income. The bank always has enough income to use the deduction in full. There are no bankruptcy costs and no other frictions. The equity ratio is measured at market value, $e = E/V_L$ with $V_L = D + E$ the value of the levered bank. The regulator raises the minimum equity ratio from $e = 5\%$ to $e = 20\%$; the bank keeps the same assets.
+
+a. For $e = 5\%$ and $e = 20\%$, find $V_L$, $D$, $E$ and the value of the interest tax shield $V_{ITS}$. (Use $D = (1 - e)V_L$ together with MM I with taxes.)
+
+b. The bank moves from $e = 5\%$ to $e = 20\%$ by issuing new shares at a fair price and using all the proceeds to retire debt at its market value. How much debt is retired? Compute the annual interest tax saving $\tau r_D D$ at each ratio, the value lost by the bank's existing shareholders, and that loss as a fraction of their equity before the change.
+
+c. Compute the after-tax WACC at each ratio with the constant-debt formula, and check that discounting the unlevered after-tax cash flow $(1 - \tau)X$ at it gives $V_L$. Derive the required return on equity $r_E$ at each ratio from the market-value balance sheet with $r_{ITS} = r_D$, and check that $\frac{E}{V_L}\,r_E + \frac{D}{V_L}\,r_D(1 - \tau)$ equals the after-tax WACC.
+
+d. The government collects $\tau(X - r_D D)$ per year from the bank. The part $\tau X$ is as risky as the assets (discount it at $r_U$); the part $\tau r_D D$ is risk-free (discount it at $r_D$). Compute the present value $G$ of the government's tax claim at each ratio, and the total $V_L + G$. Who gains what the existing shareholders lose in (b)?
+
+e. Statement 3 (slide 47): "Increased equity requirements increase the funding costs for banks because they reduce the ability of banks to benefit from the tax shield associated with interest payments on debt." Is it true for the bank's shareholders? Is the lost tax shield a cost for society as a whole? Explain why this argument does not show that equity is socially expensive.
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 2B slides 7–8 (Aula/Topic2B.pdf) — MM I with corporate taxes:*
+
+Relative to an identical unlevered firm, the levered firm can pay out $\tau r_f D$ more to its investors in each period. Assuming perpetuity
+
+$$V_{ITS} = \frac{\tau r_f D}{r_f} = \tau D.$$
+
+(MM I with corporate taxes) The value of a levered firm equals that of an unlevered firm plus the present value of the interest tax shield
+
+$$V_L = V_U + V_{ITS}.$$
+
+If investors cannot get an equivalent tax break on homemade leverage, they are willing to pay a premium for levered firms. All the tax benefits from leverage accrue to the shareholders.
+
+*From Prof. Ricca's Topic 2B slides 9–11 (Aula/Topic2B.pdf) — market-value balance sheet with taxes:*
+
+Assets of the levered firm: $V_U$ (market value of the unlevered firm's assets, return $r_U$) and $V_{ITS}$ (return $r_{ITS}$); claims: debt $D$ (return $r_D$) and equity $E$ (return $r_E$); $V_L = V_U + V_{ITS} = D + E$. From the balance sheet, we have the identity
+
+$$\frac{D}{D + E}\,r_D + \frac{E}{D + E}\,r_E = \frac{V_U}{V_U + V_{ITS}}\,r_U + \frac{V_{ITS}}{V_U + V_{ITS}}\,r_{ITS}.$$
+
+$r_{ITS} = r_D$ if the firm maintains a constant market value debt amount in perpetuity. In this case, $V_{ITS} = \tau D r_D / r_D = \tau D$.
+
+*From Prof. Ricca's Topic 2B slides 16 and 18 (Aula/Topic2B.pdf) — after-tax WACC:*
+
+With tax-deductible interest, the effective return on debt is $r_D(1 - \tau)$. The after-tax WACC is
+
+$$r_{WACC} = \frac{E}{E + D}\,r_E + \frac{D}{E + D}\,r_D(1 - \tau).$$
+
+If we discount the unlevered free cash flows with the after-tax WACC, we obtain the correct value of the levered firm. Constant debt level:
+
+$$r_{WACC} = \Bigl(1 - \tau\,\frac{D}{D + E}\Bigr)\,r_U.$$
+
+---
+
+### 18. The failure externality and the socially optimal capital ratio
+**Origin:** original exercise on the bank capital debate (failure externality) and the static trade-off, built on Prof. Ricca's Topic 2B slides 44–47 (Aula/Topic2B.pdf) · Answer: in the solutions file
+
+Measure everything per \$1 of bank assets per year. The bank's equity ratio is $e \in [0, 1]$ and its deposits are $1 - e$. Each year the assets suffer a loss rate $\ell \ge 0$ (loss as a fraction of assets) that is exponentially distributed with mean $\theta = 0.01$:
+
+$$\Pr(\ell > x) = \exp(-x/\theta), \qquad x \ge 0.$$
+
+The bank fails when the loss exceeds its equity, $\ell > e$. A failure imposes on the rest of the economy (the deposit insurer and taxpayers, and the disruption of credit to borrowers) a social loss of $\kappa = 0.50$ per \$1 of the bank's assets. The bank's shareholders bear none of it: they have limited liability, and deposits are fully insured at a flat premium, so the deposit rate does not depend on $e$. Deposits also give depositors liquidity services worth $\lambda = 0.005$ per \$1 of deposits per year; this is a genuine social benefit of deposit funding, and the bank captures all of it through fees. Each \$1 of deposits also saves the bank $s = \tau r_D = 0.20 \times 4\% = 0.008$ of taxes per year. Apart from these features, MM holds: the higher required return on equity at low $e$ only compensates shareholders for the higher risk of their claim, and the tax saving is paid by the government.
+
+a. Find the annual failure probability $p(e)$ and the expected annual social cost of failure $F(e) = \kappa\,p(e)$ at $e = 4\%$ and at $e = 20\%$.
+
+b. Explain why society's annual cost of the funding mix, per \$1 of assets and up to a constant, is
+
+$$S(e) = \lambda e + \kappa \exp(-e/\theta),$$
+
+and why neither the equity premium nor the tax saving $s$ appears in it. Derive the first-order condition, check the second-order condition, and find the socially optimal equity ratio $e^*$ in closed form and numerically. What is the annual failure probability at $e^*$? Compute $S(4\%)$, $S(e^*)$ and $S(20\%)$.
+
+c. Per \$1 of assets per year, the bank's shareholders bear the private cost $(\lambda + s)\,e$ of using equity (fees and tax savings forgone on the deposits it replaces) and none of the failure cost. Which equity ratio does the bank choose if it is unregulated, and which if the regulatory minimum is $\underline e = 4\%$? For a move from $4\%$ to $e^*$, compute the private cost to the shareholders and the social gain $S(4\%) - S(e^*)$.
+
+d. A planner who believes two of the slide-47 statements computes a different "optimal" ratio. (i) Counting the lost tax saving as a social cost, she uses $\lambda + s$ in place of $\lambda$. (ii) Believing that equity is costly because of its higher required return, she uses the gap of $10$ percentage points between a $14\%$ required return on equity and a $4\%$ deposit rate, $0.10$ per \$1 of equity per year, in place of $\lambda$. Find the ratio each calculation gives and compare it with $e^*$.
+
+e. Derive $\partial e^*/\partial\kappa$, $\partial e^*/\partial\lambda$ and $\partial e^*/\partial\theta$, and sign them at the given parameter values. By how much does $e^*$ rise if the social loss of a failure $\kappa$ doubles?
+
+#### Context needed to solve it
+
+*From Prof. Ricca's Topic 2B slide 47 (Aula/Topic2B.pdf):*
+
+[…] negative externality because the increase in leverage raises the probability of a bank failure, weakening the financial system and imposing losses on the broader economy.
+
+*From Prof. Ricca's Topic 2B slides 44–45 (Aula/Topic2B.pdf) — the static trade-off this exercise transposes from the firm to society:*
+
+An increase in $K$ has two effects. It increases the value of the tax shield […] But it increases the expected bankruptcy cost $C$: $C\,H(K)$. The optimal debt level $K^*$ is such that the marginal benefit of debt equals the marginal expected bankruptcy costs. […] With bankruptcy costs, $V_L = V_U + V_{ITS} - PV(\text{bankruptcy costs})$.
+
+*Results of MM without and with taxes (Topic 2A slides 98–102; Topic 2B slides 7–8), restated:*
+
+Without taxes, a change in leverage leaves $r_{WACC} = r_A$ and the value of the assets unchanged: the higher required return on equity at higher leverage, $r_E = r_A + \frac{D}{E}(r_A - r_D)$, is compensation for risk, not a cost to anyone. With corporate taxes, $V_L = V_U + \tau D$ for constant perpetual debt; the gain $\tau D$ is paid by the government, whose tax claim falls by the same amount, so the total value of the claims on the assets (shareholders, debtholders and government) does not depend on $D$.

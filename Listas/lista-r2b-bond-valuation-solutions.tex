@@ -1,0 +1,767 @@
+% Worked solutions for Listas/lista-r2b-bond-valuation.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r2b-bond-valuation-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R2b (Bond valuation) --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\E}{\mathbb{E}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R2b --- Bond valuation, the term structure and the cost of debt}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r2b-bond-valuation.md}; each exercise is cited by number and printed page and is not restated. Short answers: \url{lista-r2b-bond-valuation-solutions-short.pdf}. Editions are the local copies: Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed. (2011); Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed. (2013); Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial Management}, 13th ed.; Grinblatt--Titman, \emph{Financial Markets and Corporate Strategy}, 2nd ed. (2002). Ross writes decimals with commas and \$1.000 for one thousand; these solutions use points. Numbers labelled ``illustration'' are not part of the statement.
+
+\medskip\noindent\textbf{Formulas used throughout.} With coupon $C$ per period, face value $F$, $n$ periods and yield $y$ per period,
+\begin{align}
+  P &= C\cdot A(y,n) + \frac{F}{(1+y)^n}, \qquad A(y,n) = \frac{1-(1+y)^{-n}}{y} \quad\text{(annuity factor)}, \label{r2be0-bond}\\
+  P &= \sum_{t=1}^{n}\frac{CF_t}{(1+r_t)^t} \quad\text{(spot rates $r_t$, Berk Eq.~6.4)}. \label{r2be0-spot}
+\end{align}
+A semiannual bond quoted at an APR $y^{\text{APR}}$ has $y=y^{\text{APR}}/2$ per period and $C=$ coupon rate$\times F/2$.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Zero-coupon prices and the yield curve --- Berk 6.4, p.~172}
+
+\asked (a) The yield to maturity of each of the five default-free zeros from its price per \$100 of face value.
+(b) A plot of yield against maturity. (c) Whether the curve slopes up, down or is flat.
+
+\approach A zero-coupon bond has a single cash flow, the face value at maturity, so its price is that face
+value discounted at its own yield: $P_n = 100/(1+YTM_n)^n$. Inverting gives the yield. The zero-coupon
+yields are the \emph{spot rates} of block 2A.1, the discount rates used to price any other default-free bond.
+
+\notation
+\begin{itemize}
+  \item $n\in\{1,\dots,5\}$: maturity in years; $P_n$: price per \$100 face value; $YTM_n$: annual yield (spot rate) for maturity $n$.
+\end{itemize}
+
+\step{1}{Invert the pricing formula} The price of a zero is
+\begin{align}
+  P_n = \frac{100}{(1+YTM_n)^n} \;\Longrightarrow\; (1+YTM_n)^n = \frac{100}{P_n} \;\Longrightarrow\; YTM_n = \left(\frac{100}{P_n}\right)^{1/n}-1. \label{r2be1-inv}
+\end{align}
+
+\step{2}{Substitute each price} We compute the ratio $100/P_n$, take the $n$th root and subtract one.
+\begin{center}
+\begin{tabular}{@{}cccc c@{}}\toprule
+$n$ & $P_n$ & $100/P_n$ & $(100/P_n)^{1/n}$ & $YTM_n$\\\midrule
+1 & 95.51 & 1.047011 & $1.047011^{1}=1.047011$ & 4.70\%\\
+2 & 91.05 & 1.098298 & $1.098298^{1/2}=1.047997$ & 4.80\%\\
+3 & 86.38 & 1.157675 & $1.157675^{1/3}=1.050015$ & 5.00\%\\
+4 & 81.65 & 1.224740 & $1.224740^{1/4}=1.051988$ & 5.20\%\\
+5 & 76.51 & 1.307019 & $1.307019^{1/5}=1.055009$ & 5.50\%\\\bottomrule
+\end{tabular}
+\end{center}
+\answer{(a)} $YTM_1=4.70\%$, $YTM_2=4.80\%$, $YTM_3=5.00\%$, $YTM_4=5.20\%$, $YTM_5=5.50\%$.
+
+\step{3}{Plot} The curve joins the points $(1,4.70)$, $(2,4.80)$, $(3,5.00)$, $(4,5.20)$, $(5,5.50)$ (maturity in years, yield in \%).
+\answer{(b)} A rising line through those five points, steepening after year 3.
+
+\step{4}{Slope} Each yield exceeds the previous one: $4.70<4.80<5.00<5.20<5.50$.
+\answer{(c)} Upward sloping.
+
+\intuition Longer zeros are cheaper per year of waiting than a constant rate would imply: the market
+asks a higher annual rate to lend for longer. These five numbers are all one needs to price any default-free
+bond paying on those dates (Exercise~8).
+\pitfalls
+\begin{itemize}
+  \item Computing $(100-P_n)/P_n$ and calling it the annual yield: that is the \emph{total} return over $n$ years, not an annual rate.
+  \item Dividing the total return by $n$ (simple interest) instead of taking the $n$th root.
+\end{itemize}
+\refbib{Berk \S6.2 ``Zero-Coupon Bonds'', pp.~147--151.}
+
+% =============================================================================
+\exsec{2. Holding-period return on a bond --- Higgins 5.5, p.~188}
+
+\asked (a) The return over one year on a bond bought at \$1,050 and worth \$940 a year later, after one
+annual coupon at 6\% of \$1,000. (b) Two reasons why its price could have fallen.
+
+\approach The holding-period return is the definition given in the statement: income plus capital gain
+over the starting price. Part (b) uses the pricing formula \eqref{r2be0-bond}: the price falls if the
+yield the market demands rises, either because riskless rates rise or because the issuer's credit risk rises.
+
+\notation
+\begin{itemize}
+  \item $P_0=1{,}050$, $P_1=940$: prices at the start and end of the year; $I$: coupon received; $HPR$: holding-period return.
+\end{itemize}
+
+\step{1}{Coupon} The annual coupon is
+\begin{align}
+  I = 0.06\times 1{,}000 = 60. \label{r2be2-I}
+\end{align}
+
+\step{2}{Return} We add the coupon to the price change and divide by the starting price:
+\begin{align}
+  HPR = \frac{I + (P_1-P_0)}{P_0} = \frac{60 + (940-1{,}050)}{1{,}050} = \frac{60-110}{1{,}050} = \frac{-50}{1{,}050} = -4.76\%. \label{r2be2-hpr}
+\end{align}
+\answer{(a)} $HPR=-4.76\%$.
+
+\step{3}{Why the price fell} From \eqref{r2be0-bond}, with coupon and face fixed, $P$ falls only if the
+discount rate $y$ rises (the passage of time alone pulls a premium bond toward par, but a 6\% bond at
+\$1,050 would only lose a few dollars that way, not \$110).
+\answer{(b)} (i) Market interest rates rose (interest-rate risk); (ii) the market judged the issuer riskier
+(a downgrade or worse prospects raised the default premium). Either raises the yield and lowers the price.
+
+\intuition The coupon is fixed, so all news reaches the bondholder through the price. Even a default-free
+bond has a risky one-year return unless it matures exactly at the end of the holding period.
+\pitfalls
+\begin{itemize}
+  \item Forgetting the coupon: $(940-1{,}050)/1{,}050=-10.5\%$ is the capital loss only.
+  \item Dividing by the face value \$1,000 instead of the price paid.
+\end{itemize}
+\bookans Matches the book's answer, $-4.76$ percent, with interest rates or perceived risk rising as the reasons (p.~410).
+\refbib{Higgins Ch.~5, ``Bonds'' and ``Bond Ratings'', pp.~143--150; Ch.~7 for bond pricing.}
+
+% =============================================================================
+\exsec{3. Price of a seasoned semiannual bond --- Ross 7.6, p.~232}
+
+\asked The price today of a bond issued one year ago with an 11-year maturity, a 6.9\% coupon paid
+twice a year, when its yield to maturity is 7.4\% (APR, semiannual).
+
+\approach Ross's bond value formula \eqref{r2be0-bond} with half-year periods. Two conversions do the work:
+the remaining life is $11-1=10$ years, i.e.\ 20 half-years, and both the coupon and the quoted yield are
+halved. Face value \$1,000 (the book's convention; see the Context in the list).
+
+\notation
+\begin{itemize}
+  \item $F=1{,}000$; $C=34.5$: coupon per half-year; $y=3.7\%$: yield per half-year; $n=20$ half-years.
+\end{itemize}
+
+\step{1}{Per-period inputs} We convert the annual figures to half-years:
+\begin{align}
+  C = \frac{0.069\times1{,}000}{2} = \frac{69}{2} = 34.5,\qquad y = \frac{0.074}{2} = 0.037,\qquad n = 2\times(11-1) = 20. \label{r2be3-in}
+\end{align}
+
+\step{2}{Factors} The compounding factor and the annuity factor are
+\begin{align}
+  (1.037)^{20} &= 2.068117,\qquad \frac{1}{(1.037)^{20}} = 0.483532, \label{r2be3-v}\\
+  A(0.037,20) &= \frac{1-0.483532}{0.037} = \frac{0.516468}{0.037} = 13.958605. \label{r2be3-a}
+\end{align}
+
+\step{3}{Price} Substituting into \eqref{r2be0-bond}:
+\begin{align}
+  P = (34.5)(13.958605) + (1{,}000)(0.483532) = 481.57 + 483.53 = 965.10. \label{r2be3-P}
+\end{align}
+\answer{\unskip} $P=\$965.10$ per \$1,000 of face value (a discount bond: coupon 6.9\% $<$ yield 7.4\%).
+
+\intuition The bond pays 6.9\% when the market wants 7.4\%, so it must sell below par; the discount
+(\$34.90) is the present value of the coupon shortfall $(37-34.5)\times A(0.037,20)=2.5\times13.958605=34.90$.
+\pitfalls
+\begin{itemize}
+  \item Using 11 periods or 22 half-years: the bond is one year old, so 10 years (20 half-years) remain.
+  \item Discounting semiannual coupons at 7.4\% per period, or annual coupons at 3.7\%.
+\end{itemize}
+\refbib{Ross \S7.1 ``Valores e retornos dos t\'itulos de d\'ivida'', bond value formula and Example 7.1, pp.~192--196.}
+
+% =============================================================================
+\exsec{4. Callable vs.\ noncallable bonds --- Higgins 5.4, p.~188}
+
+\asked Whether two otherwise identical 20-year bonds, one callable at \$1,000 after five years and one not,
+have different yields; which is higher; and why.
+
+\approach A call provision is an option held by the \emph{issuer}: the bondholder has sold it. By the law of
+one price, the callable bond is a straight bond minus a call option, so its price is lower and, for the same
+promised cash flows, its yield is higher.
+
+\notation
+\begin{itemize}
+  \item $P^{\text{straight}}$, $P^{\text{callable}}$: prices; $V^{\text{call}}\ge 0$: value of the issuer's option to repay at \$1,000.
+\end{itemize}
+
+\step{1}{Decompose the callable bond} The holder of a callable bond owns the straight bond and is short the call:
+\begin{align}
+  P^{\text{callable}} = P^{\text{straight}} - V^{\text{call}} \le P^{\text{straight}}. \label{r2be4-dec}
+\end{align}
+
+\step{2}{When is the call exercised} The issuer calls when rates have fallen so that the straight bond is worth
+more than \$1,000: it refinances at the lower rate. The bondholder loses exactly the gain she would otherwise
+have had and must reinvest at the lower rate. The call caps her upside.
+
+\step{3}{From price to yield} Both bonds promise the same coupons and face value if not called; a lower price for the
+same promised flows means a higher discount rate solving \eqref{r2be0-bond}.
+\answer{\unskip} Yes: the callable bond's yield to maturity is \emph{higher}, compensating investors for the option they give
+the issuer (the call is exercised precisely when it hurts them: after a fall in rates).
+
+\intuition Exercise~14 puts a number on $V^{\text{call}}$: about 12\% of face value for a Treasury callable within a year.
+The yield difference is a price for an option, not a default premium.
+\pitfalls
+\begin{itemize}
+  \item Thinking the callable bond is \emph{safer} because it may be repaid early; early repayment happens when the investor least wants it.
+  \item Confusing the call (issuer's option) with a put (holder's option, which lowers the yield).
+\end{itemize}
+\refbib{Higgins Ch.~5, ``Bonds'' (call provisions), p.~145; Ross \S7.2 ``Op\c{c}\~ao de resgate antecipado'', p.~207.}
+
+% =============================================================================
+\exsec{5. Expected return vs.\ yield on a corporate bond --- Berk Critical Thinking 8, p.~172}
+
+\asked Why the expected return of a corporate bond differs from its yield to maturity.
+
+\approach Block 2A.10: the yield to maturity is the internal rate of return of the \emph{promised} cash flows,
+the expected return is the rate that equates the price to the \emph{expected} cash flows. With default
+risk the expected cash flows are smaller, so the same price implies a smaller rate.
+
+\notation
+\begin{itemize}
+  \item $P$: price; $F$: promised payment (one-year zero, for clarity); $p$: default probability; $C$: recovery in default.
+  \item $y$: promised yield, $P=F/(1+y)$; $r_D$: expected return (cost of debt), $P=[F(1-p)+Cp]/(1+r_D)$.
+\end{itemize}
+
+\step{1}{Two definitions, one price} From the two pricing equations,
+\begin{align}
+  1+y = \frac{F}{P}, \qquad 1+r_D = \frac{F(1-p)+Cp}{P}. \label{r2be5-defs}
+\end{align}
+
+\step{2}{Compare} Since $C<F$, $F(1-p)+Cp = F - p(F-C) < F$ whenever $p>0$, hence
+\begin{align}
+  r_D < y. \label{r2be5-ineq}
+\end{align}
+
+\step{3}{Illustration} $F=100$, $P=90$, $p=5\%$, $C=40$:
+\begin{align}
+  y &= \frac{100}{90}-1 = 11.11\%, \nonumber\\
+  \E[\text{payoff}] &= (0.95)(100)+(0.05)(40) = 95+2 = 97, \qquad r_D = \frac{97}{90}-1 = 7.78\%. \nonumber
+\end{align}
+\answer{\unskip} The yield is computed from the promised payments, which are the most the holder can receive; with a positive
+probability of default and partial recovery the expected payments are lower, so the expected return is below the yield.
+The yield spread over Treasuries pays for expected default losses \emph{and} a risk premium; only the latter adds to
+the expected return.
+
+\intuition Using the yield as $r_D$ in a WACC overstates the cost of debt, and the error is largest for junk debt,
+exactly when default is most likely (Berk Ch.~13 cites KB Homes: 8.6\% promised, about 7.3\% expected).
+\pitfalls
+\begin{itemize}
+  \item Treating a high yield as a high expected return: a bond close to default can promise 20\% and be expected to earn far less.
+  \item Using the coupon rate as the cost of debt; it is historical and is neither the yield nor the expected return.
+\end{itemize}
+\refbib{Berk \S6.5 ``Corporate Bond Yields'', p.~166; Ch.~13 box ``Using the Coupon Rate as the Cost of Debt'', p.~387; Ricca 2A.10 (slides 103--105).}
+
+% =============================================================================
+\exsec{6. Credit spreads on one-year zeros --- Berk 6.24, p.~174}
+
+\asked (a) The price, in \% of face, of a one-year AAA zero yielding 3.2\%. (b), (c) The credit spreads of AAA and B
+bonds over the Treasury. (d) How spreads move with the rating, and why.
+
+\approach One-year zeros: price $=100/(1+y)$. The credit (default) spread is the difference between a corporate yield and
+the Treasury yield of the same maturity.
+
+\notation
+\begin{itemize}
+  \item $y^{T}=3.1\%$, $y^{AAA}=3.2\%$, $y^{BBB}=4.2\%$, $y^{B}=4.9\%$; spread $s^{k}=y^{k}-y^{T}$.
+\end{itemize}
+
+\step{1}{Price}
+\begin{align}
+  P^{AAA} = \frac{100}{1+0.032} = \frac{100}{1.032} = 96.90. \label{r2be6-P}
+\end{align}
+\answer{(a)} 96.90\% of face value.
+
+\step{2}{Spreads}
+\begin{align}
+  s^{AAA} = 3.2-3.1 = 0.1\%,\qquad s^{BBB} = 4.2-3.1 = 1.1\%,\qquad s^{B} = 4.9-3.1 = 1.8\%. \label{r2be6-s}
+\end{align}
+\answer{(b)} 0.1\% (10 basis points). \answer{(c)} 1.8\% (180 basis points).
+
+\step{3}{Pattern} $0.1<1.1<1.8$: spreads rise as the rating falls.
+\answer{(d)} The spread widens as the rating worsens, because lower-rated issuers have higher default probabilities
+(and lower expected recoveries): their promised yields must cover larger expected losses and a larger risk premium.
+
+\intuition The spread is the market price of credit risk. By Exercise~5, a B bond's 4.9\% is a \emph{promise}; its
+expected return is lower.
+\pitfalls
+\begin{itemize}
+  \item Quoting spreads relative to AAA rather than to the Treasury.
+  \item Reading the B spread as the expected extra return; part of it only compensates expected default losses.
+\end{itemize}
+\refbib{Berk \S6.5 ``Corporate Bonds'', ``Corporate Bond Yields'' and ``Bond Ratings'', pp.~164--167.}
+
+% =============================================================================
+\exsec{7. A bond's price over time at a constant yield --- Berk 6.16--6.18, p.~173}
+
+\asked (16) The issue price of a 10-year, 7\% annual-coupon \$1,000 bond at a 6\% yield. (17) Its price one year later just
+before the first coupon, and (18) just after it, if the yield stays at 6\%.
+
+\approach Formula \eqref{r2be0-bond}. At a constant yield, the value of any bond grows at the yield between coupon dates
+(it is a present value rolling forward), and drops by the coupon when it is paid. The price ``after'' is just the price of
+a 9-year bond.
+
+\notation
+\begin{itemize}
+  \item $C=70$, $F=1{,}000$, $y=6\%$; $P_0$: issue price; $P_1^-$, $P_1^+$: prices just before and just after the first coupon.
+\end{itemize}
+
+\step{1}{(16) Issue price} The factors at 6\% for 10 years are
+\begin{align}
+  A(0.06,10) = \frac{1-(1.06)^{-10}}{0.06} = \frac{1-0.558395}{0.06} = 7.360087,\qquad \frac{1}{(1.06)^{10}} = 0.558395, \label{r2be7-f10}
+\end{align}
+so
+\begin{align}
+  P_0 = (70)(7.360087) + (1{,}000)(0.558395) = 515.21 + 558.39 = 1{,}073.60. \label{r2be7-P0}
+\end{align}
+\answer{(16)} \$1,073.60 (a premium bond: coupon 7\% $>$ yield 6\%).
+
+\step{2}{(17) Just before the coupon} One year on, the same cash flows are one year closer; their present value is
+$P_0$ carried forward at 6\%:
+\begin{align}
+  P_1^- = P_0(1+y) = (1{,}073.60)(1.06) = 1{,}138.02. \label{r2be7-Pm}
+\end{align}
+\answer{(17)} \$1,138.02.
+
+\step{3}{(18) Just after the coupon} The holder of the bond now owns a 9-year bond. At 6\% for 9 years:
+\begin{align}
+  A(0.06,9) &= \frac{1-0.591898}{0.06} = 6.801692,\qquad \frac{1}{(1.06)^9} = 0.591898, \nonumber\\
+  P_1^+ &= (70)(6.801692) + (1{,}000)(0.591898) = 476.12 + 591.90 = 1{,}068.02. \label{r2be7-Pp}
+\end{align}
+Check: $P_1^- = 70 + P_1^+ = 70 + 1{,}068.02 = 1{,}138.02$, as in \eqref{r2be7-Pm}.
+\answer{(18)} \$1,068.02.
+
+\intuition Over the year the holder earns $0.06\times1{,}073.60=64.42$: a coupon of 70 less a capital loss of
+$1{,}073.60-1{,}068.02=5.58$. A premium bond loses value as it ages (it is ``pulled to par''), but its return stays at the
+yield. The saw-tooth path (rise, drop by the coupon) is how prices move with time alone.
+\pitfalls
+\begin{itemize}
+  \item Answering (17) and (18) with the same number: the coupon is paid between the two instants.
+  \item Thinking the price stays at \$1,073.60 because the yield did not change; with constant yield the \emph{return}, not the price, is constant.
+\end{itemize}
+\refbib{Berk \S6.4 ``Time and Bond Prices'', pp.~158--160.}
+
+% =============================================================================
+\exsec{8. Pricing a coupon bond with spot rates --- Berk 6.10, p.~173}
+
+\asked The price of a \$1,000, 4\% semiannual-coupon Treasury maturing in 1.5 years, given spot rates (semiannual APRs)
+of 1\% (0.5 years), 1.1\% (1 year) and 1.3\% (1.5 years).
+
+\approach Block 2A.1: by the law of one price, a coupon bond is a portfolio of zeros, one per cash flow, so each cash flow
+is discounted at the spot rate of its own date (Berk Eq.~6.4, equation \eqref{r2be0-spot}). Using a single rate would mix
+three different prices of time.
+
+\notation
+\begin{itemize}
+  \item Cash flows: $CF_1=CF_2=0.04\times1{,}000/2=20$, $CF_3=20+1{,}000=1{,}020$ at half-years 1, 2, 3.
+  \item Spot rates per half-year: $r_1=1\%/2=0.5\%$, $r_2=1.1\%/2=0.55\%$, $r_3=1.3\%/2=0.65\%$.
+\end{itemize}
+
+\step{1}{Compounding factors}
+\begin{align}
+  (1.0055)^2 = 1.011030,\qquad (1.0065)^3 = 1.019627. \label{r2be8-f}
+\end{align}
+
+\step{2}{Discount each cash flow at its own spot rate}
+\begin{align}
+  P &= \frac{20}{1.005} + \frac{20}{(1.0055)^2} + \frac{1{,}020}{(1.0065)^3}
+     = \frac{20}{1.005} + \frac{20}{1.011030} + \frac{1{,}020}{1.019627} \nonumber\\
+    &= 19.90 + 19.78 + 1{,}000.37 = 1{,}040.05. \label{r2be8-P}
+\end{align}
+\answer{\unskip} $P=\$1{,}040.05$.
+
+\step{3}{The bond's own yield (for intuition)} Solving $1{,}040.05 = 20/(1+y)+20/(1+y)^2+1{,}020/(1+y)^3$ gives $2y=1.295\%$
+APR: between the 1-year and 1.5-year spot rates and close to the latter, because most of the value comes from the last cash flow.
+
+\intuition The yield to maturity of a coupon bond is a (value-weighted) average of the spot rates of its dates. With an
+upward-sloping curve it lies just below the spot rate of its maturity.
+\pitfalls
+\begin{itemize}
+  \item Discounting everything at 1.3\%: gives a slightly lower price because the early coupons are over-discounted.
+  \item Using the annual APR as a per-period rate, or compounding the 1.5-year rate for 1.5 rather than 3 half-years.
+\end{itemize}
+\refbib{Berk Ch.~6 Appendix B ``Valuing a Coupon Bond Using Zero-Coupon Yields'', pp.~178--181; Ricca 2A.1 (slides 2--7).}
+
+% =============================================================================
+\exsec{9. Coupon rate for a new issue sold at par --- Ross 7.19, p.~233}
+
+\asked The coupon rate that makes new 20-year semiannual bonds sell at par, when the firm's existing 20-year, 8\%
+semiannual bonds sell for \$930.
+
+\approach A bond sells at par exactly when its coupon rate equals its yield to maturity. The market's required return on
+20-year debt of this issuer is the yield of the existing bonds, so: solve for that yield, then set the new coupon equal to it.
+This is the cost of new debt; the old 8\% coupon is history.
+
+\notation
+\begin{itemize}
+  \item Existing bond: $C=40$ per half-year, $F=1{,}000$, $n=40$, $P=930$; $y$: yield per half-year.
+\end{itemize}
+
+\step{1}{Equation for the yield} From \eqref{r2be0-bond},
+\begin{align}
+  930 = 40\cdot\frac{1-(1+y)^{-40}}{y} + \frac{1{,}000}{(1+y)^{40}}. \label{r2be9-eq}
+\end{align}
+The bond is at a discount, so $y>4\%$ per half-year.
+
+\step{2}{Bracket and solve} Trial values: at $y=4.5\%$ (9\% APR) the right side is 907.99; at $y=4.25\%$ (8.5\% APR) it is
+952.31. The root lies between and, by iteration (or a financial calculator), is $y=4.3736\%$. Check:
+\begin{align}
+  A(0.043736,40) = 18.738512,\qquad \frac{1}{(1.043736)^{40}} = 0.180460, \nonumber\\
+  (40)(18.738512) + (1{,}000)(0.180460) = 749.54 + 180.46 = 930.00. \label{r2be9-chk}
+\end{align}
+
+\step{3}{Annual quote} The yield is quoted as an APR:
+\begin{align}
+  y^{\text{APR}} = 2\times4.3736\% = 8.75\%,\qquad \text{EAR} = (1.043736)^2-1 = 8.94\%. \label{r2be9-apr}
+\end{align}
+\answer{\unskip} Set the coupon rate at 8.75\% per year (4.375\% per half-year); then the new bonds sell at par.
+
+\intuition The cost of new debt is the yield the market currently demands, not the coupon promised in the past (block 2A.10:
+$r_D$ is not the coupon). The old bonds trade at a discount precisely because 8\% is below what the market now asks.
+\pitfalls
+\begin{itemize}
+  \item Answering 8\% (the old coupon).
+  \item Reporting the EAR 8.94\% as the coupon rate; coupon rates, like yields, are quoted as APRs.
+\end{itemize}
+\refbib{Ross \S7.1 ``Valores e retornos dos t\'itulos de d\'ivida'', pp.~192--199.}
+
+% =============================================================================
+\exsec{10. Ratings, prices and issue size --- Berk 6.26, p.~175}
+
+\asked (a) The price of a 5-year, 6.5\% annual-coupon \$1,000 bond if rated AA. (b) The total face value HMK must issue to
+raise \$10 million at that price. (c) The rating at which the bond sells at par. (d) The rating implied by a price of \$959.54,
+and whether that is junk.
+
+\approach The rating maps to a yield (the table), the yield to a price via \eqref{r2be0-bond}. A bond sells at par when its
+yield equals its coupon; and a price can be inverted to a yield and hence to a rating.
+
+\notation
+\begin{itemize}
+  \item $C=65$, $F=1{,}000$, $n=5$; $y^{k}$: yield for rating $k$ (6.20, 6.30, 6.50, 6.90, 7.50\% for AAA to BB).
+\end{itemize}
+
+\step{1}{(a) Price at AA ($y=6.3\%$)}
+\begin{align}
+  A(0.063,5) &= \frac{1-(1.063)^{-5}}{0.063} = \frac{1-0.736773}{0.063} = 4.178207, \nonumber\\
+  P^{AA} &= (65)(4.178207) + (1{,}000)(0.736773) = 271.58 + 736.77 = 1{,}008.36. \label{r2be10-P}
+\end{align}
+\answer{(a)} \$1,008.36.
+
+\step{2}{(b) Number of bonds} Proceeds per bond are \$1,008.36, so
+\begin{align}
+  \frac{10{,}000{,}000}{1{,}008.36} = 9{,}917.13 \;\to\; 9{,}917 \text{ bonds},\qquad 9{,}917\times1{,}000 = \$9{,}917{,}000 \text{ of face value}. \label{r2be10-n}
+\end{align}
+(They raise $9{,}917\times1{,}008.36=\$9{,}999{,}870.56$, within rounding of \$10 million.)
+\answer{(b)} \$9.917 million of principal (9,917 bonds).
+
+\step{3}{(c) Par} At $y=6.5\%$ the coupon equals the yield, so each coupon exactly pays the required return and $P=1{,}000$.
+\answer{(c)} A rating (yield 6.50\%).
+
+\step{4}{(d) Implied rating} The price is below par, so the yield exceeds 6.5\%. Try BB, $y=7.5\%$:
+\begin{align}
+  A(0.075,5) &= \frac{1-0.696559}{0.075} = 4.045885,\qquad \frac{1}{(1.075)^5}=0.696559, \nonumber\\
+  P &= (65)(4.045885) + (1{,}000)(0.696559) = 262.98 + 696.56 = 959.54. \label{r2be10-d}
+\end{align}
+The price matches, so the yield is 7.50\%.
+\answer{(d)} BB. Yes, they are junk bonds: BB is below the four investment-grade classes (AAA, AA, A, BBB).
+
+\intuition Each notch down the rating scale raises the yield and lowers what the firm raises per bond. For HMK, the difference
+between AA and BB is $1{,}008.36-959.54=48.82$ per bond, almost 5\% of the issue.
+\pitfalls
+\begin{itemize}
+  \item In (b), dividing \$10 million by \$1,000 face (10,000 bonds) instead of by the price.
+  \item In (d), calling BBB junk: BBB is the lowest investment grade.
+\end{itemize}
+\refbib{Berk \S6.5 ``Bond Ratings'', Table 6.6 and ``Corporate Yield Curves'', pp.~166--167.}
+
+% =============================================================================
+\exsec{11. Interest-rate sensitivity: maturity and coupon --- Berk 6.21--6.22, p.~174}
+
+\asked (21) The percentage price change of each of four bonds (two zeros, two coupon bonds; 10 and 15 years) when the yield
+falls from 6\% to 5\%. (22) Which is most and which least sensitive, and why.
+
+\approach Price each bond at both yields with \eqref{r2be0-bond} ($F=1{,}000$; percentage changes do not depend on $F$).
+Sensitivity grows with the time at which value is received: longer maturity and lower coupon both push value later. The
+summary measure is Macaulay duration, the value-weighted average time of the cash flows.
+
+\notation
+\begin{itemize}
+  \item $P(y)$: price at yield $y$; $\Delta\% = P(5\%)/P(6\%)-1$; $D=\sum_t t\,PV(CF_t)/P$: Macaulay duration at 6\%.
+\end{itemize}
+
+\step{1}{Factors} $A(0.06,15)=9.712249$, $A(0.05,15)=10.379658$, $A(0.06,10)=7.360087$, $A(0.05,10)=7.721735$;
+$(1.06)^{-15}=0.417265$, $(1.05)^{-15}=0.481017$, $(1.06)^{-10}=0.558395$, $(1.05)^{-10}=0.613913$.
+
+\step{2}{Prices and changes} For example, bond C:
+\begin{align}
+  P(6\%) &= (40)(9.712249)+(1{,}000)(0.417265) = 388.49+417.27 = 805.76, \nonumber\\
+  P(5\%) &= (40)(10.379658)+(1{,}000)(0.481017) = 415.19+481.02 = 896.20, \nonumber\\
+  \Delta\% &= 896.20/805.76-1 = 11.23\%. \label{r2be11-C}
+\end{align}
+In full:
+\begin{center}\small\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccc@{}}\toprule
+Bond & Coupon, mat. & $P(6\%)$ & $P(5\%)$ & $\Delta\%$ & $D$ (years)\\\midrule
+A & 0\%, 15 & $1{,}000\times0.417265=417.27$ & $1{,}000\times0.481017=481.02$ & $+15.28\%$ & 15.00\\
+B & 0\%, 10 & $1{,}000\times0.558395=558.39$ & $1{,}000\times0.613913=613.91$ & $+9.94\%$ & 10.00\\
+C & 4\%, 15 & $388.49+417.27=805.76$ & $415.19+481.02=896.20$ & $+11.23\%$ & 11.11\\
+D & 8\%, 10 & $588.81+558.39=1{,}147.20$ & $617.74+613.91=1{,}231.65$ & $+7.36\%$ & 7.45\\\bottomrule
+\end{tabular}
+\end{center}
+\answer{(21)} A $+15.28\%$, B $+9.94\%$, C $+11.23\%$, D $+7.36\%$.
+
+\step{3}{Ranking} $15.28>11.23>9.94>7.36$: A $>$ C $>$ B $>$ D, which is the order of the durations $15>11.11>10>7.45$.
+\answer{(22)} Most sensitive: A (15-year zero); least sensitive: D (10-year, 8\% coupon). A receives all its value at year 15,
+where a change in the discount rate is compounded 15 times; D receives large coupons early, which are barely affected by the rate.
+
+\intuition The relevant ``maturity'' for interest-rate risk is duration, not the final date: C matures in 15 years like A but its
+coupons pull its duration to 11.1 years, so it is less sensitive than A and (because 11.1 $>$ 10) more sensitive than the 10-year zero B.
+\pitfalls
+\begin{itemize}
+  \item Ranking by maturity alone (would put C level with A).
+  \item Computing the change relative to the new price instead of the old one.
+\end{itemize}
+\refbib{Berk \S6.4 ``Interest Rate Changes and Bond Prices'', pp.~156--158 (duration, footnote 4, p.~161).}
+
+% =============================================================================
+\exsec{12. A bond with deferred, stepped payments --- Ross 7.31 (DESAFIO), p.~234}
+
+\asked The price of bond M (\$20,000 face, 20 years; nothing for 6 years, then \$1,100 every six months for 8 years, then
+\$1,400 every six months for 6 years, plus the face value at maturity) and of zero-coupon bond N (\$20,000 face, 20 years),
+both at 7\% compounded semiannually.
+
+\approach Value each block of level payments as an annuity at the date just before its first payment, then discount that
+value back to today (a deferred annuity); add the face value discounted 40 half-years. Bond N is that last term alone.
+
+\notation
+\begin{itemize}
+  \item $r=7\%/2=3.5\%$ per half-year; periods $1$--$12$: no payment; $13$--$28$: \$1,100 (16 payments); $29$--$40$: \$1,400 (12 payments); $F=20{,}000$ at $40$.
+\end{itemize}
+
+\step{1}{Factors}
+\begin{align}
+  A(0.035,16) &= 12.094117,\quad A(0.035,12) = 9.663334, \nonumber\\
+  (1.035)^{12} &= 1.511069,\quad (1.035)^{28}=2.620172,\quad (1.035)^{40}=3.959260. \label{r2be12-f}
+\end{align}
+
+\step{2}{First block (periods 13--28)} Its value at period 12 is an ordinary 16-period annuity; we discount it 12 periods:
+\begin{align}
+  PV_1 = \frac{1{,}100\times A(0.035,16)}{(1.035)^{12}} = \frac{(1{,}100)(12.094117)}{1.511069} = \frac{13{,}303.53}{1.511069} = 8{,}804.05. \label{r2be12-b1}
+\end{align}
+
+\step{3}{Second block (periods 29--40)} Its value at period 28, discounted 28 periods:
+\begin{align}
+  PV_2 = \frac{1{,}400\times A(0.035,12)}{(1.035)^{28}} = \frac{(1{,}400)(9.663334)}{2.620172} = \frac{13{,}528.67}{2.620172} = 5{,}163.27. \label{r2be12-b2}
+\end{align}
+
+\step{4}{Face value}
+\begin{align}
+  PV_3 = \frac{20{,}000}{(1.035)^{40}} = \frac{20{,}000}{3.959260} = 5{,}051.45. \label{r2be12-F}
+\end{align}
+
+\step{5}{Prices}
+\begin{align}
+  P_M = 8{,}804.05 + 5{,}163.27 + 5{,}051.45 = 19{,}018.78,\qquad P_N = 5{,}051.45. \label{r2be12-P}
+\end{align}
+\answer{\unskip} $P_M=\$19{,}018.78$; $P_N=\$5{,}051.45$.
+
+\intuition Both bonds promise the same \$20,000 at year 20; M is worth \$13,967 more because of the coupons, even though none is paid for six
+years. Deferral is handled by a two-stage discount: annuity value at the start of the block, then a lump sum back to today.
+\pitfalls
+\begin{itemize}
+  \item Discounting the first block's annuity value by 13 periods (its first payment date) instead of 12 (one period before it).
+  \item Forgetting the \$20,000 face value of bond M.
+  \item Using 7\% per year with annual periods: the payments and the compounding are semiannual.
+\end{itemize}
+\refbib{Ross \S6.2 (annuities), pp.~155--163, and \S7.1, pp.~192--199.}
+
+% =============================================================================
+\exsec{13. Spot and annuity yields from par yields --- Grinblatt \& Titman 10A.3, p.~369}
+
+\asked Given par yields of 4.5\%, 5\%, 5.25\%, 5.25\% for years 1--4 (annual coupons and compounding), compute the spot (zero-coupon) yields
+and the annuity yields for years 1--4.
+
+\approach Bootstrapping (G\&T \S10A.2): a par bond is worth 100 and pays its par yield as coupon. Starting from year 1 (a par bond
+of one year is a zero), strip the earlier coupons using the discount factors already found; what is left is a zero-coupon payment
+at the final date whose price gives the next discount factor. Annuity yields then follow from the discount factors: the
+annuity's price is the sum of the discount factors and its yield is the IRR.
+
+\notation
+\begin{itemize}
+  \item $c_t$: par yield (coupon per 100) for maturity $t$; $d_t=1/(1+s_t)^t$: discount factor; $s_t$: spot yield; $A_t=\sum_{k\le t}d_k$: price of a \$1 annuity; $a_t$: annuity yield, solving $A(a_t,t)=A_t$.
+\end{itemize}
+
+\step{1}{Bootstrap equation} For the $t$-year par bond, price 100 equals coupons plus final payment discounted with the
+spot factors:
+\begin{align}
+  100 = c_t\sum_{k=1}^{t-1}d_k + (100+c_t)\,d_t \;\Longrightarrow\; d_t = \frac{100-c_t\sum_{k=1}^{t-1}d_k}{100+c_t},\qquad s_t = d_t^{-1/t}-1. \label{r2be13-boot}
+\end{align}
+
+\step{2}{Year 1} $d_1 = 100/104.5 = 0.956938$, so $s_1=4.50\%$.
+
+\step{3}{Year 2} Strip the year-1 coupon: $5d_1=5\times0.956938=4.784689$.
+\begin{align}
+  d_2 = \frac{100-4.784689}{105} = \frac{95.215311}{105} = 0.906812,\qquad s_2 = (0.906812)^{-1/2}-1 = 5.0126\%. \label{r2be13-2}
+\end{align}
+
+\step{4}{Year 3} Strip two coupons: $5.25(d_1+d_2)=5.25\times1.863750=9.784689$.
+\begin{align}
+  d_3 = \frac{100-9.784689}{105.25} = \frac{90.215311}{105.25} = 0.857153,\qquad s_3 = (0.857153)^{-1/3}-1 = 5.2723\%. \label{r2be13-3}
+\end{align}
+
+\step{5}{Year 4} Strip three coupons: $5.25(d_1+d_2+d_3)=5.25\times2.720903=14.284740$.
+\begin{align}
+  d_4 = \frac{100-14.284740}{105.25} = \frac{85.715260}{105.25} = 0.814397,\qquad s_4 = (0.814397)^{-1/4}-1 = 5.2667\%. \label{r2be13-4}
+\end{align}
+Check: $5.25\times2.720903+105.25\times0.814397 = 14.284740+85.715260=100$.
+\answer{(spot)} $s_1=4.50\%$, $s_2=5.01\%$, $s_3=5.27\%$, $s_4=5.27\%$ (5.2723\% and 5.2667\%: the 4-year spot is slightly \emph{below} the 3-year).
+
+\step{6}{Annuity prices} Summing the discount factors:
+\begin{align}
+  A_1=0.956938,\quad A_2=1.863750,\quad A_3=2.720903,\quad A_4=3.535300. \label{r2be13-A}
+\end{align}
+
+\step{7}{Annuity yields} Solve $\sum_{k=1}^{t}(1+a_t)^{-k}=A_t$ for each $t$ (one unknown, monotone, so iteration converges):
+\begin{align}
+  a_1 = 4.50\%,\quad a_2 = 4.8356\%,\quad a_3 = 5.0460\%,\quad a_4 = 5.1296\%. \label{r2be13-a}
+\end{align}
+For example $t=2$: $1/1.048356+1/1.048356^2 = 0.953874+0.909876 = 1.863751\approx A_2=1.863750$ (the gap is the rounding of $a_2$).
+\answer{(annuity)} $a_1=4.50\%$, $a_2=4.84\%$, $a_3=5.05\%$, $a_4=5.13\%$.
+
+\intuition G\&T's rule: when the curve rises, the spot curve is the steepest, the par curve next and the annuity curve the flattest
+(here spots $>$ par $>$ annuity at years 2--4). The annuity puts weight on early, low-rate years, so its yield is lowest; a par bond
+puts most weight on the final payment, so its yield is close to, but below, the spot rate. The flat par yield from 3 to 4 years needs a
+slightly falling spot rate, because the extra coupon is discounted at the higher 3-year rate.
+\pitfalls
+\begin{itemize}
+  \item Setting spot yields equal to par yields beyond year 1.
+  \item Discounting the stripped coupons at the par yield instead of at the spot factors already found.
+  \item Averaging spot yields to get the annuity yield; it must be solved as an IRR.
+\end{itemize}
+\refbib{Grinblatt \& Titman Appendix 10A, \S10A.1--10A.2 and Examples 10A.1--10A.2, pp.~363--367.}
+
+% =============================================================================
+\exsec{14. The implied value of a call option --- Ross 7.32 (DESAFIO), p.~234}
+
+\asked The value of the issuer's call option embedded in the 8.25\% Treasury (callable from February 2008), using two noncallable
+Treasuries with the same maturity and coupons of 6.5\% and 12\%.
+
+\approach The law of one price again. A portfolio of the two noncallable bonds with the right weights has an 8.25\% coupon and the
+same maturity as the callable bond: it is the callable bond \emph{without} the call. The call's value is the price gap
+(Exercise~4: $P^{\text{callable}}=P^{\text{straight}}-V^{\text{call}}$). Prices are in 32nds of 1\% of face (Ross's quote convention).
+
+\notation
+\begin{itemize}
+  \item $w$: weight on the 6.5\% bond, $1-w$ on the 12\% bond (fractions of \$100 face); ask prices $106{:}12$, $103{:}16$, $134{:}31$; bid prices $106{:}10$, $103{:}14$, $134{:}25$.
+\end{itemize}
+
+\step{1}{Match the coupon} Same maturity, so matching coupons matches every cash flow:
+\begin{align}
+  6.5\,w + 12\,(1-w) = 8.25 \;\Longrightarrow\; 12-5.5\,w = 8.25 \;\Longrightarrow\; w = \frac{3.75}{5.5} = 0.681818,\quad 1-w = 0.318182. \label{r2be14-w}
+\end{align}
+Check: $0.681818\times6.5+0.318182\times12 = 4.431818+3.818182 = 8.25$. Face values match too: $w+(1-w)=1$.
+
+\step{2}{Convert the quotes} $106{:}12 = 106+12/32 = 106.375$; $103{:}16 = 103.5$; $134{:}31 = 134+31/32 = 134.96875$ (\% of face).
+
+\step{3}{Price of the synthetic noncallable 8.25\% bond (ask)}
+\begin{align}
+  P^{\text{straight}} = (0.681818)(106.375) + (0.318182)(134.96875) = 72.5284 + 42.9446 = 115.4730. \label{r2be14-syn}
+\end{align}
+
+\step{4}{Call value}
+\begin{align}
+  V^{\text{call}} = P^{\text{straight}} - P^{\text{callable}} = 115.4730 - 103.5 = 11.9730\% \text{ of face} \;\Rightarrow\; \$119.73 \text{ per } \$1{,}000. \label{r2be14-call}
+\end{align}
+With bid prices ($106.3125$, $103.4375$, $134.78125$): synthetic $115.3707$, call $= 11.9332\%$, i.e.\ \$119.33.
+\answer{\unskip} About \$119.73 per \$1,000 of face value (11.97\% of par) using ask prices; \$119.33 using bid prices.
+
+\intuition The callable bond trades at 103.5 although an otherwise identical noncallable bond is worth 115.5: the Treasury can retire
+it at par in less than a year, so holders will not pay much above 100 plus the coupons until then. The option is deep in the money
+(market yields of about 5.25\% versus an 8.25\% coupon), which is why it is worth about 12\% of face.
+\pitfalls
+\begin{itemize}
+  \item Reading $106{:}12$ as $106.12$; the digits after the colon are 32nds.
+  \item Mixing bid and ask prices across the bonds.
+  \item Comparing yields instead of prices: the callable's quoted yield (5.24\%) is not a yield on comparable cash flows.
+\end{itemize}
+\refbib{Ross \S7.2 ``Op\c{c}\~ao de resgate antecipado'', p.~207; \S7.5 ``Relat\'orios de pre\c{c}os de t\'itulos de d\'ivida'', pp.~218--219.}
+
+% =============================================================================
+\exsec{15. A defaultable bond on a binomial tree --- Grinblatt \& Titman 7.3, p.~254}
+
+\asked The no-arbitrage value of a two-period (six-month periods) corporate bond paying \$5 at date 1 (secured by a reserve fund) and
+promising \$105 at date 2, of which only \$50 is paid in the default state $DD$; risk-free rate 4\% per period; asset values per bond
+as in the exhibit. As an extension tied to block 2A.10 we also compute the bond's promised yield and compare it with its expected return.
+
+\approach The bond is a derivative on the firm's assets, so G\&T's risk-neutral valuation applies: find, at each node, the probability
+$\pi$ that makes the assets earn the risk-free rate (eq.~7.4), weight the bond's payoffs with these probabilities, and discount at 4\%
+backwards through the tree. The date-1 coupon is riskless (reserve fund), so its value is $5/1.04$.
+
+\notation
+\begin{itemize}
+  \item $r_f=4\%$ per period; asset values $S_0=100$, $S_U=120$, $S_D=90$, $S_{UU}=300$, $S_{UD}=110$, $S_{DD}=50$.
+  \item $\pi_0,\pi_U,\pi_D$: risk-neutral up-probabilities at nodes $0$, $U$, $D$; $V_U,V_D$: date-1 values of the date-2 payment; $V_0$: bond value.
+\end{itemize}
+
+\step{1}{Risk-neutral probabilities} From $\pi u+(1-\pi)d=1+r_f$, i.e.\ $\pi S_{\text{up}}+(1-\pi)S_{\text{down}}=S(1+r_f)$:
+\begin{align}
+  \pi_0 &= \frac{100(1.04)-90}{120-90} = \frac{104-90}{30} = \frac{14}{30} = 0.466667, \label{r2be15-p0}\\
+  \pi_U &= \frac{120(1.04)-110}{300-110} = \frac{124.8-110}{190} = \frac{14.8}{190} = 0.077895, \label{r2be15-pU}\\
+  \pi_D &= \frac{90(1.04)-50}{110-50} = \frac{93.6-50}{60} = \frac{43.6}{60} = 0.726667. \label{r2be15-pD}
+\end{align}
+
+\step{2}{Date-1 values of the date-2 payment} At $U$ both successors pay 105, so the payment is riskless there; at $D$ it is
+105 (state $UD$) or 50 (state $DD$):
+\begin{align}
+  V_U &= \frac{\pi_U(105)+(1-\pi_U)(105)}{1.04} = \frac{105}{1.04} = 100.9615, \label{r2be15-VU}\\
+  V_D &= \frac{(0.726667)(105)+(0.273333)(50)}{1.04} = \frac{76.30+13.6667}{1.04} = \frac{89.9667}{1.04} = 86.5064. \label{r2be15-VD}
+\end{align}
+
+\step{3}{Date-0 value} The date-2 payment is worth, at date 0,
+\begin{align}
+  \frac{\pi_0V_U+(1-\pi_0)V_D}{1.04} &= \frac{(0.466667)(100.9615)+(0.533333)(86.5064)}{1.04} \nonumber\\
+  &= \frac{47.1154+46.1368}{1.04} = \frac{93.2521}{1.04} = 89.6655, \label{r2be15-V2}
+\end{align}
+and the coupon is worth $5/1.04=4.8077$. Hence
+\begin{align}
+  V_0 = 4.8077 + 89.6655 = 94.47. \label{r2be15-V0}
+\end{align}
+(Same result carrying the coupon through the tree: $[\pi_0(V_U+5)+(1-\pi_0)(V_D+5)]/1.04 = 98.2521/1.04 = 94.47$.)
+\answer{\unskip} The bond is worth \$94.47 per \$100 of face value.
+
+\step{4}{Cost of default} A default-free twin would be worth $5/1.04+105/1.04^2 = 4.8077+105/1.0816 = 101.89$. The risk-neutral
+probability of reaching $DD$ is $(1-\pi_0)(1-\pi_D)=0.533333\times0.273333=0.145778$, and the shortfall there is $105-50=55$:
+\begin{align}
+  \frac{55\times0.145778}{(1.04)^2} = \frac{8.0178}{1.0816} = 7.4129 = 101.89-94.47. \label{r2be15-loss}
+\end{align}
+
+\step{5}{Promised yield vs.\ expected return (block 2A.10)} The promised yield $y$ solves $94.47 = 5/(1+y)+105/(1+y)^2$: $y=8.10\%$
+per half-year (16.21\% APR, 16.86\% effective). Under the risk-neutral probabilities, the expected return of the bond is exactly
+$r_f=4\%$ per period (e.g.\ at $U$: $105/100.9615-1=4\%$). The promised yield exceeds this expected return by $8.10-4=4.10$
+percentage points, all of it compensation for the expected default loss of step 4. Under the true probabilities (not given) the
+expected return would be $4\%$ plus a risk premium, still below 8.10\% because the payoffs can only fall short of the promise.
+
+\intuition The bond equals a default-free bond minus the value of the shareholders' option to hand over the assets in $DD$. Its
+yield measures the promise; its expected return (the cost of debt $r_D$) is far lower. Using 8.10\% as $r_D$ would double the cost of
+this debt.
+\pitfalls
+\begin{itemize}
+  \item Using the same up-probability at every node; the asset returns differ by node ($+20\%/-10\%$ at 0, $+150\%/-8.3\%$ at $U$), so $\pi$ differs.
+  \item Discounting the expected payoff under some guessed ``true'' probability at the risk-free rate; only risk-neutral probabilities go with $r_f$.
+  \item Taking the promised yield as the bond's expected return.
+\end{itemize}
+\refbib{Grinblatt \& Titman Ch.~7, ``Risk-Neutral Valuation of Derivatives'', pp.~239--242 (eq.~7.4); Ricca 2A.6--2A.10 (state prices, $r_D$ vs.\ the yield).}
+
+\end{document}

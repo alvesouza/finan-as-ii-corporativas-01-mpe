@@ -1,4 +1,4 @@
-% Short answer key for Listas/lista-topic4-moral-hazard-overhang.md (15 exercises).
+% Short answer key for Listas/lista-topic4-moral-hazard-overhang.md (19 exercises; 16--19 are original).
 % Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
 % Every number is asserted in lista-topic4-moral-hazard-overhang-solutions_check.py.
 \documentclass[11pt,a4paper]{article}
@@ -153,5 +153,51 @@ $r^*$ = smallest root, $\rho_0(r^*)<L$.\\
 (iv) $r^*>\hat r$: investors' income $\le\max\{L/2,\rho_0\}$, strictly below breakeven: no financing.\\
 (v) $r^*<\hat r$: either no financing or cutoff $r^{**}\in(r^*,\hat r]$; lenders break even, borrower's
 NPV falls. Example: $I-A=3.31$, $r^*=0.0040$, $r^{**}=0.0471$.
+
+% Topic 4 list, exercises 16--19: ORIGINAL exercises (no book exercise exists; user agreed 2026-11-12).
+
+\section*{16. Default as insurance: the default cutoff (original)}
+(a) Cash-flow default iff $A+Y<D$, i.e.\ $Y<7$; probability $F(7)=0.1$.\\
+(b) Repay: $u=\sqrt{Y-7}$; default: $u(9)-1=2>0$. Strategic default iff $\sqrt{Y-7}<2$; $Y^*=7+4=11$, and
+$7<11<16=D+E$ (garnishment $Y-E<7<D$, so the cap never binds).\\
+(c) $p=F(11)=6/20=0.3$: $0.1$ cash-flow, $0.2$ strategic.\\
+(d) $Y=6$: cash-flow default, $C=9$, $u=2$, creditors $2$. $Y=9$: could repay ($u=\sqrt2=1.414<2$) but defaults,
+creditors $5$. $Y=20$: repays, $C=13$, $u=3.606$, creditors $12$.\\
+(e) $E[Y-E\mid Y<11]=8-4=4$; consumption floor $A+E=9$: default swaps low, risky consumption for a fixed floor.
+
+\section*{17. Default as insurance: comparative statics, pricing, ex ante welfare (original)}
+(a) From $u(A+Y^*-D)=u(A+E)-\sigma$ and $c_r<c_d$ (since $\sigma>0$): $dY^*/dD=1$, $dY^*/dA=u'(c_d)/u'(c_r)-1<0$,
+$dY^*/d\sigma=-1/u'(c_r)<0$, $dY^*/dE=u'(c_d)/u'(c_r)>0$. Baseline ($c_r=4$, $c_d=9$, ratio $2/3$): $1$, $-1/3$, $-4$, $2/3$;
+$dp/dx=\tfrac1{20}dY^*/dx$: $0.05$, $-1/60$, $-0.2$, $1/30$ (slide 44).\\
+(b) $Q=0.7(12)+\tfrac1{20}\int_5^{11}(y-4)dy=8.4+1.2=9.6$; rate $12/9.6-1=25\%$.\\
+(c) Regime N: $D_N=9.6$, $EU_N=\tfrac1{30}[20.4^{3/2}-0.4^{3/2}]=3.062880$, $CE=9.381$. Regime B ($\sigma=1$): $D_B=12$,
+$EU_B=0.6+\tfrac1{30}[18^{3/2}-8]=2.878918$, $CE=8.288$. $E[C]=10.4$ in both. N preferred.\\
+(d) $Y^*=D-A+c_r$, $40Q=-D^2+42D+(c_r-9)^2-1$. $\sigma=0.1$: $c_r=8.41$, $D_B=21-\sqrt{56.3481}=13.4935$,
+$Y^*=16.9035$, $p=0.5952$, rate $40.56\%$, $EU_B=3.148474$, $CE=9.913$: B preferred.\\
+(e) Same mean consumption, single crossing $\Rightarrow$ insurance gain $E[u(C_B)]-EU_N>0$; welfare gap $=$ gain
+$-\sigma p$: $0.116-0.3<0$ at $\sigma=1$, $0.145-0.060>0$ at $\sigma=0.1$. $\bar\sigma\approx0.26$ ($0.2648$).
+
+\section*{18. Karlan--Zinman: selection vs moral hazard (original)}
+(a) $H$ iff $\Delta\pi_\theta[Y(\theta)-(1+r_c)+C_b]\ge c$. $S$: gains $0.03$--$0.07<0.17$, always $L$. $R$: $0.19$, $0.23$,
+$0.15$, $0.19$ for $(10\%,0.25)$, $(10\%,0.45)$, $(30\%,0.25)$, $(30\%,0.45)$: $L$ only at $(30\%,0.25)$.\\
+(b) Expecting $r_c=r_o$, $C_b=0.25$: $S$ gets $0.15$ at $10\%$, $-0.01$ at $30\%$; $R$ gets $0.245$ and $0.125$.
+Take-up $100\%$ at $10\%$, $50\%$ (only $R$) at $30\%$.\\
+(c) Default rates (no / yes dynamic incentive): A $25\%$/$25\%$; B $30\%$/$30\%$; C $50\%$/$30\%$.\\
+(d) Selection: B$-$A $=+5$ pp. Burden: C$-$B $=+20$ pp (no incentive), $0$ (with). Dynamic: C $-20$ pp; $0$ in A, B
+(ICs not near binding there).\\
+(e) C$-$A $=25$ pp $=5+20$; with $r_o=r_c$ always, the parts cannot be separated.\\
+(f) $1+r_c\le Y_R+C_b-c/\Delta\pi_R=0.95+C_b$: $r_c\le20\%$ without, $40\%$ with the incentive; HT's $(\Delta p)(R_b+C_b)\ge B$;
+pledgeable $0.84\to0.98$.
+
+\section*{19. Reading a three-rate experiment (original; hypothetical data)}
+(a) Cells: A $11.5/8.5\%$, B $17.6/14.4\%$, C $18.8/15.2\%$; groups $10$, $16$, $17\%$; pooled $16.29\%$ vs $13.0\%$.
+Selection B$-$A $=6.0$ pp; burden C$-$B $=1.0$ pp; dynamic $-3.29$ pp ($-3.0$, $-3.2$, $-3.6$ within).\\
+(b) SE $0.01283$, $0.01355$, $0.01090$; $z=4.68$, $0.74$, $-3.01$: selection and dynamic significant at $5\%$, burden not.\\
+(c) Saturated in groups, $C_i$ balanced (FWL): $\beta_o=6/10=0.6$, $\beta_c=1/10=0.1$, $\beta_b=-3.29$, $\alpha=-9.36$.\\
+(d) $\mathcal R(30\%)=0.90(1.30)=1.170>\mathcal R(40\%)=0.83(1.40)=1.162$; $-0.008=+0.090$ (rate) $-0.084$ (selection)
+$-0.014$ (burden): backward-bending supply, ration rather than raise the rate (Stiglitz--Weiss, lemons).\\
+(e) IC $(\Delta p)(R_b+C_b)\ge B$; $\mathcal P=0.9(1.5-0.5+C_b)$: $0.9$ ($\bar A=0.1$) for $C_b=0$, $1.08$ ($\bar A=-0.08$, no
+rationing) for $C_b=0.2$; utility $0.35-0.02=0.33$.\\
+(f) Cannot separate selection on risk type from selection on anticipated effort (slide 47).
 
 \end{document}

@@ -1,0 +1,1031 @@
+% Worked solutions for Listas/lista-r2c-financial-planning-forecasting.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r2c-financial-planning-forecasting-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{tikz}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II --- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R2c (financial planning) --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\exsec}[1]{\section*{\color{blue!55!black}#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\notation}{\par\noindent\textbf{Notation.}}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newcommand{\intuition}{\par\medskip\noindent\textbf{Intuition.}~}
+\newcommand{\bookans}{\par\medskip\noindent\textbf{Book answer.}~}
+\newcommand{\refbib}{\par\smallskip\noindent\textbf{Ref:}~}
+\newcommand{\asked}{\par\medskip\noindent\textbf{What is asked.}~}
+\newcommand{\approach}{\par\smallskip\noindent\textbf{Approach.}~}
+\newcommand{\answer}[1]{\par\smallskip\noindent\fbox{\textbf{Answer #1.}}~}
+\newcommand{\pitfalls}{\par\medskip\noindent\textbf{Common mistakes.}}
+\newcommand{\EFN}{\mathit{EFN}}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R2c --- Financial planning and forecasting for valuation}\\[4pt]{\large Worked solutions}\end{center}
+
+\noindent Statements are in \url{Listas/lista-r2c-financial-planning-forecasting.md}; each exercise is
+cited by number and printed page and is not restated. Short answers:
+\url{lista-r2c-financial-planning-forecasting-solutions-short.pdf}. Editions are the local copies:
+Berk = Berk, DeMarzo \& Harford, \emph{Fundamentals of Corporate Finance}, 2nd ed.\ (2011), Ch.~18;
+Higgins = Koski, Higgins \& Mitton, \emph{Analysis for Financial Management}, 13th ed., Ch.~3--4;
+Ross = Ross, Westerfield, Jordan \& Lamb, \emph{Fundamentos de Administra\c{c}\~ao Financeira}, 9th ed.,
+Cap.~4 (``NAF'' = \emph{necessidade de aporte financeiro} = EFN). Amounts carry the units of the
+statement (dollars, \$ thousands or \$ millions). Numbers marked ``illustration'' are not part of the
+statement.
+
+\tableofcontents
+
+% =============================================================================
+\exsec{1. Cost of goods sold by the percent of sales method --- Berk 18.1, p.~558}
+
+\asked Next year's cost of goods sold (COGS) when sales rise from \$100,000 to \$110,000, assuming COGS
+keeps this year's ratio to sales.
+
+\approach The percent of sales method (Berk \S18.2) assumes that an item that moves with activity keeps
+the same fraction of sales. So we measure the fraction today and apply it to forecast sales. This is
+the first line of any pro forma income statement.
+
+\notation
+\begin{itemize}
+  \item $S_0=100{,}000$, $S_1=110{,}000$: sales this year and next year (\$).
+  \item $C_0=72{,}000$: COGS this year (\$); $c=C_0/S_0$: COGS as a fraction of sales; $C_1$: forecast COGS.
+\end{itemize}
+
+\step{1}{Measure the ratio} We divide this year's COGS by this year's sales:
+\begin{align}
+  c &= \frac{C_0}{S_0} = \frac{72{,}000}{100{,}000} = 0.72. \label{r2ce1-c}
+\end{align}
+
+\step{2}{Apply it to forecast sales} The ratio is assumed constant, so
+\begin{align}
+  C_1 &= c\,S_1 = (0.72)(110{,}000) = 79{,}200. \label{r2ce1-C1}
+\end{align}
+\answer{} Forecast COGS $=\$79{,}200$ (72\% of \$110,000).
+
+\intuition Holding COGS at 72\% of sales assumes the gross margin (28\%) is stable: each extra dollar of
+sales brings 72 cents of extra cost. It is a good first guess for a mature business; a firm with
+fixed production costs would see COGS grow more slowly than sales.
+\pitfalls
+\begin{itemize}
+  \item Growing COGS by a different rate than sales (e.g.\ by last year's COGS growth) --- the method ties
+        every proportional item to the \emph{sales} forecast.
+  \item Applying the ratio to this year's sales instead of next year's.
+\end{itemize}
+\refbib{Berk \S18.2, ``Percent of Sales Method'', pp.~537--538; Example 18.1, p.~539.}
+
+% =============================================================================
+\exsec{2. Reading external financing required --- Higgins 3.1 and 3.4, p.~103}
+
+\asked (3.1) What a \emph{negative} external financing required means. (3.4a) Whether a larger
+receivables forecast raises external funding required. (3.4b) Whether cash flow forecasts usually show
+larger needs than pro forma statements. (3.4c) Whether an annual forecast with no external need rules
+out cash shortfalls during the year.
+
+\approach In a pro forma balance sheet, external funding required (EFN) is the \emph{plug}: the amount
+that makes assets equal liabilities plus equity. Every question follows from the identity that defines
+it and from the date at which the identity is evaluated.
+
+\notation
+\begin{itemize}
+  \item $TA$: projected total assets; $L$: projected liabilities (without new financing); $E$: projected equity.
+  \item $\EFN = TA-(L+E)$: external funding required at the forecast date.
+\end{itemize}
+
+\step{1}{The defining identity} By construction,
+\begin{align}
+  \EFN &= TA-(L+E). \label{r2ce2-efn}
+\end{align}
+A positive value means projected uses (assets) exceed projected sources: money must be raised.
+
+\step{2}{(3.1) Negative EFN} If $\EFN<0$, sources exceed uses: the company will generate more cash than
+its plan absorbs. Illustration: projected assets $1{,}000$ with cash at its minimum of $100$, and
+$L+E=1{,}040$; then $\EFN=1{,}000-1{,}040=-40$. Setting the plug to zero and adding the $40$ to cash gives
+cash $=100+40=140$ and assets $=900+140=1{,}040=L+E$: the balance sheet balances.
+\answer{(3.1)} A negative EFN is a projected cash \emph{surplus} above the desired minimum: cash (or
+debt repayment, dividends, buybacks) absorbs it.
+
+\step{3}{(3.4a) Receivables} Receivables are part of $TA$ in \eqref{r2ce2-efn}. Holding $L$ and $E$
+fixed, $\partial \EFN/\partial AR=1$: in the illustration, raising receivables by $50$ moves EFN from
+$-40$ to $-40+50=10$.
+\answer{(3.4a)} True: every extra dollar tied up in receivables must be financed.
+
+\step{4}{(3.4b) Cash flow forecasts} A cash flow forecast and a pro forma balance sheet rearrange the
+same accounting identities; Higgins' chapter summary states that cash flow forecasts ``yield the same
+need for external funding as a pro forma projection, given the same assumptions.''
+\answer{(3.4b)} False: with the same assumptions and no errors, the two estimates are identical.
+
+\step{5}{(3.4c) Intra-year needs} \eqref{r2ce2-efn} is evaluated on one date (December 31). A seasonal
+firm can build inventory and receivables in mid-year and need financing then, even if by year-end the
+cash has come back.
+\answer{(3.4c)} False: an annual forecast says nothing about needs between forecast dates; monthly
+cash budgets or quarterly pro formas are needed for that.
+
+\intuition EFN is a balancing item, not a forecast of performance. Its sign tells you whether the plan
+throws off or absorbs cash \emph{at the forecast date}, and anything that adds to assets raises it
+one-for-one.
+\pitfalls
+\begin{itemize}
+  \item Reading a negative EFN as ``the forecast is wrong''; it is a cash surplus.
+  \item Believing different forecasting methods give different needs; differences signal an error.
+  \item Using a year-end forecast to manage a seasonal business.
+\end{itemize}
+\bookans 3.1 matches the book (p.~405): ``A negative value implies that the company has excess cash above
+its desired minimum'', confirmed by adding it to cash. 3.4: no answer in the book.
+\refbib{Higgins Ch.~3, ``Pro Forma Statements'' and chapter summary, pp.~80--102.}
+
+% =============================================================================
+\exsec{3. Corpora\c{c}\~ao Felipe: the plug variable --- Ross 4.1 and 4.2, p.~117}
+
+\asked (4.1) Pro forma statements when sales and \emph{every} balance sheet item grow 15\%, and which
+variable closes the balance sheet. (4.2) Same forecast, but half of net income is paid as dividends
+and debt and equity do not grow with sales: find the external financing needed (NAF).
+
+\approach A pro forma model has one degree of freedom too many once we fix sales growth, the
+percentages, and the financing; one item must be the \emph{variable de fechamento} (plug). In 4.1 the
+balance sheet is fully specified, so dividends become the plug; in 4.2 the payout is fixed, so the
+plug moves to external financing.
+
+\notation
+\begin{itemize}
+  \item $g=15\%$: sales growth; $S$, $C$, $NI$: sales, costs, net income (no taxes).
+  \item $A$, $D$, $E$: assets, debt, equity; $Div$: dividends; $\EFN$ (NAF): external financing needed.
+\end{itemize}
+
+\step{1}{Pro forma income statement (both parts)} Costs vary with sales:
+\begin{align}
+  S_1 &= 23{,}000(1.15) = 26{,}450, \qquad C_1 = 16{,}700(1.15) = 19{,}205, \label{r2ce3-S}\\
+  NI_1 &= S_1-C_1 = 26{,}450-19{,}205 = 7{,}245. \label{r2ce3-NI}
+\end{align}
+
+\step{2}{(4.1) Balance sheet grown 15\%} Every item grows 15\%:
+$A_1=15{,}800(1.15)=18{,}170$, $D_1=5{,}200(1.15)=5{,}980$, $E_1=10{,}600(1.15)=12{,}190$, and
+$5{,}980+12{,}190=18{,}170$, so it balances.
+
+\step{3}{(4.1) Find the plug} Equity can only change through retained earnings (no share issues), so
+$E_1=E_0+NI_1-Div_1$. Solving for dividends,
+\begin{align}
+  Div_1 &= NI_1-(E_1-E_0) = 7{,}245-(12{,}190-10{,}600) = 7{,}245-1{,}590 = 5{,}655. \label{r2ce3-div}
+\end{align}
+If no dividend were paid, equity would be $10{,}600+7{,}245=17{,}845$ and the balance sheet would not
+balance; the dividend of $5{,}655$ is what makes it do so.
+\answer{(4.1)} Sales $26{,}450$, costs $19{,}205$, net income $7{,}245$; assets $18{,}170$ = debt
+$5{,}980$ + equity $12{,}190$. The plug (\emph{vari\'avel de fechamento}) is the dividend, $\$5{,}655$.
+
+\step{4}{(4.2) Fixed payout, fixed debt} Dividends are $0.5(7{,}245)=3{,}622.5$, so retained earnings
+add $3{,}622.5$ and
+\begin{align}
+  E_1 &= 10{,}600+3{,}622.5 = 14{,}222.5, \qquad D_1 = 5{,}200, \nonumber\\
+  D_1+E_1 &= 5{,}200+14{,}222.5 = 19{,}422.5, \nonumber\\
+  \EFN &= A_1-(D_1+E_1) = 18{,}170-19{,}422.5 = -1{,}252.5. \label{r2ce3-efn}
+\end{align}
+\answer{(4.2)} NAF $=-\$1{,}252.5$: a surplus. The firm can pay down debt, add to cash, or raise the
+dividend by that amount.
+
+\intuition Once growth and the asset intensity are fixed, \emph{something} must give: dividends,
+borrowing or new equity. Ross' point is that the pro forma does not tell you which; the manager
+chooses the plug, and the model reports the consequence.
+\pitfalls
+\begin{itemize}
+  \item Growing equity by 15\% \emph{and} adding net income: equity changes only through retained earnings.
+  \item Reporting a negative NAF as zero; the sign carries information (excess funds).
+\end{itemize}
+\refbib{Ross \S4.3, ``O modelo da porcentagem de vendas'', pp.~99--104; Exemplo pp.~97--98.}
+
+% =============================================================================
+\exsec{4. Internal and sustainable growth rates --- Berk 18.16, p.~561}
+
+\asked (a) The fastest growth the firm can finance with retained earnings alone; (b) the fastest growth
+with retained earnings plus the debt that keeps $D/E$ constant; (c) (b) again when 40\% of income is
+paid out.
+
+\approach Berk's equations (18.4)--(18.5): internal growth $=$ ROA $\times$ retention, sustainable
+growth $=$ ROE $\times$ retention, both on \emph{beginning-of-period} assets and equity. With retention
+$b$, equity grows by $b\cdot NI$; assets can grow at that rate relative to assets (no external money)
+or relative to equity (debt grows in step).
+
+\notation
+\begin{itemize}
+  \item $NI=50{,}000$; $A_0=400{,}000$, $E_0=250{,}000$: beginning assets and equity.
+  \item $b=1-\text{payout}$: retention (plowback) ratio; $\text{ROA}=NI/A_0$, $\text{ROE}=NI/E_0$.
+\end{itemize}
+
+\step{1}{(a) Internal growth} With payout 0\%, $b=1$:
+\begin{align}
+  g_{int} &= \text{ROA}\times b = \frac{50{,}000}{400{,}000}\times 1 = 0.125 = 12.5\%. \label{r2ce4-int}
+\end{align}
+\answer{(a)} 12.5\%.
+
+\step{2}{(b) Sustainable growth}
+\begin{align}
+  g_{sus} &= \text{ROE}\times b = \frac{50{,}000}{250{,}000}\times 1 = 0.20 = 20\%. \label{r2ce4-sus}
+\end{align}
+\answer{(b)} 20\%.
+
+\step{3}{(c) Payout 40\%} Now $b=1-0.40=0.60$:
+\begin{align}
+  g_{sus} &= (0.20)(0.60) = 0.12 = 12\%. \label{r2ce4-sus40}
+\end{align}
+\answer{(c)} 12\%.
+
+\intuition Retained earnings are the only internal source of equity. Measured against assets they bound
+growth without any outside money; measured against equity they bound growth when debt is allowed to
+grow in proportion. Leverage ($A_0/E_0=1.6$) is why (b) exceeds (a): $20\%=12.5\%\times1.6$.
+\pitfalls
+\begin{itemize}
+  \item Using end-of-year equity or assets with the simple formulas (then the formulas are
+        $x b/(1-xb)$; see Exercise 13).
+  \item Forgetting to multiply by the retention ratio when there is a payout.
+\end{itemize}
+\refbib{Berk \S18.4, Eqs.~(18.4)--(18.5), p.~548; Example 18.3, p.~549.}
+
+% =============================================================================
+\exsec{5. Universal Products: finishing a pro forma --- Higgins 3.5, p.~104}
+
+\asked (a) Net fixed assets at the end of 2022 given \$500 thousand of purchases. (b) Owners' equity
+with a 50\% payout and no equity issues. (c) The resulting external funding required.
+
+\approach Two roll-forward identities fill the blanks: fixed assets evolve by capex less depreciation;
+equity by retained earnings. EFN is then the plug of the balance sheet (Exercise 2).
+
+\notation
+\begin{itemize}
+  \item $NFA$: net fixed assets; $CapEx=500$; $Dep_{2022}=260$ (\$ thousands).
+  \item $NI_{2022}=156$; payout $=50\%$; $E$: owners' equity; $CA$, $CL$, $LTD$ as in the table.
+\end{itemize}
+
+\step{1}{(a) Fixed assets} Net fixed assets grow by purchases and fall by depreciation:
+\begin{align}
+  NFA_{2022} &= NFA_{2021}+CapEx-Dep_{2022} = 2{,}000+500-260 = 2{,}240. \label{r2ce5-nfa}
+\end{align}
+\answer{(a)} \$2,240 thousand.
+
+\step{2}{(b) Equity} Equity grows by retained income only:
+\begin{align}
+  E_{2022} &= E_{2021}+NI_{2022}(1-0.5) = 2{,}950+156(0.5) = 2{,}950+78 = 3{,}028. \label{r2ce5-eq}
+\end{align}
+\answer{(b)} \$3,028 thousand.
+
+\step{3}{(c) The plug} Totals and the difference:
+\begin{align}
+  TA_{2022} &= CA+NFA = 2{,}750+2{,}240 = 4{,}990, \nonumber\\
+  (L+E)_{2022} &= CL+LTD+E = 1{,}155+500+3{,}028 = 4{,}683, \nonumber\\
+  \EFN_{2022} &= 4{,}990-4{,}683 = 307. \label{r2ce5-efn}
+\end{align}
+\answer{(c)} External funding required $=\$307$ thousand.
+
+\intuition Assets grow by $4{,}990-4{,}500=490$, but spontaneous liabilities supply only
+$1{,}155-1{,}050=105$ and retained earnings $78$; the remaining $490-105-78=307$ must come from outside.
+\pitfalls
+\begin{itemize}
+  \item Adding all of net income to equity (ignoring the 50\% dividend).
+  \item Forgetting depreciation in the fixed-asset roll-forward, or subtracting 2021's (250) instead of 2022's (260).
+\end{itemize}
+\bookans Matches the book (p.~405): $NFA=2{,}240$, equity $3{,}028$, EFN $307$.
+\refbib{Higgins Ch.~3, ``Pro Forma Statements'', pp.~80--88.}
+
+% =============================================================================
+\exsec{6. Net new financing and how to split it --- Berk 18.2 and 18.3, p.~558}
+
+\asked (18.2) The external financing needed next year given ending assets, net income, payout and the
+growth of non-debt liabilities. (18.3) With beginning debt of \$100,000, how much of that financing must
+be debt and how much equity to keep the debt-equity ratio unchanged.
+
+\approach Berk's identity: Net New Financing $=$ Projected Assets $-$ Projected Liabilities and Equity,
+where projected liabilities and equity include only the \emph{spontaneous} sources (payables) and
+retained earnings. Part 18.3 is a financing-policy choice: the total is fixed by 18.2; the policy splits it.
+
+\notation
+\begin{itemize}
+  \item $TA_1=500{,}000$; $NI=50{,}000$; payout $10\%$; $E_0=300{,}000$; $L_0=120{,}000$ (of which $D_0=100{,}000$ debt in 18.3).
+  \item $NNF$: net new financing; $\Delta D$, $\Delta E^{new}$: new debt and new equity issued.
+\end{itemize}
+
+\step{1}{(18.2) Projected sources} Retained earnings are $50{,}000(1-0.10)=45{,}000$, so
+\begin{align}
+  E_1 &= 300{,}000+45{,}000 = 345{,}000, \qquad L_1 = 120{,}000+10{,}000 = 130{,}000, \nonumber\\
+  NNF &= TA_1-(L_1+E_1) = 500{,}000-(130{,}000+345{,}000) = 500{,}000-475{,}000 = 25{,}000. \label{r2ce6-nnf}
+\end{align}
+\answer{(18.2)} Net new financing $=\$25{,}000$.
+
+\step{2}{(18.3) Target capital structure} Non-debt liabilities are $120{,}000-100{,}000=20{,}000$ at the
+start and $20{,}000+10{,}000=30{,}000$ at the end. Debt plus equity must therefore fund
+$500{,}000-30{,}000=470{,}000$ of assets, in the initial proportion $D/E=100{,}000/300{,}000=1/3$, i.e.\
+$D=\tfrac14$ and $E=\tfrac34$ of the total:
+\begin{align}
+  E_1 &= \tfrac34(470{,}000) = 352{,}500, \qquad D_1 = \tfrac14(470{,}000) = 117{,}500. \label{r2ce6-split}
+\end{align}
+
+\step{3}{(18.3) Issues} Equity already reaches $345{,}000$ through retention; debt starts at $100{,}000$:
+\begin{align}
+  \Delta E^{new} &= 352{,}500-345{,}000 = 7{,}500, \qquad \Delta D = 117{,}500-100{,}000 = 17{,}500, \nonumber
+\end{align}
+and $7{,}500+17{,}500=25{,}000=NNF$.
+\answer{(18.3)} Issue \$7,500 of equity and \$17,500 of debt.
+
+\intuition Net new financing is fixed by the operating plan; how it is raised is a separate capital
+structure decision. Keeping $D/E$ constant forces some equity issuance here because retained earnings
+($45{,}000$) are too small relative to the asset growth.
+\pitfalls
+\begin{itemize}
+  \item Treating payables as debt when computing $D/E$; they are spontaneous operating liabilities.
+  \item Applying $D/E=1/3$ to the \$25,000 alone; the ratio must hold for the \emph{stocks}, and retained
+        earnings already added equity.
+\end{itemize}
+\refbib{Berk \S18.2, ``Pro Forma Balance Sheet'' and ``Making the Balance Sheet Balance'', pp.~539--541.}
+
+% =============================================================================
+\exsec{7. Companhia Jo\~ao Herdeiro: percent-of-sales balance sheet --- Ross 4.9--4.11, pp.~118--119}
+
+\asked (4.9) The pro forma income statement at 20\% sales growth with constant payout, and the addition
+to retained earnings. (4.10) Each balance sheet item as a percent of sales, ``n/a'' where it does not
+vary with sales. (4.11) The pro forma balance sheet at 15\% growth with no new debt or equity, and the NAF.
+
+\approach Percent of sales: costs, assets and payables scale with sales; notes payable, long-term debt
+and paid-in capital stay; retained earnings grow by the retained part of the new net income. NAF is the plug.
+
+\notation
+\begin{itemize}
+  \item $S_0=38{,}000$, $C_0=18{,}400$; tax rate $34\%$; $Div_0=5{,}200$, $NI_0=12{,}936$.
+  \item $b=7{,}736/12{,}936=0.598021$: retention ratio; $1-b=0.401979$: payout.
+\end{itemize}
+
+\step{1}{(4.9) Income statement at $g=20\%$}
+\begin{align}
+  S_1 &= 38{,}000(1.2) = 45{,}600, \quad C_1 = 18{,}400(1.2) = 22{,}080, \quad
+  EBT_1 = 45{,}600-22{,}080 = 23{,}520, \nonumber\\
+  T_1 &= 0.34(23{,}520) = 7{,}996.8, \qquad NI_1 = 23{,}520-7{,}996.8 = 15{,}523.2. \label{r2ce7-ni}
+\end{align}
+Since all lines scale with sales, $NI_1=1.2(12{,}936)=15{,}523.2$ too. With a constant payout,
+$Div_1=15{,}523.2(0.401979)=6{,}240$ and the addition to retained earnings is
+$15{,}523.2(0.598021)=9{,}283.2$ $(=1.2\times7{,}736)$.
+\answer{(4.9)} Addition to retained earnings $=\$9{,}283.20$ (dividends $\$6{,}240$).
+
+\step{2}{(4.10) Percent of sales} Divide each item by $S_0=38{,}000$:
+\begin{center}\small
+\begin{tabular}{lrr@{\qquad}lrr}
+\toprule
+Ativo & \$ & \% sales & Passivo e PL & \$ & \% sales\\
+\midrule
+Caixa & 3,050 & 8.03 & Contas a pagar & 1,300 & 3.42\\
+Contas a receber & 6,900 & 18.16 & Empr\'estimos & 6,800 & n/a\\
+Estoque & 7,600 & 20.00 & Total circulante & 8,100 & n/a\\
+Total circulante & 17,550 & 46.18 & Passivo n\~ao circulante & 25,000 & n/a\\
+Instala\c{c}\~oes e equip. & 34,500 & 90.79 & Capital social & 15,000 & n/a\\
+ & & & Lucros retidos & 3,950 & n/a\\
+ & & & Total PL & 18,950 & n/a\\
+Total do ativo & 52,050 & 136.97 & Total & 52,050 & n/a\\
+\bottomrule
+\end{tabular}
+\end{center}
+The current-liabilities total is n/a because only part of it (payables) varies with sales.
+\answer{(4.10)} See the table: all assets and payables scale (total assets $136.97\%$ of sales); loans,
+long-term debt and equity are n/a.
+
+\step{3}{(4.11) Income at $g=15\%$} $S_1=43{,}700$, $C_1=21{,}160$, $EBT_1=22{,}540$,
+$T_1=0.34(22{,}540)=7{,}663.6$, $NI_1=22{,}540-7{,}663.6=14{,}876.4$; dividends
+$14{,}876.4(0.401979)=5{,}980$; addition to retained earnings $14{,}876.4(0.598021)=8{,}896.4$.
+
+\step{4}{(4.11) Pro forma balance sheet} Scaling assets and payables by 1.15 and rolling retained
+earnings forward ($3{,}950+8{,}896.4=12{,}846.4$):
+\begin{center}\small
+\begin{tabular}{lr@{\qquad}lr}
+\toprule
+Ativo & \$ & Passivo e PL & \$\\
+\midrule
+Caixa & 3,507.5 & Contas a pagar & 1,495.0\\
+Contas a receber & 7,935.0 & Empr\'estimos & 6,800.0\\
+Estoque & 8,740.0 & Total circulante & 8,295.0\\
+Total circulante & 20,182.5 & Passivo n\~ao circulante & 25,000.0\\
+Instala\c{c}\~oes e equip. & 39,675.0 & Capital social & 15,000.0\\
+ & & Lucros retidos & 12,846.4\\
+ & & Total PL & 27,846.4\\
+Total do ativo & 59,857.5 & Total & 61,141.4\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{align}
+  \text{NAF} &= 59{,}857.5-(8{,}295+25{,}000+27{,}846.4) = 59{,}857.5-61{,}141.4 = -1{,}283.9. \label{r2ce7-naf}
+\end{align}
+\answer{(4.11)} NAF $=-\$1{,}283.90$: at 15\% growth the firm generates a surplus.
+
+\intuition Asset needs rise by $0.15\times52{,}050=7{,}807.5$; payables supply $195$ and retained earnings
+$8{,}896.4$, more than enough. A very profitable firm (net margin 34\%) can finance moderate growth
+internally; the surplus would turn into a deficit at a higher growth rate (Exercise 14 shows how to find
+the switch point).
+\pitfalls
+\begin{itemize}
+  \item Using the 20\% income statement of 4.9 in 4.11; the growth rate changes to 15\%.
+  \item Scaling loans (\emph{empr\'estimos}) with sales: they are a financing decision.
+\end{itemize}
+\refbib{Ross \S4.3, pp.~99--104.}
+
+% =============================================================================
+\exsec{8. Global Corp.: two-pass pro forma --- Berk 18.8--18.11, p.~560}
+
+\asked (18.8) Next year's costs, depreciation, net income and the operating balance sheet items at 8\%
+sales growth. (18.9) Equity with a 50\% payout. (18.10) Net new financing. (18.11) The payout that keeps
+net new financing at or below \$9 million.
+
+\approach Berk's KMS template (Tables 18.2--18.3): costs and depreciation as a percent of sales,
+interest expense unchanged, tax at the current rate; assets and payables as a percent of sales; debt
+unchanged in the first pass; equity rolls forward by retained earnings; net new financing is the gap.
+Part 18.11 inverts the plug: fix NNF, solve for retention.
+
+\notation
+\begin{itemize}
+  \item $g=8\%$; amounts in \$ millions; $\tau=0.7/2.7=0.259259$: Global's tax rate (taxes/pretax income).
+  \item $p$: payout; $NNF$: net new financing.
+\end{itemize}
+
+\step{1}{(18.8) Income statement} Every operating line scales by 1.08; interest stays at 7.7:
+\begin{align}
+  S_1 &= 186.7(1.08) = 201.636, \quad C_1 = 175.1(1.08) = 189.108, \quad Dep_1 = 1.2(1.08) = 1.296, \nonumber\\
+  EBIT_1 &= 201.636-189.108-1.296 = 11.232, \qquad EBT_1 = 11.232-7.7 = 3.532, \nonumber\\
+  T_1 &= 0.259259(3.532) = 0.915704, \qquad NI_1 = 3.532-0.915704 = 2.616296. \label{r2ce8-ni}
+\end{align}
+(Depreciation is $1.2/186.7=0.6427\%$ of sales; scaling by 1.08 is the same thing.)
+
+\step{2}{(18.8) Balance sheet items} Each scales by 1.08: cash $23.2(1.08)=25.056$; receivables
+$18.5(1.08)=19.98$; inventory $15.3(1.08)=16.524$ (current assets $61.56$); PP\&E $113.1(1.08)=122.148$;
+total assets $183.708$; payables $34.7(1.08)=37.476$.
+\answer{(18.8)} (a) 189.108; (b) 1.296; (c) 2.616; (d) 25.056; (e) 19.98; (f) 16.524; (g) 122.148; (h) 37.476 (\$ millions).
+
+\step{3}{(18.9) Equity} Retained earnings are $0.5(2.616296)=1.308148$:
+\begin{align}
+  E_1 &= 22.2+1.308148 = 23.508148. \label{r2ce8-eq}
+\end{align}
+\answer{(18.9)} Stockholders' equity $\approx\$23.51$ million.
+
+\step{4}{(18.10) Net new financing} Debt stays at $113.2$ in the first pass:
+\begin{align}
+  (L+E)_1 &= 37.476+113.2+23.508148 = 174.184148, \nonumber\\
+  NNF &= 183.708-174.184148 = 9.523852. \label{r2ce8-nnf}
+\end{align}
+\answer{(18.10)} Net new financing $\approx\$9.52$ million.
+
+\step{5}{(18.11) Payout cap} Write NNF as a function of the payout:
+$NNF(p)=183.708-37.476-113.2-22.2-(1-p)NI_1=10.832-(1-p)(2.616296)$. Requiring $NNF\le 9$:
+\begin{align}
+  (1-p)(2.616296) &\ge 10.832-9 = 1.832, \nonumber\\
+  1-p &\ge \frac{1.832}{2.616296} = 0.700227, \nonumber\\
+  p &\le 0.299773. \label{r2ce8-p}
+\end{align}
+Dividends fall from $1.308$ to at most $2.616296-1.832=0.784$ million, i.e.\ by the $0.524$ excess.
+\answer{(18.11)} Global must cut its payout from 50\% to at most about 30\% (dividends $\le\$0.78$ million).
+
+\intuition Global is highly levered with a thin margin (net income \$2.0 million on \$186.7 million of
+sales), so 8\% growth in a \$170 million asset base creates a financing need ($13.6$ of new assets) that
+retained earnings barely dent. The payout is the only internal lever left; cutting it from 50\% to 30\%
+saves just \$0.52 million.
+\pitfalls
+\begin{itemize}
+  \item Growing interest expense with sales; the method holds it fixed until the financing is decided.
+  \item Using a 35\% tax rate (the KMS rate) instead of Global's own $0.7/2.7$.
+  \item Solving 18.11 by scaling dividends instead of solving the inequality for the payout.
+\end{itemize}
+\refbib{Berk \S18.2, Tables 18.1--18.4 and Example 18.2, pp.~537--541.}
+
+% =============================================================================
+\exsec{9. KMS growth vs.\ its SGR; new debt; D/E at the internal rate --- Berk 18.17--18.19, p.~561}
+
+\asked (18.17) Whether the KMS plan grows sales faster or slower than its sustainable growth rate (SGR).
+(18.18) How much debt a firm must issue if it grows exactly at its SGR. (18.19) IZAX's new $D/E$ if its
+assets grow at its internal growth rate.
+
+\approach SGR $=$ ROE $\times b$ (beginning equity), Eq.~(18.5): the growth that leaves $D/E$ constant
+with no new equity. Comparing planned growth with SGR tells us whether leverage, payout or equity issues
+must change. At the internal rate no external money is raised, so debt is frozen and $D/E$ falls.
+
+\notation
+\begin{itemize}
+  \item $g_t=S_t/S_{t-1}-1$: KMS sales growth; $\text{SGR}_t=(NI_t-Div_t)/E_{t-1}$; $\text{ROE}_t=NI_t/E_{t-1}$.
+  \item 18.18: $\text{ROE}=12\%$, payout $25\%$, $E_0=600{,}000$, $D_0=400{,}000$.
+  \item 18.19: $A_0=400{,}000$, $D_0=100{,}000$, $E_0=300{,}000$, $NI=20{,}000$, $Div=5{,}000$.
+\end{itemize}
+
+\step{1}{(18.17) Growth and SGR year by year} Using Tables 18.8 and 18.17 (\$000s); e.g.\ 2011:
+$g=88{,}369/74{,}889-1=18.00\%$ and $\text{SGR}=(7{,}600-4{,}786)/74{,}134=2{,}814/74{,}134=3.80\%$.
+\begin{center}\small
+\begin{tabular}{lrrrrr}
+\toprule
+ & 2011 & 2012 & 2013 & 2014 & 2015\\
+\midrule
+Sales growth $g_t$ (\%) & 18.00 & 16.84 & 16.03 & 15.34 & 14.75\\
+SGR with the plan's dividends (\%) & 3.80 & 8.19 & 8.29 & 8.40 & 8.51\\
+ROE $=$ SGR at full retention (\%) & 10.25 & 11.45 & 13.38 & 15.24 & 17.01\\
+\bottomrule
+\end{tabular}
+\end{center}
+Even under the 2010 policy (30\% payout, Section 18.2) the SGR was $6{,}941/69{,}275\times0.7=7.01\%$.
+\answer{(18.17)} Faster: sales grow 15--18\% a year against an SGR of 4--9\%. KMS covers the gap by
+raising leverage --- book $D/E$ jumps from $4{,}500/74{,}134=6.07\%$ to $24{,}500/76{,}948=31.84\%$ in 2011 ---
+and, through 2014, growth exceeds even the full-retention ROE.
+
+\step{2}{(18.18) Debt at the SGR}
+\begin{align}
+  \text{SGR} &= 0.12(1-0.25) = 0.09, \qquad \Delta E = 600{,}000(0.12)(0.75) = 54{,}000 = 9\%\ \text{of } E_0, \nonumber\\
+  \Delta D &= 0.09(400{,}000) = 36{,}000. \label{r2ce9-dd}
+\end{align}
+Check: $(400{,}000+36{,}000)/(600{,}000+54{,}000)=436{,}000/654{,}000=2/3=400{,}000/600{,}000$.
+\answer{(18.18)} Issue \$36,000 of new debt.
+
+\step{3}{(18.19) IZAX at the internal rate}
+\begin{align}
+  \text{ROA} &= 20{,}000/400{,}000 = 0.05, \quad b = 15{,}000/20{,}000 = 0.75, \quad g_{int} = (0.05)(0.75) = 0.0375, \nonumber\\
+  A_1 &= 400{,}000(1.0375) = 415{,}000, \quad E_1 = 300{,}000+15{,}000 = 315{,}000, \quad D_1 = 100{,}000, \nonumber\\
+  D_1/E_1 &= 100{,}000/315{,}000 = 0.3175. \label{r2ce9-de}
+\end{align}
+\answer{(18.19)} $D/E=0.3175$ (down from $0.3333$).
+
+\intuition The SGR is a benchmark, not a target. KMS's planned growth is far above it, which only says
+that the plan needs outside money (here a \$20 million bond); whether that growth is \emph{worth} it
+is an NPV question (Exercise 15). At the internal rate equity grows and debt does not, so leverage
+drifts down; at the sustainable rate debt grows with equity and leverage stays put.
+\pitfalls
+\begin{itemize}
+  \item Calling growth above the SGR ``bad'': Berk stresses that only NPV decides value.
+  \item Computing ROE on end-of-year equity with the simple formula.
+\end{itemize}
+\refbib{Berk \S18.4, pp.~547--551; Tables 18.8, 18.17, pp.~545, 562.}
+
+% =============================================================================
+\exsec{10. Under Armour: sustainable growth and its sensitivity --- Higgins 4.8, pp.~135--136}
+
+\asked (a) The sustainable growth rate each year 2009--2013. (b) Whether actual growth outran it.
+(c) How the company coped. (d) The 2013 SGR with an 8\% margin, with leverage of 2.40, and with both.
+
+\approach Higgins' $g^*=PRA\hat T$: profit margin $\times$ retention $\times$ asset turnover $\times$
+assets/beginning equity. A firm growing faster than $g^*$ must improve operations ($P$, $A$) or change
+financial policy ($R$, $\hat T$) or issue equity. Part (d) is a one-at-a-time sensitivity analysis.
+
+\notation
+\begin{itemize}
+  \item $P$ (\%), $R=1$, $A$ (times), $\hat T$ (times): the four ratios in the table; $g$: actual sales growth.
+\end{itemize}
+
+\step{1}{(a) The product of four ratios} With $R=1$ in every year, $g^*=P\cdot A\cdot\hat T$:
+\begin{align}
+  g^*_{2009} &= 5.5(1.6)(1.7) = 14.96\%, & g^*_{2010} &= 6.4(1.6)(1.7) = 17.41\%, \nonumber\\
+  g^*_{2011} &= 6.6(1.6)(1.9) = 20.06\%, & g^*_{2012} &= 7.0(1.6)(1.8) = 20.16\%, \nonumber\\
+  g^*_{2013} &= 7.0(1.5)(1.9) = 19.95\%. & & \label{r2ce10-g}
+\end{align}
+\answer{(a)} 14.96\%, 17.41\%, 20.06\%, 20.16\%, 19.95\%.
+
+\step{2}{(b) Compare with actual growth} Actual growth was 18.1, 24.2, 38.4, 24.6 and 27.1\%: above
+$g^*$ every year, by up to $38.4-20.06=18.34$ points in 2011.
+\answer{(b)} Yes: a too-much-growth challenge --- growing faster than equity could be built internally.
+
+\step{3}{(c) Which ratios moved} Retention was already 100\%. The margin rose (5.5\% $\to$ 7.0\%) and
+leverage rose ($\hat T$: 1.7 $\to$ 1.9); turnover slipped (1.6 $\to$ 1.5), which worked the other way.
+Because each year's $g^*$ uses that year's ratios, growth above $g^*$ in a year must have been met by
+ratios rising further (or new equity) during that year.
+\answer{(c)} By raising profitability and, above all, financial leverage (more debt per dollar of
+beginning equity), with no dividends; operating efficiency (turnover) did not help.
+
+\step{4}{(d) Sensitivity of 2013 $g^*$}
+\begin{align}
+  P=8.0\%:&\quad g^* = 8.0(1.5)(1.9) = 22.8\%, \nonumber\\
+  \hat T=2.40:&\quad g^* = 7.0(1.5)(2.4) = 25.2\%, \nonumber\\
+  \text{both}:&\quad g^* = 8.0(1.5)(2.4) = 28.8\%. \label{r2ce10-d}
+\end{align}
+\answer{(d)} 22.8\%, 25.2\% and 28.8\%; only the combination exceeds 2013's actual 27.1\%.
+
+\intuition $g^*$ is linear in each lever, so the levers multiply: a 14\% rise in the margin and a 26\%
+rise in leverage together lift $g^*$ by 44\%. Leverage is the easiest lever to pull and the riskiest
+to rely on.
+\pitfalls
+\begin{itemize}
+  \item Adding the percentage effects in (d) instead of multiplying the ratios.
+  \item Using end-of-period assets/equity; Higgins' $\hat T$ uses beginning equity.
+\end{itemize}
+\refbib{Higgins Ch.~4, ``Sustainable Growth'' and ``What If Actual Growth Exceeds Sustainable Growth?'', pp.~112--123.}
+
+% =============================================================================
+\exsec{11. Turismo da On\c{c}a: NAF, capacity, constant D/E --- Ross 4.25--4.27, p.~121}
+
+\asked (4.25) The NAF for 20\% growth at full capacity with no new debt or equity, interest, tax rate
+and payout constant. (4.26) The NAF if the firm ran at 80\% of capacity. (4.27) The NAF if the firm
+keeps its debt-equity ratio constant.
+
+\approach Percent of sales for costs, other expenses, current assets and payables; fixed assets scale
+only if there is no idle capacity; interest is \emph{fixed}. In 4.27 the financing policy allows debt
+to grow with equity, so part of the gap is filled by planned borrowing.
+
+\notation
+\begin{itemize}
+  \item $S_0=929{,}000$; $\tau=60{,}550/173{,}000=0.35$; payout $=33{,}735/112{,}450=0.30$; interest $14{,}000$.
+  \item ``Total debt'' (Ross) = all liabilities: $D_0=85{,}000+158{,}000=243{,}000$; $E_0=322{,}900$.
+\end{itemize}
+
+\step{1}{Income statement at $g=20\%$}
+\begin{align}
+  S_1 &= 1{,}114{,}800, \quad \text{Custos} = 867{,}600, \quad \text{Outras} = 22{,}800, \quad EBIT = 224{,}400, \nonumber\\
+  EBT &= 224{,}400-14{,}000 = 210{,}400, \quad T = 0.35(210{,}400) = 73{,}640, \quad NI = 136{,}760, \nonumber\\
+  Div &= 0.30(136{,}760) = 41{,}028, \qquad \text{Acr\'escimo aos lucros retidos} = 95{,}732. \label{r2ce11-is}
+\end{align}
+
+\step{2}{(4.25) Balance sheet at full capacity} Current assets $152{,}900(1.2)=183{,}480$
+(cash $30{,}360$, receivables $48{,}840$, inventory $104{,}280$); fixed assets $413{,}000(1.2)=495{,}600$;
+total $679{,}080$. Payables $81{,}600$; notes $17{,}000$; long-term $158{,}000$; equity
+$140{,}000+182{,}900+95{,}732=418{,}632$; total $81{,}600+17{,}000+158{,}000+418{,}632=675{,}232$.
+\begin{align}
+  \text{NAF} &= 679{,}080-675{,}232 = 3{,}848. \label{r2ce11-25}
+\end{align}
+\answer{(4.25)} NAF $=\$3{,}848$.
+
+\step{3}{(4.26) Idle capacity} Full-capacity sales are $929{,}000/0.80=1{,}161{,}250>1{,}114{,}800$, so no new
+fixed assets are needed (utilization rises to 96\%). Total assets $=183{,}480+413{,}000=596{,}480$:
+\begin{align}
+  \text{NAF} &= 596{,}480-675{,}232 = -78{,}752. \label{r2ce11-26}
+\end{align}
+\answer{(4.26)} NAF $=-\$78{,}752$ (a surplus).
+
+\step{4}{(4.27) Constant total-debt/equity} $D/E=243{,}000/322{,}900=0.752555$. With equity
+$418{,}632$, permitted total debt is $0.752555(418{,}632)=315{,}043.59$; total sources
+$418{,}632+315{,}043.59=733{,}675.59$:
+\begin{align}
+  \text{NAF} &= 679{,}080-733{,}675.59 = -54{,}595.59. \label{r2ce11-27}
+\end{align}
+Existing and spontaneous liabilities total $81{,}600+17{,}000+158{,}000=256{,}600$, so the policy allows
+$315{,}043.59-256{,}600=58{,}443.59$ of new borrowing, which more than covers the $3{,}848$ gap.
+\answer{(4.27)} NAF $\approx-\$54{,}596$: the debt the policy allows exceeds the need by that amount.
+
+\intuition Three different answers from one forecast: the NAF depends as much on assumptions about
+capacity and financing policy as on the sales forecast. Idle capacity is worth \$82,600 of financing here
+($495{,}600-413{,}000$).
+\pitfalls
+\begin{itemize}
+  \item Growing interest expense with sales (the statement holds it constant).
+  \item In 4.26, cutting fixed assets below the current level; they stay at 413,000.
+  \item In 4.27, applying $D/E$ only to interest-bearing debt; Ross' ratio uses total liabilities (the
+        alternative definition changes the number, so state it).
+\end{itemize}
+\refbib{Ross \S4.3, ``Uma situa\c{c}\~ao alternativa'', pp.~103--104; \S4.4, pp.~106--111.}
+
+% =============================================================================
+\exsec{12. R\&E Supplies: extending the spreadsheet, sensitivity and scenario --- Higgins 3.9 (3.8), p.~105}
+
+\asked (3.8, Part 0) The 2023 spreadsheet formulas for net sales and equity. (a) The 2023 external
+financing required (EFR) and its comparison with 2022. (b) EFR if COGS falls to 84\% of sales.
+(c) EFR in a recession: sales $-5\%$, COGS 88\%, current assets 35\% of sales.
+
+\approach Extend Table 3.5 one column: 2023 sales grow from 2022 forecast sales; 2023 equity starts
+from 2022 forecast equity. Interest is charged on long-term debt, its current portion \emph{and} the
+EFR itself, which makes EFR circular; we solve the circularity in closed form instead of iterating.
+(b) changes one input (sensitivity); (c) changes several together (scenario).
+
+\notation
+\begin{itemize}
+  \item $X$: 2023 EFR (\$ thousands); $i=10\%$; $\tau=25\%$; payout $50\%$; $LTD=560$, $CPLTD=100$, $NFA=270$.
+  \item $S$, $GP$, $SGA$, $CA$, $CL$: 2023 sales, gross profit, SG\&A (11\%), current assets, current liabilities (14.4\%).
+  \item $S_{22}=20{,}613(1.25)=25{,}766.25$ and $E_{22}=1{,}837.81$: Table 3.5's unrounded 2022 values (the table prints 25,766 and 1,838).
+\end{itemize}
+
+\step{0}{(3.8) Formulas} \texttt{D19 = C19 + C19*D4} (2023 sales from 2022 forecast sales) and
+\texttt{D37 = C37 + D28} (2023 equity = 2022 forecast equity + 2023 additions to retained earnings).
+\answer{(3.8)} \texttt{D19 = C19 + C19*D4}; \texttt{D37 = C37 + D28}.
+
+\step{1}{Closed form for the circular interest} EFR $=TA-CL-LTD-E$, with
+$E=E_{22}+(1-0.5)(1-\tau)\big[GP-SGA-i(LTD+CPLTD+X)\big]$. Let $k=(0.5)(0.75)=0.375$. Then
+\begin{align}
+  X &= TA-CL-LTD-E_{22}-k\big[GP-SGA-i(660)\big]+k\,i\,X, \nonumber\\
+  X(1-k\,i) &= \underbrace{TA-CL-LTD-E_{22}-k\big[GP-SGA-66\big]}_{K}, \qquad X=\frac{K}{1-0.0375}=\frac{K}{0.9625}. \label{r2ce12-X}
+\end{align}
+
+\step{2}{(a) Base case} $S=25{,}766.25(1.30)=33{,}496.13$; $COGS=0.86S=28{,}806.67$; $GP=4{,}689.46$;
+$SGA=0.11S=3{,}684.57$; $CA=0.29S=9{,}713.88$; $TA=9{,}713.88+270=9{,}983.88$; $CL=0.144S=4{,}823.44$.
+\begin{align}
+  K &= 9{,}983.88-4{,}823.44-560-1{,}837.81-0.375(4{,}689.46-3{,}684.57-66) = 2{,}410.54, \nonumber\\
+  X &= 2{,}410.54/0.9625 = 2{,}504.46. \label{r2ce12-a}
+\end{align}
+Then interest $=0.1(660+2{,}504.46)=316.45$; EBT $=4{,}689.46-3{,}684.57-316.45=688.44$; tax $172.11$;
+EAT $516.33$; dividends $258.16$; equity $1{,}837.81+258.16=2{,}095.97$; liabilities and equity
+$4{,}823.44+560+2{,}095.97=7{,}479.42$; and $9{,}983.88-7{,}479.42=2{,}504.46=X$, as it must.
+\answer{(a)} EFR $\approx\$2{,}504$ thousand in 2023, about \$986 thousand more than 2022's \$1,518 thousand.
+
+\step{3}{(b) Sensitivity: COGS 84\%} Only $GP$ changes: $GP=0.16S=5{,}359.38$, so
+$K=2{,}410.54-0.375(5{,}359.38-4{,}689.46)=2{,}159.32$ and $X=2{,}159.32/0.9625=2{,}243.45$.
+\answer{(b)} EFR $\approx\$2{,}243$ thousand: $-\$261$ thousand, or $-10.4\%$.
+
+\step{4}{(c) Recession scenario} $S=25{,}766.25(0.95)=24{,}477.94$; $COGS=0.88S=21{,}540.59$; $GP=2{,}937.35$;
+$SGA=2{,}692.57$; $CA=0.35S=8{,}567.28$; $TA=8{,}837.28$; $CL=3{,}524.82$.
+\begin{align}
+  K &= 8{,}837.28-3{,}524.82-560-1{,}837.81-0.375(2{,}937.35-2{,}692.57-66) = 2{,}847.60, \nonumber\\
+  X &= 2{,}847.60/0.9625 = 2{,}958.55. \label{r2ce12-c}
+\end{align}
+Interest $=361.85$, EBT $=-117.08$, EAT $=-87.81$, and the spreadsheet's dividend formula
+\texttt{=C11*C26} pays $-43.90$ (a negative dividend).
+\answer{(c)} EFR $\approx\$2{,}959$ thousand, $+18.1\%$ over the base case. If dividends are set to zero
+when earnings are negative (the realistic policy), EFR is $\approx\$3{,}006$ thousand.
+
+\intuition The financing need is far more sensitive to working capital than to margins: the recession
+\emph{lowers} sales but raises EFR because current assets jump to 35\% of a smaller sales figure and
+profits vanish. Sensitivity analysis shows which inputs drive the answer; scenario analysis shows how
+they move together.
+\pitfalls
+\begin{itemize}
+  \item Starting 2023 from 2021 data (sales \$20,613, equity \$1,730) instead of the 2022 forecast.
+  \item Ignoring the interest on the EFR itself (understates EFR by about $0.0375X\approx\$94$ thousand).
+  \item Copying a formula that pays negative dividends without noticing.
+\end{itemize}
+\bookans Matches the book (p.~406): \$2.504 million; \$2.243 million ($-10.4\%$); \$2.959 million
+($+18.2\%$ in the book; $+18.1\%$ here from unrounded values). The book's recession figure uses the
+spreadsheet's mechanical (negative) dividend.
+\refbib{Higgins Ch.~3, ``Forecasting with Spreadsheets'' and ``Coping with Uncertainty'', pp.~89--98.}
+
+% =============================================================================
+\exsec{13. Deriving NAF and the growth formulas --- Ross 4.31--4.33, p.~122}
+
+\asked (4.31) Show $\text{NAF}=-ML(V)b+(A-ML(V)b)g$. (4.32) Use it to recover the internal and
+sustainable growth formulas [4.2]--[4.3]. (4.33) Show that the end-of-period formula
+$\text{ROE}\,b/(1-\text{ROE}\,b)$ equals $\text{ROE}_{bop}\times b$, and similarly for ROA.
+
+\approach The NAF is uses minus internal sources. All assets scale with sales (asset need $Ag$), the
+margin is constant, and no liability is spontaneous; retained earnings are next year's income times $b$.
+The sustainable case adds the debt that keeps $D/P$ constant.
+
+\notation
+\begin{itemize}
+  \item $V$: last year's sales; $A$, $D$, $P$: last year's total assets, debt, equity ($A=D+P$).
+  \item $g$: sales growth; $ML$: profit margin; $b$: retention; $\text{ROA}=ML\cdot V/A$, $\text{ROE}=ML\cdot V/P$
+        (Ross' definitions, end of the base year).
+\end{itemize}
+
+\step{1}{(4.31) Uses and sources} New assets are $A g$; next year's net income is $ML\cdot V(1+g)$, of
+which $b$ is retained. So
+\begin{align}
+  \text{NAF} &= A g - ML(V)b(1+g) \nonumber\\
+  &= A g - ML(V)b - ML(V)b\,g \nonumber\\
+  &= -ML(V)b + \big(A-ML(V)b\big)g. \label{r2ce13-naf}
+\end{align}
+\answer{(4.31)} Shown in \eqref{r2ce13-naf}.
+
+\step{2}{(4.32) Internal growth} Set $\text{NAF}=0$ in \eqref{r2ce13-naf}:
+\begin{align}
+  \big(A-ML(V)b\big)g &= ML(V)b \;\Longrightarrow\; g = \frac{ML(V)b}{A-ML(V)b}. \nonumber
+\end{align}
+Divide numerator and denominator by $A$ and use $\text{ROA}=ML\cdot V/A$:
+\begin{align}
+  g_{int} &= \frac{(ML\cdot V/A)\,b}{1-(ML\cdot V/A)\,b} = \frac{\text{ROA}\times b}{1-\text{ROA}\times b}. \label{r2ce13-int}
+\end{align}
+
+\step{3}{(4.32) Sustainable growth} Keeping $D/P$ constant lets debt rise by $(D/P)$ per dollar of
+retained earnings, so the sources are $(1+D/P)\,ML(V)b(1+g)$ and $1+D/P=A/P$. Setting uses equal to
+sources:
+\begin{align}
+  A g &= \frac{A}{P}ML(V)b(1+g) \;\Longrightarrow\; g\Big(A-\frac{A}{P}ML(V)b\Big) = \frac{A}{P}ML(V)b, \nonumber\\
+  g_{sus} &= \frac{(ML\cdot V/P)\,b}{1-(ML\cdot V/P)\,b} = \frac{\text{ROE}\times b}{1-\text{ROE}\times b} \quad(\text{dividing by } A). \label{r2ce13-sus}
+\end{align}
+Illustration (Ross' Hoffman example: $V=A=500$, $NI=66$, $P=250$, $b=2/3$): $g_{int}=9.65\%$, $g_{sus}=21.36\%$.
+\answer{(4.32)} Both chapter formulas [4.2] and [4.3] follow from \eqref{r2ce13-naf}.
+
+\step{4}{(4.33) Beginning- vs.\ end-of-period ROE} With no new shares, end equity is
+$P_e=P_b+b\,NI$. Let $\text{ROE}_e=NI/P_e$. Then
+\begin{align}
+  \frac{\text{ROE}_e\,b}{1-\text{ROE}_e\,b} &= \frac{b\,NI/P_e}{1-b\,NI/P_e} = \frac{b\,NI}{P_e-b\,NI}
+  = \frac{b\,NI}{P_b} = \text{ROE}_{b}\times b. \label{r2ce13-roe}
+\end{align}
+The same steps with assets work when assets grow only by retained earnings (no external financing,
+which is exactly the internal-growth case), $A_e=A_b+b\,NI$:
+$\text{ROA}_e b/(1-\text{ROA}_e b)=b\,NI/(A_e-b\,NI)=b\,NI/A_b=\text{ROA}_b\times b$. Ross' numbers:
+$NI=20$, $b=0.6$, $P_b=80$ give $0.6(20/80)=15\%$ and $0.6(0.2174)/(1-0.6(0.2174))=15\%$; with $A_b=100$, $12\%$.
+\answer{(4.33)} \eqref{r2ce13-roe} and its ROA analogue.
+
+\intuition The ``$1-\text{ROE}\,b$'' denominator is just the conversion from end-of-period to
+beginning-of-period equity: retained earnings are in the end balance but cannot have financed
+themselves. Use one consistent definition and you get the same growth rate.
+\pitfalls
+\begin{itemize}
+  \item Forgetting the $(1+g)$ on next year's earnings, which drops the $-ML(V)b\,g$ term.
+  \item Mixing definitions: end-of-period ROE in the simple $\text{ROE}\times b$ understates growth
+        ($0.6\times0.2174=13.0\%$ instead of $15\%$ in Ross' example); beginning-of-period ROE in [4.3]
+        overstates it ($0.15/(1-0.15)=17.6\%$).
+\end{itemize}
+\refbib{Ross \S4.4, pp.~106--113, Tabela 4.9.}
+
+% =============================================================================
+\exsec{14. Turismo da On\c{c}a: NAF as a function of growth --- Ross 4.28 and 4.29, p.~121}
+
+\asked (4.28) Redo 4.25 at 15\% and 25\% growth, plot NAF against $g$, find the $g$ where NAF $=0$, and
+explain why it differs from the internal growth formula. (4.29) The same for 4.27 at 20, 30 and 35\%.
+
+\approach Write NAF as an explicit function of $g$ using the model of Exercise 11: assets and payables
+scale with $1+g$; interest is fixed at 14,000; retained earnings
+$=(1-0.30)(1-0.35)\big[187{,}000(1+g)-14{,}000\big]=0.455\big[187{,}000(1+g)-14{,}000\big]$.
+NAF is then linear in $g$, and its root is the model's own internal (4.28) or sustainable (4.29) rate.
+
+\notation
+\begin{itemize}
+  \item $RE(g)$: addition to retained earnings at growth $g$; $D/E=0.752555$ (total liabilities/equity).
+\end{itemize}
+
+\step{1}{(4.28) NAF$(g)$ with no new debt or equity}
+\begin{align}
+  \text{NAF}(g) &= 565{,}900(1+g)-\big[68{,}000(1+g)+17{,}000+158{,}000+322{,}900+RE(g)\big] \nonumber\\
+  &= (565{,}900-68{,}000-0.455\cdot187{,}000)(1+g)-(497{,}900-0.455\cdot14{,}000) \nonumber\\
+  &= 412{,}815(1+g)-491{,}530. \label{r2ce14-28}
+\end{align}
+At $g=15\%$: $RE=91{,}477.75$, NAF $=-16{,}792.75$; at $20\%$: $RE=95{,}732$, NAF $=3{,}848$; at $25\%$:
+$RE=99{,}986.25$, NAF $=24{,}488.75$. Root: $1+g=491{,}530/412{,}815$, so $g=19.07\%$.
+
+\step{2}{(4.28) The textbook formula} $\text{ROA}=112{,}450/565{,}900=19.87\%$, $\text{ROA}\cdot b=0.139097$,
+$g_{int}=0.139097/(1-0.139097)=16.16\%$. The formula equals the root of
+$565{,}900g-78{,}715(1+g)=0$, i.e.\ it assumes (i) no spontaneous liabilities and (ii) a constant net
+margin. Adding (i) back (payables grow with sales) moves the root to $78{,}715/(565{,}900-68{,}000-78{,}715)=18.78\%$;
+adding (ii) (fixed interest makes the margin rise with sales) moves it to $19.07\%$.
+\answer{(4.28)} NAF $=-16{,}793$; $3{,}848$; $24{,}489$. NAF $=0$ at $g\approx19.07\%$, above the formula's
+16.16\% because payables finance part of the growth and fixed interest raises the margin.
+
+\step{3}{(4.29) NAF$(g)$ with constant $D/E$} Sources are equity times $(1+D/E)$:
+\begin{align}
+  \text{NAF}(g) &= 565{,}900(1+g)-1.752555\big[322{,}900+RE(g)\big] \nonumber\\
+  &= \big(565{,}900-1.752555\cdot85{,}085\big)(1+g)-1.752555(322{,}900-6{,}370) \nonumber\\
+  &= 416{,}783.86(1+g)-554{,}736.22. \label{r2ce14-29}
+\end{align}
+At $20\%$: NAF $=-54{,}595.59$; at $30\%$ ($RE=104{,}240.5$): $-12{,}917.21$; at $35\%$
+($RE=108{,}494.75$): $7{,}921.99$. Root: $g=554{,}736.22/416{,}783.86-1=33.10\%$.
+
+\step{4}{(4.29) The textbook formula} $\text{ROE}=112{,}450/322{,}900=34.83\%$, $\text{ROE}\cdot b=0.243775$,
+$g_{sus}=0.243775/(1-0.243775)=32.24\%$, the root of $565{,}900g=1.752555\times78{,}715(1+g)$
+$=137{,}952.36(1+g)$, which assumes a constant margin. Payables do not matter here (they count as debt
+in $D/E$); the gap is the fixed interest only.
+\answer{(4.29)} NAF $=-54{,}596$; $-12{,}917$; $7{,}922$. NAF $=0$ at $g\approx33.10\%$, above the formula's
+32.24\% because interest does not grow with sales, so the margin rises with growth.
+
+\begin{center}
+\begin{tikzpicture}[x=0.32cm,y=0.032cm]
+  \draw[->] (10,0) -- (41,0) node[right]{\small $g$ (\%)};
+  \draw[->] (10,-100) -- (10,95) node[above]{\small NAF (\$000)};
+  \foreach \x in {15,20,25,30,35,40} \draw (\x,2)--(\x,-2) node[below]{\scriptsize \x};
+  \foreach \y in {-75,-50,-25,25,50,75} \draw (9.7,\y)--(10.3,\y) node[left=2pt]{\scriptsize \y};
+  % 4.28: 412.815(1+g) - 491.53 (thousands); 4.29: 416.784(1+g) - 554.736
+  \draw[thick,blue!70!black] (10,-37.4335) -- (40,86.411) node[right]{\scriptsize 4.28};
+  \draw[thick,red!70!black] (10,-96.2741) -- (40,28.7616) node[right]{\scriptsize 4.29};
+  \foreach \p in {(15,-16.79275),(20,3.848),(25,24.48875)} \fill[blue!70!black] \p circle (2pt);
+  \foreach \p in {(20,-54.5956),(30,-12.9172),(35,7.9220)} \fill[red!70!black] \p circle (2pt);
+  \draw[dashed] (19.07,0) -- (19.07,-12) node[below]{\scriptsize 19.07};
+  \draw[dashed] (33.10,0) -- (33.10,-30) node[below]{\scriptsize 33.10};
+\end{tikzpicture}
+\end{center}
+
+\intuition NAF rises linearly with growth: each extra point of growth needs $\$4{,}128$ more financing
+in 4.28 ($412{,}815/100$) and $\$4{,}168$ in 4.29. The closed-form growth rates are exact only in the
+stylized world where every cost scales with sales; real pro formas have fixed costs (here interest), so
+always verify with the model itself.
+\pitfalls
+\begin{itemize}
+  \item Treating the formula rates as the model's break-even rates without checking its assumptions.
+  \item Plotting NAF against $g$ with curvature: in this model it is a straight line.
+\end{itemize}
+\refbib{Ross \S4.4, ``Necessidade de aporte financeiro e crescimento'', pp.~106--111.}
+
+% =============================================================================
+\exsec{15. KMS Designs under 0.25\% share growth --- Berk 18.20--18.22 (18.12--18.15), pp.~560--561}
+
+\asked (18.12) Required production each year and when it first exceeds the 1,100 thousand-unit
+capacity. (18.13) Interest and interest tax shields through 2015 when the \$20 million expansion is
+delayed to 2012. (18.14) Net income through 2015 with the given depreciation. (18.15) Working capital
+needs. (18.20) Free cash flows. (18.21) Continuation value at 8.5 times 2015 EBITDA. (18.22) Firm value
+at a 10\% cost of capital.
+
+\approach Rebuild the KMS model (Tables 18.5--18.9, 18.13--18.14) with market share
+$10\%+0.25\%\times t$. Value with APV, as in the chapter: unlevered free cash flows and the continuation
+value at the 10\% pretax WACC, plus interest tax shields at the 6.8\% debt rate (later tax shields are
+inside the multiple). Assumption, stated because the statement says ``adjusted accordingly'': capex is
+\$5 million in 2011 (replacement only), \$25 million in 2012 (expansion year) and \$8 million from 2013,
+mirroring the chapter's schedule one year later.
+
+\notation
+\begin{itemize}
+  \item $Q_t=M_t\times s_t$: production (000 units); $S_t=Q_t\times p_t$: sales (\$000); costs $78\%$ of sales; $\tau=35\%$.
+  \item $NWC_t$: cash 16\% + receivables 19\% + inventory 20\% $-$ payables 16\% of sales $=39\%$ of sales (2010 actual: 29,207).
+  \item $FCF_t=NI_t+(1-\tau)Int_t+Dep_t-\Delta NWC_t-CapEx_t$; $CV_{2015}=8.5\times EBITDA_{2015}$.
+\end{itemize}
+
+\step{1}{(18.12) Capacity} Volumes $Q_t=M_t s_t$ (e.g.\ 2012: $11{,}025\times10.5\%=1{,}157.625$):
+\begin{center}\small
+\begin{tabular}{lrrrrrr}
+\toprule
+ & 2010 & 2011 & 2012 & 2013 & 2014 & 2015\\
+\midrule
+Market share (\%) & 10.00 & 10.25 & 10.50 & 10.75 & 11.00 & 11.25\\
+Production (000 units) & 1,000.00 & 1,076.25 & 1,157.63 & 1,244.42 & 1,337.05 & 1,435.84\\
+\bottomrule
+\end{tabular}
+\end{center}
+\answer{(18.12)} Requirements as in the table; production first exceeds 1,100 in 2012, so the expansion is needed in 2012.
+
+\step{2}{(18.13) Interest and tax shields} By Eq.~(18.1), interest in year $t$ is $6.8\%$ of debt at the
+end of $t-1$. Debt is 4,500 through 2011 and $24{,}500$ from the end of 2012:
+$0.068(4{,}500)=306$ in 2011 and 2012; $0.068(24{,}500)=1{,}666$ in 2013--2015. Tax shields
+$=0.35\times$ interest: $107.1$, $107.1$, $583.1$, $583.1$, $583.1$.
+\answer{(18.13)} Interest 306, 306, 1,666, 1,666, 1,666; tax shields 107.1, 107.1, 583.1, 583.1, 583.1 (\$000).
+
+\step{3}{(18.14) Pro forma income statement} Sales $=Q_t p_t$ (2011: $1{,}076.25\times76.51=82{,}343.9$);
+then costs, EBITDA, depreciation (given), interest (Step 2), tax 35\%:
+\begin{center}\small
+\begin{tabular}{lrrrrrr}
+\toprule
+\$000 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015\\
+\midrule
+Sales & 74,889.0 & 82,343.9 & 90,341.1 & 99,055.8 & 108,555.1 & 118,916.1\\
+Costs except dep.\ (78\%) & $-$58,413.0 & $-$64,228.2 & $-$70,466.0 & $-$77,263.5 & $-$84,673.0 & $-$92,754.5\\
+EBITDA & 16,476.0 & 18,115.7 & 19,875.0 & 21,792.3 & 23,882.1 & 26,161.5\\
+Depreciation & $-$5,492.0 & $-$5,443.0 & $-$7,398.0 & $-$7,459.0 & $-$7,513.0 & $-$7,561.0\\
+EBIT & 10,984.0 & 12,672.7 & 12,477.0 & 14,333.3 & 16,369.1 & 18,600.5\\
+Interest & $-$306.0 & $-$306.0 & $-$306.0 & $-$1,666.0 & $-$1,666.0 & $-$1,666.0\\
+Pretax income & 10,678.0 & 12,366.7 & 12,171.0 & 12,667.3 & 14,703.1 & 16,934.5\\
+Income tax (35\%) & $-$3,737.3 & $-$4,328.3 & $-$4,259.9 & $-$4,433.5 & $-$5,146.1 & $-$5,927.1\\
+Net income & 6,940.7 & 8,038.3 & 7,911.2 & 8,233.7 & 9,557.0 & 11,007.4\\
+\bottomrule
+\end{tabular}
+\end{center}
+\answer{(18.14)} Net income 8,038.3; 7,911.2; 8,233.7; 9,557.0; 11,007.4 for 2011--2015 (\$000).
+
+\step{4}{(18.15) Working capital} Each item is its percent of sales (2010 actual):
+\begin{center}\small
+\begin{tabular}{lrrrrrr}
+\toprule
+\$000 & 2010 & 2011 & 2012 & 2013 & 2014 & 2015\\
+\midrule
+Cash (16\%) & 11,982.0 & 13,175.0 & 14,454.6 & 15,848.9 & 17,368.8 & 19,026.6\\
+Accounts receivable (19\%) & 14,229.0 & 15,645.3 & 17,164.8 & 18,820.6 & 20,625.5 & 22,594.1\\
+Inventory (20\%) & 14,978.0 & 16,468.8 & 18,068.2 & 19,811.2 & 21,711.0 & 23,783.2\\
+Total current assets & 41,189.0 & 45,289.1 & 49,687.6 & 54,480.7 & 59,705.3 & 65,403.8\\
+Accounts payable (16\%) & 11,982.0 & 13,175.0 & 14,454.6 & 15,848.9 & 17,368.8 & 19,026.6\\
+Net working capital & 29,207.0 & 32,114.1 & 35,233.0 & 38,631.8 & 42,336.5 & 46,377.3\\
+Increase in NWC & & 2,907.1 & 3,118.9 & 3,398.8 & 3,704.7 & 4,040.8\\
+\bottomrule
+\end{tabular}
+\end{center}
+\answer{(18.15)} NWC as in the table; increases 2,907.1; 3,118.9; 3,398.8; 3,704.7; 4,040.8 (\$000).
+
+\step{5}{(18.20) Free cash flows} Unlevered net income $=NI+(1-0.35)Int$ ($=0.65\,EBIT$; after-tax
+interest is $198.9$ while debt is 4,500 and $1{,}082.9$ after). E.g.\ 2012:
+$8{,}110.1+7{,}398-3{,}118.9-25{,}000=-12{,}610.8$.
+\begin{center}\small
+\begin{tabular}{lrrrrr}
+\toprule
+\$000 & 2011 & 2012 & 2013 & 2014 & 2015\\
+\midrule
+Net income & 8,038.3 & 7,911.2 & 8,233.7 & 9,557.0 & 11,007.4\\
+Plus: after-tax interest & 198.9 & 198.9 & 1,082.9 & 1,082.9 & 1,082.9\\
+Unlevered net income & 8,237.2 & 8,110.1 & 9,316.6 & 10,639.9 & 12,090.3\\
+Plus: depreciation & 5,443.0 & 7,398.0 & 7,459.0 & 7,513.0 & 7,561.0\\
+Less: increase in NWC & $-$2,907.1 & $-$3,118.9 & $-$3,398.8 & $-$3,704.7 & $-$4,040.8\\
+Less: capital expenditures & $-$5,000.0 & $-$25,000.0 & $-$8,000.0 & $-$8,000.0 & $-$8,000.0\\
+Free cash flow of firm & 5,773.1 & $-$12,610.8 & 5,376.9 & 6,448.2 & 7,610.6\\
+\bottomrule
+\end{tabular}
+\end{center}
+\answer{(18.20)} FCF $=5{,}773.1$; $-12{,}610.8$; $5{,}376.9$; $6{,}448.2$; $7{,}610.6$ (\$000).
+
+\step{6}{(18.21) Continuation value} By Eq.~(18.7),
+\begin{align}
+  CV_{2015} &= 8.5\times EBITDA_{2015} = 8.5(26{,}161.5) = 222{,}373.0. \label{r2ce15-cv}
+\end{align}
+\answer{(18.21)} About \$222.4 million at the end of 2015.
+
+\step{7}{(18.22) APV} Discount FCF and $CV$ at 10\% ($1.1^5=1.61051$) and tax shields at 6.8\%:
+\begin{align}
+  PV(FCF) &= \frac{5{,}773.1}{1.1}+\frac{-12{,}610.8}{1.1^2}+\frac{5{,}376.9}{1.1^3}+\frac{6{,}448.2}{1.1^4}+\frac{7{,}610.6}{1.1^5} \nonumber\\
+  &= 5{,}248.3-10{,}422.2+4{,}039.7+4{,}404.2+4{,}725.6 = 7{,}995.6, \nonumber\\
+  PV(CV) &= 222{,}373.0/1.61051 = 138{,}076.2, \nonumber\\
+  PV(ITS) &= \frac{107.1}{1.068}+\frac{107.1}{1.068^2}+\frac{583.1}{1.068^3}+\frac{583.1}{1.068^4}+\frac{583.1}{1.068^5} \nonumber\\
+  &= 100.3+93.9+478.7+448.2+419.6 = 1{,}540.7, \nonumber\\
+  V_{2010} &= 7{,}995.6+138{,}076.2+1{,}540.7 = 147{,}612.5. \label{r2ce15-v}
+\end{align}
+\answer{(18.22)} KMS is worth about \$147.6 million under the 0.25\% scenario, versus \$201.0 million in the
+chapter's 1\% scenario (Table 18.14) --- \$53.4 million less (still \$42.5 million less if the chapter's
+value is redone at 8.5$\times$: \$190.1 million).
+
+\intuition The value lives in the continuation value (93.5\% of the total), and the continuation value
+lives in 2015 EBITDA. Slower share growth cuts 2015 EBITDA from 34,880 to 26,162, and with it most of the
+value; the five-year cash flows barely matter. That is the chapter's lesson: growth is valuable only
+through the cash flows it adds, and the forecast's horizon multiple must be stress-tested.
+\pitfalls
+\begin{itemize}
+  \item Subtracting the level of NWC instead of its \emph{increase} (Berk's ``Common Mistake'', p.~553).
+  \item Discounting the tax shields at 10\%, or adding them twice (net income already contains them; start from \emph{unlevered} income).
+  \item Charging the new bond's interest in 2012: under Eq.~(18.1) interest starts the year after the borrowing.
+\end{itemize}
+\refbib{Berk \S18.3--18.5, pp.~542--556; Tables 18.5--18.9, 18.13--18.14.}
+
+\end{document}

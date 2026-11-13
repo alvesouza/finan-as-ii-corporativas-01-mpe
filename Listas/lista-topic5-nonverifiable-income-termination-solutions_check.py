@@ -553,4 +553,144 @@ chk("13iv r* from root", (0.18 - math.sqrt(0.0084)) / 0.2, 0.441742, 1e-6)
 chk("13iv rho0(r*)", e13rho0(e13rs4), 0.208348, 1e-6)
 chk("13iv sum", 0.5 + 0.0225 + 0.102 + 0.09775, 0.72225)
 
+# ======================================================================
+# t5c -- original exercises 14-17 (sovereign debt, slides 13-29)
+import numpy as np
+
+# ---- Ex 14: two periods, y in {1.2 (0.8), 0.8 (0.2)}, h(y) = 0.9 y, r = 0.05 ----
+e14y, e14p, e14lam, e14r = (1.2, 0.8), (0.8, 0.2), 0.1, 0.05
+def e14D(b):  # default set at face value b = -B'; strict preference for default
+    return [y for y in e14y if (1 - e14lam) * y > y - b + 1e-12]
+def e14q(b):
+    return sum(p for y, p in zip(e14y, e14p) if y not in e14D(b)) / (1 + e14r)
+chk("14 thresholds", e14lam * 0.8 + e14lam * 1.2, 0.08 + 0.12)
+chk("14 q(+0.05)", 1 / 1.05, 0.952381, 1e-6)
+for b, qw in ((0.05, 0.952381), (0.08, 0.952381), (0.10, 0.761905), (0.12, 0.761905), (0.15, 0.0)):
+    chk(f"14 q(b={b})", e14q(b), qw, 1e-6)
+chk("14 1/q at b=0.1", 1.05 / 0.8, 1.3125); chk("14 spread", 1.05 / 0.8 - 1 - 0.05, 0.2625)
+chk("14 lender PV b=0.1", e14q(0.10) * 0.10, 0.0761905, 1e-7)
+chk("14 lender payoff", e14q(0.10) * 0.10 * 1.05, 0.8 * 0.10)
+e14grid = [i / 10000 for i in range(1, 2001)]
+e14raise = [e14q(b) * b for b in e14grid]
+chk("14 B* = -0.12", e14grid[e14raise.index(max(e14raise))], 0.12)
+chk("14 max raise", max(e14raise), 0.091429, 1e-6)
+chk("14 max safe raise", 0.08 / 1.05, 0.076190, 1e-6)
+chk("14 raise just above 0.08", 0.8 * 0.08 / 1.05, 0.060952, 1e-6)
+chk("14 dominated range top", 0.8 * 0.10, 0.08)
+
+# ---- Ex 15: Markov 3 states, h(y) = min(y, 0.9), r = 0.04, two periods ----
+e15y = (0.8, 1.0, 1.2)
+e15P = {0.8: (0.6, 0.3, 0.1), 1.0: (0.2, 0.6, 0.2), 1.2: (0.1, 0.3, 0.6)}
+for k in e15P: chk(f"15 row {k} sums to 1", sum(e15P[k]), 1.0)
+def e15D(b): return [y for y in e15y if min(y, 0.9) > y - b + 1e-12]
+def e15q(b, y): return sum(p for yy, p in zip(e15y, e15P[y]) if yy not in e15D(b)) / 1.04
+chk("15 costs", sum(y - min(y, 0.9) for y in e15y), 0 + 0.1 + 0.3)
+e15tab = {0.0: (0.961538,) * 3, 0.05: (0.384615, 0.769231, 0.865385), 0.10: (0.384615, 0.769231, 0.865385),
+          0.20: (0.096154, 0.192308, 0.576923), 0.30: (0.096154, 0.192308, 0.576923), 0.40: (0.0, 0.0, 0.0)}
+for b, row in e15tab.items():
+    for y, qw in zip(e15y, row):
+        chk(f"15 q(b={b},y={y})", e15q(b, y), qw, 1e-6)
+chk("15 q(B'=+0.1)", 1 / 1.04, 0.961538, 1e-6)
+for y, gw, sw in ((0.8, 2.6, 1.56), (1.0, 1.3, 0.26), (1.2, 1.155556, 0.115556)):
+    chk(f"15 1/q y={y}", 1 / e15q(0.05, y), gw, 1e-6); chk(f"15 spread y={y}", 1 / e15q(0.05, y) - 1.04, sw, 1e-6)
+chk("15 iid q", 0.7 / 1.04, 0.673077, 1e-6)
+e15grid = [i / 1000 for i in range(1, 501)]
+for y, bstar, mx in ((0.8, 0.1, 0.038462), (1.0, 0.1, 0.076923), (1.2, 0.3, 0.173077)):
+    rs = [e15q(b, y) * b for b in e15grid]
+    chk(f"15 B*({y})", e15grid[rs.index(max(rs))], bstar); chk(f"15 max raise({y})", max(rs), mx, 1e-6)
+chk("15 alt raise y=0.8", 0.3 * 0.1 / 1.04, 0.028846, 1e-6)
+chk("15 alt raise y=1.0", 0.3 * 0.2 / 1.04, 0.057692, 1e-6)
+chk("15 alt raise y=1.2", 0.1 * 0.9 / 1.04, 0.086538, 1e-6)
+
+# ---- Ex 16-17: infinite horizon, iid y in {0.9, 1.1} (1/2 each), log u, beta = 0.9, r = 0.05 ----
+chk("16 E log y", 0.5 * (math.log(0.9) + math.log(1.1)), -0.005025, 1e-6)
+chk("16 beta/(1-beta)", 0.9 / 0.1, 9.0)
+chk("16 Vd(yL)", math.log(0.9) + 9 * 0.5 * (math.log(0.9) + math.log(1.1)), -0.150587, 1e-6)
+chk("16 Vd(yH)", math.log(1.1) + 9 * 0.5 * (math.log(0.9) + math.log(1.1)), 0.050084, 1e-6)
+chk("16 offer raise 0.25/1.05", 0.25 / 1.05, 0.238095, 1e-6)
+chk("16 offer c", 0.9 - 0.2 + 0.25 / 1.05, 0.938095, 1e-6)
+chk("16 inflow", -0.2 + 0.25 / 1.05, 0.038095, 1e-6)
+chk("16 utility gain", math.log((0.9 - 0.2 + 0.25 / 1.05) / 0.9), 0.041457, 1e-6)
+chk("16 ln 0.9", math.log(0.9), -0.1053605, 1e-7); chk("16 ln 1.1", math.log(1.1), 0.0953102, 1e-7)
+chk("16 E ln y (7dp)", 0.5 * (-0.1053605 + 0.0953102), -0.0050252, 1e-7)
+chk("16 9E", 9 * 0.5 * (math.log(0.9) + math.log(1.1)), -0.0452265, 1e-7)
+chk("16 Vd(yL) 7dp", -0.1053605 - 0.0452265, -0.1505870, 1e-7)
+chk("16 Vd(yH) 7dp", 0.0953102 - 0.0452265, 0.0500837, 1e-7)
+chk("17 Elog (1-lam)y", 0.5 * (math.log(0.882) + math.log(1.078)), -0.025228, 1e-6)
+chk("17 Vd(yL)", math.log(0.882) + 9 * 0.5 * (math.log(0.882) + math.log(1.078)), -0.352614, 1e-6)
+chk("17 Vd(yH)", math.log(1.078) + 9 * 0.5 * (math.log(0.882) + math.log(1.078)), -0.151943, 1e-6)
+chk("17 s = rb/(1+r)", 0.05 * 1 / 1.05, 1 / 21)
+def e17G(s): return 5.5 * math.log(1 - s / 0.9) + 4.5 * math.log(1 - s / 1.1) - 10 * math.log(0.98)
+def e17Gp(s): return -5.5 / (0.9 - s) - 4.5 / (1.1 - s)
+def e17Delta(s, y, lam=0.02):  # W(b,y) - Vd(y), s = rb/(1+r)
+    return (math.log((y - s) / ((1 - lam) * y))
+            + 9 * 0.5 * sum(math.log((yy - s) / ((1 - lam) * yy)) for yy in (0.9, 1.1)))
+chk("17 G = Delta(yL)", e17G(0.013), e17Delta(0.013, 0.9))
+chk("17 10 log 0.98", 10 * math.log(0.98), -0.202027, 1e-6)
+chk("17 G(0)", e17G(0), 0.202027, 1e-6); chk("17 G'(0)", e17Gp(0), -10.202020, 1e-6)
+e17s1 = 0 - e17G(0) / e17Gp(0); chk("17 Newton s1", e17s1, 0.019803, 1e-6)
+chk("17 G(s1)", e17G(e17s1), -0.002089, 1e-6); chk("17 G'(s1)", e17Gp(e17s1), -10.414504, 1e-6)
+e17s2 = e17s1 - e17G(e17s1) / e17Gp(e17s1); chk("17 Newton s2", e17s2, 0.019602, 1e-6)
+chk("17 Newton step 2 size", e17G(e17s1) / e17Gp(e17s1), 0.000201, 1e-6)
+chk("17 Newton s3 stable", e17s2 - e17G(e17s2) / e17Gp(e17s2), 0.019602, 1e-6)
+chk("17 G'(s2)", e17Gp(e17s2), -10.412307, 1e-6)
+chk("17 5.5/0.9 + 4.5/1.1", 5.5 / 0.9 + 4.5 / 1.1, 10.202020, 1e-6)
+chk("17 G_lambda = 10/0.98", 10 / 0.98, 10.204082, 1e-6)
+chk("17 9E", 9 * 0.5 * (math.log(0.882) + math.log(1.078)), -0.2270509, 1e-7)
+chk("17 ln 0.882", math.log(0.882), -0.1255632, 1e-7); chk("17 ln 1.078", math.log(1.078), 0.0751075, 1e-7)
+chk("17 E (7dp)", 0.5 * (-0.1255632 + 0.0751075), -0.02522785, 1e-7)
+chk("17 Vd(yL) 7dp", -0.1255632 - 0.2270509, -0.3526141, 1e-7)
+chk("17 Vd(yH) 7dp", 0.0751075 - 0.2270509, -0.1519434, 1e-7)
+chk("17 bound gap", 0.42 - 21 * 0.019602020, 0.008358, 1e-6)
+chk("17 G(0.019) pieces", 5.5 * math.log(1 - 0.019 / 0.9) + 4.5 * math.log(1 - 0.019 / 1.1) + 0.202027, 0.006266, 2e-6)
+e17sbar = e17s2
+for _ in range(5): e17sbar -= e17G(e17sbar) / e17Gp(e17sbar)
+chk("17 sbar", e17sbar, 0.019602, 1e-6); chk("17 bbar", e17sbar * 1.05 / 0.05, 0.411642, 1e-6)
+chk("17 G(0.019) > 0", e17G(0.019), 0.006266, 1e-6); chk("17 G(0.020) < 0", e17G(0.020), -0.004145, 1e-6)
+chk("17 Delta(yH) > Delta(yL) at sbar", e17Delta(e17sbar, 1.1) - e17Delta(e17sbar, 0.9),
+    math.log(1 - e17sbar / 1.1) - math.log(1 - e17sbar / 0.9))
+assert e17Delta(e17sbar, 1.1) > 0
+for s in (0.001, 0.01, 0.05): assert e17Delta(s, 0.9, 0.0) < 0 and e17Delta(s, 1.1, 0.0) < 0; N += 1
+chk("17 ds/dlam", (10 / 0.98) / (-e17Gp(e17sbar)), 0.980002, 1e-6)
+chk("17 db/dlam", 21 * (10 / 0.98) / (-e17Gp(e17sbar)), 20.580043, 1e-6)
+chk("17 b of grid limit", 0.42 * 0.05 / 1.05, 0.02)
+
+
+def e17solve(lam, theta, n, lo, hi, yv=np.array([0.9, 1.1]), pi=np.array([0.5, 0.5]), beta=0.9, r=0.05):
+    """Eaton-Gersovitz/Arellano equilibrium on a grid of assets B (slides 19-22), iid output.
+
+    lam: output cost, h(y) = (1-lam) y; theta: re-entry probability; grid of n points on [lo, hi]
+    (must contain 0). Inner loop: value iteration given q; outer loop: q = (1-delta)/(1+r), damped.
+    Returns (B grid, q, default indicator [y, B], number of outer iterations)."""
+    B = np.linspace(lo, hi, n); i0 = int(np.argmin(abs(B)))
+    q = np.full(n, 1 / (1 + r)); Vo = np.zeros((2, n)); Vd = np.zeros(2)
+    for outer in range(500):
+        for _ in range(3000):
+            EVo = pi @ Vo
+            Vd_new = np.log((1 - lam) * yv) + beta * (theta * EVo[i0] + (1 - theta) * (pi @ Vd))
+            c = yv[:, None, None] + B[None, :, None] - (q * B)[None, None, :]
+            u = np.where(c > 0, np.log(np.maximum(c, 1e-12)), -1e10)
+            Vc = (u + beta * EVo[None, None, :]).max(axis=2)
+            Vo_new = np.maximum(Vc, Vd_new[:, None])
+            d = abs(Vo_new - Vo).max(); Vo, Vd = Vo_new, Vd_new
+            if d < 1e-10: break
+        dflt = Vd[:, None] > Vc + 1e-12
+        qn = (1 - pi @ dflt) / (1 + r)
+        if abs(qn - q).max() < 1e-12: return B, q, dflt, outer
+        q = 0.5 * q + 0.5 * qn
+    raise AssertionError("17 grid equilibrium did not converge")
+
+def e17limit(B, dflt): return B[(~dflt).all(axis=0)].min()  # lowest B with empty default set
+B_, q_, d_, _ = e17solve(0.02, 0.0, 241, -0.6, 0.3)
+chk("17 grid risk-free limit, lam=.02 theta=0", e17limit(B_, d_), -0.42, 1e-9)
+assert e17limit(B_, d_) <= -e17sbar * 1.05 / 0.05; N += 1   # certified bound is conservative
+B_, q_, d_, _ = e17solve(0.02, 0.5, 241, -0.6, 0.3)
+chk("17 grid risk-free limit, theta=0.5", e17limit(B_, d_), -0.0375, 1e-9)
+B_, q_, d_, _ = e17solve(0.0, 0.0, 201, -0.05, 0.05)
+chk("16 grid risk-free limit, lam=0", e17limit(B_, d_), -0.01, 1e-9)
+e16raise = (-q_ * B_).max()
+for b, dB in zip(B_, d_.any(axis=0)):   # Claim 3 on the grid: D(B) nonempty => no inflow available
+    if dB: assert b + e16raise <= 1e-12, ("16 Claim 3 on grid", b, e16raise)
+N += 1
+
 print(f"PASS {N} checks")

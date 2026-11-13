@@ -61,7 +61,9 @@ ed.\ (2023); Grinblatt \& Titman, \textit{Financial Markets and Corporate Strate
 number below is reproduced by \texttt{lista-r3-mm-taxes-tradeoff-solutions\_check.py}.
 Amounts are in dollars unless a section says ``millions''. Each section follows the same order:
 what is asked, approach, notation, steps (with the answer to each part boxed), intuition, common
-mistakes, book answer and reference.\normalsize
+mistakes, book answer and reference. Sections 16--18 solve \emph{original} exercises on the bank
+capital debate (no course book has one); they have no book answer and cite Prof.~Ricca's slides
+instead of a book page.\normalsize
 
 % =============================================================================
 \section{Two-outcome project financed with equity or safe debt --- Berk 16.1, p.~490}
@@ -1473,5 +1475,421 @@ only for a given value of $X$ (or in expectation), not state by state. The portf
 incomes exactly, so \eqref{eq:15band} is a true no-arbitrage band for any distribution of $X$. The
 two coincide only if $X/V_u$ happens to equal $\bar r$ (upper bound) or $\underline r$ (lower bound).
 \refbib{Amaro de Matos Ch.~2, §2.1.1--2.1.3, pp.~40--46 (MM1, MM2, MM with taxes); Appendix C.2.1, pp.~252--254.}
+
+% =============================================================================
+\section{Bank capital without taxes: does more equity lower ROE and raise funding costs? --- Original exercise}
+
+\noindent\textit{Original exercise (list, Exercise 16), built on Topic 2B slides 46--47 and Topic 2A
+slides 89 and 97--102. Amounts in \$ billion.}
+
+\asked
+(a) The balance sheet at the two equity ratios and a check that deposits are really safe.
+(b) What shareholders earn per dollar invested (ROE) in each state, its mean and its risk, and the
+reward per unit of risk.
+(c) The return shareholders \emph{require} at each ratio (MM II), whether it matches what they
+expect to earn, and whether the overall cost of funding (WACC) or the bank's value moves.
+(d) How a shareholder can rebuild the high-leverage ROE herself by borrowing.
+(e)--(f) Whether Statements 1 and 2 of slide 47 survive these numbers.
+
+\approach
+The bank is a firm in a perfect market, so MM applies unchanged: the loans' cash flows and their
+required return $r_A$ do not depend on how they are funded (\emph{MM I}). Leverage only
+redistributes the same risk: with less equity, each dollar of equity carries more of the asset risk
+and therefore must earn more (\emph{MM II}). ROE compares returns on claims of different risk, so a
+lower ROE at higher capital is not a loss. \emph{Homemade leverage} shows the old ROE remains
+available to any investor who wants it.
+
+\notation
+\begin{itemize}
+  \item $A=100$: market value of the loans at $t=0$; $\tilde r_A\in\{9\%,3\%\}$: return on assets (good, bad state), probability $\tfrac12$ each; $r_A=6\%$: required return on assets; $\sigma_A$: standard deviation of $\tilde r_A$.
+  \item $e=E/A$: equity ratio; $E$, $D=A-E$: equity and deposits; $r_D=r_f=4\%$: deposit (risk-free) rate.
+  \item $\Pi_s$: payoff to shareholders at $t=1$ in state $s\in\{g,b\}$; $ROE_s=\Pi_s/E-1$; $r_E$: required return on equity; $r_{WACC}$: weighted average cost of capital.
+\end{itemize}
+
+\step{1}{(a) Balance sheets and the repayment owed} The equity ratio fixes $E=eA$, deposits are the
+rest, and depositors are owed principal plus interest:
+\begin{align}
+  e=4\%:&\quad E=(0.04)(100)=4,\quad D=100-4=96,\quad D(1+r_f)=(96)(1.04)=99.84, \label{eq:16owed}\\
+  e=20\%:&\quad E=(0.20)(100)=20,\quad D=100-20=80,\quad D(1+r_f)=(80)(1.04)=83.2. \nonumber
+\end{align}
+
+\step{2}{(a) Deposits are safe} The worst case for depositors is the bad state, where the loans pay
+\begin{align}
+  A(1+0.03)=(100)(1.03)=103. \label{eq:16Ab}
+\end{align}
+Since $103>99.84$ and $103>83.2$, depositors are paid in full in both states at both ratios, so the
+deposits are risk-free and $r_D=r_f$ is the right rate. In the good state the loans pay
+$(100)(1.09)=109$.
+\answer{(a)} $e=4\%$: $E=4$, $D=96$, owed $99.84$; $e=20\%$: $E=20$, $D=80$, owed $83.2$; both below
+the bad-state asset payoff of $103$, so deposits are risk-free.
+
+\step{3}{(b) Shareholders' payoffs} Shareholders receive what is left after depositors:
+\begin{align}
+  e=4\%:&\quad \Pi_g=109-99.84=9.16,\qquad \Pi_b=103-99.84=3.16, \nonumber\\
+  e=20\%:&\quad \Pi_g=109-83.2=25.8,\qquad\ \Pi_b=103-83.2=19.8. \nonumber
+\end{align}
+
+\step{4}{(b) ROE in each state} Divide each payoff by the equity invested and subtract 1:
+\begin{align}
+  e=4\%:&\quad ROE_g=\frac{9.16}{4}-1=2.29-1=129\%,\qquad ROE_b=\frac{3.16}{4}-1=0.79-1=-21\%, \nonumber\\
+  e=20\%:&\quad ROE_g=\frac{25.8}{20}-1=1.29-1=29\%,\qquad\ \ ROE_b=\frac{19.8}{20}-1=0.99-1=-1\%. \nonumber
+\end{align}
+The same numbers follow from $ROE_s=\tilde r_{A,s}+\frac{D}{E}(\tilde r_{A,s}-r_f)$: at $e=4\%$,
+$D/E=96/4=24$ and $ROE_g=9\%+24(9\%-4\%)=9\%+120\%=129\%$.
+
+\step{5}{(b) Mean, risk and reward per unit of risk} With two equally likely states the mean is the
+average and the standard deviation is half the gap between the two outcomes:
+\begin{align}
+  e=4\%:&\quad \E[ROE]=\tfrac12(129\%)+\tfrac12(-21\%)=54\%, \label{eq:16mom}\\
+        &\quad \sigma(ROE)=\tfrac12\,|129\%-(-21\%)|=\tfrac12(150\%)=75\%, \nonumber\\
+  e=20\%:&\quad \E[ROE]=\tfrac12(29\%)+\tfrac12(-1\%)=14\%, \nonumber\\
+        &\quad \sigma(ROE)=\tfrac12\,|29\%-(-1\%)|=\tfrac12(30\%)=15\%. \nonumber
+\end{align}
+For comparison, $\sigma_A=\tfrac12|9\%-3\%|=3\%$, and $\sigma(ROE)=(A/E)\,\sigma_A$: $(25)(3\%)=75\%$ and
+$(5)(3\%)=15\%$. The reward per unit of risk is
+\begin{align}
+  e=4\%:\quad \frac{54\%-4\%}{75\%}=\frac{50}{75}=0.6667,\qquad
+  e=20\%:\quad \frac{14\%-4\%}{15\%}=\frac{10}{15}=0.6667. \label{eq:16sharpe}
+\end{align}
+\answer{(b)} $e=4\%$: ROE $129\%$ / $-21\%$, $\E[ROE]=54\%$, $\sigma=75\%$; $e=20\%$: ROE $29\%$ /
+$-1\%$, $\E[ROE]=14\%$, $\sigma=15\%$. The ratio is $0.6667$ at both: expected ROE falls exactly in
+proportion to risk.
+
+\step{6}{(c) Required return on equity (MM II)} With safe debt, $r_E=r_A+\frac{D}{E}(r_A-r_D)$:
+\begin{align}
+  e=4\%:&\quad r_E=6\%+\Bigl(\frac{96}{4}\Bigr)(6\%-4\%)=6\%+(24)(2\%)=6\%+48\%=54\%, \label{eq:16rE}\\
+  e=20\%:&\quad r_E=6\%+\Bigl(\frac{80}{20}\Bigr)(6\%-4\%)=6\%+(4)(2\%)=6\%+8\%=14\%. \nonumber
+\end{align}
+These equal the expected ROEs in \eqref{eq:16mom}: at both ratios shareholders expect to earn
+exactly what their risk requires, so their claim has zero NPV either way. Indeed the equity is worth
+$\E[\Pi]/(1+r_E)$: $\tfrac12(9.16+3.16)/1.54=6.16/1.54=4$ and $\tfrac12(25.8+19.8)/1.14=22.8/1.14=20$, the
+amounts invested.
+
+\step{7}{(c) WACC and value} Weight each required return by its share of funding:
+\begin{align}
+  e=4\%:&\quad r_{WACC}=(0.04)(54\%)+(0.96)(4\%)=2.16\%+3.84\%=6\%, \label{eq:16wacc}\\
+  e=20\%:&\quad r_{WACC}=(0.20)(14\%)+(0.80)(4\%)=2.80\%+3.20\%=6\%. \nonumber
+\end{align}
+Both equal $r_A$. The bank's value is $E+D=4+96=20+80=100=A$ at both ratios.
+\answer{(c)} $r_E=54\%$ at $4\%$ equity and $14\%$ at $20\%$ equity, equal to the expected ROEs;
+$r_{WACC}=6\%$ at both; the bank's value stays $100$.
+
+\step{8}{(d) Homemade leverage} One dollar of the $4\%$ bank's equity carries $A/E=1/0.04=25$ dollars of
+loans; one dollar of the $20\%$ bank's equity carries $1/0.20=5$. To rebuild 25 dollars of loan exposure
+per dollar of her own money, she buys $25/5=5$ dollars of the $20\%$ bank's equity, financed with her
+\$1 plus $5-1=4$ dollars borrowed at $r_f$. Her return in each state:
+\begin{align}
+  \text{good:}\quad &\frac{(5)(1.29)-(4)(1.04)}{1}-1=6.45-4.16-1=1.29=129\%, \nonumber\\
+  \text{bad:}\quad &\frac{(5)(0.99)-(4)(1.04)}{1}-1=4.95-4.16-1=-0.21=-21\%. \label{eq:16home}
+\end{align}
+\answer{(d)} Buy \$5 of the $20\%$ bank's equity per \$1 of her own money, borrowing \$4 at $4\%$; she
+gets $129\%$ and $-21\%$, exactly the $4\%$ bank's ROE.
+
+\step{9}{(e) Statement 1} Expected ROE does fall, from $54\%$ to $14\%$, but risk falls in the same
+proportion \eqref{eq:16sharpe}, the required return falls by the same amount \eqref{eq:16rE}, the value of
+the shareholders' claim equals what they paid at both ratios, and the high-ROE payoff is still
+available through \eqref{eq:16home}.
+\answer{(e)} False. A lower ROE is the price of lower risk, not a loss to shareholders.
+
+\step{10}{(f) Statement 2} The executive's computation keeps $r_E$ at its $4\%$-equity level:
+\begin{align}
+  (0.20)(54\%)+(0.80)(4\%)=10.8\%+3.2\%=14\%. \label{eq:16wrong}
+\end{align}
+But $r_E$ is not a constant: by MM II it falls to $14\%$ when equity rises to $20\%$, and the correct
+WACC \eqref{eq:16wacc} stays at $6\%$. Equity has a higher required return than debt at every ratio,
+yet replacing debt with equity does not raise the funding cost, because it makes all equity less
+risky.
+\answer{(f)} The executive's number is $14\%$; the error is holding $r_E$ fixed at $54\%$. Statement 2
+is false: the funding cost stays at $6\%$.
+
+\intuition The loans' risk is fixed by the loans, not by the liability side. Leverage concentrates
+that risk on a thin layer of equity, which then demands a high return; more equity spreads the same
+risk over more dollars, so each dollar demands less. ROE is a return on a risky claim, and comparing
+ROEs across leverage levels compares claims of different risk.
+
+\pitfalls
+\begin{itemize}
+  \item Judging shareholder welfare by expected ROE instead of by the value of their claim (or ROE
+        per unit of risk).
+  \item Using a fixed $r_E$ when leverage changes, as in \eqref{eq:16wrong}.
+  \item Forgetting to check that deposits are safe; MM II in the linear form needs $r_D=r_f$.
+\end{itemize}
+
+\refbib{Prof.~Ricca, Topic 2B slides 46--47 (bank capital debate, Statements 1--2); Topic 2A slide 89
+(homemade leverage) and slides 97--102 (MM II, $r_{WACC}$ independent of $D$ and $E$, conservation of value).}
+
+% =============================================================================
+\section{Bank capital with corporate taxes: the lost interest tax shield --- Original exercise}
+
+\noindent\textit{Original exercise (list, Exercise 17), built on Topic 2B slides 7--18 and 47.
+Amounts in \$ billion, flows per year.}
+
+\asked
+(a) The bank's market-value balance sheet at $5\%$ and $20\%$ equity when interest is tax-deductible.
+(b) What the move to $20\%$ requires (debt retired) and what it costs the bank's current owners.
+(c) How the after-tax WACC and the required return on equity change, with two consistency checks.
+(d) What happens to the government's tax claim and to the total value of all claims.
+(e) Whether the lost tax shield (Statement 3) is a private cost, a social cost, or both.
+
+\approach
+With constant perpetual safe debt, \emph{MM I with taxes} gives $V_L=V_U+\tau D$ (slides 7--8): the
+interest tax shield is the only thing leverage adds. Because the requirement is stated as a share of
+$V_L$, which itself depends on $D$, part (a) is a fixed point solved in one line. Part (d) counts the
+government as a third claimant: the pie $X$ is split among shareholders, debtholders and the
+government, and leverage only moves value between them.
+
+\notation
+\begin{itemize}
+  \item $X=7.5$: expected pre-tax cash flow per year (perpetual); $\tau=20\%$: tax rate; $r_U=6\%$: unlevered cost of capital; $V_U=(1-\tau)X/r_U=100$.
+  \item $D$: perpetual constant safe debt, $r_D=4\%$; $E$: equity; $V_L=D+E$; $e=E/V_L$; $V_{ITS}=\tau D$.
+  \item $r_E$: required return on equity; $r_{WACC}$: after-tax WACC; $G$: present value of the government's tax claim.
+\end{itemize}
+
+\step{1}{(a) Solve for $V_L$} Substitute $D=(1-e)V_L$ into $V_L=V_U+\tau D$ and collect $V_L$:
+\begin{align}
+  V_L &= V_U+\tau(1-e)V_L \nonumber\\
+  V_L\bigl[1-\tau(1-e)\bigr] &= V_U \nonumber\\
+  V_L &= \frac{V_U}{1-\tau(1-e)}. \label{eq:17VL}
+\end{align}
+
+\step{2}{(a) Balance sheet at $e=5\%$}
+\begin{align}
+  V_L &= \frac{100}{1-(0.20)(0.95)}=\frac{100}{1-0.19}=\frac{100}{0.81}=123.4568, \nonumber\\
+  D &= (0.95)(123.4568)=117.2840,\qquad E=(0.05)(123.4568)=6.1728, \nonumber\\
+  V_{ITS} &= (0.20)(117.2840)=23.4568=V_L-V_U. \nonumber
+\end{align}
+
+\step{3}{(a) Balance sheet at $e=20\%$}
+\begin{align}
+  V_L &= \frac{100}{1-(0.20)(0.80)}=\frac{100}{1-0.16}=\frac{100}{0.84}=119.0476, \nonumber\\
+  D &= (0.80)(119.0476)=95.2381,\qquad E=(0.20)(119.0476)=23.8095, \nonumber\\
+  V_{ITS} &= (0.20)(95.2381)=19.0476=V_L-V_U. \nonumber
+\end{align}
+\answer{(a)} $e=5\%$: $V_L=123.457$, $D=117.284$, $E=6.173$, $V_{ITS}=23.457$; $e=20\%$:
+$V_L=119.048$, $D=95.238$, $E=23.810$, $V_{ITS}=19.048$.
+
+\step{4}{(b) Debt retired and the annual tax saving} The debt retired equals the new equity raised:
+\begin{align}
+  \Delta D=117.2840-95.2381=22.0459. \nonumber
+\end{align}
+The annual interest tax saving $\tau r_D D$ is
+\begin{align}
+  e=5\%:\ (0.20)(0.04)(117.2840)=0.9383,\qquad e=20\%:\ (0.20)(0.04)(95.2381)=0.7619, \nonumber
+\end{align}
+a fall of $0.9383-0.7619=0.1764$ per year.
+
+\step{5}{(b) Loss to existing shareholders} New shareholders pay a fair price, so they pay exactly
+what their shares are worth and neither gain nor lose. The fall in $V_L$ therefore lands entirely on the existing shareholders:
+\begin{align}
+  \Delta V_L &= 123.4568-119.0476=4.4092=\tau\,\Delta D=(0.20)(22.0459), \label{eq:17loss}
+\end{align}
+which is also the perpetual annual loss discounted at $r_D$: $0.1764/0.04=4.41$. The existing
+shareholders keep $23.8095-22.0459=1.7637=6.1728-4.4092$, so the loss as a fraction of their equity is
+\begin{align}
+  \frac{4.4092}{6.1728}=0.7143=71.43\%. \nonumber
+\end{align}
+\answer{(b)} Retire $22.046$ of debt; the annual tax saving falls from $0.938$ to $0.762$; existing
+shareholders lose $4.409$, i.e.\ $71.43\%$ of their pre-change equity.
+
+\step{6}{(c) After-tax WACC} Constant-debt formula $r_{WACC}=\bigl(1-\tau\frac{D}{V_L}\bigr)r_U$, with $D/V_L=1-e$:
+\begin{align}
+  e=5\%:&\quad r_{WACC}=\bigl(1-(0.20)(0.95)\bigr)(6\%)=(0.81)(6\%)=4.86\%, \nonumber\\
+        &\quad \frac{(1-\tau)X}{r_{WACC}}=\frac{6}{0.0486}=123.4568, \nonumber\\
+  e=20\%:&\quad r_{WACC}=\bigl(1-(0.20)(0.80)\bigr)(6\%)=(0.84)(6\%)=5.04\%, \nonumber\\
+        &\quad \frac{(1-\tau)X}{r_{WACC}}=\frac{6}{0.0504}=119.0476. \nonumber
+\end{align}
+Both reproduce $V_L$ from Steps 2--3. The after-tax WACC rises by $5.04\%-4.86\%=0.18$ percentage points.
+
+\step{7}{(c) Required return on equity} The balance-sheet identity (slide 10) multiplied by $V_L$, with
+$r_{ITS}=r_D$ and $V_{ITS}=\tau D$, is $E\,r_E+D\,r_D=V_U r_U+\tau D\,r_D$. Substitute $V_U=V_L-\tau D=E+(1-\tau)D$ and solve for $r_E$:
+\begin{align}
+  E\,r_E &= \bigl[E+(1-\tau)D\bigr]r_U+\tau D\,r_D-D\,r_D \nonumber\\
+         &= E\,r_U+(1-\tau)D\,r_U-(1-\tau)D\,r_D \nonumber\\
+  r_E &= r_U+(1-\tau)\frac{D}{E}(r_U-r_D). \label{eq:17rE}
+\end{align}
+With $D/E=0.95/0.05=19$ and $D/E=0.80/0.20=4$:
+\begin{align}
+  e=5\%:&\quad r_E=6\%+(0.80)(19)(2\%)=6\%+30.4\%=36.4\%, \nonumber\\
+  e=20\%:&\quad r_E=6\%+(0.80)(4)(2\%)=6\%+6.4\%=12.4\%. \nonumber
+\end{align}
+Check with the after-tax WACC formula (slide 16):
+\begin{align}
+  e=5\%:&\quad (0.05)(36.4\%)+(0.95)(4\%)(0.80)=1.82\%+3.04\%=4.86\%, \nonumber\\
+  e=20\%:&\quad (0.20)(12.4\%)+(0.80)(4\%)(0.80)=2.48\%+2.56\%=5.04\%. \nonumber
+\end{align}
+\answer{(c)} After-tax WACC $4.86\%\to5.04\%$ (it gives back $V_L$); $r_E$ $36.4\%\to12.4\%$; both
+checks hold.
+
+\step{8}{(d) The government's claim} Discount $\tau X$ at $r_U$ and $\tau r_D D$ at $r_D$:
+\begin{align}
+  G &= \frac{\tau X}{r_U}-\frac{\tau r_D D}{r_D}=\frac{(0.20)(7.5)}{0.06}-\tau D=25-\tau D, \label{eq:17G}\\
+  e=5\%:&\quad G=25-23.4568=1.5432,\qquad V_L+G=123.4568+1.5432=125, \nonumber\\
+  e=20\%:&\quad G=25-19.0476=5.9524,\qquad V_L+G=119.0476+5.9524=125. \nonumber
+\end{align}
+The total $125=X/r_U=7.5/0.06$ is the pre-tax value of the assets, independent of $D$. The government
+gains $5.9524-1.5432=4.4092$, exactly the shareholders' loss in \eqref{eq:17loss}.
+\answer{(d)} $G=1.543$ at $5\%$ and $5.952$ at $20\%$; $V_L+G=125$ at both; the taxpayers gain the
+$4.409$ the shareholders lose.
+
+\step{9}{(e) Statement 3} For the bank's shareholders the statement is true: they lose the subsidy
+$4.409$ and the after-tax WACC rises. For society it is a transfer, not a cost: the total value of the
+claims on the assets stays at $125$, and the government's extra revenue can fund spending or lower
+taxes elsewhere. The lost tax shield shows that the tax code subsidises bank debt, not that equity
+uses up resources.
+\answer{(e)} True privately, false socially: the lost tax shield is a transfer from bank shareholders to
+taxpayers, so it does not make equity socially expensive.
+
+\intuition Taxes add a third claimant to the bank. Debt lowers what the government takes, and that is
+the only reason it raises $V_L$. A capital requirement moves that slice back to the government. Whether
+banks should get the subsidy is a separate tax-policy question; it is no reason to keep leverage high.
+
+\pitfalls
+\begin{itemize}
+  \item Treating $e$ as $E/V_U$ instead of $E/V_L$, or computing $D=(1-e)V_U$; the requirement is a
+        fixed point in $V_L$ \eqref{eq:17VL}.
+  \item Counting the lost tax shield as a loss to society; it reappears in $G$.
+  \item Holding $r_E$ at $36.4\%$ when equity rises (the Statement 2 mistake, again).
+\end{itemize}
+
+\refbib{Prof.~Ricca, Topic 2B slides 7--8 (MM I with taxes, $V_{ITS}=\tau D$), slides 9--11
+(market-value balance sheet, $r_{ITS}=r_D$ for constant debt), slides 16--18 (after-tax WACC,
+constant-debt formula), slide 47 (Statement 3).}
+
+% =============================================================================
+\section{The failure externality and the socially optimal capital ratio --- Original exercise}
+
+\noindent\textit{Original exercise (list, Exercise 18), built on Topic 2B slides 44--47. All amounts
+per \$1 of bank assets per year.}
+
+\asked
+(a) How likely failure is, and how much it costs society in expectation, at a thin and a thick capital ratio.
+(b) Society's cost of the funding mix, why only two terms belong in it, and the ratio that minimises it.
+(c) What the bank chooses on its own, and how its private cost of more capital compares with society's gain.
+(d) How the slide-47 fallacies (Statements 2 and 3) bias a planner's ``optimal'' ratio downward.
+(e) How $e^*$ responds to the social loss of a failure, the value of liquidity and asset risk.
+
+\approach
+This is the \emph{static trade-off} of slides 44--45 seen from society's side: the marginal social
+benefit of debt (liquidity services) is set equal to the marginal expected cost of failure. By
+Exercises 16--17 (MM without and with taxes), neither the equity premium nor the tax shield is a
+social cost, so they are left out. The failure cost is a \emph{negative externality} (slide 47): the
+bank does not bear it, which is why the private and social optima differ.
+
+\notation
+\begin{itemize}
+  \item $e\in[0,1]$: equity ratio; $1-e$: deposits per \$1 of assets; $\ell\ge0$: annual loss rate, $\Pr(\ell>x)=\exp(-x/\theta)$, $\theta=0.01$.
+  \item $p(e)=\Pr(\ell>e)$: annual failure probability; $\kappa=0.50$: social loss of a failure per \$1 of assets; $F(e)=\kappa p(e)$.
+  \item $\lambda=0.005$: liquidity value per \$1 of deposits per year; $s=0.008$: tax saving per \$1 of deposits per year.
+  \item $S(e)$: social cost of the funding mix; $e^*$: its minimiser; $\underline e$: regulatory minimum.
+\end{itemize}
+
+\step{1}{(a) Failure probability and expected failure cost} The bank fails when $\ell>e$, so
+$p(e)=\exp(-e/\theta)$:
+\begin{align}
+  e=4\%:&\quad p=\exp(-0.04/0.01)=\exp(-4)=0.018316, \label{eq:18F}\\
+        &\quad F=(0.50)(0.018316)=0.0091578, \nonumber\\
+  e=20\%:&\quad p=\exp(-0.20/0.01)=\exp(-20)=2.06\times10^{-9}, \nonumber\\
+        &\quad F=(0.50)(2.06\times10^{-9})=1.03\times10^{-9}. \nonumber
+\end{align}
+\answer{(a)} $p(4\%)=1.83\%$ a year and $F(4\%)=0.916\%$ of assets a year; at $20\%$ failure is
+practically impossible ($p=2.06\times10^{-9}$, $F=1.03\times10^{-9}$).
+
+\step{2}{(b) The social cost function} Deposits yield a social benefit $\lambda(1-e)=\lambda-\lambda e$
+a year, so relative to $e=0$ each unit of equity forgoes $\lambda$ of liquidity services. Adding the
+expected failure cost and dropping the constant $-\lambda$:
+\begin{align}
+  S(e)=\lambda e+\kappa\exp(-e/\theta). \label{eq:18S}
+\end{align}
+The equity premium is absent because, by MM (Exercise 16), it only compensates shareholders for the
+risk they bear and the total required return on the assets does not change. The tax saving $s$ is
+absent because it is a transfer from the government (Exercise 17): what the bank gains, taxpayers lose.
+
+\step{3}{(b) First- and second-order conditions} Differentiate \eqref{eq:18S}, using
+$\frac{d}{de}\exp(-e/\theta)=-\frac1\theta\exp(-e/\theta)$:
+\begin{align}
+  S'(e) &= \lambda-\frac{\kappa}{\theta}\exp(-e/\theta)=0, \label{eq:18foc}\\
+  S''(e) &= \frac{\kappa}{\theta^2}\exp(-e/\theta)>0, \nonumber
+\end{align}
+so the stationary point is the global minimum. Solve \eqref{eq:18foc}:
+\begin{align}
+  \exp(-e^*/\theta) &= \frac{\lambda\theta}{\kappa} \nonumber\\
+  -\frac{e^*}{\theta} &= \ln\frac{\lambda\theta}{\kappa} \nonumber\\
+  e^* &= \theta\ln\frac{\kappa}{\lambda\theta}. \label{eq:18estar}
+\end{align}
+$e^*>0$ because $\kappa/(\lambda\theta)>1$. Numerically,
+\begin{align}
+  \frac{\kappa}{\lambda\theta}=\frac{0.50}{(0.005)(0.01)}=\frac{0.50}{0.00005}=10{,}000,\qquad
+  e^*=(0.01)\ln(10{,}000)=(0.01)(9.2103)=0.092103. \nonumber
+\end{align}
+By \eqref{eq:18estar} the failure probability at the optimum is
+$p(e^*)=\lambda\theta/\kappa=0.00005/0.50=0.0001$, once in $10{,}000$ years.
+
+\step{4}{(b) Social cost at three ratios}
+\begin{align}
+  S(4\%) &= (0.005)(0.04)+0.0091578=0.0002+0.0091578=0.0093578, \nonumber\\
+  S(e^*) &= (0.005)(0.092103)+(0.50)(0.0001)=0.00046052+0.00005=0.00051052, \nonumber\\
+  S(20\%) &= (0.005)(0.20)+1.03\times10^{-9}=0.0010000. \nonumber
+\end{align}
+\answer{(b)} $e^*=\theta\ln\bigl(\kappa/(\lambda\theta)\bigr)=9.21\%$, with failure probability $0.01\%$ a
+year; $S(4\%)=0.93578\%$, $S(e^*)=0.05105\%$, $S(20\%)=0.10000\%$ of assets a year.
+
+\step{5}{(c) The bank's choice} The shareholders' private cost $P(e)=(\lambda+s)e=0.013\,e$ has
+$P'(e)=0.013>0$ at every $e$: each extra unit of equity only costs them, and the failure cost it would
+avoid falls on others. The bank picks the lowest ratio allowed: $e=0$ unregulated, $e=\underline e=4\%$
+under the minimum. Moving from $4\%$ to $e^*$:
+\begin{align}
+  \text{private cost} &= (0.013)(0.092103-0.04)=(0.013)(0.052103)=0.00067734, \nonumber\\
+  \text{social gain} &= S(4\%)-S(e^*)=0.0093578-0.00051052=0.0088473. \nonumber
+\end{align}
+Of the private cost, $(0.005)(0.052103)=0.00026052$ is the liquidity loss (already inside $S$) and
+$(0.008)(0.052103)=0.00041683$ is tax paid to the government.
+\answer{(c)} The bank chooses $e=0$ unregulated and exactly $4\%$ under the minimum. The move to $e^*$
+costs shareholders $0.0677\%$ of assets a year and saves society $0.8847\%$, about 13 times more.
+
+\step{6}{(d) The planner's mistakes} Each mistake replaces $\lambda$ in \eqref{eq:18estar}:
+\begin{align}
+  \text{(i)}\quad \lambda+s=0.013:&\quad e=(0.01)\ln\frac{0.50}{(0.013)(0.01)}=(0.01)\ln(3{,}846.15)=(0.01)(8.2548)=0.082548, \nonumber\\
+  \text{(ii)}\quad 0.10:&\quad e=(0.01)\ln\frac{0.50}{(0.10)(0.01)}=(0.01)\ln(500)=(0.01)(6.2146)=0.062146. \nonumber
+\end{align}
+The failure probabilities rise to $(0.013)(0.01)/0.50=0.00026$ and $(0.10)(0.01)/0.50=0.002$, and the
+true social costs to $S=(0.005)(0.082548)+(0.50)(0.00026)=0.00041274+0.00013=0.00054274$ and
+$S=(0.005)(0.062146)+(0.50)(0.002)=0.00031073+0.001=0.00131073$, both above $S(e^*)=0.00051052$.
+\answer{(d)} (i) $8.25\%$, (ii) $6.21\%$, both below $e^*=9.21\%$; the larger the cost wrongly assigned
+to equity, the thinner the ``optimal'' capital and the higher the true social cost.
+
+\step{7}{(e) Comparative statics} Differentiate \eqref{eq:18estar}, written as
+$e^*=\theta\bigl[\ln\kappa-\ln\lambda-\ln\theta\bigr]$:
+\begin{align}
+  \frac{\partial e^*}{\partial\kappa} &= \frac{\theta}{\kappa}=\frac{0.01}{0.50}=0.02>0, \nonumber\\
+  \frac{\partial e^*}{\partial\lambda} &= -\frac{\theta}{\lambda}=-\frac{0.01}{0.005}=-2<0, \nonumber\\
+  \frac{\partial e^*}{\partial\theta} &= \bigl[\ln\kappa-\ln\lambda-\ln\theta\bigr]+\theta\Bigl(-\frac1\theta\Bigr)=\ln\frac{\kappa}{\lambda\theta}-1=9.2103-1=8.2103>0. \nonumber
+\end{align}
+Doubling $\kappa$ changes $e^*$ by
+\begin{align}
+  \theta\ln\frac{2\kappa}{\lambda\theta}-\theta\ln\frac{\kappa}{\lambda\theta}=\theta\ln2=(0.01)(0.6931)=0.0069315, \nonumber
+\end{align}
+from $9.21\%$ to $(0.01)\ln(20{,}000)=9.90\%$.
+\answer{(e)} $e^*$ rises with $\kappa$ ($+0.02$ per unit) and with $\theta$ ($+8.21$ per unit, since
+$\kappa/(\lambda\theta)>e$), and falls with $\lambda$ ($-2$ per unit). Doubling $\kappa$ adds $0.69$
+percentage points.
+
+\intuition The bank's leverage choice is a trade-off in which it bears all of the benefit of debt and
+none of the cost of failure. Society's trade-off counts both, and once the MM ``costs'' of equity are
+seen to be risk compensation and transfers, the only real cost of equity left is the small loss of
+liquidity services. That is why the social optimum is well above what banks would choose, and why
+getting Statements 2 and 3 wrong biases capital requirements downward.
+
+\pitfalls
+\begin{itemize}
+  \item Putting the equity premium or the tax shield into the social cost; both drop out by MM.
+  \item Stating the first-order condition without differentiating $\exp(-e/\theta)$ (the factor
+        $-1/\theta$ is where $\theta$ enters $e^*$).
+  \item Reading the small private cost in (c) as proof that capital is cheap for society, or the
+        reverse: the private cost includes a transfer, the social gain is the externality avoided.
+\end{itemize}
+
+\refbib{Prof.~Ricca, Topic 2B slides 44--45 (static trade-off: marginal benefit of debt = marginal expected
+bankruptcy cost, $V_L=V_U+V_{ITS}-PV(\text{bankruptcy costs})$), slides 46--47 (bank capital debate, failure
+externality).}
 
 \end{document}

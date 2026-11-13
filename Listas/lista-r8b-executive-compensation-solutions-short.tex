@@ -1,0 +1,115 @@
+% Short answer key for Listas/lista-r8b-executive-compensation.md (15 exercises).
+% Compile: pdflatex twice; check: pdffonts (Type 1 only, uni = yes).
+% Every number is asserted in lista-r8b-executive-compensation-solutions_check.py.
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[brazilian,english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize List R8b --- Answer key}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+\setlist{topsep=2pt,itemsep=1pt}
+\setlength{\parindent}{0pt}
+\newcommand{\dpp}{\Delta p}
+
+\usepackage[hyphens]{url}
+\begin{document}
+\begin{center}{\Large\bfseries Exercise list R8b --- Executive compensation and managerial incentives}\\[4pt]{\large Answer key (full derivations in \url{lista-r8b-executive-compensation-solutions.pdf})}\end{center}
+
+Amounts in \$ millions. Numbers marked ``illustrative'' are parameter points chosen in the full solutions.
+
+\section*{1. Is CEO pay too high? (Ross CQ 1.16)}
+\$550m over five years is \$110m a year; \$54.4m is 1\% of a \$5.44bn value gain. Not necessarily excessive:
+scarce talent applied to a very large firm, as with sports stars. Excessive if not set at arm's length
+(boards influenced by the CEO) or if it pays for industry luck (the oil price) rather than value created
+relative to peers. Jensen--Murphy: \$3 per \$1{,}000 --- the problem is weak sensitivity, not level.
+
+\section*{2. GreenFrame acquisition (Berk Ch.~22, Problem 3)}
+CEO's loss $0.03\times50=1.5$; net $5-1.5=+3.5$: \textbf{better off}. He would refuse only with a stake above
+$5/50=10\%$, or if the deal destroyed more than $5/0.03=166.7$.
+
+\section*{3. Why managers want growth (G\&T 18.1)}
+Expand iff $\Delta W+b>\alpha|\mathrm{NPV}|$: pay and prestige rise with size, perquisites, job security from
+diversification (43\% of CEOs keep their jobs after bankruptcy), careers for staff, entrenchment; free cash
+flow finances it (RJR: \$148m on \$2.8bn, 5.3\%). Remedies: value-based pay, ownership, debt.
+
+\section*{4. Braintree bonus (Higgins 1.2)}
+ROE $=100/5{,}000=2\%$, ROA $=1.43\%$; equity charge at 10\% $=500$; economic profit $100-500=-400$. The
+profit came from the boom (luck). \textbf{Reject}; tie any bonus to economic profit relative to peers.
+
+\section*{5. Stock pay and market-to-book (G\&T 18.7)}
+(1) Incentives: stock-based pay raises value (Mehran; +20\% at adoption). (2) Firm type: high-M/B growth
+firms have intangibles, discretion and poor accounting measures, so stock pay is the efficient contract.
+(Also signalling: options at \$20 are worth 10 to Jack (value 30), 0 to Peggy (value 15).)
+
+\section*{6. Chicago Bulls coach (G\&T 18.9)}
+IC: bonus $\ge B/\Delta_s$. Illustrative: wins $0.6/0.4\Rightarrow b=5$, expected pay 3; experts $0.9/0.3\Rightarrow
+b=1.667$, expected pay 1.5. (a) Wins: aligned, objective, cheap; but luck/roster risk, short-termism.
+(b) Decisions: filters luck, rewards long-term choices; but costly, subjective, non-verifiable,
+conformist. Best: wins relative to a benchmark plus an evaluation component.
+
+\section*{7. Chrysler vs Chevron (G\&T 18.6)}
+Chevron: filter the oil price (indexed/peer-relative pay; illustrative $R^2=0.7$ lets the slope rise
+$1/\sqrt{0.3}=1.83\times$), charge for capital to curb free-cash-flow overinvestment. Chrysler: high
+stock-based sensitivity (value depends on the CEO's strategy), limited explicit relative performance
+(aggressive competition among three automakers), watch risk-taking near distress.
+
+\section*{8. High Tech vs Super Tech (G\&T 18.3)}
+(1) Jacobs $25.5/75=34\%$: loses majority, bears less of perks; unit managers paid in diluted High Tech
+stock. (2) Keeps 51\% of High Tech; look-through $0.51\times0.55=28.05\%$ of Super Tech; unit managers paid
+in Super Tech stock (stronger incentives, market monitoring); but Jacobs gains $0.51-0.2805=0.2295$ per
+\$1 shifted from Super Tech to High Tech.
+
+\section*{9. Cybertex recap (G\&T 18.8)}
+$V=100$: managers' $0.5$ of equity becomes $0.5/20=2.5\%$ (from 1\%). (i) Fewer pet projects (2.5 times
+the cost borne; debt drains free cash). (ii) Ambiguous: levered equity rewards risk, but distress risk and
+undiversified human capital make managers conservative. (iii) Fewer long-term projects (overhang,
+cash commitments, distress fear).
+
+\section*{10. Stock options in \S3.1.1 (Amaro 3.1.5 \#3)}
+FOC $-\alpha U_1+U_2=0$; $dF/d\alpha=U_1/g_F<0$ (no wealth effects). Options raise the marginal stake to
+$\alpha+n\Delta$, like a higher $\alpha$: illustrative $U=\alpha(100-F)+\sqrt F$, $F^*=(0.5/\alpha)^2$: $V$ from 75
+($\alpha=0.10$) to 88.89 ($\alpha_{\text{eff}}=0.15$). Add: risk-taking and bondholder transfers, dilution,
+falling delta, managerial risk aversion, price noise, manipulation. Matches the book (p.~256).
+
+\section*{11. Condition (3.4) (Amaro 3.1.5 \#4)}
+$U'[w-f]=\lambda G'[f]$: equal MRS across states (Pareto-efficient risk sharing). Differentiating:
+$\dfrac{df}{d\theta}=\dfrac{R^P}{R^P+R^A}\dfrac{dw}{d\theta}$; constant fee if shareholders are risk neutral, full
+payoff minus a rent if the manager is. Matches the book (pp.~256--257).
+
+\section*{12. CARA $\Rightarrow$ linear fee (Amaro 3.1.5 \#6)}
+$e^{-\delta(w-f)}=\lambda e^{-\alpha f}\Rightarrow f=\dfrac{\delta}{\alpha+\delta}w+\dfrac{\ln\lambda}{\alpha+\delta}$. Similarity also holds:
+$U=(\alpha\lambda/\delta)G$. Matches the book (p.~257).
+
+\section*{13. Congruence and power (Tirole 3.10)}
+High-powered: NPV$^1=p_HR-I+(1-x)B$, $\mathcal P^1=p_H(R-B/\dpp)$. Low-powered ($R_b=0$):
+$\mathcal P^2=p_HR-x\dpp R$, NPV gap $x(\dpp R-B)>0$. Low-powered optimal only if (1) fails, (2) holds,
+which needs $x<\hat x=p_HB/[(\dpp)^2R]$; for $x\ge\hat x$ any funded scheme is high-powered. Illustrative
+($\hat x=0.45$): $x=0.2$, $I-A=7.6$: $7.2<7.6\le8.2$, low-powered. (ii) The congruent type can take the
+dissonant scheme, so rents are at least $p_HB/\dpp$ (or 0): menus cannot beat simple schemes. Matches
+the book (p.~575).
+
+\section*{14. Second best is not Pareto-efficient (Amaro 3.1.5 \#5)}
+Risk-neutral shareholders: Pareto efficiency = constant fee = no effort. Incentives need $f$ to vary, so
+$U'/G'$ varies ($\psi>0$). Illustrative ($G=\sqrt f$): $f_H=30.25$, $f_L=9$, pay 26 vs 25 first best;
+$1/G'=11,6$; $\psi=2$, $\lambda=10$. Risk-neutral manager: sell him the firm ($K=29$), $\psi=0$,
+Pareto-efficient. Matches the book (p.~257).
+
+\section*{15. Golden parachutes (Tirole 7.9)}
+$R_b^r=B/\dpp$, $T^r=0$; only the $q$-type's rent $\Pi\ge\max\{z^r(q_H-\tau)b,\,z^qq_Hb\}$ matters.
+$q_HR>L$: $T^{q*}=0$ (continuation is the cheaper currency, $q_HR_b+dT/dz^q=q_HR-L>0$); under (7.10)
+funding fails if $(1,z^*)$ violates (NM). $q_HR<L$: $z^{q*}=0$, $T^{q*}=z^r(q_H-\tau)B/\dpp$; illustrative
+$T^*=0.6$, NPV 1.5 vs 1.333 without the parachute. Matches the book (pp.~604--605).
+
+\end{document}

@@ -5,7 +5,7 @@ date: 2026-11-10
 
 # Exercise list — Topic 4 (A and B): Moral hazard, credit rationing, asset substitution, debt overhang, renegotiation
 
-One list for Prof. Ricca's Topic 4A (`Aula/Topic4_A.pdf`: the Holmström–Tirole fixed-investment model, pledgeable income, credit rationing, debt versus equity) and Topic 4B (`Aula/Topic4_B.pdf`: asset substitution, debt overhang, renegotiation and bankruptcy design), mapped in [[Map/lectures-index|lectures-index]]. 15 real exercises ordered easy → really hard, copied verbatim from the course books for personal study; pages are printed, with the PDF page in brackets. Every block is taken unchanged from lists R4 and R7, where it already passed `tools/check_lists.py`; the last column says where. No book exercise covers Indarte's default-as-insurance model or the Karlan–Zinman experiment. Links: [[Map/exercises-index|exercise index]] · [[rules/04_agencia_estrutura_governanca|rules]] · [[Listas/lista-r4-moral-hazard-financing-capacity|R4]] · [[Listas/lista-r7-lectures-3-5|R7]].
+One list for Prof. Ricca's Topic 4A (`Aula/Topic4_A.pdf`: the Holmström–Tirole fixed-investment model, pledgeable income, credit rationing, debt versus equity) and Topic 4B (`Aula/Topic4_B.pdf`: asset substitution, debt overhang, renegotiation and bankruptcy design), mapped in [[Map/lectures-index|lectures-index]]. 19 exercises. Exercises 1–15 are real exercises ordered easy → really hard, copied verbatim from the course books for personal study; pages are printed, with the PDF page in brackets. Every such block is taken unchanged from lists R4 and R7, where it already passed `tools/check_lists.py`; the last column says where. Exercises 16–19 (easy → really hard) are **original exercises**, not book exercises: no book exercise covers Indarte's default-as-insurance model (block 4B.7, slides 41–44) or the Karlan–Zinman experiment that separates adverse selection from moral hazard (block 4B.8, slides 45–58). The user agreed on 2026-11-12 to original exercises for these two topics; each one opens with an `**Origin:**` line instead of a `**Source:**` line, its answer is in the solutions file, and the data in exercise 19 are hypothetical. Links: [[Map/exercises-index|exercise index]] · [[rules/04_agencia_estrutura_governanca|rules]] · [[Listas/lista-r4-moral-hazard-financing-capacity|R4]] · [[Listas/lista-r7-lectures-3-5|R7]].
 
 | Lecture block | Exercises |
 |---|---|
@@ -16,6 +16,8 @@ One list for Prof. Ricca's Topic 4A (`Aula/Topic4_A.pdf`: the Holmström–Tirol
 | 4B.1–4B.3 Asset substitution and remedies | 2, 4, 6, 14 |
 | 4B.4 Debt overhang | 1, 3, 7 |
 | 4B.5–4B.6 Renegotiation and bankruptcy design | 12, 15 |
+| 4B.7 Default as insurance (original) | 16, 17 |
+| 4B.8 Separating adverse selection from moral hazard (original) | 18, 19 |
 
 ## References
 
@@ -36,6 +38,10 @@ One list for Prof. Ricca's Topic 4A (`Aula/Topic4_A.pdf`: the Holmström–Tirol
 | 13 | Really hard | Tirole | Ch. 4 | 4.17 | 195 (208) | yes, p. 591 | Comparative statics of investment size and failure-contingent collateral with concave $R(I)$ and $\phi(C)$ | R7 ex. 16 |
 | 14 | Really hard | Tirole | Ch. 7 | 7.3 | 323–324 (336) | yes, p. 602 | Pledgeable liquidation value, asset substitution via hidden maintenance choice, minimum $A$ that neutralizes it | R7 ex. 17 |
 | 15 | Really hard | Tirole | Ch. 4 | 4.9 | 190–191 (203) | yes, p. 586 | Optimal continuation cutoff $r^*$ as short-term debt; why a borrower-friendly court hurts the borrower | R7 ex. 18 |
+| 16 | Easy | Original | — | — | Topic 4B slides 41–44 | no (solutions file) | Default as insurance: cash-flow vs. strategic default, cutoff $Y^*$, default probability, consumption floor | — |
+| 17 | Exam | Original | — | — | Topic 4B slides 37–44 | no (solutions file) | Comparative statics of $Y^*$ in $D$, $A$, $\sigma$, $E$; pricing anticipated default; when bankruptcy raises ex ante welfare | — |
+| 18 | Exam | Original | — | — | Topic 4B slides 45–58 | no (solutions file) | Two-type, two-effort Karlan–Zinman model: take-up, effort, default table; which comparison identifies selection and which moral hazard | — |
+| 19 | Really hard | Original | — | — | Topic 4B slides 45–58; Topic 4A; Topic 3 | no (solutions file) | Hypothetical three-rate results: effects, $z$-tests, slide-58 regression, backward-bending lender return, Holmström–Tirole IC with dynamic incentives | — |
 
 ## Tier 1 — Easy
 
@@ -1052,3 +1058,161 @@ The *(expected) pledgeable income* is then
 
 $$\mathcal{P} = p_H\left(R - \frac{B}{\Delta p}\right).$$
 
+---
+
+## Original exercises (no book exercise exists)
+
+None of the six course books has an exercise on default as insurance (Indarte 2023, Topic 4B block 4B.7, slides 41–44) or on separating adverse selection from moral hazard (Karlan–Zinman 2009, block 4B.8, slides 45–58). The four exercises below are original, written with the user's agreement (2026-11-12), and are numbered after the book exercises. They go from easy (16) to really hard (19). All numbers are invented for practice; the data in exercise 19 are hypothetical and are **not** Karlan and Zinman's estimates. Answers: `Listas/lista-topic4-moral-hazard-overhang-solutions.pdf`, sections 16–19.
+
+### 16. Default as insurance: the default cutoff
+**Origin:** original exercise on default as insurance (Indarte 2023), built on Prof. Ricca's Topic 4B slides 41–44 (Aula/Topic4_B.pdf) · Answer: in the solutions file
+
+A household enters next period owing a debt payment $D = 12$. It holds liquid assets $A = 5$ (so $A < D$) that lenders cannot seize, and it receives an income $Y$ that is uniformly distributed on $[\underline Y, \bar Y] = [5, 25]$, so that $F(a) = \Pr[Y \le a] = (a - 5)/20$ for $a \in [5, 25]$. The household is risk-averse with utility of consumption $u(C) = \sqrt{C}$ (so $u(0) = 0$, $u' > 0$, $u'' < 0$). If it defaults, a court lets it keep the minimum income level $E = 4$ (note $E < \underline Y$); creditors receive the garnished income $Y - E$, up to the amount due $D$; and the household bears a non-pecuniary cost of default $\sigma = 1$, measured in utility units and subtracted from $u$. If it repays, it consumes $A + Y - D$; if it defaults, it consumes $A + E$. There is no later period and no other decision.
+
+(a) For which incomes is the household unable to repay (cash-flow default)? What is the probability of that event?
+
+(b) For incomes at which it can repay, write the condition under which it nevertheless chooses to default (strategic default). Show that $u(A + E) - \sigma > 0$ and find the cutoff $Y^*$ defined by $u(A + Y^* - D) = u(A + E) - \sigma$. Check that $D - A < Y^* < D + E$, and explain why the second inequality matters for what the creditors receive in default.
+
+(c) Compute the default probability $p = F(Y^*)$ and split it into its cash-flow and strategic parts.
+
+(d) For $Y = 6$, $Y = 9$ and $Y = 20$: does the household repay or default? Give its consumption, its utility (net of $\sigma$ if it defaults) and the creditors' receipts.
+
+(e) Compute the creditors' expected receipts conditional on default, $E[\,Y - E \mid Y < Y^*\,]$, and the household's consumption floor. In two sentences, explain in what sense default works as insurance here.
+
+#### Context needed to solve it
+
+The model is the one on Prof. Ricca's Topic 4B slides 41–44 (Aula/Topic4_B.pdf), based on Indarte (2023), "Moral hazard versus liquidity in household bankruptcy", *Journal of Finance* 78(5).
+
+*From the slides (41–44):* In the next period, an individual has a debt payment $D$; liquid assets $A < D$, which lenders cannot seize; and income $Y \in [\underline Y, \bar Y]$ distributed according to a cdf $F(\cdot)$, $\Pr[Y \le a] = F(a)$. The individual is risk-averse with utility $u(C)$, where $u(0) = 0$, $u' > 0$ and $u'' < 0$. In case of default, courts determine that the individual retains a minimum income level $E$, where $E < \underline Y$; creditors receive $Y - E$ (wage garnishment) up to the amount due $D$. Default entails a non-pecuniary cost $\sigma > 0$. If $A + Y < D$, individuals cannot repay (cash-flow default). If $A + Y \ge D$, individuals can choose not to repay (strategic default): if they repay, they consume $A + Y - D$; if they default, they consume $A + E$. When $A + Y \ge D$ (or $Y \ge D - A$), the individual defaults whenever
+
+$$u(A + Y - D) < u(A + E) - \sigma.$$
+
+As long as $u(A + E) - \sigma > 0$, there is a $Y^* > D - A$ such that $u(A + Y^* - D) = u(A + E) - \sigma$, and the individual defaults whenever $Y < Y^*$. Default acts as insurance whenever income drops below a given level: it guarantees a consumption of $A + E$ when income is too low. Since the individual is risk-averse, default can increase welfare by making the individual bear less income risk. The default probability is $p = \Pr[Y \le Y^*] = F(Y^*)$.
+
+Uniform distribution on $[a, b]$: density $1/(b - a)$, $E[Y \mid Y < y] = (a + y)/2$ for $y \in [a, b]$.
+
+---
+
+### 17. Default as insurance: comparative statics, the price of credit and ex ante welfare
+**Origin:** original exercise on default as insurance (Indarte 2023) and the ex ante cost of soft debt, built on Prof. Ricca's Topic 4B slides 37–44 (Aula/Topic4_B.pdf) · Answer: in the solutions file
+
+Baseline. A household owes a debt payment $D$ next period. It holds liquid assets $A = 5$ that lenders cannot seize, and its income $Y$ is uniform on $[5, 25]$, with cdf $F(a) = (a - 5)/20$ and density $F'(a) = 1/20$. Its utility of consumption is $u(C) = \sqrt{C}$. In default it keeps the minimum income $E = 4$ and consumes $A + E$; creditors receive $Y - E$, up to $D$; and the household bears a non-pecuniary cost $\sigma$ (in utility units, subtracted from $u$). If it repays it consumes $A + Y - D$. It defaults if and only if $Y < Y^*$, where $Y^*$ solves
+
+$$u(A + Y^* - D) = u(A + E) - \sigma, \qquad Y^* \in (D - A,\ D + E),$$
+
+and the default probability is $p = F(Y^*)$. In the baseline $D = 12$ and $\sigma = 1$, which gives $Y^* = 11$ and $p = 0.3$. Lenders are competitive and risk-neutral, the riskless rate is $0$, and a lender values a claim at its expected repayment.
+
+(a) Differentiate the cutoff equation implicitly and derive $dY^*/dD$, $dY^*/dA$, $dY^*/d\sigma$ and $dY^*/dE$ for a general increasing and strictly concave $u$, with their signs. (Hint: first show that $\sigma > 0$ implies $A + Y^* - D < A + E$.) Evaluate each at the baseline, give the effect on the default probability, $dp/dx = F'(Y^*)\,dY^*/dx$, and check that your $dp/dE$ matches the expression on slide 44. Explain why more unseizable liquid assets $A$ *lower* the default probability.
+
+(b) At the baseline ($D = 12$, $\sigma = 1$), compute the value $Q$ of the lender's claim (its expected repayment) and the promised interest rate $D/Q - 1$ that a borrower pays if the amount lent is $Q$.
+
+(c) The household must raise $L = 9.6$ at date 0 from these lenders; what it does with the money is the same in every regime and is ignored. Compare two legal regimes.
+- Regime N (no default): courts enforce repayment in full in every state. This is feasible because $A + Y \ge 10 > 9.6$, so the debt is riskless and $D_N = 9.6$.
+- Regime B (bankruptcy as above, $\sigma = 1$): lenders set the face value $D_B$ so that $Q(D_B) = 9.6$. Show that $D_B = 12$.
+
+For each regime compute the household's expected utility (net of $\sigma$ in default states) and its certainty equivalent $u^{-1}(EU)$, and the expected consumption $E[C]$. Which regime does the household prefer ex ante?
+
+(d) Now let $\sigma = 0.1$, everything else unchanged. Show that, with $c_r \equiv \big(\sqrt{A + E} - \sigma\big)^2$, the cutoff is $Y^* = D - A + c_r$ and the lender's value satisfies $40\,Q(D) = -D^2 + 42D + (c_r - 9)^2 - 1$ (as long as $5 \le Y^* \le 25$). Find $D_B$ from $Q(D_B) = 9.6$, then $Y^*$, $p$, the promised rate $D_B/9.6 - 1$, the expected utility and its certainty equivalent. Compare with Regime N.
+
+(e) Explain why bankruptcy raises ex ante welfare in (d) but lowers it in (c), although in both cases lenders price the anticipated default and the household's expected consumption is the same as in Regime N. *(Harder, numerical.)* Find, to two decimals, the cost $\bar\sigma$ at which the household is indifferent between Regime B and Regime N.
+
+#### Context needed to solve it
+
+The model is the one on Prof. Ricca's Topic 4B slides 41–44 (Aula/Topic4_B.pdf), based on Indarte (2023); slides 37–40 give the ex ante side.
+
+*From the slides (41–44):* In the next period, an individual has a debt payment $D$; liquid assets $A < D$, which lenders cannot seize; and income $Y \in [\underline Y, \bar Y]$ with cdf $F(\cdot)$. The individual is risk-averse with utility $u(C)$, $u(0) = 0$, $u' > 0$, $u'' < 0$. In case of default, courts determine that the individual retains a minimum income level $E < \underline Y$; creditors receive $Y - E$ (wage garnishment) up to the amount due $D$. Default entails a non-pecuniary cost $\sigma > 0$. If $A + Y < D$, individuals cannot repay (cash-flow default); if $A + Y \ge D$, they can choose not to repay (strategic default). If they repay, they consume $A + Y - D$; if they default, they consume $A + E$. The individual defaults whenever $Y < Y^*$, where $u(A + Y^* - D) = u(A + E) - \sigma$. Default acts as insurance: it guarantees a consumption of $A + E$ when income is too low, and since the individual is risk-averse, default can increase welfare by making the individual bear less income risk. The default probability is $p = F(Y^*)$. An increase in the generosity of debt relief $E$ provides more insurance, but it also increases default rates (and thus interest rates in equilibrium):
+
+$$\frac{\partial p}{\partial E} = F'(Y^*)\,\frac{u'(A + E)}{u'(A + Y^* - D)} > 0.$$
+
+*From the slides (39–40):* By undermining incentives, the prospect of renegotiation can increase the default risk of debt contracts, leading to credit rationing and higher costs. The prospect of renegotiation can be ex ante inefficient; public policy should take into account costs and benefits.
+
+Tools: implicit-function theorem, $dY^*/dx = -(\partial G/\partial x)/(\partial G/\partial Y^*)$ for $G(Y^*, x) = 0$; $\int y\,dy = y^2/2$, $\int (a + y)^{1/2} dy = \tfrac23 (a + y)^{3/2}$. A random consumption $C_1$ that has the same mean as $C_2$ and crosses it once from above (higher in low states, lower in high states) is less risky: every risk-averse household prefers it.
+
+---
+
+### 18. Karlan–Zinman: which comparison identifies selection and which identifies moral hazard
+**Origin:** original exercise on separating adverse selection from moral hazard (Karlan–Zinman 2009), built on Prof. Ricca's Topic 4B slides 45–58 (Aula/Topic4_B.pdf) · Answer: in the solutions file
+
+A lender makes one-period loans of size $I = 1$ to penniless, risk-neutral individuals whose outside option is worth $0$. Half the population is of a safe type $\theta = S$ and half of a risky type $\theta = R$; the lender cannot tell them apart. A borrower's project succeeds with probability $\pi(\theta, e)$ and then yields $Y(\theta)$; it fails with probability $1 - \pi(\theta, e)$ and yields $0$. Effort $e$ is either low ($L$, cost $0$) or high ($H$, cost $c = 0.17$), is chosen by the borrower and is not observed by the lender. A borrower who is indifferent chooses $H$.
+
+| Type | $Y(\theta)$ | $\pi(\theta, H)$ | $\pi(\theta, L)$ |
+|---|---|---|---|
+| $S$ (safe) | $1.35$ | $0.9$ | $0.8$ |
+| $R$ (risky) | $1.80$ | $0.7$ | $0.5$ |
+
+(The two types' projects need not have the same mean.) On success the borrower repays $1 + r_c$, where $r_c$ is the contract rate; the cost of defaulting when the project succeeds is large enough that she always repays when she can (no strategic default). On failure she defaults and bears a cost $C_b(r_f)$, the forgone value of future loans, which depends on the rate $r_f$ at which future loans will be offered: $C_b = 0.25$ if future loans carry the normal rate $r$, and $C_b = 0.45$ if the lender has promised future loans at a low rate to borrowers who repay (the dynamic repayment incentive). So a borrower of type $\theta$ who has taken a loan at contract rate $r_c$ and faces default cost $C_b$ and effort $e$ gets
+
+$$\pi(\theta, e)\,\big[Y(\theta) - (1 + r_c)\big] - \big[1 - \pi(\theta, e)\big]\,C_b - \text{cost}(e).$$
+
+There are two rates, $r_L = 10\%$ and $r_H = 30\%$. Timing:
+- Stage 1: each individual receives a randomly assigned offer rate $r_o \in \{r_L, r_H\}$ and decides whether to take the loan, believing that the contract rate will be $r_c = r_o$ and that future loans carry the normal rate ($C_b = 0.25$).
+- Stage 2: among those who took up at $r_o = r_H$, a random half is surprised with a lower contract rate $r_c = r_L$; the rest keep $r_c = r_H$. Independently, a random half of all borrowers is told that future loans will be at the low rate if they repay ($C_b = 0.45$). Each borrower then chooses effort.
+- Stage 3: the project succeeds or fails, and the borrower repays or defaults.
+
+This creates three groups, each split by the dynamic incentive: group A ($r_o = r_c = r_L$), group B ($r_o = r_H$, $r_c = r_L$) and group C ($r_o = r_c = r_H$).
+
+(a) Show that a borrower chooses $H$ if and only if $[\pi(\theta, H) - \pi(\theta, L)]\,[Y(\theta) - (1 + r_c) + C_b] \ge c$. Find the effort of each type for each of the four combinations of $r_c \in \{r_L, r_H\}$ and $C_b \in \{0.25, 0.45\}$.
+
+(b) Which types take up the loan at $r_o = r_L$ and at $r_o = r_H$? Give the take-up rate at each offer rate.
+
+(c) Build the table of default rates (share of borrowers who default) for the six cells: groups A, B, C, each without and with the dynamic incentive.
+
+(d) Which pair of cells differs only in who selected in, and so identifies hidden information (adverse selection)? Which pair differs only in the contract rate, and which only in the dynamic incentive, so that they identify hidden action (moral hazard)? Compute each effect in percentage points and explain why the dynamic incentive matters in group C but not in groups A and B.
+
+(e) An analyst without an experiment compares borrowers who were offered and paid $r_H$ with those who were offered and paid $r_L$ (cells C and A, no dynamic incentive). Compute the difference in default rates and decompose it into a selection part and a moral-hazard part. Why can this comparison alone not tell the two apart?
+
+(f) For the risky type, find the highest contract rate $r_c$ at which it still chooses $H$, without and with the dynamic incentive. Relate this bound to the Holmström–Tirole incentive constraint $(\Delta p) R_b \ge B$ and to pledgeable income.
+
+#### Context needed to solve it
+
+The design and model are those of Prof. Ricca's Topic 4B slides 45–58 (Aula/Topic4_B.pdf), based on Karlan and Zinman (2009), "Observing unobservables: Identifying information asymmetries with a consumer credit field experiment", *Econometrica* 77(6). The exercise replaces the slides' continuous type and effort with two types and two effort levels.
+
+*From the slides (45–47):* A positive correlation between interest rates and default can arise due to adverse selection (those with a relatively high probability of default are more likely to accept a high rate) or moral hazard (a high interest rate can undermine incentives and increase the default probability). Karlan and Zinman randomize interest rates across three dimensions: the interest rate offered in a direct-mail solicitation (the offer rate), the actual interest rate on the loan contract (the contract rate), and the interest rate on future loans conditional on not defaulting (the dynamic repayment incentive). The design compares borrowers who select in at different rates and then face identical repayment incentives (adverse selection) and borrowers who select at identical rates and then face different repayment incentives (moral hazard). It separates hidden information, defined as ex ante selection effects, which include both selection on unobserved risk and selection on unobserved anticipated effort, from hidden action, ex post incentive effects. It cannot disentangle the two sources of hidden information.
+
+*From the slides (48–52):* Stage 1: the individual decides whether to take up a loan at an exogenous rate $r_o$, believing that future loans will be offered at a normal rate $r$. Stage 2: the lender randomly lowers the rate for some borrowers to $r_c < r_o$; with an independent randomization, it lowers the rate of future loans to $r_f < r$ for some borrowers (conditional on repaying). Given $r_c$ and $r_f$ the borrower chooses effort. Stage 3: cash flows are realized and the borrower decides whether to repay. A penniless risk-neutral individual has a project that requires $I = 1$; with success probability $\pi(\theta_i, e)$ it yields $Y(\theta_i)$, otherwise $0$. The borrower bears a state-specific cost of default $C_i(r_f)$, $i = g, b$, decreasing in $r_f$ (the forgone discounted profits from future loans). With no strategic default, the borrower solves $\max_e \pi(\theta_i, e)[Y(\theta_i) - (1 + r_c)] + (1 - \pi(\theta_i, e))[-C_b(r_f)] - e$. Hidden action effect 1: effort is decreasing in $r_c$. Hidden action effect 2: effort increases with the cost of default, so repayment increases when $r_f$ decreases.
+
+*From the slides (55–56):* Hidden information effect: a higher offer rate leads to a riskier pool of clients and thus a higher default rate. Experiment: the offer rate is low or high, $r_o \in \{r_L, r_H\}$. Of those who take up $r_o = r_H$, some are randomly surprised with a lower contract rate $r_c = r_L$, while the rest keep $r_o = r_c = r_H$. Hidden information: compare those who were offered and accepted $r_o = r_c = r_L$ with those who were offered and accepted $r_o = r_H$ but ended up with $r_c = r_L$. Hidden action: compare those who took up the high rate and kept it, $r_o = r_c = r_H$, with those who took up $r_o = r_H$ but ended up with $r_c = r_L$.
+
+*From Tirole §3.2.2, pp. 116–117 (Holmström–Tirole fixed-investment model, Topic 4A):* the borrower, who receives $R_b$ on success and $0$ on failure, behaves (success probability $p_H$) rather than misbehaves (success probability $p_L$, private benefit $B$) if $(\Delta p) R_b \ge B$, $\Delta p = p_H - p_L$. The highest income in the case of success that can be pledged to lenders is $R - B/\Delta p$, and the pledgeable income is $p_H(R - B/\Delta p)$.
+
+---
+
+### 19. Reading a three-rate experiment: selection, incentives and credit rationing
+**Origin:** original exercise on separating adverse selection from moral hazard (Karlan–Zinman 2009) and its implications for credit rationing, built on Prof. Ricca's Topic 4B slides 45–58 (Aula/Topic4_B.pdf), Topic 4A (Aula/Topic4_A.pdf) and Topic 3 slides 4–19 and 47–55 (Aula/Topic_3.pdf) · Answer: in the solutions file
+
+A consumer lender runs a three-rate field experiment like Karlan and Zinman's. **The data below are hypothetical, invented for this exercise; they are not Karlan and Zinman's estimates.** Offer rates $r_o$ and contract rates $r_c$ take two values, $r_L = 30\%$ and $r_H = 40\%$ per loan (four-month loans). Group A was offered and paid $r_L$; group B was offered $r_H$, took the loan, and was then surprised with $r_c = r_L$; group C was offered and paid $r_H$. Independently of the rates, a random half of each group received the dynamic repayment incentive: future loans at a lower rate if this loan is repaid ($C_i = 1$; $C_i = 0$ otherwise). A loan is in default if it is not repaid; assume defaulted loans repay nothing.
+
+| Group | $r_o$ | $r_c$ | Dynamic incentive | Loans $n$ | Defaults |
+|---|---|---|---|---|---|
+| A | 30% | 30% | no | 600 | 69 |
+| A | 30% | 30% | yes | 600 | 51 |
+| B | 40% | 30% | no | 750 | 132 |
+| B | 40% | 30% | yes | 750 | 108 |
+| C | 40% | 40% | no | 750 | 141 |
+| C | 40% | 40% | yes | 750 | 114 |
+
+(a) Compute the default rate in each cell and in each group (A, B, C, pooling the two halves), and the pooled default rates with and without the dynamic incentive. For each of the three effects — selection (hidden information), repayment burden (hidden action effect 1) and dynamic incentive (hidden action effect 2) — state which comparison identifies it and why, and compute it in percentage points. Also compute the dynamic-incentive effect within each group.
+
+(b) For each of the three effects, compute the standard error of the difference of two proportions, $\text{SE} = \sqrt{\hat p_1(1 - \hat p_1)/n_1 + \hat p_2(1 - \hat p_2)/n_2}$, the $z$-statistic and the 95% confidence interval ($\pm 1.96\,\text{SE}$). Which effects are significant at 5%?
+
+(c) Slide 58 estimates the linear probability model $Y_i = \alpha + \beta_o r_o + \beta_c r_c + \beta_b C_i + \varepsilon_i$, where $Y_i$ is the default indicator in percentage points ($0$ or $100$) and the rates are in percentage points. Explain why, in this design, the OLS estimates satisfy $\beta_o (r_H - r_L) = \bar d_B - \bar d_A$, $\beta_c (r_H - r_L) = \bar d_C - \bar d_B$ and $\beta_b = $ the pooled dynamic-incentive effect ($\bar d_g$ is the default rate of group $g$). Compute $\beta_o$, $\beta_c$, $\beta_b$ and $\alpha$, and state which coefficient signals hidden information and which signal hidden action.
+
+(d) A loan officer proposes raising the rate on new loans from $30\%$ to $40\%$. Using groups A and C, compute the expected gross repayment per unit lent, $(1 - \bar d)(1 + r)$, at each rate. Decompose the change into a rate effect, a selection effect and a repayment-burden effect. What does the result imply for the shape of the lender's expected return as a function of the rate, and why may the lender ration credit rather than raise the rate? Relate the selection part to the lemons problem of Topic 3.
+
+(e) Link the hidden-action results to the Holmström–Tirole fixed-investment model. A borrower with assets $A$ needs $I = 1$; the project yields $R = 1.5$ with probability $p_H = 0.9$ if she behaves and $p_L = 0.5$ if she misbehaves, in which case she enjoys a private benefit $B = 0.2$. Lenders are competitive and risk-neutral with a zero riskless rate. She receives $R_b$ on success and $0$ on failure; in addition, a dynamic incentive makes her lose $C_b \ge 0$ (the value of cheaper future loans) if the project fails. (i) Write the incentive constraint and show that it becomes $(\Delta p)(R_b + C_b) \ge B$. (ii) Compute the pledgeable income and the minimum assets $\bar A$ needed for financing for $C_b = 0$ and $C_b = 0.2$. (iii) Compute the borrower's net utility when financed with $C_b = 0.2$, counting the loss $C_b$ as a deadweight cost. (iv) Use (i)–(iii) to interpret the repayment-burden and dynamic-incentive effects of part (a).
+
+(f) What can this design not tell you about the source of the selection effect? Give one reason why a significant selection effect does not by itself prove adverse selection on risk type.
+
+#### Context needed to solve it
+
+The design and the regression are those of Prof. Ricca's Topic 4B slides 45–58 (Aula/Topic4_B.pdf), based on Karlan and Zinman (2009), *Econometrica* 77(6). The data are hypothetical.
+
+*From the slides (45–47):* A positive correlation between interest rates and default can arise due to adverse selection (those with a relatively high probability of default are more likely to accept a high rate) or moral hazard (a high interest rate can undermine incentives and increase the default probability). Karlan and Zinman randomize the offer rate, the contract rate, and the interest rate on future loans conditional on not defaulting (the dynamic repayment incentive). The design compares borrowers who select in at different rates and then face identical repayment incentives (adverse selection) with borrowers who select at identical rates and then face different repayment incentives (moral hazard). It separates hidden information — ex ante selection effects, which include both selection on unobserved risk and selection on unobserved anticipated effort — from hidden action, ex post incentive effects. The design cannot disentangle the two sources of hidden information.
+
+*From the slides (52, 55–56):* Hidden action effect 1: effort is decreasing in $r_c$. Hidden action effect 2: effort increases as the cost of default increases, so repayment increases when $r_f$ decreases. Hidden information effect: a higher offer rate leads to a riskier pool of clients and thus a higher default rate. Experiment: $r_o \in \{r_L, r_H\}$; of those who take up $r_o = r_H$, some are randomly surprised with $r_c = r_L$, while the remainder keep $r_o = r_c = r_H$. Hidden information: compare $r_o = r_c = r_L$ with $r_o = r_H$, $r_c = r_L$. Hidden action: compare $r_o = r_c = r_H$ with $r_o = r_H$, $r_c = r_L$.
+
+*From the slides (58):* Empirical model $Y_i = \alpha + \beta_o r_o + \beta_c r_c + \beta_b C + X_i + \varepsilon$, where $Y_i$ is a measure of default. $\beta_c > 0$ identifies hidden action effect 1 (effect of a higher repayment on effort); $\beta_b < 0$ identifies hidden action effect 2 (effect of higher dynamic incentives on effort); $\beta_o > 0$ identifies adverse selection (hidden information effect, effect of a higher offer rate on default).
+
+*From Tirole §3.2.2, pp. 116–117 (Topic 4A):* the borrower behaves if $p_H R_b \ge p_L R_b + B$, or $(\Delta p) R_b \ge B$ (IC$_b$); the highest income in the case of success that can be pledged to lenders is $R - B/\Delta p$; the pledgeable income is $\mathcal P = p_H(R - B/\Delta p)$; the project is financed if and only if $\mathcal P \ge I - A$, i.e. $A \ge \bar A \equiv I - \mathcal P$ (credit rationing below $\bar A$).
+
+*From Topic 3 (Aula/Topic_3.pdf; summary in Map/lectures-index.md, blocks 3.2–3.3 and 3.6):* in the lemons model of credit, lenders who cannot tell good from bad borrowers offer one pooling contract, good types cross-subsidise bad types, and the market breaks down when the share of good types is too low. In Stiglitz–Weiss (1981, slides 47–55), borrowers' projects are mean-preserving spreads of each other; above a threshold rate the safe types leave the pool, the bank's expected return is non-monotonic in the rate, the loan supply curve bends backward, and equilibrium credit rationing can occur.
