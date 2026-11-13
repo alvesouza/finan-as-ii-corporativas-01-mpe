@@ -28,6 +28,15 @@ This overrides the references-only format of `/exercise-plan` whenever real exer
    problem cannot be solved where it is read, which defeats its purpose.
    *Check:* reading only the block, every input the solution uses appears in it.
 
+4. When a topic in the list's scope has no exercise in any course book, problem set or past
+   exam, ask the user whether to write original exercises for it before building the list.
+   Do not leave the gap unmentioned, and do not present an original exercise as a book one.
+   *Why:* an unmentioned gap reads as "this topic is covered", and an invented exercise under a
+   `**Source:**` line sends the reader to a page that does not exist. Whether original practice
+   is worth having, and what it draws on (slides, a section's model, a paper), is the user's call.
+   *Check:* the list intro names each uncovered topic and the user's answer; original exercises
+   open with `**Origin:**`, never `**Source:**`.
+
 ## Avoid
 
 3. Paraphrasing, summarizing or trimming a statement. Keep the source's words, order and
@@ -44,3 +53,6 @@ This overrides the references-only format of `/exercise-plan` whenever real exer
   that are not part of the problem; write currency as `\$`, never a bare `$`.
 - A figure that cannot be reproduced is described with all its values (axes, points, labels).
 - A dependency on an earlier problem is copied as part 0 of the same block, with its own source.
+- Original exercise (only after the user agreed, rule 4): `**Origin:** original exercise on <topic>, built on <slides p. X | Book §y, pp. a–b> · Answer: in the solutions file`,
+  then a blank line, then the statement. `tools/check_lists.py` anchors only on `**Source:**`,
+  so it skips these blocks.
