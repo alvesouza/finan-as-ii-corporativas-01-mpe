@@ -1,0 +1,192 @@
+% Formula sheet, Topics 1-2B — SHORT version (2 pages, two columns, 9pt). Condensed from formula-sheet-topics-1-2b.tex.
+% Compile: pdflatex twice; check pdffonts (Type 1, uni = yes) and that the PDF has 2 pages.
+\documentclass[10pt,a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=0.9cm,top=0.8cm,bottom=0.9cm]{geometry}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\setlist{nosep,leftmargin=0.9em,label=\textbullet}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.2pt}
+\setlength{\columnsep}{9pt}
+\setlength{\columnseprule}{0.2pt}
+\setlength{\abovedisplayskip}{1.5pt}\setlength{\belowdisplayskip}{1.5pt}
+\setlength{\abovedisplayshortskip}{1pt}\setlength{\belowdisplayshortskip}{1pt}
+\newcommand{\T}[1]{\par\smallskip{\color{blue!55!black}\bfseries\large #1}\par\smallskip}
+\newcommand{\B}[1]{\par\medskip{\color{blue!55!black}\bfseries #1}\par}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\dd}{\displaystyle}
+
+\begin{document}
+\begin{center}
+{\bfseries\large Formula sheet --- Topics 1, 2A, 2B}\quad {\small Finan\c{c}as II (MPE Insper)}\\[-1pt]
+{\scriptsize $V=D+E$; $\tau$ corporate tax; $r_D,r_E,r_A$ expected returns; $r_U$ unlevered cost of capital; $g$ growth; $N$ shares.}
+\end{center}
+\vspace{-6pt}
+\begin{multicols}{2}
+
+% ===================================================================== TOPIC 1
+\T{Topic 1 --- Accounting}
+\B{Balance sheet}
+$A=L+E$ (book and market); $\Delta A=\Delta L+\Delta E$.\\
+Debt $\min(X,F)$ + equity $\max(X-F,0)=X$; $FCF_A=FCF_L+FCF_E$.\\
+$NWC=CA-CL$;\ Dep $=(K_0-S)/n$;\ $BV=$ cost $-$ acc.\ dep.\\
+Goodwill $=$ price $-$ fair value of net identifiable assets.
+\begin{itemize}
+\item Liabilities senior/specific, equity junior/residual. Intangibles mostly off the balance sheet; Dep is not cash.
+\end{itemize}
+
+\B{Book vs.\ market, leverage, liquidity}
+$E^{mkt}=PN$;\ $M/B=E^{mkt}/E^{book}$;\ net debt $=D-$Cash;\\
+$EV=E^{mkt}+D-\text{Cash}$;\ current $=CA/CL$;\ quick $=(CA-\text{Inv})/CL$.
+\begin{itemize}
+\item Market forward-, book backward-looking; book $E$ can be $<0$. High $M/B$ = growth. Covenants on book ratios.
+\end{itemize}
+
+\B{Income statement}
+Cash collected $=S-\Delta AR$;\ $GP=S-\text{COGS}$;\ $EBIT=GP-\text{Opex}$;\\
+$NI=(EBIT-\text{Int})(1-\tau)$;\ $E_{end}=E_{beg}+NI-\text{Div}$.\\
+$OI=(1-v)S-F$;\ $DOL=\%\Delta OI/\%\Delta S=1+F/OI$.
+\begin{itemize}
+\item Accrual and matching principles; Dep spreads capex. COGS $\approx$ variable, opex $\approx$ fixed.
+\end{itemize}
+
+\B{Ratios}
+$EPS=NI/N$; margins $GP/S$, $OI/S$, $NI/S$; AR days $=AR/(S/365)$; AP days $=AP/(\text{COGS}/365)$; coverage $=EBIT/\text{Int}$; $P/E$; economic earnings $=NI-r_EE$.
+\[ROE=\tfrac{NI}{E}=\tfrac{NI}{S}\cdot\tfrac{S}{A}\cdot\tfrac{A}{E}\ \text{(DuPont)},\quad ROA=\tfrac{NI}{A}\]
+\[ROIC=\tfrac{EBIT(1-\tau)}{D+E},\quad ROE=ROIC+\tfrac DE[ROIC-r_D(1-\tau)]\]
+$\operatorname{sd}(ROE)=(1+D/E)\operatorname{sd}(ROIC)$.
+\begin{itemize}
+\item Leverage raises ROE iff $ROIC>r_D(1-\tau)$, always raises risk. ROE ignores timing, risk, uses book values.
+\end{itemize}
+
+\B{Cash flows and FCF}
+$CFO=NI+\text{Dep}+\text{non-cash}-\Delta AR+\Delta AP-\Delta\text{Inv}$;\ $\Delta\text{Cash}=CFO+CFI+CFF$.
+\[\boxed{FCF=EBIT(1-\tau)+\text{Dep}-\text{Capex}-\Delta NWC}\]
+\[\boxed{FCFE=FCF-\text{Int}(1-\tau)+\Delta D}\]
+$CF_D=\text{Int}-\Delta D$;\ $FCFE+CF_D=FCF+\tau\,\text{Int}$.
+\begin{itemize}
+\item FCF $\to$ EV (WACC, or $r_U$ in APV); FCFE $\to$ equity ($r_E$). $\Delta NWC$: operating items only. Add back non-cash charges incl.\ deferred taxes.
+\end{itemize}
+
+% ===================================================================== TOPIC 2A
+\T{Topic 2A --- Valuation, NPV, MM}
+\B{Time value of money}
+Perpetuity $C/r$;\ growing $C_1/(r-g)$;\ annuity $\frac Cr[1-(1+r)^{-T}]$;\\
+growing annuity $\frac{C_1}{r-g}[1-(\frac{1+g}{1+r})^T]$;\ $EAR=(1+\frac{APR}{k})^k-1$;\\
+$1+r_{nom}=(1+r_{real})(1+\pi)$.
+
+\B{Present value and bonds}
+\[P_A=\sum_t\tfrac{\E[\tilde d_t]}{(1+r_t)^t},\quad P=\sum_{t\le T}\tfrac{c}{(1+r_t)^t}+\tfrac{F}{(1+r_T)^T}\]
+Zero: $r_T=(F/P)^{1/T}-1$;\ YTM $y$: $P=\sum CF_t/(1+y)^t$;\\
+$(1+r_2)^2=(1+r_1)(1+f_{1,2})$;\ $HPR=(P_1-P_0+c)/P_0$;\\
+$D_{mac}=\frac1P\sum t\,\frac{CF_t}{(1+y)^t}$,\ $\frac{\Delta P}{P}\approx-\frac{D_{mac}}{1+y}\Delta y$.
+\begin{itemize}
+\item Price $\downarrow$ when $y\uparrow$; premium iff $c>y$; pulls to par. Long, low-coupon = more sensitive. Callable $=$ bond $-$ call. Spread $=y_{corp}-y_{gov}$.
+\end{itemize}
+
+\B{CAPM, betas, comparables}
+$r=r_f+\beta(\E[r_m]-r_f)$;\ $\beta=\text{Cov}(r,r_m)/\text{Var}(r_m)$;
+\[r_A=\tfrac EV r_E+\tfrac DV r_D,\quad \beta_A=\tfrac EV\beta_E+\tfrac DV\beta_D\]
+$r_E=r_A+\frac DE(r_A-r_D)$;\ $\beta_E=\beta_A+\frac DE(\beta_A-\beta_D)$.
+\begin{itemize}
+\item Use the project's risk. Unlever each comparable, average $\beta_A$, relever at target $D/E$.
+\end{itemize}
+
+\B{Which cash flows; NPV; IRR}
+After-tax salvage $=SV-\tau(SV-BV)$;\ $TV_T=FCF_{T+1}/(r-g)$;\\
+$NPV=PV-c$;\ $IRR$: $0=-c+\sum \E[d_t]/(1+IRR)^t$.
+\begin{itemize}
+\item Incremental: opportunity costs and side effects in; sunk costs and unchanged overhead out; financing not in FCF; NWC invested then recovered; nominal with nominal.
+\item NPV $>0$ $\Leftrightarrow$ shareholder gain (any financing, frictionless). Fisher separation.
+\item IRR pitfalls: borrowing-type flows, multiple IRRs, scale/timing (use NPV or crossover rate).
+\end{itemize}
+
+\B{Debt vs.\ equity; state prices}
+$C_D=\min(A,F)=F-\max(F-A,0)$ (bond $-$ put);\ $C_E=\max(A-F,0)$ (call).\\
+Price $=\sum_s p_sx_s$;\ $\sum_sp_s=\frac1{1+r_f}$;\ $\pi_s=p_s(1+r_f)$;\ price $=\frac{\sum\pi_sx_s}{1+r_f}$;\\
+put--call parity $C-P=S-K/(1+r_f)$.
+\begin{itemize}
+\item Benchmark: competitive complete markets, same borrowing terms, no taxes, no bankruptcy costs, cash flows independent of financing. No arbitrage $\Leftrightarrow p_s>0$; find $p_s$ by replication.
+\end{itemize}
+
+\B{MM I, MM II, cost of debt}
+$V_L=V_U$;\ $V(K)=C(K)+\frac{K}{1+r_f}-P(K)=S$.
+\[r_E=r_A+\tfrac DE(r_A-r_D),\qquad r_{WACC}=r_A=r_U\ \text{(no taxes)}\]
+$D=\frac{F}{1+y}=\frac{F(1-p)+Cp}{1+r_D}\Rightarrow y>r_D$ if $p>0$.
+\begin{itemize}
+\item Proof by arbitrage with homemade leverage (or undoing it). Conservation of value: repackaging risk adds nothing.
+\item $r_E$ linear in $D/E$ while debt is safe, flatter once $r_D$ rises. Yield $=$ promised, not expected, return.
+\end{itemize}
+
+% ===================================================================== TOPIC 2B
+\T{Topic 2B --- Taxes, distress, trade-off}
+\B{Tax shield and MM with taxes}
+$ITS=\tau r_DD=\tau\cdot\text{Int}$;\ payout $(1-\tau)X+\tau r_DD$;
+\[\boxed{V_L=V_U+PV(ITS)}=D+E\]
+$\frac DVr_D+\frac EVr_E=\frac{V_U}{V_L}r_U+\frac{V_{ITS}}{V_L}r_{ITS}$.\\
+Recap: $P=\frac{V_U+PV(ITS)}{N_0}$ at announcement; shares bought $=D/P$.
+
+\B{By debt policy}
+\textit{Constant debt} ($r_{ITS}=r_D$): $V_{ITS}=\tau D$;\ $r_E=r_U+\frac DE(1-\tau)(r_U-r_D)$;\ $\beta_E=\beta_U[1+(1-\tau)\frac DE]$;\ $r_{WACC}=r_U(1-\tau\frac DV)$ ($g=0$).\\
+\textit{Target $D/V$, continuous} ($r_{ITS}=r_U$): $V_{ITS}=\frac{\tau r_DD}{r_U-g}$;\ $r_E=r_U+\frac DE(r_U-r_D)$;\ $r_{WACC}=r_U-\tau r_D\frac DV$.\\
+\textit{Annual}: multiply $V_{ITS}$ by $\frac{1+r_U}{1+r_D}$;\ $r_{WACC}=r_U-\tau r_D\frac DV\frac{1+r_U}{1+r_D}$.
+
+\B{WACC and APV}
+\[\boxed{r_{WACC}=\tfrac EVr_E+\tfrac DVr_D(1-\tau)}\]
+\[r_{WACC}-g=(r_U-g)\big(1-\tfrac{V_{ITS}}{V_L}\big)\]
+$APV=V_U+PV(ITS)-PV(\text{distress})+PV(\text{side effects})$.
+\begin{itemize}
+\item WACC: unlever comparables, relever at target $D/E$; assumes constant $D/E$. APV: known debt schedule. Same answer under constant $D/E$.
+\item Risky debt: shield on coupon paid, $\bar r_D=\E[C_{t+1}]/D_t$; after-tax cost $r_D-\tau\bar r_D$.
+\end{itemize}
+
+\B{Puzzle, personal taxes, distress}
+$V_L/V_U=1+\tau D/V_U$;\ Miller $G_L=\big[1-\frac{(1-\tau_c)(1-\tau_s)}{1-\tau_b}\big]D$.
+\begin{itemize}
+\item Default = transfer of control, not an MM violation. Direct costs (legal, fire sales) vs.\ indirect (customers, suppliers, workers; asset substitution, overhang, cashing out). Borne by shareholders ex ante.
+\end{itemize}
+
+\B{Static trade-off}
+$V_U=\frac{(1-\tau)\E[X]}{1+r_f}$;\ safe debt ($K<\underline X$): $V=V_U+\frac{\tau K}{1+r_f}$;
+\[V(K)=V_U+\tfrac{1}{1+r_f}\Big[\tau\Big(\textstyle\int_{\underline X}^{K}xh+K(1-H)\Big)-CH(K)\Big]\]
+FOC $\tau[1-H(K^*)]=Ch(K^*)$;\ $dK^*/d\tau>0$, $dK^*/dC<0$;\\
+uniform: $K^*=\bar X-C/\tau$ (if $C<\tau(\bar X-\underline X)$).
+
+\B{Bank capital; payout}
+\begin{itemize}
+\item More equity: ROE falls but so does risk and required $r_E$ (MM II); lost shield is a transfer, not a social cost; failure externality $\Rightarrow$ social optimum has more equity.
+\end{itemize}
+Sources $=$ uses: $X_t+\text{issues}_t=I_t+\text{Div}_t$;\ $V_t=\E\sum_{i\ge1}\delta^i(X_{t+i}-I_{t+i})$.
+\begin{itemize}
+\item Payout irrelevant given investment; dividend $\equiv$ repurchase in a perfect market.
+\end{itemize}
+
+\T{Exam traps}
+\begin{itemize}
+\item Negative book equity $\ne$ insolvency; profit $\ne$ cash; Dep is not a source of cash (only its tax saving is).
+\item EV $=E^{mkt}+D-$Cash, not market cap $+$ total liabilities. Say which $D/E$ (book or market).
+\item FCF taxes EBIT as if unlevered: no interest, no tax shield in FCF (shield goes in WACC or APV).
+\item $\Delta NWC$: operating items only (not excess cash, not short-term debt).
+\item Higher ROE $\ne$ better: check $ROIC$ vs.\ $r_D(1-\tau)$ and the added risk.
+\item Use asset betas of comparables; never discount a project at the firm's $r_E$.
+\item ``Debt is cheaper'' is wrong without taxes: $r_E$ rises to offset (MM II), WACC unchanged.
+\item Equity gets riskier with leverage even when debt is riskless (more claims on the same risk).
+\item The yield (or coupon) is not $r_D$ when default is possible.
+\item State prices are not probabilities ($\sum p_s=1/(1+r_f)$; $\pi_s$ are risk-neutral, not real).
+\item IRR does not rank projects (scale, timing, sign changes): use NPV.
+\item $V_{ITS}=\tau D$ only for permanent, constant, safe debt; with a target $D/E$ use $r_U$.
+\item $r_{WACC}=r_U(1-\tau D/V)$ only for constant debt and $g=0$.
+\item Bankruptcy costs, not default itself, break MM; they are paid by shareholders ex ante.
+\end{itemize}
+
+\end{multicols}
+\end{document}
