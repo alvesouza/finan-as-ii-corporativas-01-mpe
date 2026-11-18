@@ -1,0 +1,411 @@
+% =============================================================================
+% Worked solutions for Simulados/mock-midterm-topics-1-2b.pdf (Topics 1, 2A, 2B).
+% Statements: mock-midterm-topics-1-2b-statements.tex (shared with the exam paper).
+% Compile: python -I Simulados/mock-midterm-topics-1-2b-solutions_check.py (must print PASS),
+%          then pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Mock midterm, Topics 1--2B --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
+\makeatother
+\numberwithin{equation}{section}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\srcline}[1]{\par\noindent{\small\color{black!65}\textbf{Source:} #1}\par\smallskip}
+\newcommand{\statement}[1]{\par\smallskip\noindent\colorbox{black!5}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small #1}}\par\medskip}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newenvironment{notation}{\par\noindent\textbf{Notation.}\begin{itemize}[leftmargin=1.4em]}{\end{itemize}}
+\newcommand{\intuition}[1]{\par\medskip\noindent\textbf{Intuition.}~#1}
+\newcommand{\refline}[1]{\par\smallskip\noindent{\small\color{black!70}\textbf{Ref:} #1}}
+\newcommand{\rubric}[1]{\par\smallskip\noindent{\small\textbf{Marking guide (10 marks).}~#1}}
+\newcommand{\answer}[1]{\par\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Answer.}~#1}}\par}
+
+\input{mock-midterm-topics-1-2b-statements}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Finance II --- Mock Midterm Exam (Topics 1, 2A, 2B)}\\[4pt]
+  {\large Worked solutions}
+\end{center}
+
+{\sloppy\noindent Exam paper: \texttt{Simulados/mock-midterm-topics-1-2b.pdf}. Each question's full statement
+(grey box, with its source) comes first, then the solution step by step, a boxed answer and a marking
+guide. Money is in the units of each statement (\$ billion in 1.1, \$ million in 1.2--1.4). Rates are
+decimals inside equations. Every number is reproduced by
+\texttt{Simulados/mock-midterm-topics-1-2b-solutions\_check.py}. References: lecture slides
+\texttt{Aula\_Topic1}, \texttt{Aula\_Topic2A}, \texttt{Aula\_Topic2B} and the formula sheet
+\texttt{Notas/formula-sheet-topics-1-2b.pdf}.\par}
+
+% =============================================================================
+\section{Question 1.1 --- American Airlines vs.\ British Airways: which multiple?}
+
+\statement{\QoneA}
+
+\begin{notation}
+  \item $MC$: market capitalization (market value of equity); $D$: debt; $C$: cash; $R$: revenues.
+  \item $EV=MC+D-C$: enterprise value, the market value of the operating business (net of cash),
+        claimed jointly by equity and net debt.
+\end{notation}
+
+\subsection*{(a) Price-to-sales}
+\[
+  \frac{MC}{R}\Big|_{AMR}=\frac{1.7}{23.8}=0.0714,\qquad
+  \frac{MC}{R}\Big|_{BA}=\frac{2.2}{13.1}=0.1679 .
+\]
+On this measure British Airways looks about $0.1679/0.0714\approx2.35$ times as expensive per dollar of
+sales.
+
+\subsection*{(b) Enterprise value-to-revenue}
+\step{1}{Enterprise values}
+$EV_{AMR}=1.7+11.1-4.6=8.2$ and $EV_{BA}=2.2+4.7-2.6=4.3$ (\$ billion).
+
+\step{2}{Ratios}
+\[
+  \frac{EV}{R}\Big|_{AMR}=\frac{8.2}{23.8}=0.3445,\qquad
+  \frac{EV}{R}\Big|_{BA}=\frac{4.3}{13.1}=0.3282 .
+\]
+Once net debt is added back, the two airlines are valued almost the same per dollar of revenue.
+
+\subsection*{(c) Which comparison is meaningful}
+EV/revenue. Revenue is produced by the operating assets, which are financed by \emph{both} debt and
+equity, so the matching numerator is the value of the whole enterprise. Market capitalization is only
+the equity slice. Its size relative to revenue depends on leverage: American's net debt is
+$11.1-4.6=6.5$ against $2.1$ for British Airways, so its equity is a thin residual claim, and the
+price-to-sales ratio makes it look ``cheap'' only because it is more levered.
+
+\answer{(a) P/S: AMR $0.071$, BA $0.168$. (b) EV/R: AMR $0.345$, BA $0.328$. (c) EV/revenue is the
+meaningful comparison: numerator and denominator both refer to the whole firm, so it is not distorted by
+the very different leverage of the two airlines.}
+
+\intuition{This is MM read on a balance sheet: the left-hand side (operating value) is the same
+regardless of how the right-hand side is split. A multiple that mixes a firm-level flow (sales, EBITDA)
+with an equity-level value mixes the two sides.}
+\refline{Topic 1 slides (market-value balance sheet, enterprise value); formula sheet, Topic 1 block.}
+\rubric{3 for each ratio pair in (a) and (b) with the EV formula stated; 4 for (c): EV/R chosen,
+justified by matching claims (firm-level flow with firm-level value) and the leverage distortion.}
+
+% =============================================================================
+\section{Question 1.2 --- Elmdale Enterprises: incremental earnings and free cash flow}
+
+\statement{\QoneB}
+
+\begin{notation}
+  \item $EBIT_t=\text{Revenues}_t-\text{OpEx}_t-\text{Dep}_t$; $\tau=0.35$.
+  \item Incremental (unlevered) earnings $=EBIT_t(1-\tau)$: no interest, because financing is kept out
+        of project cash flows.
+  \item $FCF_t=EBIT_t(1-\tau)+\text{Dep}_t-\text{CapEx}_t-\Delta NWC_t$.
+\end{notation}
+
+\subsection*{(a) Incremental earnings}
+\begin{center}
+\begin{tabular}{lrr}
+  \toprule
+  \$ million & Year 1 & Year 2 \\ \midrule
+  Revenues & 125 & 160 \\
+  $-$ Operating expenses & $-40$ & $-60$ \\
+  $-$ Depreciation & $-25$ & $-36$ \\
+  $=$ EBIT & 60 & 64 \\
+  $-$ Taxes (35\%) & $-21$ & $-22.4$ \\
+  $=$ Incremental earnings & \textbf{39} & \textbf{41.6} \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{(b) Free cash flows}
+\step{1}{Bridge from earnings}
+Add back depreciation (a non-cash charge), then subtract the cash actually spent on capital and working
+capital:
+\[
+  FCF_1=39+25-30-2=32,\qquad FCF_2=41.6+36-40-8=29.6 .
+\]
+\step{2}{Cross-check with the tax-shield form}
+$FCF_t=(\text{Rev}-\text{OpEx})(1-\tau)+\tau\,\text{Dep}-\text{CapEx}-\Delta NWC$:
+year 1, $85(0.65)+8.75-30-2=32$; year 2, $100(0.65)+12.6-40-8=29.6$. The terms $\tau\,\text{Dep}$
+($8.75$ and $12.6$) are the depreciation tax shields: depreciation matters for cash only through taxes.
+
+\answer{(a) Incremental earnings: \$39 million (year 1) and \$41.6 million (year 2).
+(b) Free cash flows: \$32 million (year 1) and \$29.6 million (year 2).}
+
+\intuition{Earnings rise from year 1 to year 2 while free cash flow falls, because the project absorbs
+more capital expenditure and working capital in year 2. Investors are paid in cash, so the NPV
+discounts FCF, not earnings (PS1, Exercise 1a).}
+\refline{Topic 1 slides (NI $\to$ FCF bridge, depreciation tax shield); Topic 2A slides (incremental
+cash flows); Berk Ch.~9.}
+\rubric{4 for (a), with the EBIT line and no interest deducted; 6 for (b): add back depreciation (2),
+subtract CapEx and $\Delta NWC$ with correct signs (3), both years correct (1).}
+
+% =============================================================================
+\section{Question 1.3 --- Kohwe Corporation: equity, debt, and financial distress}
+
+\statement{\QoneC}
+
+\begin{notation}
+  \item $r=8\%$: discount rate for the free cash flows (unlevered cost of capital); $N_0=5$ million
+        shares; $I=50$: investment; $\tau_c=40\%$.
+  \item $V_U$: value of the unlevered firm; $V_L=V_U+PV(ITS)$; for permanent debt $D$ whose shields are
+        as risky as the debt, $PV(ITS)=\tau_c D$.
+\end{notation}
+
+\subsection*{Problem 19 --- equity financing}
+\step{1}{NPV}
+The FCF are a perpetuity: $V_U=10/0.08=125$, so
+\[ NPV=125-50=75. \]
+\step{2}{Share price}
+In a competitive market new shareholders pay a fair price, so the old shareholders capture the NPV.
+Before the issue, existing equity is worth $125-50=75$, so $P=75/5=\$15$. Check: Kohwe sells
+$50/15=3.3333$ million shares, and after the investment $8.3333$ million shares $\times\$15=125=V_U$.
+
+\subsection*{Problem 20 --- debt financing}
+Permanent debt of 50 at a 40\% tax rate gives $PV(ITS)=0.40\times50=20$. Then $V_L=125+20=145$, equity
+$=145-50=95$, and
+\[ P=\frac{95}{5}=\$19 . \]
+The \$4 gain per share over equity financing is the tax shield ($20/5$), which goes to the existing
+shareholders.
+
+\subsection*{Problem 21 --- debt financing with distress costs}
+With leverage the expected FCF fall to 9, so $V_U=9/0.08=112.5$; the tax shield is unchanged at 20, so
+$V_L=132.5$, equity $=132.5-50=82.5$, and
+\[ P=\frac{82.5}{5}=\$16.50 . \]
+Equivalently, $V_L=V_U+PV(ITS)-PV(\text{distress})=125+20-12.5$, with $PV(\text{distress})=1/0.08=12.5$.
+
+\answer{19: NPV $=\$75$ million, price $\$15$. 20: $\$19$. 21: $\$16.50$; debt still beats equity
+($16.50>15$) because the tax shield (20) exceeds the present value of distress costs (12.5).}
+
+\intuition{This is the static trade-off in three lines: the tax shield raises value, expected distress
+costs lower it, and leverage pays while the first exceeds the second. The price moves at once because
+all the value change is capitalised into the old shares.}
+\refline{Topic 2B slides (ITS, $V_L=V_U+PV(ITS)-PV(\text{distress})$); formula sheet, debt policies table.}
+\rubric{3 for 19 (NPV and price, with the reason old shareholders capture the NPV); 3 for 20
+($PV(ITS)=\tau_cD$); 4 for 21 (lower $V_U$, unchanged shield, price, and the trade-off reading).}
+
+% =============================================================================
+\section{Question 1.4 --- Kay Industries: paying out cash under three tax regimes}
+
+\statement{\QoneD}
+
+\begin{notation}
+  \item $C=100$: Treasuries held; $r_f=7\%$; $\tau_c$: corporate tax rate; $\tau_d$: personal tax on
+        dividends; capital gains untaxed.
+  \item Value created by the policy change $=$ (after-tax value to investors of the one-time payout) $-$
+        (after-tax value to investors of keeping the Treasuries and paying out the interest).
+\end{notation}
+
+\subsection*{Problem 11 --- perfect capital markets}
+(a) No change. Selling Treasuries at their fair price is a zero-NPV transaction; the interest of 7 a
+year is worth $7/0.07=100$, exactly the cash that would be paid out. (b) On the ex-dividend date the
+stock's total value falls by \$100 million (per share by $100/N$), but shareholders have received \$100
+million in cash. (c) No: shareholder wealth is unchanged; a shareholder who wanted the old policy can
+buy Treasuries with the dividend (homemade payout policy).
+
+\subsection*{Problem 12 --- corporate tax 35\%, no investor taxes}
+Inside the firm the interest is taxed: the after-tax interest paid out is $7(1-0.35)=4.55$ a year,
+worth $4.55/0.07=65$ to investors, who can earn 7\% untaxed by themselves. Paid out now, the cash is
+worth 100. (a) On the announcement the stock rises by $100-65=\$35$ million, which is the present value
+of the corporate taxes on the interest that would no longer be paid ($0.35\times100$). (b) On the
+ex-dividend date it falls by the \$100 million dividend. (c) Yes: investors gain \$35 million.
+
+\subsection*{Problem 13 --- 15\% dividend tax, no capital gains tax, no corporate tax}
+Status quo: dividends of 7 a year are worth $7(1-0.15)=5.95$ after tax, or $5.95/0.07=85$. One-time
+payout: $100(1-0.15)=85$ after tax. (a) No change on the announcement, since $85=85$: the dividend tax is
+paid either way, now or year by year. (b) On the ex-dividend date the stock falls by the after-tax value
+of the dividend, \$85 million (from $P_{cum}-P_{ex}=Div(1-\tau_d)$ with $\tau_g=0$). (c) No: investors
+are indifferent.
+
+\answer{11: (a) no change; (b) falls by \$100 million; (c) no benefit. 12: (a) rises by \$35 million;
+(b) falls by \$100 million; (c) yes, $+\$35$ million. 13: (a) no change; (b) falls by \$85 million;
+(c) no benefit.}
+
+\intuition{Retaining cash is a financing decision. It is irrelevant in a perfect market, costly when
+the firm pays corporate tax on its interest income (corporate tax is the friction that makes excess
+cash expensive), and neutral when only dividends are taxed and the tax cannot be avoided by deferring.}
+\refline{Topic 2B slides (payout irrelevance, taxes on payout); Berk Ch.~17 (retention of cash, the
+effective dividend tax rate).}
+\rubric{3 for 11 (zero NPV, ex-dividend drop, homemade payout); 4 for 12 (after-tax interest 4.55, PV 65,
+gain 35); 3 for 13 (85 vs.\ 85, ex-dividend drop of 85).}
+
+% =============================================================================
+\section{Question 2 --- Previous-year midterm: comparables, constant leverage and tax shields}
+
+\statement{\QtwoIntro}
+
+\begin{notation}
+  \item $A=V_U+PV(ITS)=D+E$: market-value balance sheet of the comparable firm (and later of company A).
+  \item $\beta_X$, $r_X$: beta and expected return of claim $X\in\{A,U,D,E,ITS\}$; CAPM:
+        $r_X=r_f+\beta_X(\mathbb{E}[\tilde r_m]-r_f)=0.05+0.10\,\beta_X$.
+  \item $\tau=0.30$; risk-free debt: $\beta_D=0$, $r_D=r_f=5\%$.
+  \item Constant $D/E$ (the debt is rebalanced as the firm's value moves) $\Rightarrow$ the tax shields
+        are as risky as the unlevered assets: $\beta_{ITS}=\beta_U$, $r_{ITS}=r_U$ (formula sheet,
+        ``continuous target $D/V$'').
+\end{notation}
+
+% -----------------------------------------------------------------------------
+\subsection*{(a) Betas and expected returns of the comparable firm}
+\statement{\QtwoA}
+
+\step{1}{Why constant leverage simplifies the hint}
+With $D/E$ held constant, debt is always a fixed fraction of firm value, so next year's debt, and hence
+next year's tax shield, moves one-for-one with the value of the assets. The shields therefore inherit
+the systematic risk of $U$: $\beta_{ITS}=\beta_U$. The right-hand side of the hint becomes
+$\frac{V_U}{A}\beta_U+\frac{PV(ITS)}{A}\beta_U=\beta_U$, so $\beta_A=\beta_U$ (and $r_A=r_U$).
+
+\step{2}{Asset beta from the equity beta}
+$D/E=0.1\Rightarrow D/A=0.1/1.1=0.0909$ and $E/A=1/1.1=0.9091$. With $\beta_D=0$:
+\begin{equation}
+  \beta_A=\frac DA\beta_D+\frac EA\beta_E=0.9091\times1.65=1.5 .
+\end{equation}
+
+\step{3}{Expected returns}
+$r_A=r_U=r_{ITS}=0.05+1.5(0.10)=20\%$; $r_D=5\%$; $r_E=0.05+1.65(0.10)=21.5\%$.
+MM II check: $r_E=r_U+\frac DE(r_U-r_D)=0.20+0.1(0.15)=21.5\%$. \checkmark
+
+\answer{$\beta_A=\beta_U=\beta_{ITS}=1.5$, $\beta_D=0$. $r_A=r_U=r_{ITS}=20\%$, $r_D=5\%$,
+$r_E=21.5\%$.}
+\rubric{2 for stating why $\beta_{ITS}=\beta_U$ under constant $D/E$; 4 for $\beta_A=\beta_U=1.5$ from
+the weights; 4 for the five returns (CAPM or MM II).}
+
+% -----------------------------------------------------------------------------
+\subsection*{(b) All-equity financing}
+\statement{\QtwoB}
+
+\step{1}{Discount rate}
+The project has the risk of the comparable's unlevered assets, and with no debt $A=U=E$:
+$r_A=r_E=r_U=20\%$.
+
+\step{2}{Value and NPV}
+\[
+  V_U=250\times\frac{1-1.2^{-5}}{0.20}=250\times2.9906=747.65,\qquad NPV=747.65-750=-2.35 .
+\]
+
+\step{3}{Financing}
+Outside investors pay at most what they receive: the whole firm is worth 747.65, so raising 750 would
+require selling $750/747.65=100.31\%$ of the firm, which is impossible. No investor provides 750 for a
+claim worth less than 750, and the owners would not want to undertake a negative-NPV project anyway.
+
+\answer{$r_A=r_E=20\%$; $NPV=-2.35$; $V_U=747.65$. No: outsiders would need more than 100\%
+($100.31\%$) of the firm for their 750, so the project is not financed (or undertaken) with equity
+only.}
+\rubric{2 for $r_A=r_E=r_U$; 4 for the annuity value and NPV; 4 for the financing argument (share
+$>100\%$, so no).}
+
+% -----------------------------------------------------------------------------
+\subsection*{(c) Cost of equity at $D/E=0.5$}
+\statement{\QtwoC}
+
+With constant $D/E$, $r_{ITS}=r_U$, and MM II keeps its no-tax form:
+\begin{equation}
+  r_E=r_U+\frac DE(r_U-r_D)=0.20+0.5(0.20-0.05)=27.5\% .
+\end{equation}
+Equivalently $\beta_E=\beta_U(1+D/E)=1.5\times1.5=2.25$ and $r_E=0.05+2.25(0.10)=27.5\%$.
+
+\answer{$r_E=27.5\%$, larger than the 20\% of (b). The same asset risk is now borne by a smaller equity
+claim: debt is risk-free, so all the variability of the assets falls on equity, raising its beta from
+1.5 to 2.25. The higher return is compensation for financial risk, not a higher cost of the project.}
+\rubric{5 for $r_E=27.5\%$ (formula stated); 5 for ``larger'' with the financial-risk explanation.}
+
+% -----------------------------------------------------------------------------
+\subsection*{(d) NPV with debt}
+\statement{\QtwoD}
+
+\step{1}{WACC}
+$D/V=0.5/1.5=1/3$ and $E/V=2/3$:
+\begin{equation}
+  r_{WACC}=\frac EV r_E+\frac DV r_D(1-\tau)=\tfrac23(0.275)+\tfrac13(0.05)(0.7)=0.183333+0.011667=19.5\% ,
+\end{equation}
+which matches the shortcut $r_{WACC}=r_U-\tau r_D\frac DV=0.20-0.30(0.05)\tfrac13=19.5\%$.
+
+\step{2}{NPV}
+\[
+  V_L=250\times\frac{1-1.195^{-5}}{0.195}=250\times3.0238=755.95,\qquad NPV=755.95-750=5.95 .
+\]
+
+\answer{$NPV=+5.95$. The project's operating risk is unchanged; what changes is that interest is tax
+deductible. The interest tax shields are worth more than the 2.35 shortfall of (b), and the WACC (19.5\%)
+is below $r_U$ (20\%) by exactly the tax subsidy $\tau r_D D/V$. Yes, investors provide financing: the
+levered firm is worth 755.95, more than the 750 they are asked to contribute.}
+\rubric{4 for the WACC (either route); 3 for the NPV; 3 for the explanation (tax shield, not lower risk)
+and ``yes''.}
+
+% -----------------------------------------------------------------------------
+\subsection*{(e) Market-value balance sheet at $t=0$ and the owners' stake}
+\statement{\QtwoE}
+
+\step{1}{Values}
+$A_0=V_{L,0}=755.95$; $D_0=\tfrac13(755.95)=251.98$; $E_0=\tfrac23(755.95)=503.97$.
+
+\step{2}{Who pays the 750}
+Debt raises 251.98, so new shareholders must provide $750-251.98=498.02$. Paying a fair price, they
+receive the fraction $498.02/503.97=98.82\%$ of the equity.
+
+\step{3}{Owners}
+The original owners keep $1-0.9882=1.18\%$ of the equity, worth $503.97-498.02=5.95$.
+
+\answer{$D=251.98$, $E=503.97$, total assets $=755.95$. Original owners retain $1.18\%$ of the equity,
+worth $5.95$: \emph{equal} to the project's NPV in (d). In competitive markets outside investors (debt
+and equity) earn exactly their required return, a zero-NPV deal, so the whole NPV, tax subsidy
+included, accrues to the owners who hold the project.}
+\rubric{3 for $D$, $E$ and $A$; 3 for the outside share (98.82\%); 2 for the owners' share and value; 2
+for ``equal'' with the competitive-markets argument.}
+
+% -----------------------------------------------------------------------------
+\subsection*{(f) Debt schedule, tax shields and $PV(ITS)$}
+\statement{\QtwoF}
+
+\step{1}{Firm value along the way}
+At each date the levered firm is worth the remaining FCF discounted at the WACC,
+$V_{L,t}=250\times\frac{1-1.195^{-(5-t)}}{0.195}$, and $D_t=\tfrac13V_{L,t}$.
+
+\step{2}{Shields} $ITS_t=D_{t-1}\,r_D\,\tau=0.015\,D_{t-1}$, discounted at $r_{ITS}=r_U=20\%$.
+
+\begin{center}
+\begin{tabular}{crrrrr}
+  \toprule
+  $t$ & $V_{L,t}$ & $D_t$ & $ITS_t=0.015\,D_{t-1}$ & $1/1.2^t$ & $PV(ITS_t)$ \\ \midrule
+  0 & 755.95 & 251.98 & -- & -- & -- \\
+  1 & 653.37 & 217.79 & 3.78 & 0.8333 & 3.15 \\
+  2 & 530.77 & 176.92 & 3.27 & 0.6944 & 2.27 \\
+  3 & 384.27 & 128.09 & 2.65 & 0.5787 & 1.54 \\
+  4 & 209.21 & 69.74 & 1.92 & 0.4823 & 0.93 \\
+  5 & 0 & 0 & 1.05 & 0.4019 & 0.42 \\ \midrule
+  \multicolumn{5}{r}{$PV(ITS)$ (sum of unrounded terms)} & \textbf{8.30} \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\step{3}{The relation}
+\begin{equation}
+  V_L=V_U+PV(ITS):\qquad 755.95=747.65+8.30 ,
+\end{equation}
+and for the project, $NPV_{(d)}=NPV_{(b)}+PV(ITS)=-2.35+8.30=5.95$ (the APV method).
+
+\answer{$D_1=217.79$, $D_2=176.92$, $D_3=128.09$, $D_4=69.74$, $D_5=0$. Tax shields
+$3.78,\ 3.27,\ 2.65,\ 1.92,\ 1.05$ at $t=1,\dots,5$, with $PV(ITS)=8.30$ at $r_U=20\%$. The levered value
+equals the unlevered value of (b) plus the shields: $755.95=747.65+8.30$. WACC and APV give the same NPV
+($5.95$) because both treat the shields as having the risk of $U$, as constant $D/E$ requires.}
+\intuition{Debt falls as the project winds down because the firm keeps $D/E$ fixed while its value
+declines; the shields shrink with it. Discounting them at $r_U$ (not $r_D$) is what makes the WACC of
+(d) and the APV of (f) agree to the cent.}
+\refline{Topic 2B slides (WACC vs.\ APV, $V_L=V_U+PV(ITS)$, target-leverage policies); formula sheet,
+debt policies table; PS2 Exercise 2.}
+\rubric{3 for the debt schedule; 3 for the shields with the lag ($D_{t-1}$); 2 for $PV(ITS)$ at $r_U$;
+2 for $V_L=V_U+PV(ITS)$ linked to (b) and (d).}
+
+\end{document}

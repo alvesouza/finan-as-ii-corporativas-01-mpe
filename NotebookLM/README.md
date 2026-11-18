@@ -25,6 +25,9 @@
 | `audio/topic5-audio-part1.md` | Audio (Custom, hard) 1/3 concepts | Topic 5 — nonverifiable income, strategic vs. liquidity default, threat of termination, sovereign debt without enforcement (Eaton–Gersovitz, Arellano; Tirole §3.8, Amaro de Matos §5.2) | 571 | 3,655 | Audio Overview → Customize |
 | `audio/topic5-audio-part2.md` | Audio (Custom, hard) 2/3 derivations | Topic 5 — termination programme and its three claims, liquidation probability, sovereign value functions, default sets, price schedule, borrowing limit | 607 | 4,016 | Audio Overview → Customize |
 | `audio/topic5-audio-part3.md` | Audio (Custom, hard) 3/3 exercises | Topic 5 — Lista R7 ex. 13, 15, 18; four slide-based questions on the sovereign model; four misconceptions; module wrap-up | 535 | 3,398 | Audio Overview → Customize |
+| `audio/artigos-audio-part1.md` | Audio (Custom, hard) 1/3 screening | Artigos — all six ARFE surveys scored on a green-finance lens and a quant-trading lens; provisional ranking to test | 696 | 4,605 | Audio Overview → Customize |
+| `audio/artigos-audio-part2.md` | Audio (Custom, hard) 2/3 green pick | Artigos — Hong & Shore (CSR): the $r_S - r_U = -m/q$ wedge, seven tests, RDD on ISS votes, greeniums vs. decarbonisation investment (Tirole §1.8–1.9, Aula 2B WACC) | 714 | 4,678 | Audio Overview → Customize |
+| `audio/artigos-audio-part3.md` | Audio (Custom, hard) 3/3 quant showdown | Artigos — Bolton–Chen–Wang (marginal value of cash, conditional beta, cash anomaly) vs. Benmelech (secured premium), then the final verdict against Hong & Shore (Tirole Ch. 5, §4.3; Aulas 2A, 2B, 4A) | 718 | 4,677 | Audio Overview → Customize |
 
 Each topic is a three-episode series: (1) concepts, (2) derivations, (3) exercises and
 misconceptions. Generate them in order; each part tells the hosts what the listener already heard.
@@ -41,5 +44,6 @@ when each topic was split into three parts (all recoverable from git history).
 All course materials should be uploaded as separate sources in the same NotebookLM notebook; the
 files in `sources/` are the current set, named exactly as the prompts cite them: lecture slides
 (`Aula_Topic*.pdf`), problem sets (`Lista_PS*.pdf`), exercise lists (`Lista_R1…R5 *.md`, `Lista_R7 - Lectures 3-5.md`), books
-(`Livro_*.pdf`, including Berk–DeMarzo–Harford and Grinblatt–Titman) and syllabi (`Programa_*.pdf`).
+(`Livro_*.pdf`, including Berk–DeMarzo–Harford and Grinblatt–Titman), syllabi (`Programa_*.pdf`) and the
+six Annual Review articles from `Artigos/` (`Artigo_*.pdf`, needed by the `artigos-audio-part*` series).
 These prompts guide how NotebookLM processes those sources.

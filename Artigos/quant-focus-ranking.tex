@@ -1,0 +1,148 @@
+% =============================================================================
+% Which of the six Annual Review of Financial Economics surveys in Artigos/ is the most
+% quant-focused? Companion to NotebookLM/audio/artigos-audio-part1..3.md.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\setlist{topsep=2pt,itemsep=2pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\verdict}[1]{\par\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{#1}}\par\medskip}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Which survey in \texttt{Artigos/} is the most quant-focused?}\\[4pt]
+  {\large A ranking of six Annual Review of Financial Economics articles for a reader interested in
+  quantitative trading (and green finance)}
+\end{center}
+
+\noindent\textbf{Articles.} Hong \& Shore, ``Corporate Social Responsibility'' (2023); Bolton, Chen \&
+Wang, ``The Marginal Value of Cash'' (2024); Benmelech, ``The Benefits and Costs of Secured Debt''
+(2024); Kermani \& Ma, ``Two Tales of Debt'' (2026); Colla, Ippolito \& Li, ``Debt Structure'' (2020);
+Ewens \& Farre-Mensa, ``Private or Public Equity?'' (2022). References below are to each article's
+sections, equations, tables and figures.
+
+\verdict{\textbf{Bottom line.} \emph{The Marginal Value of Cash} (Bolton, Chen \& Wang) is the most
+quant-focused in both senses of the word: it is the most mathematical (a solved dynamic model) and the
+only one with a full asset-pricing section linking a firm characteristic to beta and expected returns.
+\emph{Corporate Social Responsibility} (Hong \& Shore) is the runner-up and the strongest on empirical
+return evidence. It is also the only article with green-finance content.}
+
+\section*{1. What ``quant-focused'' means here}
+Two different things, scored separately:
+\begin{enumerate}[label=(\roman*)]
+  \item \textbf{Quantitative modelling}: a formal model with equations, solved and calibrated.
+  \item \textbf{Quant-trading relevance}: a priced, measurable relation (a return or a spread
+        associated with a variable one could sort on in CRSP, Compustat, DealScan or ISS), a credible
+        identification design, and warnings about the traps a backtest would hit (endogeneity, selection,
+        omitted risk factors, short samples).
+\end{enumerate}
+
+\section*{2. The winner: \emph{The Marginal Value of Cash}}
+\textbf{Modelling (§2--3).} The static model (Froot--Scharfstein--Stein; Kaplan--Zingales) maximises
+$f(I)+w-I-C(e)$ subject to $e=\max(I-w,0)$. The first-order condition $f'(I)=1+C'(e)$ makes the marginal
+value of cash $P_w=1+C'(e)\ge1$, which exceeds one exactly when the firm is constrained; the first best
+($f'(I^{FB})=1$) is independent of $w$, which is Modigliani--Miller. Figure~4 calibrates it
+($I^{FB}=0.30$, external finance used only for $w<0.23$). The dynamic model (§3, after Bolton, Chen \&
+Wang 2011) is a continuous-time $q$-theory with frictions solved through an HJB equation: a payout
+boundary fixed by a super-contact condition, an equity-issuance boundary, a credit-line limit and
+hedging. Every policy depends on one state variable, $w=W/K$.
+
+\medskip\noindent\textbf{Asset pricing (§4).} This is the part a quant can use:
+\begin{itemize}[leftmargin=1.4em]
+  \item \emph{Conditional beta} (Eq.~28): $\beta(w)=\dfrac{\rho\sigma}{\sigma_m}\,\dfrac{p'(w)}{p(w)}$.
+        The marginal value of cash enters beta directly, so beta moves with financial constraints.
+  \item \emph{The textbook unlevering formula fails} (§4.1, Eq.~30, Fig.~8a): treating cash as negative
+        debt underestimates beta by 24\% (starting from the payout boundary) or overestimates it by
+        32\% (starting from zero cash); at the boundary, beta can fall to 81\% of the unconstrained
+        firm's.
+  \item \emph{Idiosyncratic volatility is priced through beta} (§4.2, Fig.~8b), with a sign that depends
+        on the cash level, against the usual ``diversifiable, hence irrelevant'' view.
+  \item \emph{A sort variable with a published spread}: the top cash-to-assets decile beats the bottom by
+        0.69\% a month, equal-weighted (Palazzo 2012).
+  \item \emph{Conditional evidence}: cash-rich firms outperform cash-poor firms at the onset of the 2008
+        crisis (Duchin, Ozbas \& Sensoy) and in early 2020 (Ramelli \& Wagner); cash is positively related
+        to credit spreads (Acharya, Davydenko \& Strebulaev).
+  \item \emph{Built-in warnings}: cash holdings are chosen, so the cash--return relation is endogenous and
+        state-dependent; the spread is equal-weighted, so it may be concentrated in small caps.
+\end{itemize}
+
+\section*{3. The other five}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}lYl@{}}
+  \toprule
+  Article & Quant content & Verdict \\ \midrule
+  \emph{Corporate Social Responsibility} &
+  The most return-based evidence: Table~1 (cost-of-capital wedges; sin stocks about $+3\%$ a year, a
+  $-1.5\%$ green-minus-brown wedge), Table~2 (portfolio performance), and the authors' own regression
+  discontinuity on ISS shareholder votes, 2006--2021 (§3.2, Eqs.~2--3, Table~8), with Carhart
+  four-factor abnormal returns. Theory is one equilibrium relation, $r_S-r_U=-m/q$ (Eq.~1); the greenium
+  distribution (Fig.~4) has mean $-1.41\%$. &
+  Strong runner-up \\[3pt]
+  \emph{Secured Debt} &
+  Credit pricing: raw secured spreads look 150--200 bp higher because riskier firms pledge collateral
+  (Fig.~2); firm-by-time fixed effects (§3.2.2, Eq.~1) give a secured premium of about 2 bp for
+  investment grade and 55 bp below it, rising with each rating downgrade (§5). &
+  Best for a credit quant \\[3pt]
+  \emph{Two Tales of Debt} &
+  Within-firm, within-year comparisons of interest rates across debt types (§4.2), and debt--tangibility
+  regressions (§4.3). Focus is macro and contract design. &
+  Little to trade \\[3pt]
+  \emph{Debt Structure} &
+  Descriptive measures of how concentrated firms' borrowing is (HHI, Excl90; §4.1), with regressions
+  explaining it (§4.4). &
+  No return content \\[3pt]
+  \emph{Private or Public Equity?} &
+  Venture and IPO market trends and regulation (NSMIA, SOX, JOBS Act); the only return figure is the
+  $-2\%$ average announcement return on seasoned equity offerings. &
+  Least quant \\ \bottomrule
+\end{tabularx}
+\end{center}
+
+\section*{4. Ranking}
+\begin{center}\small
+\begin{tabular}{@{}lccc@{}}
+  \toprule
+  Article & Modelling & Quant-trading relevance & Green finance \\ \midrule
+  The Marginal Value of Cash & 1st & 1st & none \\
+  Corporate Social Responsibility & 2nd & 2nd & \textbf{only direct coverage} \\
+  The Benefits and Costs of Secured Debt & 3rd & 3rd (credit) & none \\
+  Two Tales of Debt & 4th & 4th & none \\
+  Debt Structure & 5th & 5th & none \\
+  Private or Public Equity? & 6th & 6th & none \\ \bottomrule
+\end{tabular}
+\end{center}
+\noindent Only \emph{The Marginal Value of Cash} has a solved model. The other modelling ranks are
+judgement calls: Hong \& Shore have an equilibrium relation (Eq.~1) and an explicit regression
+specification, Benmelech has testable predictions and a fixed-effects specification, and the last three
+are descriptive and empirical. First place in both columns is the robust part of the ranking. ``None''
+under green finance means the article has no environmental content; in the other five, ``green'' appears
+only as an author's name (Greenwald) or a figure colour.
+
+\section*{5. How to read them}
+\begin{enumerate}[leftmargin=1.4em]
+  \item \textbf{The Marginal Value of Cash}, §2 and §4 first (the beta formula and the cash evidence),
+        then §3 for the model.
+  \item \textbf{Corporate Social Responsibility}, §1.2 (Eq.~1), Tables~1--2, §3.2 and §4. It is the one
+        to read if green finance matters, and a model of how to test a return anomaly.
+  \item \textbf{The Benefits and Costs of Secured Debt}, §3.2 and §5, for credit spreads.
+  \item The other three only for corporate-finance background (debt contracts, private markets).
+\end{enumerate}
+
+\noindent\textbf{Caveat.} The numbers above are as the articles report them; none was re-estimated here.
+A trading strategy built on them would need its own out-of-sample test with point-in-time data.
+
+\end{document}
