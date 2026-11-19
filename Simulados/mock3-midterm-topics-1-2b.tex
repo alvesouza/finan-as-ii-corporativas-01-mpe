@@ -1,0 +1,89 @@
+% =============================================================================
+% Mock midterm 3, Finance II -- Corporate Finance, Topics 1, 2A and 2B.
+% Format follows Prova/q2.pdf (previous-year midterm): Question N (marks), parts with marks.
+% Statements: mock3-midterm-topics-1-2b-statements.tex (shared with the solutions).
+% Solutions: mock3-midterm-topics-1-2b-solutions.pdf.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newcommand{\srcline}[1]{\par\noindent{\small\color{black!65}\textbf{Source:} #1}\par\smallskip}
+\newcommand{\qpart}[2]{\par\needspace{12\baselineskip}\medskip\noindent\textbf{#1} (\emph{#2})\par}
+
+\input{mock3-midterm-topics-1-2b-statements}
+
+\begin{document}
+
+\textbf{Finance II - Corporate Finance}
+
+\begin{center}
+  {\LARGE\bfseries Mock Midterm Exam --- Set 3}\\[4pt]
+  {\large Topics 1 (accounting review), 2A (valuation and MM) and 2B (taxes, distress and payout)}
+\end{center}
+
+\noindent\textbf{Instructions.} Total: 100 marks. Question~1 has 14 true/false items of 2 marks each:
+answer true or false and explain briefly (an answer without a reason earns nothing). Question~2 (32 marks)
+and Question~3 (40 marks) are numerical; show every step and state the formula before using it. Every
+question is a real exercise reproduced verbatim; its source is printed above the statement. Worked
+solutions: \texttt{mock3-midterm-topics-1-2b-solutions.pdf}.
+
+\bigskip
+\noindent\textbf{Question 1} (\emph{28 marks}) True or false? 2 marks per item.
+
+\qpart{Part 1.1}{14 marks --- Topic 1: financial ratios}
+\QoneA
+
+\qpart{Part 1.2}{12 marks --- Topics 1 and 2B: growth, new equity and share repurchases}
+\QoneB
+
+\qpart{Part 1.3}{2 marks --- Topic 2A: MM and risk-free debt}
+\QoneC
+
+\bigskip
+\noindent\textbf{Question 2} (\emph{32 marks}) Topic 2A: the frictionless benchmark and the cost of
+capital.
+
+\QtwoIntro
+
+\qpart{Part 2.1}{8 marks --- MM: how much equity must be sold}
+\QtwoA
+
+\qpart{Part 2.2}{10 marks --- homemade leverage}
+\QtwoB
+
+\qpart{Part 2.3}{8 marks --- divisional WACC from a comparable}
+\QtwoC
+
+\qpart{Part 2.4}{6 marks --- MM II}
+\QtwoD
+
+\bigskip
+\noindent\textbf{Question 3} (\emph{40 marks}) Topic 2B: taxes, the WACC and payout.
+
+\qpart{Part 3.1}{10 marks --- the interest tax shield in the income statement}
+\QthreeA
+
+\qpart{Part 3.2}{8 marks --- present value of permanent tax shields}
+\QthreeB
+
+\qpart{Part 3.3}{12 marks --- pretax and after-tax WACC}
+\QthreeC
+
+\qpart{Part 3.4}{10 marks --- repurchases and dividends in a perfect market}
+\QthreeD
+
+\end{document}

@@ -1,0 +1,330 @@
+% =============================================================================
+% Worked solutions for Simulados/mock3-midterm-topics-1-2b.pdf (Topics 1, 2A, 2B).
+% Statements: mock3-midterm-topics-1-2b-statements.tex (shared with the exam paper).
+% Compile: python -I Simulados/mock3-midterm-topics-1-2b-solutions_check.py (must print PASS),
+%          then pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Mock midterm 3, Topics 1--2B --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
+\makeatother
+\numberwithin{equation}{section}
+\setlist{topsep=2pt,itemsep=1pt}
+
+\newcommand{\srcline}[1]{\par\noindent{\small\color{black!65}\textbf{Source:} #1}\par\smallskip}
+\newcommand{\statement}[1]{\par\smallskip\noindent\colorbox{black!5}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small #1}}\par\medskip}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newenvironment{notation}{\par\noindent\textbf{Notation.}\begin{itemize}[leftmargin=1.4em]}{\end{itemize}}
+\newcommand{\intuition}[1]{\par\medskip\noindent\textbf{Intuition.}~#1}
+\newcommand{\refline}[1]{\par\smallskip\noindent{\small\color{black!70}\textbf{Ref:} #1}}
+\newcommand{\rubric}[2]{\par\smallskip\noindent{\small\textbf{Marking guide (#1 marks).}~#2}}
+\newcommand{\answer}[1]{\par\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Answer.}~#1}}\par}
+\newcommand{\tf}[3]{\item[#1] \textbf{#2.} #3}
+
+\input{mock3-midterm-topics-1-2b-statements}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Finance II --- Mock Midterm Exam, Set 3 (Topics 1, 2A, 2B)}\\[4pt]
+  {\large Worked solutions}
+\end{center}
+
+{\sloppy\noindent Exam paper: \texttt{Simulados/mock3-midterm-topics-1-2b.pdf}. Each question's full
+statement (grey box, with its source) comes first, then the solution, a boxed answer and a marking guide.
+True/false items earn 1 mark for the verdict and 1 for the reason; each verdict is compared with the
+book's printed answer where one exists. Higgins Ch.~2, Exercise 3 (Part~1.1) also appears in Lista R1.
+Every number is reproduced by \texttt{Simulados/mock3-midterm-topics-1-2b-solutions\_check.py}.
+References: lecture slides \texttt{Aula\_Topic1}, \texttt{Aula\_Topic2A}, \texttt{Aula\_Topic2B} and
+the formula sheet \texttt{Notas/formula-sheet-topics-1-2b.pdf}.\par}
+
+% =============================================================================
+\section{Question 1.1 --- Financial ratios: true or false}
+
+\statement{\QoneA}
+
+\begin{itemize}[leftmargin=2em]
+  \tf{a.}{True}{$A=L+E$, so $A/E=(L+E)/E=1+L/E$. This is an identity, and it is the leverage factor in
+  the DuPont decomposition $ROE=\frac{NI}{S}\cdot\frac SA\cdot\frac AE$. \emph{Book: true.}}
+  \tf{b.}{True}{$ROE=NI/E$ and $ROA=NI/A$ share the numerator, and $A\ge E$ whenever liabilities are
+  non-negative, so $ROE=ROA\cdot\frac AE\ge ROA$. Caveat worth stating in an exam: with a \emph{loss}
+  ($NI<0$) leverage magnifies it and $ROE<ROA$; ``always'' holds only for non-negative income.
+  \emph{Book: true.}}
+  \tf{c.}{False}{A payables period longer than the collection period is convenient (suppliers then
+  finance the receivables), but both are set by industry practice and bargaining power; nothing says
+  it \emph{should always} hold. \emph{Book: false.}}
+  \tf{d.}{True}{The acid-test ratio is $(CA-\text{inventory})/CL$; inventory cannot be negative, so the
+  numerator is never larger than the current ratio's. \emph{Book: true.}}
+  \tf{e.}{True}{Higher turnover means the same sales on fewer assets: with margin and leverage fixed,
+  ROA and ROE rise (DuPont). ``All else equal'' is what makes it true. \emph{Book: true.}}
+  \tf{f.}{False}{The earnings yield is $E/P$, the inverse of $P/E$; equal earnings yields imply equal
+  P/E ratios. \emph{Book: false.}}
+  \tf{g.}{False}{Without taxes and transaction costs an unrealized gain can be turned into cash by
+  selling, so it is worth exactly as much as a realized gain. Value is what the asset can be sold for,
+  not what has been booked. \emph{Book: false.}}
+\end{itemize}
+
+\answer{a T, b T (for non-negative income), c F, d T, e T, f F, g F.}
+\refline{Topic 1 slides (balance sheet, DuPont, ratios); Higgins Ch.~2.}
+\rubric{14}{per item: 1 for the verdict, 1 for a correct reason (the identity, the shared numerator, the
+inverse relation, etc.).}
+
+% =============================================================================
+\section{Question 1.2 --- Growth, new equity and repurchases: true or false}
+
+\statement{\QoneB}
+
+\begin{itemize}[leftmargin=2em]
+  \tf{a.}{False}{The sustainable growth rate is $g^*=P\cdot R\cdot A\cdot\hat T$ (profit margin,
+  retention, asset turnover, assets-to-equity). A firm can exceed it by raising any of the four ratios,
+  not only by issuing stock; the limit is how far each ratio can be pushed. \emph{Book: false.}}
+  \tf{b.}{False}{Firms with heavy losses usually find equity expensive or unavailable: outside investors
+  doubt the cash flows. Exceptions are ``glamorous'' firms with an exciting story; traditional loss-makers
+  struggle. \emph{Book: false.}}
+  \tf{c.}{True}{Fewer shares raise EPS, while the cash spent (lost interest, or new interest if
+  borrowed) lowers earnings; usually the first effect wins. But in a perfect market the higher EPS is
+  riskier: the price does not rise and the P/E falls (MM). \emph{Book: true.}}
+  \tf{d.}{True}{Survey evidence: managers usually think their shares are undervalued, and buying
+  undervalued shares transfers value from selling to remaining shareholders. (This is an information
+  effect, outside the perfect-market benchmark.) \emph{Book: true.}}
+  \tf{e.}{False}{Slow-growth firms have growth problems too: they generate more cash than they can
+  invest well and face pressure to grow through value-destroying investments. \emph{Book: false.}}
+  \tf{f.}{False}{Only growth earning more than the cost of capital (positive NPV) raises the price;
+  growth at returns below the cost of capital destroys value. \emph{Book: false.}}
+\end{itemize}
+
+\answer{a F, b F, c T, d T, e F, f F.}
+\refline{Topic 1 slides (new equity financing); Topic 2A (NPV rule; EPS vs.\ value under MM); Higgins
+Ch.~4.}
+\rubric{12}{per item: 1 for the verdict, 1 for the reason. In (c) full marks need the EPS mechanism; the
+MM remark is a plus.}
+
+% =============================================================================
+\section{Question 1.3 --- Risk-free debt and the cost of equity}
+
+\statement{\QoneC}
+
+The argument is \textbf{wrong}. Equity is the residual claim. Risk-free debt takes a fixed payment, so all
+the variation of the asset cash flows now falls on a smaller equity stake:
+\[
+  \beta_E=\beta_A+\frac DE(\beta_A-\beta_D)=\beta_A\Big(1+\frac DE\Big)>\beta_A\quad(\beta_D=0).
+\]
+Equity becomes riskier and its cost rises, $r_E=r_A+\frac DE(r_A-r_D)$, by exactly enough to keep the
+WACC equal to $r_A$ (MM II). The ``cheap'' debt is offset by more expensive equity; without taxes, the
+cost of capital of the firm does not change.
+
+\answer{False: risk-free debt raises the equity's risk and cost ($\beta_E=\beta_A(1+D/E)$); the WACC stays
+at $r_A$.}
+\rubric{2}{1 for ``equity risk rises'', 1 for ``WACC unchanged (MM II)''.}
+
+% =============================================================================
+\section{Question 2.1 --- Biotech start-up: MM and the fraction of equity sold}
+
+\statement{\QtwoIntro\par\medskip\QtwoA}
+
+\step{1}{Value without leverage}
+\$2 million buys 50\% of the unlevered equity, so the whole firm is worth $V_U=2/0.5=\$4$ million. (A
+\$30 million payoff in the success state is worth 4 today, so the price of \$1 paid on success is
+$4/30=0.1333$.)
+
+\step{2}{Borrow \$1 million}
+MM I: $V_L=V_U=4$. With debt worth 1, the equity is worth $E=4-1=3$. To raise the remaining \$1
+million, sell $1/3=33.33\%$ of the equity. The debt is risky (it gets nothing if the research fails),
+but MM holds for any debt: the claims just split the same \$4 million.
+
+\step{3}{Your stake}
+(a) $50\%\times4=\$2$ million; (b) $\frac23\times3=\$2$ million.
+
+\answer{(a) \$4 million. (b) Sell one third of the equity. (c) \$2 million in both cases: the financing
+choice does not change your wealth.}
+\intuition{Debt only changes how the \$4 million is split; outside investors pay a fair price for what
+they get, so the founder's wealth is the same.}
+\refline{Topic 2A slides (MM I, perfect markets); Berk Ch.~16.1.}
+\rubric{8}{2 for $V_U=4$; 3 for $E=3$ and the fraction 1/3; 3 for both stakes worth 2 and the reason.}
+
+% =============================================================================
+\section{Question 2.2 --- Homemade leverage}
+
+\statement{\QtwoB}
+
+\step{1}{Payments (part a)}
+XYZ pays interest $0.10\times5000=\$500$ in either state.
+\begin{center}
+\begin{tabular}{lcccc}
+  \toprule
+  & \multicolumn{2}{c}{ABC} & \multicolumn{2}{c}{XYZ} \\
+  \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+  FCF & Debt Payments & Equity Dividends & Debt Payments & Equity Dividends \\ \midrule
+  \$\ 800 & 0 & 800 & 500 & 300 \\
+  \$1000 & 0 & 1000 & 500 & 500 \\ \bottomrule
+\end{tabular}
+\end{center}
+
+\step{2}{Unlevering (part b)}
+10\% of ABC's equity pays 80 or 100. Hold 10\% of XYZ's equity \emph{and} 10\% of XYZ's debt
+($0.1\times5000=\$500$ of debt): $30+50=80$ or $50+50=100$. Same cash flows.
+
+\step{3}{Homemade leverage (part c)}
+10\% of XYZ's equity pays 30 or 50. Borrow \$500 at 10\% (interest \$50) and buy 10\% of ABC's equity:
+$80-50=30$ or $100-50=50$. Same cash flows.
+
+\answer{(a) Table above. (b) 10\% of XYZ's equity plus 10\% (\$500) of XYZ's debt. (c) Borrow \$500 at
+10\% and buy 10\% of ABC's equity.}
+\intuition{Investors can create or undo leverage on their own account at the same rate as firms, so
+they will not pay more for a levered or an unlevered firm: by no arbitrage, $V_L=V_U$ (MM I).}
+\refline{Topic 2A slides (homemade leverage, MM I proof); Berk Ch.~16.1.}
+\rubric{10}{4 for the table; 3 for (b); 3 for (c), each with the payoffs shown in both states.}
+
+% =============================================================================
+\section{Question 2.3 --- Divisional WACC from a comparable}
+
+\statement{\QtwoC}
+
+\step{1}{Comparable's cost of equity}
+$r_E=4.5\%+1.21\times5\%=10.55\%$.
+
+\step{2}{WACC of the computer division}
+Dell matches the division in risk \emph{and} financing, so its WACC can be used directly (no need to
+unlever and relever). With $V=67+0.7=67.7$, $E/V=0.9897$ and $D/V=0.0103$; the after-tax cost of debt is
+$6\%(1-0.35)=3.9\%$:
+\[
+  r_{WACC}=0.9897(10.55\%)+0.0103(3.9\%)=10.48\%.
+\]
+
+\step{3}{WACC of the software division}
+The firm's WACC is the value-weighted average of the divisions' WACCs:
+$12\%=0.40(10.48\%)+0.60\,r_{soft}$, so $r_{soft}=(12\%-0.40\times10.48\%)/0.60=13.01\%$.
+
+\answer{(a) About 10.48\%. (b) About 13.01\%.}
+\intuition{Each division is discounted at its own risk; using the firm-wide 12\% would over-penalise the
+computer division and favour the riskier software division.}
+\refline{Topic 2A slides (project cost of capital, comparables); Berk Ch.~13.}
+\rubric{8}{2 for $r_E$; 3 for the computer-division WACC with market weights and after-tax $r_D$; 3 for
+the software WACC from the weighted average.}
+
+% =============================================================================
+\section{Question 2.4 --- MM II: Microsoft with industry leverage}
+
+\statement{\QtwoIntro\par\medskip\QtwoD}
+
+With no debt, the WACC is the unlevered cost of capital: $r_U=9.2\%$. The section assumes no taxes, so MM
+II applies with $D/E=0.05/0.95=0.0526$:
+\[
+  r_E=r_U+\frac DE(r_U-r_D)=9.2\%+0.0526(9.2\%-6\%)=9.37\%.
+\]
+Check: $0.95(9.37\%)+0.05(6\%)=9.2\%$, so the WACC is unchanged.
+
+\answer{About 9.37\%.}
+\rubric{6}{2 for $r_U=9.2\%$; 2 for $D/E=0.0526$ (not 0.05); 2 for $r_E$ and the WACC check.}
+
+% =============================================================================
+\section{Question 3.1 --- Interest, net income and free cash flow}
+
+\statement{\QthreeA}
+
+\step{1}{Pelamed (Problem 7)}
+(a) $NI=(325-125)(1-0.40)=\$120$ million. (b) $NI+\text{interest}=120+125=\$245$ million. (c) Without
+interest, $NI=325(0.60)=\$195$ million, which is \$50 million \emph{less} than in (b). (d) The interest
+tax shield is $0.40\times125=\$50$ million: exactly the gap between (b) and (c).
+
+\step{2}{Grommit (Problem 8)}
+(a) An extra \$1 million of interest lowers taxable income by 1 and taxes by 0.35, so net income falls by
+$1(1-0.35)=\$0.65$ million, to \$20.10 million. (b) Free cash flow is unlevered (computed before
+interest), so it does not change: \$22.15 million.
+
+\answer{7: (a) \$120m; (b) \$245m; (c) \$195m, \$50m less than (b); (d) \$50m. 8: (a) falls by \$0.65m
+(to \$20.10m); (b) unchanged.}
+\intuition{Debt and equity together receive more when the firm pays interest, because the government
+receives less: that extra \$50 million is the tax shield. It never enters FCF; it enters valuation through
+the after-tax WACC or APV.}
+\refline{Topic 2B slides (interest tax shield); Berk Ch.~16.3.}
+\rubric{10}{6 for Problem 7 (1.5 per part, with the link (b)$-$(c)$=$(d)); 4 for Problem 8 (2 each; (b)
+needs the reason ``FCF is unlevered'').}
+
+% =============================================================================
+\section{Question 3.2 --- Present value of permanent tax shields}
+
+\statement{\QthreeB}
+
+\step{1}{Microsoft (Problem 9)}
+Permanent debt of $0.13\times300=\$39$ billion; its shields are as safe as the debt, so
+$PV(ITS)=\tau D=0.35\times39=\$13.65$ billion.
+
+\step{2}{Arnell (Problem 12)}
+(a) $ITS=0.35\times0.06\times10=\$0.21$ million a year. (b) A perpetuity discounted at the debt's rate:
+$0.21/0.06=\$3.5$ million. (c) At 5\%: $ITS=\$0.175$ million and $PV=0.175/0.05=\$3.5$ million.
+
+\answer{9: \$13.65 billion. 12: (a) \$0.21m; (b) \$3.5m; (c) \$3.5m.}
+\intuition{For permanent debt, $PV(ITS)=\tau r_DD/r_D=\tau D$: the rate cancels, because a higher rate
+raises the shield and the discount rate in the same proportion.}
+\refline{Topic 2B slides (debt-policy table, fixed perpetual debt); Berk Ch.~16.3.}
+\rubric{8}{2 for Problem 9; 2 for 12(a); 2 for 12(b); 2 for 12(c) with the reason it equals $\tau D$.}
+
+% =============================================================================
+\section{Question 3.3 --- Pretax and after-tax WACC}
+
+\statement{\QthreeC}
+
+\step{1}{Rogot (Problem 13)}
+$V=1+2=3$, so $E/V=2/3$, $D/V=1/3$. (a) Pretax: $\frac23(12\%)+\frac13(7\%)=10.33\%$. (b) After-tax:
+$\frac23(12\%)+\frac13(7\%)(0.65)=9.52\%$.
+
+\step{2}{Rumolt (Problem 14)}
+$E=30\times15=\$450$ million, $D=150$, $V=600$. (a) $0.75(10\%)+0.25(5\%)=8.75\%$. (b)
+$0.75(10\%)+0.25(5\%)(0.65)=8.31\%$.
+
+\step{3}{Summit (Problem 15)}
+$D/V=0.65/1.65=0.3939$. The shield lowers the WACC by $\tau r_D\frac DV=0.40(7\%)(0.3939)=1.10$
+percentage points.
+
+\answer{13: (a) 10.33\%; (b) 9.52\%. 14: (a) 8.75\%; (b) 8.31\%. 15: by about 1.10 percentage points.}
+\intuition{The pretax WACC is the return on the firm's assets ($r_U$ when $D/V$ is held constant). The
+after-tax WACC is lower by $\tau r_D D/V$: the tax shield, expressed as a rate.}
+\refline{Topic 2B slides (WACC $=r_U-\tau r_D D/V$); Berk Ch.~16.3.}
+\rubric{12}{4 for Rogot; 4 for Rumolt (market value of equity first); 4 for Summit (2 for converting
+$D/E$ to $D/V$, 2 for the reduction).}
+
+% =============================================================================
+\section{Question 3.4 --- Repurchases and dividends in a perfect market}
+
+\statement{\QthreeD}
+
+\step{1}{ECB (Problem 3)}
+Market cap before: $1\times20=\$20$ million. The firm spends $0.1\times20=\$2$ million, so the market
+cap falls to \$18 million and the price stays at $18/0.9=\$20$: buying at a fair price is zero-NPV.
+
+\step{2}{KMS (Problem 4)}
+(a) Cash falls from 50 to 30 and assets from 500 to 480; debt stays at 200; equity falls from 300 to
+280. (b) $D/E$ rises from $200/300=0.667$ to $200/280=0.714$ (equivalently $D/V$ from 40\% to 41.7\%).
+
+\step{3}{KMS dividend (Problem 5)}
+A perpetuity worth \$20 million at 10\% pays $C=20\times0.10=\$2$ million a year.
+
+\answer{3: \$18 million, \$20 a share. 4: (a) cash and assets $-20$, equity $-20$ (to 280); (b) $D/E$
+from 0.667 to 0.714. 5: \$2 million a year.}
+\intuition{Paying out cash shrinks the firm but not the value per share in a perfect market; using cash
+(negative debt) to buy back shares raises leverage.}
+\refline{Topic 2B slides (payout irrelevance); Berk Ch.~17.2.}
+\rubric{10}{3 for Problem 3 (cap and price, with the reason); 4 for Problem 4; 3 for Problem 5.}
+
+\end{document}

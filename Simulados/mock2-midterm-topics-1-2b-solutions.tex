@@ -1,0 +1,317 @@
+% =============================================================================
+% Worked solutions for Simulados/mock2-midterm-topics-1-2b.pdf (Topics 1, 2A, 2B).
+% Statements: mock2-midterm-topics-1-2b-statements.tex (shared with the exam paper).
+% Compile: python -I Simulados/mock2-midterm-topics-1-2b-solutions_check.py (must print PASS),
+%          then pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage[a4paper,margin=2.2cm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{microtype}
+
+\pagestyle{fancy}\fancyhf{}
+\lhead{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper)}
+\rhead{\footnotesize Mock midterm 2, Topics 1--2B --- Worked solutions}
+\cfoot{\footnotesize\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\setlength{\headheight}{14pt}
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname.\quad}
+\makeatother
+\numberwithin{equation}{section}
+\setlist{topsep=2pt,itemsep=1pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+
+\newcommand{\srcline}[1]{\par\noindent{\small\color{black!65}\textbf{Source:} #1}\par\smallskip}
+\newcommand{\statement}[1]{\par\smallskip\noindent\colorbox{black!5}{\parbox{\dimexpr\linewidth-2\fboxsep}{\small #1}}\par\medskip}
+\newcommand{\step}[2]{\par\medskip\noindent\textbf{Step #1 --- #2.}~}
+\newenvironment{notation}{\par\noindent\textbf{Notation.}\begin{itemize}[leftmargin=1.4em]}{\end{itemize}}
+\newcommand{\intuition}[1]{\par\medskip\noindent\textbf{Intuition.}~#1}
+\newcommand{\refline}[1]{\par\smallskip\noindent{\small\color{black!70}\textbf{Ref:} #1}}
+\newcommand{\rubric}[2]{\par\smallskip\noindent{\small\textbf{Marking guide (#1 marks).}~#2}}
+\newcommand{\answer}[1]{\par\medskip\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{\textbf{Answer.}~#1}}\par}
+\newcommand{\TF}[3]{\item[#1] \textbf{#2.} #3}
+\newcommand{\E}{\mathbb{E}}
+
+\input{mock2-midterm-topics-1-2b-statements}
+
+\begin{document}
+
+\begin{center}
+  {\Large\bfseries Finance II --- Mock Midterm Exam, Set 2 (Topics 1, 2A, 2B)}\\[4pt]
+  {\large Worked solutions}
+\end{center}
+
+{\sloppy\noindent Exam paper: \texttt{Simulados/mock2-midterm-topics-1-2b.pdf}. Each question's full
+statement (grey box, with its source) comes first, then the solution, a boxed answer and a marking
+guide. Money is in the units of each statement. Rates are decimals inside equations. Every number is
+reproduced by \texttt{Simulados/mock2-midterm-topics-1-2b-solutions\_check.py}. For the true/false items
+Higgins prints suggested answers; each verdict below agrees with the book's, and the reason is
+written in this course's terms. References: lecture slides \texttt{Aula\_Topic1}, \texttt{Aula\_Topic2A},
+\texttt{Aula\_Topic2B}; formula sheet \texttt{Notas/formula-sheet-topics-1-2b.pdf}.\par}
+
+% =============================================================================
+\section{Question 1.1 --- The balance sheet and cash (true/false)}
+
+\statement{\QoneA}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=4pt]
+  \TF{a.}{False}{Equity is a \emph{claim} on the right-hand side of the balance sheet, not a pool of money.
+  The cash shareholders contributed, plus retained profits, has already been spent on assets. Bills are
+  paid with cash, which is an asset.}
+  \TF{b.}{False}{Book equity is the plug $A-L$. Accumulated losses or large buybacks can make it
+  negative while the firm keeps paying its bills and its market equity is large (Starbucks 2020:
+  $-7.9$ bn book vs.\ $122.6$ bn market). Bankruptcy is about failing to pay obligations when due.}
+  \TF{c.}{False}{Dividends are a distribution of net income after it is computed. A higher dividend
+  lowers retained earnings, not net income.}
+  \TF{d.}{False}{A sources and uses statement for 2020 compares the balance sheet at the start of 2020
+  (year-end 2019) with the one at the end of 2020. Year-end 2020 and 2021 give the statement for 2021.}
+  \TF{e.}{False}{Goodwill records the amount an acquirer paid above the book value of the acquired
+  firm's assets. It has nothing to do with public relations.}
+  \TF{f.}{True}{Shrinking an asset (collecting receivables, selling inventory or equipment) frees cash;
+  shrinking a liability (paying suppliers, repaying debt) consumes cash. These are the same signs as in
+  the indirect cash flow statement: $-\Delta AR$, $+\Delta AP$.}
+  \TF{g.}{False}{Market equity usually exceeds book equity (intangibles and growth are not on the
+  balance sheet), but a firm with obsolete assets or a failing strategy can trade below book
+  (market-to-book $<1$).}
+\end{enumerate}
+
+\answer{a F, b F, c F, d F, e F, f T, g F (the book's answers, pp.~397--398).}
+\refline{Topic 1 slides (book vs.\ market balance sheet, accruals, cash flow statement).}
+\rubric{14}{2 per item: 1 for the verdict, 1 for a reason that names the mechanism (claim vs.\ asset,
+plug, retained earnings, timing of balance sheets, acquisition premium, signs, market-to-book).}
+
+% =============================================================================
+\section{Question 1.2 --- The cost of capital (true/false)}
+
+\statement{\QoneB}
+
+\begin{enumerate}[leftmargin=2.2em,itemsep=4pt]
+  \TF{a.}{False}{With a constant rate, $PV=CF_t/(1+r)^t$: the risk premium inside $r$ compounds with
+  $t$, so later cash flows are already discounted more for risk. A single rate assumes risk grows at a
+  constant geometric rate.}
+  \TF{b.}{True}{The WACC is right only for projects with the risk (and financing) of the firm's existing
+  assets. A riskier or safer project needs its own rate, taken from comparables (Question~2.2 is an
+  example).}
+  \TF{c.}{False}{This is the marginal-cost-of-capital fallacy. Borrowing for the project raises the risk
+  borne by equity, so $r_E$ rises (MM~II). The discount rate is the opportunity cost of the project's
+  risk, not the cost of whichever source pays for it.}
+  \TF{d.}{False}{Interest expense over book debt is a historical coupon rate, on a debt balance that
+  changes during the year. The cost of debt is the return lenders require \emph{now}: the yield to
+  maturity on the firm's debt (and, with default risk, the expected return is below even that).}
+  \TF{e.}{False}{Competitors' equity betas mix business risk with their own leverage. Unlever each
+  ($\beta_A=\frac EV\beta_E+\frac DV\beta_D$), average the asset betas, then relever at the private
+  firm's own debt ratio.}
+  \TF{f.}{True}{Discount like with like: nominal cash flows at nominal rates, real cash flows at real
+  rates. Mixing them double counts or ignores inflation.}
+\end{enumerate}
+
+\answer{a F, b T, c F, d F, e F, f T (the book's answers, pp.~421--422).}
+\refline{Topic 2A slides (project discount rate, unlevering comparables); Higgins Ch.~8.}
+\rubric{12}{2 per item: 1 for the verdict, 1 for the reason; (c) and (e) need the leverage argument.}
+
+% =============================================================================
+\section{Question 2.1 --- Market-value weights}
+
+\statement{\QtwoA}
+
+\step{1}{MV Corporation} The WACC weights are market values. The book value of common equity
+(\$100 million) is irrelevant. Market value of equity: $6\times50=300$; total $V=100+300+20=420$:
+\[
+  w_E=\frac{300}{420}=0.7143,\qquad w_D=\frac{100}{420}=0.2381,\qquad w_P=\frac{20}{420}=0.0476 .
+\]
+\step{2}{Book Co.} (a) $E=1\times50=\$50$ million (book equity would be $1+30=\$31$ million: not used).
+(b) $D=20\times1.01=\$20.2$ million. (c) $V=70.2$; $w_E=50/70.2=0.7123$, $w_D=20.2/70.2=0.2877$.
+
+\answer{MV: 71.43\% common equity, 23.81\% debt, 4.76\% preferred. Book Co.: (a) \$50 million; (b) \$20.2
+million; (c) 71.23\% equity, 28.77\% debt.}
+\intuition{The weights describe how much investors have at stake today, which is what they require a
+return on. Book values describe what was paid in the past.}
+\refline{Topic 1 slides (book vs.\ market value); Topic 2A (WACC).}
+\rubric{6}{3 for MV (market equity computed, book value ignored); 3 for Book Co.\ (1 each part).}
+
+% =============================================================================
+\section{Question 2.2 --- The project's own discount rate}
+
+\statement{\QtwoB}
+
+\step{1}{Which rate (Problem 18)} 15\%, Raft Adventures' WACC. The discount rate belongs to the
+cash flows being valued: the acquired business keeps its own risk whoever owns it. RiverRocks' 12\%
+reflects RiverRocks' assets, not Raft's.
+
+\step{2}{NPV (Problem 19)} A growing perpetuity starting in one year:
+\[
+  PV=\frac{C_1}{r-g}=\frac{15}{0.15-0.04}=136.36,\qquad NPV=136.36-100=\$36.36\text{ million}.
+\]
+\textbf{Contrast.} At RiverRocks' 12\% the NPV would be $15/0.08-100=\$87.5$ million: the wrong rate
+more than doubles the NPV and would justify overpaying.
+
+\answer{18: 15\%, the target's cost of capital, because it reflects the risk of the cash flows acquired.
+19: $NPV=\$36.36$ million.}
+\refline{Topic 2A slides (project risk, growing perpetuity).}
+\rubric{8}{3 for 15\% with the reason; 4 for the NPV ($C_1/(r-g)$ with $C_1=15$); 1 for a sensible
+comment.}
+
+% =============================================================================
+\section{Question 2.3 --- Estimating a WACC}
+
+\statement{\QtwoC}
+
+\step{1}{Cost of equity (a)} Constant-growth dividend model: $r_E=\frac{Div_1}{P_0}+g=\frac{1}{20}+0.04=9\%$.
+
+\step{2}{Cost of preferred (b)} A perpetuity: $r_P=\frac{2}{28}=7.14\%$.
+
+\step{3}{Cost of debt (c)} The relevant cost is what new debt costs today: the new issue at par
+pays 6.5\%, so its yield is 6.5\%. The 6\% coupon from three years ago is history.
+
+\step{4}{Market value of assets (d)} Market value of the claims: common $5\times20=100$, preferred
+$1\times28=28$, liabilities $20$; total $\$148$ million. The book value of equity (\$50 million) is not
+used.
+
+\step{5}{WACC (e)}
+\[
+  r_{WACC}=\tfrac{100}{148}(9\%)+\tfrac{28}{148}(7.14\%)+\tfrac{20}{148}(6.5\%)(1-0.35)
+  =6.08\%+1.35\%+0.57\%=8.00\% .
+\]
+Only debt gets the $(1-\tau)$: interest is deductible, preferred dividends are not.
+
+\answer{(a) 9\%; (b) 7.14\%; (c) 6.5\%; (d) \$148 million; (e) $r_{WACC}=8.00\%$.}
+\refline{Topic 2A slides (WACC); Berk Ch.~13.}
+\rubric{10}{2 each part; (e) needs market weights and the after-tax cost of debt only.}
+
+% =============================================================================
+\section{Question 2.4 --- MM and the risk of levered equity}
+
+\statement{\QtwoD}
+
+\step{1}{Unlevered equity (a)} $\E[V_1]=0.8(50)+0.2(20)=44$; $V_0=44/1.10=\$40$ million.
+
+\step{2}{Levered equity (b)} The debt pays \$20 million in both states (assets are never below 20),
+so it is risk-free: $D=20/1.05=19.05$. By MM~I the firm is still worth 40, so $E=40-19.05=\$20.95$
+million.
+
+\step{3}{Expected returns (c)} Unlevered: 10\% (the assets' cost of capital). Levered: equity pays
+$50-20=30$ or $20-20=0$, so $\E[\text{payoff}]=0.8(30)=24$ and
+\[
+  r_E=\frac{24}{20.95}-1=14.55\% .
+\]
+Check with MM~II: $r_E=r_A+\frac DE(r_A-r_D)=10\%+\frac{19.05}{20.95}(10\%-5\%)=14.55\%$.
+
+\step{4}{Lowest realized returns (d)} Without leverage: $20/40-1=-50\%$. With leverage:
+$0/20.95-1=-100\%$ (the best case is $+25\%$ unlevered and $+43.18\%$ levered).
+
+\answer{(a) \$40 million; (b) \$20.95 million; (c) 10\% unlevered, 14.55\% levered; (d) $-50\%$
+unlevered, $-100\%$ levered.}
+\intuition{Leverage does not change the value of the firm, but it concentrates the same asset risk on a
+smaller equity claim: the expected return rises because the downside is worse, not because value is
+created.}
+\refline{Topic 2A slides (MM~I and II, homemade leverage).}
+\rubric{10}{2 for (a); 3 for (b) with safe debt at $r_f$; 3 for (c) with the MM~II check; 2 for (d).}
+
+% =============================================================================
+\section{Question 3.1 --- The value of the interest tax shield}
+
+\statement{\QthreeA}
+
+\step{1}{No debt (a)} Net income $=1000(1-0.4)=600$ a year, riskless, paid as dividends forever:
+$E=600/0.05=\$12{,}000$.
+
+\step{2}{With \$500 interest (b)} Net income $=(1000-500)(0.6)=300$, so $E=300/0.05=\$6{,}000$. Debt
+pays a riskless \$500 forever: $D=500/0.05=\$10{,}000$.
+
+\step{3}{Difference (c)} $V_L=6{,}000+10{,}000=16{,}000$; $V_L-V_U=16{,}000-12{,}000=\$4{,}000$.
+
+\step{4}{As a share of debt (d)} $4{,}000/10{,}000=40\%=\tau$. The interest tax shield is
+$0.4\times500=200$ a year, worth $200/0.05=4{,}000=\tau D$.
+
+\answer{(a) \$12,000; (b) equity \$6,000, debt \$10,000; (c) \$4,000; (d) 40\% of the debt, the tax
+rate: $V_L=V_U+\tau D$ for permanent debt.}
+\intuition{Investors in total receive $1000-0.4(1000-500)=800$ a year with debt vs.\ 600 without: the
+government's take falls by 200, and that is the whole gain.}
+\refline{Topic 2B slides (interest tax shield, permanent debt).}
+\rubric{10}{2 for (a); 4 for (b); 2 for (c); 2 for (d) linked to $\tau D$.}
+
+% =============================================================================
+\section{Question 3.2 --- Fixed debt vs.\ a constant debt-to-value ratio}
+
+\statement{\QthreeB}
+
+\step{1}{Milton (16): permanent debt} (a) $V_U=5/0.15=\$33.33$ million. (b) Permanent debt
+$\Rightarrow$ shields as safe as the debt, $PV(ITS)=\tau D=0.35(19.05)=6.67$:
+$V_L=33.33+6.67=\$40.00$ million.
+
+\step{2}{NatNah (17): constant $D/V$} The pretax WACC stays at $r_U=15\%$. After tax:
+\[
+  r_{WACC}=r_U-\tau r_D\frac DV=15\%-0.35(9\%)(0.5)=15\%-1.575\%=13.425\% .
+\]
+Check: $15\%=0.5\,r_E+0.5(9\%)\Rightarrow r_E=21\%$; then $0.5(21\%)+0.5(9\%)(0.65)=13.425\%$.
+
+\answer{16: (a) \$33.33 million; (b) \$40.00 million. 17: after-tax WACC $=13.425\%$ (13.43\%).}
+\intuition{Two debt policies, two tools: a fixed amount of debt is valued by APV with $PV(ITS)=\tau D$;
+a constant $D/V$ goes into the WACC, which falls below $r_U$ by exactly $\tau r_DD/V$.}
+\refline{Topic 2B slides (debt-policy table); cheatsheet §3.}
+\rubric{10}{4 for Milton ($V_U$, then $+\tau D$); 6 for NatNah (pretax WACC $=r_U$, then subtract
+$\tau r_DD/V$ or rebuild from $r_E$).}
+
+% =============================================================================
+\section{Question 3.3 --- Tax shield vs.\ financial distress}
+
+\statement{\QthreeC}
+
+\step{1}{Discount rate} The beta of the free cash flows gives the unlevered cost of capital:
+$r_U=5\%+1.10(15\%-5\%)=16\%$.
+
+\step{2}{Without leverage (a)} $V_U=16/0.16=\$100$ million.
+
+\step{3}{With leverage (b)} The expected FCF fall to 15 (indirect distress costs); the permanent debt
+adds $PV(ITS)=\tau D=0.35(40)=14$:
+\[
+  V_L=\frac{15}{0.16}+0.35(40)=93.75+14=\$107.75\text{ million}.
+\]
+In APV form: $V_L=V_U+PV(ITS)-PV(\text{distress})=100+14-6.25$.
+
+\answer{(a) \$100 million; (b) \$107.75 million: the tax shield (14) exceeds the PV of distress costs
+(6.25), so the new leverage adds \$7.75 million.}
+\intuition{This is the static trade-off with numbers: leverage pays while the marginal shield exceeds
+the marginal expected distress cost.}
+\refline{Topic 2B slides ($V_L=V_U+PV(ITS)-PV(\text{distress})$, indirect costs).}
+\rubric{10}{3 for $r_U$ by CAPM; 2 for (a); 5 for (b): lower FCF discounted at $r_U$ (2), $+\tau D$
+(2), conclusion (1).}
+
+% =============================================================================
+\section{Question 3.4 --- Payout policy and personal taxes}
+
+\statement{\QthreeD}
+
+\begin{notation}
+  \item The 12\% is read as the \emph{after-tax} return investors require on HNH (what they earn on
+        equally risky stock); capital gains are untaxed.
+\end{notation}
+
+\step{1}{With dividends (a)} Investors keep $2(1-0.2)=1.60$ a year:
+$P=\frac{1.60}{0.12}=\$13.33$.
+
+\step{2}{With repurchases (b)} The same \$2 a share now reaches investors as capital gains, which are
+untaxed: $P=\frac{2}{0.12}=\$16.67$, a rise of \$3.33 (25\%) on the announcement.
+
+\answer{(a) \$13.33; (b) \$16.67.}
+\intuition{With a dividend tax and no capital gains tax, paying out by repurchase saves investors the
+tax, and the saving is capitalised in the price at once. In a perfect market both prices would be
+equal.}
+\textbf{Watch.} Reading 12\% as a pre-tax rate gives \$16.67 in (a) and hides the point of the
+question, which is the tax disadvantage of dividends.
+\refline{Topic 2B slides (payout with taxes); Berk §17.3.}
+\rubric{10}{5 for (a) with the after-tax dividend; 5 for (b) with the reason (capital gains untaxed).}
+
+\end{document}

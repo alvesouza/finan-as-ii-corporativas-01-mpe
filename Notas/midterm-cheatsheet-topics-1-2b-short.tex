@@ -1,0 +1,298 @@
+% =============================================================================
+% Midterm cheatsheet, Topics 1, 2A, 2B -- two-page version.
+% Long version: Notas/midterm-cheatsheet-topics-1-2b.pdf. Formulas: Notas/formula-sheet-topics-1-2b.pdf.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[8pt,a4paper]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=0.9cm,top=0.8cm,bottom=0.9cm]{geometry}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{needspace}
+\usepackage{microtype}
+
+\pagestyle{empty}
+\setlist{nosep,leftmargin=1.0em}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt}
+\setlength{\columnsep}{10pt}
+\setlength{\columnseprule}{0.3pt}
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\definecolor{hd}{RGB}{25,60,120}
+\definecolor{wr}{RGB}{160,30,30}
+\definecolor{ok}{RGB}{20,110,40}
+\newcommand{\sect}[1]{\par\needspace{4\baselineskip}\smallskip{\color{hd}\large\bfseries #1}\par\nopagebreak\vspace{1pt}}
+\newcommand{\hd}[1]{\par\textbf{\color{hd}#1}~}
+\newcommand{\watch}{\textbf{\color{wr}Watch:}~}
+\newcommand{\T}{\textbf{\color{ok}T}~}
+\newcommand{\F}{\textbf{\color{wr}F}~}
+\newcommand{\E}{\mathbb{E}}
+
+\begin{document}
+\begin{center}
+{\Large\bfseries Midterm cheatsheet --- Topics 1, 2A, 2B (two-page version)}\\
+{\footnotesize Finan\c{c}as II -- Corporativas (MPE Insper). Long version (T/F explanations, full recipes):
+\texttt{Notas/midterm-cheatsheet-topics-1-2b.pdf}; formulas: \texttt{Notas/formula-sheet-topics-1-2b.pdf}.}
+\end{center}
+\vspace{-6pt}
+\begin{multicols}{2}
+
+\sect{0. Every question}
+\begin{enumerate}[label=\arabic*.]
+  \item Units (thousands/millions, per share/total); rates as decimals in formulas.
+  \item Timing: first flow at $t=0$ or $t=1$? $C/r$ starts next year; growing perpetuity uses $C_1$.
+  \item ``For $T$ years'' = annuity; no end = perpetuity.
+  \item Which world? No taxes / corporate taxes / personal taxes / distress / risky debt.
+  \item Which debt policy? Fixed amount, constant $D/E$, or a schedule (table §3).
+  \item Market values for weights and betas; say ``book'' or ``market'' for ratios.
+  \item Formula first, then numbers; 4 decimals inside, round at the end.
+  \item Sanity: $r_D\le r_U\le r_E$; $r_D(1-\tau)<r_{WACC}<r_U$ with taxes; $\beta_D\le\beta_A\le\beta_E$.
+  \item Answer every sub-question (``willing?'', ``smaller/equal/larger?'', ``explain'' = mechanism).
+  \item Cross-check: WACC vs.\ APV, CAPM vs.\ MM II, FCF two ways.
+  \item ``Will investors benefit?'' = total wealth (cash $+$ shares), not the share price.
+\end{enumerate}
+
+\sect{1. Topic 1 --- Accounting and capital structure}
+\hd{Balance sheet.} $A=L+E$ in book and market value; debt = senior fixed promise, equity = residual.
+Book is historical and misses intangibles; book equity can be negative while market equity is large
+(Starbucks 2020). $EV=E^{mkt}+D-\text{Cash}$, paired with firm-level flows (sales, EBITDA, FCF).
+\hd{Accruals.} Revenue when earned; depreciation spreads capex and is not cash. $NWC=CA-CL$ (operating
+items); growth absorbs cash; payables finance the firm. $DOL=1+F/OI$.
+\hd{Returns.} $ROE=\frac{NI}{S}\frac SA\frac AE$; $ROIC=\frac{EBIT(1-\tau)}{D+E}$ (financing-free);
+$ROE=ROIC+\frac DE[ROIC-r_D(1-\tau)]$: leverage helps only if $ROIC>r_D(1-\tau)$ and always adds risk.
+\hd{FCF recipe.} Keep incremental items only (no sunk costs, no overhead incurred anyway; add
+opportunity costs, cannibalisation). $FCF=EBIT(1-\tau)+\text{Dep}-\text{Capex}-\Delta NWC
+=(\text{Rev}-\text{Costs})(1-\tau)+\tau\text{Dep}-\text{Capex}-\Delta NWC$. No interest. NWC out when
+needed, back at the end. Salvage after tax $=SV-\tau(SV-BV)$.
+\hd{CFO.} $NI+\text{Dep}-\Delta AR-\Delta\text{Inv}+\Delta AP\,(+\Delta\text{deferred tax liab.})$;
+assets up = cash down.
+\hd{Cash and ratios.} $\Delta\text{Cash}=CFO+CFI+CFF$ (capex in CFI; dividends, borrowing in CFF).
+$E^{mkt}=P\times N$ first, then $EV$, then the ratio; say book or market. Coverage $=EBIT/\text{Int}$
+(ability to pay). Quick $\le$ current. Excess cash is not NWC. Report already deducted interest? Add back
+$\text{Int}(1-\tau)$. Tax rate changes by year: use each year's rate.
+\watch P/S and P/E are distorted by leverage, EV multiples are not. FCF $\to$ WACC/APV $\to$ EV; FCFE
+$\to r_E\to$ equity.
+
+\sect{2. Topic 2A --- Valuation, NPV, MM}
+\hd{Discount rate} = the \emph{project's} risk: $r=r_f+\beta\,\text{MRP}$. Expected $\ne$ realised.
+\hd{Time value.} Annuity $\frac Cr[1-(1+r)^{-T}]$; growing perpetuity $\frac{C_1}{r-g}$;
+$TV_T=\frac{FCF_{T+1}}{r-g}$ discounted $T$ periods (not $T+1$). Real with real, nominal with nominal.
+NWC recovered at the end still costs time value.
+\hd{Comparables.} Unlever each: $\beta_A=\frac EV\beta_E+\frac DV\beta_D$ ($\beta_D=0$ if safe;
+$D/V=\frac{D/E}{1+D/E}$); average; relever at the project's target $D/E$ for WACC. Never use a levered
+$\beta_E$ directly. Read whether MRP or $\E[r_m]$ is given.
+\hd{NPV} $=PV-\text{cost}$. Frictionless: NPV goes to existing owners whatever the financing. Fisher
+separation: invest at the market rate. IRR fails with sign changes, borrowing-type flows, scale/timing.
+\hd{Options view.} $E=\max(A-F,0)$ = call; $D=\min(A,F)=$ safe bond $-$ put; parity $\Rightarrow D+E=A$
+(MM I).
+\hd{State prices.} Solve $\text{price}=\sum_s p_sx_s$ for traded assets; $\sum p_s=\frac1{1+r_f}$; no
+arbitrage $\Leftrightarrow p_s>0$. Price any claim; expected returns use \emph{true} probabilities:
+$r=\E[\text{payoff}]/\text{price}-1$; risk-neutral $\pi_s=p_s(1+r_f)$ are not real. To raise $D$, find
+$F$ with $\sum p_s\min(X_s,F)=D$; $F>$ slump payoff $\Rightarrow$ risky debt.
+\hd{MM I/II (no taxes).} $V_L=V_U$ (homemade leverage); $r_E=r_A+\frac DE(r_A-r_D)$, linear while
+debt is safe; WACC $=r_A$. $r_D<$ yield when default is possible.
+\hd{Leverage and EPS (PS2 Ex.\,4).} Relever $r_E$, $\beta_E$; EPS$=(EBIT-r_DD)/N_{new}$; price
+\emph{unchanged}, so P/E falls when EPS rises. Higher $r_E$ or EPS $\ne$ more value.
+\watch debt-financed dividend: firm value unchanged, equity falls by the dividend (PS2 1f).
+
+\sect{3. Topic 2B --- Taxes, distress, trade-off, payout}
+\hd{Tax shield.} $ITS_t=\tau r_DD_{t-1}$; $V_L=V_U+PV(ITS)$; the gain goes to shareholders. FCF stays
+unlevered: the shield enters via WACC \emph{or} APV, never both.
+\begin{center}\footnotesize
+\begin{tabularx}{\columnwidth}{@{}>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{2.0cm}Y@{}}
+\toprule
+Debt policy & Shields: rate; PV & $r_E$;\ \ WACC \\ \midrule
+Fixed perpetual $D$ & $r_D$;\ $\tau D$ & $r_U+\frac DE(1-\tau)(r_U-r_D)$;\ \ $r_U(1-\tau\frac DV)$ \\[2pt]
+Constant $D/E$ & $r_U$;\ each $ITS_t$ at $r_U$ & $r_U+\frac DE(r_U-r_D)$;\ \ $r_U-\tau r_D\frac DV$ \\[2pt]
+Known schedule & $r_D$;\ sum at $r_D$ & use APV \\ \bottomrule
+\end{tabularx}
+\end{center}
+``Maintain a constant $D/E$'' = row 2 (Prova Q2, PS2 2a--c); ``issue \$100m of perpetual debt'' = row 1.
+Safe debt, $\beta_E$: row 1 $\beta_U[1+(1-\tau)\frac DE]$; row 2 $\beta_U+\frac DE(\beta_U-\beta_D)$.
+Risky debt: the shield uses the coupon paid $\bar r_D$, not the expected return.
+\hd{WACC} $=\frac EVr_E+\frac DVr_D(1-\tau)$, needs constant $D/E$. \textbf{APV} $=V_U+PV(ITS)-
+PV(\text{distress})$, best for known debt amounts. Market-value weights; marginal tax rate.
+\hd{Debt-financed buyback.} $V_L=V_U+PV(ITS)$; price jumps at the \emph{announcement} to
+$P=V_L/N_0$; buy $D/P$ shares; after: $E=V_L-D$, same $P$. Given $P_{new}$:
+$PV(\text{distress})=V_U+PV(ITS)-P_{new}N_0$.
+\hd{Distress.} Default = transfer of control (not an MM violation); its \emph{costs} matter: direct
+(legal, fire sales) and indirect (customers, suppliers, workers, overhang, risk-shifting), before any
+filing. Creditors price them in $\Rightarrow$ shareholders pay ex ante. In states: set $F$ so creditors
+break even; equity falls by the PV of costs.
+\hd{Risky debt in states (PS2 Ex.\,3).} $V=\E[X]/(1+r_A)$. Creditors: $F$ if solvent, $(1-c)X_s$ in
+default; set $F$ so that $D=\E[\text{payoff}]/(1+r_D)$; $F$ rises to compensate. Equity value vs.\ the
+no-cost case: the drop is the PV of bankruptcy costs.
+\hd{Trade-off.} $\tau[1-H(K^*)]=C\,h(K^*)$; uniform: $K^*=\bar X-C/\tau$ (corner $\underline X$ if
+$C\ge\tau(\bar X-\underline X)$). $K^*\uparrow$ in $\tau$, $\downarrow$ in $C$. More debt: stable,
+tangible; less: R\&D, brands, service. Personal taxes (Miller) also cut the gain.
+\hd{Banks (Admati).} More equity: lower ROE \emph{and} lower risk; WACC unchanged; lost shield is a
+transfer, not a social cost.
+\hd{Payout.} Perfect market: dividend $\Rightarrow$ price falls by Div; buyback $\Rightarrow$ price
+unchanged. Taxes: dividend tax $>$ CG tax favours buybacks; corporate tax on interest makes retained
+cash costly (pay out: $+\tau_c\times$cash, perpetual); a dividend tax paid either way changes nothing;
+ex-div drop $=Div(1-\tau_d^*)$, $\tau_d^*=\frac{\tau_d-\tau_g}{1-\tau_g}$. Irrelevance needs fixed
+investment.
+
+\sect{4. Last year's Q2: the solution logic (60 marks)}
+\textbf{Data}: FCF $-750$, then $250$ for 5 years. Comparable: $D/E=0.1$, safe debt, $\beta_E=1.65$.
+$r_f=5\%$, MRP $10\%$, $\tau=30\%$.
+\begin{enumerate}[label=(\alph*),leftmargin=1.5em,itemsep=1pt]
+  \item \textbf{Constant $D/E$ $\Rightarrow$ shields move with firm value $\Rightarrow$
+        $\beta_{ITS}=\beta_U$}, so the hint collapses to $\beta_A=\beta_U$. Safe debt:
+        $\beta_A=\frac{1}{1.1}(1.65)=1.5$. CAPM: $r_A=r_U=r_{ITS}=20\%$, $r_D=5\%$,
+        $r_E=5\%+1.65(10\%)=21.5\%$; check MM II: $20\%+0.1(15\%)$. \checkmark
+  \item All equity: $r_A=r_E=r_U=20\%$. $V_U=250\times\text{ann}(20\%,5)=250(2.9906)=747.65$;
+        $NPV=-2.35$. Outsiders would need $750/747.65=100.31\%$ of the firm $\Rightarrow$ \textbf{not
+        financed}.
+  \item $D/E=0.5$, constant $\Rightarrow$ MM II \emph{without} $(1-\tau)$:
+        $r_E=20\%+0.5(15\%)=27.5\%$ ($\beta_E=1.5\times1.5=2.25$). \textbf{Larger}: the same asset risk
+        sits on a smaller equity base; pay for financial risk.
+  \item $D/V=\frac13$: $r_{WACC}=\frac23(27.5\%)+\frac13(5\%)(0.7)=19.5\%=r_U-\tau r_D\frac DV$.
+        $V_L=250\times\text{ann}(19.5\%,5)=250(3.0238)=755.95$; $NPV=+5.95$. \textbf{Why}: interest is
+        deductible; the tax shields (8.30) outweigh the $-2.35$. \textbf{Yes}, investors finance it.
+  \item $A_0=755.95$, $D_0=\frac13A_0=251.98$, $E_0=503.97$. Outside equity provides
+        $750-251.98=498.02$ and buys $498.02/503.97=98.82\%$; owners keep $1.18\%$, worth
+        $5.95$ $=$ \textbf{NPV (equal)}: outsiders earn exactly their required return (zero NPV).
+  \item $V_{L,t}=250\times\text{ann}(19.5\%,5-t)$, $D_t=\frac13V_{L,t}$:
+        $D_{1..5}=217.79,\ 176.92,\ 128.09,\ 69.74,\ 0$. $ITS_t=\tau r_DD_{t-1}=0.015D_{t-1}$:
+        $3.78,\ 3.27,\ 2.65,\ 1.92,\ 1.05$. Discount at $r_U=20\%$: $PV(ITS)=8.30$.
+        \textbf{Link}: $V_L=V_U+PV(ITS)$: $755.95=747.65+8.30$, and $NPV_{(d)}=NPV_{(b)}+PV(ITS)$
+        (APV $=$ WACC under constant $D/E$).
+\end{enumerate}
+\watch shields lag one period ($D_{t-1}$); debt hits 0 at $t=5$; discount shields at $r_U$, not $r_D$.
+
+\sect{5. ``Explain'' in one line}
+\begin{itemize}
+  \item \emph{$r_E$ up with (safe) debt}: same asset risk on less equity $\Rightarrow\beta_E\uparrow$;
+        compensation, not a cost.
+  \item \emph{NPV up with debt (taxes)}: operating risk unchanged; the tax shield lowers the WACC.
+  \item \emph{No value from debt (no taxes)}: debt and equity split the same cash flow; homemade leverage.
+  \item \emph{``Debt is cheaper''}: $r_E$ rises to keep WACC $=r_A$; with taxes the gain is the shield.
+  \item \emph{Who bears distress costs}: shareholders, ex ante, via the price of the claims they sell.
+  \item \emph{Owners' stake = NPV}: outsiders pay a fair price; the surplus stays with the owners.
+  \item \emph{FCF, not earnings}: earnings include non-cash items and ignore capex and NWC.
+  \item \emph{Unlever comparables}: their $\beta_E$ mixes business risk with their own leverage.
+  \item \emph{Price jumps at announcement}: the PV of the shield is capitalised on the news.
+  \item \emph{Not 100\% debt}: distress, personal taxes and agency costs offset the shield at the margin.
+  \item \emph{Debt-financed dividend (MM)}: cash today, equity falls by the same amount; wealth unchanged.
+  \item \emph{EPS up, price same}: riskier EPS, higher required return; P/E falls.
+  \item \emph{Positive NPV survives competition}: it cannot be scaled (arbitrage across the firm's boundary).
+\end{itemize}
+
+\sect{6. True/False: how to attack}
+Absolute words (``always'', ``any'') $\to$ find one counter-case. Fix the world first (taxes? risky
+debt? distress?). Swaps are false: value vs.\ expected return, EPS vs.\ price, book vs.\ market,
+yield vs.\ expected return, per share vs.\ total. A compound statement with one wrong part is false.
+Under a half-point penalty, guess only if more than $\tfrac13$ sure.
+
+\sect{7. True/False bank: all 75, one line each}
+\textbf{\color{hd}Topic 1}
+\begin{enumerate}[label=\arabic*.,start=1,leftmargin=1.6em,itemsep=0pt]
+  \item Negative book equity means insolvency. \F{}Starbucks 2020.
+  \item Depreciation is a source of cash. \F{}only $\tau$Dep.
+  \item $\uparrow AR$ makes CFO $<$ NI (other things equal). \T
+  \item $\uparrow AP$ lowers CFO. \F{}raises it.
+  \item Capex $=$ Dep $\Rightarrow$ NI $=$ FCF. \F{}needs $\Delta NWC=0$, no interest.
+  \item $EV=$ market cap $+$ total liabilities. \F$+D-\text{Cash}$.
+  \item Leverage always raises ROE. \F{}only if $ROIC>r_D(1-\tau)$.
+  \item Same ROE = same operating profitability. \F{}DuPont.
+  \item ROIC does not depend on financing. \T
+  \item Book and market $D/E$ coincide. \F
+  \item Revenue recognised when cash is received. \F{}when earned.
+  \item Higher fixed costs: OI more sensitive to sales. \T{}DOL.
+  \item Growing firm: NI $>0$ with CFO $<0$ possible. \T
+  \item Unlevered FCF deducts interest. \F
+  \item $\uparrow$ deferred tax liab.\ is added back to CFO. \T
+  \item Quick ratio $\le$ current ratio. \T
+  \item High market-to-book means overvalued. \F{}growth, intangibles.
+  \item Excess cash belongs in NWC. \F
+\end{enumerate}
+\textbf{\color{hd}Topic 2A}
+\begin{enumerate}[label=\arabic*.,start=19,leftmargin=1.6em,itemsep=0pt]
+  \item Discount every project at the firm's WACC. \F{}project risk.
+  \item Use a levered comparable's $\beta_E$ directly. \F{}unlever.
+  \item Safe debt leaves equity risk unchanged. \F$\beta_E\uparrow$.
+  \item Sunk costs belong in FCF. \F
+  \item An owned asset used by the project is a cost. \T{}opportunity cost.
+  \item Overhead incurred anyway is incremental. \F
+  \item Higher IRR $\Rightarrow$ higher NPV. \F{}scale, timing.
+  \item Any flows: accept iff $IRR>r$. \F{}sign changes.
+  \item NPV goes to old owners however financed (frictionless). \T
+  \item State prices are probabilities. \F
+  \item $\sum p_s=1/(1+r_f)$. \T
+  \item No arbitrage $\Leftrightarrow$ all $p_s>0$. \T
+  \item Borrowing to pay a dividend raises value (MM). \F{}equity falls by Div.
+  \item Without taxes, debt lowers the WACC. \F{}WACC $=r_A$.
+  \item $r_E$ linear in $D/E$ even with risky debt. \F{}only while safe.
+  \item Equity $=$ call with strike $F$. \T
+  \item Risky debt $=$ safe bond $+$ put. \F{}minus a put.
+  \item Yield $=$ expected return on risky debt. \F$y>r_D$.
+  \item MM proof needs equal borrowing terms. \T{}homemade leverage.
+  \item Recap raising $\E[r_E]$ helps shareholders. \F{}pay for risk.
+  \item Leverage that raises EPS raises the price (MM). \F
+  \item Debt buyback raises EPS $\Rightarrow$ P/E falls (MM). \T
+  \item Portfolio beta = value-weighted average. \T
+  \item $r_A=\frac EVr_E+\frac DVr_D$ only for expected returns. \F{}realised too.
+  \item Fisher: investment depends on owners' patience. \F
+  \item Positive NPV survives: it cannot be scaled. \T
+  \item Real flows at nominal rates. \F
+  \item NWC recovered at the end: no NPV effect. \F{}time value.
+  \item After-tax salvage $=SV(1-\tau)$. \F$SV-\tau(SV-BV)$.
+\end{enumerate}
+\textbf{\color{hd}Topic 2B}
+\begin{enumerate}[label=\arabic*.,start=48,leftmargin=1.6em,itemsep=0pt]
+  \item $V_L-V_U=\tau D$ for any debt policy. \F{}only fixed perpetual.
+  \item The tax shield benefits creditors. \F{}shareholders.
+  \item Permanent debt buyback: price jumps at announcement. \T
+  \item With taxes and debt, WACC $<r_U$. \T{}by $\tau r_D\frac DV$.
+  \item Unlevered FCF includes the ITS. \F{}WACC or APV.
+  \item WACC $=$ APV under constant $D/E$. \T
+  \item APV is easier with a known debt schedule. \T
+  \item Constant $D/E$: shields as risky as debt. \F{}as $U$.
+  \item Fixed perpetual debt: shields at $r_D$. \T
+  \item Constant $D/E$: $r_E$ has a $(1-\tau)$ factor. \F
+  \item Corporate taxes alone imply near all-debt firms. \T
+  \item Personal taxes can cancel debt's advantage. \T{}Miller.
+  \item Default itself breaks MM. \F{}its costs do.
+  \item Creditors bear bankruptcy costs. \F{}shareholders, ex ante.
+  \item Indirect distress costs start only after filing. \F
+  \item Firms needing long-term service borrow less. \T
+  \item $K^*\uparrow$ in $\tau$, $\downarrow$ in distress cost. \T
+  \item Optimal debt maximises $PV(ITS)$. \F{}maximises value.
+  \item More bank equity raises the WACC. \F{}MM II.
+  \item More bank equity: lower ROE, so shareholders lose. \F{}risk falls too.
+  \item Dividends $\to$ buybacks raises value (perfect). \F
+  \item Dividend irrelevance needs fixed investment. \T
+  \item Price falls by Div ex-dividend (perfect). \T
+  \item Open-market buyback raises the price (perfect). \F
+  \item $\tau_d>\tau_g$ favours buybacks. \T
+  \item Excess cash is costly with corporate tax on interest. \T
+  \item Risky debt: shield computed with expected $r_D$. \F{}coupon $\bar r_D$.
+  \item Taxes, safe debt: leverage still raises $\beta_E$. \T
+\end{enumerate}
+\sect{8. Mock Q1: the solution logic (40 marks)}
+\begin{enumerate}[label=1.\arabic*,leftmargin=1.8em,itemsep=1pt]
+  \item \emph{Airlines.} $EV=MC+D-C$: AMR $8.2$, BA $4.3$. P/S $0.071$ vs.\ $0.168$; EV/R $0.345$ vs.\
+        $0.328$. EV/R is right: firm-level flow over firm-level value; P/S is distorted by leverage.
+  \item \emph{Elmdale.} $EBIT=$ Rev $-$ OpEx $-$ Dep $=60,\ 64$; earnings $\times0.65=39,\ 41.6$.
+        $FCF=$ earnings $+$ Dep $-$ CapEx $-\Delta NWC=32,\ 29.6$; check
+        $(\text{Rev}-\text{OpEx})(1-\tau)+\tau\text{Dep}-\dots$ Earnings up, FCF down.
+  \item \emph{Kohwe.} $V_U=10/0.08=125$, $NPV=75$, equity issue: $P=75/5=\$15$. Perpetual debt 50:
+        $PV(ITS)=0.4(50)=20$, $P=(145-50)/5=\$19$. Distress (FCF 9): $V_U=112.5$, $P=\$16.50>15$:
+        shield 20 $>$ $PV(\text{distress})$ 12.5.
+  \item \emph{Kay (pay out 100 of Treasuries).} Perfect: no change; ex-div $-100$; no gain.
+        $\tau_c=35\%$: kept, worth $4.55/0.07=65$; announcement $+35$; ex-div $-100$; gain 35.
+        $\tau_d=15\%$ only: $85=85$, no change; ex-div $-85$; no gain.
+\end{enumerate}
+
+\end{multicols}
+\end{document}

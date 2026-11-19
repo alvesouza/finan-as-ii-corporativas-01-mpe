@@ -1,0 +1,84 @@
+% =============================================================================
+% Mock midterm 2, Finance II -- Corporate Finance, Topics 1, 2A and 2B.
+% Format follows Prova/q2.pdf and mock-midterm-topics-1-2b.tex: Question N (marks), parts with marks.
+% Statements: mock2-midterm-topics-1-2b-statements.tex (shared with the solutions).
+% Solutions: mock2-midterm-topics-1-2b-solutions.pdf.
+% Compile: pdflatex (twice); check: pdffonts (Type 1 only, uni = yes).
+% =============================================================================
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}   % Type 1 vector fonts (replaces PK bitmaps)
+\usepackage{cmap}      % ToUnicode CMap -> copyable text and accents
+\usepackage[english]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage[a4paper,margin=2.3cm]{geometry}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{needspace}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newcommand{\srcline}[1]{\par\noindent{\small\color{black!65}\textbf{Source:} #1}\par\smallskip}
+\newcommand{\qpart}[2]{\par\needspace{12\baselineskip}\medskip\noindent\textbf{#1} (\emph{#2})\par}
+
+\input{mock2-midterm-topics-1-2b-statements}
+
+\begin{document}
+
+\textbf{Finance II - Corporate Finance}
+
+\begin{center}
+  {\LARGE\bfseries Mock Midterm Exam --- Set 2}\\[4pt]
+  {\large Topics 1 (accounting review), 2A (valuation and MM) and 2B (taxes, distress and payout)}
+\end{center}
+
+\noindent\textbf{Instructions.} Total: 100 marks. Question~1 is true/false: 13 statements, 2 marks
+each (1 for the verdict, 1 for the reason). Question~2 has four parts (34 marks); Question~3 has four
+parts of 10 marks each. Show every step; state the formula before using it. Every question is a real
+exercise reproduced verbatim; its source is printed above the statement. Worked solutions:
+\texttt{mock2-midterm-topics-1-2b-solutions.pdf}.
+
+\bigskip
+\noindent\textbf{Question 1} (\emph{26 marks}) True or false. A verdict without a reason earns half the
+marks.
+
+\qpart{Part 1.1}{14 marks --- Topic 1: the balance sheet and cash}
+\QoneA
+
+\qpart{Part 1.2}{12 marks --- Topic 2A: the cost of capital}
+\QoneB
+
+\bigskip
+\noindent\textbf{Question 2} (\emph{34 marks}) Answer the four parts below.
+
+\qpart{Part 2.1}{6 marks --- Topic 1: market-value weights}
+\QtwoA
+
+\qpart{Part 2.2}{8 marks --- Topic 2A: the project's own discount rate}
+\QtwoB
+
+\qpart{Part 2.3}{10 marks --- Topic 2A: estimating a WACC}
+\QtwoC
+
+\qpart{Part 2.4}{10 marks --- Topic 2A: MM and the risk of levered equity}
+\QtwoD
+
+\newpage
+\noindent\textbf{Question 3} (\emph{40 marks}) Answer the four parts below.
+
+\qpart{Part 3.1}{10 marks --- Topic 2B: the value of the interest tax shield}
+\QthreeA
+
+\qpart{Part 3.2}{10 marks --- Topic 2B: fixed debt vs.\ a constant debt-to-value ratio}
+\QthreeB
+
+\qpart{Part 3.3}{10 marks --- Topic 2B: tax shield vs.\ financial distress}
+\QthreeC
+
+\qpart{Part 3.4}{10 marks --- Topic 2B: payout policy and personal taxes}
+\QthreeD
+
+\end{document}
